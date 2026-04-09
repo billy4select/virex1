@@ -1,4 +1,10 @@
 ---
+/**
+ * Index Page - 網站首頁
+ * * @description
+ * 這是首頁的總入口。我已將原本的軟體開發內容修改為行銷實戰內容。
+ * 包含：Hero, 信任商標, 實踐步驟, 工具整合, 核心價值, 服務方案, 讀者見證, 呼籲行動。
+ */
 import { getCollection, type CollectionEntry } from 'astro:content';
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Hero from '@sections/marketing/Hero.astro';
@@ -15,6 +21,7 @@ import IntegrationsGrid from '@sections/marketing/IntegrationsGrid.astro';
 
 type TestimonialEntry = CollectionEntry<'testimonials'>;
 
+// 抓取讀者見證資料
 const testimonials = await getCollection(
   'testimonials',
   ({ data }: { data: TestimonialEntry['data'] }) => !data.draft
@@ -23,178 +30,181 @@ const sortedTestimonials = [...testimonials].sort(
   (a: TestimonialEntry, b: TestimonialEntry) => a.data.order - b.data.order
 );
 
+/** * 工具整合：改為行銷常用的 AI 與生產力工具
+ */
 const integrations = [
   {
-    name: 'GitLab',
-    logo: '/images/integrations/gitlab.svg',
-    category: '開發工具',
+    name: 'ChatGPT / Claude',
+    logo: '/images/integrations/chatgpt.svg',
+    category: '策略發想',
     featured: true,
-    description: '與 GitLab 儲存庫完整整合，實現自動化建置。',
-    href: '/integrations',
+    description: '運用 AI 進行市場調研與內容架構開發，將產出效率提升 3 倍以上。',
+    href: '#',
   },
   {
-    name: 'Slack',
-    logo: '/images/integrations/slack.svg',
-    category: '通訊協作',
+    name: 'Notion / Heptabase',
+    logo: '/images/integrations/notion.svg',
+    category: '知識管理',
     featured: true,
-    description: '在 Slack 頻道中即時獲取部署通知與提醒。',
-    href: '/integrations',
+    description: '打造行銷人的第二大腦，將零散的專案經驗結構化為可複用的邏輯。',
+    href: '#',
   },
   {
-    name: 'n8n',
-    logo: '/images/integrations/n8n.svg',
-    category: '自動化',
+    name: 'Canva / Midjourney',
+    logo: '/images/integrations/canva.svg',
+    category: '視覺行銷',
     featured: true,
-    description: '透過 n8n 整合實現強大的工作流自動化。',
-    href: '/integrations',
+    description: '即便沒有設計背景，也能透過 AI 產出具有品牌感的視覺內容。',
+    href: '#',
   },
 ];
 
 const featuredIntegrations = integrations.filter((i) => i.featured);
 
+/** * Bento Grid：改為展示你的四大專業核心 
+ */
 const bentoItems = [
   {
-    title: '預覽部署',
-    description: '每個 PR 都擁有專屬的預覽 URL。在合併前與團隊分享並獲取意見回饋。',
-    icon: 'lucide:eye',
+    title: '整合行銷實戰',
+    description: '不談虛幻的口號，只談如何串聯 PM、品牌與廣告投放的真實商業決策。',
+    icon: 'lucide:layers',
     size: 'large' as const,
     accent: 'primary' as const,
-    href: '/docs/previews',
+    href: '/blog/marketing',
   },
   {
-    title: '即時回滾',
-    description: '一鍵即可快速回滾至任何先前的部署版本，確保運行穩定。',
-    icon: 'lucide:history',
+    title: 'AI 工作流優化',
+    description: '教你如何將重複性工作外包給 AI，把時間留給更重要的判斷與決策。',
+    icon: 'lucide:cpu',
     accent: 'blue' as const,
-    href: '/docs/rollback',
+    href: '/blog/ai',
   },
   {
-    title: '邊緣快取',
-    description: '全球 200 多個節點進行智慧快取，提供最快的訪問速度。',
-    icon: 'lucide:database',
+    title: '商業邏輯判斷',
+    description: '數據背後是人性。培養在複雜資訊中看清本質的「行銷判斷力」。',
+    icon: 'lucide:line-chart',
     accent: 'green' as const,
-    href: '/docs/edge-network',
+    href: '/blog/logic',
   },
   {
-    title: '團隊協作',
-    description: '基於角色的權限管理、部署留言功能，為組織提供完整的審計日誌。',
-    icon: 'lucide:users',
+    title: '個人品牌思維',
+    description: '如何在這個注意力稀缺的時代，建立起無法被輕易取代的專業辨識度。',
+    icon: 'lucide:user-check',
     size: 'medium' as const,
     accent: 'purple' as const,
-    href: '/docs/teams',
+    href: '/blog/branding',
   },
 ];
 
+/** * 特色區塊：行銷人的核心競爭力 
+ */
 const features = [
   {
     icon: 'lucide:zap',
-    title: '極速部署',
-    description: '在數秒內完成推送與部署。我們優化的建置流程讓你的改動以前所未有的速度上線。',
+    title: '高效率產出',
+    description: '利用 AI 工具自動化處理瑣碎任務，讓你能在數分鐘內完成以往數小時的工作。',
   },
   {
-    icon: 'lucide:refresh-cw',
-    title: '自動回滾',
-    description: '如果發生錯誤？只需點擊一下，即可立即恢復到任何先前運作正常的版本。',
+    icon: 'lucide:shield-check',
+    title: '不可替代性',
+    description: '技術會過時，但解決問題的邏輯不會。教你如何建立 AI 無法模仿的護城河。',
   },
   {
     icon: 'lucide:globe',
-    title: '全球邊緣網路',
-    description: '你的應用程式在全球 200 多個節點運行，確保每位用戶都能閃電般載入。',
+    title: '跨視角整合',
+    description: '從 PM 的成本思維到品牌的感性訴求，提供 360 度的行銷解決方案。',
   },
   {
-    icon: 'lucide:shield',
-    title: '內建安全防護',
-    description: '自動為每個專案配置 SSL 憑證、DDoS 防護與安全性標頭。',
+    icon: 'lucide:message-square',
+    title: '實戰社群交流',
+    description: '加入 Line 實戰群組，與千位行銷人同步最新的 AI 應用與職場心得。',
   },
   {
-    icon: 'lucide:bar-chart',
-    title: '即時數據分析',
-    description: '透過內建的可視化工具監控效能、追蹤錯誤並深入了解用戶行為。',
+    icon: 'lucide:book-open',
+    title: '深度內容分享',
+    description: '每週更新深度長文，拒絕碎片化資訊，幫你建立完整的知識體系。',
   },
   {
-    icon: 'lucide:handshake',
-    title: '無縫團隊協作',
-    description: '每個 PR 都有預覽環境，結合權限控制與流暢的 Git 整合。',
+    icon: 'lucide:users',
+    title: '品牌顧問服務',
+    description: '提供 1 對 1 諮詢，針對你的品牌現狀提供精準的優化建議與執行路徑。',
   },
 ];
 
+/** * 方案區塊：改為電子書與諮詢服務 
+ */
 const pricingPlans = [
   {
-    name: '入門者',
+    name: '讀者 / 訂閱者',
     monthlyPrice: 0,
-    description: '適合個人側專案',
-    features: ['3 個專案', '每月 100 GB 流量', '自動 HTTPS', '社群支援'],
-    cta: { label: '免費開始', href: '/register' },
+    description: '適合剛開始探索 AI 行銷的你',
+    features: ['每週實戰電子報', '加入 Line 交流群組', '限時免費資源下載', '基礎 AI 提示詞库'],
+    cta: { label: '免費訂閱', href: 'https://billy4select.kit.com/profile/posts' },
   },
   {
-    name: '專業版',
-    monthlyPrice: 20,
-    description: '適合專業開發者',
+    name: '專業成長版',
+    monthlyPrice: 19,
+    description: '適合想深度進修的行銷職人',
     features: [
-      '無限專案數量',
-      '每月 1 TB 流量',
-      '完整團隊協作',
-      '優先技術支援',
+      '所有電子書完整版',
+      '專屬進階 AI 工作流教學',
+      '行銷實戰模板下載',
+      '優先提問回覆權',
     ],
     highlighted: true,
-    cta: { label: '開始免費試用', href: '/register' },
+    cta: { label: '查看學習資源', href: '/resources' },
   },
   {
-    name: '企業版',
+    name: '品牌/企業諮詢',
     monthlyPrice: null,
     customPrice: '專案報價',
-    description: '適合大型組織',
-    features: ['無限功能使用', 'SSO & SAML 登入', 'SLA 服務保證', '專屬客服'],
-    cta: { label: '聯絡業務', href: '/contact' },
+    description: '適合需要深度策略輔導的團隊',
+    features: ['1 對 1 策略診斷', 'AI 流程導入建議', '全案行銷計畫審核', '內部團隊教育訓練'],
+    cta: { label: '聯絡比利', href: 'mailto:billy4select@gmail.com' },
   },
 ];
 ---
 
 <MarketingLayout
-  title={`${siteConfig.name} - ${siteConfig.description}`}
+  title={`${siteConfig.name}`}
   description={siteConfig.description}
 >
   <Hero
-    title="AI 時代判斷力才是唯一護城河"
-    subtitle="我是比利陳。曾經任PM、品牌經營在行銷戰場打滾多年，我深知 AI 為我們帶來的職涯焦慮。 這裡記錄我如何用 AI 改善工作流程，並用思維邏輯建立不可替代的護城河。"
-    primaryCTA={{ label: '加入 Line 群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default' }}
+    title="AI 時代，判斷力才是你唯一的護城河"
+    subtitle="我是比利陳。10 年整合行銷實戰，跑過 PM、品牌經營與廣告投放。這裡記錄我如何用 AI 改善工作流程，並用思維邏輯建立不可替代的專業地位。"
+    primaryCTA={{ label: '加入 Line 群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw' }}
     secondaryCTA={{ label: '訂閱電子報', href: 'https://billy4select.kit.com/profile/posts' }}
   />
 
   <LogoCloud
-    title="深受全球創新團隊信賴"
+    title="專注於提升個人與組織的行銷戰力"
     logos={[
-      { name: 'Logo Ipsum 1', src: '/images/logos/logoipsum-1.svg' },
-      { name: 'Logo Ipsum 2', src: '/images/logos/logoipsum-2.svg' },
-      { name: 'Logo Ipsum 3', src: '/images/logos/logoipsum-3.svg' },
-      { name: 'Logo Ipsum 4', src: '/images/logos/logoipsum-4.svg' },
-      { name: 'Logo Ipsum 5', src: '/images/logos/logoipsum-5.svg' },
-      { name: 'Logo Ipsum 6', src: '/images/logos/logoipsum-6.svg' },
+      { name: 'Notion', src: '/images/logos/notion.svg' },
+      { name: 'ChatGPT', src: '/images/logos/chatgpt.svg' },
+      { name: 'Claude', src: '/images/logos/claude.svg' },
     ]}
-    grayscale={false}
-    logoSize="lg"
+    grayscale={true}
+    logoSize="md"
   />
 
   <HowItWorks
-    title="簡單三步驟即可上線"
-    subtitle="只需幾分鐘，即可完成從代碼到上線的所有流程。"
+    title="三步驟，開始重塑行銷邏輯"
+    subtitle="不需要死記硬背，從最核心的商業判斷開始優化。"
     steps={[
       {
-        title: '連接儲存庫',
-        description:
-          "連結您的 GitHub, GitLab 或 Bitbucket。我們將自動偵測您的框架。",
-        icon: 'lucide:git-branch',
+        title: '獲取實戰資訊',
+        description: "訂閱電子報或加入 Line 群組，獲取最新 AI 應用與行銷分析。",
+        icon: 'lucide:mail-plus',
       },
       {
-        title: '配置與自定義',
-        description:
-          '設定環境變數、自定義網域。您也可以直接使用我們的智慧預設值。',
-        icon: 'lucide:settings',
+        title: '導入 AI 流程',
+        description: '參考我的實測教學，將繁瑣任務自動化，解放你的大腦。',
+        icon: 'lucide:wand-2',
       },
       {
-        title: '部署與擴展',
-        description: '推送代碼，看著它在全球上線。自動擴展功能將處理剩餘的一切。',
-        icon: 'lucide:rocket',
+        title: '建立個人品牌',
+        description: '將省下的時間用於策略思考，逐步建立屬於你的職涯護城河。',
+        icon: 'lucide:trophy',
       },
     ]}
     variant="horizontal"
@@ -202,48 +212,44 @@ const pricingPlans = [
   />
 
   <IntegrationsGrid
-    title="工具整合"
-    subtitle="我們的平台與您現有的工作流程工具完美銜接。"
+    title="AI 生產力工具組"
+    subtitle="我如何將最前沿的 AI 工具無縫融入日常行銷工作流。"
     integrations={featuredIntegrations}
     variant="detailed"
     invertOnDark={false}
     columns={3}
     background="default"
-    footerLink={{ label: '查看所有整合功能 →', href: '/integrations' }}
   />
 
   <FeaturesSection
-    title="一切您所需的開發工具"
-    subtitle="從開發到生產環境，我們提供團隊所需的所有工具，助您快速且穩定地推進。"
+    title="為什麼你需要這份實戰經驗？"
+    subtitle="在工具氾濫的時代，我們更需要的是一套穩固的判斷框架。"
     features={features}
     background="muted"
-    footerLink={{ label: '查看所有功能 →', href: '/features' }}
   />
 
   <BentoGrid
-    title="開發者導向的功能設計"
-    subtitle="由開發者打造，為開發者設計。每一項功能都是為了讓您的工作流更順暢。"
+    title="深度探索行銷邏輯"
+    subtitle="從工具操作到頂層戰略，全方位提升你的職場競爭力。"
     items={bentoItems}
     background="muted"
   />
 
   <PricingTable
-    title="簡單透明的定價方案"
-    subtitle="免費開始，隨規模擴展。絕無隱藏費用。"
+    title="資源與諮詢服務"
+    subtitle="選擇最適合你現階段成長的學習路徑。"
     plans={pricingPlans}
     annualDiscount={20}
     background="default"
-    footerLink={{ label: '查看完整價格細節 →', href: '/pricing' }}
   />
 
   {
     siteConfig.features.testimonials && sortedTestimonials.length > 0 && (
       <TestimonialsSection
-        title="開發者的真實好評"
-        subtitle="加入數千個信賴我們來驅動部署的團隊。"
+        title="讀者與合作夥伴的回饋"
+        subtitle="看看其他行銷人如何評價我的內容與建議。"
         background="muted"
         limit={4}
-        footerLink={{ label: '查看所有評價 →', href: '/testimonials' }}
         testimonials={sortedTestimonials.map((t) => ({
           quote: t.data.quote,
           author: t.data.author,
@@ -256,9 +262,9 @@ const pricingPlans = [
   }
 
   <CTA
-    title="準備好提升效率了嗎？"
-    description="今天就開始使用。免費版無需信用卡即可加入。"
-    action={{ label: '立即開始', href: '/register' }}
+    title="不想在 AI 浪潮中失焦？"
+    description="現在就加入社群，與比利陳一起掌握行銷的底層邏輯。"
+    action={{ label: '立即索取資源', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw' }}
   />
 
   <Newsletter />
