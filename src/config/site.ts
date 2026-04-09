@@ -19,17 +19,17 @@ export const url = 'https://blog.billy4select.com';
 /** 作者名稱 */
 export const author = '比利陳 Billy Chen';
 
-/** Logo 路徑 */
-export const logo = '/logo.svg';
+/** Logo 路徑：已換成你的個人頭像 */
+export const logo = '/avatar.webp';
 
-/** Open Graph 預覽圖路徑 */
-export const ogImage = '/images/og-image.png';
+/** Open Graph 預覽圖路徑 (建議之後也把這張圖換成你的頭像或品牌圖) */
+export const ogImage = '/avatar.webp';
 
-/** 社群連結 (對應你提供的平台) */
+/** 社群連結 */
 export const social: SocialLinks = {
   youtube: 'https://www.youtube.com/@billyselect4',
   instagram: 'https://www.instagram.com/billy4select',
-  x: 'https://www.threads.net/@billy4select', // Threads 放在這裡
+  x: 'https://www.threads.net/@billy4select', 
   github: '',
   discord: '',
 };
