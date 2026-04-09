@@ -27,25 +27,25 @@ const integrations = [
   {
     name: 'GitLab',
     logo: '/images/integrations/gitlab.svg',
-    category: 'Development',
+    category: '開發工具',
     featured: true,
-    description: 'Full CI/CD integration with GitLab repositories.',
+    description: '與 GitLab 儲存庫完整整合，實現自動化建置。',
     href: '/integrations',
   },
   {
     name: 'Slack',
     logo: '/images/integrations/slack.svg',
-    category: 'Communication',
+    category: '通訊協作',
     featured: true,
-    description: 'Get deployment notifications and alerts in your Slack channels.',
+    description: '在 Slack 頻道中即時獲取部署通知與提醒。',
     href: '/integrations',
   },
   {
     name: 'n8n',
     logo: '/images/integrations/n8n.svg',
-    category: 'Automation',
+    category: '自動化',
     featured: true,
-    description: 'Workflow automation with n8n integrations.',
+    description: '透過 n8n 整合實現強大的工作流自動化。',
     href: '/integrations',
   },
 ];
@@ -54,32 +54,30 @@ const featuredIntegrations = integrations.filter((i) => i.featured);
 
 const bentoItems = [
   {
-    title: 'Preview Deployments',
-    description:
-      'Every PR gets its own preview URL. Share with your team and get feedback before merging.',
+    title: '預覽部署',
+    description: '每個 PR 都擁有專屬的預覽 URL。在合併前與團隊分享並獲取意見回饋。',
     icon: 'lucide:eye',
     size: 'large' as const,
     accent: 'primary' as const,
     href: '/docs/previews',
   },
   {
-    title: 'Instant Rollbacks',
-    description: 'One-click rollback to any previous deployment.',
+    title: '即時回滾',
+    description: '一鍵即可快速回滾至任何先前的部署版本，確保運行穩定。',
     icon: 'lucide:history',
     accent: 'blue' as const,
     href: '/docs/rollback',
   },
   {
-    title: 'Edge Caching',
-    description: 'Smart caching at 200+ edge locations worldwide.',
+    title: '邊緣快取',
+    description: '全球 200 多個節點進行智慧快取，提供最快的訪問速度。',
     icon: 'lucide:database',
     accent: 'green' as const,
     href: '/docs/edge-network',
   },
   {
-    title: 'Team Collaboration',
-    description:
-      'Role-based access, deployment comments, and audit logs for your entire organization.',
+    title: '團隊協作',
+    description: '基於角色的權限管理、部署留言功能，為組織提供完整的審計日誌。',
     icon: 'lucide:users',
     size: 'medium' as const,
     accent: 'purple' as const,
@@ -90,70 +88,64 @@ const bentoItems = [
 const features = [
   {
     icon: 'lucide:zap',
-    title: 'Lightning Fast Deploys',
-    description:
-      'Push to deploy in seconds, not minutes. Our optimized build pipeline gets your changes live faster than ever.',
+    title: '極速部署',
+    description: '在數秒內完成推送與部署。我們優化的建置流程讓你的改動以前所未有的速度上線。',
   },
   {
     icon: 'lucide:refresh-cw',
-    title: 'Automatic Rollbacks',
-    description:
-      'Something went wrong? Instantly roll back to any previous deployment with a single click.',
+    title: '自動回滾',
+    description: '如果發生錯誤？只需點擊一下，即可立即恢復到任何先前運作正常的版本。',
   },
   {
     icon: 'lucide:globe',
-    title: 'Global Edge Network',
-    description:
-      'Your app runs on 200+ edge locations worldwide, ensuring blazing fast load times for every user.',
+    title: '全球邊緣網路',
+    description: '你的應用程式在全球 200 多個節點運行，確保每位用戶都能閃電般載入。',
   },
   {
     icon: 'lucide:shield',
-    title: 'Built-in Security',
-    description:
-      'SSL certificates, DDoS protection, and security headers configured automatically for every project.',
+    title: '內建安全防護',
+    description: '自動為每個專案配置 SSL 憑證、DDoS 防護與安全性標頭。',
   },
   {
     icon: 'lucide:bar-chart',
-    title: 'Real-time Analytics',
-    description:
-      'Monitor performance, track errors, and understand your users with built-in observability tools.',
+    title: '即時數據分析',
+    description: '透過內建的可視化工具監控效能、追蹤錯誤並深入了解用戶行為。',
   },
   {
     icon: 'lucide:handshake',
-    title: 'Team Collaboration',
-    description:
-      'Preview deployments for every PR, role-based access control, and seamless Git integration.',
+    title: '無縫團隊協作',
+    description: '每個 PR 都有預覽環境，結合權限控制與流暢的 Git 整合。',
   },
 ];
 
 const pricingPlans = [
   {
-    name: 'Hobby',
+    name: '入門者',
     monthlyPrice: 0,
-    description: 'Perfect for side projects',
-    features: ['3 projects', '100 GB bandwidth/month', 'Automatic HTTPS', 'Community support'],
-    cta: { label: 'Start Free', href: '/register' },
+    description: '適合個人側專案',
+    features: ['3 個專案', '每月 100 GB 流量', '自動 HTTPS', '社群支援'],
+    cta: { label: '免費開始', href: '/register' },
   },
   {
-    name: 'Pro',
+    name: '專業版',
     monthlyPrice: 20,
-    description: 'For professional developers',
+    description: '適合專業開發者',
     features: [
-      'Unlimited projects',
-      '1 TB bandwidth/month',
-      'Team collaboration',
-      'Priority support',
+      '無限專案數量',
+      '每月 1 TB 流量',
+      '完整團隊協作',
+      '優先技術支援',
     ],
     highlighted: true,
-    cta: { label: 'Start Free Trial', href: '/register' },
+    cta: { label: '開始免費試用', href: '/register' },
   },
   {
-    name: 'Enterprise',
+    name: '企業版',
     monthlyPrice: null,
-    customPrice: 'Custom',
-    description: 'For large organizations',
-    features: ['Unlimited everything', 'SSO & SAML', 'SLA guarantee', 'Dedicated support'],
-    cta: { label: 'Contact Sales', href: '/contact' },
+    customPrice: '專案報價',
+    description: '適合大型組織',
+    features: ['無限功能使用', 'SSO & SAML 登入', 'SLA 服務保證', '專屬客服'],
+    cta: { label: '聯絡業務', href: '/contact' },
   },
 ];
 ---
@@ -165,12 +157,12 @@ const pricingPlans = [
   <Hero
     title="AI 時代判斷力才是唯一護城河"
     subtitle="我是比利陳。曾經任PM、品牌經營在行銷戰場打滾多年，我深知 AI 為我們帶來的職涯焦慮。 這裡記錄我如何用 AI 改善工作流程，並用思維邏輯建立不可替代的護城河。"
-    primaryCTA={{ label: '加入line群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default' }}
+    primaryCTA={{ label: '加入 Line 群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default' }}
     secondaryCTA={{ label: '訂閱電子報', href: 'https://billy4select.kit.com/profile/posts' }}
   />
 
   <LogoCloud
-    title="Trusted by innovative teams worldwide"
+    title="深受全球創新團隊信賴"
     logos={[
       { name: 'Logo Ipsum 1', src: '/images/logos/logoipsum-1.svg' },
       { name: 'Logo Ipsum 2', src: '/images/logos/logoipsum-2.svg' },
@@ -184,24 +176,24 @@ const pricingPlans = [
   />
 
   <HowItWorks
-    title="Deploy in 3 simple steps"
-    subtitle="From code to production in minutes, not hours."
+    title="簡單三步驟即可上線"
+    subtitle="只需幾分鐘，即可完成從代碼到上線的所有流程。"
     steps={[
       {
-        title: 'Connect your repo',
+        title: '連接儲存庫',
         description:
-          "Link your GitHub, GitLab, or Bitbucket repository. We'll detect your framework automatically.",
+          "連結您的 GitHub, GitLab 或 Bitbucket。我們將自動偵測您的框架。",
         icon: 'lucide:git-branch',
       },
       {
-        title: 'Configure & customize',
+        title: '配置與自定義',
         description:
-          'Set environment variables, custom domains, and build settings. Or use our smart defaults.',
+          '設定環境變數、自定義網域。您也可以直接使用我們的智慧預設值。',
         icon: 'lucide:settings',
       },
       {
-        title: 'Deploy & scale',
-        description: 'Push your code and watch it go live globally. Auto-scaling handles the rest.',
+        title: '部署與擴展',
+        description: '推送代碼，看著它在全球上線。自動擴展功能將處理剩餘的一切。',
         icon: 'lucide:rocket',
       },
     ]}
@@ -210,48 +202,48 @@ const pricingPlans = [
   />
 
   <IntegrationsGrid
-    title="Integrations"
-    subtitle="Our platform integrates seamlessly with the tools you already use."
+    title="工具整合"
+    subtitle="我們的平台與您現有的工作流程工具完美銜接。"
     integrations={featuredIntegrations}
     variant="detailed"
     invertOnDark={false}
     columns={3}
     background="default"
-    footerLink={{ label: 'View all integrations →', href: '/integrations' }}
+    footerLink={{ label: '查看所有整合功能 →', href: '/integrations' }}
   />
 
   <FeaturesSection
-    title="Everything you need to ship"
-    subtitle="From development to production, Virex provides all the tools your team needs to move fast and stay reliable."
+    title="一切您所需的開發工具"
+    subtitle="從開發到生產環境，我們提供團隊所需的所有工具，助您快速且穩定地推進。"
     features={features}
     background="muted"
-    footerLink={{ label: 'View all feature →', href: '/features' }}
+    footerLink={{ label: '查看所有功能 →', href: '/features' }}
   />
 
   <BentoGrid
-    title="Developer-First Features"
-    subtitle="Built by developers, for developers. Every feature designed to make your workflow smoother."
+    title="開發者導向的功能設計"
+    subtitle="由開發者打造，為開發者設計。每一項功能都是為了讓您的工作流更順暢。"
     items={bentoItems}
     background="muted"
   />
 
   <PricingTable
-    title="Simple, transparent pricing"
-    subtitle="Start free and scale as you grow. No hidden fees."
+    title="簡單透明的定價方案"
+    subtitle="免費開始，隨規模擴展。絕無隱藏費用。"
     plans={pricingPlans}
     annualDiscount={20}
     background="default"
-    footerLink={{ label: 'View full pricing details →', href: '/pricing' }}
+    footerLink={{ label: '查看完整價格細節 →', href: '/pricing' }}
   />
 
   {
     siteConfig.features.testimonials && sortedTestimonials.length > 0 && (
       <TestimonialsSection
-        title="Loved by developers"
-        subtitle="Join thousands of teams who trust Virex to power their deployments."
+        title="開發者的真實好評"
+        subtitle="加入數千個信賴我們來驅動部署的團隊。"
         background="muted"
         limit={4}
-        footerLink={{ label: 'View all testimonial →', href: '/testimonials' }}
+        footerLink={{ label: '查看所有評價 →', href: '/testimonials' }}
         testimonials={sortedTestimonials.map((t) => ({
           quote: t.data.quote,
           author: t.data.author,
@@ -264,9 +256,9 @@ const pricingPlans = [
   }
 
   <CTA
-    title="Ready to ship faster?"
-    description="Get started with Virex today. No credit card required for the free tier."
-    action={{ label: 'Get Started', href: '/register' }}
+    title="準備好提升效率了嗎？"
+    description="今天就開始使用。免費版無需信用卡即可加入。"
+    action={{ label: '立即開始', href: '/register' }}
   />
 
   <Newsletter />
