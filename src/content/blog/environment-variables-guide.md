@@ -14,7 +14,7 @@ This guide covers everything you need to know about environment variables in mod
 
 ## What Are Environment Variables?
 
-Environment variables are key-value pairs that exist outside your application code. They allow you to:
+1111TheEnvironment variables are key-value pairs that exist outside your application code. They allow you to:
 
 - Configure behavior without changing code
 - Keep secrets out of version control
