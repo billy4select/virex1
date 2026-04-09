@@ -1,27 +1,23 @@
 ---
 /**
- * Index Page - 網站首頁
- * * @description
- * 1. 訂價改為「書籍介紹」：將五本電子書連結嵌入定價區塊結構。
- * 2. Logo 使用方案三：遠端加載 AI 工具標誌，解決圖檔缺失問題。
+ * Index Page - 比利陳個人品牌精簡版
+ * 刪除區塊：HowItWorks (步驟), IntegrationsGrid (工具細節), FeaturesSection (特色列表)
+ * 保留精華：Hero, LogoCloud, BentoGrid (引導文章), PricingTable (書籍), Testimonials, CTA
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Hero from '@sections/marketing/Hero.astro';
 import LogoCloud from '@sections/marketing/LogoCloud.astro';
-import HowItWorks from '@sections/marketing/HowItWorks.astro';
-import FeaturesSection from '@sections/marketing/FeaturesSection.astro';
 import BentoGrid from '@sections/marketing/BentoGrid.astro';
 import PricingTable from '@sections/pricing/PricingTable.astro';
 import TestimonialsSection from '@sections/social-proof/TestimonialsSection.astro';
 import CTA from '@sections/marketing/CTA.astro';
 import Newsletter from '@sections/marketing/Newsletter.astro';
 import { siteConfig } from '@/config';
-import IntegrationsGrid from '@sections/marketing/IntegrationsGrid.astro';
 
 type TestimonialEntry = CollectionEntry<'testimonials'>;
 
-// 抓取讀者見證資料
+// 抓取讀者見證
 const testimonials = await getCollection(
   'testimonials',
   ({ data }: { data: TestimonialEntry['data'] }) => !data.draft
@@ -30,90 +26,43 @@ const sortedTestimonials = [...testimonials].sort(
   (a: TestimonialEntry, b: TestimonialEntry) => a.data.order - b.data.order
 );
 
-/** * 工具整合：改為行銷常用的 AI 與生產力工具 (遠端載入 Logo) */
-const integrations = [
-  {
-    name: 'ChatGPT',
-    logo: 'https://cdn.simpleicons.org/openai/412991',
-    category: '策略發想',
-    featured: true,
-    description: '運用 AI 進行市場調研與內容架構開發，將產出效率提升 3 倍以上。',
-    href: '#',
-  },
-  {
-    name: 'Claude',
-    logo: 'https://cdn.simpleicons.org/anthropic/D97757',
-    category: '內容分析',
-    featured: true,
-    description: '利用 Claude 的長文本分析能力進行市場調研與邏輯梳理。',
-    href: '#',
-  },
-  {
-    name: 'Notion',
-    logo: 'https://cdn.simpleicons.org/notion/000000',
-    category: '知識管理',
-    featured: true,
-    description: '打造行銷人的第二大腦，將零散的專案經驗結構化為可複用的邏輯。',
-    href: '#',
-  },
-];
-
-const featuredIntegrations = integrations.filter((i) => i.featured);
-
-/** * Bento Grid：展示四大專業核心 */
+/** * Bento Grid：文章分類與核心觀點 (引導閱讀的核心)
+ */
 const bentoItems = [
   {
-    title: '整合行銷實戰',
-    description: '不談虛幻的口號，只談如何串聯 PM、品牌與廣告投放的真實商業決策。',
-    icon: 'lucide:layers',
+    title: '行銷判斷力觀點',
+    description: '不談虛幻口號，拆解 PM 與品牌經營背後的真實商業決策邏輯。',
+    icon: 'lucide:brain',
     size: 'large' as const,
     accent: 'primary' as const,
     href: '/blog/marketing',
   },
   {
-    title: 'AI 工作流優化',
-    description: '教你如何將重複性工作外包給 AI，把時間留給更重要的判斷與決策。',
-    icon: 'lucide:cpu',
+    title: 'AI 工作流實踐',
+    description: '實測真正能提效的 AI 工具與工作流，把時間留給更重要的判斷。',
+    icon: 'lucide:zap',
     accent: 'blue' as const,
     href: '/blog/ai',
   },
   {
-    title: '商業邏輯判斷',
-    description: '數據背後是人性。培養在複雜資訊中看清本質的「行銷判斷力」。',
-    icon: 'lucide:line-chart',
+    title: '個人品牌資產化',
+    description: '如何將腦袋裡的經驗轉化為數位資產，建立不可替代的職涯護城河。',
+    icon: 'lucide:trending-up',
     accent: 'green' as const,
-    href: '/blog/logic',
-  },
-  {
-    title: '個人品牌思維',
-    description: '如何在這個注意力稀缺的時代，建立起無法被輕易取代的專業辨識度。',
-    icon: 'lucide:user-check',
-    size: 'medium' as const,
-    accent: 'purple' as const,
     href: '/blog/branding',
   },
-];
-
-/** * 特色區塊：行銷人的核心競爭力 */
-const features = [
   {
-    icon: 'lucide:zap',
-    title: '高效率產出',
-    description: '利用 AI 工具自動化處理瑣碎任務，讓你能在數分鐘內完成以往數小時的工作。',
-  },
-  {
-    icon: 'lucide:shield-check',
-    title: '不可替代性',
-    description: '技術會過時，但解決問題的邏輯不會。教你如何建立 AI 無法模仿的護城河。',
-  },
-  {
-    icon: 'lucide:globe',
-    title: '跨視角整合',
-    description: '從 PM 的成本思維到品牌的感性訴求，提供 360 度的行銷解決方案。',
+    title: '閱讀更多文章 →',
+    description: '瀏覽所有關於行銷判斷力、AI 應用與職場思維的深度好文。',
+    icon: 'lucide:arrow-right',
+    size: 'medium' as const,
+    accent: 'purple' as const,
+    href: '/blog',
   },
 ];
 
-/** * 書籍介紹：取代原本的定價方案 */
+/** * 書籍介紹：取代定價方案
+ */
 const pricingPlans = [
   {
     name: 'AI時代職場生存法則',
@@ -128,48 +77,25 @@ const pricingPlans = [
     monthlyPrice: null,
     customPrice: '品牌地圖',
     description: '10年品牌行銷人的經營地圖',
-    features: [
-      '零基礎經營策略',
-      '個人品牌商業化路徑',
-      '真實案例拆解',
-    ],
+    features: ['零基礎經營策略', '個人品牌商業化路徑', '真實案例拆解'],
     highlighted: true,
     cta: { label: '查看書籍詳情', href: 'https://portaly.cc/billyselect4/product/ioeupgO66jK7vB24yJzY' },
   },
   {
-    name: '人人都做得到的知識變現',
+    name: '更多著作...',
     monthlyPrice: null,
-    customPrice: '獲利指南',
-    description: '將專業轉化為持續產值',
-    features: ['內容變現的底層架構', '打造高品質課程', '規模化你的專業影響力'],
-    cta: { label: '查看書籍詳情', href: 'https://portaly.cc/billyselect4/product/icSVZ0k6BHdItavIKf9X' },
-  },
-  {
-    name: '寫給大家的行銷書 ',
-    monthlyPrice: null,
-    customPrice: '白話指南',
-    description: '用邏輯解決商業問題',
-    features: ['從零理解行銷邏輯', '解決銷量與品牌難題', '淺顯易懂的實戰心法'],
-    cta: { label: '查看書籍詳情', href: 'https://portaly.cc/billyselect4/product/FlzuxW1QbZpC79Op2zhE' },
-  },
-  {
-    name: '流量騙局',
-    monthlyPrice: null,
-    customPrice: '真相拆解',
-    description: '戳破虛榮指標的行銷課',
-    features: ['辨別有效與無效流量', '轉換率的真實關鍵', '避免陷入行銷盲點'],
-    cta: { label: '查看書籍詳情', href: 'https://portaly.cc/billyselect4/product/khu55lTbwebNRjRtUCQ33' },
+    customPrice: '系列彙整',
+    description: '知識變現、流量騙局、行銷書',
+    features: ['《流量騙局》', '《知識變現》', '《寫給大家的行銷書》'],
+    cta: { label: '瀏覽所有書籍', href: 'https://portaly.cc/billyselect4' },
   },
 ];
 ---
 
-<MarketingLayout
-  title={`${siteConfig.name}`}
-  description={siteConfig.description}
->
+<MarketingLayout title={`${siteConfig.name}`} description={siteConfig.description}>
   <Hero
     title="AI 時代，判斷力才是你唯一的護城河"
-    subtitle="我是比利陳。10 年整合行銷實戰，跑過 PM、品牌經營與廣告投放。這裡記錄我如何用 AI 改善工作流程，並用思維邏輯建立不可替代的專業地位。"
+    subtitle="我是比利陳。10 年整合行銷實戰，記錄我如何用 AI 改善工作流程，並用思維邏輯建立不可替代的專業地位。"
     primaryCTA={{ label: '加入 Line 群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw' }}
     secondaryCTA={{ label: '訂閱電子報', href: 'https://billy4select.kit.com/profile/posts' }}
   />
@@ -187,59 +113,18 @@ const pricingPlans = [
     logoSize="md"
   />
 
-  <HowItWorks
-    title="三步驟，開始重塑行銷邏輯"
-    subtitle="不需要死記硬背，從最核心的商業判斷開始優化。"
-    steps={[
-      {
-        title: '獲取實戰資訊',
-        description: "訂閱電子報或加入 Line 群組，獲取最新 AI 應用與行銷分析。",
-        icon: 'lucide:mail-plus',
-      },
-      {
-        title: '導入 AI 流程',
-        description: '參考我的實測教學，將繁瑣任務自動化，解放你的大腦。',
-        icon: 'lucide:wand-2',
-      },
-      {
-        title: '建立個人品牌',
-        description: '將省下的時間用於策略思考，逐步建立屬於你的職涯護城河。',
-        icon: 'lucide:trophy',
-      },
-    ]}
-    variant="horizontal"
-    background="muted"
-  />
-
-  <IntegrationsGrid
-    title="AI 生產力工具組"
-    subtitle="我如何將最前沿的 AI 工具無縫融入日常行銷工作流。"
-    integrations={featuredIntegrations}
-    variant="detailed"
-    invertOnDark={false}
-    columns={3}
-    background="default"
-  />
-
-  <FeaturesSection
-    title="為什麼你需要這份實戰經驗？"
-    subtitle="在工具氾濫的時代，我們更需要的是一套穩固的判斷框架。"
-    features={features}
-    background="muted"
-  />
-
   <BentoGrid
-    title="深度探索行銷邏輯"
+    title="深度文章：掌握行銷邏輯"
     subtitle="從工具操作到頂層戰略，全方位提升你的職場競爭力。"
     items={bentoItems}
-    background="muted"
+    background="default"
   />
 
   <PricingTable
     title="系列著作：行銷與 AI 實戰指南"
-    subtitle="透過文字，將 10 年累積的行銷心法與 AI 工作流完整交付給你。"
+    subtitle="透過文字，將累積的行銷心法與 AI 工作流完整交付給你。"
     plans={pricingPlans}
-    background="default"
+    background="muted"
   />
 
   {
@@ -247,7 +132,7 @@ const pricingPlans = [
       <TestimonialsSection
         title="讀者與合作夥伴的回饋"
         subtitle="看看其他行銷人如何評價我的內容與建議。"
-        background="muted"
+        background="default"
         limit={4}
         testimonials={sortedTestimonials.map((t) => ({
           quote: t.data.quote,
@@ -261,9 +146,9 @@ const pricingPlans = [
   }
 
   <CTA
-    title="不想在 AI 浪潮中失焦？"
-    description="現在就加入社群，與比利陳一起掌握行銷的底層邏輯。"
-    action={{ label: '立即索取資源', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw' }}
+    title="準備好開始進階了嗎？"
+    description="現在就加入社群，與比利陳一起在 AI 時代保持領先。"
+    action={{ label: '立即加入 Line 群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw' }}
   />
 
   <Newsletter />
