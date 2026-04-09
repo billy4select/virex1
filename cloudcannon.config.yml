@@ -1,0 +1,17 @@
+# 告訴 CloudCannon 你的頁面在哪裡
+collections_config:
+  pages:
+    path: "src/pages"
+    output: true
+    name: "頁面管理"
+    icon: "wysiwyg"
+  content:
+    path: "src/content"
+    output: false
+    name: "內容文章"
+    icon: "description"
+
+# 設定編輯模式
+_enabled_editors:
+  - content
+  - visual
