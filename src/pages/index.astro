@@ -2,8 +2,8 @@
 /**
  * Index Page - 網站首頁
  * * @description
- * 這是首頁的總入口。我已將原本的軟體開發內容修改為行銷實戰內容。
- * 包含：Hero, 信任商標, 實踐步驟, 工具整合, 核心價值, 服務方案, 讀者見證, 呼籲行動。
+ * 1. 訂價改為「書籍介紹」：將五本電子書連結嵌入定價區塊結構。
+ * 2. Logo 使用方案三：遠端加載 AI 工具標誌，解決圖檔缺失問題。
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
@@ -30,39 +30,37 @@ const sortedTestimonials = [...testimonials].sort(
   (a: TestimonialEntry, b: TestimonialEntry) => a.data.order - b.data.order
 );
 
-/** * 工具整合：改為行銷常用的 AI 與生產力工具
- */
+/** * 工具整合：改為行銷常用的 AI 與生產力工具 (遠端載入 Logo) */
 const integrations = [
   {
-    name: 'ChatGPT / Claude',
-    logo: '/images/integrations/chatgpt.svg',
+    name: 'ChatGPT',
+    logo: 'https://cdn.simpleicons.org/openai/412991',
     category: '策略發想',
     featured: true,
     description: '運用 AI 進行市場調研與內容架構開發，將產出效率提升 3 倍以上。',
     href: '#',
   },
   {
-    name: 'Notion / Heptabase',
-    logo: '/images/integrations/notion.svg',
-    category: '知識管理',
+    name: 'Claude',
+    logo: 'https://cdn.simpleicons.org/anthropic/D97757',
+    category: '內容分析',
     featured: true,
-    description: '打造行銷人的第二大腦，將零散的專案經驗結構化為可複用的邏輯。',
+    description: '利用 Claude 的長文本分析能力進行市場調研與邏輯梳理。',
     href: '#',
   },
   {
-    name: 'Canva / Midjourney',
-    logo: '/images/integrations/canva.svg',
-    category: '視覺行銷',
+    name: 'Notion',
+    logo: 'https://cdn.simpleicons.org/notion/000000',
+    category: '知識管理',
     featured: true,
-    description: '即便沒有設計背景，也能透過 AI 產出具有品牌感的視覺內容。',
+    description: '打造行銷人的第二大腦，將零散的專案經驗結構化為可複用的邏輯。',
     href: '#',
   },
 ];
 
 const featuredIntegrations = integrations.filter((i) => i.featured);
 
-/** * Bento Grid：改為展示你的四大專業核心 
- */
+/** * Bento Grid：展示四大專業核心 */
 const bentoItems = [
   {
     title: '整合行銷實戰',
@@ -96,8 +94,7 @@ const bentoItems = [
   },
 ];
 
-/** * 特色區塊：行銷人的核心競爭力 
- */
+/** * 特色區塊：行銷人的核心競爭力 */
 const features = [
   {
     icon: 'lucide:zap',
@@ -114,53 +111,54 @@ const features = [
     title: '跨視角整合',
     description: '從 PM 的成本思維到品牌的感性訴求，提供 360 度的行銷解決方案。',
   },
-  {
-    icon: 'lucide:message-square',
-    title: '實戰社群交流',
-    description: '加入 Line 實戰群組，與千位行銷人同步最新的 AI 應用與職場心得。',
-  },
-  {
-    icon: 'lucide:book-open',
-    title: '深度內容分享',
-    description: '每週更新深度長文，拒絕碎片化資訊，幫你建立完整的知識體系。',
-  },
-  {
-    icon: 'lucide:users',
-    title: '品牌顧問服務',
-    description: '提供 1 對 1 諮詢，針對你的品牌現狀提供精準的優化建議與執行路徑。',
-  },
 ];
 
-/** * 方案區塊：改為電子書與諮詢服務 
- */
+/** * 書籍介紹：取代原本的定價方案 */
 const pricingPlans = [
   {
-    name: '讀者 / 訂閱者',
-    monthlyPrice: 0,
-    description: '適合剛開始探索 AI 行銷的你',
-    features: ['每週實戰電子報', '加入 Line 交流群組', '限時免費資源下載', '基礎 AI 提示詞库'],
-    cta: { label: '免費訂閱', href: 'https://billy4select.kit.com/profile/posts' },
+    name: 'AI時代職場生存法則',
+    monthlyPrice: null,
+    customPrice: '實戰必備',
+    description: '每天 1% 的資產化練習 (電子書)',
+    features: ['AI 浪潮下的自我定位', '建立個人知識資產', '不被取代的實戰練習'],
+    cta: { label: '查看書籍詳情', href: 'https://portaly.cc/billyselect4/product/jLrib0ZgLmXWs2WOTiy8' },
   },
   {
-    name: '專業成長版',
-    monthlyPrice: 19,
-    description: '適合想深度進修的行銷職人',
+    name: '從零開始自媒體',
+    monthlyPrice: null,
+    customPrice: '品牌地圖',
+    description: '10年品牌行銷人的經營地圖',
     features: [
-      '所有電子書完整版',
-      '專屬進階 AI 工作流教學',
-      '行銷實戰模板下載',
-      '優先提問回覆權',
+      '零基礎經營策略',
+      '個人品牌商業化路徑',
+      '真實案例拆解',
     ],
     highlighted: true,
-    cta: { label: '查看學習資源', href: '/resources' },
+    cta: { label: '查看書籍詳情', href: 'https://portaly.cc/billyselect4/product/ioeupgO66jK7vB24yJzY' },
   },
   {
-    name: '品牌/企業諮詢',
+    name: '人人都做得到的知識變現',
     monthlyPrice: null,
-    customPrice: '專案報價',
-    description: '適合需要深度策略輔導的團隊',
-    features: ['1 對 1 策略診斷', 'AI 流程導入建議', '全案行銷計畫審核', '內部團隊教育訓練'],
-    cta: { label: '聯絡比利', href: 'mailto:billy4select@gmail.com' },
+    customPrice: '獲利指南',
+    description: '將專業轉化為持續產值',
+    features: ['內容變現的底層架構', '打造高品質課程', '規模化你的專業影響力'],
+    cta: { label: '查看書籍詳情', href: 'https://portaly.cc/billyselect4/product/icSVZ0k6BHdItavIKf9X' },
+  },
+  {
+    name: '寫給大家的行銷書 ',
+    monthlyPrice: null,
+    customPrice: '白話指南',
+    description: '用邏輯解決商業問題',
+    features: ['從零理解行銷邏輯', '解決銷量與品牌難題', '淺顯易懂的實戰心法'],
+    cta: { label: '查看書籍詳情', href: 'https://portaly.cc/billyselect4/product/FlzuxW1QbZpC79Op2zhE' },
+  },
+  {
+    name: '流量騙局',
+    monthlyPrice: null,
+    customPrice: '真相拆解',
+    description: '戳破虛榮指標的行銷課',
+    features: ['辨別有效與無效流量', '轉換率的真實關鍵', '避免陷入行銷盲點'],
+    cta: { label: '查看書籍詳情', href: 'https://portaly.cc/billyselect4/product/khu55lTbwebNRjRtUCQ33' },
   },
 ];
 ---
@@ -179,11 +177,13 @@ const pricingPlans = [
   <LogoCloud
     title="專注於提升個人與組織的行銷戰力"
     logos={[
-      { name: 'Notion', src: '/images/logos/notion.svg' },
-      { name: 'ChatGPT', src: '/images/logos/chatgpt.svg' },
-      { name: 'Claude', src: '/images/logos/claude.svg' },
+      { name: 'Notion', src: 'https://cdn.simpleicons.org/notion/000000' },
+      { name: 'ChatGPT', src: 'https://cdn.simpleicons.org/openai/412991' },
+      { name: 'Claude', src: 'https://cdn.simpleicons.org/anthropic/D97757' },
+      { name: 'Gemini', src: 'https://cdn.simpleicons.org/googlegemini/8E75FB' },
+      { name: 'NotebookLM', src: 'https://cdn.simpleicons.org/google/4285F4' },
     ]}
-    grayscale={true}
+    grayscale={false}
     logoSize="md"
   />
 
@@ -236,10 +236,9 @@ const pricingPlans = [
   />
 
   <PricingTable
-    title="資源與諮詢服務"
-    subtitle="選擇最適合你現階段成長的學習路徑。"
+    title="系列著作：行銷與 AI 實戰指南"
+    subtitle="透過文字，將 10 年累積的行銷心法與 AI 工作流完整交付給你。"
     plans={pricingPlans}
-    annualDiscount={20}
     background="default"
   />
 
