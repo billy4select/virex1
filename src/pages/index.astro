@@ -1,8 +1,7 @@
 ---
 /**
  * Index Page - 比利陳個人品牌精簡版
- * 刪除區塊：HowItWorks (步驟), IntegrationsGrid (工具細節), FeaturesSection (特色列表)
- * 保留精華：Hero, LogoCloud, BentoGrid (引導文章), PricingTable (書籍), Testimonials, CTA
+ * 優化重點：徹底去化「軟體訂閱感」，將書籍區塊改造成「個人著作集」
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
@@ -17,7 +16,6 @@ import { siteConfig } from '@/config';
 
 type TestimonialEntry = CollectionEntry<'testimonials'>;
 
-// 抓取讀者見證
 const testimonials = await getCollection(
   'testimonials',
   ({ data }: { data: TestimonialEntry['data'] }) => !data.draft
@@ -26,12 +24,11 @@ const sortedTestimonials = [...testimonials].sort(
   (a: TestimonialEntry, b: TestimonialEntry) => a.data.order - b.data.order
 );
 
-/** * Bento Grid：文章分類與核心觀點 (引導閱讀的核心)
- */
+/** * Bento Grid：文章分類導流 */
 const bentoItems = [
   {
     title: '行銷判斷力觀點',
-    description: '不談虛幻口號，拆解 PM 與品牌經營背後的真實商業決策邏輯。',
+    description: '拆解那些 AI 帶不走的商業決策邏輯。',
     icon: 'lucide:brain',
     size: 'large' as const,
     accent: 'primary' as const,
@@ -39,21 +36,21 @@ const bentoItems = [
   },
   {
     title: 'AI 工作流實踐',
-    description: '實測真正能提效的 AI 工具與工作流，把時間留給更重要的判斷。',
+    description: '實測真正能提效的工具，把時間留給決策。',
     icon: 'lucide:zap',
     accent: 'blue' as const,
     href: '/blog/ai',
   },
   {
     title: '個人品牌資產化',
-    description: '如何將腦袋裡的經驗轉化為數位資產，建立不可替代的職涯護城河。',
+    description: '將經驗轉化為數位資產，建立職涯護城河。',
     icon: 'lucide:trending-up',
     accent: 'green' as const,
     href: '/blog/branding',
   },
   {
     title: '閱讀更多文章 →',
-    description: '瀏覽所有關於行銷判斷力、AI 應用與職場思維的深度好文。',
+    description: '瀏覽所有關於行銷與職場思維的深度好文。',
     icon: 'lucide:arrow-right',
     size: 'medium' as const,
     accent: 'purple' as const,
@@ -61,43 +58,59 @@ const bentoItems = [
   },
 ];
 
-/** * 書籍介紹：取代定價方案
- */
-const pricingPlans = [
+/** * 書籍區塊：移除 Monthly/Price 邏輯，改為類別與名稱 */
+const ebookCollections = [
   {
-    name: 'AI時代職場生存法則',
-    monthlyPrice: null,
-    customPrice: '實戰必備',
+    name: '《AI時代職場生存法則》',
     description: '每天 1% 的資產化練習 (電子書)',
-    features: ['AI 浪潮下的自我定位', '建立個人知識資產', '不被取代的實戰練習'],
-    cta: { label: '查看書籍詳情', href: 'https://portaly.cc/billyselect4/product/jLrib0ZgLmXWs2WOTiy8' },
+    // 將價格設為 null 或空字串，並在下方使用客製化標籤
+    monthlyPrice: null, 
+    price: '', 
+    customPrice: '核心著作', 
+    features: [
+      'AI 浪潮下的自我定位',
+      '建立個人知識資產',
+      '不可替代的實戰練習'
+    ],
+    cta: { label: '立即前往閱讀', href: 'https://portaly.cc/billyselect4/product/jLrib0ZgLmXWs2WOTiy8' },
   },
   {
-    name: '從零開始自媒體',
+    name: '《從零開始自媒體》',
+    description: '10 年品牌行銷人的經營地圖',
     monthlyPrice: null,
-    customPrice: '品牌地圖',
-    description: '10年品牌行銷人的經營地圖',
-    features: ['零基礎經營策略', '個人品牌商業化路徑', '真實案例拆解'],
-    highlighted: true,
+    price: '',
+    customPrice: '實戰指南',
+    highlighted: true, // 這會讓中間這本書有醒目的外框或顏色
+    features: [
+      '零基礎經營策略',
+      '個人品牌商業化路徑',
+      '真實案例深度拆解'
+    ],
     cta: { label: '查看書籍詳情', href: 'https://portaly.cc/billyselect4/product/ioeupgO66jK7vB24yJzY' },
   },
   {
-    name: '更多著作...',
+    name: '更多個人著作系列',
+    description: '針對不同行銷場景的深度解析',
     monthlyPrice: null,
+    price: '',
     customPrice: '系列彙整',
-    description: '知識變現、流量騙局、行銷書',
-    features: ['《流量騙局》', '《知識變現》', '《寫給大家的行銷書》'],
-    cta: { label: '瀏覽所有書籍', href: 'https://portaly.cc/billyselect4' },
+    features: [
+      '《流量騙局》真相拆解',
+      '《人人都做得到的知識變現》',
+      '《寫給大家的行銷書》'
+    ],
+    cta: { label: '瀏覽所有作品', href: 'https://portaly.cc/billyselect4' },
   },
 ];
 ---
 
 <MarketingLayout title={`${siteConfig.name}`} description={siteConfig.description}>
+  
   <Hero
     title="AI 時代，判斷力才是你唯一的護城河"
-    subtitle="我是比利陳。10 年整合行銷實戰，記錄我如何用 AI 改善工作流程，並用思維邏輯建立不可替代的專業地位。"
-    primaryCTA={{ label: '加入 Line 群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw' }}
-    secondaryCTA={{ label: '訂閱電子報', href: 'https://billy4select.kit.com/profile/posts' }}
+    subtitle="我是比利陳。這裡記錄我如何用 AI 改善工作流程，並用思維邏輯建立不可替代的專業地位。"
+    primaryCTA={{ label: '加入 Line 群組', href: '...' }}
+    secondaryCTA={{ label: '訂閱電子報', href: '...' }}
   />
 
   <LogoCloud
@@ -117,13 +130,12 @@ const pricingPlans = [
     title="深度文章：掌握行銷邏輯"
     subtitle="從工具操作到頂層戰略，全方位提升你的職場競爭力。"
     items={bentoItems}
-    background="default"
   />
 
   <PricingTable
-    title="系列著作：行銷與 AI 實戰指南"
-    subtitle="透過文字，將累積的行銷心法與 AI 工作流完整交付給你。"
-    plans={pricingPlans}
+    title="個人著作與實戰指南"
+    subtitle="將 10 年行銷心法與 AI 工作流系統化整理，讓你少走彎路。"
+    plans={ebookCollections}
     background="muted"
   />
 
@@ -148,7 +160,7 @@ const pricingPlans = [
   <CTA
     title="準備好開始進階了嗎？"
     description="現在就加入社群，與比利陳一起在 AI 時代保持領先。"
-    action={{ label: '立即加入 Line 群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw' }}
+    action={{ label: '立即加入 Line 群組', href: '...' }}
   />
 
   <Newsletter />
