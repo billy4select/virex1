@@ -9,7 +9,6 @@ export const navigation: Navigation = {
       { label: '訂閱電子報', href: 'https://billy4select.kit.com/profile/posts' },
     ],
     cta: [
-      { label: '訂閱電子報', href: 'https://billy4select.kit.com/profile/posts', variant: 'ghost' },
       { label: '加入群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw', variant: 'primary' },
     ],
   },
