@@ -2,42 +2,58 @@ import type { Navigation } from '../lib/types';
 
 export const navigation: Navigation = {
   /**
-   * 頁首導覽 (Header) - 這裡放最常用的
+   * 頁首導覽 (Header Navigation)
+   * 保留了所有原始連結，僅將 Label 替換為你的業務內容
    */
   header: {
     main: [
-      { label: '首頁', href: '/' },
-      { label: 'BLOG', href: '/blog' },
-      { label: '關於我', href: '/about' },
-      { label: '訂閱電子報', href: 'https://billy4select.kit.com/profile/posts' },
+      { label: '生存法則 (Features)', href: '/features' },
+      { label: '行銷書 (Pricing)', href: '/pricing' },
+      { label: '展示 (Demo)', href: '/dashboard' },
+      { label: '讀者見證 (Customers)', href: '/customers' },
+      { label: '企業合作 (Enterprise)', href: '/enterprise' },
+      { label: '使用文件 (Docs)', href: '/docs', feature: 'docs' },
+      { label: '部落格 (Blog)', href: '/blog', feature: 'blog' },
     ],
     cta: [
-      { label: '加入 Line 群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default', variant: 'primary' },
+      { label: '登入', href: '/login', variant: 'ghost' },
+      { label: '訂閱電子報', href: 'https://billy4select.kit.com/profile/posts', variant: 'primary' },
     ],
   },
 
   /**
-   * 頁尾導覽 (Footer) - 這裡放完整的連結分類
+   * 頁尾導覽 (Footer Navigation)
+   * 5 欄完整保留，將你的舊站分類與模板分類完美融合
    */
   footer: {
-    product: [ // 改為「網站」
+    product: [ // 原本的產品欄位，放你的網站核心連結
       { label: '首頁', href: '/' },
-      { label: 'BLOG', href: '/blog' },
-      { label: '關於我', href: '/about' },
-      { label: '隱私權政策', href: '/privacy' },
-      { label: '免責聲明', href: '/terms' },
+      { label: '功能介紹 (Features)', href: '/features' },
+      { label: '工具整合 (Integrations)', href: '/integrations' },
+      { label: '安全性 (Security)', href: '/security' },
+      { label: '方案價格 (Pricing)', href: '/pricing' },
     ],
-    solutions: [ // 改為「電子書」
-      { label: '《AI 時代職場生存法則》', href: '/ebook-ai-career' },
-      { label: '《從零開始自媒體》', href: '/ebook-self-media' },
-      { label: '《寫給大家的行銷書》', href: '/ebook-marketing' },
-      { label: '《流量騙局》', href: '/ebook-traffic-scam' },
+    solutions: [ // 原本的解決方案，放你的電子書與服務
+      { label: '《AI時代職場生存法則》', href: '/enterprise' },
+      { label: '讀者見證 (Customers)', href: '/customers' },
+      { label: '預約展示 (Demo)', href: '/demo' },
+      { label: '系統狀態 (Status)', href: '/status' },
     ],
-    resources: [ // 改為「更多資源」
-      { label: '索取檔案', href: '/resources' },
-      { label: '訂閱電子報', href: 'https://billy4select.kit.com/profile/posts' },
+    resources: [ // 資源欄位
+      { label: '索取檔案 (Docs)', href: '/docs', feature: 'docs' },
+      { label: '部落格 (Blog)', href: '/blog', feature: 'blog' },
+      { label: '更新日誌 (Changelog)', href: '/changelog', feature: 'changelog' },
+      { label: '產品規劃 (Roadmap)', href: '/roadmap', feature: 'roadmap' },
     ],
-    company: [], // 留空，或放你其他的社群連結
-    legal: [],
+    company: [ // 公司/個人資訊
+      { label: '關於比利 (About)', href: '/about' },
+      { label: '人才招募 (Careers)', href: '/careers' },
+      { label: '聯絡我 (Contact)', href: '/contact' },
+      { label: '客戶好評 (Testimonials)', href: '/testimonials', feature: 'testimonials' },
+    ],
+    legal: [ // 法律條款
+      { label: '隱私權政策 (Privacy)', href: '/privacy' },
+      { label: '服務條款 (Terms)', href: '/terms' },
+    ],
   },
 };
