@@ -1,5 +1,5 @@
 ---
-title: "The Complete Guide to Environment Variables in Modern Applications"
+title: "1111The Complete Guide to Environment Variables in Modern Applications"
 description: "Everything you need to know about managing environment variables—from local development to production deployments. Includes best practices and common mistakes to avoid."
 publishedDate: 2025-12-01
 author: "David Kim"
