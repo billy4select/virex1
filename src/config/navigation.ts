@@ -1,71 +1,57 @@
-/**
- * Navigation Configuration
- *
- * @description
- * Centralized navigation configuration for header and footer.
- * All navigation items are defined here for consistency and easy maintenance.
- *
- * Items with a `feature` property will only be shown if that feature is enabled
- * in the site config's feature flags.
- */
-
 import type { Navigation } from '../lib/types';
 
 export const navigation: Navigation = {
   /**
-   * Header Navigation
-   * - main: Primary navigation links
-   * - cta: Call-to-action buttons on the right
+   * 頁首導覽 (Header Navigation)
    */
   header: {
     main: [
-      { label: 'Features', href: '/features' },
-      { label: 'Pricing', href: '/pricing' },
-      { label: 'Demo', href: '/dashboard' },
-      { label: 'Customers', href: '/customers' },
-      { label: 'Enterprise', href: '/enterprise' },
-      { label: 'Docs', href: '/docs', feature: 'docs' },
-      { label: 'Blog', href: '/blog', feature: 'blog' },
+      { label: '產品功能', href: '/features' },
+      { label: '方案價格', href: '/pricing' },
+      { label: '展示 Demo', href: '/dashboard' },
+      { label: '客戶案例', href: '/customers' },
+      { label: '企業方案', href: '/enterprise' },
+      { label: '使用文件', href: '/docs', feature: 'docs' },
+      { label: '部落格', href: '/blog', feature: 'blog' },
     ],
     cta: [
-      { label: 'Login', href: '/login', variant: 'ghost' },
-      { label: 'Get Started', href: '/register', variant: 'primary' },
+      { label: '登入', href: '/login', variant: 'ghost' },
+      { label: '立即開始', href: '/register', variant: 'primary' },
     ],
   },
 
   /**
-   * Footer Navigation
-   * Organized into 5 columns: Product, Solutions, Resources, Company, Legal
+   * 頁尾導覽 (Footer Navigation)
    */
   footer: {
     product: [
-      { label: 'Features', href: '/features' },
-      { label: 'Integrations', href: '/integrations' },
-      { label: 'Security', href: '/security' },
-      { label: 'Pricing', href: '/pricing' },
-      { label: 'FAQ', href: '/faq' },
+      { label: '功能介紹', href: '/features' },
+      { label: '工具整合', href: '/integrations' },
+      { label: '安全防護', href: '/security' },
+      { label: '方案價格', href: '/pricing' },
+      { label: '常見問題', href: '/faq' },
     ],
     solutions: [
-      { label: 'Enterprise', href: '/enterprise' },
-      { label: 'Customers', href: '/customers' },
-      { label: 'Request Demo', href: '/demo' },
-      { label: 'Status', href: '/status' },
+      { label: '企業解決方案', href: '/enterprise' },
+      { label: '客戶見證', href: '/customers' },
+      { label: '預約展示', href: '/demo' },
+      { label: '系統狀態', href: '/status' },
     ],
     resources: [
-      { label: 'Documentation', href: '/docs', feature: 'docs' },
-      { label: 'Blog', href: '/blog', feature: 'blog' },
-      { label: 'Changelog', href: '/changelog', feature: 'changelog' },
-      { label: 'Roadmap', href: '/roadmap', feature: 'roadmap' },
+      { label: '技術文件', href: '/docs', feature: 'docs' },
+      { label: '官方部落格', href: '/blog', feature: 'blog' },
+      { label: '更新日誌', href: '/changelog', feature: 'changelog' },
+      { label: '產品規劃', href: '/roadmap', feature: 'roadmap' },
     ],
     company: [
-      { label: 'About', href: '/about' },
-      { label: 'Careers', href: '/careers' },
-      { label: 'Contact', href: '/contact' },
-      { label: 'Testimonials', href: '/testimonials', feature: 'testimonials' },
+      { label: '關於我們', href: '/about' },
+      { label: '人才招募', href: '/careers' },
+      { label: '聯絡我們', href: '/contact' },
+      { label: '客戶好評', href: '/testimonials', feature: 'testimonials' },
     ],
     legal: [
-      { label: 'Privacy', href: '/privacy' },
-      { label: 'Terms', href: '/terms' },
+      { label: '隱私權政策', href: '/privacy' },
+      { label: '服務條款', href: '/terms' },
     ],
   },
 };
