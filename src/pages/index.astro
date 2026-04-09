@@ -1,8 +1,10 @@
 ---
 /**
- * Index Page - 比利陳個人品牌精簡版 (V3)
- * 1. 移除底部 Line 群組 CTA
- * 2. Newsletter 改為點擊跳轉模式
+ * Index Page - 比利陳個人品牌官網 (最終精簡完整版)
+ * 1. 視覺統一：AI Logo 牆全面灰階、補齊 ChatGPT 圖示。
+ * 2. 內容精簡：移除 HowItWorks, Integrations, Features, 底部重複 CTA。
+ * 3. 導流優化：BentoGrid 引導深度文章、Newsletter 改為單點擊跳轉 Kit。
+ * 4. 去軟體感：書籍介紹移除「每月/定價」邏輯。
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
@@ -11,39 +13,144 @@ import LogoCloud from '@sections/marketing/LogoCloud.astro';
 import BentoGrid from '@sections/marketing/BentoGrid.astro';
 import PricingTable from '@sections/pricing/PricingTable.astro';
 import TestimonialsSection from '@sections/social-proof/TestimonialsSection.astro';
-// 移除原本的 CTA 引用 (因為要拿掉 Line 群組區塊)
-// import CTA from '@sections/marketing/CTA.astro'; 
 import { siteConfig } from '@/config';
-import { Icon } from 'astro-icon/components'; // 確保有引入 icon
+import { Icon } from 'astro-icon/components';
 
-// ... (bentoItems 與 ebookCollections 邏輯維持不變) ...
+type TestimonialEntry = CollectionEntry<'testimonials'>;
+
+// 抓取並排序讀者見證
+const testimonials = await getCollection(
+  'testimonials',
+  ({ data }: { data: TestimonialEntry['data'] }) => !data.draft
+);
+const sortedTestimonials = [...testimonials].sort(
+  (a: TestimonialEntry, b: TestimonialEntry) => a.data.order - b.data.order
+);
+
+/**
+ * Bento Grid：引導閱讀文章與核心分類
+ * 確保每個分類都有對應 Icon，並導向 Blog 特定分類
+ */
+const bentoItems = [
+  {
+    title: '行銷判斷力觀點',
+    description: '不談虛幻口號，拆解 PM 與品牌經營背後的真實商業決策邏輯。',
+    icon: 'lucide:brain', // 圖示
+    size: 'large' as const,
+    accent: 'primary' as const,
+    href: '/blog/marketing',
+  },
+  {
+    title: 'AI 工作流實踐',
+    description: '實測真正能提效的 AI 工具與工作流，把時間留給更重要的判斷。',
+    icon: 'lucide:zap', // 圖示
+    accent: 'blue' as const,
+    href: '/blog/ai',
+  },
+  {
+    title: '個人品牌資產化',
+    description: '如何將腦袋裡的經驗轉化為數位資產，建立不可替代的職涯護城河。',
+    icon: 'lucide:trending-up', // 圖示
+    accent: 'green' as const,
+    href: '/blog/branding',
+  },
+  {
+    title: '閱讀更多文章 →',
+    description: '瀏覽所有關於行銷判斷力、AI 應用與職場思維的深度好文。',
+    icon: 'lucide:book-open', // 圖示
+    size: 'medium' as const,
+    accent: 'purple' as const,
+    href: '/blog',
+  },
+];
+
+/**
+ * 書籍區塊：移除軟體訂閱感
+ * 使用 customPrice 取代金額，標籤化處理
+ */
+const ebookCollections = [
+  {
+    name: '《AI時代職場生存法則》',
+    description: '每天 1% 的資產化練習 (電子書)',
+    monthlyPrice: null, 
+    price: '', 
+    customPrice: '核心著作', 
+    features: ['AI 浪潮下的自我定位', '建立個人知識資產', '不可替代的實戰練習'],
+    cta: { label: '查看書籍詳情', href: 'https://portaly.cc/billyselect4/product/jLrib0ZgLmXWs2WOTiy8' },
+  },
+  {
+    name: '《從零開始自媒體》',
+    description: '10 年品牌行銷人的經營地圖',
+    monthlyPrice: null,
+    price: '',
+    customPrice: '品牌地圖',
+    highlighted: true, 
+    features: ['零基礎經營策略', '個人品牌商業化路徑', '真實案例深度拆解'],
+    cta: { label: '查看書籍詳情', href: 'https://portaly.cc/billyselect4/product/ioeupgO66jK7vB24yJzY' },
+  },
+  {
+    name: '更多個人著作系列',
+    description: '針對不同行銷場景的深度解析',
+    monthlyPrice: null,
+    price: '',
+    customPrice: '系列彙整',
+    features: ['《流量騙局》真相拆解', '《人人都做得到的知識變現》', '《寫給大家的行銷書》'],
+    cta: { label: '瀏覽所有作品', href: 'https://portaly.cc/billyselect4' },
+  },
+];
 ---
 
 <MarketingLayout title={`${siteConfig.name}`} description={siteConfig.description}>
   
   <Hero
     title="AI 時代，判斷力才是你唯一的護城河"
-    subtitle="..."
-    primaryCTA={{ label: '加入 Line 群組', href: '...' }}
-    secondaryCTA={{ label: '訂閱電子報', href: '...' }}
+    subtitle="我是比利陳。10 年整合行銷實戰，記錄我如何用 AI 改善工作流程，並用思維邏輯建立不可替代的專業地位。"
+    primaryCTA={{ label: '加入 Line 群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw' }}
+    secondaryCTA={{ label: '訂閱電子報', href: 'https://billy4select.kit.com/profile/posts' }}
   />
 
-  <LogoCloud ... />
+  <LogoCloud
+    title="擅長運用頂尖 AI 工具提升行銷效率"
+    logos={[
+      { name: 'Notion', src: 'https://cdn.simpleicons.org/notion/000000' },
+      { name: 'ChatGPT', src: 'https://cdn.simpleicons.org/openai/412991.svg' }, 
+      { name: 'Claude', src: 'https://cdn.simpleicons.org/anthropic/D97757' },
+      { name: 'Gemini', src: 'https://cdn.simpleicons.org/googlegemini/8E75FB' },
+      { name: 'NotebookLM', src: 'https://cdn.simpleicons.org/google/4285F4' },
+    ]}
+    grayscale={true} 
+    logoSize="md"
+  />
 
   <BentoGrid
     title="深度文章：掌握行銷邏輯"
+    subtitle="透過實戰觀點，建立你的職場護城河。"
     items={bentoItems}
+    background="default"
   />
 
   <PricingTable
     title="個人著作與實戰指南"
+    subtitle="將累積的行銷心法與 AI 工作流系統化整理。"
     plans={ebookCollections}
     background="muted"
   />
 
   {
     siteConfig.features.testimonials && sortedTestimonials.length > 0 && (
-      <TestimonialsSection ... />
+      <TestimonialsSection
+        title="讀者與合作夥伴的回饋"
+        subtitle="看看其他行銷人如何評價我的內容與建議。"
+        background="default"
+        limit={4}
+        testimonials={sortedTestimonials.map((t) => ({
+          quote: t.data.quote,
+          author: t.data.author,
+          role: t.data.role,
+          company: t.data.company,
+          avatar: t.data.avatar,
+        }))}
+      />
     )
   }
 
@@ -64,7 +171,7 @@ import { Icon } from 'astro-icon/components'; // 確保有引入 icon
       </a>
       
       <p class="mt-6 text-sm opacity-60 text-white/70 italic">
-        * 已有超過千位行銷人加入，隨時可取消訂閱
+        * 已有超過位300人加入，隨時可取消訂閱
       </p>
     </div>
   </section>
