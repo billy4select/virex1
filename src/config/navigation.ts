@@ -1,9 +1,6 @@
 import type { Navigation } from '../lib/types';
 
 export const navigation: Navigation = {
-  /**
-   * 頁首導覽 (Header) - 這裡放最常用的
-   */
   header: {
     main: [
       { label: '首頁', href: '/' },
@@ -12,32 +9,37 @@ export const navigation: Navigation = {
       { label: '訂閱電子報', href: 'https://billy4select.kit.com/profile/posts' },
     ],
     cta: [
-      { label: '加入 Line 群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default', variant: 'primary' },
+      { label: '訂閱電子報', href: 'https://billy4select.kit.com/profile/posts', variant: 'ghost' },
+      { label: '加入群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw', variant: 'primary' },
     ],
   },
-
-  /**
-   * 頁尾導覽 (Footer) - 這裡放完整的連結分類
-   */
   footer: {
-    product: [ // 改為「網站」
+    product: [ 
       { label: '首頁', href: '/' },
       { label: 'BLOG', href: '/blog' },
       { label: '關於我', href: '/about' },
       { label: '隱私權政策', href: '/privacy' },
       { label: '免責聲明', href: '/terms' },
     ],
-    solutions: [ // 改為「電子書」
-      { label: '《AI 時代職場生存法則》', href: '/ebook-ai-career' },
-      { label: '《從零開始自媒體》', href: '/ebook-self-media' },
-      { label: '《寫給大家的行銷書》', href: '/ebook-marketing' },
-      { label: '《流量騙局》', href: '/ebook-traffic-scam' },
+    solutions: [ 
+      { label: '《AI時代職場生存法則》', href: '/features' }, 
+      { label: '《從零開始自媒體》', href: '/customers' },
+      { label: '《寫給大家的行銷書》', href: '/pricing' },
+      { label: '《流量騙局》', href: '/enterprise' },
     ],
-    resources: [ // 改為「更多資源」
-      { label: '索取檔案', href: '/resources' },
+    resources: [
+      { label: '索取檔案', href: '/docs' },
       { label: '訂閱電子報', href: 'https://billy4select.kit.com/profile/posts' },
+      { label: '更新日誌', href: '/changelog' },
     ],
-    company: [], // 留空，或放你其他的社群連結
-    legal: [],
+    company: [
+      { label: 'YouTube', href: 'https://www.youtube.com/@billyselect4' },
+      { label: 'Instagram', href: 'https://www.instagram.com/billy4select' },
+      { label: 'Threads', href: 'https://www.threads.net/@billy4select' },
+    ],
+    legal: [
+      { label: 'Privacy Policy', href: '/privacy' },
+      { label: 'Terms of Service', href: '/terms' },
+    ],
   },
 };
