@@ -4,7 +4,7 @@ description: >-
   當 AI 開始處理你做了十幾年的事，焦慮是正常的。但『取代』並非一夕發生，而是一個緩慢的重新定義過程。本文分享三個方向，教你如何從執行者轉型為 AI
   時代的價值定義者。
 publishedDate: 2026-04-10T00:00:00Z
-author: AI 策略顧問
+author: billychen
 image: /images/blog/ai-replacement-anxiety.webp
 tags:
   - 職場心法
