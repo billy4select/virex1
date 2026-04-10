@@ -5,7 +5,7 @@ import { calculateReadingTime, formatDate } from '@/lib/utils';
 
 interface Props {
   title: string;
-  displayTitle?: string; // 新增：專門給頁面內顯示的標題
+  displayTitle?: string;
   description: string;
   publishedDate: Date;
   author: string;
@@ -26,12 +26,7 @@ const {
 } = Astro.props;
 
 const readingTime = calculateReadingTime(content);
-// 將日期格式化邏輯確保為中文環境
-const formattedDate = formatDate(publishedDate, {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-});
+const formattedDate = formatDate(publishedDate);
 ---
 
 <MarketingLayout
@@ -49,8 +44,7 @@ const formattedDate = formatDate(publishedDate, {
         <h1 class="text-4xl font-bold text-text mb-4">
           {displayTitle || title}
         </h1>
-        <p class="text-lg text-text-muted mb-6">{description}</p>
-
+        
         <div
           class="flex flex-wrap items-center gap-4 text-sm text-text-muted border-b border-border pb-6"
         >
