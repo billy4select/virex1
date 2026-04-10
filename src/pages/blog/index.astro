@@ -70,26 +70,19 @@ const getTypedTags = (tags: string[]) => tags.slice(0, 3);
           paginatedPosts.map((post) => (
             <article class="group">
               <a href={`/blog/${post.id}`} class="block">
+                {/* 1. 這裡的 flex col/row 和 gap-6 可以保留，或者如果你希望完全通欄，可以改成簡單的 div */}
                 <div class="flex flex-col sm:flex-row gap-6">
-                  <div class="sm:w-48 sm:h-32 shrink-0 rounded-lg overflow-hidden bg-surface">
-                    {post.data.image ? (
-                      <img
-                        src={post.data.image}
-                        alt={post.data.title}
-                        class="w-full h-32 sm:h-full object-cover"
-                      />
-                    ) : (
-                      <div class="w-full h-32 sm:h-full bg-primary/10 flex items-center justify-center">
-                        <Icon name="lucide:image" class="w-12 h-12 text-primary/40" />
-                      </div>
-                    )}
-                  </div>
+                  
+                  {/* --- 圖片區塊已完全移除 --- */}
+
+                  {/* 2. 這裡原本有 'flex-1'，現在依然保留，它會讓文字區塊自動填滿空間 */}
                   <div class="flex-1">
                     <div class="flex flex-wrap items-center gap-3 text-sm text-text-muted mb-2">
                       <span>
                         {post.data.publishedDate.toLocaleDateString('zh-TW', {
                           year: 'numeric',
                           month: 'long',
+                          day: 'numeric',
                           day: 'numeric',
                         })}
                       </span>
