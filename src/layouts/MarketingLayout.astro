@@ -1,63 +1,58 @@
 ---
-import BaseLayout from './BaseLayout.astro';
-import Header from '@layout/Header.astro';
-import Footer from '@layout/Footer.astro';
-import AnnouncementBar from '@layout/AnnouncementBar.astro';
-import { siteConfig } from '@/config';
-
+/**
+ * Newsletter - 比利陳個人品牌專用版
+ * 修改重點：移除 Email 輸入框，改為大型直達按鈕導向 Kit 頁面。
+ */
 interface Props {
-  title: string;
-  description: string;
-  image?: string;
-  type?: 'website' | 'article';
-  // Article-specific props for JSON-LD
-  publishedDate?: Date;
-  modifiedDate?: Date;
-  author?: string;
-  tags?: string[];
+  title?: string;
+  description?: string;
+  buttonText?: string;
+  kitUrl?: string;
+  background?: 'default' | 'muted' | 'accent';
 }
 
 const {
-  title,
-  description,
-  image,
-  type = 'website',
-  publishedDate,
-  modifiedDate,
-  author,
-  tags,
+  title = "訂閱比利陳的電子報",
+  description = "每週分享 AI 工具實測與行銷判斷力觀點，與你一起建立不可替代的專業地位。",
+  buttonText = "立即訂閱電子報",
+  kitUrl = "https://billy4select.kit.com/profile",
+  background = 'muted',
 } = Astro.props;
 
-const { announcement } = siteConfig;
+const bgClass = {
+  default: 'bg-background',
+  muted: 'bg-surface',
+  accent: 'bg-primary/5',
+}[background];
 ---
 
-<BaseLayout
-  title={title}
-  description={description}
-  image={image}
-  type={type}
-  publishedDate={publishedDate}
-  modifiedDate={modifiedDate}
-  author={author}
-  tags={tags}
->
-  <div class="flex flex-col min-h-screen">
-    {
-      announcement.enabled && (
-        <AnnouncementBar
-          id={announcement.id}
-          text={announcement.text}
-          href={announcement.href}
-          linkText={announcement.linkText}
-          variant={announcement.variant}
-          dismissible={announcement.dismissible}
-        />
-      )
-    }
-    <Header />
-    <main id="main-content" class="flex-1">
-      <slot />
-    </main>
-    <Footer />
+<section class:list={[bgClass, "py-16 sm:py-24"]}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h3 class="text-3xl font-bold tracking-tight text-text sm:text-4xl">
+        {title}
+      </h3>
+      <p class="mt-4 text-lg text-text-muted leading-relaxed">
+        {description}
+      </p>
+
+      <div class="mt-10">
+        <a
+          href={kitUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center px-10 py-4 text-lg font-bold text-white bg-primary rounded-full hover:bg-primary-dark hover:scale-105 transition-all shadow-xl hover:shadow-primary/30"
+        >
+          {buttonText}
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+      
+      <p class="mt-6 text-sm text-text-muted italic opacity-75">
+        點擊後將跳轉至我的 Kit 專屬訂閱頁面
+      </p>
+    </div>
   </div>
-</BaseLayout>
+</section>
