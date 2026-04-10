@@ -5,80 +5,53 @@ import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
 import { calculateReadingTime } from '@/lib/utils';
 
-export async function getStaticPaths({ paginate }: { paginate: any }) {
-  const posts = await getCollection('blog', ({ data }) => !data.draft);
-  const sortedPosts = posts.sort(
-    (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
-  );
-  return paginate(sortedPosts, { pageSize: 6 });
-}
-
-const { page } = Astro.props;
-const { data: paginatedPosts } = page;
-
-// 獲取標籤
+// 直接獲取所有文章並排序
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
-const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags))].sort();
+const sortedPosts = allPosts.sort(
+  (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
+);
 
-const getTypedTags = (tags: string[]) => tags.slice(0, 3);
+// 手動定義分頁邏輯
+const POSTS_PER_PAGE = 6;
+const currentPage = 1;
+const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
+const paginatedPosts = sortedPosts.slice(0, POSTS_PER_PAGE);
+
+// 獲取標籤清單
+const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags))].sort();
 ---
 
-<MarketingLayout
-  title={`Blog - 第 ${page.currentPage} 頁`}
-  description={`這是 ${siteConfig.name} 的官方部落格。`}
->
+<MarketingLayout title="Blog" description={siteConfig.description}>
   <section class="py-section">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h1 class="text-4xl sm:text-5xl font-bold text-text">Blog</h1>
-        <p class="mt-4 text-lg text-text-muted max-w-2xl mx-auto">
-          分享行銷心得、AI 工具應用與自媒體經營筆記。
-        </p>
+        <p class="mt-4 text-lg text-text-muted">分享行銷心得、AI 工具應用與自媒體經營筆記。</p>
       </div>
 
-      {allTags.length > 0 && (
-        <div class="mb-10">
-          <div class="flex flex-wrap items-center gap-2">
-            <span class="text-sm font-medium text-text-muted mr-2">標籤篩選：</span>
-            <a href="/blog" class="px-3 py-1.5 text-sm font-medium rounded-md bg-surface text-text-muted hover:bg-primary/10 hover:text-primary transition-colors">全部</a>
-            {allTags.map((tag) => (
-              <a href={`/blog/tag/${tag}`} class="px-3 py-1.5 text-sm font-medium rounded-md bg-surface text-text-muted hover:bg-primary/10 hover:text-primary transition-colors">{tag}</a>
-            ))}
-          </div>
+      <div class="mb-10">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="text-sm font-medium text-text-muted mr-2">標籤篩選：</span>
+          <a href="/blog" class="px-3 py-1.5 text-sm font-medium rounded-md bg-primary text-white">全部</a>
+          {allTags.map((tag) => (
+            <a href={`/blog/tag/${tag}`} class="px-3 py-1.5 text-sm font-medium rounded-md bg-surface text-text-muted hover:text-primary transition-colors">{tag}</a>
+          ))}
         </div>
-      )}
+      </div>
 
       <div class="space-y-10">
-        {paginatedPosts.map((post: any) => (
+        {paginatedPosts.map((post) => (
           <article class="group">
             <a href={`/blog/${post.id}`} class="block">
-              {/* 這裡統一使用 flex-col，確保沒有圖片區塊 */}
               <div class="flex flex-col gap-6">
                 <div class="flex-1">
                   <div class="flex flex-wrap items-center gap-3 text-sm text-text-muted mb-2">
-                    <span>
-                      {post.data.publishedDate.toLocaleDateString('zh-TW', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                      })}
-                    </span>
+                    <span>{post.data.publishedDate.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
                     <span>·</span>
                     <span>閱讀時間 {calculateReadingTime(post.body || '')} 分鐘</span>
                   </div>
-                  <h2 class="text-xl font-bold text-text group-hover:text-primary transition-colors">
-                    {post.data.title}
-                  </h2>
+                  <h2 class="text-xl font-bold text-text group-hover:text-primary transition-colors">{post.data.title}</h2>
                   <p class="mt-2 text-text-muted line-clamp-2">{post.data.description}</p>
-                  {post.data.tags.length > 0 && (
-                    <div class="flex flex-wrap gap-2 mt-3">
-                      {getTypedTags(post.data.tags).map((tag: string) => (
-                        <span class="px-2 py-0.5 text-xs font-medium bg-surface text-text-muted rounded">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
                 </div>
               </div>
             </a>
@@ -87,8 +60,8 @@ const getTypedTags = (tags: string[]) => tags.slice(0, 3);
       </div>
 
       <Pagination 
-        currentPage={page.currentPage} 
-        totalPages={page.lastPage} 
+        currentPage={currentPage} 
+        totalPages={totalPages} 
         basePath="/blog" 
       />
     </div>
