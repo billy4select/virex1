@@ -21,10 +21,10 @@ export const navigation: Navigation = {
       { label: '免責聲明', href: '/terms' },
     ],
     solutions: [ 
-      { label: '《AI時代職場生存法則》', href: '/features' }, 
-      { label: '《從零開始自媒體》', href: '/customers' },
-      { label: '《寫給大家的行銷書》', href: '/pricing' },
-      { label: '《流量騙局》', href: '/enterprise' },
+      { label: '《AI時代職場生存法則》', href: 'https://portaly.cc/billyselect4/product/jLrib0ZgLmXWs2WOTiy8' }, 
+      { label: '《從零開始自媒體》', href: 'https://portaly.cc/billyselect4/product/ioeupgO66jK7vB24yJzY' },
+      { label: '《寫給大家的行銷書》', href: 'https://portaly.cc/billyselect4/product/FlzuxW1QbZpC79Op2zhE' },
+      { label: '《流量騙局》', href: 'https://portaly.cc/billyselect4/product/khu55lTbwebNRjRtUCQ3' },
     ],
     resources: [
       { label: '索取檔案', href: '/docs' },
