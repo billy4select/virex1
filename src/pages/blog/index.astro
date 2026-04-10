@@ -1,30 +1,31 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Pagination from '@ui/Pagination.astro';
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
 import { calculateReadingTime } from '@/lib/utils';
 
-// 1. 首頁不需要 getStaticPaths，直接獲取內容
-const posts = await getCollection('blog', ({ data }) => !data.draft);
-const sortedPosts = posts.sort(
-  (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
-);
+export async function getStaticPaths({ paginate }: { paginate: any }) {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  const sortedPosts = posts.sort(
+    (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
+  );
+  return paginate(sortedPosts, { pageSize: 6 });
+}
 
-// 2. 設定首頁顯示的數量（與分頁一致，例如 6 篇）
-const POSTS_PER_PAGE = 6;
-const currentPage = 1;
-const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
-const paginatedPosts = sortedPosts.slice(0, POSTS_PER_PAGE);
+const { page } = Astro.props;
+const { data: paginatedPosts } = page;
 
-// 3. 獲取標籤
-const allTags = [...new Set(posts.flatMap((post) => post.data.tags))].sort();
+// 獲取標籤
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags))].sort();
+
 const getTypedTags = (tags: string[]) => tags.slice(0, 3);
 ---
 
 <MarketingLayout
-  title="Blog" 
-  description={`這是 ${siteConfig.name} 的官方部落格，分享最新資訊與心得。`} 
+  title={`Blog - 第 ${page.currentPage} 頁`}
+  description={`這是 ${siteConfig.name} 的官方部落格。`}
 >
   <section class="py-section">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,7 +40,7 @@ const getTypedTags = (tags: string[]) => tags.slice(0, 3);
         <div class="mb-10">
           <div class="flex flex-wrap items-center gap-2">
             <span class="text-sm font-medium text-text-muted mr-2">標籤篩選：</span>
-            <a href="/blog" class="px-3 py-1.5 text-sm font-medium rounded-md bg-primary text-white">全部</a>
+            <a href="/blog" class="px-3 py-1.5 text-sm font-medium rounded-md bg-surface text-text-muted hover:bg-primary/10 hover:text-primary transition-colors">全部</a>
             {allTags.map((tag) => (
               <a href={`/blog/tag/${tag}`} class="px-3 py-1.5 text-sm font-medium rounded-md bg-surface text-text-muted hover:bg-primary/10 hover:text-primary transition-colors">{tag}</a>
             ))}
@@ -48,9 +49,10 @@ const getTypedTags = (tags: string[]) => tags.slice(0, 3);
       )}
 
       <div class="space-y-10">
-        {paginatedPosts.map((post) => (
+        {paginatedPosts.map((post: any) => (
           <article class="group">
             <a href={`/blog/${post.id}`} class="block">
+              {/* 這裡統一使用 flex-col，確保沒有圖片區塊 */}
               <div class="flex flex-col gap-6">
                 <div class="flex-1">
                   <div class="flex flex-wrap items-center gap-3 text-sm text-text-muted mb-2">
@@ -70,7 +72,7 @@ const getTypedTags = (tags: string[]) => tags.slice(0, 3);
                   <p class="mt-2 text-text-muted line-clamp-2">{post.data.description}</p>
                   {post.data.tags.length > 0 && (
                     <div class="flex flex-wrap gap-2 mt-3">
-                      {getTypedTags(post.data.tags).map((tag) => (
+                      {getTypedTags(post.data.tags).map((tag: string) => (
                         <span class="px-2 py-0.5 text-xs font-medium bg-surface text-text-muted rounded">
                           {tag}
                         </span>
@@ -84,15 +86,9 @@ const getTypedTags = (tags: string[]) => tags.slice(0, 3);
         ))}
       </div>
 
-      {sortedPosts.length === 0 && (
-        <div class="text-center py-12">
-          <p class="text-text-muted">目前還沒有文章，敬請期待！</p>
-        </div>
-      )}
-
       <Pagination 
-        currentPage={currentPage} 
-        totalPages={totalPages} 
+        currentPage={page.currentPage} 
+        totalPages={page.lastPage} 
         basePath="/blog" 
       />
     </div>
