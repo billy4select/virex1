@@ -71,7 +71,7 @@ const bentoItems = [
 const ebookCollections = [
   {
     name: '《從零開始自媒體》',
-    description: '10 年品牌行銷人的經營地圖',
+    description: '10 年 brand 行銷人的經營地圖',
     monthlyPrice: null,
     price: '',
     customPrice: '實戰指南',
@@ -133,7 +133,7 @@ const ebookCollections = [
 
   <PricingTable
     title="個人著作與實戰指南"
-    subtitle=""
+    subtitle="將經驗轉化為系統化的知識資產"
     plans={ebookCollections}
     background="muted"
   />
@@ -142,7 +142,7 @@ const ebookCollections = [
     sortedTestimonials.length > 0 && (
       <TestimonialsSection
         title="讀者與夥伴的回饋"
-        subtitle=""
+        subtitle="真實的聲音，是持續創作的動力"
         background="default"
         limit={4}
         testimonials={sortedTestimonials.map((t) => ({
@@ -162,7 +162,9 @@ const ebookCollections = [
     action={{ label: '立即加入 Line 群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw' }}
   />
 
-  <Newsletter />
+  <Newsletter 
+    kitUrl="https://billy4select.kit.com/profile"
+  />
 </MarketingLayout>
 
 <style is:global>
@@ -174,33 +176,34 @@ const ebookCollections = [
   }
 
   .logo-cloud h2 {
-    font-size: 1.2rem !important;
-    font-weight: 800 !important;
+    font-size: 1.25rem !important;
+    font-weight: 900 !important;
     color: #111 !important;
-    letter-spacing: 0.15em !important;
-    margin-bottom: 4rem !important;
+    letter-spacing: 0.2em !important;
+    margin-bottom: 4.5rem !important;
     opacity: 1 !important;
+    text-transform: uppercase;
   }
 
   .logo-cloud img {
     filter: grayscale(100%) brightness(0.6) contrast(1.2) !important;
-    opacity: 0.8 !important;
-    max-height: 50px !important;
-    transition: all 0.4s ease;
+    opacity: 0.7 !important;
+    max-height: 45px !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .logo-cloud img:hover {
     filter: grayscale(0%) brightness(1) !important;
     opacity: 1 !important;
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.1);
   }
 
   /** * 2. 讀者見證視覺美化 
    */
   .testimonials-section blockquote {
-    font-size: 1.05rem !important;
-    line-height: 1.7;
-    color: #333;
+    font-size: 1.1rem !important;
+    line-height: 1.8;
+    color: #2d3748;
     font-weight: 500;
   }
 
@@ -208,7 +211,8 @@ const ebookCollections = [
    */
   .pricing-switcher, 
   [data-period="annual"], 
-  .pricing-toggle-btn {
+  .pricing-toggle-btn,
+  .pricing-period-label {
     display: none !important;
   }
 </style>
