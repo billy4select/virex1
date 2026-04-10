@@ -13,32 +13,30 @@ export const navigation: Navigation = {
     ],
   },
   footer: {
-    product: [ 
+    網站: [ 
       { label: '首頁', href: '/' },
       { label: 'BLOG', href: '/blog' },
       { label: '關於我', href: '/about' },
-      { label: '隱私權政策', href: '/privacy' },
-      { label: '免責聲明', href: '/terms' },
     ],
-    solutions: [ 
+    電子書: [ 
       { label: '《AI時代職場生存法則》', href: '/features' }, 
       { label: '《從零開始自媒體》', href: '/customers' },
       { label: '《寫給大家的行銷書》', href: '/pricing' },
       { label: '《流量騙局》', href: '/enterprise' },
     ],
-    resources: [
-      { label: '索取檔案', href: '/docs' },
+    免費資源: [
+      { label: '索取檔案', href: 'https://billy4select.kit.com' },
       { label: '訂閱電子報', href: 'https://billy4select.kit.com/profile/posts' },
-      { label: '更新日誌', href: '/changelog' },
+      { label: '最新消息', href: '/changelog' },
     ],
-    company: [
+    社群連結: [
       { label: 'YouTube', href: 'https://www.youtube.com/@billyselect4' },
       { label: 'Instagram', href: 'https://www.instagram.com/billy4select' },
       { label: 'Threads', href: 'https://www.threads.net/@billy4select' },
     ],
     legal: [
-      { label: 'Privacy Policy', href: '/privacy' },
-      { label: 'Terms of Service', href: '/terms' },
+      { label: '隱私權政策', href: '/privacy' },
+      { label: '免責聲明', href: '/terms' },
     ],
   },
 };

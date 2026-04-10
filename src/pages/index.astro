@@ -1,10 +1,9 @@
 ---
 /**
  * Index Page - 比利陳個人品牌
- * 更新重點：
- * 1. 串接真實讀者見證：自動從 src/content/testimonials 抓取留言。
- * 2. 標題視覺重塑：強化「運用頂尖 AI 工具...」的權重，解決比重過輕問題。
- * 3. 著作集模組化：移除所有軟體訂閱相關字眼，轉為專業著作展示。
+ * 修改重點：
+ * 1. 著作集、讀者見證：僅在電腦版顯示 (md:block)，手機版隱藏。
+ * 2. 電子報：全裝置保留，確保手機用戶也能訂閱。
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
@@ -36,19 +35,19 @@ const sortedTestimonials = [...testimonials].sort((a, b) => {
 /** Bento Grid：首頁導覽區塊 */
 const bentoItems = [
   {
+    title: 'AI 工作流實踐',
+    description: '工具越來越便宜，但判斷力沒辦法外包。這裡談的是在 AI 浪潮下，如何用整合思維做決策，讓 AI 放大你的執行力，而不是替代你的判斷。',
+    icon: 'lucide:zap',
+    accent: 'blue' as const,
+    href: '/blog/ai',
+  },
+  {
     title: '行銷判斷力觀點',
     description: '行銷不是廣告，是商業決策的視覺化。 從 PM 思維到整合行銷，這裡拆解的是真正影響銷量和品牌的關鍵判斷。',
     icon: 'lucide:brain',
     size: 'large' as const,
     accent: 'primary' as const,
     href: '/blog/marketing',
-  },
-  {
-    title: 'AI 工作流實踐',
-    description: '工具越來越便宜，但判斷力沒辦法外包。這裡談的是在 AI 浪潮下，如何用整合思維做決策，讓 AI 放大你的執行力，而不是替代你的判斷。',
-    icon: 'lucide:zap',
-    accent: 'blue' as const,
-    href: '/blog/ai',
   },
   {
     title: '個人品牌資產化',
@@ -71,7 +70,7 @@ const bentoItems = [
 const ebookCollections = [
   {
     name: '《從零開始自媒體》',
-    description: '10 年品牌行銷人的經營地圖',
+    description: '10 年 brand 行銷人的經營地圖',
     monthlyPrice: null,
     price: '',
     customPrice: '實戰指南',
@@ -131,28 +130,32 @@ const ebookCollections = [
     items={bentoItems}
   />
 
-  <PricingTable
-    title="個人著作與實戰指南"
-    subtitle="將 10 年行銷心法與AI使用心得整理，讓你少走彎路。"
-    plans={ebookCollections}
-    background="muted"
-  />
+  <div class="hidden md:block">
+    <PricingTable
+      title="個人著作與實戰指南"
+      subtitle="將經驗轉化為系統化的知識資產"
+      plans={ebookCollections}
+      background="muted"
+    />
+  </div>
 
   {
     sortedTestimonials.length > 0 && (
-      <TestimonialsSection
-        title="讀者與夥伴的回饋"
-        subtitle=""
-        background="default"
-        limit={4}
-        testimonials={sortedTestimonials.map((t) => ({
-          quote: t.data.quote,
-          author: t.data.author,
-          role: t.data.role,
-          company: t.data.company,
-          avatar: t.data.avatar,
-        }))}
-      />
+      <div class="hidden md:block">
+        <TestimonialsSection
+          title="讀者與夥伴的回饋"
+          subtitle="真實的聲音，是持續創作的動力"
+          background="default"
+          limit={4}
+          testimonials={sortedTestimonials.map((t) => ({
+            quote: t.data.quote,
+            author: t.data.author,
+            role: t.data.role,
+            company: t.data.company,
+            avatar: t.data.avatar,
+          }))}
+        />
+      </div>
     )
   }
 
@@ -162,7 +165,9 @@ const ebookCollections = [
     action={{ label: '立即加入 Line 群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw' }}
   />
 
-  <Newsletter />
+  <Newsletter 
+    kitUrl="https://billy4select.kit.com/profile"
+  />
 </MarketingLayout>
 
 <style is:global>
@@ -174,33 +179,34 @@ const ebookCollections = [
   }
 
   .logo-cloud h2 {
-    font-size: 1.2rem !important;
-    font-weight: 800 !important;
+    font-size: 1.25rem !important;
+    font-weight: 900 !important;
     color: #111 !important;
-    letter-spacing: 0.15em !important;
-    margin-bottom: 4rem !important;
+    letter-spacing: 0.2em !important;
+    margin-bottom: 4.5rem !important;
     opacity: 1 !important;
+    text-transform: uppercase;
   }
 
   .logo-cloud img {
     filter: grayscale(100%) brightness(0.6) contrast(1.2) !important;
-    opacity: 0.8 !important;
-    max-height: 50px !important;
-    transition: all 0.4s ease;
+    opacity: 0.7 !important;
+    max-height: 45px !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .logo-cloud img:hover {
     filter: grayscale(0%) brightness(1) !important;
     opacity: 1 !important;
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.1);
   }
 
   /** * 2. 讀者見證視覺美化 
    */
   .testimonials-section blockquote {
-    font-size: 1.05rem !important;
-    line-height: 1.7;
-    color: #333;
+    font-size: 1.1rem !important;
+    line-height: 1.8;
+    color: #2d3748;
     font-weight: 500;
   }
 
@@ -208,7 +214,8 @@ const ebookCollections = [
    */
   .pricing-switcher, 
   [data-period="annual"], 
-  .pricing-toggle-btn {
+  .pricing-toggle-btn,
+  .pricing-period-label {
     display: none !important;
   }
 </style>
