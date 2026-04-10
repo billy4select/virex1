@@ -8,54 +8,64 @@ import { calculateReadingTime } from '@/lib/utils';
 
 type BlogPost = CollectionEntry<'blog'>;
 
+// 設定每頁顯示的文章數量
 const POSTS_PER_PAGE = 6;
 
+// 抓取非草稿文章並按日期排序
 const posts = await getCollection('blog', ({ data }: { data: BlogPost['data'] }) => !data.draft);
 const sortedPosts = [...posts].sort(
   (a: BlogPost, b: BlogPost) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
 );
 
-// Get current page from URL
-const currentPage = 1;
+// --- 動態分頁邏輯 ---
+// 這裡將 currentPage 改為動態抓取 URL 參數，若無則預設為 1
+const { page } = Astro.params;
+const currentPage = page ? parseInt(page) : 1;
 const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
-const paginatedPosts: BlogPost[] = sortedPosts.slice(0, POSTS_PER_PAGE);
+const paginatedPosts: BlogPost[] = sortedPosts.slice(
+  (currentPage - 1) * POSTS_PER_PAGE,
+  currentPage * POSTS_PER_PAGE
+);
 
-// Get all unique tags
+// 提取所有不重複標籤
 const allTags = [...new Set(posts.flatMap((post: BlogPost) => post.data.tags))].sort();
 
-// Helper to get typed tags
+// 限制卡片上顯示的標籤數量
 const getTypedTags = (tags: string[]) => tags.slice(0, 3);
 ---
 
 <MarketingLayout
-  title={`Blog - ${siteConfig.name}`}
-  description={`Latest news, updates, and insights from the ${siteConfig.name} team.`}
+  title={`實戰觀點 - ${siteConfig.name}`}
+  description="分享 AI 工作流實踐、品牌行銷思維與職場判斷力觀點。"
 >
-  <section class="py-section">
+  <section class="py-16 sm:py-24">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h1 class="text-4xl sm:text-5xl font-bold text-text">Blog</h1>
+      
+      <div class="text-center mb-16">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-text tracking-tight">實戰觀點</h1>
         <p class="mt-4 text-lg text-text-muted max-w-2xl mx-auto">
-          Latest news, updates, and insights from the {siteConfig.name} team.
+          記錄 AI 時代下的經營邏輯，從工具操作到頂層戰略，全方位建立你的職場競爭力。
         </p>
       </div>
 
-      <!-- Tags Filter -->
       {
         allTags.length > 0 && (
-          <div class="mb-10">
+          <div class="mb-12">
             <div class="flex flex-wrap items-center gap-2">
-              <span class="text-sm font-medium text-text-muted mr-2">Filter by tag:</span>
+              <span class="text-sm font-bold text-text/60 mr-2">內容分類：</span>
               <a
                 href="/blog"
-                class="px-3 py-1.5 text-sm font-medium rounded-md bg-primary text-white"
+                class:list={[
+                  "px-4 py-1.5 text-sm font-medium rounded-full transition-all",
+                  currentPage === 1 ? "bg-primary text-white shadow-md shadow-primary/20" : "bg-surface text-text-muted hover:bg-primary/10"
+                ]}
               >
-                All
+                全部內容
               </a>
               {allTags.map((tag) => (
                 <a
                   href={`/blog/tag/${tag}`}
-                  class="px-3 py-1.5 text-sm font-medium rounded-md bg-surface text-text-muted hover:bg-primary/10 hover:text-primary transition-colors"
+                  class="px-4 py-1.5 text-sm font-medium rounded-full bg-surface text-text-muted hover:bg-primary/10 hover:text-primary transition-all"
                 >
                   {tag}
                 </a>
@@ -65,46 +75,55 @@ const getTypedTags = (tags: string[]) => tags.slice(0, 3);
         )
       }
 
-      <!-- Posts Grid -->
-      <div class="space-y-10">
+      <div class="space-y-12">
         {
           paginatedPosts.map((post) => (
-            <article class="group">
+            <article class="group relative bg-white/50 p-4 -m-4 rounded-2xl hover:bg-white hover:shadow-xl hover:shadow-black/5 transition-all duration-300">
               <a href={`/blog/${post.id}`} class="block">
-                <div class="flex flex-col sm:flex-row gap-6">
-                  <div class="sm:w-48 sm:h-32 shrink-0 rounded-lg overflow-hidden bg-surface">
+                <div class="flex flex-col sm:flex-row gap-8">
+                  <div class="sm:w-64 sm:h-40 shrink-0 rounded-xl overflow-hidden bg-surface shadow-inner">
                     {post.data.image ? (
                       <img
                         src={post.data.image}
                         alt={post.data.title}
-                        class="w-full h-32 sm:h-full object-cover"
+                        class="w-full h-48 sm:h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                     ) : (
-                      <div class="w-full h-32 sm:h-full bg-primary/10 flex items-center justify-center">
-                        <Icon name="lucide:image" class="w-12 h-12 text-primary/40" />
+                      <div class="w-full h-48 sm:h-full bg-primary/5 flex items-center justify-center">
+                        <Icon name="lucide:image" class="w-12 h-12 text-primary/20" />
                       </div>
                     )}
                   </div>
-                  <div class="flex-1">
-                    <div class="flex flex-wrap items-center gap-3 text-sm text-text-muted mb-2">
-                      <span>
-                        {post.data.publishedDate.toLocaleDateString('en-US', {
+
+                  <div class="flex-1 flex flex-col justify-center">
+                    <div class="flex flex-wrap items-center gap-3 text-xs font-medium text-text-muted mb-3">
+                      <span class="flex items-center gap-1">
+                        <Icon name="lucide:calendar" class="w-3.5 h-3.5" />
+                        {post.data.publishedDate.toLocaleDateString('zh-TW', {
                           year: 'numeric',
                           month: 'long',
                           day: 'numeric',
                         })}
                       </span>
-                      <span>·</span>
-                      <span>{calculateReadingTime(post.body || '')} min read</span>
+                      <span>•</span>
+                      <span class="flex items-center gap-1">
+                        <Icon name="lucide:clock" class="w-3.5 h-3.5" />
+                        {calculateReadingTime(post.body || '')} 分鐘閱讀
+                      </span>
                     </div>
-                    <h2 class="text-xl font-bold text-text group-hover:text-primary transition-colors">
+
+                    <h2 class="text-2xl font-bold text-text group-hover:text-primary transition-colors mb-3 leading-snug">
                       {post.data.title}
                     </h2>
-                    <p class="mt-2 text-text-muted line-clamp-2">{post.data.description}</p>
+                    
+                    <p class="text-text-muted line-clamp-2 text-base mb-4 leading-relaxed">
+                      {post.data.description}
+                    </p>
+
                     {post.data.tags.length > 0 && (
-                      <div class="flex flex-wrap gap-2 mt-3">
+                      <div class="flex flex-wrap gap-2 mt-auto">
                         {getTypedTags(post.data.tags).map((tag) => (
-                          <span class="px-2 py-0.5 text-xs font-medium bg-surface text-text-muted rounded">
+                          <span class="px-2.5 py-0.5 text-[10px] uppercase tracking-wider font-bold bg-primary/5 text-primary/80 rounded border border-primary/10">
                             {tag}
                           </span>
                         ))}
@@ -120,14 +139,18 @@ const getTypedTags = (tags: string[]) => tags.slice(0, 3);
 
       {
         sortedPosts.length === 0 && (
-          <div class="text-center py-12">
-            <p class="text-text-muted">No blog posts yet. Check back soon!</p>
+          <div class="text-center py-24 bg-surface rounded-3xl border-2 border-dashed border-border">
+            <Icon name="lucide:pen-tool" class="w-12 h-12 text-text-muted mx-auto mb-4" />
+            <p class="text-text-muted font-medium text-lg">目前尚無文章，敬請期待內容更新！</p>
           </div>
         )
       }
 
-      <!-- Pagination -->
-      <Pagination currentPage={currentPage} totalPages={totalPages} basePath="/blog" />
+      {totalPages > 1 && (
+        <div class="mt-20 border-t border-border pt-10">
+          <Pagination currentPage={currentPage} totalPages={totalPages} basePath="/blog" />
+        </div>
+      )}
     </div>
   </section>
 </MarketingLayout>
