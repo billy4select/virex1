@@ -17,7 +17,7 @@ export const announcement: AnnouncementConfig = {
   id: 'line-group-launch',
 
   /** 公告顯示的內容文字 */
-  text: '🚀 比利陳的行銷實戰 Line 社群正式開放！立即加入交流',
+  text: '自媒體xAI Line 社群正式開放！立即加入交流',
 
   /** 連結網址 (指向你的 Line 群組) */
   href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw',
