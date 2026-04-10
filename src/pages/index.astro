@@ -1,7 +1,10 @@
 ---
 /**
  * Index Page - 比利陳個人品牌精簡版
- * 優化重點：徹底去化「軟體訂閱感」，將書籍區塊改造成「個人著作集」
+ * 優化重點：
+ * 1. 強化 Logo 視覺份量 (lg 尺寸與對比度優化)
+ * 2. 徹底去化軟體訂閱感，轉為個人著作展示
+ * 3. 修正本地 SVG 圖示路徑
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
@@ -24,7 +27,7 @@ const sortedTestimonials = [...testimonials].sort(
   (a: TestimonialEntry, b: TestimonialEntry) => a.data.order - b.data.order
 );
 
-/** * Bento Grid：文章分類導流 */
+/** Bento Grid：文章分類導流 */
 const bentoItems = [
   {
     title: '行銷判斷力觀點',
@@ -58,12 +61,11 @@ const bentoItems = [
   },
 ];
 
-/** * 書籍區塊：移除 Monthly/Price 邏輯，改為類別與名稱 */
+/** 書籍區塊：作品集化配置 */
 const ebookCollections = [
   {
     name: '《AI時代職場生存法則》',
     description: '每天 1% 的資產化練習 (電子書)',
-    // 將價格設為 null 或空字串，並在下方使用客製化標籤
     monthlyPrice: null, 
     price: '', 
     customPrice: '核心著作', 
@@ -80,7 +82,7 @@ const ebookCollections = [
     monthlyPrice: null,
     price: '',
     customPrice: '實戰指南',
-    highlighted: true, // 這會讓中間這本書有醒目的外框或顏色
+    highlighted: true, 
     features: [
       '零基礎經營策略',
       '個人品牌商業化路徑',
@@ -109,12 +111,12 @@ const ebookCollections = [
   <Hero
     title="AI 時代，判斷力才是你唯一的護城河"
     subtitle="我是比利陳。這裡記錄我如何用 AI 改善工作流程，並用思維邏輯建立不可替代的專業地位。"
-    primaryCTA={{ label: '加入 Line 群組', href: '...' }}
-    secondaryCTA={{ label: '訂閱電子報', href: '...' }}
+    primaryCTA={{ label: '加入 Line 群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw' }}
+    secondaryCTA={{ label: '訂閱電子報', href: 'https://billy4select.kit.com/profile/posts' }}
   />
 
-<LogoCloud
-    title="擅長運用頂尖 AI 工具提升行銷效率"
+  <LogoCloud
+    title="讓我們運用頂尖 AI 工具提升行銷效率"
     logos={[
       { name: 'Notion', src: '/notion-icon.svg' },
       { name: 'ChatGPT', src: '/openai-icon.svg' }, 
@@ -125,7 +127,7 @@ const ebookCollections = [
       { name: 'Grok', src: '/grok-icon.svg' },
     ]}
     grayscale={true} 
-    logoSize="md"
+    logoSize="lg" 
   />
 
   <BentoGrid
@@ -162,8 +164,45 @@ const ebookCollections = [
   <CTA
     title="準備好開始進階了嗎？"
     description="現在就加入社群，與比利陳一起在 AI 時代保持領先。"
-    action={{ label: '立即加入 Line 群組', href: '...' }}
+    action={{ label: '立即加入 Line 群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw' }}
   />
 
   <Newsletter />
 </MarketingLayout>
+
+<style is:global>
+  /* 強化 Logo 視覺的存在感與專業度 */
+  .logo-cloud {
+    padding-top: 2rem !important; /* 縮小與 Hero 的間距，視覺更緊湊 */
+    padding-bottom: 5rem !important;
+  }
+
+  .logo-cloud h2 {
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+    margin-bottom: 3rem !important;
+  }
+
+  .logo-cloud img {
+    /* 調整濾鏡：增加對比度與降低亮度，讓黑白圖示更紮實 */
+    filter: grayscale(100%) contrast(1.1) brightness(0.8) !important;
+    opacity: 0.8 !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* 滑鼠懸停效果：恢復顏色並微浮 */
+  .logo-cloud img:hover {
+    filter: grayscale(0%) contrast(1) brightness(1) !important;
+    opacity: 1 !important;
+    transform: translateY(-4px);
+  }
+
+  /* 隱藏 PricingTable 可能殘留的訂閱切換 UI */
+  .pricing-switcher, 
+  [data-period="annual"] span,
+  .pricing-toggle-btn {
+    display: none !important;
+  }
+</style>
