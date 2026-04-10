@@ -5,6 +5,7 @@ import { calculateReadingTime, formatDate } from '@/lib/utils';
 
 interface Props {
   title: string;
+  displayTitle?: string; // 新增：專門給頁面內顯示的標題
   description: string;
   publishedDate: Date;
   author: string;
@@ -13,9 +14,19 @@ interface Props {
   content: string;
 }
 
-const { title, description, publishedDate, author, image, tags = [], content } = Astro.props;
+const { 
+  title, 
+  displayTitle, 
+  description, 
+  publishedDate, 
+  author, 
+  image, 
+  tags = [], 
+  content 
+} = Astro.props;
 
 const readingTime = calculateReadingTime(content);
+// 將日期格式化邏輯確保為中文環境
 const formattedDate = formatDate(publishedDate, {
   year: 'numeric',
   month: 'long',
@@ -34,12 +45,12 @@ const formattedDate = formatDate(publishedDate, {
 >
   <article class="py-section">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Article Header -->
       <header class="mb-8">
-        <h1 class="text-4xl font-bold text-text mb-4">{title}</h1>
+        <h1 class="text-4xl font-bold text-text mb-4">
+          {displayTitle || title}
+        </h1>
         <p class="text-lg text-text-muted mb-6">{description}</p>
 
-        <!-- Article Metadata -->
         <div
           class="flex flex-wrap items-center gap-4 text-sm text-text-muted border-b border-border pb-6"
         >
@@ -53,11 +64,10 @@ const formattedDate = formatDate(publishedDate, {
           </span>
           <span class="flex items-center gap-1">
             <Icon name="lucide:clock" class="w-4 h-4" />
-            {readingTime} min read
+            閱讀時間 {readingTime} 分鐘
           </span>
         </div>
 
-        <!-- Tags -->
         {
           tags.length > 0 && (
             <div class="flex flex-wrap gap-2 mt-4">
@@ -71,7 +81,6 @@ const formattedDate = formatDate(publishedDate, {
         }
       </header>
 
-      <!-- Article Content -->
       <div class="prose prose-lg max-w-none dark:prose-invert">
         <slot name="content" />
       </div>
