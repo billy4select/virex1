@@ -21,13 +21,24 @@ interface Props {
 const { post } = Astro.props;
 const { Content } = await render(post);
 
-// SEO 標題（用於分頁標籤）與 顯示標題（用於頁面內 H1）
 const seoTitle = `${post.data.title} - ${siteConfig.name}`;
 const displayTitle = post.data.title;
 
-// 獲取相關文章邏輯
+// --- 邏輯處理：計算 相關文章、上一篇、下一篇 ---
 const allPosts = await getCollection('blog', ({ data }: { data: BlogPost['data'] }) => !data.draft);
+const sortedPosts = allPosts.sort(
+  (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
+);
 
+// 找到目前文章的索引位置
+const currentIndex = sortedPosts.findIndex((p) => p.id === post.id);
+
+// 取得上一篇與下一篇（按時間排序）
+// 因為是降序排，索引值較小的是「新文章(Next)」，較大的是「舊文章(Prev)」
+const nextPost = currentIndex > 0 ? sortedPosts[currentIndex - 1] : null;
+const prevPost = currentIndex < sortedPosts.length - 1 ? sortedPosts[currentIndex + 1] : null;
+
+// 相關推薦邏輯
 interface RelatedPostWithScore {
   post: BlogPost;
   sharedTags: number;
@@ -42,14 +53,9 @@ const relatedPosts: BlogPost[] = allPosts
     })
   )
   .filter((p: RelatedPostWithScore) => p.sharedTags > 0)
-  .sort((a: RelatedPostWithScore, b: RelatedPostWithScore) => {
-    if (b.sharedTags !== a.sharedTags) {
-      return b.sharedTags - a.sharedTags;
-    }
-    return b.post.data.publishedDate.getTime() - a.post.data.publishedDate.getTime();
-  })
+  .sort((a, b) => b.sharedTags - a.sharedTags || b.post.data.publishedDate.getTime() - a.post.data.publishedDate.getTime())
   .slice(0, 3)
-  .map((p: RelatedPostWithScore) => p.post);
+  .map((p) => p.post);
 ---
 
 <BlogLayout
@@ -64,29 +70,52 @@ const relatedPosts: BlogPost[] = allPosts
 >
   <Content slot="content" />
 
+  <nav class="mt-16 py-8 border-t border-b border-border flex flex-col sm:flex-row justify-between gap-8">
+    <div class="flex-1">
+      {prevPost && (
+        <a href={`/blog/${prevPost.id}`} class="group block">
+          <span class="text-sm text-text-muted flex items-center gap-1 group-hover:text-primary transition-colors">
+            ← 較舊的文章
+          </span>
+          <div class="mt-2 font-bold text-text group-hover:text-primary transition-colors line-clamp-2">
+            {prevPost.data.title}
+          </div>
+        </a>
+      )}
+    </div>
+    
+    <div class="flex-1 sm:text-right">
+      {nextPost && (
+        <a href={`/blog/${nextPost.id}`} class="group block">
+          <span class="text-sm text-text-muted flex items-center justify-end gap-1 group-hover:text-primary transition-colors">
+            較新的文章 →
+          </span>
+          <div class="mt-2 font-bold text-text group-hover:text-primary transition-colors line-clamp-2">
+            {nextPost.data.title}
+          </div>
+        </a>
+      )}
+    </div>
+  </nav>
+
   {
     relatedPosts.length > 0 && (
-      <aside class="mt-16 pt-12 border-t border-border">
-        <h2 class="text-2xl font-bold text-text mb-8">相關文章</h2>
+      <aside class="mt-12">
+        <h2 class="text-2xl font-bold text-text mb-8">您可能也會感興趣...</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {relatedPosts.map((relatedPost) => (
             <a href={`/blog/${relatedPost.id}`} class="group block">
-              <article class="h-full p-4 rounded-lg border border-border hover:border-primary transition-colors">
-                <div class="text-sm text-text-muted mb-2">
+              <article class="h-full p-4 rounded-lg border border-border hover:border-primary transition-all hover:shadow-md">
+                <div class="text-xs text-text-muted mb-2">
                   {relatedPost.data.publishedDate.toLocaleDateString('zh-TW', {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric',
                   })}
-                  <span class="mx-1">·</span>
-                  閱讀時間 {calculateReadingTime(relatedPost.body || '')} 分鐘
                 </div>
                 <h3 class="font-semibold text-text group-hover:text-primary transition-colors line-clamp-2">
                   {relatedPost.data.title}
                 </h3>
-                <p class="mt-2 text-sm text-text-muted line-clamp-2">
-                  {relatedPost.data.description}
-                </p>
               </article>
             </a>
           ))}
