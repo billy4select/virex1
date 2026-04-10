@@ -24,38 +24,17 @@ const { Content } = await render(post);
 const seoTitle = `${post.data.title} - ${siteConfig.name}`;
 const displayTitle = post.data.title;
 
-// --- 邏輯處理：計算 相關文章、上一篇、下一篇 ---
+// --- 邏輯處理：計算 上一篇、下一篇 ---
 const allPosts = await getCollection('blog', ({ data }: { data: BlogPost['data'] }) => !data.draft);
 const sortedPosts = allPosts.sort(
   (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
 );
 
-// 找到目前文章的索引位置
 const currentIndex = sortedPosts.findIndex((p) => p.id === post.id);
 
-// 取得上一篇與下一篇（按時間排序）
-// 因為是降序排，索引值較小的是「新文章(Next)」，較大的是「舊文章(Prev)」
+// 索引值較小的是「新文章(Next)」，較大的是「舊文章(Prev)」
 const nextPost = currentIndex > 0 ? sortedPosts[currentIndex - 1] : null;
 const prevPost = currentIndex < sortedPosts.length - 1 ? sortedPosts[currentIndex + 1] : null;
-
-// 相關推薦邏輯
-interface RelatedPostWithScore {
-  post: BlogPost;
-  sharedTags: number;
-}
-
-const relatedPosts: BlogPost[] = allPosts
-  .filter((p: BlogPost) => p.id !== post.id)
-  .map(
-    (p: BlogPost): RelatedPostWithScore => ({
-      post: p,
-      sharedTags: p.data.tags.filter((tag: string) => post.data.tags.includes(tag)).length,
-    })
-  )
-  .filter((p: RelatedPostWithScore) => p.sharedTags > 0)
-  .sort((a, b) => b.sharedTags - a.sharedTags || b.post.data.publishedDate.getTime() - a.post.data.publishedDate.getTime())
-  .slice(0, 3)
-  .map((p) => p.post);
 ---
 
 <BlogLayout
@@ -70,7 +49,7 @@ const relatedPosts: BlogPost[] = allPosts
 >
   <Content slot="content" />
 
-  <nav class="mt-16 py-8 border-t border-b border-border flex flex-col sm:flex-row justify-between gap-8">
+  <nav class="mt-16 py-8 border-t border-border flex flex-col sm:flex-row justify-between gap-8">
     <div class="flex-1">
       {prevPost && (
         <a href={`/blog/${prevPost.id}`} class="group block">
@@ -97,30 +76,4 @@ const relatedPosts: BlogPost[] = allPosts
       )}
     </div>
   </nav>
-
-  {
-    relatedPosts.length > 0 && (
-      <aside class="mt-12">
-        <h2 class="text-2xl font-bold text-text mb-8">您可能也會感興趣...</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {relatedPosts.map((relatedPost) => (
-            <a href={`/blog/${relatedPost.id}`} class="group block">
-              <article class="h-full p-4 rounded-lg border border-border hover:border-primary transition-all hover:shadow-md">
-                <div class="text-xs text-text-muted mb-2">
-                  {relatedPost.data.publishedDate.toLocaleDateString('zh-TW', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                  })}
-                </div>
-                <h3 class="font-semibold text-text group-hover:text-primary transition-colors line-clamp-2">
-                  {relatedPost.data.title}
-                </h3>
-              </article>
-            </a>
-          ))}
-        </div>
-      </aside>
-    )
-  }
 </BlogLayout>
