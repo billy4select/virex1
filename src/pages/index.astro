@@ -2,9 +2,9 @@
 /**
  * Index Page - 比利陳個人品牌精簡版
  * 優化重點：
- * 1. 強化 Logo 視覺份量 (lg 尺寸與對比度優化)
- * 2. 徹底去化軟體訂閱感，轉為個人著作展示
- * 3. 修正本地 SVG 圖示路徑
+ * 1. 強化標題權重：解決「擅長運用頂尖 AI 工具...」視覺比重過輕的問題。
+ * 2. 視覺份量提升：加大 Logo 尺寸並優化灰階對比度。
+ * 3. 個人著作化：徹底去化軟體訂閱感。
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
@@ -61,7 +61,7 @@ const bentoItems = [
   },
 ];
 
-/** 書籍區塊：作品集化配置 */
+/** 書籍區塊：個人著作集配置 */
 const ebookCollections = [
   {
     name: '《AI時代職場生存法則》',
@@ -69,11 +69,7 @@ const ebookCollections = [
     monthlyPrice: null, 
     price: '', 
     customPrice: '核心著作', 
-    features: [
-      'AI 浪潮下的自我定位',
-      '建立個人知識資產',
-      '不可替代的實戰練習'
-    ],
+    features: ['AI 浪潮下的自我定位', '建立個人知識資產', '不可替代的實戰練習'],
     cta: { label: '立即前往閱讀', href: 'https://portaly.cc/billyselect4/product/jLrib0ZgLmXWs2WOTiy8' },
   },
   {
@@ -83,11 +79,7 @@ const ebookCollections = [
     price: '',
     customPrice: '實戰指南',
     highlighted: true, 
-    features: [
-      '零基礎經營策略',
-      '個人品牌商業化路徑',
-      '真實案例深度拆解'
-    ],
+    features: ['零基礎經營策略', '個人品牌商業化路徑', '真實案例深度拆解'],
     cta: { label: '查看書籍詳情', href: 'https://portaly.cc/billyselect4/product/ioeupgO66jK7vB24yJzY' },
   },
   {
@@ -96,11 +88,7 @@ const ebookCollections = [
     monthlyPrice: null,
     price: '',
     customPrice: '系列彙整',
-    features: [
-      '《流量騙局》真相拆解',
-      '《人人都做得到的知識變現》',
-      '《寫給大家的行銷書》'
-    ],
+    features: ['《流量騙局》真相拆解', '《知識變現》', '《寫給大家的行銷書》'],
     cta: { label: '瀏覽所有作品', href: 'https://portaly.cc/billyselect4' },
   },
 ];
@@ -115,20 +103,22 @@ const ebookCollections = [
     secondaryCTA={{ label: '訂閱電子報', href: 'https://billy4select.kit.com/profile/posts' }}
   />
 
-  <LogoCloud
-    title="讓我們運用頂尖 AI 工具提升行銷效率"
-    logos={[
-      { name: 'Notion', src: '/notion-icon.svg' },
-      { name: 'ChatGPT', src: '/openai-icon.svg' }, 
-      { name: 'Claude', src: '/claude-ai-icon.svg' },
-      { name: 'Gemini', src: '/google-gemini-icon.svg' },
-      { name: 'NotebookLM', src: '/notebooklm-icon.svg' },
-      { name: 'Canva', src: '/canva-icon.svg' },
-      { name: 'Grok', src: '/grok-icon.svg' },
-    ]}
-    grayscale={true} 
-    logoSize="lg" 
-  />
+  <div class="logo-section-wrapper">
+    <LogoCloud
+      title="運用頂尖 AI 工具提升行銷效率"
+      logos={[
+        { name: 'Notion', src: '/notion-icon.svg' },
+        { name: 'ChatGPT', src: '/openai-icon.svg' }, 
+        { name: 'Claude', src: '/claude-ai-icon.svg' },
+        { name: 'Gemini', src: '/google-gemini-icon.svg' },
+        { name: 'NotebookLM', src: '/notebooklm-icon.svg' },
+        { name: 'Canva', src: '/canva-icon.svg' },
+        { name: 'Grok', src: '/grok-icon.svg' },
+      ]}
+      grayscale={true} 
+      logoSize="lg" 
+    />
+  </div>
 
   <BentoGrid
     title="深度文章：掌握行銷邏輯"
@@ -171,37 +161,40 @@ const ebookCollections = [
 </MarketingLayout>
 
 <style is:global>
-  /* 強化 Logo 視覺的存在感與專業度 */
-  .logo-cloud {
-    padding-top: 2rem !important; /* 縮小與 Hero 的間距，視覺更緊湊 */
-    padding-bottom: 5rem !important;
+  /** * 視覺強化：解決標題比重不足問題 
+   */
+  .logo-section-wrapper {
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.015));
+    padding: 2rem 0 4rem 0;
   }
 
+  /* 針對 LogoCloud 標題的強制強化 */
   .logo-cloud h2 {
-    font-size: 0.95rem !important;
-    font-weight: 500 !important;
-    letter-spacing: 0.05em;
-    opacity: 0.8;
-    margin-bottom: 3rem !important;
-  }
-
-  .logo-cloud img {
-    /* 調整濾鏡：增加對比度與降低亮度，讓黑白圖示更紮實 */
-    filter: grayscale(100%) contrast(1.1) brightness(0.8) !important;
-    opacity: 0.8 !important;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  /* 滑鼠懸停效果：恢復顏色並微浮 */
-  .logo-cloud img:hover {
-    filter: grayscale(0%) contrast(1) brightness(1) !important;
+    font-size: 1.15rem !important;      /* 放大字體 */
+    font-weight: 700 !important;        /* 極粗體 */
+    color: #1a1a1a !important;          /* 深度黑色，拒絕灰感 */
+    letter-spacing: 0.12em !important;  /* 拉開字距增加高級感 */
+    margin-bottom: 3.5rem !important;    /* 增加標題與圖示間的呼吸空間 */
     opacity: 1 !important;
-    transform: translateY(-4px);
   }
 
-  /* 隱藏 PricingTable 可能殘留的訂閱切換 UI */
+  /* 針對 Logo 圖示的強制強化 */
+  .logo-cloud img {
+    filter: grayscale(100%) brightness(0.7) contrast(1.1) !important;
+    opacity: 0.85 !important;
+    max-height: 52px !important;        /* 稍微加大 Logo 物理高度 */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .logo-cloud img:hover {
+    filter: grayscale(0%) brightness(1) !important;
+    opacity: 1 !important;
+    transform: scale(1.1) translateY(-5px);
+  }
+
+  /* 移除 PricingTable 多餘的訂閱切換 UI */
   .pricing-switcher, 
-  [data-period="annual"] span,
+  [data-period="annual"], 
   .pricing-toggle-btn {
     display: none !important;
   }
