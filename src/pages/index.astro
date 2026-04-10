@@ -1,10 +1,9 @@
 ---
 /**
  * Index Page - 比利陳個人品牌
- * 更新重點：
- * 1. 串接真實讀者見證：自動從 src/content/testimonials 抓取留言。
- * 2. 標題視覺重塑：強化「運用頂尖 AI 工具...」的權重，解決比重過輕問題。
- * 3. 著作集模組化：移除所有軟體訂閱相關字眼，轉為專業著作展示。
+ * 修改重點：
+ * 1. 著作集、讀者見證：僅在電腦版顯示 (md:block)，手機版隱藏。
+ * 2. 電子報：全裝置保留，確保手機用戶也能訂閱。
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
@@ -131,30 +130,40 @@ const ebookCollections = [
     items={bentoItems}
   />
 
-  <PricingTable
-    title="個人著作與實戰指南"
-    subtitle="將經驗轉化為系統化的知識資產"
-    plans={ebookCollections}
-    background="muted"
-  />
+  <div class="hidden md:block">
+    <PricingTable
+      title="個人著作與實戰指南"
+      subtitle="將經驗轉化為系統化的知識資產"
+      plans={ebookCollections}
+      background="muted"
+    />
+  </div>
 
   {
     sortedTestimonials.length > 0 && (
-      <TestimonialsSection
-        title="讀者與夥伴的回饋"
-        subtitle="真實的聲音，是持續創作的動力"
-        background="default"
-        limit={4}
-        testimonials={sortedTestimonials.map((t) => ({
-          quote: t.data.quote,
-          author: t.data.author,
-          role: t.data.role,
-          company: t.data.company,
-          avatar: t.data.avatar,
-        }))}
-      />
+      <div class="hidden md:block">
+        <TestimonialsSection
+          title="讀者與夥伴的回饋"
+          subtitle="真實的聲音，是持續創作的動力"
+          background="default"
+          limit={4}
+          testimonials={sortedTestimonials.map((t) => ({
+            quote: t.data.quote,
+            author: t.data.author,
+            role: t.data.role,
+            company: t.data.company,
+            avatar: t.data.avatar,
+          }))}
+        />
+      </div>
     )
   }
+
+  <CTA
+    title="準備好開始進階了嗎？"
+    description="現在就加入社群，讓我們一起在 AI 時代保持領先。"
+    action={{ label: '立即加入 Line 群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw' }}
+  />
 
   <Newsletter 
     kitUrl="https://billy4select.kit.com/profile"
