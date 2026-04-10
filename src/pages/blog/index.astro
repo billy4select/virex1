@@ -6,37 +6,33 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import { siteConfig } from '@/config';
 import { calculateReadingTime } from '@/lib/utils';
 
-type BlogPost = CollectionEntry<'blog'>;
+export async function getStaticPaths({ paginate }: { paginate: any }) {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  const sortedPosts = posts.sort(
+    (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
+  );
+  return paginate(sortedPosts, { pageSize: 6 });
+}
 
-const POSTS_PER_PAGE = 6;
+const { page } = Astro.props;
+const { data: paginatedPosts } = page;
 
-const posts = await getCollection('blog', ({ data }: { data: BlogPost['data'] }) => !data.draft);
-const sortedPosts = [...posts].sort(
-  (a: BlogPost, b: BlogPost) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
-);
+// 獲取所有標籤用於篩選列
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags))].sort();
 
-// Get current page from URL
-const currentPage = 1;
-const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
-const paginatedPosts: BlogPost[] = sortedPosts.slice(0, POSTS_PER_PAGE);
-
-// Get all unique tags
-const allTags = [...new Set(posts.flatMap((post: BlogPost) => post.data.tags))].sort();
-
-// Helper to get typed tags
 const getTypedTags = (tags: string[]) => tags.slice(0, 3);
 ---
 
 <MarketingLayout
-  title={`Blog - ${siteConfig.name}`}
-  description={`這是 ${siteConfig.name} 的官方部落格，分享最新資訊與心得。`} 
+  title={`Blog - Page ${page.currentPage} - ${siteConfig.name}`}
+  description={`這是 ${siteConfig.name} 的官方部落格，第 ${page.currentPage} 頁。`} 
 >
   <section class="py-section">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h1 class="text-4xl sm:text-5xl font-bold text-text">Blog</h1>
         <p class="mt-4 text-lg text-text-muted max-w-2xl mx-auto">
-          {/* 這裡已經拿掉了那句英文，你可以換成中文或保持空白 */}
           分享行銷心得、AI 工具應用與自媒體經營筆記。
         </p>
       </div>
@@ -48,7 +44,7 @@ const getTypedTags = (tags: string[]) => tags.slice(0, 3);
               <span class="text-sm font-medium text-text-muted mr-2">標籤篩選：</span>
               <a
                 href="/blog"
-                class="px-3 py-1.5 text-sm font-medium rounded-md bg-primary text-white"
+                class="px-3 py-1.5 text-sm font-medium rounded-md bg-surface text-text-muted hover:bg-primary/10 hover:text-primary transition-colors"
               >
                 全部
               </a>
@@ -67,22 +63,17 @@ const getTypedTags = (tags: string[]) => tags.slice(0, 3);
 
       <div class="space-y-10">
         {
-          paginatedPosts.map((post) => (
+          paginatedPosts.map((post: any) => (
             <article class="group">
               <a href={`/blog/${post.id}`} class="block">
-                {/* 1. 這裡的 flex col/row 和 gap-6 可以保留，或者如果你希望完全通欄，可以改成簡單的 div */}
-                <div class="flex flex-col sm:flex-row gap-6">
-                  
-                  {/* --- 圖片區塊已完全移除 --- */}
-
-                  {/* 2. 這裡原本有 'flex-1'，現在依然保留，它會讓文字區塊自動填滿空間 */}
+                {/* 移除圖片區塊，僅保留文字內容容器 */}
+                <div class="flex flex-col gap-6">
                   <div class="flex-1">
                     <div class="flex flex-wrap items-center gap-3 text-sm text-text-muted mb-2">
                       <span>
                         {post.data.publishedDate.toLocaleDateString('zh-TW', {
                           year: 'numeric',
                           month: 'long',
-                          day: 'numeric',
                           day: 'numeric',
                         })}
                       </span>
@@ -95,7 +86,7 @@ const getTypedTags = (tags: string[]) => tags.slice(0, 3);
                     <p class="mt-2 text-text-muted line-clamp-2">{post.data.description}</p>
                     {post.data.tags.length > 0 && (
                       <div class="flex flex-wrap gap-2 mt-3">
-                        {getTypedTags(post.data.tags).map((tag) => (
+                        {getTypedTags(post.data.tags).map((tag: string) => (
                           <span class="px-2 py-0.5 text-xs font-medium bg-surface text-text-muted rounded">
                             {tag}
                           </span>
@@ -110,15 +101,11 @@ const getTypedTags = (tags: string[]) => tags.slice(0, 3);
         }
       </div>
 
-      {
-        sortedPosts.length === 0 && (
-          <div class="text-center py-12">
-            <p class="text-text-muted">目前還沒有文章，敬請期待！</p>
-          </div>
-        )
-      }
-
-      <Pagination currentPage={currentPage} totalPages={totalPages} basePath="/blog" />
+      <Pagination 
+        currentPage={page.currentPage} 
+        totalPages={page.lastPage} 
+        basePath="/blog" 
+      />
     </div>
   </section>
 </MarketingLayout>
