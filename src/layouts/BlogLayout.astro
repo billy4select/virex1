@@ -1,124 +1,106 @@
 ---
-import MarketingLayout from '@/layouts/MarketingLayout.astro';
-import { getCollection, type CollectionEntry } from 'astro:content';
-import { siteConfig } from '@/config';
-import { calculateReadingTime } from '@/lib/utils';
+import MarketingLayout from "./MarketingLayout.astro";
+import { siteConfig } from "@/config";
+import { calculateReadingTime } from "@/lib/utils";
 
-export async function getStaticPaths() {
-  // 1. 取得所有非草稿文章
-  const posts = await getCollection('blog', ({ data }) => !data.draft);
-  
-  // 2. 提取標籤並進行「地毯式」清理
-  const allTags = [
-    ...new Set(
-      posts.flatMap((post) => {
-        const tags = post.data.tags;
-        // 如果 tags 是陣列，過濾掉非字串或空字串
-        if (Array.isArray(tags)) {
-          return tags.filter(t => typeof t === 'string' && t.trim().length > 0);
-        }
-        // 如果 tags 根本不是陣列（例如是單一字串或 null），強制轉為有效陣列或排除
-        if (typeof tags === 'string' && tags.trim().length > 0) {
-          return [tags.trim()];
-        }
-        return [];
-      })
-    )
-  ].sort();
-
-  // 3. 核心關鍵：如果過濾完發現有「空字串」混進去，這裡直接殺掉
-  const cleanTags = allTags.filter(tag => tag && tag !== "");
-
-  // 如果完全沒有標籤，回傳空路徑避免崩潰
-  if (cleanTags.length === 0) return [];
-
-  return cleanTags.map((tag) => ({
-    params: { tag: String(tag) }, // 強制轉為字串
-    props: {
-      posts: posts
-        .filter((post) => {
-          const t = post.data.tags;
-          return Array.isArray(t) ? t.includes(tag) : t === tag;
-        })
-        .sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()),
-    },
-  }));
+// 定義組件傳入參數的類型
+interface Props {
+  title: string;
+  description?: string;
+  publishedDate?: Date;
+  updatedDate?: Date;
+  tags?: string[];
+  image?: string;
 }
 
-const { tag } = Astro.params;
-const { posts } = Astro.props;
+// 取得參數並設定預設值，避免未定義導致崩潰
+const { 
+  title, 
+  description = siteConfig.description, 
+  publishedDate, 
+  tags = [] 
+} = Astro.props;
 
-// 同樣的邏輯用於側邊欄標籤列表
-const allPosts = await getCollection('blog', ({ data }) => !data.draft);
-const displayTags = [...new Set(allPosts.flatMap((p) => {
-  const t = p.data.tags;
-  return Array.isArray(t) ? t : (t ? [t] : []);
-}))].filter(t => typeof t === 'string' && t.trim().length > 0).sort();
+// 格式化日期顯示
+const formattedDate = publishedDate
+  ? publishedDate.toLocaleDateString("zh-TW", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })
+  : "";
+
+// 取得內容計算閱讀時間（若無內容則預設 1）
+const readingTime = calculateReadingTime(Astro.slots.has('default') ? "content" : "");
 ---
 
-<MarketingLayout
-  title={`標籤：${tag} - ${siteConfig.name}`}
-  description={`瀏覽所有關於 ${tag} 的文章。`}
->
-  <section class="py-section">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<MarketingLayout title={`${title} - ${siteConfig.name}`} description={description}>
+  <article class="py-section">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center mb-12">
-        <a href="/blog" class="text-sm font-medium text-primary hover:underline mb-4 inline-block">
-          ← 返回所有文章
-        </a>
-        <h1 class="text-4xl sm:text-5xl font-bold text-text">
-          標籤："{tag}"
-        </h1>
-        <p class="mt-4 text-text-muted">找到 {posts.length} 篇文章</p>
-      </div>
-
-      <div class="mb-10">
-        <div class="flex flex-wrap items-center gap-2">
-          <span class="text-sm font-medium text-text-muted mr-2">標籤篩選：</span>
-          <a href="/blog" class="px-3 py-1.5 text-sm font-medium rounded-md bg-surface text-text-muted hover:bg-primary/10 transition-colors">全部</a>
-          {displayTags.map((t) => (
-            <a
-              href={`/blog/tag/${t}`}
-              class={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
-                t === tag ? 'bg-primary text-white' : 'bg-surface text-text-muted hover:bg-primary/10'
-              }`}
-            >
-              {t}
-            </a>
-          ))}
+      <header class="mb-12 text-center">
+        <div class="flex flex-wrap justify-center items-center gap-3 text-sm text-text-muted mb-4">
+          {formattedDate && <time datetime={publishedDate?.toISOString()}>{formattedDate}</time>}
+          {formattedDate && <span>·</span>}
+          <span>約 {readingTime} 分鐘閱讀</span>
         </div>
+        
+        <h1 class="text-4xl sm:text-5xl font-bold text-text leading-tight mb-6">
+          {title}
+        </h1>
+
+        {tags.length > 0 && (
+          <div class="flex flex-wrap justify-center gap-2 mt-4">
+            {tags.filter(tag => tag.trim() !== "").map((tag) => (
+              <a
+                href={`/blog/tag/${tag}`}
+                class="px-3 py-1 text-xs font-medium rounded-full bg-surface text-text-muted hover:bg-primary hover:text-white transition-colors border border-border"
+              >
+                #{tag}
+              </a>
+            ))}
+          </div>
+        )}
+      </header>
+
+      <hr class="border-border mb-12" />
+
+      <div class="prose prose-virex max-w-none">
+        <slot />
       </div>
 
-      <div class="space-y-10">
-        {posts.map((post) => (
-          <article class="group border-b border-border pb-10 last:border-0">
-            <a href={`/blog/${post.id}`} class="block">
-              <div class="flex flex-col gap-4">
-                <div class="flex flex-wrap items-center gap-3 text-sm text-text-muted">
-                  <span>
-                    {post.data.publishedDate.toLocaleDateString('zh-TW', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric',
-                    })}
-                  </span>
-                  <span>·</span>
-                  <span>閱讀時間 {calculateReadingTime(post.body || '')} 分鐘</span>
-                </div>
-                
-                <h2 class="text-2xl font-bold text-text group-hover:text-primary transition-colors leading-snug">
-                  {post.data.title}
-                </h2>
-                
-                <p class="text-text-muted line-clamp-3 leading-relaxed">
-                  {post.data.description}
-                </p>
-              </div>
-            </a>
-          </article>
-        ))}
-      </div>
+      <footer class="mt-16 pt-8 border-t border-border">
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-6">
+          <a
+            href="/blog"
+            class="text-primary font-medium hover:underline inline-flex items-center gap-2"
+          >
+            ← 返回文章列表
+          </a>
+          
+          <button 
+            onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+            class="text-sm text-text-muted hover:text-primary transition-colors"
+          >
+            回到頂部 ↑
+          </button>
+        </div>
+      </footer>
     </div>
-  </section>
+  </article>
 </MarketingLayout>
+
+<style is:global>
+  /* 針對文章內文字距與行高的微調，提升中文閱讀體驗 */
+  .prose-virex {
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+  }
+  .prose-virex p {
+    margin-bottom: 1.5em;
+  }
+  .prose-virex h2 {
+    margin-top: 2em;
+    font-weight: 700;
+  }
+</style>
