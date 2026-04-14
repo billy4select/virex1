@@ -7,7 +7,6 @@ import { calculateReadingTime } from '@/lib/utils';
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
   
-  // 【修正點 1】加上嚴格過濾，確保標籤不是 null、undefined 或空字串
   const allTags = [...new Set(posts.flatMap((post) => post.data.tags || []))]
     .map(tag => String(tag).trim())
     .filter(tag => tag.length > 0);
@@ -25,7 +24,6 @@ export async function getStaticPaths() {
 const { tag } = Astro.params;
 const { posts } = Astro.props;
 
-// 【修正點 2】篩選列也要同步過濾，避免出現點不下去的空白標籤
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
   .map(t => String(t).trim())
@@ -60,4 +58,42 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
             <a
               href={`/blog/tag/${t}`}
               class={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
-                t === tag ? 'bg-primary text-white' : 'bg-surface text-text-muted
+                t === tag ? 'bg-primary text-white' : 'bg-surface text-text-muted hover:bg-primary/10'
+              }`}
+            >
+              {t}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="space-y-10">
+        {posts.map((post) => (
+          <article class="group border-b border-border pb-10 last:border-0">
+            <a href={`/blog/${post.id}`} class="block">
+              <div class="flex flex-col gap-4">
+                <div class="flex flex-wrap items-center gap-3 text-sm text-text-muted">
+                  <span>
+                    {post.data.publishedDate.toLocaleDateString('zh-TW', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </span>
+                  <span>·</span>
+                  <span>閱讀時間 {calculateReadingTime(post.body || '')} 分鐘</span>
+                </div>
+                <h2 class="text-2xl font-bold text-text group-hover:text-primary transition-colors leading-snug">
+                  {post.data.title}
+                </h2>
+                <p class="text-text-muted line-clamp-3 leading-relaxed">
+                  {post.data.description}
+                </p>
+              </div>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</MarketingLayout>
