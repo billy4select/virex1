@@ -6,13 +6,17 @@ import { calculateReadingTime } from '@/lib/utils';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
-  const allTags = [...new Set(posts.flatMap((post) => post.data.tags))];
+  
+  // 【修正點 1】加上嚴格過濾，確保標籤不是 null、undefined 或空字串
+  const allTags = [...new Set(posts.flatMap((post) => post.data.tags || []))]
+    .map(tag => String(tag).trim())
+    .filter(tag => tag.length > 0);
 
   return allTags.map((tag) => ({
     params: { tag },
     props: {
       posts: posts
-        .filter((post) => post.data.tags.includes(tag))
+        .filter((post) => (post.data.tags || []).includes(tag))
         .sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()),
     },
   }));
@@ -21,9 +25,12 @@ export async function getStaticPaths() {
 const { tag } = Astro.params;
 const { posts } = Astro.props;
 
-// 獲取所有標籤用於篩選列顯示
+// 【修正點 2】篩選列也要同步過濾，避免出現點不下去的空白標籤
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
-const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags))].sort();
+const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
+  .map(t => String(t).trim())
+  .filter(t => t.length > 0)
+  .sort();
 ---
 
 <MarketingLayout
@@ -53,42 +60,4 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags))].sort();
             <a
               href={`/blog/tag/${t}`}
               class={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
-                t === tag ? 'bg-primary text-white' : 'bg-surface text-text-muted hover:bg-primary/10'
-              }`}
-            >
-              {t}
-            </a>
-          ))}
-        </div>
-      </div>
-
-      <div class="space-y-10">
-        {posts.map((post) => (
-          <article class="group">
-            <a href={`/blog/${post.id}`} class="block">
-              <div class="flex flex-col gap-6">
-                <div class="flex-1">
-                  <div class="flex flex-wrap items-center gap-3 text-sm text-text-muted mb-2">
-                    <span>
-                      {post.data.publishedDate.toLocaleDateString('zh-TW', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                      })}
-                    </span>
-                    <span>·</span>
-                    <span>閱讀時間 {calculateReadingTime(post.body || '')} 分鐘</span>
-                  </div>
-                  <h2 class="text-xl font-bold text-text group-hover:text-primary transition-colors">
-                    {post.data.title}
-                  </h2>
-                  <p class="mt-2 text-text-muted line-clamp-2">{post.data.description}</p>
-                </div>
-              </div>
-            </a>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-</MarketingLayout>
+                t === tag ? 'bg-primary text-white' : 'bg-surface text-text-muted
