@@ -4,21 +4,27 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import { siteConfig } from '@/config';
 import { calculateReadingTime } from '@/lib/utils';
 
-type BlogPost = CollectionEntry<'blog'>;
-
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
   
-  // 核心修復：過濾掉空字串、純空格或 null 的標籤，避免 Cloudflare Build 失敗
-  const allTags = [...new Set(posts.flatMap((post) => post.data.tags || []))]
-    .filter(tag => tag && typeof tag === 'string' && tag.trim() !== '')
+  // 1. 提取所有標籤，並確保它是一個陣列 (避免有些文章忘記寫 tags)
+  const rawTags = posts.flatMap((post) => post.data.tags || []);
+  
+  // 2. 嚴格過濾：必須是字串、長度大於 0、不是純空格
+  const allTags = [...new Set(rawTags)]
+    .filter(tag => {
+      return typeof tag === 'string' && tag.trim().length > 0;
+    })
     .sort();
+
+  // 如果最後沒有任何有效標籤，回傳空陣列避免 Astro 崩潰
+  if (allTags.length === 0) return [];
 
   return allTags.map((tag) => ({
     params: { tag },
     props: {
       posts: posts
-        .filter((post) => post.data.tags && post.data.tags.includes(tag))
+        .filter((post) => (post.data.tags || []).includes(tag))
         .sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()),
     },
   }));
@@ -27,10 +33,10 @@ export async function getStaticPaths() {
 const { tag } = Astro.params;
 const { posts } = Astro.props;
 
-// 獲取所有有效標籤用於導覽列顯示
+// 同步過濾導覽列標籤
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
-  .filter(t => t && typeof t === 'string' && t.trim() !== '')
+  .filter(t => typeof t === 'string' && t.trim().length > 0)
   .sort();
 ---
 
@@ -40,7 +46,6 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
 >
   <section class="py-section">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      
       <div class="text-center mb-12">
         <a href="/blog" class="text-sm font-medium text-primary hover:underline mb-4 inline-block">
           ← 返回所有文章
@@ -48,9 +53,6 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
         <h1 class="text-4xl sm:text-5xl font-bold text-text">
           標籤："{tag}"
         </h1>
-        <p class="mt-4 text-text-muted">
-          找到 {posts.length} 篇文章
-        </p>
       </div>
 
       <div class="mb-10">
@@ -86,11 +88,9 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
                   <span>·</span>
                   <span>閱讀時間 {calculateReadingTime(post.body || '')} 分鐘</span>
                 </div>
-                
                 <h2 class="text-2xl font-bold text-text group-hover:text-primary transition-colors leading-snug">
                   {post.data.title}
                 </h2>
-                
                 <p class="text-text-muted line-clamp-3 leading-relaxed">
                   {post.data.description}
                 </p>
