@@ -35,15 +35,18 @@ const formattedDate = formatDate(publishedDate, {
   <article class="py-section">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <nav class="flex items-center gap-2 text-sm text-text-muted mb-6" aria-label="Breadcrumb">
-        <a href="/" class="hover:text-primary transition-colors flex items-center gap-1">
-          <Icon name="lucide:home" class="w-3.5 h-3.5" /> 
-          首頁
-        </a>
-        <Icon name="lucide:chevron-right" class="w-4 h-4 opacity-50" />
-        <a href="/blog" class="hover:text-primary transition-colors">BLOG</a>
-        <Icon name="lucide:chevron-right" class="w-4 h-4 opacity-50" />
-        <span class="text-text-muted/60 truncate max-w-[150px] sm:max-w-none">
+      <nav class="flex items-center text-sm text-text-muted mb-6 w-full" aria-label="Breadcrumb">
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <a href="/" class="hover:text-primary transition-colors flex items-center gap-1">
+            <Icon name="lucide:home" class="w-3.5 h-3.5" /> 
+            首頁
+          </a>
+          <Icon name="lucide:chevron-right" class="w-4 h-4 opacity-50" />
+          <a href="/blog" class="hover:text-primary transition-colors">BLOG</a>
+          <Icon name="lucide:chevron-right" class="w-4 h-4 opacity-50" />
+        </div>
+        
+        <span class="text-text-muted/60 truncate font-medium ml-2 flex-1 min-w-0">
           {title}
         </span>
       </nav>
