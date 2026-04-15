@@ -33,7 +33,7 @@ const displayTitle = title.split(/ [\|\-] /)[0];
   <section class="bg-[#FF6A00] border-b border-black/10 py-8 md:py-16">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <nav class="flex items-center text-xs sm:text-sm text-white/70 mb-6 w-full font-medium" aria-label="Breadcrumb">
+      <nav class="flex items-center text-xs sm:text-sm text-white/80 mb-6 w-full font-medium" aria-label="Breadcrumb">
         <div class="flex items-center gap-1 sm:gap-2 flex-shrink-0">
           <a href="/" class="hover:text-white transition-colors flex items-center gap-1">
             <Icon name="lucide:home" class="w-3.5 h-3.5" /> 首頁
@@ -42,16 +42,16 @@ const displayTitle = title.split(/ [\|\-] /)[0];
           <a href="/blog" class="hover:text-white transition-colors">BLOG</a>
           <Icon name="lucide:chevron-right" class="w-4 h-4 opacity-40" />
         </div>
-        <span class="truncate ml-2 flex-1 min-w-0 text-white/90">{displayTitle}</span>
+        <span class="truncate ml-2 flex-1 min-w-0 text-white">{displayTitle}</span>
       </nav>
 
       <header>
-        <h1 class="text-2xl md:text-4xl font-extrabold text-slate-950 mb-4 leading-tight">
+        <h1 class="text-2xl md:text-4xl font-extrabold text-white mb-4 leading-tight">
           {displayTitle}
         </h1>
 
         <div class="flex flex-col gap-4">
-          <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] md:text-sm text-slate-900/80 font-medium">
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] md:text-sm text-white/90 font-medium">
             <span class="flex items-center gap-1"><Icon name="lucide:user" class="w-3.5 h-3.5" />{author}</span>
             <span class="flex items-center gap-1"><Icon name="lucide:calendar" class="w-3.5 h-3.5" />{formattedDate}</span>
             <span class="flex items-center gap-1"><Icon name="lucide:clock" class="w-3.5 h-3.5" />{readingTime} 分鐘</span>
@@ -62,7 +62,7 @@ const displayTitle = title.split(/ [\|\-] /)[0];
               {tags.map((tag) => (
                 <a 
                   href={`/blog/tag/${tag}`}
-                  class="px-3 py-1 text-[11px] md:text-xs font-bold bg-white/20 border border-black/10 text-white rounded-full hover:bg-white/40 transition-all"
+                  class="px-3 py-1 text-[11px] md:text-xs font-bold bg-white/20 border border-white/20 text-white rounded-full hover:bg-white/40 transition-all"
                 >
                   #{tag}
                 </a>
@@ -86,15 +86,13 @@ const displayTitle = title.split(/ [\|\-] /)[0];
 </MarketingLayout>
 
 <style>
-  /* 全域樣式微調 */
   .prose {
     --tw-prose-headings: #0f172a;
-    --tw-prose-links: #FF6A00; /* 內文連結使用你的品牌橘色 */
+    --tw-prose-links: #FF6A00; 
   }
 
-  /* 深色模式下的文字與連結顏色最佳化 */
   :global(.dark) .prose {
-    --tw-prose-links: #FF8533; /* 深色模式下橘色略微調亮，增加可讀性 */
+    --tw-prose-links: #FF8533;
     --tw-prose-bold: #ffffff;
     --tw-prose-headings: #f8fafc;
   }
