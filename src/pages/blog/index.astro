@@ -15,7 +15,7 @@ const currentPage = 1;
 const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
 const paginatedPosts = sortedPosts.slice(0, POSTS_PER_PAGE);
 
-// 修正：過濾掉空值，避免出現空白圓點
+// 修正：過濾掉空值，並確保 allTags 存在
 const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
   .filter(tag => tag && tag.trim() !== "")
   .sort();
@@ -33,7 +33,10 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
         <span class="text-sm font-bold text-text-muted flex-shrink-0">標籤篩選：</span>
         
         <div class="relative flex-1 overflow-hidden">
-          <div class="flex flex-nowrap overflow-x-auto gap-2 pb-2 no-scrollbar scroll-smooth">
+          <div 
+            id="tag-container"
+            class="flex flex-nowrap overflow-x-auto gap-2 pb-2 no-scrollbar scroll-smooth cursor-grab active:cursor-grabbing select-none"
+          >
             <a 
               href="/blog" 
               class="px-4 py-1.5 text-sm font-medium rounded-full bg-primary text-white whitespace-nowrap shrink-0"
@@ -81,13 +84,49 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
   </section>
 </MarketingLayout>
 
+<script>
+  // 讓電腦版也能拖拽捲動標籤
+  const slider = document.getElementById('tag-container');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  if (slider) {
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      slider.classList.add('active');
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+    
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+    });
+    
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+    });
+    
+    slider.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 2; // 數字 2 代表拖拽速度
+      slider.scrollLeft = scrollLeft - walk;
+    });
+  }
+</script>
+
 <style>
-  /* 隱藏捲軸外觀，讓介面像 App 一樣乾淨 */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
   .no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  /* 避免拖拽時選選到文字 */
+  .select-none {
+    user-select: none;
   }
 </style>
