@@ -5,7 +5,6 @@ import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
 import { calculateReadingTime } from '@/lib/utils';
 
-// 數據抓取
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const sortedPosts = allPosts.sort(
   (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
@@ -23,59 +22,56 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
 
 <MarketingLayout title="Blog" description={siteConfig.description}>
   
-  <section class="bg-[#FFB800] border-b border-black py-10 md:py-16">
+  <section class="bg-[#FFB800] border-b border-black/5 py-10 md:py-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col gap-6">
-        <div>
-          <h1 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">Blog</h1>
-          <p class="mt-4 text-base md:text-lg text-slate-900 font-medium opacity-90">
-            分享行銷心得、AI 工具應用與自媒體經營筆記。
-          </p>
-        </div>
+      <div class="text-center mb-10">
+        <h1 class="text-4xl sm:text-5xl font-bold text-slate-900">Blog</h1>
+        <p class="mt-4 text-lg text-slate-800/80">分享行銷心得、AI 工具應用與自媒體經營筆記。</p>
+      </div>
 
-        <div class="flex items-center gap-2 mt-2">
-          <span class="text-sm font-bold text-slate-900 flex-shrink-0">標籤篩選：</span>
-          <div class="relative flex-1 overflow-hidden">
-            <div 
-              id="tag-container"
-              class="flex flex-nowrap overflow-x-auto gap-2 pb-2 no-scrollbar scroll-smooth cursor-grab active:cursor-grabbing select-none"
+      <div class="flex items-center gap-2">
+        <span class="text-sm font-bold text-slate-900 flex-shrink-0">標籤篩選：</span>
+        
+        <div class="relative flex-1 overflow-hidden">
+          <div 
+            id="tag-container"
+            class="flex flex-nowrap overflow-x-auto gap-2 pb-2 no-scrollbar scroll-smooth cursor-grab active:cursor-grabbing select-none"
+          >
+            <a 
+              href="/blog" 
+              class="px-4 py-1.5 text-sm font-medium rounded-full bg-black text-white whitespace-nowrap shrink-0"
             >
-              <a href="/blog" class="px-4 py-1.5 text-sm font-bold rounded-md bg-black text-white whitespace-nowrap shrink-0">全部</a>
-              {allTags.map((tag) => (
-                <a 
-                  href={`/blog/tag/${tag}`} 
-                  class="px-4 py-1.5 text-sm font-bold rounded-md bg-white/20 border border-black/10 text-slate-900 hover:bg-white/40 whitespace-nowrap shrink-0 transition-all"
-                >
-                  #{tag}
-                </a>
-              ))}
-            </div>
+              全部
+            </a>
+            {allTags.map((tag) => (
+              <a 
+                href={`/blog/tag/${tag}`} 
+                class="px-4 py-1.5 text-sm font-medium rounded-full bg-white/30 text-slate-900 hover:bg-white/50 whitespace-nowrap shrink-0 transition-colors border border-black/5"
+              >
+                {tag}
+              </a>
+            ))}
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-12 md:py-20 bg-white">
+  <section class="py-section">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid gap-16">
+      <div class="space-y-10">
         {paginatedPosts.map((post) => (
           <article class="group">
             <a href={`/blog/${post.id}`} class="block">
-              <div class="flex flex-col items-start gap-4">
-                <div class="flex items-center gap-3 text-xs font-bold text-slate-400 uppercase tracking-widest">
-                  <time>{post.data.publishedDate.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
-                  <span>/</span>
-                  <span>{calculateReadingTime(post.body || '')} MINS READ</span>
-                </div>
-                <h2 class="text-2xl md:text-3xl font-black text-slate-900 group-hover:text-[#FFB800] transition-colors leading-tight">
-                  {post.data.title}
-                </h2>
-                <p class="text-slate-600 text-base md:text-lg line-clamp-2 leading-relaxed max-w-2xl">
-                  {post.data.description}
-                </p>
-                <div class="mt-2 text-sm font-black border-b-2 border-black pb-0.5 group-hover:bg-[#FFB800] transition-all">
-                  READ ARTICLE →
+              <div class="flex flex-col gap-6">
+                <div class="flex-1">
+                  <div class="flex flex-wrap items-center gap-3 text-sm text-text-muted mb-2">
+                    <span>{post.data.publishedDate.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                    <span>·</span>
+                    <span>閱讀時間 {calculateReadingTime(post.body || '')} 分鐘</span>
+                  </div>
+                  <h2 class="text-xl font-bold text-text group-hover:text-primary transition-colors">{post.data.title}</h2>
+                  <p class="mt-2 text-text-muted line-clamp-2">{post.data.description}</p>
                 </div>
               </div>
             </a>
@@ -83,16 +79,17 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
         ))}
       </div>
 
-      <div class="mt-20">
-        <Pagination currentPage={currentPage} totalPages={totalPages} basePath="/blog" />
-      </div>
+      <Pagination 
+        currentPage={currentPage} 
+        totalPages={totalPages} 
+        basePath="/blog" 
+      />
     </div>
   </section>
-
 </MarketingLayout>
 
 <script>
-  // ... 同之前的拖拽腳本 (確保功能正常) ...
+  // 電腦版拖拽邏輯
   const slider = document.getElementById('tag-container');
   let isDown = false;
   let startX;
@@ -102,13 +99,17 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
   if (slider) {
     slider.addEventListener('mousedown', (e) => {
       isDown = true;
-      isDragging = false;
+      isDragging = false; 
       slider.style.cursor = 'grabbing';
       startX = e.pageX - slider.offsetLeft;
       scrollLeft = slider.scrollLeft;
     });
 
-    const end = () => { isDown = false; slider.style.cursor = 'grab'; };
+    const end = () => {
+      isDown = false;
+      slider.style.cursor = 'grab';
+    };
+
     slider.addEventListener('mouseleave', end);
     slider.addEventListener('mouseup', end);
 
@@ -116,6 +117,7 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
       if (!isDown) return;
       const x = e.pageX - slider.offsetLeft;
       const walk = (x - startX) * 2;
+      
       if (Math.abs(walk) > 5) {
         isDragging = true;
         e.preventDefault();
@@ -124,7 +126,10 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
     });
 
     slider.addEventListener('click', (e) => {
-      if (isDragging) { e.preventDefault(); isDragging = false; }
+      if (isDragging) {
+        e.preventDefault();
+        isDragging = false;
+      }
     }, true);
   }
 </script>
