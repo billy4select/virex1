@@ -17,25 +17,38 @@ const currentPage = 1;
 const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
 const paginatedPosts = sortedPosts.slice(0, POSTS_PER_PAGE);
 
-// 獲取標籤清單
-const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags))].sort();
+// --- 修正處：獲取標籤並過濾掉空值或無效字串 ---
+const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
+  .filter(tag => tag && tag.trim() !== "") // 確保標籤不是空的
+  .sort();
 ---
 
 <MarketingLayout title="Blog" description={siteConfig.description}>
   <section class="py-section">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h1 class="text-4xl sm:text-5xl font-bold text-text">Blog</h1>
+      <div class="text-center mb-8 md:mb-12"> <h1 class="text-4xl sm:text-5xl font-bold text-text">Blog</h1>
         <p class="mt-4 text-lg text-text-muted">分享行銷心得、AI 工具應用與自媒體經營筆記。</p>
       </div>
 
-      <div class="mb-10">
-        <div class="flex flex-wrap items-center gap-2">
-          <span class="text-sm font-medium text-text-muted mr-2">標籤篩選：</span>
-          <a href="/blog" class="px-3 py-1.5 text-sm font-medium rounded-md bg-primary text-white">全部</a>
-          {allTags.map((tag) => (
-            <a href={`/blog/tag/${tag}`} class="px-3 py-1.5 text-sm font-medium rounded-md bg-surface text-text-muted hover:text-primary transition-colors">{tag}</a>
-          ))}
+      <div class="mb-10 overflow-hidden">
+        <div class="flex items-center">
+          <span class="text-sm font-bold text-text-muted mr-3 flex-shrink-0">標籤篩選：</span>
+          <div class="flex flex-nowrap overflow-x-auto gap-2 pb-2 no-scrollbar">
+            <a 
+              href="/blog" 
+              class="px-4 py-1.5 text-sm font-medium rounded-full bg-primary text-white whitespace-nowrap"
+            >
+              全部
+            </a>
+            {allTags.map((tag) => (
+              <a 
+                href={`/blog/tag/${tag}`} 
+                class="px-4 py-1.5 text-sm font-medium rounded-full bg-surface text-text-muted hover:text-primary whitespace-nowrap transition-colors"
+              >
+                {tag}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -67,3 +80,14 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags))].sort();
     </div>
   </section>
 </MarketingLayout>
+
+<style>
+  /* 隱藏捲軸但保留捲動功能，讓視覺更乾淨 */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
