@@ -16,9 +16,22 @@ interface Props {
 const { title, description, publishedDate, author, image, tags = [], content } = Astro.props;
 const readingTime = calculateReadingTime(content);
 const formattedDate = formatDate(publishedDate, { year: 'numeric', month: 'long', day: 'numeric' });
+
+/** * 優化 1: 移除多餘標題文字
+ * 使用正則表達式切分字串，只取「 - 」或「 | 」之前的內容
+ */
+const displayTitle = title.split(/ [\|\-] /)[0]; 
 ---
 
-<MarketingLayout title={title} description={description} image={image} type="article" publishedDate={publishedDate} author={author} tags={tags}>
+<MarketingLayout 
+  title={title} 
+  description={description} 
+  image={image} 
+  type="article" 
+  publishedDate={publishedDate} 
+  author={author} 
+  tags={tags}
+>
   
   <section class="bg-[#FFB800] border-b border-black/5 py-8 md:py-16">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-slate-900">
@@ -33,17 +46,13 @@ const formattedDate = formatDate(publishedDate, { year: 'numeric', month: 'long'
           <a href="/blog" class="hover:text-black transition-colors">BLOG</a>
           <Icon name="lucide:chevron-right" class="w-4 h-4 opacity-40" />
         </div>
-        <span class="truncate ml-2 flex-1 min-w-0 opacity-60">{title}</span>
+        <span class="truncate ml-2 flex-1 min-w-0 opacity-60">{displayTitle}</span>
       </nav>
 
       <header>
         <h1 class="text-2xl md:text-4xl font-extrabold text-slate-900 mb-4 leading-tight">
-          {title}
+          {displayTitle}
         </h1>
-
-        <p class="text-base md:text-lg text-slate-800/80 mb-6 leading-relaxed line-clamp-2 md:line-clamp-none">
-          {description}
-        </p>
 
         <div class="flex flex-col gap-4">
           <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] md:text-sm text-slate-800/70 font-medium">
