@@ -2,13 +2,14 @@
 import BlogLayout from '@/layouts/BlogLayout.astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import { siteConfig } from '@/config';
+import { calculateReadingTime } from '@/lib/utils';
 
 type BlogPost = CollectionEntry<'blog'>;
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog', ({ data }) => !data.draft);
-  return posts.map((post) => ({
-    params: { id: post.id },
+  const posts = await getCollection('blog', ({ data }: { data: BlogPost['data'] }) => !data.draft);
+  return posts.map((post: BlogPost) => ({
+    params: { slug: post.id },
     props: { post },
   }));
 }
@@ -20,25 +21,33 @@ interface Props {
 const { post } = Astro.props;
 const { Content } = await render(post);
 
+const seoTitle = `${post.data.title} - ${siteConfig.name}`;
+const displayTitle = post.data.title;
+
 // --- 邏輯處理：計算 上一篇、下一篇 ---
-const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const allPosts = await getCollection('blog', ({ data }: { data: BlogPost['data'] }) => !data.draft);
 const sortedPosts = allPosts.sort(
   (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
 );
 
 const currentIndex = sortedPosts.findIndex((p) => p.id === post.id);
+
+// 索引值較小的是「新文章(Next)」，較大的是「舊文章(Prev)」
 const nextPost = currentIndex > 0 ? sortedPosts[currentIndex - 1] : null;
 const prevPost = currentIndex < sortedPosts.length - 1 ? sortedPosts[currentIndex + 1] : null;
 ---
 
 <BlogLayout
-  title={`${post.data.title} - ${siteConfig.name}`}
+  title={seoTitle}
+  displayTitle={displayTitle}
   description={post.data.description}
   publishedDate={post.data.publishedDate}
+  author={post.data.author}
   image={post.data.image}
   tags={post.data.tags}
+  content={post.body || ''}
 >
-  <Content />
+  <Content slot="content" />
 
   <nav class="mt-16 py-8 border-t border-border flex flex-col sm:flex-row justify-between gap-8">
     <div class="flex-1">
