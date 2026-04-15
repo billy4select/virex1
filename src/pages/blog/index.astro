@@ -5,17 +5,19 @@ import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
 import { calculateReadingTime } from '@/lib/utils';
 
+// 1. 獲取所有文章並排序
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const sortedPosts = allPosts.sort(
   (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
 );
 
+// 2. 分頁邏輯
 const POSTS_PER_PAGE = 6;
 const currentPage = 1;
 const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
 const paginatedPosts = sortedPosts.slice(0, POSTS_PER_PAGE);
 
-// 修正：過濾掉空值，並確保 allTags 存在
+// 3. 獲取標籤並過濾空值（解決空白圓點問題）
 const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
   .filter(tag => tag && tag.trim() !== "")
   .sort();
@@ -24,6 +26,7 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
 <MarketingLayout title="Blog" description={siteConfig.description}>
   <section class="py-section">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
       <div class="text-center mb-10">
         <h1 class="text-4xl sm:text-5xl font-bold text-text">Blog</h1>
         <p class="mt-4 text-lg text-text-muted">分享行銷心得、AI 工具應用與自媒體經營筆記。</p>
@@ -66,67 +69,4 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
                     <span>·</span>
                     <span>閱讀時間 {calculateReadingTime(post.body || '')} 分鐘</span>
                   </div>
-                  <h2 class="text-xl font-bold text-text group-hover:text-primary transition-colors">{post.data.title}</h2>
-                  <p class="mt-2 text-text-muted line-clamp-2">{post.data.description}</p>
-                </div>
-              </div>
-            </a>
-          </article>
-        ))}
-      </div>
-
-      <Pagination 
-        currentPage={currentPage} 
-        totalPages={totalPages} 
-        basePath="/blog" 
-      />
-    </div>
-  </section>
-</MarketingLayout>
-
-<script>
-  // 讓電腦版也能拖拽捲動標籤
-  const slider = document.getElementById('tag-container');
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  if (slider) {
-    slider.addEventListener('mousedown', (e) => {
-      isDown = true;
-      slider.classList.add('active');
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-    
-    slider.addEventListener('mouseleave', () => {
-      isDown = false;
-    });
-    
-    slider.addEventListener('mouseup', () => {
-      isDown = false;
-    });
-    
-    slider.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 2; // 數字 2 代表拖拽速度
-      slider.scrollLeft = scrollLeft - walk;
-    });
-  }
-</script>
-
-<style>
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  /* 避免拖拽時選選到文字 */
-  .select-none {
-    user-select: none;
-  }
-</style>
+                  <h
