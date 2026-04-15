@@ -15,22 +15,22 @@ const currentPage = 1;
 const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
 const paginatedPosts = sortedPosts.slice(0, POSTS_PER_PAGE);
 
+// 修正：過濾掉空值，並確保 allTags 存在
 const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
   .filter(tag => tag && tag.trim() !== "")
   .sort();
 ---
 
 <MarketingLayout title="Blog" description={siteConfig.description}>
-  
-  <section class="bg-[#FFB800] border-b border-black/5 py-10 md:py-16">
+  <section class="py-section">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
-        <h1 class="text-4xl sm:text-5xl font-bold text-slate-900">Blog</h1>
-        <p class="mt-4 text-lg text-slate-800/80">分享行銷心得、AI 工具應用與自媒體經營筆記。</p>
+        <h1 class="text-4xl sm:text-5xl font-bold text-text">Blog</h1>
+        <p class="mt-4 text-lg text-text-muted">分享行銷心得、AI 工具應用與自媒體經營筆記。</p>
       </div>
 
-      <div class="flex items-center gap-2">
-        <span class="text-sm font-bold text-slate-900 flex-shrink-0">標籤篩選：</span>
+      <div class="mb-10 flex items-center gap-2">
+        <span class="text-sm font-bold text-text-muted flex-shrink-0">標籤篩選：</span>
         
         <div class="relative flex-1 overflow-hidden">
           <div 
@@ -39,14 +39,14 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
           >
             <a 
               href="/blog" 
-              class="px-4 py-1.5 text-sm font-medium rounded-full bg-black text-white whitespace-nowrap shrink-0"
+              class="px-4 py-1.5 text-sm font-medium rounded-full bg-primary text-white whitespace-nowrap shrink-0"
             >
               全部
             </a>
             {allTags.map((tag) => (
               <a 
                 href={`/blog/tag/${tag}`} 
-                class="px-4 py-1.5 text-sm font-medium rounded-full bg-white/30 text-slate-900 hover:bg-white/50 whitespace-nowrap shrink-0 transition-colors border border-black/5"
+                class="px-4 py-1.5 text-sm font-medium rounded-full bg-surface text-text-muted hover:text-primary whitespace-nowrap shrink-0 transition-colors border border-transparent hover:border-primary/20"
               >
                 {tag}
               </a>
@@ -54,11 +54,7 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="py-section">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="space-y-10">
         {paginatedPosts.map((post) => (
           <article class="group">
@@ -89,53 +85,48 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
 </MarketingLayout>
 
 <script>
-  // 電腦版拖拽邏輯
+  // 讓電腦版也能拖拽捲動標籤
   const slider = document.getElementById('tag-container');
   let isDown = false;
   let startX;
   let scrollLeft;
-  let isDragging = false;
 
   if (slider) {
     slider.addEventListener('mousedown', (e) => {
       isDown = true;
-      isDragging = false; 
-      slider.style.cursor = 'grabbing';
+      slider.classList.add('active');
       startX = e.pageX - slider.offsetLeft;
       scrollLeft = slider.scrollLeft;
     });
-
-    const end = () => {
+    
+    slider.addEventListener('mouseleave', () => {
       isDown = false;
-      slider.style.cursor = 'grab';
-    };
-
-    slider.addEventListener('mouseleave', end);
-    slider.addEventListener('mouseup', end);
-
+    });
+    
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+    });
+    
     slider.addEventListener('mousemove', (e) => {
       if (!isDown) return;
+      e.preventDefault();
       const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 2;
-      
-      if (Math.abs(walk) > 5) {
-        isDragging = true;
-        e.preventDefault();
-        slider.scrollLeft = scrollLeft - walk;
-      }
+      const walk = (x - startX) * 2; // 數字 2 代表拖拽速度
+      slider.scrollLeft = scrollLeft - walk;
     });
-
-    slider.addEventListener('click', (e) => {
-      if (isDragging) {
-        e.preventDefault();
-        isDragging = false;
-      }
-    }, true);
   }
 </script>
 
 <style>
-  .no-scrollbar::-webkit-scrollbar { display: none; }
-  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-  #tag-container a { -webkit-user-drag: none; }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  /* 避免拖拽時選選到文字 */
+  .select-none {
+    user-select: none;
+  }
 </style>
