@@ -1,0 +1,43 @@
+---
+// src/components/Breadcrumbs.astro
+interface Props {
+  className?: string;
+}
+
+const { className = '' } = Astro.props;
+
+// 根據需求定義麵包屑路徑，這通常是固定的
+const breadcrumbs = [
+  { label: '首頁', href: '/' },
+  { label: 'Blog', href: '/blog' },
+  // 第三個項目通常是當前頁面，不需要 href，且可以動態傳入
+];
+---
+
+<nav aria-label="Breadcrumb" class={className}>
+  <ol class="flex items-center space-x-1 sm:space-x-3 list-none p-0 m-0 text-sm">
+    {breadcrumbs.map((crumb, index) => (
+      <li class="flex items-center">
+        {index > 0 && (
+          <span class="text-text-muted mx-1 sm:mx-2" aria-hidden="true">
+            /
+          </span>
+        )}
+        <a href={crumb.href} class="text-text-muted hover:text-primary transition-colors duration-200">
+          {crumb.label}
+        </a>
+      </li>
+    ))}
+    {/* 顯示當前頁面標題（不加連結） */}
+    {Astro.props.currentTitle && (
+        <li class="flex items-center">
+            <span class="text-text-muted mx-1 sm:mx-2" aria-hidden="true">
+                /
+            </span>
+            <span class="text-text font-medium truncate max-w-[200px]" aria-current="page">
+                {Astro.props.currentTitle}
+            </span>
+        </li>
+    )}
+  </ol>
+</nav>
