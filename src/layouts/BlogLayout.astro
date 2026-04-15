@@ -17,9 +17,6 @@ const { title, description, publishedDate, author, image, tags = [], content } =
 const readingTime = calculateReadingTime(content);
 const formattedDate = formatDate(publishedDate, { year: 'numeric', month: 'long', day: 'numeric' });
 
-/** * 優化標題顯示：
- * 使用正則表達式切分字串，只取「 - 」或「 | 」之前的內容
- */
 const displayTitle = title.split(/ [\|\-] /)[0]; 
 ---
 
@@ -34,13 +31,12 @@ const displayTitle = title.split(/ [\|\-] /)[0];
 >
   
   <section class="bg-[#FF6A00] border-b border-black/10 py-8 md:py-16">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-slate-900">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <nav class="flex items-center text-xs sm:text-sm text-white/70 mb-6 w-full font-medium" aria-label="Breadcrumb">
         <div class="flex items-center gap-1 sm:gap-2 flex-shrink-0">
           <a href="/" class="hover:text-white transition-colors flex items-center gap-1">
-            <Icon name="lucide:home" class="w-3.5 h-3.5" /> 
-            首頁
+            <Icon name="lucide:home" class="w-3.5 h-3.5" /> 首頁
           </a>
           <Icon name="lucide:chevron-right" class="w-4 h-4 opacity-40" />
           <a href="/blog" class="hover:text-white transition-colors">BLOG</a>
@@ -66,7 +62,7 @@ const displayTitle = title.split(/ [\|\-] /)[0];
               {tags.map((tag) => (
                 <a 
                   href={`/blog/tag/${tag}`}
-                  class="px-3 py-1 text-[11px] md:text-xs font-bold bg-white/20 border border-black/10 text-white rounded-full hover:bg-white/40 hover:scale-105 transition-all active:scale-95"
+                  class="px-3 py-1 text-[11px] md:text-xs font-bold bg-white/20 border border-black/10 text-white rounded-full hover:bg-white/40 transition-all"
                 >
                   #{tag}
                 </a>
@@ -78,9 +74,9 @@ const displayTitle = title.split(/ [\|\-] /)[0];
     </div>
   </section>
 
-  <article class="py-10 md:py-16 bg-white">
+  <article class="py-10 md:py-16">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="prose prose-slate prose-base md:prose-lg max-w-none">
+      <div class="prose prose-slate dark:prose-invert prose-base md:prose-lg max-w-none">
         <slot name="content" />
         <slot />
       </div>
@@ -90,9 +86,16 @@ const displayTitle = title.split(/ [\|\-] /)[0];
 </MarketingLayout>
 
 <style>
-  /* 針對文章內容的微調 */
+  /* 全域樣式微調 */
   .prose {
     --tw-prose-headings: #0f172a;
-    --tw-prose-links: #FF6A00; /* 內文連結也統一使用橘色 */
+    --tw-prose-links: #FF6A00; /* 內文連結使用你的品牌橘色 */
+  }
+
+  /* 深色模式下的文字與連結顏色最佳化 */
+  :global(.dark) .prose {
+    --tw-prose-links: #FF8533; /* 深色模式下橘色略微調亮，增加可讀性 */
+    --tw-prose-bold: #ffffff;
+    --tw-prose-headings: #f8fafc;
   }
 </style>
