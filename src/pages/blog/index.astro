@@ -1,100 +1,62 @@
----
-import MarketingLayout from '@/layouts/MarketingLayout.astro';
-import Pagination from '@ui/Pagination.astro';
-import { getCollection } from 'astro:content';
-import { siteConfig } from '@/config';
-import { calculateReadingTime } from '@/lib/utils';
-
-// 1. 取得所有文章並按日期排序
-const allPosts = await getCollection('blog', ({ data }) => !data.draft);
-const sortedPosts = allPosts.sort(
-  (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
-);
-
-// 2. 定義精選文章 (在 Markdown frontmatter 中設定 featured: true)
-// 如果沒有設定，則自動取前兩篇作為精選
-const featuredPosts = sortedPosts.filter(post => post.data.featured).slice(0, 2);
-
-// 3. 分頁邏輯
-const POSTS_PER_PAGE = 6;
-const currentPage = 1;
-const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
-const paginatedPosts = sortedPosts.slice(0, POSTS_PER_PAGE);
-
-// 4. 標籤處理
-const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
-  .filter(tag => tag && tag.trim() !== "")
-  .sort();
----
-
 <MarketingLayout title="Blog" description={siteConfig.description}>
-  <section class="py-section">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-10">
-        <h1 class="text-4xl sm:text-5xl font-bold text-text">Blog</h1>
-        <p class="mt-4 text-lg text-text-muted">分享行銷心得、AI 工具應用與自媒體經營筆記。</p>
-      </div>
+  
+  <section class="bg-[#FF6A00] border-b border-black/10 py-10 md:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+      <div class="flex flex-col gap-6">
+        <div>
+          <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">最新實戰心得</h1>
+          <p class="text-white/80 mt-3 text-sm md:text-base max-w-2xl">
+            分享行銷心得、AI 工具應用與自媒體經營筆記，將經驗轉化為數位資產。
+          </p>
+        </div>
 
-      <div class="mb-10 flex items-center gap-2">
-        <span class="text-sm font-bold text-text-muted flex-shrink-0">標籤篩選：</span>
-        <div class="relative flex-1 overflow-hidden">
-          <div 
-            id="tag-container"
-            class="flex flex-nowrap overflow-x-auto gap-2 pb-2 no-scrollbar scroll-smooth cursor-grab active:cursor-grabbing select-none"
-          >
-            <a href="/blog" class="px-4 py-1.5 text-sm font-medium rounded-full bg-primary text-white whitespace-nowrap shrink-0">全部</a>
-            {allTags.map((tag) => (
-              <a href={`/blog/tag/${tag}`} class="px-4 py-1.5 text-sm font-medium rounded-full bg-surface text-text-muted hover:text-primary whitespace-nowrap shrink-0 transition-colors border border-transparent hover:border-primary/20">
-                {tag}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="text-xs font-bold text-white/60 uppercase tracking-widest">分類搜尋</span>
+          <div class="flex flex-wrap gap-2">
+            <a href="/blog" class="px-4 py-1.5 text-xs font-bold bg-white text-[#FF6A00] rounded-full transition-all">
+              全部
+            </a>
+            {allTags.map((tag) => (
+              <a 
+                href={`/blog/tag/${tag}`} 
+                class="px-4 py-1.5 text-xs font-bold bg-white/20 border border-white/10 text-white rounded-full hover:bg-white/30 transition-all"
+              >
+                #{tag}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      {currentPage === 1 && featuredPosts.length > 0 && (
-        <div class="mb-16">
-          <h2 class="text-xs font-bold text-primary tracking-[0.2em] uppercase mb-6 flex items-center gap-3">
-            <span class="w-8 h-[1px] bg-primary"></span> 精選深度專欄
-          </h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {featuredPosts.map((post) => (
-              <a href={`/blog/${post.id}`} class="group relative p-6 rounded-xl bg-surface/50 border border-border hover:border-primary/30 transition-all duration-300">
-                <div class="flex flex-col h-full">
-                  <div class="text-[10px] text-text-muted mb-2 uppercase tracking-wider">Featured Post</div>
-                  <h3 class="text-xl font-bold text-text group-hover:text-primary transition-colors mb-2">{post.data.title}</h3>
-                  <p class="text-sm text-text-muted line-clamp-2 mt-auto">{post.data.description}</p>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      )}
+  <section class="py-12 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-16">
+        {paginatedPosts.map((post) => (
+          <article class="group">
+            <a href={`/blog/${post.id}`} class="block">
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-3 text-[12px] text-text-muted font-medium">
+                  <time>{post.data.publishedDate.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+                  <span class="w-1 h-1 rounded-full bg-border"></span>
+                  <span>{calculateReadingTime(post.body || '')} 分鐘閱讀</span>
+                </div>
+                <h2 class="text-xl md:text-2xl font-bold text-text group-hover:text-[#FF6A00] transition-colors leading-snug">
+                  {post.data.title}
+                </h2>
+                <p class="text-text-muted line-clamp-2 text-sm md:text-base leading-relaxed max-w-3xl">
+                  {post.data.description}
+                </p>
+              </div>
+            </a>
+          </article>
+        ))}
+      </div>
 
-      <div class="space-y-12">
-        <h2 class="text-xs font-bold text-text-muted tracking-[0.2em] uppercase mb-6 flex items-center gap-3">
-          <span class="w-8 h-[1px] bg-border"></span> 最新發布文章
-        </h2>
-        {paginatedPosts.map((post) => (
-          <article class="group">
-            <a href={`/blog/${post.id}`} class="block">
-              <div class="flex flex-col gap-4">
-                <div class="flex flex-wrap items-center gap-3 text-[12px] text-text-muted">
-                  <span>{post.data.publishedDate.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-                  <span>·</span>
-                  <span>閱讀時間 {calculateReadingTime(post.body || '')} 分鐘</span>
-                </div>
-                <h3 class="text-xl font-bold text-text group-hover:text-primary transition-colors leading-snug">{post.data.title}</h3>
-                <p class="text-text-muted line-clamp-2 text-sm leading-relaxed">{post.data.description}</p>
-              </div>
-            </a>
-          </article>
-        ))}
-      </div>
-
-      <div class="mt-16">
-        <Pagination currentPage={currentPage} totalPages={totalPages} basePath="/blog" />
-      </div>
-    </div>
-  </section>
+      <div class="mt-20">
+        <Pagination currentPage={currentPage} totalPages={totalPages} basePath="/blog" />
+      </div>
+    </div>
+  </section>
 </MarketingLayout>
