@@ -4,48 +4,27 @@ import sitemap from '@astrojs/sitemap';
 import icon from 'astro-icon';
 import tailwindcss from '@tailwindcss/vite';
 import { siteConfig } from './src/config';
-
 import cloudflare from "@astrojs/cloudflare";
 
-// Site URL from environment variable with localhost fallback
-const siteUrl = process.env.SITE_URL || 'http://localhost:4321';
-
-// Custom integration to warn about missing environment variables after build
-function envCheckIntegration() {
-  return {
-    name: 'env-check',
-    hooks: {
-      'astro:build:done': () => {
-        if (!process.env.SITE_URL) {
-          console.warn('='.repeat(60));
-          console.warn('WARNING: SITE_URL environment variable not set');
-          console.warn('Build completed with fallback URL: http://localhost:4321');
-          console.warn('For production, create .env file and set SITE_URL');
-          console.warn('='.repeat(60) + '\n');
-        }
-      },
-    },
-  };
-}
+// 直接寫死你的正式網址，確保 Sitemap 生成絕對正確
+const siteUrl = 'https://blog.billy4select.com';
 
 export default defineConfig({
+  // 使用正確的網址
   site: siteUrl,
 
   integrations: [
     mdx(),
     icon(),
-    envCheckIntegration(),
     sitemap({
       filter: (page) => {
         const { features } = siteConfig;
-
-        // Filter out pages based on feature flags
+        // 根據功能開關過濾頁面
         if (!features.blog && page.includes('/blog')) return false;
         if (!features.docs && page.includes('/docs')) return false;
         if (!features.changelog && page.includes('/changelog')) return false;
         if (!features.testimonials && page.includes('/testimonials')) return false;
         if (!features.roadmap && page.includes('/roadmap')) return false;
-
         return true;
       },
     }),
@@ -55,5 +34,6 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
+  // 如果你是部署到 Cloudflare Pages，保留這行；如果是 GitHub Pages 則可移除
   adapter: cloudflare()
 });
