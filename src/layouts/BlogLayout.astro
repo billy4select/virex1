@@ -17,7 +17,6 @@ const { title, description, publishedDate, author, image, tags = [], content } =
 const readingTime = calculateReadingTime(content);
 const formattedDate = formatDate(publishedDate, { year: 'numeric', month: 'long', day: 'numeric' });
 
-// 修正後的 displayTitle 邏輯
 const displayTitle = title ? title.split(/ [\|\-] /)[0] : ""; 
 ---
 
@@ -80,19 +79,6 @@ const displayTitle = title ? title.split(/ [\|\-] /)[0] : "";
       <div class="prose prose-slate dark:prose-invert prose-base md:prose-lg max-w-none">
         <slot name="content" />
         <slot />
-        
-        <hr class="my-16 border-slate-100" />
-        
-        <div class="not-prose max-w-2xl mx-auto py-4 text-center">
-            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">比利選讀週報</h3>
-            <p class="text-slate-500 dark:text-slate-400 text-sm md:text-base mb-8">
-            
-            </p>
-
-            <div class="ck-clean-embed">
-                <script async data-uid="087d93e4f0" src="https://billy4select.kit.com/087d93e4f0/index.js"></script>
-            </div>
-        </div>
       </div>
     </div>
   </article>
@@ -109,18 +95,5 @@ const displayTitle = title ? title.split(/ [\|\-] /)[0] : "";
     --tw-prose-links: #FF8533;
     --tw-prose-bold: #ffffff;
     --tw-prose-headings: #f8fafc;
-  }
-
-  .ck-clean-embed :global(.ck_form) {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-  }
-  .ck-clean-embed :global(.ck_header),
-  .ck-clean-embed :global(.ck_guarantee),
-  .ck-clean-embed :global(.ck_powered_by) {
-    display: none !important;
   }
 </style>
