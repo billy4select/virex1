@@ -5,9 +5,7 @@ publishedDate: 2026-04-10T00:00:00Z
 author: billychen
 image: /images/blog/ai-learning-age.webp
 tags:
-  - 職涯發展
-  - AI 學習
-  - 管理思維
+  - AI應用
 draft: false
 ---
 這個問題背後有一個隱藏的假設：學 AI 是一件有「太晚」這個概念存在的事。

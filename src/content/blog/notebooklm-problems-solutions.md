@@ -5,9 +5,8 @@ publishedDate: 2026-04-10T00:00:00Z
 author: billychen
 image: /images/blog/notebooklm-troubleshooting.webp
 tags:
-  - 工具教學
+  - AI應用
   - NotebookLM
-  - 生產力技巧
 draft: false
 ---
 你把年度報告丟進 NotebookLM，期待它幫你整理重點，結果出來的是一堆「???」亂碼？或者它給的摘要看似合理，但對照原文發現根本是幻覺？

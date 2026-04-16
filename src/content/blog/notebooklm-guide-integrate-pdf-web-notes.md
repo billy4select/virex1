@@ -7,8 +7,7 @@ publishedDate: 2026-04-10T00:00:00Z
 author: billychen
 image: /images/blog/notebooklm-integration.webp
 tags:
-  - 生產力工具
-  - 專案管理
+  - AI應用
   - NotebookLM
 draft: false
 ---

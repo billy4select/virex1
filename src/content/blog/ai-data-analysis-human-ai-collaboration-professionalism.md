@@ -5,9 +5,7 @@ publishedDate: 2026-04-09T00:00:00Z
 author: billychen
 image: /images/blog/pm-ai-data.webp
 tags:
-  - 產品管理
-  - 數據分析
-  - 人機協作
+  - AI應用
 draft: false
 ---
 那份分析報告你花了兩個小時做完。平常這種報告需要半天，這次因為用了 AI 輔助，速度快了很多。你覺得品質也不差，就發給相關部門。下午收到財務主管的回覆：「這個數字是怎麼算出來的？可以說明一下嗎？」

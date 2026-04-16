@@ -7,10 +7,7 @@ publishedDate: 2026-04-10T00:00:00Z
 author: billychen
 image: /images/blog/ai-replacement-anxiety.webp
 tags:
-  - 職場心法
-  - AI 轉型
-  - 價值重定義
-  - ''
+  - AI應用
 draft: false
 ---
 你打開電腦，看到標題寫著：「AI 已經可以做到 X 工作內容的 80%。」而 X 剛好是你做了十幾年的事。
