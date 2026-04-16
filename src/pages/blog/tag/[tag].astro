@@ -1,6 +1,6 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
 import { calculateReadingTime } from '@/lib/utils';
 
@@ -17,76 +17,74 @@ export async function getStaticPaths() {
       posts: posts
         .filter((post) => (post.data.tags || []).includes(tag))
         .sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()),
+      allTags: allTags.sort(),
     },
   }));
 }
 
 const { tag } = Astro.params;
-const { posts } = Astro.props;
-
-const allPosts = await getCollection('blog', ({ data }) => !data.draft);
-const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
-  .map(t => String(t).trim())
-  .filter(t => t.length > 0)
-  .sort();
+const { posts, allTags } = Astro.props;
 ---
 
 <MarketingLayout
   title={`標籤：${tag} - ${siteConfig.name}`}
   description={`瀏覽所有關於 ${tag} 的文章。`}
 >
-  <section class="py-section">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center mb-12">
-        <a href="/blog" class="text-sm font-medium text-primary hover:underline mb-4 inline-block">
-          ← 返回所有文章
-        </a>
-        <h1 class="text-4xl sm:text-5xl font-bold text-text">
-          標籤："{tag}"
-        </h1>
-        <p class="mt-4 text-text-muted">
-          找到 {posts.length} 篇文章
-        </p>
-      </div>
+  <section class="bg-[#FF6A00] border-b border-black/10 py-10 md:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+      <div class="flex flex-col gap-8">
+        <div>
+          <a href="/blog" class="text-white/60 hover:text-white text-xs font-bold flex items-center gap-2 mb-4 transition-colors">
+            ← 返回所有文章
+          </a>
+          <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">
+            標籤：<span class="underline underline-offset-8 decoration-white/30">{tag}</span>
+          </h1>
+          <p class="text-white/80 mt-4 text-sm md:text-base leading-relaxed">
+            目前共有 {posts.length} 篇相關文章
+          </p>
+        </div>
 
-      <div class="mb-10">
-        <div class="flex flex-wrap items-center gap-2">
-          <span class="text-sm font-medium text-text-muted mr-2">標籤篩選：</span>
-          <a href="/blog" class="px-3 py-1.5 text-sm font-medium rounded-md bg-surface text-text-muted hover:bg-primary/10 transition-colors">全部</a>
-          {allTags.map((t) => (
-            <a
-              href={`/blog/tag/${t}`}
-              class={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
-                t === tag ? 'bg-primary text-white' : 'bg-surface text-text-muted hover:bg-primary/10'
-              }`}
-            >
-              {t}
+        <div class="flex flex-col gap-3">
+          <span class="text-[10px] font-bold text-white/50 uppercase tracking-[0.2em]">切換其他主題</span>
+          <div class="flex flex-wrap gap-2">
+            <a href="/blog" class="px-4 py-1.5 text-xs font-bold bg-white/10 border border-white/10 text-white rounded-full hover:bg-white/20 transition-all">
+              全部
             </a>
-          ))}
+            {allTags.map((t) => (
+              <a 
+                href={`/blog/tag/${t}`} 
+                class={`px-4 py-1.5 text-xs font-bold rounded-full transition-all ${
+                  t === tag 
+                  ? 'bg-white text-[#FF6A00] shadow-sm' 
+                  : 'bg-white/10 border border-white/10 text-white hover:bg-white/20'
+                }`}
+              >
+                #{t}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="space-y-10">
+  <section class="py-12 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-16">
         {posts.map((post) => (
-          <article class="group border-b border-border pb-10 last:border-0">
+          <article class="group">
             <a href={`/blog/${post.id}`} class="block">
               <div class="flex flex-col gap-4">
-                <div class="flex flex-wrap items-center gap-3 text-sm text-text-muted">
-                  <span>
-                    {post.data.publishedDate.toLocaleDateString('zh-TW', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric',
-                    })}
-                  </span>
-                  <span>·</span>
-                  <span>閱讀時間 {calculateReadingTime(post.body || '')} 分鐘</span>
+                <div class="flex items-center gap-3 text-[11px] font-medium text-text-muted">
+                  <time>{post.data.publishedDate.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+                  <span class="w-1.5 h-1.5 rounded-full bg-border"></span>
+                  <span>{calculateReadingTime(post.body || '')} 分鐘閱讀</span>
                 </div>
-                <h2 class="text-2xl font-bold text-text group-hover:text-primary transition-colors leading-snug">
+                <h2 class="text-xl md:text-2xl font-bold text-text group-hover:text-[#FF6A00] transition-colors leading-snug max-w-3xl">
                   {post.data.title}
                 </h2>
-                <p class="text-text-muted line-clamp-3 leading-relaxed">
+                <p class="text-text-muted line-clamp-2 text-sm md:text-base leading-relaxed max-w-3xl">
                   {post.data.description}
                 </p>
               </div>

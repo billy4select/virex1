@@ -33,7 +33,7 @@ const paginatedPosts: CollectionEntry<'blog'>[] = sortedPosts.slice(
   startIndex + POSTS_PER_PAGE
 );
 
-// 如果是第一頁，重新導向回 /blog
+// 第一頁導回主頁
 if (currentPage === 1) {
   return Astro.redirect('/blog');
 }
@@ -41,74 +41,76 @@ if (currentPage === 1) {
 // 獲取所有標籤
 const allTags = [
   ...new Set(posts.flatMap((post: CollectionEntry<'blog'>) => post.data.tags)),
-].sort();
-
-const getTypedTags = (tags: string[]) => tags.slice(0, 3);
+].filter(tag => tag && tag.trim() !== "").sort();
 ---
 
 <MarketingLayout
   title={`Blog - 第 ${currentPage} 頁`}
   description={`分享行銷心得、AI 工具應用與自媒體經營筆記。第 ${currentPage} 頁，共 ${totalPages} 頁。`}
 >
-  <section class="py-section">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h1 class="text-4xl sm:text-5xl font-bold text-text">Blog</h1>
-        <p class="mt-4 text-lg text-text-muted max-w-2xl mx-auto">
-          分享行銷心得、AI 工具應用與自媒體經營筆記。
-        </p>
-      </div>
+  <section class="bg-[#FF6A00] border-b border-black/10 py-10 md:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+      <div class="flex flex-col gap-8">
+        <div>
+          <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">最新實戰心得</h1>
+          <p class="text-white/80 mt-3 text-sm md:text-base max-w-2xl leading-relaxed">
+            分享行銷心得、AI 工具應用與自媒體經營筆記。目前位於第 {currentPage} 頁。
+          </p>
+        </div>
 
-      {allTags.length > 0 && (
-        <div class="mb-10">
-          <div class="flex flex-wrap items-center gap-2">
-            <span class="text-sm font-medium text-text-muted mr-2">標籤篩選：</span>
-            <a href="/blog" class="px-3 py-1.5 text-sm font-medium rounded-md bg-surface text-text-muted hover:bg-primary/10 hover:text-primary transition-colors">全部</a>
+        <div class="flex flex-col gap-3">
+          <span class="text-[10px] font-bold text-white/50 uppercase tracking-[0.2em]">按主題瀏覽</span>
+          <div class="flex flex-wrap gap-2">
+            <a href="/blog" class="px-4 py-1.5 text-xs font-bold bg-white/10 border border-white/10 text-white rounded-full hover:bg-white/20 transition-all">
+              全部
+            </a>
             {allTags.map((tag) => (
-              <a href={`/blog/tag/${tag}`} class="px-3 py-1.5 text-sm font-medium rounded-md bg-surface text-text-muted hover:bg-primary/10 hover:text-primary transition-colors">{tag}</a>
+              <a 
+                href={`/blog/tag/${tag}`} 
+                class="px-4 py-1.5 text-xs font-bold bg-white/10 border border-white/10 text-white rounded-full hover:bg-white/20 transition-all"
+              >
+                #{tag}
+              </a>
             ))}
           </div>
         </div>
-      )}
+      </div>
+    </div>
+  </section>
 
-      <div class="space-y-10">
+  <section class="py-12 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-16">
         {paginatedPosts.map((post) => (
           <article class="group">
             <a href={`/blog/${post.id}`} class="block">
-              <div class="flex flex-col gap-6">
-                <div class="flex-1">
-                  <div class="flex flex-wrap items-center gap-3 text-sm text-text-muted mb-2">
-                    <span>
-                      {post.data.publishedDate.toLocaleDateString('zh-TW', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                      })}
-                    </span>
-                    <span>·</span>
-                    <span>閱讀時間 {calculateReadingTime(post.body || '')} 分鐘</span>
-                  </div>
-                  <h2 class="text-xl font-bold text-text group-hover:text-primary transition-colors">
-                    {post.data.title}
-                  </h2>
-                  <p class="mt-2 text-text-muted line-clamp-2">{post.data.description}</p>
-                  {post.data.tags.length > 0 && (
-                    <div class="flex flex-wrap gap-2 mt-3">
-                      {getTypedTags(post.data.tags).map((tag) => (
-                        <span class="px-2 py-0.5 text-xs font-medium bg-surface text-text-muted rounded">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-3 text-[11px] font-medium text-text-muted">
+                  <time>
+                    {post.data.publishedDate.toLocaleDateString('zh-TW', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </time>
+                  <span class="w-1.5 h-1.5 rounded-full bg-border"></span>
+                  <span>{calculateReadingTime(post.body || '')} 分鐘閱讀</span>
                 </div>
+                <h2 class="text-xl md:text-2xl font-bold text-text group-hover:text-[#FF6A00] transition-colors leading-snug max-w-3xl">
+                  {post.data.title}
+                </h2>
+                <p class="text-text-muted line-clamp-2 text-sm md:text-base leading-relaxed max-w-3xl">
+                  {post.data.description}
+                </p>
               </div>
             </a>
           </article>
         ))}
       </div>
 
-      <Pagination currentPage={currentPage} totalPages={totalPages} basePath="/blog" />
+      <div class="mt-24">
+        <Pagination currentPage={currentPage} totalPages={totalPages} basePath="/blog" />
+      </div>
     </div>
   </section>
 </MarketingLayout>
