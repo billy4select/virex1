@@ -11,7 +11,7 @@ const sortedPosts = allPosts.sort(
   (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
 );
 
-// 2. 定義精選文章
+// 2. 定義精選文章 (Featured Assets)
 const featuredPosts = sortedPosts.filter(post => post.data.featured).slice(0, 2);
 
 // 3. 分頁邏輯
@@ -28,22 +28,38 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
 
 <MarketingLayout title="Blog" description={siteConfig.description}>
   
-  <section class="bg-[#FF6A00] border-b border-black/10 py-10 md:py-16">
+  <section class="bg-[#FF6A00] border-b border-black/10 pt-12 pb-16 md:pt-16 md:pb-24">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
-      <div class="flex flex-col gap-8">
-        <div>
+      <div class="flex flex-col gap-10">
+        <div class="space-y-4">
           <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">最新實戰心得</h1>
-          <p class="text-white/80 mt-3 text-sm md:text-base max-w-2xl leading-relaxed">
+          <p class="text-white/80 text-sm md:text-base max-w-2xl leading-relaxed">
             分享行銷心得、AI 工具應用與自媒體經營筆記。將經驗系統化，打造可持續增長的數位資產。
           </p>
         </div>
 
+        {featuredPosts.length > 0 && (
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {featuredPosts.map((post) => (
+              <a href={`/blog/${post.id}`} class="group block p-6 rounded-2xl bg-white/10 border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-sm">
+                <div class="flex flex-col h-full gap-3">
+                  <div class="text-[9px] font-bold text-white/50 uppercase tracking-[0.2em]">⭐ 精選資產</div>
+                  <h3 class="text-lg font-bold text-white group-hover:underline underline-offset-4 decoration-white/40 transition-all">
+                    {post.data.title}
+                  </h3>
+                  <p class="text-white/70 text-xs line-clamp-2 leading-relaxed mt-auto">
+                    {post.data.description}
+                  </p>
+                </div>
+              </a>
+            ))}
+          </div>
+        )}
+
         <div class="flex flex-col gap-3">
-          <span class="text-[10px] font-bold text-white/50 uppercase tracking-[0.2em]">按主題瀏覽</span>
+          <span class="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em]">按主題瀏覽</span>
           <div class="flex flex-wrap gap-2">
-            <a href="/blog" class="px-4 py-1.5 text-xs font-bold bg-white text-[#FF6A00] rounded-full transition-all shadow-sm">
-              全部
-            </a>
+            <a href="/blog" class="px-4 py-1.5 text-xs font-bold bg-white text-[#FF6A00] rounded-full shadow-md">全部</a>
             {allTags.map((tag) => (
               <a 
                 href={`/blog/tag/${tag}`} 
@@ -58,39 +74,26 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
     </div>
   </section>
 
-  <section class="py-12 md:py-20">
+  <section class="py-16 md:py-24 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      {currentPage === 1 && featuredPosts.length > 0 && (
-        <div class="mb-20">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {featuredPosts.map((post) => (
-              <a href={`/blog/${post.id}`} class="group relative p-6 rounded-xl bg-surface/40 border border-primary/10 hover:border-[#FF6A00]/30 hover:bg-[#FF6A00]/5 transition-all duration-300">
-                <div class="flex flex-col h-full">
-                  <div class="text-[9px] font-bold text-[#FF6A00] mb-2 uppercase tracking-[0.2em]">Featured Asset</div>
-                  <h3 class="text-lg font-bold text-text group-hover:text-[#FF6A00] transition-colors mb-2">{post.data.title}</h3>
-                  <p class="text-xs text-text-muted line-clamp-2 mt-auto leading-relaxed">{post.data.description}</p>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      )}
+      <div class="mb-12 border-b border-gray-100 pb-4">
+        <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.3em]">Timeline / 最新發布</h2>
+      </div>
 
       <div class="space-y-16">
         {paginatedPosts.map((post) => (
           <article class="group">
             <a href={`/blog/${post.id}`} class="block">
               <div class="flex flex-col gap-4">
-                <div class="flex items-center gap-3 text-[11px] font-medium text-text-muted">
+                <div class="flex items-center gap-3 text-[11px] font-medium text-gray-400">
                   <time>{post.data.publishedDate.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
-                  <span class="w-1.5 h-1.5 rounded-full bg-border"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-gray-200"></span>
                   <span>{calculateReadingTime(post.body || '')} 分鐘閱讀</span>
                 </div>
-                <h2 class="text-xl md:text-2xl font-bold text-text group-hover:text-[#FF6A00] transition-colors leading-snug max-w-3xl">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-[#FF6A00] transition-colors leading-snug max-w-3xl">
                   {post.data.title}
                 </h2>
-                <p class="text-text-muted line-clamp-2 text-sm md:text-base leading-relaxed max-w-3xl">
+                <p class="text-gray-500 line-clamp-2 text-sm md:text-base leading-relaxed max-w-3xl">
                   {post.data.description}
                 </p>
               </div>
