@@ -1,86 +1,99 @@
 ---
 import MarketingLayout from './MarketingLayout.astro';
-import { getCollection } from 'astro:content';
-import { calculateReadingTime } from '@/lib/utils';
+import { Icon } from 'astro-icon/components';
+import { calculateReadingTime, formatDate } from '@/lib/utils';
 
-const { post } = Astro.props;
-const { title, description, publishedDate, image, tags } = post.data;
+interface Props {
+  title: string;
+  description: string;
+  publishedDate: Date;
+  author: string;
+  image?: string;
+  tags?: string[];
+  content: string;
+}
 
-// 邏輯：抓取「相關閱讀」的文章
-// 排除掉當前這篇文章，並找出至少有一個相同標籤的文章，最後取 2 篇
-const allPosts = await getCollection('blog', ({ data }) => !data.draft);
-const relatedPosts = allPosts
-  .filter((p) => p.id !== post.id && p.data.tags?.some((tag) => tags?.includes(tag)))
-  .sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime())
-  .slice(0, 2);
+const { title, description, publishedDate, author, image, tags = [], content } = Astro.props;
+const readingTime = calculateReadingTime(content);
+const formattedDate = formatDate(publishedDate, { year: 'numeric', month: 'long', day: 'numeric' });
+
+const displayTitle = title ? title.split(/ [\|\-] /)[0] : ""; 
 ---
 
-<MarketingLayout title={title} description={description} image={image}>
-  <article class="py-section max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-    <header class="mb-12 text-center">
-      <div class="flex items-center justify-center gap-3 text-sm text-text-muted mb-4">
-        <time datetime={publishedDate.toISOString()}>
-          {publishedDate.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })}
-        </time>
-        <span>·</span>
-        <span>閱讀時間 {calculateReadingTime(post.body || '')} 分鐘</span>
-      </div>
-      <h1 class="text-3xl sm:text-4xl font-bold text-text leading-tight mb-6">
-        {title}
-      </h1>
+<MarketingLayout 
+  title={title} 
+  description={description} 
+  image={image} 
+  type="article" 
+  publishedDate={publishedDate} 
+  author={author} 
+  tags={tags}
+>
+  
+  <section class="bg-[#FF6A00] border-b border-black/10 py-8 md:py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      {tags && (
-        <div class="flex flex-wrap justify-center gap-2">
-          {tags.map((tag) => (
-            <a href={`/blog/tag/${tag}`} class="text-xs font-medium px-3 py-1 bg-surface border border-border rounded-full hover:border-primary/30 transition-colors">
-              #{tag}
-            </a>
-          ))}
+      <nav class="flex items-center text-xs sm:text-sm text-white/80 mb-6 w-full font-medium" aria-label="Breadcrumb">
+        <div class="flex items-center gap-1 sm:gap-2 flex-shrink-0">
+          <a href="/" class="hover:text-white transition-colors flex items-center gap-1">
+            <Icon name="lucide:home" class="w-3.5 h-3.5" /> 首頁
+          </a>
+          <Icon name="lucide:chevron-right" class="w-4 h-4 opacity-40" />
+          <a href="/blog" class="hover:text-white transition-colors">BLOG</a>
+          <Icon name="lucide:chevron-right" class="w-4 h-4 opacity-40" />
         </div>
-      )}
-    </header>
+        <span class="truncate ml-2 flex-1 min-w-0 text-white">{displayTitle}</span>
+      </nav>
 
-    <div class="prose prose-lg dark:prose-invert max-w-none 
-      prose-headings:text-text prose-p:text-text-muted prose-strong:text-text
-      prose-a:text-primary prose-a:no-underline hover:prose-a:underline
-      prose-code:text-primary prose-pre:bg-surface prose-pre:border prose-pre:border-border">
-      <slot />
-    </div>
+      <header>
+        <h1 class="text-2xl md:text-4xl font-extrabold text-white mb-4 leading-tight">
+          {displayTitle}
+        </h1>
 
-    <footer class="mt-16 pt-8 border-t border-border">
-      <div class="bg-surface/50 rounded-2xl p-8 border border-primary/10 text-center">
-        <h3 class="text-xl font-bold mb-4">覺得這篇文章有幫助嗎？</h3>
-        <p class="text-text-muted mb-6">
-          我是比利陳，專注於 AI 工具應用與個人品牌資產化。
-          歡迎加入我的 Line 社群，一起交流最新的行銷實戰心得。
-        </p>
-        <a href="https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw" 
-           class="inline-flex items-center px-6 py-3 rounded-md bg-primary text-white font-bold hover:bg-primary-dark transition-colors">
-          立即加入行銷實戰社群
-        </a>
-      </div>
-
-      {relatedPosts.length > 0 && (
-        <div class="mt-16">
-          <h3 class="text-sm font-bold text-text-muted tracking-[0.2em] uppercase mb-8 flex items-center gap-3">
-            <span class="w-8 h-[1px] bg-border"></span> 你可能也會感興趣
-          </h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {relatedPosts.map((related) => (
-              <a href={`/blog/${related.id}`} class="group">
-                <div class="p-5 rounded-xl border border-border hover:border-primary/20 transition-all">
-                  <h4 class="font-bold text-text group-hover:text-primary transition-colors line-clamp-2 mb-2">
-                    {related.data.title}
-                  </h4>
-                  <p class="text-xs text-text-muted line-clamp-2">
-                    {related.data.description}
-                  </p>
-                </div>
-              </a>
-            ))}
+        <div class="flex flex-col gap-4">
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] md:text-sm text-white/90 font-medium">
+            <span class="flex items-center gap-1"><Icon name="lucide:user" class="w-3.5 h-3.5" />{author}</span>
+            <span class="flex items-center gap-1"><Icon name="lucide:calendar" class="w-3.5 h-3.5" />{formattedDate}</span>
+            <span class="flex items-center gap-1"><Icon name="lucide:clock" class="w-3.5 h-3.5" />{readingTime} 分鐘</span>
           </div>
+
+          {tags && tags.length > 0 && (
+            <div class="flex flex-wrap gap-2">
+              {tags.map((tag) => (
+                <a 
+                  href={`/blog/tag/${tag}`}
+                  class="px-3 py-1 text-[11px] md:text-xs font-bold bg-white/20 border border-white/20 text-white rounded-full hover:bg-white/40 transition-all"
+                >
+                  #{tag}
+                </a>
+              ))}
+            </div>
+          )}
         </div>
-      )}
-    </footer>
+      </header>
+    </div>
+  </section>
+
+  <article class="py-10 md:py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-slate dark:prose-invert prose-base md:prose-lg max-w-none">
+        <slot name="content" />
+        <slot />
+      </div>
+    </div>
   </article>
+
 </MarketingLayout>
+
+<style>
+  .prose {
+    --tw-prose-headings: #0f172a;
+    --tw-prose-links: #FF6A00; 
+  }
+
+  :global(.dark) .prose {
+    --tw-prose-links: #FF8533;
+    --tw-prose-bold: #ffffff;
+    --tw-prose-headings: #f8fafc;
+  }
+</style>
