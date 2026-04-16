@@ -80,11 +80,19 @@ const displayTitle = title.split(/ [\|\-] /)[0];
         <slot name="content" />
         <slot />
         
-        <hr class="my-12 border-gray-200" />
-        <div class="not-prose mt-10 p-6 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800">
-           <script async data-uid="087d93e4f0" src="https://billy4select.kit.com/087d93e4f0/index.js"></script>
+        <hr class="my-16 border-slate-100" />
+        
+        <div class="not-prose max-w-2xl mx-auto py-4 text-center">
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">比利選讀週報</h3>
+            <p class="text-slate-500 dark:text-slate-400 text-sm md:text-base mb-8">
+              每週分享 1% 的數位資產經營體悟。
+            </p>
+
+            <div class="ck-clean-embed">
+                <script async data-uid="087d93e4f0" src="https://billy4select.kit.com/087d93e4f0/index.js"></script>
+            </div>
         </div>
-        </div>
+      </div>
     </div>
   </article>
 
@@ -100,5 +108,19 @@ const displayTitle = title.split(/ [\|\-] /)[0];
     --tw-prose-links: #FF8533;
     --tw-prose-bold: #ffffff;
     --tw-prose-headings: #f8fafc;
+  }
+
+  /* 強制移除 Kit 外部所有裝飾，實現瑞士設計的扁平感 */
+  .ck-clean-embed :global(.ck_form) {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+  .ck-clean-embed :global(.ck_header),
+  .ck-clean-embed :global(.ck_guarantee),
+  .ck-clean-embed :global(.ck_powered_by) {
+    display: none !important;
   }
 </style>
