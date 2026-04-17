@@ -11,20 +11,29 @@ const sortedPosts = allPosts.sort(
   (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
 );
 
-// 2. 篩選精選 (首頁只取前 2 篇)
-const featuredPostsCount = allPosts.filter(post => post.data.featured).length;
-const featuredPosts = sortedPosts.filter(post => post.data.featured).slice(0, 2);
+// 2. 篩選強推文章 (Boosted & Featured)
+// 修改點：優先撈 boost: true，次選 featured: true
+const boostedPosts = sortedPosts
+  .filter(post => post.data.boost === true || post.data.featured === true)
+  .slice(0, 2);
 
-// 3. 分頁邏輯
+// 3. 排除已在上方顯示的文章，避免重複
+const remainingPosts = sortedPosts.filter(
+  post => !boostedPosts.some(bp => bp.id === post.id)
+);
+
+// 4. 分頁邏輯 (對應剩下的文章)
 const POSTS_PER_PAGE = 6;
 const currentPage = 1;
-const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
-const paginatedPosts = sortedPosts.slice(0, POSTS_PER_PAGE);
+const totalPages = Math.ceil(remainingPosts.length / POSTS_PER_PAGE);
+const paginatedPosts = remainingPosts.slice(0, POSTS_PER_PAGE);
 
-// 4. 標籤處理
+// 5. 標籤處理
 const tags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
   .filter(tag => tag && tag.trim() !== "")
   .sort();
+
+const featuredPostsCount = allPosts.filter(post => post.data.featured || post.data.boost).length;
 ---
 
 <MarketingLayout title="Blog" description={siteConfig.description}>
@@ -57,10 +66,9 @@ const tags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
   <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-4">
       
-      {/* 熱門文章區塊 */}
-      {featuredPosts.length > 0 && (
+      {/* 熱門文章區塊 - 視覺風格完全保留你的原始設計 */}
+      {boostedPosts.length > 0 && (
         <div class="mb-20">
-          {/* 修改點：線在下面 + 查看更多按鈕 */}
           <div class="mb-12 border-b border-gray-100 pb-4 flex justify-between items-end">
             <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.3em]">熱門文章</h2>
             {featuredPostsCount > 2 && (
@@ -71,10 +79,13 @@ const tags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {featuredPosts.map((post) => (
+            {boostedPosts.map((post) => (
               <a href={`/blog/${post.id}`} class="group block p-7 rounded-3xl bg-gray-50 border border-gray-100 hover:border-[#FF6A00]/20 hover:bg-white hover:shadow-xl hover:shadow-[#FF6A00]/5 transition-all duration-300">
                 <div class="flex flex-col h-full gap-4">
-                  <div class="text-[10px] font-bold text-[#FF6A00] uppercase tracking-[0.1em]">必讀</div>
+                  {/* 維持你的必讀標籤顏色 */}
+                  <div class="text-[10px] font-bold text-[#FF6A00] uppercase tracking-[0.1em]">
+                    {post.data.boost ? "必讀" : "精選"}
+                  </div>
                   <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#FF6A00] transition-colors leading-snug">{post.data.title}</h3>
                   <p class="text-gray-500 text-sm line-clamp-2 mt-auto leading-relaxed">{post.data.description}</p>
                 </div>
@@ -84,7 +95,6 @@ const tags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
         </div>
       )}
 
-      {/* 最新文章標題：維持線在下面 */}
       <div class="mb-12 border-b border-gray-100 pb-4">
         <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.3em]">最新文章</h2>
       </div>
