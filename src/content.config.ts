@@ -1,5 +1,4 @@
-import { defineCollection } from 'astro:content';
-import { z } from 'astro:zod';
+import { defineCollection, z } from 'astro:content'; // 修正這裡：z 直接從 astro:content 拿
 import { glob } from 'astro/loaders';
 
 const blog = defineCollection({
@@ -12,7 +11,7 @@ const blog = defineCollection({
     image: z.string().optional(),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
-    // 關鍵修正：加入精選欄位，並預設為 false
+    // 關鍵修正：加入精選欄位
     featured: z.boolean().default(false),
   }),
 });
