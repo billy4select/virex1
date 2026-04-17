@@ -11,13 +11,32 @@ interface Props {
   image?: string;
   tags?: string[];
   content: string;
+  displayTitle?: string; // 修正：接收傳入的顯示標題
+  // --- 新增：接收 Schema 資料 ---
+  schemaType?: 'HowTo' | 'FAQ' | 'Article';
+  steps?: { name: string; text: string }[];
+  faq?: { q: string; a: string }[];
 }
 
-const { title, description, publishedDate, author, image, tags = [], content } = Astro.props;
+const { 
+  title, 
+  description, 
+  publishedDate, 
+  author, 
+  image, 
+  tags = [], 
+  content,
+  displayTitle: propsDisplayTitle,
+  schemaType,
+  steps,
+  faq
+} = Astro.props;
+
 const readingTime = calculateReadingTime(content);
 const formattedDate = formatDate(publishedDate, { year: 'numeric', month: 'long', day: 'numeric' });
 
-const displayTitle = title ? title.split(/ [\|\-] /)[0] : ""; 
+// 如果 Props 沒有傳 displayTitle，則從 title 自動切分
+const displayTitle = propsDisplayTitle || (title ? title.split(/ [\|\-] /)[0] : ""); 
 ---
 
 <MarketingLayout 
@@ -28,6 +47,10 @@ const displayTitle = title ? title.split(/ [\|\-] /)[0] : "";
   publishedDate={publishedDate} 
   author={author} 
   tags={tags}
+  /* --- 轉發 Schema 資料給 MarketingLayout --- */
+  schemaType={schemaType}
+  steps={steps}
+  faq={faq}
 >
   
   <section class="bg-[#FF6A00] border-b border-black/10 py-8 md:py-16">

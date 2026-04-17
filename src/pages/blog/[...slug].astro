@@ -22,13 +22,10 @@ const displayTitle = post.data.title;
 // --- 邏輯處理：自動化相關閱讀 ---
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 
-// 1. 找出同類別 (category) 且排除目前正在閱讀的這篇
 const sameCategoryPosts = allPosts.filter(
   (p) => p.id !== post.id && p.data.category === post.data.category
 );
 
-// 2. 隨機打亂順序 (Shuffle)，確保每篇文章底下的推薦內容具有多樣性
-// 這樣就不會點每一篇都看到一模一樣的最新三篇
 const relatedPosts = sameCategoryPosts
   .sort(() => Math.random() - 0.5)
   .slice(0, 3);
@@ -43,11 +40,15 @@ const relatedPosts = sameCategoryPosts
   image={post.data.image}
   tags={post.data.tags}
   content={post.body || ''}
+  /* --- 注入 SEO 結構化資料所需的 Props --- */
+  schemaType={post.data.schemaType}
+  steps={post.data.steps}
+  faq={post.data.faq}
 >
   {/* 文章主體內容 */}
   <Content slot="content" />
 
-  {/* 系統自動抓取的相關閱讀 - 採用純文字設計，無圖片版面 */}
+  {/* 系統自動抓取的相關閱讀 */}
   {relatedPosts.length > 0 && (
     <div class="mt-20 pt-10 border-t border-gray-100">
       <h3 class="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] mb-8 flex items-center gap-3">
@@ -71,6 +72,5 @@ const relatedPosts = sameCategoryPosts
     </div>
   )}
 
-  {/* 底部留白，移除舊式的「上一篇/下一篇」導覽，讓視覺更聚焦在相關閱讀 */}
   <div class="py-12"></div>
 </BlogLayout>
