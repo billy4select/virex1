@@ -7,122 +7,52 @@ import { siteConfig } from '@/config';
 
 const faqCategories = [
   {
-    name: 'General',
+    name: '關於部落格',
     faqs: [
       {
-        question: 'What is ' + siteConfig.name + '?',
+        question: `關於 ${siteConfig.name}？`,
         answer:
-          siteConfig.name +
-          ' is a modern deployment platform that helps developers and teams build, deploy, and scale applications without the infrastructure headaches. We handle the complexity so you can focus on building great products.',
+          `${siteConfig.name} 是一個專注於技術分享、選物評論與個人成長的空間。我希望透過文字，將複雜的技術簡單化，並記錄下生活中的各種啟發。`,
       },
       {
-        question: 'Who is ' + siteConfig.name + ' for?',
+        question: '這個網站是用什麼技術架設的？',
         answer:
-          'We built ' +
-          siteConfig.name +
-          " for developers and teams of all sizes—from solo developers working on side projects to enterprise teams shipping production applications. If you write code and need to deploy it, we're here to help.",
+          '本站採用 Astro 框架建構，結合 Tailwind CSS 進行樣式設計。這讓網站擁有極快的加載速度與優秀的閱讀體驗。',
       },
       {
-        question: 'What frameworks do you support?',
+        question: '我該如何訂閱最新的文章？',
         answer:
-          'We support all major frameworks including Next.js, Astro, Remix, Nuxt, SvelteKit, and any static site generator. Our platform auto-detects your framework and configures the build process automatically.',
+          '您可以定期回到本站查看「最新文章」區塊，或者追蹤我的社群媒體，我會在發布新內容時同步更新。',
       },
     ],
   },
   {
-    name: 'Pricing & Billing',
+    name: '內容授權與轉載',
     faqs: [
       {
-        question: 'Is there a free tier?',
+        question: '我可以轉載部落格的文章嗎？',
         answer:
-          'Yes! Our Hobby plan is completely free and includes 3 projects, 100 GB bandwidth per month, automatic HTTPS, and preview deployments. No credit card required to get started.',
+          '歡迎在非商業用途下分享文章連結。若是全文轉載，請事先來信聯繫取得授權，並在標題或文首註明原文出處與作者。',
       },
       {
-        question: 'Can I change plans later?',
+        question: '文章內容是否有參考資料？',
         answer:
-          "Absolutely. You can upgrade or downgrade your plan at any time. When upgrading, you'll be charged the prorated difference. When downgrading, the new rate applies at your next billing cycle.",
-      },
-      {
-        question: 'What happens if I exceed my bandwidth limit?',
-        answer:
-          "We'll notify you when you're approaching your limit. If you exceed it, your sites will continue to work—we'll just reach out to discuss upgrading your plan or purchasing additional bandwidth.",
-      },
-      {
-        question: 'Do you offer discounts for annual billing?',
-        answer:
-          'Yes! Annual plans come with a 20% discount. You can switch to annual billing from your account settings at any time.',
-      },
-      {
-        question: "Can I get a refund if I'm not satisfied?",
-        answer:
-          "Yes, we offer a 30-day money-back guarantee on all paid plans. If you're not happy with " +
-          siteConfig.name +
-          ', contact support for a full refund.',
+          '為了確保正確性，技術類文章我都會盡量附上官方文件連結或參考來源。若您發現內容有誤，非常歡迎留言或聯繫我修正。',
       },
     ],
   },
   {
-    name: 'Technical',
+    name: '合作與交流',
     faqs: [
       {
-        question: 'How fast are deployments?',
+        question: '有提供技術諮詢或合作計畫嗎？',
         answer:
-          'Most deployments complete in under 60 seconds. Our optimized build pipeline caches dependencies and uses incremental builds to get your changes live as fast as possible.',
+          '我非常歡迎各類型的技術交流、專欄邀稿或產品評論合作。請透過聯絡頁面或 Email 提供詳細說明，我會盡快回覆您。',
       },
       {
-        question: 'Do you support custom domains?',
+        question: '如何聯繫到作者本人？',
         answer:
-          'Yes, you can connect unlimited custom domains to your projects. We automatically provision and renew SSL certificates for all domains at no extra cost.',
-      },
-      {
-        question: 'Can I use environment variables?',
-        answer:
-          'Yes, you can set environment variables for each project with different values for development, preview, and production environments. All variables are encrypted at rest.',
-      },
-      {
-        question: 'What about serverless functions?',
-        answer:
-          'We support serverless functions out of the box. Deploy API routes alongside your frontend with zero configuration. Functions run on our global edge network for low latency.',
-      },
-    ],
-  },
-  {
-    name: 'Security & Compliance',
-    faqs: [
-      {
-        question: 'Is my data secure?',
-        answer:
-          'Security is our top priority. All data is encrypted in transit and at rest. We use industry-standard security practices and undergo regular security audits.',
-      },
-      {
-        question: 'Do you offer SSO?',
-        answer:
-          'Yes, SSO with SAML is available on our Enterprise plan. We support integration with Okta, Azure AD, Google Workspace, and other identity providers.',
-      },
-      {
-        question: 'Are you SOC 2 compliant?',
-        answer:
-          'Yes, we maintain SOC 2 Type II compliance. Enterprise customers can request our compliance reports and security documentation.',
-      },
-    ],
-  },
-  {
-    name: 'Support',
-    faqs: [
-      {
-        question: 'How can I get help?',
-        answer:
-          'We offer multiple support channels: community Discord for quick questions, email support for all customers, and priority support with dedicated response times for Pro and Enterprise plans.',
-      },
-      {
-        question: 'Do you have documentation?',
-        answer:
-          'Yes! Our comprehensive documentation covers everything from getting started to advanced configurations. Visit our docs section for guides, tutorials, and API references.',
-      },
-      {
-        question: 'What are your support hours?',
-        answer:
-          'Our community Discord is active 24/7. Email support is available Monday-Friday, 9am-6pm PT. Enterprise customers have access to 24/7 priority support.',
+          '最快的方式是透過「聯絡我們」頁面的表單，或是直接發送郵件到我的電子信箱。我也常出沒在 Discord 社群中，歡迎加入一起聊天。',
       },
     ],
   },
@@ -130,23 +60,23 @@ const faqCategories = [
 ---
 
 <MarketingLayout
-  title={`FAQ - ${siteConfig.name}`}
-  description={`Frequently asked questions about ${siteConfig.name}. Find answers about pricing, features, security, and more.`}
+  title={`常見問題 - ${siteConfig.name}`}
+  description={`關於 ${siteConfig.name} 的常見問題解答。了解本站的內容、授權規範與合作方式。`}
 >
   <PageHeader
-    title="Frequently Asked Questions"
-    subtitle={`Everything you need to know about ${siteConfig.name}. Can't find what you're looking for?`}
+    title="常見問題"
+    subtitle={`關於 ${siteConfig.name}，您想知道的都在這裡。找不到答案嗎？`}
   >
-    <a href="/contact" class="text-primary hover:underline">Contact our team</a>.
+    <a href="/contact" class="text-[#FF6A00] hover:underline">直接與我聯繫</a>。
   </PageHeader>
 
   <FAQSection categories={faqCategories} variant="accordion" background="default" />
 
   <CTA
-    title="Still have questions?"
-    description="Can't find the answer you're looking for? Our team is here to help."
-    action={{ label: 'Contact Support', href: '/contact' }}
-    secondaryAction={{ label: 'Join Discord Community', href: siteConfig.social.discord || '#' }}
+    title="還有其他疑問嗎？"
+    description="沒關係，您可以直接聯絡我，我很樂意為您解答。"
+    action={{ label: '前往聯絡頁面', href: '/contact' }}
+    secondaryAction={{ label: '加入社群討論', href: siteConfig.social.discord || '#' }}
     background="muted"
   />
 </MarketingLayout>
