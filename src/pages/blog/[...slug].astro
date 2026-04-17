@@ -19,23 +19,14 @@ const { Content } = await render(post);
 const seoTitle = `${post.data.title} - ${siteConfig.name}`;
 const displayTitle = post.data.title;
 
-// --- 邏輯處理：取得所有文章 ---
+// --- 邏輯處理 ---
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
-const sortedPosts = allPosts.sort(
-  (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
-);
 
-const currentIndex = sortedPosts.findIndex((p) => p.id === post.id);
-
-// --- 1. 上下篇導覽 (你原本的邏輯) ---
-const nextPost = currentIndex > 0 ? sortedPosts[currentIndex - 1] : null;
-const prevPost = currentIndex < sortedPosts.length - 1 ? sortedPosts[currentIndex + 1] : null;
-
-// --- 2. 相關閱讀邏輯 (新增) ---
-// 規則：找同一個 category 的文章，且排除掉「現在正在看的這篇」
+// 相關閱讀：找同類別 (category) 且排除自己，取 3 篇
 const relatedPosts = allPosts
   .filter((p) => p.id !== post.id && p.data.category === post.data.category)
-  .slice(0, 3); // 取 3 篇相關的
+  .sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime())
+  .slice(0, 3);
 ---
 
 <BlogLayout
@@ -50,56 +41,30 @@ const relatedPosts = allPosts
 >
   <Content slot="content" />
 
+  {/* 系統自動抓取的相關閱讀 - 純文字設計 */}
   {relatedPosts.length > 0 && (
-    <div class="mt-16 pt-8 border-t border-border">
-      <h3 class="text-lg font-bold mb-6 flex items-center gap-2">
-        <span class="w-1 h-6 bg-[#FF6A00] rounded-full"></span>
+    <div class="mt-20 pt-10 border-t border-gray-100">
+      <h3 class="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] mb-8 flex items-center gap-3">
+        <span class="w-1 h-4 bg-[#FF6A00]"></span>
         相關閱讀
       </h3>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {relatedPosts.map((related) => (
-          <a href={`/blog/${related.id}`} class="group">
-            <div class="aspect-video mb-3 overflow-hidden rounded-xl border border-border">
-              <img 
-                src={related.data.image} 
-                alt={related.data.title}
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
+          <a href={`/blog/${related.id}`} class="group block">
+            <div class="flex flex-col gap-3">
+              <h4 class="font-bold text-gray-900 group-hover:text-[#FF6A00] transition-colors leading-snug">
+                {related.data.title}
+              </h4>
+              <p class="text-gray-500 text-xs line-clamp-2 leading-relaxed">
+                {related.data.description}
+              </p>
             </div>
-            <h4 class="font-bold text-sm group-hover:text-[#FF6A00] transition-colors line-clamp-2">
-              {related.data.title}
-            </h4>
           </a>
         ))}
       </div>
     </div>
   )}
 
-  <nav class="mt-12 py-8 border-t border-border flex flex-col sm:flex-row justify-between gap-8">
-    <div class="flex-1">
-      {prevPost && (
-        <a href={`/blog/${prevPost.id}`} class="group block">
-          <span class="text-sm text-text-muted flex items-center gap-1 group-hover:text-primary transition-colors">
-            ← 較舊的文章
-          </span>
-          <div class="mt-2 font-bold text-text group-hover:text-primary transition-colors line-clamp-2">
-            {prevPost.data.title}
-          </div>
-        </a>
-      )}
-    </div>
-    
-    <div class="flex-1 sm:text-right">
-      {nextPost && (
-        <a href={`/blog/${nextPost.id}`} class="group block">
-          <span class="text-sm text-text-muted flex items-center justify-end gap-1 group-hover:text-primary transition-colors">
-            較新的文章 →
-          </span>
-          <div class="mt-2 font-bold text-text group-hover:text-primary transition-colors line-clamp-2">
-            {nextPost.data.title}
-          </div>
-        </a>
-      )}
-    </div>
-  </nav>
+  {/* 底部保留一點留白，不再需要「較舊文章」導覽 */}
+  <div class="py-12"></div>
 </BlogLayout>
