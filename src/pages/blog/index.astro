@@ -13,7 +13,7 @@ const sortedPosts = allPosts.sort(
   (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
 );
 
-// 3. 抓取精選文章 (Boolean 確保抓取到 featured: true)
+// 3. 抓取精選文章 (使用 Boolean 確保抓取到 featured: true)
 const featuredPosts = sortedPosts.filter(post => Boolean(post.data.featured)).slice(0, 2);
 
 // 4. 分頁邏輯
@@ -35,7 +35,7 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
       <div class="flex flex-col gap-10">
         <div class="space-y-4">
           <h1 class="text-3xl md:text-5xl font-black tracking-tight text-white">最新實戰心得</h1>
-          <p class="text-white/90 text-sm md:text-lg max-w-2xl leading-relaxed">
+          <p class="text-white/90 text-sm md:text-lg max-w-2xl leading-relaxed font-medium">
             分享行銷心得、AI 工具應用與自媒體經營筆記。
           </p>
         </div>
@@ -66,7 +66,7 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             {featuredPosts.map((post) => (
               <a href={`/blog/${post.id}`} class="group block p-8 rounded-[2rem] bg-slate-50 dark:bg-slate-900 border-2 border-slate-100 dark:border-slate-800 hover:border-[#FF6A00] transition-all shadow-sm">
-                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4 leading-tight group-hover:text-[#FF6A00] transition-colors">
+                <h3 class="text-xl font-bold text-slate-950 dark:text-white mb-4 leading-tight group-hover:text-[#FF6A00] transition-colors">
                   {post.data.title}
                 </h3>
                 <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 leading-relaxed">
@@ -79,36 +79,4 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
       )}
 
       <div class="mb-12 border-b-2 border-slate-100 dark:border-slate-800 pb-4">
-        <h2 class="text-xs font-bold text-slate-400 uppercase tracking-[0.3em]">Timeline / 最新發布</h2>
-      </div>
-
-      <div class="space-y-20">
-        {paginatedPosts.map((post) => (
-          <article class="group">
-            <a href={`/blog/${post.id}`} class="block">
-              <div class="flex flex-col gap-5">
-                <div class="flex items-center gap-3 text-xs font-bold text-slate-400">
-                  <time class="text-slate-500">{post.data.publishedDate.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
-                  <span class="w-1.5 h-1.5 rounded-full bg-[#FF6A00]"></span>
-                  <span>{calculateReadingTime(post.body || '')} 分鐘閱讀</span>
-                </div>
-                
-                <h2 class="text-2xl md:text-4xl font-black text-slate-950 dark:text-white group-hover:text-[#FF6A00] transition-colors leading-[1.3]">
-                  {post.data.title}
-                </h2>
-                
-                <p class="text-slate-600 dark:text-slate-400 line-clamp-3 text-base md:text-lg leading-relaxed max-w-3xl">
-                  {post.data.description}
-                </p>
-              </div>
-            </a>
-          </article>
-        ))}
-      </div>
-
-      <div class="mt-24">
-        <Pagination currentPage={currentPage} totalPages={totalPages} basePath="/blog" />
-      </div>
-    </div>
-  </section>
-</MarketingLayout>
+        <h2 class="text-xs font-bold text-slate-400 uppercase tracking-[0.
