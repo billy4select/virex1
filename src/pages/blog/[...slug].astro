@@ -19,13 +19,18 @@ const { Content } = await render(post);
 const seoTitle = `${post.data.title} - ${siteConfig.name}`;
 const displayTitle = post.data.title;
 
-// --- 邏輯處理 ---
+// --- 邏輯處理：自動化相關閱讀 ---
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 
-// 相關閱讀：找同類別 (category) 且排除自己，取 3 篇
-const relatedPosts = allPosts
-  .filter((p) => p.id !== post.id && p.data.category === post.data.category)
-  .sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime())
+// 1. 找出同類別 (category) 且排除目前正在閱讀的這篇
+const sameCategoryPosts = allPosts.filter(
+  (p) => p.id !== post.id && p.data.category === post.data.category
+);
+
+// 2. 隨機打亂順序 (Shuffle)，確保每篇文章底下的推薦內容具有多樣性
+// 這樣就不會點每一篇都看到一模一樣的最新三篇
+const relatedPosts = sameCategoryPosts
+  .sort(() => Math.random() - 0.5)
   .slice(0, 3);
 ---
 
@@ -39,9 +44,10 @@ const relatedPosts = allPosts
   tags={post.data.tags}
   content={post.body || ''}
 >
+  {/* 文章主體內容 */}
   <Content slot="content" />
 
-  {/* 系統自動抓取的相關閱讀 - 純文字設計 */}
+  {/* 系統自動抓取的相關閱讀 - 採用純文字設計，無圖片版面 */}
   {relatedPosts.length > 0 && (
     <div class="mt-20 pt-10 border-t border-gray-100">
       <h3 class="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] mb-8 flex items-center gap-3">
@@ -65,6 +71,6 @@ const relatedPosts = allPosts
     </div>
   )}
 
-  {/* 底部保留一點留白，不再需要「較舊文章」導覽 */}
+  {/* 底部留白，移除舊式的「上一篇/下一篇」導覽，讓視覺更聚焦在相關閱讀 */}
   <div class="py-12"></div>
 </BlogLayout>
