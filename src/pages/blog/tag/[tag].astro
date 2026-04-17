@@ -1,8 +1,8 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import PostCard from '@ui/PostCard.astro'; // 1. 匯入統一組件
 import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
-import { calculateReadingTime } from '@/lib/utils';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
@@ -30,11 +30,12 @@ const { posts, allTags } = Astro.props;
   title={`標籤：${tag} - ${siteConfig.name}`}
   description={`瀏覽所有關於 ${tag} 的文章。`}
 >
-  <section class="bg-[#FF6A00] border-b border-black/10 py-10 md:py-16">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
-      <div class="flex flex-col gap-8">
+  {/* 區塊 A: 頂部橘色 Header - 保持與主頁一致的內距 */}
+  <section class="bg-[#FF6A00] border-b border-black/10 pt-12 pb-16 md:pt-16 md:pb-24">
+    <div class="max-w-4xl mx-auto px-4 text-white">
+      <div class="flex flex-col gap-10">
         <div>
-          <a href="/blog" class="text-white/60 hover:text-white text-xs font-bold flex items-center gap-2 mb-4 transition-colors">
+          <a href="/blog" class="text-white/60 hover:text-white text-xs font-bold flex items-center gap-2 mb-6 transition-colors">
             ← 返回所有文章
           </a>
           <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">
@@ -46,7 +47,7 @@ const { posts, allTags } = Astro.props;
         </div>
 
         <div class="flex flex-col gap-3">
-          <span class="text-[10px] font-bold text-white/50 uppercase tracking-[0.2em]">切換其他主題</span>
+          <span class="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em]">切換其他主題</span>
           <div class="flex flex-wrap gap-2">
             <a href="/blog" class="px-4 py-1.5 text-xs font-bold bg-white/10 border border-white/10 text-white rounded-full hover:bg-white/20 transition-all">
               全部
@@ -69,28 +70,24 @@ const { posts, allTags } = Astro.props;
     </div>
   </section>
 
-  <section class="py-12 md:py-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+  {/* 區塊 B: 下方白色內容區 - 修正為一致的 py-16 與 bg-white */}
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="mb-12 border-b border-gray-100 pb-4">
+        <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.3em]">Timeline / 標籤文章</h2>
+      </div>
+
       <div class="space-y-16">
+        {/* 2. 調用統一卡片 */}
         {posts.map((post) => (
-          <article class="group">
-            <a href={`/blog/${post.id}`} class="block">
-              <div class="flex flex-col gap-4">
-                <div class="flex items-center gap-3 text-[11px] font-medium text-text-muted">
-                  <time>{post.data.publishedDate.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
-                  <span class="w-1.5 h-1.5 rounded-full bg-border"></span>
-                  <span>{calculateReadingTime(post.body || '')} 分鐘閱讀</span>
-                </div>
-                <h2 class="text-xl md:text-2xl font-bold text-text group-hover:text-[#FF6A00] transition-colors leading-snug max-w-3xl">
-                  {post.data.title}
-                </h2>
-                <p class="text-text-muted line-clamp-2 text-sm md:text-base leading-relaxed max-w-3xl">
-                  {post.data.description}
-                </p>
-              </div>
-            </a>
-          </article>
+          <PostCard post={post} />
         ))}
+      </div>
+      
+      <div class="mt-24 pt-10 border-t border-gray-100 text-center">
+        <a href="/blog" class="text-sm font-bold text-[#FF6A00] hover:underline">
+          查看所有文章主題 →
+        </a>
       </div>
     </div>
   </section>
