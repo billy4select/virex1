@@ -11,8 +11,8 @@ interface Props {
   image?: string;
   tags?: string[];
   content: string;
-  displayTitle?: string; // 修正：接收傳入的顯示標題
-  // --- 新增：接收 Schema 資料 ---
+  displayTitle?: string;
+  // --- SEO 結構化資料 Props ---
   schemaType?: 'HowTo' | 'FAQ' | 'Article';
   steps?: { name: string; text: string }[];
   faq?: { q: string; a: string }[];
@@ -35,7 +35,7 @@ const {
 const readingTime = calculateReadingTime(content);
 const formattedDate = formatDate(publishedDate, { year: 'numeric', month: 'long', day: 'numeric' });
 
-// 如果 Props 沒有傳 displayTitle，則從 title 自動切分
+// 自動切分標題，移除管道符號後的 SEO 字串
 const displayTitle = propsDisplayTitle || (title ? title.split(/ [\|\-] /)[0] : ""); 
 ---
 
@@ -47,13 +47,13 @@ const displayTitle = propsDisplayTitle || (title ? title.split(/ [\|\-] /)[0] : 
   publishedDate={publishedDate} 
   author={author} 
   tags={tags}
-  /* --- 轉發 Schema 資料給 MarketingLayout --- */
+  /* 轉發至最外層 MarketingLayout 處理 JSON-LD 生成 */
   schemaType={schemaType}
   steps={steps}
   faq={faq}
 >
   
-  <section class="bg-[#FF6A00] border-b border-black/10 py-8 md:py-16">
+  <section class="bg-[#FF6A00] border-b border-black/10 py-8 md:py-16" data-pagefind-ignore>
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <nav class="flex items-center text-xs sm:text-sm text-white/80 mb-6 w-full font-medium" aria-label="Breadcrumb">
@@ -97,7 +97,7 @@ const displayTitle = propsDisplayTitle || (title ? title.split(/ [\|\-] /)[0] : 
     </div>
   </section>
 
-  <article class="py-10 md:py-16">
+  <article class="py-10 md:py-16" data-pagefind-body>
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="prose prose-slate dark:prose-invert prose-base md:prose-lg max-w-none">
         <slot name="content" />
@@ -105,6 +105,10 @@ const displayTitle = propsDisplayTitle || (title ? title.split(/ [\|\-] /)[0] : 
       </div>
     </div>
   </article>
+
+  <div data-pagefind-ignore>
+    <slot name="footer" />
+  </div>
 
 </MarketingLayout>
 
