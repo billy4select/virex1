@@ -1,7 +1,7 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Pagination from '@ui/Pagination.astro';
-import PostCard from '@ui/PostCard.astro'; // 1. 匯入新組件
+import PostCard from '@ui/PostCard.astro';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
 
@@ -11,7 +11,8 @@ const sortedPosts = allPosts.sort(
   (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
 );
 
-// 2. 篩選精選
+// 2. 篩選精選 (首頁只取前 2 篇)
+const featuredPostsCount = allPosts.filter(post => post.data.featured).length;
 const featuredPosts = sortedPosts.filter(post => post.data.featured).slice(0, 2);
 
 // 3. 分頁邏輯
@@ -42,7 +43,11 @@ const tags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
           <span class="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em]">按主題瀏覽</span>
           <div class="flex flex-wrap gap-2">
             <a href="/blog" class="px-4 py-1.5 text-xs font-bold bg-white text-[#FF6A00] rounded-full">全部</a>
-            {tags.map((tag) => <a href={`/blog/tag/${tag}`} class="px-4 py-1.5 text-xs font-bold bg-white/10 border border-white/10 text-white rounded-full hover:bg-white/20 transition-all">#{tag}</a>)}
+            {tags.map((tag) => (
+              <a href={`/blog/tag/${tag}`} class="px-4 py-1.5 text-xs font-bold bg-white/10 border border-white/10 text-white rounded-full hover:bg-white/20 transition-all">
+                #{tag}
+              </a>
+            ))}
           </div>
         </div>
       </div>
@@ -52,12 +57,19 @@ const tags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
   <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-4">
       
+      {/* 熱門文章區塊 */}
       {featuredPosts.length > 0 && (
         <div class="mb-20">
-          <div class="flex items-center gap-3 mb-8">
+          {/* 修改點：線在下面 + 查看更多按鈕 */}
+          <div class="mb-12 border-b border-gray-100 pb-4 flex justify-between items-end">
             <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.3em]">熱門文章</h2>
-            <div class="h-px flex-1 bg-gray-100"></div>
+            {featuredPostsCount > 2 && (
+              <a href="/blog/tag/精選" class="text-[11px] font-bold text-[#FF6A00] hover:opacity-80 transition-all flex items-center gap-1">
+                查看更多 <span class="text-sm">→</span>
+              </a>
+            )}
           </div>
+
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             {featuredPosts.map((post) => (
               <a href={`/blog/${post.id}`} class="group block p-7 rounded-3xl bg-gray-50 border border-gray-100 hover:border-[#FF6A00]/20 hover:bg-white hover:shadow-xl hover:shadow-[#FF6A00]/5 transition-all duration-300">
@@ -72,12 +84,12 @@ const tags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
         </div>
       )}
 
+      {/* 最新文章標題：維持線在下面 */}
       <div class="mb-12 border-b border-gray-100 pb-4">
         <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.3em]">最新文章</h2>
       </div>
 
       <div class="space-y-16">
-        {/* 2. 這裡改用新組件，程式碼變乾淨了 */}
         {paginatedPosts.map((post) => (
           <PostCard post={post} />
         ))}
