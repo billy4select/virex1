@@ -30,7 +30,7 @@ const { posts, allTags } = Astro.props;
   title={`標籤：${tag} - ${siteConfig.name}`}
   description={`瀏覽所有關於 ${tag} 的文章。`}
 >
-  {/* 區塊 A: 頂部橘色 Header - 保持與主頁一致的內距 */}
+  {/* 區塊 A: 頂部橘色 Header */}
   <section class="bg-[#FF6A00] border-b border-black/10 pt-12 pb-16 md:pt-16 md:pb-24">
     <div class="max-w-4xl mx-auto px-4 text-white">
       <div class="flex flex-col gap-10">
@@ -70,15 +70,15 @@ const { posts, allTags } = Astro.props;
     </div>
   </section>
 
-  {/* 區塊 B: 下方白色內容區 - 修正為一致的 py-16 與 bg-white */}
+  {/* 區塊 B: 下方白色內容區 */}
   <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-4">
       <div class="mb-12 border-b border-gray-100 pb-4">
-        <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.3em]">Timeline / 標籤文章</h2>
+        {/* 已修改：將 Timeline / 標籤文章 改為 最新文章 */}
+        <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.3em]">最新文章</h2>
       </div>
 
       <div class="space-y-16">
-        {/* 2. 調用統一卡片 */}
         {posts.map((post) => (
           <PostCard post={post} />
         ))}

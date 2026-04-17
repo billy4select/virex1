@@ -1,7 +1,7 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Pagination from '@ui/Pagination.astro';
-import PostCard from '@ui/PostCard.astro'; // 1. 引入統一的卡片組件
+import PostCard from '@ui/PostCard.astro'; 
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { siteConfig } from '@/config';
 
@@ -33,22 +33,19 @@ const paginatedPosts: CollectionEntry<'blog'>[] = sortedPosts.slice(
   startIndex + POSTS_PER_PAGE
 );
 
-// 第一頁導回主頁
 if (currentPage === 1) {
   return Astro.redirect('/blog');
 }
 
-// 獲取所有標籤
 const allTags = [
   ...new Set(posts.flatMap((post: CollectionEntry<'blog'>) => post.data.tags)),
 ].filter(tag => tag && tag.trim() !== "").sort();
 ---
 
 <MarketingLayout
-  title={`Blog - 第 ${currentPage} 頁`}
+  title={`部落格 - 第 ${currentPage} 頁`}
   description={`分享行銷心得、AI 工具應用與自媒體經營筆記。第 ${currentPage} 頁，共 ${totalPages} 頁。`}
 >
-  {/* 區塊 A: 頂部橘色 Header (與主頁保持一致) */}
   <section class="bg-[#FF6A00] border-b border-black/10 pt-12 pb-16 md:pt-16 md:pb-24">
     <div class="max-w-4xl mx-auto px-4 text-white">
       <div class="flex flex-col gap-10">
@@ -79,16 +76,15 @@ const allTags = [
     </div>
   </section>
 
-  {/* 區塊 B: 下方白色內容區 */}
   <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-4">
       
       <div class="mb-12 border-b border-gray-100 pb-4">
-        <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.3em]">Timeline / 第 {currentPage} 頁</h2>
+        {/* 已修改：移除 Timeline 英文，改為中文 */}
+        <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.3em]">最新文章 - 第 {currentPage} 頁</h2>
       </div>
 
       <div class="space-y-16">
-        {/* 2. 使用統一的卡片組件 */}
         {paginatedPosts.map((post) => (
           <PostCard post={post} />
         ))}
