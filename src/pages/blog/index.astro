@@ -5,7 +5,7 @@ import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
 import { calculateReadingTime } from '@/lib/utils';
 
-// 1. 取得並排序文章
+// 1. 取得文章
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const sortedPosts = allPosts.sort(
   (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
@@ -14,13 +14,13 @@ const sortedPosts = allPosts.sort(
 // 2. 篩選精選
 const featuredPosts = sortedPosts.filter(post => post.data.featured).slice(0, 2);
 
-// 3. 分頁
+// 3. 分頁邏輯
 const POSTS_PER_PAGE = 6;
 const currentPage = 1;
 const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
 const paginatedPosts = sortedPosts.slice(0, POSTS_PER_PAGE);
 
-// 4. 先處理好標籤數據，避免在 HTML 內寫複雜 map
+// 4. 標籤處理
 const tags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
   .filter(tag => tag && tag.trim() !== "")
   .sort();
@@ -28,6 +28,7 @@ const tags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
 
 <MarketingLayout title="Blog" description={siteConfig.description}>
   
+  {/* 區塊 A: 頂部橘色 Header (變乾淨了) */}
   <section class="bg-[#FF6A00] border-b border-black/10 pt-12 pb-16 md:pt-16 md:pb-24">
     <div class="max-w-4xl mx-auto px-4 text-white">
       <div class="flex flex-col gap-10">
@@ -38,25 +39,10 @@ const tags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
           </p>
         </div>
 
-        {featuredPosts.length > 0 && (
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {featuredPosts.map((post) => (
-              <a href={`/blog/${post.id}`} class="group block p-6 rounded-2xl bg-white/10 border border-white/20 hover:bg-white/20 transition-all shadow-sm">
-                <div class="flex flex-col h-full gap-3">
-                  <div class="text-[9px] font-bold text-white/50 uppercase tracking-[0.2em]">⭐ 精選資產</div>
-                  <h3 class="text-lg font-bold text-white group-hover:underline">{post.data.title}</h3>
-                  <p class="text-white/70 text-xs line-clamp-2 mt-auto">{post.data.description}</p>
-                </div>
-              </a>
-            ))}
-          </div>
-        )}
-
         <div class="flex flex-col gap-3">
           <span class="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em]">按主題瀏覽</span>
           <div class="flex flex-wrap gap-2">
             <a href="/blog" class="px-4 py-1.5 text-xs font-bold bg-white text-[#FF6A00] rounded-full">全部</a>
-            {/* 這裡改成最簡單的單行 map，確保編譯器不會誤判 */}
             {tags.map((tag) => <a href={`/blog/tag/${tag}`} class="px-4 py-1.5 text-xs font-bold bg-white/10 border border-white/10 text-white rounded-full hover:bg-white/20 transition-all">#{tag}</a>)}
           </div>
         </div>
@@ -64,8 +50,32 @@ const tags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
     </div>
   </section>
 
+  {/* 區塊 B: 下方白色內容區 */}
   <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-4">
+      
+      {/* 1. 精選文章移到這裡 (白色背景上方) */}
+      {featuredPosts.length > 0 && (
+        <div class="mb-20">
+          <div class="flex items-center gap-3 mb-8">
+            <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.3em]">Featured / 精選資產</h2>
+            <div class="h-px flex-1 bg-gray-100"></div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {featuredPosts.map((post) => (
+              <a href={`/blog/${post.id}`} class="group block p-7 rounded-3xl bg-gray-50 border border-gray-100 hover:border-[#FF6A00]/20 hover:bg-white hover:shadow-xl hover:shadow-[#FF6A00]/5 transition-all duration-300">
+                <div class="flex flex-col h-full gap-4">
+                  <div class="text-[10px] font-bold text-[#FF6A00] uppercase tracking-[0.1em]">⭐ 推薦必讀</div>
+                  <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#FF6A00] transition-colors">{post.data.title}</h3>
+                  <p class="text-gray-500 text-sm line-clamp-2 mt-auto leading-relaxed">{post.data.description}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* 2. 最新發布 Timeline */}
       <div class="mb-12 border-b border-gray-100 pb-4">
         <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.3em]">Timeline / 最新發布</h2>
       </div>
@@ -80,10 +90,23 @@ const tags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
                   <span class="w-1.5 h-1.5 rounded-full bg-gray-200"></span>
                   <span>{calculateReadingTime(post.body || '')} min read</span>
                 </div>
-                <h2 class="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-[#FF6A00] transition-colors">{post.data.title}</h2>
-                <p class="text-gray-500 line-clamp-2 text-sm md:text-base">{post.data.description}</p>
+                <h2 class="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-[#FF6A00] transition-colors leading-snug">{post.data.title}</h2>
+                <p class="text-gray-500 line-clamp-2 text-sm md:text-base leading-relaxed">{post.data.description}</p>
               </div>
             </a>
           </article>
         ))}
       </div>
+
+      {/* 3. 分頁功能 (補回組件) */}
+      <div class="mt-20">
+        <Pagination 
+          currentPage={currentPage} 
+          totalPages={totalPages} 
+          basePath="/blog" 
+        />
+      </div>
+      
+    </div>
+  </section>
+</MarketingLayout>
