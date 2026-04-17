@@ -5,22 +5,17 @@ import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
 import { calculateReadingTime } from '@/lib/utils';
 
-// 1. 取得所有文章並按日期排序
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
-const sortedPosts = allPosts.sort(
-  (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
-);
+const sortedPosts = allPosts.sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime());
 
-// 2. 定義精選文章 (Featured Assets)
+// 1. 精選文章 (Featured)
 const featuredPosts = sortedPosts.filter(post => post.data.featured).slice(0, 2);
 
-// 3. 分頁邏輯
-const POSTS_PER_PAGE = 6;
-const currentPage = 1;
-const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
-const paginatedPosts = sortedPosts.slice(0, POSTS_PER_PAGE);
+// 2. 最新文章 (Timeline)：自動過濾掉已經在精選的文章，避免重複
+const latestPosts = sortedPosts
+  .filter(post => !post.data.featured)
+  .slice(0, 6); // 這裡對應你的 POSTS_PER_PAGE
 
-// 4. 標籤處理
 const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
   .filter(tag => tag && tag.trim() !== "")
   .sort();
@@ -41,15 +36,11 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
         {featuredPosts.length > 0 && (
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             {featuredPosts.map((post) => (
-              <a href={`/blog/${post.id}`} class="group block p-6 rounded-2xl bg-white/10 border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-sm">
+              <a href={`/blog/${post.id}`} class="group block p-6 rounded-2xl bg-white/10 border border-white/20 hover:bg-white/20 transition-all duration-300">
                 <div class="flex flex-col h-full gap-3">
                   <div class="text-[9px] font-bold text-white/50 uppercase tracking-[0.2em]">⭐ 精選資產</div>
-                  <h3 class="text-lg font-bold text-white group-hover:underline underline-offset-4 decoration-white/40 transition-all">
-                    {post.data.title}
-                  </h3>
-                  <p class="text-white/70 text-xs line-clamp-2 leading-relaxed mt-auto">
-                    {post.data.description}
-                  </p>
+                  <h3 class="text-lg font-bold text-white group-hover:underline">{post.data.title}</h3>
+                  <p class="text-white/70 text-xs line-clamp-2 mt-auto">{post.data.description}</p>
                 </div>
               </a>
             ))}
@@ -61,10 +52,7 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
           <div class="flex flex-wrap gap-2">
             <a href="/blog" class="px-4 py-1.5 text-xs font-bold bg-white text-[#FF6A00] rounded-full shadow-md">全部</a>
             {allTags.map((tag) => (
-              <a 
-                href={`/blog/tag/${tag}`} 
-                class="px-4 py-1.5 text-xs font-bold bg-white/10 border border-white/10 text-white rounded-full hover:bg-white/20 transition-all"
-              >
+              <a href={`/blog/tag/${tag}`} class="px-4 py-1.5 text-xs font-bold bg-white/10 border border-white/10 text-white rounded-full hover:bg-white/20 transition-all">
                 #{tag}
               </a>
             ))}
@@ -74,36 +62,32 @@ const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-white">
+  <section class="py-16 md:py-24">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-12 border-b border-gray-100 pb-4">
-        <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.3em]">Timeline / 最新發布</h2>
+      <div class="mb-12 border-b border-gray-100 dark:border-slate-800 pb-4">
+        <h2 class="text-xs font-bold text-gray-400 dark:text-slate-500 uppercase tracking-[0.3em]">Timeline / 最新發布</h2>
       </div>
 
       <div class="space-y-16">
-        {paginatedPosts.map((post) => (
+        {latestPosts.map((post) => (
           <article class="group">
             <a href={`/blog/${post.id}`} class="block">
               <div class="flex flex-col gap-4">
-                <div class="flex items-center gap-3 text-[11px] font-medium text-gray-400">
+                <div class="flex items-center gap-3 text-[11px] font-medium text-gray-400 dark:text-slate-500">
                   <time>{post.data.publishedDate.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
-                  <span class="w-1.5 h-1.5 rounded-full bg-gray-200"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-gray-200 dark:bg-slate-700"></span>
                   <span>{calculateReadingTime(post.body || '')} 分鐘閱讀</span>
                 </div>
-                <h2 class="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-[#FF6A00] transition-colors leading-snug max-w-3xl">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-slate-100 group-hover:text-[#FF6A00] transition-colors">
                   {post.data.title}
                 </h2>
-                <p class="text-gray-500 line-clamp-2 text-sm md:text-base leading-relaxed max-w-3xl">
+                <p class="text-gray-500 dark:text-slate-400 line-clamp-2 text-sm md:text-base">
                   {post.data.description}
                 </p>
               </div>
             </a>
           </article>
         ))}
-      </div>
-
-      <div class="mt-24">
-        <Pagination currentPage={currentPage} totalPages={totalPages} basePath="/blog" />
       </div>
     </div>
   </section>
