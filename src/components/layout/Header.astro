@@ -1,80 +1,205 @@
 ---
-// src/components/layout/Header.astro (示意路徑)
-import Search from "astro-pagefind/components/Search";
+/**
+ * Header - 完美整合搜尋功能與原始選單邏輯
+ */
+import { siteConfig } from '@/config';
 import { Icon } from 'astro-icon/components';
+import ThemeToggle from '@ui/ThemeToggle.astro';
+import Search from "astro-pagefind/components/Search.astro"; 
+import type { FeatureFlags } from '@/lib/types';
+
+const { features, navigation } = siteConfig;
+const { header: headerNav } = navigation;
+
+const mainNavItems = headerNav.main.filter(
+  (item) => !item.feature || features[item.feature as keyof FeatureFlags]
+);
+
+const ghostCTAs = headerNav.cta.filter((cta) => cta.variant === 'ghost');
+const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
 ---
 
-<header class="...你的樣式">
-  <nav class="flex items-center justify-between ...">
-    <div class="flex items-center gap-4">
+<header
+  id="site-header"
+  class="sticky top-0 z-50 p-1.5 bg-background/80 backdrop-blur-md border-b border-surface"
+>
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+    <div class="flex items-center justify-between h-16">
       
-      <div class="search-container relative">
-        <Search 
-          id="search" 
-          className="pagefind-ui" 
-          ui={{ 
-            bundlePath: "/pagefind/",
-            showImages: false, 
-            resetStyles: false, // 關閉預設樣式以便我們自訂
-            translations: { placeholder: "搜尋文章..." } 
-          }} 
-        />
+      <a href="/" class="flex items-center gap-3 group shrink-0">
+        {
+          siteConfig.logo ? (
+            <img 
+              src={siteConfig.logo} 
+              alt={siteConfig.name} 
+              class="h-10 w-10 md:h-11 md:w-11 rounded-full object-cover border-2 border-primary/20 group-hover:border-primary transition-all duration-300 shadow-sm" 
+            />
+          ) : null
+        }
+        <div class="flex flex-col leading-none">
+          <span class="font-bold text-lg md:text-xl text-text tracking-tight">
+            {siteConfig.name.split(' | ')[0]}
+          </span>
+          <span class="text-[10px] md:text-xs text-text-muted mt-1 font-medium">
+            {siteConfig.name.split(' | ')[1] || '比利陳 Billy Chen'}
+          </span>
+        </div>
+      </a>
+
+      <div class="hidden md:flex items-center gap-6">
+        {
+          mainNavItems.map((item) => (
+            <a
+              href={item.href}
+              class="text-text-muted hover:text-text transition-colors text-sm font-medium rounded-md px-2 py-1 focus:outline-none"
+            >
+              {item.label}
+            </a>
+          ))
+        }
       </div>
 
-      <button class="...">
-        <Icon name="lucide:moon" class="w-5 h-5" />
-      </button>
+      <div class="hidden md:flex items-center gap-4">
+        
+        <div class="search-container relative">
+          <Search 
+            id="search" 
+            className="pagefind-ui" 
+            ui={{ 
+              bundlePath: "/pagefind/",
+              showImages: false, 
+              resetStyles: false,
+              translations: { placeholder: "搜尋..." } 
+            }} 
+          />
+        </div>
 
-      <a href="..." class="bg-[#FF6A00] ...">加入群組</a>
+        <ThemeToggle />
+        
+        {
+          ghostCTAs.map((cta) => (
+            <a href={cta.href} class="text-text-muted hover:text-text text-sm font-medium px-2 py-1">{cta.label}</a>
+          ))
+        }
+        
+        {
+          primaryCTA && (
+            <a
+              href={primaryCTA.href}
+              class="px-4 py-2 rounded-md bg-primary text-white text-sm font-medium hover:bg-primary-dark transition-colors shrink-0"
+            >
+              {primaryCTA.label}
+            </a>
+          )
+        }
+      </div>
+
+      <div class="flex items-center gap-2 md:hidden">
+        <ThemeToggle />
+        <button
+          id="mobile-menu-button"
+          type="button"
+          aria-label="Toggle mobile menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          class="p-2 rounded-md hover:bg-surface transition-colors focus:outline-none"
+        >
+          <Icon name="lucide:menu" id="menu-icon-open" class="w-6 h-6 text-text" aria-hidden="true" />
+          <Icon name="lucide:x" id="menu-icon-close" class="hidden w-6 h-6 text-text" aria-hidden="true" />
+        </button>
+      </div>
     </div>
   </nav>
 </header>
 
-<style is:global>
-  /* 調整 Pagefind 導航欄樣式 */
-  .search-container {
-    --pagefind-ui-scale: 0.75; /* 縮小比例以符合導航欄 */
-    --pagefind-ui-primary: #FF6A00;
-    min-width: 200px;
-  }
+<div id="mobile-menu" class="fixed inset-0 z-40 hidden md:hidden" role="dialog" aria-modal="true">
+  <div id="mobile-menu-backdrop" class="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
+  <nav id="mobile-menu-panel" class="absolute left-0 right-0 bg-surface border-b border-background shadow-lg">
+    <div class="px-4 py-4 space-y-1">
+      {mainNavItems.map((item) => (
+        <a href={item.href} class="block px-3 py-3 rounded-md text-text-muted hover:text-text hover:bg-background text-base font-medium">{item.label}</a>
+      ))}
+      <div class="border-t border-border my-2"></div>
+      {primaryCTA && (
+        <a href={primaryCTA.href} class="block px-3 py-3 rounded-md bg-primary text-white text-center font-medium">{primaryCTA.label}</a>
+      )}
+    </div>
+  </nav>
+</div>
 
-  /* 隱藏 Pagefind 預設的大框框，讓它變扁平 */
-  .pagefind-ui .pagefind-ui__form::before {
-    background-color: white !important;
-    opacity: 0.6;
+<style is:global>
+  /* 搜尋框客製化樣式 */
+  .search-container {
+    --pagefind-ui-scale: 0.75;
+    --pagefind-ui-primary: #FF6A00;
+    width: 160px;
+    transition: width 0.3s ease;
   }
+  .search-container:focus-within { width: 220px; }
 
   .pagefind-ui .pagefind-ui__search-input {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    color: white !important;
+    background-color: rgba(128, 128, 128, 0.08) !important;
+    border: 1px solid rgba(128, 128, 128, 0.1) !important;
+    color: inherit !important;
     border-radius: 99px !important;
     padding: 8px 12px 8px 36px !important;
-    font-size: 14px !important;
   }
 
-  /* 讓搜尋結果視窗浮動在導航欄下方，不要撐開導航欄 */
   .pagefind-ui .pagefind-ui__drawer {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 350px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    z-index: 50;
-    margin-top: 10px;
-    max-height: 400px;
-    overflow-y: auto;
+    position: absolute !important;
+    top: 100% !important;
+    right: 0 !important;
+    width: 320px !important;
+    background: white !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+    z-index: 100 !important;
+    margin-top: 12px !important;
   }
 
-  /* 適配暗色模式 */
   :global(.dark) .pagefind-ui .pagefind-ui__drawer {
-    background: #1a1a1a;
-    color: white;
-  }
-  
-  :global(.dark) .pagefind-ui .pagefind-ui__result-link {
-    color: #FF8533 !important;
+    background: #1e293b !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
   }
 </style>
+
+<script>
+  const header = document.getElementById('site-header');
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+  const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+  const menuIconOpen = document.getElementById('menu-icon-open');
+  const menuIconClose = document.getElementById('menu-icon-close');
+
+  function updateMenuPosition() {
+    if (header && mobileMenuPanel) {
+      const headerRect = header.getBoundingClientRect();
+      mobileMenuPanel.style.top = `${headerRect.bottom}px`;
+    }
+  }
+
+  function openMobileMenu() {
+    updateMenuPosition();
+    mobileMenu?.classList.remove('hidden');
+    mobileMenuButton?.setAttribute('aria-expanded', 'true');
+    menuIconOpen?.classList.add('hidden');
+    menuIconClose?.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileMenu() {
+    mobileMenu?.classList.add('hidden');
+    mobileMenuButton?.setAttribute('aria-expanded', 'false');
+    menuIconOpen?.classList.remove('hidden');
+    menuIconClose?.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  mobileMenuButton?.addEventListener('click', () => {
+    const isExpanded = mobileMenuButton?.getAttribute('aria-expanded') === 'true';
+    isExpanded ? closeMobileMenu() : openMobileMenu();
+  });
+
+  mobileMenuBackdrop?.addEventListener('click', closeMobileMenu);
+</script>
