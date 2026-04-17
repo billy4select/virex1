@@ -14,6 +14,10 @@ interface Props {
   modifiedDate?: Date;
   author?: string;
   tags?: string[];
+  // --- 新增結構化資料相關 Props ---
+  schemaType?: 'HowTo' | 'FAQ' | 'Article';
+  steps?: { name: string; text: string }[];
+  faq?: { q: string; a: string }[];
 }
 
 const {
@@ -25,9 +29,49 @@ const {
   modifiedDate,
   author,
   tags,
+  schemaType,
+  steps,
+  faq,
 } = Astro.props;
 
 const { announcement } = siteConfig;
+
+// --- SEO 結構化資料 (JSON-LD) 生成邏輯 ---
+let schemas = [];
+
+// 1. 如果有 FAQ 資料，生成 FAQPage Schema
+if (faq && faq.length > 0) {
+  schemas.push({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faq.map(item => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.a
+      }
+    }))
+  });
+}
+
+// 2. 如果 schemaType 是 HowTo 且有步驟，生成 HowTo Schema
+if (schemaType === 'HowTo' && steps && steps.length > 0) {
+  schemas.push({
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": title,
+    "description": description,
+    "step": steps.map(step => ({
+      "@type": "HowToStep",
+      "name": step.name,
+      "itemListElement": [{
+        "@type": "HowToDirection",
+        "text": step.text
+      }]
+    }))
+  });
+}
 ---
 
 <BaseLayout
@@ -48,6 +92,10 @@ const { announcement } = siteConfig;
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-PVSL2LG5');
     </script>
+
+    {schemas.map(schema => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
   </Fragment>
 
   <div class="flex flex-col min-h-screen">
