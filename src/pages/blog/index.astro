@@ -5,151 +5,106 @@ import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
 import { calculateReadingTime } from '@/lib/utils';
 
+// 1. 取得所有文章並按日期排序
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const sortedPosts = allPosts.sort(
-  (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
+  (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
 );
 
+// 2. 定義精選文章 (Featured Assets)
+const featuredPosts = sortedPosts.filter(post => post.data.featured).slice(0, 2);
+
+// 3. 分頁邏輯
 const POSTS_PER_PAGE = 6;
 const currentPage = 1;
 const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
 const paginatedPosts = sortedPosts.slice(0, POSTS_PER_PAGE);
 
-// 修正：過濾掉空值，並確保 allTags 存在
+// 4. 標籤處理
 const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
-  .filter(tag => tag && tag.trim() !== "")
-  .sort();
+  .filter(tag => tag && tag.trim() !== "")
+  .sort();
 ---
 
 <MarketingLayout title="Blog" description={siteConfig.description}>
-  <header class="bg-[#FFB800] border-b border-black/5 py-10 md:py-16">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-10">
-        <h1 class="text-4xl sm:text-5xl font-bold text-slate-900">Blog</h1>
-        <p class="mt-4 text-lg text-slate-800/80">分享行銷心得、AI 工具應用與自媒體經營筆記。</p>
-      </div>
+  
+  <section class="bg-[#FF6A00] border-b border-black/10 pt-12 pb-16 md:pt-16 md:pb-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+      <div class="flex flex-col gap-10">
+        <div class="space-y-4">
+          <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">最新實戰心得</h1>
+          <p class="text-white/80 text-sm md:text-base max-w-2xl leading-relaxed">
+            分享行銷心得、AI 工具應用與自媒體經營筆記。將經驗系統化，打造可持續增長的數位資產。
+          </p>
+        </div>
 
-      <div class="flex items-center gap-2">
-        <span class="text-sm font-bold text-slate-900 flex-shrink-0">標籤篩選：</span>
-        
-        <div class="relative flex-1 overflow-hidden">
-          <div 
-            id="tag-container"
-            class="flex flex-nowrap overflow-x-auto gap-2 pb-2 no-scrollbar scroll-smooth cursor-grab active:cursor-grabbing select-none"
-          >
-            <a 
-              href="/blog" 
-              class="px-4 py-1.5 text-sm font-medium rounded-full bg-black text-white whitespace-nowrap shrink-0"
-            >
-              全部
-            </a>
-            {allTags.map((tag) => (
-              <a 
-                href={`/blog/tag/${tag}`} 
-                class="px-4 py-1.5 text-sm font-medium rounded-full bg-white/30 text-slate-900 hover:bg-white/50 whitespace-nowrap shrink-0 transition-colors border border-black/5"
-              >
-                {tag}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+        {featuredPosts.length > 0 && (
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {featuredPosts.map((post) => (
+              <a href={`/blog/${post.id}`} class="group block p-6 rounded-2xl bg-white/10 border border-white/20 hover:bg-white/20 transition-all duration-300 shadow-sm">
+                <div class="flex flex-col h-full gap-3">
+                  <div class="text-[9px] font-bold text-white/50 uppercase tracking-[0.2em]">⭐ 精選資產</div>
+                  <h3 class="text-lg font-bold text-white group-hover:underline underline-offset-4 decoration-white/40 transition-all">
+                    {post.data.title}
+                  </h3>
+                  <p class="text-white/70 text-xs line-clamp-2 leading-relaxed mt-auto">
+                    {post.data.description}
+                  </p>
+                </div>
+              </a>
+            ))}
+          </div>
+        )}
 
-  <section class="py-section">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="space-y-10">
-        {paginatedPosts.map((post) => (
-          <article class="group">
-            <a href={`/blog/${post.id}`} class="block">
-              <div class="flex flex-col gap-6">
-                <div class="flex-1">
-                  <div class="flex flex-wrap items-center gap-3 text-sm text-text-muted mb-2">
-                    <span>{post.data.publishedDate.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-                    <span>·</span>
-                    <span>閱讀時間 {calculateReadingTime(post.body || '')} 分鐘</span>
-                  </div>
-                  <h2 class="text-xl font-bold text-text group-hover:text-primary transition-colors">{post.data.title}</h2>
-                  <p class="mt-2 text-text-muted line-clamp-2">{post.data.description}</p>
-                </div>
-              </div>
-            </a>
-          </article>
-        ))}
-      </div>
+        <div class="flex flex-col gap-3">
+          <span class="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em]">按主題瀏覽</span>
+          <div class="flex flex-wrap gap-2">
+            <a href="/blog" class="px-4 py-1.5 text-xs font-bold bg-white text-[#FF6A00] rounded-full shadow-md">全部</a>
+            {allTags.map((tag) => (
+              <a 
+                href={`/blog/tag/${tag}`} 
+                class="px-4 py-1.5 text-xs font-bold bg-white/10 border border-white/10 text-white rounded-full hover:bg-white/20 transition-all"
+              >
+                #{tag}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <Pagination 
-        currentPage={currentPage} 
-        totalPages={totalPages} 
-        basePath="/blog" 
-      />
-    </div>
-  </section>
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 border-b border-gray-100 pb-4">
+        <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.3em]">Timeline / 最新發布</h2>
+      </div>
+
+      <div class="space-y-16">
+        {paginatedPosts.map((post) => (
+          <article class="group">
+            <a href={`/blog/${post.id}`} class="block">
+              <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-3 text-[11px] font-medium text-gray-400">
+                  <time>{post.data.publishedDate.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+                  <span class="w-1.5 h-1.5 rounded-full bg-gray-200"></span>
+                  <span>{calculateReadingTime(post.body || '')} 分鐘閱讀</span>
+                </div>
+                <h2 class="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-[#FF6A00] transition-colors leading-snug max-w-3xl">
+                  {post.data.title}
+                </h2>
+                <p class="text-gray-500 line-clamp-2 text-sm md:text-base leading-relaxed max-w-3xl">
+                  {post.data.description}
+                </p>
+              </div>
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <div class="mt-24">
+        <Pagination currentPage={currentPage} totalPages={totalPages} basePath="/blog" />
+      </div>
+    </div>
+  </section>
 </MarketingLayout>
-
-<script>
-  // 讓電腦版也能拖拽捲動標籤
-  const slider = document.getElementById('tag-container');
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-  let isDragging = false; // 增加拖拽判定以防誤觸點擊
-
-  if (slider) {
-    slider.addEventListener('mousedown', (e) => {
-      isDown = true;
-      isDragging = false;
-      slider.style.cursor = 'grabbing';
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-    
-    slider.addEventListener('mouseleave', () => {
-      isDown = false;
-      slider.style.cursor = 'grab';
-    });
-    
-    slider.addEventListener('mouseup', () => {
-      isDown = false;
-      slider.style.cursor = 'grab';
-    });
-    
-    slider.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 2; 
-      
-      if (Math.abs(walk) > 5) {
-        isDragging = true;
-        e.preventDefault();
-        slider.scrollLeft = scrollLeft - walk;
-      }
-    });
-
-    // 防止拖拽完後觸發 a 標籤點擊
-    slider.addEventListener('click', (e) => {
-      if (isDragging) {
-        e.preventDefault();
-        isDragging = false;
-      }
-    }, true);
-  }
-</script>
-
-<style>
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  .select-none {
-    user-select: none;
-  }
-  /* 初始游標狀態 */
-  #tag-container {
-    cursor: grab;
-  }
-</style>
