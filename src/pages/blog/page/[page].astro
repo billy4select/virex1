@@ -2,71 +2,65 @@
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Pagination from '@ui/Pagination.astro';
 import PostCard from '@ui/PostCard.astro'; 
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
 
-const POSTS_PER_PAGE = 6;
+// 1. 定義分頁路徑
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+  const sortedPosts = allPosts.sort(
+    (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
+  );
 
-export async function getStaticPaths() {
-  const postsPerPage = 6;
-  const posts = await getCollection('blog', ({ data }: CollectionEntry<'blog'>) => !data.draft);
-  const totalPages = Math.ceil(posts.length / postsPerPage);
+  // 篩選熱門文章 (Boosted) - 讓它可以在 Props 傳遞
+  const boostedPosts = sortedPosts
+    .filter(post => post.data.boost === true || post.data.featured === true)
+    .slice(0, 2);
 
-  return Array.from({ length: totalPages }, (_, i) => ({
-    params: { page: String(i + 1) },
-  }));
+  // 排除掉 Boost 文章後，剩下的才進入分頁流
+  const remainingPosts = sortedPosts.filter(
+    post => !boostedPosts.some(bp => bp.id === post.id)
+  );
+
+  return paginate(remainingPosts, { 
+    pageSize: 6, 
+    props: { boostedPosts, allPosts } 
+  });
 }
 
-const { page } = Astro.params;
-const currentPage = parseInt(page!);
+// 2. 取得 Astro 提供的分頁數據
+const { page, boostedPosts, allPosts } = Astro.props;
+const currentPage = page.currentPage;
 
-const posts = await getCollection('blog', ({ data }: CollectionEntry<'blog'>) => !data.draft);
-const sortedPosts = posts.sort(
-  (a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) =>
-    b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
-);
+// 3. 標籤處理
+const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
+  .filter(tag => tag && tag.trim() !== "")
+  .sort();
 
-const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
-const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
-const paginatedPosts: CollectionEntry<'blog'>[] = sortedPosts.slice(
-  startIndex,
-  startIndex + POSTS_PER_PAGE
-);
-
-if (currentPage === 1) {
-  return Astro.redirect('/blog');
-}
-
-const allTags = [
-  ...new Set(posts.flatMap((post: CollectionEntry<'blog'>) => post.data.tags)),
-].filter(tag => tag && tag.trim() !== "").sort();
+const featuredPostsCount = allPosts.filter(post => post.data.featured || post.data.boost).length;
 ---
 
 <MarketingLayout
-  title={`部落格 - 第 ${currentPage} 頁`}
-  description={`分享行銷心得、AI 工具應用與自媒體經營筆記。第 ${currentPage} 頁，共 ${totalPages} 頁。`}
+  title={currentPage === 1 ? "Blog" : `部落格 - 第 ${currentPage} 頁`}
+  description={siteConfig.description}
 >
+  {/* A 區塊：橘色 Header */}
   <section class="bg-[#FF6A00] border-b border-black/10 pt-12 pb-16 md:pt-16 md:pb-24">
     <div class="max-w-4xl mx-auto px-4 text-white">
       <div class="flex flex-col gap-10">
         <div class="space-y-4">
           <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">最新實戰心得</h1>
           <p class="text-white/80 text-sm md:text-base max-w-2xl leading-relaxed">
-            分享行銷心得、AI 工具應用與自媒體經營筆記。目前位於第 {currentPage} 頁。
+            分享行銷心得、AI 工具應用與自媒體經營筆記。
           </p>
         </div>
 
         <div class="flex flex-col gap-3">
           <span class="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em]">按主題瀏覽</span>
           <div class="flex flex-wrap gap-2">
-            <a href="/blog" class="px-4 py-1.5 text-xs font-bold bg-white/10 border border-white/10 text-white rounded-full hover:bg-white/20 transition-all">
-              全部
-            </a>
+            <a href="/blog" class="px-4 py-1.5 text-xs font-bold bg-white text-[#FF6A00] rounded-full">全部</a>
             {allTags.map((tag) => (
-              <a 
-                href={`/blog/tag/${tag}`} 
-                class="px-4 py-1.5 text-xs font-bold bg-white/10 border border-white/10 text-white rounded-full hover:bg-white/20 transition-all"
-              >
+              <a href={`/blog/tag/${tag}`} class="px-4 py-1.5 text-xs font-bold bg-white/10 border border-white/10 text-white rounded-full hover:bg-white/20 transition-all">
                 #{tag}
               </a>
             ))}
@@ -79,20 +73,56 @@ const allTags = [
   <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-4">
       
+      {/* B 區塊：熱門文章 (只在第一頁顯示) */}
+      {currentPage === 1 && boostedPosts.length > 0 && (
+        <div class="mb-20">
+          <div class="mb-12 border-b border-gray-100 pb-4 flex justify-between items-end">
+            <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.3em]">熱門文章</h2>
+            {featuredPostsCount > 2 && (
+              <a href="/blog/tag/精選" class="text-[11px] font-bold text-[#FF6A00] hover:opacity-80 transition-all flex items-center gap-1">
+                查看更多 <span class="text-sm">→</span>
+              </a>
+            )}
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {boostedPosts.map((post) => (
+              <a href={`/blog/${post.id}`} class="group block p-7 rounded-3xl bg-gray-50 border border-gray-100 hover:border-[#FF6A00]/20 hover:bg-white hover:shadow-xl hover:shadow-[#FF6A00]/5 transition-all duration-300">
+                <div class="flex flex-col h-full gap-4">
+                  <div class="text-[10px] font-bold text-[#FF6A00] uppercase tracking-[0.1em]">
+                    {post.data.boost ? "必讀" : "精選"}
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#FF6A00] transition-colors leading-snug">{post.data.title}</h3>
+                  <p class="text-gray-500 text-sm line-clamp-2 mt-auto leading-relaxed">{post.data.description}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* C 區塊：最新文章清單 */}
       <div class="mb-12 border-b border-gray-100 pb-4">
-        {/* 已修改：移除 Timeline 英文，改為中文 */}
-        <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.3em]">最新文章 - 第 {currentPage} 頁</h2>
+        <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.3em]">
+          {currentPage === 1 ? "最新文章" : `最新文章 - 第 ${currentPage} 頁`}
+        </h2>
       </div>
 
       <div class="space-y-16">
-        {paginatedPosts.map((post) => (
+        {page.data.map((post) => (
           <PostCard post={post} />
         ))}
       </div>
 
+      {/* D 區塊：分頁按鈕 */}
       <div class="mt-20">
-        <Pagination currentPage={currentPage} totalPages={totalPages} basePath="/blog" />
+        <Pagination 
+          currentPage={currentPage} 
+          totalPages={page.lastPage} 
+          basePath="/blog" 
+        />
       </div>
+      
     </div>
   </section>
 </MarketingLayout>
