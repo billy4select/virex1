@@ -1,6 +1,6 @@
 ---
 /**
- * Header - 官網風格一致版 (精細邊框與白底優化)
+ * Header - 最終排版修正版 (解決內容偏移問題)
  */
 import { siteConfig } from '@/config';
 import { Icon } from 'astro-icon/components';
@@ -23,7 +23,6 @@ const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
   class="sticky top-0 z-[100] w-full bg-white/95 backdrop-blur-md border-b border-slate-100 h-20 flex items-center"
 >
   <nav class="max-w-7xl mx-auto px-4 w-full flex items-center justify-between">
-    
     <a href="/" class="flex items-center gap-3 shrink-0">
       {siteConfig.logo && (
         <img src={siteConfig.logo} alt={siteConfig.name} class="h-10 w-10 rounded-full object-cover border border-slate-100" />
@@ -41,7 +40,6 @@ const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
     </div>
 
     <div class="flex items-center gap-4">
-      
       <div class="relative hidden md:block" style="z-index: 120;">
         <div class="search-container">
           <Search 
@@ -73,34 +71,53 @@ const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
 </header>
 
 <style is:global>
-  /* --- 搜尋框風格一致化修正 --- */
+  /* --- 搜尋框結構性修正 --- */
   .search-container {
     --pagefind-ui-scale: 0.75;
     --pagefind-ui-primary: #FF6A00;
     width: 160px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: width 0.3s ease;
+    display: flex;
+    align-items: center;
   }
   .search-container:focus-within { width: 220px; }
 
-  /* 輸入框：修正為細邊框與官網灰調 */
+  /* 解決截圖中的內部偏移問題 */
+  .pagefind-ui .pagefind-ui__form {
+    position: relative;
+    display: flex !important;
+    align-items: center !important;
+    width: 100%;
+  }
+
   .pagefind-ui .pagefind-ui__search-input {
     background-color: #fcfcfc !important;
-    border: 1px solid #e5e7eb !important; /* 細灰色邊框 */
+    border: 1px solid #e5e7eb !important;
     color: #4b5563 !important;
     border-radius: 99px !important;
-    padding: 8px 12px 8px 38px !important;
+    padding: 8px 12px 8px 34px !important; /* 縮減內距，確保文字靠左 */
     font-size: 14px !important;
-    transition: all 0.2s ease !important;
+    height: 36px !important; /* 固定高度防止抖動 */
+    line-height: 1 !important;
   }
 
-  /* 點擊時狀態 */
-  .pagefind-ui .pagefind-ui__search-input:focus {
-    background-color: #ffffff !important;
-    border-color: #FF6A00 !important;
-    box-shadow: 0 0 0 2px rgba(255, 106, 0, 0.1) !important;
+  /* 強制修正搜尋圖示位置 */
+  .pagefind-ui .pagefind-ui__search-icon {
+    position: absolute !important;
+    left: 10px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 14px !important;
+    height: 14px !important;
+    opacity: 0.4 !important;
   }
 
-  /* --- 搜尋結果下拉選單 --- */
+  /* 徹底隱藏導致跑版的 Clear 按鈕 */
+  .pagefind-ui .pagefind-ui__search-clear {
+    display: none !important;
+  }
+
+  /* 下拉選單維持質感 */
   .pagefind-ui .pagefind-ui__drawer {
     position: absolute !important;
     top: calc(100% + 12px) !important;
@@ -108,14 +125,12 @@ const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
     width: 320px !important;
     background: #ffffff !important; 
     border-radius: 12px !important;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
-    z-index: 999 !important;
-    pointer-events: auto !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
     padding: 8px !important;
     border: 1px solid #f3f4f6 !important;
   }
 
-  /* 隱藏多餘資訊，防止跑版 */
+  /* 隱藏跑版資訊 */
   .pagefind-ui .pagefind-ui__result-excerpt, 
   .pagefind-ui .pagefind-ui__message,
   .pagefind-ui .pagefind-ui__button,
@@ -123,28 +138,17 @@ const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
     display: none !important;
   }
 
-  .pagefind-ui .pagefind-ui__result {
-    padding: 0 !important;
-    border: none !important;
-  }
-
   .pagefind-ui .pagefind-ui__result-link {
     color: #374151 !important;
-    font-size: 14px !important;
-    font-weight: 500 !important;
     padding: 10px 14px !important;
-    border-radius: 8px !important;
     display: block !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
   }
 
   .pagefind-ui .pagefind-ui__result-link:hover {
     background: #fff7ed !important;
     color: #FF6A00 !important;
-    text-decoration: none !important;
-  }
-
-  /* 搜尋圖示顏色調淡 */
-  .pagefind-ui .pagefind-ui__search-icon {
-    opacity: 0.4 !important;
+    border-radius: 8px !important;
   }
 </style>
