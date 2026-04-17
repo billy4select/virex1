@@ -6,6 +6,7 @@ author: billychen
 image: /images/blog/ai-security-finance.webp
 tags:
   - AI應用
+featured: true  
 draft: false
 ---
 你手上有一份財務報表，數字多且格式亂。以前整理成摘要需要兩個小時，現在你知道丟給 AI 可能十五分鐘就搞定。但你停頓了一下：這份報表裡有客戶名稱、具體金額、還有尚未對外的數字。

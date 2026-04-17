@@ -6,6 +6,7 @@ author: billychen
 image: /images/blog/ai-meeting-notes.webp
 tags:
   - AI應用
+featured: true  
 draft: false
 ---
 會議記錄是大多數職場工作者每週最浪費時間的事情之一。開完兩小時的會，還要花半個工作天整理、確認，最後產出的往往是一份沒人讀的文件。
