@@ -1,9 +1,9 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Pagination from '@ui/Pagination.astro';
+import PostCard from '@ui/PostCard.astro'; // 1. 匯入新組件
 import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
-import { calculateReadingTime } from '@/lib/utils';
 
 // 1. 取得文章
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
@@ -28,7 +28,6 @@ const tags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
 
 <MarketingLayout title="Blog" description={siteConfig.description}>
   
-  {/* 區塊 A: 頂部橘色 Header (變乾淨了) */}
   <section class="bg-[#FF6A00] border-b border-black/10 pt-12 pb-16 md:pt-16 md:pb-24">
     <div class="max-w-4xl mx-auto px-4 text-white">
       <div class="flex flex-col gap-10">
@@ -50,11 +49,9 @@ const tags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
     </div>
   </section>
 
-  {/* 區塊 B: 下方白色內容區 */}
   <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-4">
       
-      {/* 1. 精選文章移到這裡 (白色背景上方) */}
       {featuredPosts.length > 0 && (
         <div class="mb-20">
           <div class="flex items-center gap-3 mb-8">
@@ -66,7 +63,7 @@ const tags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
               <a href={`/blog/${post.id}`} class="group block p-7 rounded-3xl bg-gray-50 border border-gray-100 hover:border-[#FF6A00]/20 hover:bg-white hover:shadow-xl hover:shadow-[#FF6A00]/5 transition-all duration-300">
                 <div class="flex flex-col h-full gap-4">
                   <div class="text-[10px] font-bold text-[#FF6A00] uppercase tracking-[0.1em]">⭐ 推薦必讀</div>
-                  <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#FF6A00] transition-colors">{post.data.title}</h3>
+                  <h3 class="text-xl font-bold text-gray-900 group-hover:text-[#FF6A00] transition-colors leading-snug">{post.data.title}</h3>
                   <p class="text-gray-500 text-sm line-clamp-2 mt-auto leading-relaxed">{post.data.description}</p>
                 </div>
               </a>
@@ -75,30 +72,17 @@ const tags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
         </div>
       )}
 
-      {/* 2. 最新發布 Timeline */}
       <div class="mb-12 border-b border-gray-100 pb-4">
         <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.3em]">Timeline / 最新發布</h2>
       </div>
 
       <div class="space-y-16">
+        {/* 2. 這裡改用新組件，程式碼變乾淨了 */}
         {paginatedPosts.map((post) => (
-          <article class="group">
-            <a href={`/blog/${post.id}`} class="block">
-              <div class="flex flex-col gap-4">
-                <div class="flex items-center gap-3 text-[11px] font-medium text-gray-400">
-                  <time>{post.data.publishedDate.toLocaleDateString('zh-TW')}</time>
-                  <span class="w-1.5 h-1.5 rounded-full bg-gray-200"></span>
-                  <span>{calculateReadingTime(post.body || '')} min read</span>
-                </div>
-                <h2 class="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-[#FF6A00] transition-colors leading-snug">{post.data.title}</h2>
-                <p class="text-gray-500 line-clamp-2 text-sm md:text-base leading-relaxed">{post.data.description}</p>
-              </div>
-            </a>
-          </article>
+          <PostCard post={post} />
         ))}
       </div>
 
-      {/* 3. 分頁功能 (補回組件) */}
       <div class="mt-20">
         <Pagination 
           currentPage={currentPage} 
