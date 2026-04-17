@@ -1,4 +1,4 @@
-import { defineCollection, z } from 'astro:content'; // 關鍵修正：從 astro:content 匯入 z
+import { defineCollection, z } from 'astro:content'; 
 import { glob } from 'astro/loaders';
 
 const blog = defineCollection({
@@ -10,9 +10,21 @@ const blog = defineCollection({
     author: z.string(),
     image: z.string().optional(),
     tags: z.array(z.string()).default([]),
+    category: z.string().default('未分類'), // 新增：支援自動化相關閱讀邏輯
     draft: z.boolean().default(false),
-    // 確保這裡有 featured 欄位
-    featured: z.boolean().default(false), 
+    featured: z.boolean().default(false),
+    boost: z.boolean().default(false).optional(), // 支援你 MD 裡的 boost 欄位
+
+    // --- 💡 關鍵新增：SEO 結構化資料欄位 ---
+    schemaType: z.enum(['HowTo', 'FAQ', 'Article']).default('Article'),
+    steps: z.array(z.object({
+      name: z.string(),
+      text: z.string(),
+    })).optional(),
+    faq: z.array(z.object({
+      q: z.string(),
+      a: z.string(),
+    })).optional(),
   }),
 });
 
