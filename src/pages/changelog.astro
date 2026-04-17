@@ -17,17 +17,17 @@ const sortedChangelog = changelog.sort(
 ---
 
 <MarketingLayout
-  title={`Changelog - ${siteConfig.name}`}
-  description={`See what's new in ${siteConfig.name}. Track our latest features, improvements, and bug fixes.`}
+  title={`更新日誌 - ${siteConfig.name}`}
+  description={`隨時掌握 ${siteConfig.name} 的最新功能、改進與修復。`}
 >
   <PageHeader
-    title="Changelog"
-    subtitle={`Stay up to date with the latest features, improvements, and fixes in ${siteConfig.name}.`}
+    title="更新日誌"
+    subtitle={`持續優化中！在這裡追蹤 ${siteConfig.name} 的最新功能更新、改進與問題修復細節。`}
   />
 
   <ChangelogList
     entries={sortedChangelog}
-    emptyMessage="No changelog entries yet. Check back soon!"
+    emptyMessage="目前還沒有更新紀錄，請稍後再回來查看！"
     background="default"
   />
 </MarketingLayout>

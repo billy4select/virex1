@@ -2,13 +2,14 @@
 import ErrorLayout from '@/layouts/ErrorLayout.astro';
 import ErrorPage from '@components/error/ErrorPage.astro';
 
+// 設定 HTTP 狀態碼為 403 (禁止訪問)
 Astro.response.status = 403;
 ---
 
-<ErrorLayout title="Access Denied" description="You don't have permission to access this page.">
+<ErrorLayout title="拒絕存取 - 403" description="抱歉，您沒有權限訪問此頁面。">
   <ErrorPage
     code={403}
-    title="Access Denied"
-    message="You don't have permission to access this page. If you believe this is a mistake, please contact support."
+    title="存取被拒絕"
+    message="抱歉，您目前沒有權限查看此頁面。如果您認為這是一個錯誤，請聯絡管理員或返回首頁。"
   />
 </ErrorLayout>

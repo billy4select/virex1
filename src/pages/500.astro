@@ -2,13 +2,14 @@
 import ErrorLayout from '@/layouts/ErrorLayout.astro';
 import ErrorPage from '@components/error/ErrorPage.astro';
 
+// 設定 HTTP 狀態碼為 500 (內部伺服器錯誤)
 Astro.response.status = 500;
 ---
 
-<ErrorLayout title="Server Error" description="Something went wrong on our end.">
+<ErrorLayout title="伺服器錯誤 - 500" description="抱歉，伺服器出現了一些問題。">
   <ErrorPage
     code={500}
-    title="Server Error"
-    message="Something went wrong on our end. We're working to fix it. Please try again later."
+    title="糟糕，出錯了"
+    message="我們這邊的伺服器出現了一些問題，目前正在努力修復中。請稍後再嘗試重新整理頁面。"
   />
 </ErrorLayout>
