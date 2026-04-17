@@ -16,18 +16,18 @@ const sortedTestimonials = testimonials.sort(
   (a: TestimonialEntry, b: TestimonialEntry) => a.data.order - b.data.order
 );
 
-// Separate featured testimonials for highlight section
+// 分離精選回饋與一般回饋
 const featuredTestimonials = sortedTestimonials.filter((t: TestimonialEntry) => t.data.featured);
 const otherTestimonials = sortedTestimonials.filter((t: TestimonialEntry) => !t.data.featured);
 ---
 
 <MarketingLayout
-  title={`Testimonials - ${siteConfig.name}`}
-  description={`See what developers and teams are saying about ${siteConfig.name}. Real stories from real users.`}
+  title={`推薦與回饋 - ${siteConfig.name}`}
+  description={`看看讀者與學員對 ${siteConfig.name} 的真實評價與心得。`}
 >
   <PageHeader
-    title="Loved by developers"
-    subtitle={`Don't just take our word for it. Here's what developers and teams are saying about ${siteConfig.name}.`}
+    title="讀者的真實回饋"
+    subtitle={`感謝每一位讀者的支持！這裡紀錄了大家對於 ${siteConfig.name} 的看法、學習心得與實作建議。`}
   />
 
   <TestimonialsGrid
@@ -45,14 +45,14 @@ const otherTestimonials = sortedTestimonials.filter((t: TestimonialEntry) => !t.
       company: t.data.company,
       avatar: t.data.avatar,
     }))}
-    emptyMessage="No testimonials yet. Check back soon!"
+    emptyMessage="目前尚無回饋，期待聽到您的聲音！"
     background="default"
   />
 
   <CTA
-    title="Ready to join them?"
-    description="Start building and shipping faster with our modern deployment platform."
-    action={{ label: 'Get Started Free', href: '/pricing' }}
+    title="也想分享您的想法嗎？"
+    description="如果您對文章有任何建議，或是我的內容對您有所啟發，歡迎隨時跟我分享。"
+    action={{ label: '與我聯繫', href: '/contact' }}
     background="muted"
   />
 </MarketingLayout>
