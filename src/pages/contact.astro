@@ -5,16 +5,17 @@ import ContactForm from '@forms/ContactForm.astro';
 import { Icon } from 'astro-icon/components';
 import { siteConfig, contact, contactMethods, contactFAQs } from '@/config';
 
+// 如果你沒有實體辦公室，這部分可以視情況移除
 const office = contact.address;
 ---
 
 <MarketingLayout
-  title={`Contact - ${siteConfig.name}`}
-  description="Get in touch with the Virex team. We're here to help with questions about our platform, pricing, or enterprise solutions."
+  title={`聯絡我們 - ${siteConfig.name}`}
+  description={`有任何問題或想進一步交流嗎？歡迎透過表單或社群媒體與 ${siteConfig.name} 聯繫。`}
 >
   <PageHeader
-    title="Get in touch"
-    subtitle={`Have a question about ${siteConfig.name}? Want to discuss enterprise solutions? We'd love to hear from you.`}
+    title="與我聯繫"
+    subtitle={`不論是有關於 ${siteConfig.name} 的疑問，或是想洽談合作與建議，都歡迎隨時留言，我會盡快回覆你。`}
     align="left"
     maxWidth="lg"
   />
@@ -23,22 +24,22 @@ const office = contact.address;
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
-          <h2 class="text-2xl font-bold text-text mb-8">Send us a message</h2>
+          <h2 class="text-2xl font-bold text-text mb-8">傳送訊息</h2>
           <ContactForm />
+          <p class="mt-4 text-sm text-text-muted">我們會保護你的隱私資訊，並僅用於回覆你的請求。</p>
         </div>
 
         <div class="space-y-8">
-          <!-- Contact Methods -->
           <div>
-            <h2 class="text-2xl font-bold text-text mb-4">Other ways to reach us</h2>
+            <h2 class="text-2xl font-bold text-text mb-4">其他聯絡管道</h2>
             <div class="space-y-3">
               {
                 contactMethods.map((method) => (
                   <a
                     href={method.href}
-                    class="flex items-center gap-3 text-text-muted hover:text-primary transition-colors group"
+                    class="flex items-center gap-3 text-text-muted hover:text-[#FF6A00] transition-colors group"
                   >
-                    <Icon name={method.icon} class="w-5 h-5 text-primary" />
+                    <Icon name={method.icon} class="w-5 h-5 text-[#FF6A00]" />
                     <span class="group-hover:underline">{method.value}</span>
                   </a>
                 ))
@@ -46,23 +47,20 @@ const office = contact.address;
             </div>
           </div>
 
-          <!-- Our Office -->
-          <div>
-            <h2 class="text-2xl font-bold text-text mb-4">Our office</h2>
-            <div class="flex items-start gap-3 text-text-muted">
-              <Icon name="lucide:map-pin" class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-              <address class="not-italic">
-                {office.street}<br />
-                {office.city}, {office.state}
-                {office.zip}<br />
-                {office.country}
-              </address>
+          {office && (
+            <div>
+              <h2 class="text-2xl font-bold text-text mb-4">服務據點</h2>
+              <div class="flex items-start gap-3 text-text-muted">
+                <Icon name="lucide:map-pin" class="w-5 h-5 text-[#FF6A00] flex-shrink-0 mt-0.5" />
+                <address class="not-italic">
+                  {office.city}, {office.country}
+                </address>
+              </div>
             </div>
-          </div>
+          )}
 
-          <!-- FAQ Mini -->
           <div>
-            <h2 class="text-2xl font-bold text-text mb-4">Common questions</h2>
+            <h2 class="text-2xl font-bold text-text mb-4">常見問題</h2>
             <div class="space-y-4">
               {
                 contactFAQs.map((faq) => (
@@ -75,9 +73,9 @@ const office = contact.address;
             </div>
             <a
               href="/faq"
-              class="inline-flex items-center gap-1 text-primary hover:underline mt-4 text-sm font-medium"
+              class="inline-flex items-center gap-1 text-[#FF6A00] hover:underline mt-4 text-sm font-medium"
             >
-              View all FAQs
+              查看完整常見問題
               <Icon name="lucide:arrow-right" class="w-4 h-4" />
             </a>
           </div>
