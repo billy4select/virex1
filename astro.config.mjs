@@ -5,12 +5,14 @@ import icon from 'astro-icon';
 import tailwindcss from '@tailwindcss/vite';
 import { siteConfig } from './src/config';
 import cloudflare from "@astrojs/cloudflare";
+import pagefind from "astro-pagefind";
 
-// 這裡直接填入你的網站網址，讓 Sitemap 知道要去哪裡抓資料
+// 這裡直接填入你的網站網址
 const siteUrl = 'https://blog.billy4select.com';
 
 export default defineConfig({
   site: siteUrl,
+  output: 'static',
 
   integrations: [
     mdx(),
@@ -29,6 +31,7 @@ export default defineConfig({
         return true;
       },
     }),
+    pagefind(), // 啟用 Pagefind 搜尋索引
   ],
 
   vite: {
