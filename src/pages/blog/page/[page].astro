@@ -23,7 +23,7 @@ export async function getStaticPaths({ paginate }) {
   );
 
   return paginate(remainingPosts, { 
-    pageSize: 6, 
+    pageSize: 5, 
     props: { boostedPosts, allPosts } 
   });
 }
