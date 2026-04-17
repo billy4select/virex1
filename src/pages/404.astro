@@ -3,10 +3,10 @@ import ErrorLayout from '@/layouts/ErrorLayout.astro';
 import ErrorPage from '@components/error/ErrorPage.astro';
 ---
 
-<ErrorLayout title="Page Not Found" description="The page you're looking for doesn't exist.">
+<ErrorLayout title="找不到頁面 - 404" description="抱歉，您所尋找的頁面不存在。">
   <ErrorPage
     code={404}
-    title="Page Not Found"
-    message="Sorry, we couldn't find the page you're looking for. It might have been moved, deleted, or never existed."
+    title="頁面失蹤了"
+    message="抱歉，我們找不到您要查看的頁面。它可能已經搬家、被刪除，或者從來沒有存在過。"
   />
 </ErrorLayout>
