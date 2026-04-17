@@ -2,20 +2,15 @@
 import BlogLayout from '@/layouts/BlogLayout.astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import { siteConfig } from '@/config';
-import { calculateReadingTime } from '@/lib/utils';
 
 type BlogPost = CollectionEntry<'blog'>;
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog', ({ data }: { data: BlogPost['data'] }) => !data.draft);
-  return posts.map((post: BlogPost) => ({
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
     params: { slug: post.id },
     props: { post },
   }));
-}
-
-interface Props {
-  post: BlogPost;
 }
 
 const { post } = Astro.props;
@@ -24,17 +19,23 @@ const { Content } = await render(post);
 const seoTitle = `${post.data.title} - ${siteConfig.name}`;
 const displayTitle = post.data.title;
 
-// --- 邏輯處理：計算 上一篇、下一篇 ---
-const allPosts = await getCollection('blog', ({ data }: { data: BlogPost['data'] }) => !data.draft);
+// --- 邏輯處理：取得所有文章 ---
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const sortedPosts = allPosts.sort(
   (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
 );
 
 const currentIndex = sortedPosts.findIndex((p) => p.id === post.id);
 
-// 索引值較小的是「新文章(Next)」，較大的是「舊文章(Prev)」
+// --- 1. 上下篇導覽 (你原本的邏輯) ---
 const nextPost = currentIndex > 0 ? sortedPosts[currentIndex - 1] : null;
 const prevPost = currentIndex < sortedPosts.length - 1 ? sortedPosts[currentIndex + 1] : null;
+
+// --- 2. 相關閱讀邏輯 (新增) ---
+// 規則：找同一個 category 的文章，且排除掉「現在正在看的這篇」
+const relatedPosts = allPosts
+  .filter((p) => p.id !== post.id && p.data.category === post.data.category)
+  .slice(0, 3); // 取 3 篇相關的
 ---
 
 <BlogLayout
@@ -49,7 +50,32 @@ const prevPost = currentIndex < sortedPosts.length - 1 ? sortedPosts[currentInde
 >
   <Content slot="content" />
 
-  <nav class="mt-16 py-8 border-t border-border flex flex-col sm:flex-row justify-between gap-8">
+  {relatedPosts.length > 0 && (
+    <div class="mt-16 pt-8 border-t border-border">
+      <h3 class="text-lg font-bold mb-6 flex items-center gap-2">
+        <span class="w-1 h-6 bg-[#FF6A00] rounded-full"></span>
+        相關閱讀
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {relatedPosts.map((related) => (
+          <a href={`/blog/${related.id}`} class="group">
+            <div class="aspect-video mb-3 overflow-hidden rounded-xl border border-border">
+              <img 
+                src={related.data.image} 
+                alt={related.data.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <h4 class="font-bold text-sm group-hover:text-[#FF6A00] transition-colors line-clamp-2">
+              {related.data.title}
+            </h4>
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <nav class="mt-12 py-8 border-t border-border flex flex-col sm:flex-row justify-between gap-8">
     <div class="flex-1">
       {prevPost && (
         <a href={`/blog/${prevPost.id}`} class="group block">
