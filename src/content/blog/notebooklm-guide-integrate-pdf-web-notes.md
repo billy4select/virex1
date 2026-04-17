@@ -1,16 +1,19 @@
 ---
 title: 專案資料散落各處？NotebookLM 跨來源整合實戰手冊
-description: >-
-  合約在 PDF、會議記錄在 Google Docs、想法在備忘錄... 每次查資料都要翻箱倒櫃？本文教你如何用 NotebookLM
-  整合破碎資訊，實現一站式對話查詢。
+description: 合約在 PDF、會議記錄在 Google Docs、想法在備忘錄... 每次查資料都要翻箱倒櫃？本文教你如何用 NotebookLM 整合破碎資訊，實現一站式對話查詢。
 publishedDate: 2026-04-10T00:00:00Z
-author: billychen
+author: 比利陳 Billy Chen
 image: /images/blog/notebooklm-integration.webp
 tags:
   - AI應用
   - NotebookLM
+  - 生產力
+category: "AI實戰"
+featured: true
+boost: true
 draft: false
 ---
+
 每個進行中的專案都有一個共同的問題：資料在十個地方。
 
 合約 PDF 在信箱、競品分析在書籤、會議記錄在 Google Docs、想法在備忘錄，甚至關鍵對話還在 LINE 裡面。每次需要資訊，你都要在這些地方翻找，並在腦袋裡辛苦拼接。
@@ -26,22 +29,18 @@ draft: false
 
 ## 整合流程：四種來源的處理建議
 
-### 1\. PDF 檔案（合約、報告、提案）
-
+### 1. PDF 檔案（合約、報告、提案）
 直接上傳即可。若是「掃描版」PDF（圖片格式），建議先上傳至 Google Drive 並用 Google Docs 開啟以進行自動 OCR 轉換，再匯入 NotebookLM。
 
-### 2\. 網頁內容（競品分析、產業報告）
-
+### 2. 網頁內容（競品分析、產業報告）
 直接貼上連結。若遇到付費牆或需登入的頁面，請使用瀏覽器的「列印」功能存成 PDF 後再上傳。
 
-### 3\. 會議記錄與筆記
-
+### 3. 會議記錄與筆記
 * **Google Docs：** 最推薦，內容更新會自動同步。
 * **Notion / Obsidian / 備忘錄：** 需輸出成 PDF 或手動複製貼上。
 * **語音想法：** 建議先用語音轉文字工具（如 Whisper）生成逐字稿後貼入。
 
-### 4\. 電子郵件與通訊軟體
-
+### 4. 電子郵件與通訊軟體
 這是目前最難整合的部分。建議不要全放，只擷取「影響專案決策」的關鍵對話（如客戶確認需求、報價條件）貼入。
 
 ## 整合之後：如何有效查詢？
@@ -64,3 +63,13 @@ draft: false
 很多人花了時間上傳資料，卻還是習慣用老方法查資訊。
 
 讓整合發揮價值的關鍵是養成新習慣：**每次需要查專案資訊，先在 NotebookLM 裡問。** 你不再需要記住資料在哪裡，只需要記住你想問什麼問題。
+
+---
+
+### 🚀 延伸閱讀：深度發揮 AI 整合威力
+
+當您建立好專案知識庫，下一個挑戰是如何將這些資訊轉化為專業判斷：
+
+* **[別再浪費生命寫會議記錄！](/blog/ai-meeting-notes-guide)**：將整理好的高品質會議記錄匯入 NotebookLM，效果翻倍。
+* **[從旁觀者到 AI 策展人](/blog/manager-ai-transition)**：了解如何運用 NotebookLM 建立團隊的「AI 判斷標準」。
+* **[與比利陳聯繫](/contact)**：如果您對建立企業級 AI 知識庫有興趣，歡迎隨時與我交流。
