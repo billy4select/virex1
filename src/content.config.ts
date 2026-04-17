@@ -1,5 +1,5 @@
 import { defineCollection } from 'astro:content';
-import { z } from 'astro/zod';
+import { z } from 'astro:zod';
 import { glob } from 'astro/loaders';
 
 const blog = defineCollection({
@@ -12,6 +12,8 @@ const blog = defineCollection({
     image: z.string().optional(),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
+    // 關鍵修正：加入精選欄位，並預設為 false
+    featured: z.boolean().default(false),
   }),
 });
 
