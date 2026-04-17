@@ -1,113 +1,214 @@
 ---
+/**
+ * Index Page - 比利陳個人品牌
+ * 更新重點：
+ * 1. 串接真實讀者見證：自動從 src/content/testimonials 抓取留言。
+ * 2. 標題視覺重塑：強化「運用頂尖 AI 工具...」的權重，解決比重過輕問題。
+ * 3. 著作集模組化：移除所有軟體訂閱相關字眼，轉為專業著作展示。
+ */
+import { getCollection, type CollectionEntry } from 'astro:content';
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
-import Pagination from '@ui/Pagination.astro';
-import { getCollection } from 'astro:content';
+import Hero from '@sections/marketing/Hero.astro';
+import LogoCloud from '@sections/marketing/LogoCloud.astro';
+import BentoGrid from '@sections/marketing/BentoGrid.astro';
+import PricingTable from '@sections/pricing/PricingTable.astro';
+import TestimonialsSection from '@sections/social-proof/TestimonialsSection.astro';
+import CTA from '@sections/marketing/CTA.astro';
+import Newsletter from '@sections/marketing/Newsletter.astro';
 import { siteConfig } from '@/config';
-import { calculateReadingTime } from '@/lib/utils';
 
-// 1. 取得所有文章並按日期排序
-const allPosts = await getCollection('blog', ({ data }) => !data.draft);
-const sortedPosts = allPosts.sort(
-  (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
+type TestimonialEntry = CollectionEntry<'testimonials'>;
+
+// 抓取真實讀者心得
+const testimonials = await getCollection(
+  'testimonials',
+  ({ data }: { data: TestimonialEntry['data'] }) => !data.draft
 );
 
-// 2. 定義精選文章 (強制抓取 featured: true)
-const featuredPosts = sortedPosts.filter(post => post.data.featured === true).slice(0, 2);
+// 依照 order 排序，並將 featured 置前
+const sortedTestimonials = [...testimonials].sort((a, b) => {
+  if (a.data.featured !== b.data.featured) {
+    return a.data.featured ? -1 : 1;
+  }
+  return (a.data.order || 99) - (b.data.order || 99);
+});
 
-// 3. 分頁邏輯
-const POSTS_PER_PAGE = 6;
-const currentPage = 1;
-const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
-const paginatedPosts = sortedPosts.slice(0, POSTS_PER_PAGE);
+/** Bento Grid：首頁導覽區塊 */
+const bentoItems = [
+  {
+    title: '行銷判斷力觀點',
+    description: '行銷不是廣告，是商業決策的視覺化。 從 PM 思維到整合行銷，這裡拆解的是真正影響銷量和品牌的關鍵判斷。',
+    icon: 'lucide:brain',
+    size: 'large' as const,
+    accent: 'primary' as const,
+    href: '/blog/marketing',
+  },
+  {
+    title: 'AI 工作流實踐',
+    description: '工具越來越便宜，但判斷力沒辦法外包。這裡談的是在 AI 浪潮下，如何用整合思維做決策，讓 AI 放大你的執行力，而不是替代你的判斷。',
+    icon: 'lucide:zap',
+    accent: 'blue' as const,
+    href: '/blog/ai',
+  },
+  {
+    title: '個人品牌資產化',
+    description: '不是追演算法，是建立商業邏輯。 從定位、內容到信任累積，只有自己走過才知道哪些方法真的有用，哪些只是讓你看起來很忙。',
+    icon: 'lucide:trending-up',
+    accent: 'green' as const,
+    href: '/blog/branding',
+  },
+  {
+    title: '閱讀更多文章 →',
+    description: '瀏覽所有關於行銷與職場思維的深度好文。',
+    icon: 'lucide:arrow-right',
+    size: 'medium' as const,
+    accent: 'purple' as const,
+    href: '/blog',
+  },
+];
 
-// 4. 標籤處理
-const allTags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
-  .filter(tag => tag && tag.trim() !== "")
-  .sort();
+/** 個人著作集配置 */
+const ebookCollections = [
+  {
+    name: '《從零開始自媒體》',
+    description: '10 年品牌行銷人的經營地圖',
+    monthlyPrice: null,
+    price: '',
+    customPrice: '實戰指南',
+    features: ['零基礎經營策略', '個人品牌商業化路徑', '建立經營思維'],
+    cta: { label: '查看書籍詳情', href: 'https://portaly.cc/billyselect4/product/ioeupgO66jK7vB24yJzY' },
+  },
+  {
+    name: '《AI時代職場生存法則》',
+    description: '每天 1% 的資產化練習 (電子書)',
+    monthlyPrice: null, 
+    price: '', 
+    customPrice: '核心著作', 
+    highlighted: true, 
+    features: ['AI 浪潮下的自我定位', '建立個人知識資產', '不可替代的實戰練習'],
+    cta: { label: '立即前往閱讀', href: 'https://portaly.cc/billyselect4/product/jLrib0ZgLmXWs2WOTiy8' },
+  },
+  {
+    name: '更多個人著作系列',
+    description: '針對不同行銷場景的深度解析',
+    monthlyPrice: null,
+    price: '',
+    features: ['《流量騙局》', '《人人都得到知識變現》', '《寫給大家的行銷書》'],
+    cta: { label: '瀏覽所有作品', href: 'https://portaly.cc/billyselect4' },
+  },
+];
 ---
 
-<MarketingLayout title="Blog" description={siteConfig.description}>
+<MarketingLayout title={`${siteConfig.name}`} description={siteConfig.description}>
   
-  <section class="bg-[#FF6A00] pt-12 pb-16 md:pt-16 md:pb-24">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
-      <div class="flex flex-col gap-10">
-        <div class="space-y-4">
-          <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white">最新實戰心得</h1>
-          <p class="text-white/90 text-sm md:text-base max-w-2xl leading-relaxed">
-            分享行銷心得、AI 工具應用與自媒體經營筆記。將經驗系統化，打造可持續增長的數位資產。
-          </p>
-        </div>
+  <Hero
+    title="AI 時代，判斷力才是你唯一的護城河"
+    subtitle="我是比利陳。這裡記錄我如何用 AI 改善工作流程，並用思維邏輯建立不可替代的專業地位。"
+    primaryCTA={{ label: '加入 Line 群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw' }}
+    secondaryCTA={{ label: '訂閱電子報', href: 'https://billy4select.kit.com/profile/posts' }}
+  />
 
-        <div class="flex flex-col gap-3">
-          <span class="text-[10px] font-bold text-white/60 uppercase tracking-[0.2em]">按主題瀏覽</span>
-          <div class="flex flex-wrap gap-2">
-            <a href="/blog" class="px-4 py-1.5 text-xs font-bold bg-white text-[#FF6A00] rounded-full">全部</a>
-            {allTags.map((tag) => (
-              <a 
-                href={`/blog/tag/${tag}`} 
-                class="px-4 py-1.5 text-xs font-bold bg-white/20 border border-white/20 text-white rounded-full hover:bg-white/40 transition-all"
-              >
-                #{tag}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="logo-section-wrapper">
+    <LogoCloud
+      title="讓我們運用頂尖 AI 工具提升行銷效率"
+      logos={[
+        { name: 'Notion', src: '/notion-icon.svg' },
+        { name: 'ChatGPT', src: '/openai-icon.svg' }, 
+        { name: 'Claude', src: '/claude-ai-icon.svg' },
+        { name: 'Gemini', src: '/google-gemini-icon.svg' },
+        { name: 'NotebookLM', src: '/notebooklm-icon.svg' },
+        { name: 'Canva', src: '/canva-icon.svg' },
+        { name: 'Grok', src: '/grok-icon.svg' },
+      ]}
+      grayscale={true} 
+      logoSize="lg" 
+    />
+  </div>
 
-  <section class="py-16 md:py-24 bg-white dark:bg-[#0F172A] min-h-screen">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      {featuredPosts.length > 0 && (
-        <div class="mb-20">
-          <h2 class="text-xs font-black text-[#FF6A00] uppercase tracking-[0.3em] mb-8 flex items-center gap-2">
-             ⭐ 精選資產 / Featured
-          </h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {featuredPosts.map((post) => (
-              <a href={`/blog/${post.id}`} class="group block p-8 rounded-3xl bg-slate-50 dark:bg-slate-900 border-2 border-slate-100 dark:border-slate-800 hover:border-[#FF6A00] transition-all">
-                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 leading-tight">
-                  {post.data.title}
-                </h3>
-                <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2">
-                  {post.data.description}
-                </p>
-              </a>
-            ))}
-          </div>
-        </div>
-      )}
+  <BentoGrid
+    title="這裡在談什麼"
+    subtitle="從工具操作到頂層戰略，全方位提升你的職場競爭力。"
+    items={bentoItems}
+  />
 
-      <div class="mb-12 border-b-2 border-slate-100 dark:border-slate-800 pb-4">
-        <h2 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-[0.3em]">Timeline / 最新發布</h2>
-      </div>
+  <PricingTable
+    title="個人著作與實戰指南"
+    subtitle="將 10 年行銷心法與AI使用心得整理，讓你少走彎路。"
+    plans={ebookCollections}
+    background="muted"
+  />
 
-      <div class="space-y-20">
-        {paginatedPosts.map((post) => (
-          <article class="group">
-            <a href={`/blog/${post.id}`} class="block">
-              <div class="flex flex-col gap-4">
-                <div class="flex items-center gap-3 text-[11px] font-bold text-slate-400">
-                  <time>{post.data.publishedDate.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
-                  <span class="w-1.5 h-1.5 rounded-full bg-[#FF6A00]"></span>
-                  <span>{calculateReadingTime(post.body || '')} 分鐘閱讀</span>
-                </div>
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white group-hover:text-[#FF6A00] transition-colors leading-snug">
-                  {post.data.title}
-                </h2>
-                <p class="text-slate-600 dark:text-slate-300 line-clamp-3 text-base md:text-lg leading-relaxed">
-                  {post.data.description}
-                </p>
-              </div>
-            </a>
-          </article>
-        ))}
-      </div>
+  {
+    sortedTestimonials.length > 0 && (
+      <TestimonialsSection
+        title="讀者與夥伴的回饋"
+        subtitle=""
+        background="default"
+        limit={4}
+        testimonials={sortedTestimonials.map((t) => ({
+          quote: t.data.quote,
+          author: t.data.author,
+          role: t.data.role,
+          company: t.data.company,
+          avatar: t.data.avatar,
+        }))}
+      />
+    )
+  }
 
-      <div class="mt-24">
-        <Pagination currentPage={currentPage} totalPages={totalPages} basePath="/blog" />
-      </div>
-    </div>
-  </section>
+  <CTA
+    title="準備好開始進階了嗎？"
+    description="現在就加入社群，讓我們一起在 AI 時代保持領先。"
+    action={{ label: '立即加入 Line 群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw' }}
+  />
+
+  <Newsletter />
 </MarketingLayout>
+
+<style is:global>
+  /** * 1. 強化 LogoCloud 標題與間距 
+   */
+  .logo-section-wrapper {
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.01));
+    padding: 3rem 0 5rem 0;
+  }
+
+  .logo-cloud h2 {
+    font-size: 1.2rem !important;
+    font-weight: 800 !important;
+    color: #111 !important;
+    letter-spacing: 0.15em !important;
+    margin-bottom: 4rem !important;
+    opacity: 1 !important;
+  }
+
+  .logo-cloud img {
+    filter: grayscale(100%) brightness(0.6) contrast(1.2) !important;
+    opacity: 0.8 !important;
+    max-height: 50px !important;
+    transition: all 0.4s ease;
+  }
+
+  .logo-cloud img:hover {
+    filter: grayscale(0%) brightness(1) !important;
+    opacity: 1 !important;
+    transform: translateY(-5px);
+  }
+
+  /** * 2. 讀者見證視覺美化 
+   */
+  .testimonials-section blockquote {
+    font-size: 1.05rem !important;
+    line-height: 1.7;
+    color: #333;
+    font-weight: 500;
+  }
+
+  /** * 3. 移除 PricingTable 多餘的訂閱切換 UI 
+   */
+  .pricing-switcher, 
+  [data-period="annual"], 
+  .pricing-toggle-btn {
+    display: none !important;
+  }
+</style>
