@@ -1,93 +1,30 @@
----
-/**
- * Header - 最終排版修正版 (解決內容偏移問題)
- */
-import { siteConfig } from '@/config';
-import { Icon } from 'astro-icon/components';
-import ThemeToggle from '@ui/ThemeToggle.astro';
-import Search from "astro-pagefind/components/Search"; 
-import type { FeatureFlags } from '@/lib/types';
-
-const { features, navigation } = siteConfig;
-const { header: headerNav } = navigation;
-
-const mainNavItems = headerNav.main.filter(
-  (item) => !item.feature || features[item.feature as keyof FeatureFlags]
-);
-
-const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
----
-
-<header
-  id="site-header"
-  class="sticky top-0 z-[100] w-full bg-white/95 backdrop-blur-md border-b border-slate-100 h-20 flex items-center"
->
-  <nav class="max-w-7xl mx-auto px-4 w-full flex items-center justify-between">
-    <a href="/" class="flex items-center gap-3 shrink-0">
-      {siteConfig.logo && (
-        <img src={siteConfig.logo} alt={siteConfig.name} class="h-10 w-10 rounded-full object-cover border border-slate-100" />
-      )}
-      <div class="hidden sm:flex flex-col leading-none">
-        <span class="font-bold text-lg text-slate-800 tracking-tight">{siteConfig.name.split(' | ')[0]}</span>
-        <span class="text-[10px] text-slate-400 mt-1 font-medium">{siteConfig.name.split(' | ')[1] || '比利陳 Billy Chen'}</span>
-      </div>
-    </a>
-
-    <div class="hidden lg:flex items-center gap-8">
-      {mainNavItems.map((item) => (
-        <a href={item.href} class="text-slate-500 hover:text-orange-500 transition-colors text-sm font-medium">{item.label}</a>
-      ))}
-    </div>
-
-    <div class="flex items-center gap-4">
-      <div class="relative hidden md:block" style="z-index: 120;">
-        <div class="search-container">
-          <Search 
-            id="search" 
-            className="pagefind-ui" 
-            ui={{ 
-              bundlePath: "/pagefind/",
-              showImages: false, 
-              resetStyles: false,
-              translations: { placeholder: "Search" } 
-            }} 
-          />
-        </div>
-      </div>
-
-      <ThemeToggle />
-
-      {primaryCTA && (
-        <a href={primaryCTA.href} class="hidden sm:block px-5 py-2 rounded-lg bg-orange-500 text-white text-sm font-bold hover:bg-orange-600 transition-all shadow-sm">
-          {primaryCTA.label}
-        </a>
-      )}
-
-      <button id="mobile-menu-button" class="p-2 md:hidden text-slate-500">
-        <Icon name="lucide:menu" class="w-6 h-6" />
-      </button>
-    </div>
-  </nav>
-</header>
-
 <style is:global>
-  /* --- 搜尋框結構性修正 --- */
+  /* --- 搜尋容器 --- */
   .search-container {
     --pagefind-ui-scale: 0.75;
     --pagefind-ui-primary: #FF6A00;
     width: 160px;
     transition: width 0.3s ease;
-    display: flex;
-    align-items: center;
   }
   .search-container:focus-within { width: 220px; }
 
-  /* 解決截圖中的內部偏移問題 */
+  /* 核心修正：使用 Flexbox 取代絕對定位來置中圖示 */
   .pagefind-ui .pagefind-ui__form {
     position: relative;
     display: flex !important;
-    align-items: center !important;
-    width: 100%;
+    align-items: center !important; /* 強制垂直置中 */
+  }
+
+  /* 放大鏡圖示：移除 transform 改用靜態定位 */
+  .pagefind-ui .pagefind-ui__search-icon {
+    position: absolute !important;
+    left: 12px !important;
+    top: auto !important; /* 重置原本的 top */
+    transform: none !important; /* 移除位移誤差 */
+    width: 16px !important;
+    height: 16px !important;
+    opacity: 0.4 !important;
+    margin: 0 !important;
   }
 
   .pagefind-ui .pagefind-ui__search-input {
@@ -95,29 +32,19 @@ const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
     border: 1px solid #e5e7eb !important;
     color: #4b5563 !important;
     border-radius: 99px !important;
-    padding: 8px 12px 8px 34px !important; /* 縮減內距，確保文字靠左 */
+    padding: 8px 12px 8px 38px !important;
     font-size: 14px !important;
-    height: 36px !important; /* 固定高度防止抖動 */
-    line-height: 1 !important;
+    height: 38px !important; /* 確保輸入框有固定高度 */
+    display: flex !important;
+    align-items: center !important;
   }
 
-  /* 強制修正搜尋圖示位置 */
-  .pagefind-ui .pagefind-ui__search-icon {
-    position: absolute !important;
-    left: 10px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    width: 14px !important;
-    height: 14px !important;
-    opacity: 0.4 !important;
-  }
-
-  /* 徹底隱藏導致跑版的 Clear 按鈕 */
+  /* 隱藏 Clear 按鈕防止再次跑版 */
   .pagefind-ui .pagefind-ui__search-clear {
     display: none !important;
   }
 
-  /* 下拉選單維持質感 */
+  /* 下拉結果選單樣式 */
   .pagefind-ui .pagefind-ui__drawer {
     position: absolute !important;
     top: calc(100% + 12px) !important;
@@ -126,11 +53,11 @@ const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
     background: #ffffff !important; 
     border-radius: 12px !important;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
-    padding: 8px !important;
     border: 1px solid #f3f4f6 !important;
+    padding: 8px !important;
+    z-index: 999 !important;
   }
 
-  /* 隱藏跑版資訊 */
   .pagefind-ui .pagefind-ui__result-excerpt, 
   .pagefind-ui .pagefind-ui__message,
   .pagefind-ui .pagefind-ui__button,
