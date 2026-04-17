@@ -1,6 +1,6 @@
 ---
 /**
- * Header - 終極穩定版 (修復黑化、跑版與點擊問題)
+ * Header - 穩定白底版本
  */
 import { siteConfig } from '@/config';
 import { Icon } from 'astro-icon/components';
@@ -20,23 +20,23 @@ const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
 
 <header
   id="site-header"
-  class="sticky top-0 z-[100] w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 h-20"
+  class="sticky top-0 z-[100] w-full bg-white/95 backdrop-blur-md border-b border-slate-200 h-20 flex items-center"
 >
-  <nav class="max-w-7xl mx-auto px-4 h-full flex items-center justify-between" aria-label="Main navigation">
+  <nav class="max-w-7xl mx-auto px-4 w-full flex items-center justify-between" aria-label="Main navigation">
     
     <a href="/" class="flex items-center gap-3 shrink-0">
       {siteConfig.logo && (
-        <img src={siteConfig.logo} alt={siteConfig.name} class="h-10 w-10 rounded-full object-cover border border-primary/20 shadow-sm" />
+        <img src={siteConfig.logo} alt={siteConfig.name} class="h-10 w-10 rounded-full object-cover border border-primary/20" />
       )}
-      <div class="hidden sm:flex flex-col leading-none">
-        <span class="font-bold text-lg text-slate-900 dark:text-white tracking-tight">{siteConfig.name.split(' | ')[0]}</span>
+      <div class="hidden sm:flex flex-col leading-none text-slate-900">
+        <span class="font-bold text-lg tracking-tight">{siteConfig.name.split(' | ')[0]}</span>
         <span class="text-[10px] text-slate-500 mt-1 font-medium">{siteConfig.name.split(' | ')[1] || '比利陳 Billy Chen'}</span>
       </div>
     </a>
 
     <div class="hidden lg:flex items-center gap-6">
       {mainNavItems.map((item) => (
-        <a href={item.href} class="text-slate-600 dark:text-slate-300 hover:text-orange-500 transition-colors text-sm font-medium">{item.label}</a>
+        <a href={item.href} class="text-slate-600 hover:text-orange-500 transition-colors text-sm font-medium">{item.label}</a>
       ))}
     </div>
 
@@ -60,57 +60,37 @@ const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
       <ThemeToggle />
 
       {primaryCTA && (
-        <a href={primaryCTA.href} class="hidden sm:block px-4 py-2 rounded-md bg-orange-500 text-white text-sm font-medium hover:bg-orange-600 transition-all shadow-sm">
+        <a href={primaryCTA.href} class="hidden sm:block px-4 py-2 rounded-md bg-orange-500 text-white text-sm font-medium hover:bg-orange-600 transition-all">
           {primaryCTA.label}
         </a>
       )}
 
-      <button id="mobile-menu-button" class="p-2 md:hidden text-slate-600 dark:text-slate-300">
-        <Icon name="lucide:menu" id="menu-icon-open" class="w-6 h-6" />
-        <Icon name="lucide:x" id="menu-icon-close" class="hidden w-6 h-6" />
+      <button id="mobile-menu-button" class="p-2 md:hidden text-slate-600">
+        <Icon name="lucide:menu" class="w-6 h-6" />
       </button>
     </div>
   </nav>
 </header>
 
-<div id="mobile-menu" class="fixed inset-0 z-[90] hidden md:hidden">
-  <div id="mobile-menu-backdrop" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
-  <nav id="mobile-menu-panel" class="absolute left-0 right-0 bg-white dark:bg-slate-900 border-b shadow-2xl transition-all">
-    <div class="px-4 py-4 space-y-1">
-      {mainNavItems.map((item) => (
-        <a href={item.href} class="block px-3 py-3 rounded-md text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 text-base font-medium">{item.label}</a>
-      ))}
-      <div class="border-t border-slate-100 dark:border-slate-800 my-2"></div>
-      {primaryCTA && (
-        <a href={primaryCTA.href} class="block px-3 py-3 rounded-md bg-orange-500 text-white text-center font-medium">{primaryCTA.label}</a>
-      )}
-    </div>
-  </nav>
-</div>
-
 <style is:global>
-  /* --- Pagefind UI 修正與美化 --- */
+  /* 強制維持白底設計，不隨暗色模式大幅變動 */
+  #site-header {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  /* 搜尋容器寬度控制 */
   .search-container {
     --pagefind-ui-scale: 0.75;
     --pagefind-ui-primary: #FF6A00;
     width: 160px;
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: width 0.3s ease;
   }
   .search-container:focus-within { width: 220px; }
 
-  /* 搜尋輸入框：強制明亮底色確保可見度 */
-  .pagefind-ui .pagefind-ui__search-input {
-    background-color: #ffffff !important;
-    border: 1px solid rgba(0, 0, 0, 0.1) !important;
-    color: #333333 !important;
-    border-radius: 99px !important;
-    padding: 8px 12px 8px 36px !important;
-  }
-
-  /* 搜尋結果選單：強制白底，解決黑化問題 */
+  /* 搜尋結果選單：強制白底黑字，避免黑化看不見結果 */
   .pagefind-ui .pagefind-ui__drawer {
     position: absolute !important;
-    top: calc(100% + 10px) !important;
+    top: calc(100% + 15px) !important;
     right: 0 !important;
     width: 320px !important;
     max-height: 420px !important;
@@ -124,19 +104,12 @@ const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
     border: 1px solid #eeeeee !important;
   }
 
-  /* 斷捨離：隱藏摘要與多餘資訊，徹底解決跑版 */
+  /* 隱藏冗餘資訊以防跑版 */
   .pagefind-ui .pagefind-ui__result-excerpt, 
   .pagefind-ui .pagefind-ui__message,
   .pagefind-ui .pagefind-ui__button,
   .pagefind-ui .pagefind-ui__result-thumb {
     display: none !important;
-  }
-
-  /* 搜尋項目美化 */
-  .pagefind-ui .pagefind-ui__result {
-    padding: 10px 12px !important;
-    border-bottom: 1px solid #f5f5f5 !important;
-    list-style: none !important;
   }
 
   .pagefind-ui .pagefind-ui__result-link {
@@ -146,38 +119,4 @@ const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
     text-decoration: none !important;
     display: block !important;
   }
-
-  .pagefind-ui .pagefind-ui__result-link:hover {
-    color: #FF6A00 !important;
-  }
-
-  /* 關鍵字高亮 */
-  .pagefind-ui mark {
-    background: transparent !important;
-    color: #FF6A00 !important;
-    font-weight: 700 !important;
-  }
 </style>
-
-<script>
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const header = document.getElementById('site-header');
-  const menuIconOpen = document.getElementById('menu-icon-open');
-  const menuIconClose = document.getElementById('menu-icon-close');
-
-  mobileMenuButton?.addEventListener('click', () => {
-    const isHidden = mobileMenu?.classList.contains('hidden');
-    if (isHidden) {
-      mobileMenu?.classList.remove('hidden');
-      menuIconOpen?.classList.add('hidden');
-      menuIconClose?.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    } else {
-      mobileMenu?.classList.add('hidden');
-      menuIconOpen?.classList.remove('hidden');
-      menuIconClose?.classList.add('hidden');
-      document.body.style.overflow = '';
-    }
-  });
-</script>
