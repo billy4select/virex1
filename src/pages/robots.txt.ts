@@ -3,23 +3,26 @@ import { siteConfig } from '@/config';
 
 export const GET: APIRoute = () => {
   const robotsTxt = `# robots.txt for ${siteConfig.name}
-# 確保 AI 搜尋與傳統搜尋都能完整抓取
 
+# 第一部分：通用規則 - 允許所有爬蟲抓取公開內容
 User-agent: *
 Allow: /
-
-# 移除 /_astro/ 的限制，確保 CSS 與 JS 正常渲染
 Disallow: /api/
 
-# 明確歡迎 AI 爬蟲（選填，但具備戰略意義）
+# 第二部分：針對 AI 爬蟲的設定
+# 雖然 User-agent: * 已經允許抓取，但明確標註可增加索引友善度
 User-agent: GPTBot
 Allow: /
+
 User-agent: ClaudeBot
 Allow: /
+
+# Google-Extended 是 Google 用來訓練其 AI 模型（如 Gemini）的爬蟲
+# 允許它有助於您的內容出現在 Google 的 AI 搜尋摘要中
 User-agent: Google-Extended
 Allow: /
 
-# Sitemap location
+# 第三部分：網站地圖
 Sitemap: ${siteConfig.url}/sitemap-index.xml
 `;
 
