@@ -1,6 +1,6 @@
 ---
 /**
- * Header - 優化效能與移除搜尋後的完整修正版
+ * Header - 優化效能與移除搜尋後的最終修正版
  */
 import { siteConfig } from '@/config';
 import { Icon } from 'astro-icon/components';
@@ -32,10 +32,8 @@ const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
             <img 
               src={siteConfig.logo} 
               alt={siteConfig.name} 
-              /* 效能優化：明確寬高屬性，解決 Lighthouse 診斷項 */
               width="44" 
               height="44"
-              /* 效能優化：首屏圖片最高優先權，縮短 LCP */
               loading="eager"
               fetchpriority="high"
               class="h-10 w-10 md:h-11 md:w-11 rounded-full object-cover border-2 border-primary/20 group-hover:border-primary transition-all duration-300 shadow-sm" 
