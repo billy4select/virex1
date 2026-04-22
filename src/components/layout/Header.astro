@@ -1,6 +1,6 @@
 ---
 /**
- * Header - 優化效能與移除搜尋後的完整版
+ * Header - 優化效能與移除搜尋後的完整修正版
  */
 import { siteConfig } from '@/config';
 import { Icon } from 'astro-icon/components';
@@ -32,10 +32,10 @@ const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
             <img 
               src={siteConfig.logo} 
               alt={siteConfig.name} 
-              /* 效能優化：明確寬高，防止 Layout Shift */
+              /* 效能優化：明確寬高屬性，解決 Lighthouse 診斷項 */
               width="44" 
               height="44"
-              /* 效能優化：首屏圖片強制優先下載，縮短 LCP */
+              /* 效能優化：首屏圖片最高優先權，縮短 LCP */
               loading="eager"
               fetchpriority="high"
               class="h-10 w-10 md:h-11 md:w-11 rounded-full object-cover border-2 border-primary/20 group-hover:border-primary transition-all duration-300 shadow-sm" 
@@ -156,4 +156,69 @@ const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
         primaryCTA && (
           <a
             href={primaryCTA.href}
-            class="
+            class="block px-3 py-3 rounded-md bg-primary text-white hover:bg-primary-dark transition-colors text-base font-medium text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
+          >
+            {primaryCTA.label}
+          </a>
+        )
+      }
+    </div>
+  </nav>
+</div>
+
+<script>
+  const header = document.getElementById('site-header');
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+  const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+  const menuIconOpen = document.getElementById('menu-icon-open');
+  const menuIconClose = document.getElementById('menu-icon-close');
+
+  function updateMenuPosition() {
+    if (header && mobileMenuPanel) {
+      const headerRect = header.getBoundingClientRect();
+      mobileMenuPanel.style.top = `${headerRect.bottom}px`;
+    }
+  }
+
+  function openMobileMenu() {
+    updateMenuPosition();
+    mobileMenu?.classList.remove('hidden');
+    mobileMenuButton?.setAttribute('aria-expanded', 'true');
+    menuIconOpen?.classList.add('hidden');
+    menuIconClose?.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileMenu() {
+    mobileMenu?.classList.add('hidden');
+    mobileMenuButton?.setAttribute('aria-expanded', 'false');
+    menuIconOpen?.classList.remove('hidden');
+    menuIconClose?.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  function toggleMobileMenu() {
+    const isExpanded = mobileMenuButton?.getAttribute('aria-expanded') === 'true';
+    if (isExpanded) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
+  }
+
+  mobileMenuButton?.addEventListener('click', toggleMobileMenu);
+  mobileMenuBackdrop?.addEventListener('click', closeMobileMenu);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenuButton?.getAttribute('aria-expanded') === 'true') {
+      closeMobileMenu();
+      mobileMenuButton?.focus();
+    }
+  });
+
+  mobileMenu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+</script>
