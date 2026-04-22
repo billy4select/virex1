@@ -1,7 +1,7 @@
 ---
 title: Claude vs ChatGPT：行銷人寫提案，哪個比較不會讓你改到崩潰
 description: 同樣是 AI 寫提案，為什麼有人改三遍就過，有人改十遍還在原地？不是你的 prompt 不夠好，是你用錯工具了。本文從行銷人的實際需求出發，拆解 Claude 和 ChatGPT 在提案寫作上的真實差異。
-publishedDate: 2026-04-22T00:00:00Z
+publishedDate: 2026-04-20T00:00:00Z
 author: 比利陳 Billy Chen
 image: /images/blog/claude-vs-chatgpt-proposal.webp
 tags:

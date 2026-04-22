@@ -1,7 +1,7 @@
 ---
 title: 免費仔的 AI 工具組合：不花錢也能跑完 80% 職場任務
 description: 每個工具都有免費版，但免費版不代表能用。這篇整理了四個真正好用的免費 AI 工具，搭配起來能跑完大多數職場任務，不用每個月多花一分錢。
-publishedDate: 2026-04-23T00:00:00Z
+publishedDate: 2026-04-21T00:00:00Z
 author: 比利陳 Billy Chen
 image: /images/blog/free-ai-tools-workflow.webp
 tags:
