@@ -9,7 +9,7 @@ tags:
   - 數據資安
   - 職場成長
 category: AI實戰
-featured: true
+featured: false
 boost: true
 draft: false
 schemaType: HowTo
