@@ -1,6 +1,8 @@
 ---
 title: Claude vs ChatGPT：行銷人寫提案，哪個比較不會讓你改到崩潰
-description: 同樣是 AI 寫提案，為什麼有人改三遍就過，有人改十遍還在原地？不是你的 prompt 不夠好，是你用錯工具了。本文從行銷人的實際需求出發，拆解 Claude 和 ChatGPT 在提案寫作上的真實差異。
+description: >-
+  同樣是 AI 寫提案，為什麼有人改三遍就過，有人改十遍還在原地？不是你的 prompt 不夠好，是你用錯工具了。本文從行銷人的實際需求出發，拆解
+  Claude 和 ChatGPT 在提案寫作上的真實差異。
 publishedDate: 2026-04-20T00:00:00Z
 author: 比利陳 Billy Chen
 image: /images/blog/claude-vs-chatgpt-proposal.webp
@@ -8,7 +10,7 @@ tags:
   - AI工具比較
   - 行銷實戰
   - 提案技巧
-category: AI工具選型
+category: AI實戰
 featured: false
 boost: false
 draft: false
@@ -21,11 +23,8 @@ faq:
   - q: 可以同時用 Claude 和 ChatGPT 寫提案嗎？
     a: 可以，而且很多人這樣做。常見的做法是用 ChatGPT 快速發想多個切角，再把最有潛力的方向交給 Claude 展開成完整結構。
   - q: 免費版和付費版的差異大嗎？
-    a: >-
-      在提案寫作上，付費版的差異主要在長度限制與輸出穩定性。如果你的提案超過 2000
-      字或需要多輪修改，付費版的體驗明顯更好。免費版適合測試與短篇草稿。
+    a: 在提案寫作上，付費版的差異主要在長度限制與輸出穩定性。如果你的提案超過 2000 字或需要多輪修改，付費版的體驗明顯更好。免費版適合測試與短篇草稿。
 ---
-
 你把提案大綱丟給 AI，它給你一份東西。你看了一眼，格式對了，但語感不對。改一輪，還是不對。再改，還是差一點。
 
 這個循環你應該不陌生。

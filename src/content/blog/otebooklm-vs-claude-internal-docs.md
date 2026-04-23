@@ -1,6 +1,8 @@
 ---
 title: NotebookLM 讀內部文件 vs Claude 讀內部文件，差在哪
-description: 同樣是把公司文件丟給 AI，NotebookLM 和 Claude 給你的東西完全不一樣。不是誰比較厲害，是它們設計來解決不同的問題。本文拆解兩者在內部文件場景的實際差異，讓你知道什麼時候該用誰。
+description: >-
+  同樣是把公司文件丟給 AI，NotebookLM 和 Claude
+  給你的東西完全不一樣。不是誰比較厲害，是它們設計來解決不同的問題。本文拆解兩者在內部文件場景的實際差異，讓你知道什麼時候該用誰。
 publishedDate: 2026-04-22T00:00:00Z
 author: 比利陳 Billy Chen
 image: /images/blog/notebooklm-vs-claude-internal-docs.webp
@@ -9,7 +11,7 @@ tags:
   - NotebookLM
   - Claude
   - 職場效率
-category: AI工具選型
+category: AI實戰
 featured: false
 boost: false
 draft: false
@@ -18,7 +20,8 @@ faq:
   - q: NotebookLM 和 Claude 都可以讀 PDF，有什麼差別？
     a: >-
       NotebookLM 的設計是「長期管理多份文件」，你上傳後可以反覆查詢，它只會從你上傳的文件裡回答。Claude
-      是「單次對話處理」，你貼進去的文件在那次對話裡有效，關掉就沒了。需要持續查詢同一批文件，用 NotebookLM；需要即時分析或改寫，用 Claude。
+      是「單次對話處理」，你貼進去的文件在那次對話裡有效，關掉就沒了。需要持續查詢同一批文件，用 NotebookLM；需要即時分析或改寫，用
+      Claude。
   - q: 哪個工具比較不會產生幻覺？
     a: >-
       NotebookLM 在「只回答文件裡有的內容」這件事上限制比較嚴格，它會明確告訴你某個問題在文件裡找不到答案。Claude
@@ -28,7 +31,6 @@ faq:
       使用前都需要確認公司的 AI 使用政策，以及工具的資料儲存設定。敏感文件建議先脫敏再上傳。詳細的資安判斷方式可以參考：把財報貼給 AI
       真的沒問題嗎？處理敏感數據的五條安全底線。
 ---
-
 你把一份內部文件丟給 AI，你想要的是什麼？
 
 如果你說「我想快速知道這份文件在講什麼」，NotebookLM 和 Claude 都能做到。但如果你繼續想，你會發現你要的不只是摘要。你可能想查某個數字、想比對兩份文件的說法、想把文件內容改寫成簡報、或想讓 AI 指出文件裡的邏輯漏洞。
