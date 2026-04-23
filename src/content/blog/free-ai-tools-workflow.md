@@ -1,7 +1,7 @@
 ---
 title: 免費仔的 AI 工具組合：不花錢也能跑完 80% 職場任務
 description: 每個工具都有免費版，但免費版不代表能用。這篇整理了四個真正好用的免費 AI 工具，搭配起來能跑完大多數職場任務，不用每個月多花一分錢。
-publishedDate: 2026-04-21T00:00:00Z
+publishedDate: 2026-04-21T10:12:45Z
 author: 比利陳 Billy Chen
 image: /images/blog/free-ai-tools-workflow.webp
 tags:
@@ -47,7 +47,7 @@ Claude 免費版目前能用的是 Sonnet 系列，每五小時大約 15 到 40 
 
 **適合拿來做的事：** 起草報告、整理邏輯、分析上傳的文件、改寫文案。
 
-**要注意的是：** 對話關掉就沒了，不會記住你上次說什麼。每次開新對話，要把相關背景重新給一次。
+→ [Claude vs ChatGPT：行銷人寫提案，哪個比較比較不會讓你改到崩潰](https://blog.billy4select.com/blog/claude-vs-chatgpt-proposal/)
 
 ---
 
@@ -59,8 +59,6 @@ ChatGPT 免費版現在用的是 GPT-5.3，每五小時 10 則主力模型訊息
 
 **適合拿來做的事：** 創意發想、快速產出多個選項、短篇文案草稿。
 
-**要注意的是：** 2026 年 2 月起，免費版開始在美國出現廣告。台灣目前影響不大，但這個趨勢值得觀察。
-
 ---
 
 ### NotebookLM（免費版）：管理多份文件、反覆查詢
@@ -71,7 +69,7 @@ NotebookLM 免費版可以建最多 100 個筆記本，每個筆記本最多 50 
 
 **適合拿來做的事：** 管理大量參考資料、客戶訪談記錄、競品研究、多份文件跨查詢。
 
-**要注意的是：** 它擅長查詢和整理，不擅長改寫和生成。需要 AI 幫你動筆，還是要回到 Claude 或 ChatGPT。
+→ [NotebookLM 難用？解決 PDF 亂碼、幻覺與格式混亂的 7 個實戰方案](https://blog.billy4select.com/blog/notebooklm-problems-solutions/)
 
 ---
 
@@ -85,7 +83,7 @@ NotebookLM 免費版可以建最多 100 個筆記本，每個筆記本最多 50 
 
 **適合拿來做的事：** Google 文件整合、快速查詢即時資訊、跟 NotebookLM 搭配使用。
 
-**要注意的是：** 寫作和長篇邏輯分析不是它的強項，這兩件事還是交給 Claude。
+→ [NotebookLM + Gemini 的協作心法：兩個 Google 工具怎麼串](https://blog.billy4select.com/blog/notebooklm-gemini-collaboration/)
 
 ---
 
@@ -93,17 +91,15 @@ NotebookLM 免費版可以建最多 100 個筆記本，每個筆記本最多 50 
 
 不同任務有不同的最佳路徑，以下是幾個常見職場場景：
 
-**準備客戶提案**
-先用 ChatGPT 發想三到五個切角，選出最有潛力的方向，再交給 Claude 展開成完整結構和論述。
+**準備客戶提案** 先用 ChatGPT 發想三到五個切角，選出最有潛力的方向，再交給 Claude 展開成完整結構和論述。
 
-**整理大量參考資料**
-把相關文件都丟進 NotebookLM，之後有問題直接問它。需要把整理出來的內容改寫成報告，再貼給 Claude 處理。
+**整理大量參考資料** 把相關文件都丟進 NotebookLM，之後有問題直接問它。需要把整理出來的內容改寫成報告，再貼給 Claude 處理。
 
-**快速掌握市場動態**
-用 Gemini 查最新資訊，或直接問它整理近期相關新聞。如果需要進一步分析，把查到的資料貼給 Claude。
+→ [NotebookLM 整理完，再交給 Claude 改寫：完整的研究到輸出流程](https://blog.billy4select.com/blog/notebooklm-to-claude-research-output/)
 
-**日常工作文書**
-電子郵件、簡短說明、會議摘要，Claude 或 ChatGPT 都能做。選哪個看你目前哪個還有額度。
+**快速掌握市場動態** 用 Gemini 查最新資訊，或直接問它整理近期相關新聞。如果需要進一步分析，把查到的資料貼給 Claude。
+
+**日常工作文書** 電子郵件、簡短說明、會議摘要，Claude 或 ChatGPT 都能做。選哪個看你目前哪個還有額度。
 
 ---
 
@@ -111,7 +107,7 @@ NotebookLM 免費版可以建最多 100 個筆記本，每個筆記本最多 50 
 
 這四個工具都是外部雲端服務，公司機密文件、未公開的財務數字、客戶個資，丟進去之前需要先確認公司政策和工具的資料儲存設定。敏感文件建議先脫敏再使用。
 
-免費版預設通常可以用資料訓練模型，這個選項在設定裡可以關掉，建議第一次使用就設定好。
+→ [把財報貼給 AI 真的沒問題嗎？處理敏感數據的五條安全底線](https://blog.billy4select.com/blog/ai-finance-data-security-5-bottom-lines/)
 
 ---
 
