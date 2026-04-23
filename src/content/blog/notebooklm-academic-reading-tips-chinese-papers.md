@@ -6,9 +6,9 @@ author: 比利陳 Billy Chen
 image: /images/blog/notebooklm-academic-tips.webp
 tags:
   - NotebookLM
-  - AI工具
   - 學術研究
   - 生產力
+  - AI應用
 category: AI實戰
 featured: false
 boost: false
