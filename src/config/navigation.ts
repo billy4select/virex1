@@ -18,7 +18,7 @@ export const navigation: Navigation = {
       { label: 'BLOG', href: '/blog' },
       { label: '關於我', href: '/about' },
       { label: '隱私權政策', href: '/privacy' },
-      { label: '免責聲明', href: '/terms' },
+      { label: '免責聲明', href: '/disclaimer' },
     ],
     solutions: [ 
       { label: '《AI時代職場生存法則》', href: 'https://portaly.cc/billyselect4/product/jLrib0ZgLmXWs2WOTiy8' }, 
@@ -37,7 +37,7 @@ export const navigation: Navigation = {
     ],
     legal: [
       { label: 'Privacy Policy', href: '/privacy' },
-      { label: 'Terms of Service', href: '/terms' },
+      { label: 'Terms of Service', href: '/disclaimer' },
     ],
   },
 };
