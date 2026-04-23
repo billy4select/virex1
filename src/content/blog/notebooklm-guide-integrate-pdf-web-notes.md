@@ -10,6 +10,7 @@ tags:
   - AI應用
   - NotebookLM
   - 生產力
+  - 精選
 category: AI實戰
 featured: true
 boost: true
