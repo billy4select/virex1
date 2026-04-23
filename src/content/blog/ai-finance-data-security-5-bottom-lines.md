@@ -10,7 +10,7 @@ tags:
   - 職場成長
 category: AI實戰
 featured: false
-boost: true
+boost: false
 draft: false
 schemaType: HowTo
 faq:
