@@ -9,8 +9,8 @@ tags:
   - 職場成長
   - 心態建立
 category: AI實戰
-featured: true
-boost: true
+featured: false
+boost: false
 draft: false
 ---
 這個問題背後有一個隱藏的假設：學 AI 是一件有「太晚」這個概念存在的事。
