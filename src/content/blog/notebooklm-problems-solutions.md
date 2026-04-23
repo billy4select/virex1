@@ -8,6 +8,7 @@ tags:
   - AI應用
   - NotebookLM
   - 問題解決
+  - 精選
 category: AI實戰
 featured: true
 boost: true
