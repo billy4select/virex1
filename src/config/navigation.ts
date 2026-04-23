@@ -17,6 +17,7 @@ export const navigation: Navigation = {
       { label: '首頁', href: '/' },
       { label: 'BLOG', href: '/blog' },
       { label: '關於我', href: '/about' },
+      { label: '讀者的真實回饋', href: '/testimonials' },
       { label: '隱私權政策', href: '/privacy' },
       { label: '免責聲明', href: '/disclaimer' },
     ],
