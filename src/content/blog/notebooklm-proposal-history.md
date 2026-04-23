@@ -1,14 +1,10 @@
 ---
 title: 用 NotebookLM 管理客戶提案歷史，六個月後你會謝謝自己
 description: 每次準備新提案都要從頭翻舊資料？客戶說過的話、上次提的方向、當初為什麼沒成，這些東西你其實都有，只是沒有放對地方。這篇教你用 NotebookLM 把提案歷史變成可以對話的知識庫。
-publishedDate: 2026-04-23T00:00:00Z
+publishedDate: 2026-04-23T14:25:08Z
 author: 比利陳 Billy Chen
 image: /images/blog/notebooklm-proposal-history.webp
-tags:
-  - NotebookLM
-  - 提案技巧
-  - 客戶管理
-  - 職場效率
+tags: [NotebookLM, 提案技巧, 客戶管理, 職場效率]
 category: AI實戰
 featured: false
 boost: false
@@ -16,14 +12,11 @@ draft: false
 schemaType: HowTo
 faq:
   - q: 提案文件有客戶資訊，放進 NotebookLM 安全嗎？
-    a: >-
-      使用前需要確認公司的 AI 使用政策。如果有顧慮，可以先把文件脫敏——把客戶名稱換成代號、具體金額換成相對數字——NotebookLM 分析的是提案邏輯和結構，不需要看到真實的識別資訊。
+    a: 使用前需要確認公司的 AI 使用政策。如果有顧慮，可以先把文件脫敏——把客戶名稱換成代號、具體金額換成相對數字——NotebookLM 分析的是提案邏輯和結構，不需要看到真實的識別資訊。
   - q: 每個客戶都要建一個筆記本嗎？
-    a: >-
-      看你的業務量。如果客戶數量多，建議一個客戶一個筆記本，方便單獨查詢。如果客戶少但每個客戶的提案量大，也可以一個客戶一個筆記本，把所有歷史文件都放進去。NotebookLM 免費版可以建最多 100 個筆記本，一般業務量不會超過。
+    a: 看你的業務量。如果客戶數量多，建議一個客戶一個筆記本，方便單獨查詢。如果客戶少但每個客戶的提案量大，也可以一個客戶一個筆記本，把所有歷史文件都放進去。NotebookLM 免費版可以建最多 100 個筆記本，一般業務量不會超過。
   - q: 如果提案是口頭討論，沒有文字記錄怎麼辦？
-    a: >-
-      開會後用幾句話把討論重點打下來，存成一個簡單的文字檔上傳進去就夠了。不需要完整的會議記錄，重點是把「客戶說了什麼、你判斷的是什麼、結果是什麼」這三件事留下來。
+    a: 開會後用幾句話把討論重點打下來，存成一個簡單的文字檔上傳進去就夠了。不需要完整的會議記錄，重點是把「客戶說了什麼、你判斷的是什麼、結果是什麼」這三件事留下來。
 steps:
   - name: 整理現有的提案文件
     text: 把同一個客戶的歷史提案、會議記錄、客戶反饋、往來重要信件整理好，不需要整理格式，只要確認文件能被文字選取就行。
@@ -55,6 +48,8 @@ steps:
 
 把這些東西放進 NotebookLM，你就可以問它們問題了。
 
+→ [專案資料散落各處？NotebookLM 跨來源整合實戰手冊](https://blog.billy4select.com/blog/notebooklm-guide-integrate-pdf-web-notes/)
+
 ---
 
 ## 怎麼建起來
@@ -77,6 +72,8 @@ steps:
 
 文件格式以能被文字選取的 PDF 或 Google Docs 最穩定。掃描版的圖片 PDF 它讀起來比較吃力，能轉換就先轉換。
 
+→ [NotebookLM 難用？解決 PDF 亂碼、幻覺與格式混亂的 7 個實戰方案](https://blog.billy4select.com/blog/notebooklm-problems-solutions/)
+
 ---
 
 ### 第三步：用提問代替翻資料
@@ -91,9 +88,11 @@ steps:
 
 「這個客戶最常提到的顧慮是什麼？」
 
-「上次提案和這次情況有什麼不同？」
+「上次提案 and 這次情況有什麼不同？」
 
 它給你的答案會附上來源——是哪份文件、哪個段落說的。你可以點進去確認，不用擔心它亂說。
+
+→ [Claude vs ChatGPT：行銷人寫提案，哪個比較不會讓你改到崩潰](https://blog.billy4select.com/blog/claude-vs-chatgpt-proposal/)
 
 ---
 
@@ -117,4 +116,7 @@ steps:
 
 ---
 
-**延伸閱讀：** [專案資料散落各處？NotebookLM 跨來源整合實戰手冊](/blog/notebooklm-guide-integrate-pdf-web-notes)
+**延伸閱讀：**
+
+→ [NotebookLM + Gemini 的協作心法：兩個 Google 工具怎麼串](https://blog.billy4select.com/blog/notebooklm-gemini-collaboration/)
+→ [NotebookLM 建知識庫 vs Notion AI 建知識庫：場景不同，選法不同](https://blog.billy4select.com/blog/notebooklm-vs-notion-ai-knowledge-base/)
