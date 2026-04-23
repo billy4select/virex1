@@ -1,7 +1,7 @@
 ---
 title: NotebookLM 整理完，再交給 Claude 改寫：完整的研究到輸出流程
 description: NotebookLM 擅長整理資料，Claude 擅長把資料寫成東西。兩個工具串起來，從研究到輸出可以跑一條完整的流程。這篇把這個流程拆開來說清楚。
-publishedDate: 2026-04-23T00:00:00Z
+publishedDate: 2026-04-22T00:00:00Z
 author: 比利陳 Billy Chen
 image: /images/blog/notebooklm-to-claude-research-output.webp
 tags:
