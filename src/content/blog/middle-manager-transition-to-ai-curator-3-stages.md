@@ -9,8 +9,8 @@ tags:
   - 職場成長
   - 管理轉型
 category: AI實戰
-featured: true
-boost: true
+featured: false
+boost: false
 draft: false
 ---
 你最近有沒有這種感覺：開會的時候，有人提了一個用 AI 做的分析，你聽不太懂，但也不好意思問。部屬開始用各種 AI 工具加速工作，你不確定這些工具在做什麼。公司開始討論 AI 導入計畫，你在那個討論裡感覺自己是旁觀者。
