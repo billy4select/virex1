@@ -148,7 +148,7 @@ NotebookLM 單獨用已經很有價值，但跟其他工具配合，能做的事
 
 NotebookLM 擅長整理，Claude 擅長生成。從研究素材到最終輸出，兩個工具接力跑完整個流程——你只需要在最需要判斷的地方出手。
 
-→ [NotebookLM 整理完，再交給 Claude 改寫：完整的研究到輸出流程](/blog/notebooklm-to-claude-workflow/)
+→ [NotebookLM 整理完，再交給 Claude 改寫：完整的研究到輸出流程](/blog/notebooklm-to-claude-research-output/)
 
 ---
 
