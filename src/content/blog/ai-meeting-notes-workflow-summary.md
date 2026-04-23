@@ -9,8 +9,8 @@ tags:
   - 職場成長
   - 生產力
 category: AI實戰
-featured: true
-boost: true
+featured: false
+boost: false
 draft: false
 schemaType: HowTo
 faq:
