@@ -29,7 +29,6 @@ export const navigation: Navigation = {
     resources: [
       { label: '索取檔案', href: 'https://billy4select.kit.com/profile/links' },
       { label: '訂閱電子報', href: 'https://billy4select.kit.com/profile/posts' },
-      { label: '更新日誌', href: '/changelog' },
     ],
     company: [
       { label: 'YouTube', href: 'https://www.youtube.com/@billyselect4' },
