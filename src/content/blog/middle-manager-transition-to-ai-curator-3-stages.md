@@ -54,7 +54,7 @@ draft: false
 
 這套標準能讓團隊有共同的語言，避免過度依賴或完全抗拒 AI。
 
-→ [別再浪費生命寫會議記錄！AI 整理術：從逐字稿到高價值決策摘要](https://blog.billy4select.com/blog/ai-meeting-notes/)
+→ [別再浪費生命寫會議記錄！AI 整理術：從逐字稿到高價值決策摘要](https://blog.billy4select.com/blog/ai-meeting-notes-workflow-summary/)
 
 ---
 
@@ -73,4 +73,4 @@ draft: false
 
 這三個階段加起來需要三個月。雖然每週投入的時間不多（約 2-5 小時），但回報是巨大的。你將從一個可能被邊緣化的傳統主管，變成組織在 AI 轉型過程裡真正需要的**整合節點**。
 
-→ [35 歲學 AI 會太晚嗎？這不是追趕，而是發揮你累積十年的判斷力槓桿](https://blog.billy4select.com/blog/ai-learning-age/)
+→ [35 歲學 AI 會太晚嗎？這不是追趕，而是發揮你累積十年的判斷力槓桿](https://blog.billy4select.com/blog/learn-ai-at-35-too-late-roi-metrics/)
