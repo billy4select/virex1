@@ -11,7 +11,14 @@ const siteUrl = 'https://blog.billy4select.com';
 export default defineConfig({
   site: siteUrl,
   
-  // 提升感知速度
+  // 【新增關鍵點 1】強制所有網址不帶結尾斜槓，對齊你的導覽列設定
+  trailingSlash: 'never',
+  
+  build: {
+    // 【新增關鍵點 2】確保編譯出來是 about.html，避免 Cloudflare 產生目錄型轉址
+    format: 'file'
+  },
+
   prefetch: {
     prefetchAll: true,
     defaultStrategy: 'viewport',
@@ -36,18 +43,12 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     build: {
-      // 關鍵優化 1：提高內嵌門檻到 10KB
-      // 這能解決報告中提到的「轉譯封鎖要求」，將小型 CSS 直接塞進 HTML
       assetsInlineLimit: 10240, 
-      
-      // 關鍵優化 2：優化 CSS 分塊策略
       cssCodeSplit: true,
     },
   },
 
   adapter: cloudflare({
-    // 如果你要衝分，建議暫時維持 passthrough，
-    // 並「手動」將 avatar.webp 裁切成 88x88 像素
     imageService: 'passthrough' 
   })
 });
