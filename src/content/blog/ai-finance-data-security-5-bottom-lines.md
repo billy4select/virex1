@@ -40,7 +40,7 @@ steps:
 
 未公開的財務數字涉及法律層面（如證券法規）、客戶合約的保密條款。一旦外洩，責任可能直接指向你。
 
-→ [速度快了，但你站得住腳嗎？PM 使用 AI 做數據分析的生存指南](https://blog.billy4select.com/blog/pm-ai-data-analysis/)
+→ [速度快了，但你站得住腳嗎？PM 使用 AI 做數據分析的生存指南](https://blog.billy4select.com/blog/ai-data-analysis-human-ai-collaboration-professionalism/)
 
 ## 守住資安的五條底線
 
