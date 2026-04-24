@@ -1,7 +1,7 @@
 ---
 title: NotebookLM 做簡報的優缺點實測：哪些場景真的好用，哪些場景會讓你踩坑
 description: NotebookLM 生成簡報很快，但快不等於好用。這篇把它的優點和限制說清楚，讓你知道什麼時候值得用、什麼時候你會後悔沒有先看這篇。
-publishedDate: 2026-04-24T00:00:00Z
+publishedDate: 2026-04-24T10:54:00Z
 author: 比利陳 Billy Chen
 image: /images/blog/notebooklm-slide-deck-review.webp
 tags:
