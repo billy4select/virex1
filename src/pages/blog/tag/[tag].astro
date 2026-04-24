@@ -1,25 +1,36 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
-import PostCard from '@ui/PostCard.astro'; // 1. 匯入統一組件
+import PostCard from '@ui/PostCard.astro';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
 
 export async function getStaticPaths() {
+  // 1. 抓取所有非草稿文章
   const posts = await getCollection('blog', ({ data }) => !data.draft);
   
+  // 2. 提取所有標籤，並進行嚴格的清洗（去空白、轉字串、過濾空值）
   const allTags = [...new Set(posts.flatMap((post) => post.data.tags || []))]
     .map(tag => String(tag).trim())
-    .filter(tag => tag.length > 0);
+    .filter(tag => tag.length > 0)
+    .sort((a, b) => a.localeCompare(b, 'zh-Hant')); // 使用繁體中文排序確保穩定
 
-  return allTags.map((tag) => ({
-    params: { tag },
-    props: {
-      posts: posts
-        .filter((post) => (post.data.tags || []).includes(tag))
-        .sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()),
-      allTags: allTags.sort(),
-    },
-  }));
+  // 3. 為每個標籤生成對應頁面
+  return allTags.map((tag) => {
+    const filteredPosts = posts
+      .filter((post) => {
+        const postTags = (post.data.tags || []).map(t => String(t).trim());
+        return postTags.includes(tag);
+      })
+      .sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime());
+
+    return {
+      params: { tag },
+      props: {
+        posts: filteredPosts,
+        allTags: allTags,
+      },
+    };
+  });
 }
 
 const { tag } = Astro.params;
@@ -74,7 +85,6 @@ const { posts, allTags } = Astro.props;
   <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-4">
       <div class="mb-12 border-b border-gray-100 pb-4">
-        {/* 已修改：將 Timeline / 標籤文章 改為 最新文章 */}
         <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.3em]">最新文章</h2>
       </div>
 
