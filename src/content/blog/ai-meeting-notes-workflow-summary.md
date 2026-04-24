@@ -83,7 +83,9 @@ AI 處理的前提是有文字輸入。
 
 ### 1\. 資安地雷
 
-涉及機密數據時，請務必參考資安底線進行處理。 → [把財報貼給 AI 真的沒問題嗎？處理敏感數據的五條安全底線](https://blog.billy4select.com/blog/ai-security-finance/)
+涉及機密數據時，請務必參考資安底線進行處理。
+
+→ [把財報貼給 AI 真的沒問題嗎？處理敏感數據的五條安全底線](https://blog.billy4select.com/blog/ai-finance-data-security-5-bottom-lines/)
 
 ### 2\. 職場考量
 
