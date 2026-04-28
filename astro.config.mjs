@@ -11,12 +11,13 @@ const siteUrl = 'https://blog.billy4select.com';
 export default defineConfig({
   site: siteUrl,
   
-  // 【修正 1】設定為 ignore，讓 Astro 靈活處理，配合 Cloudflare Pages 的預設行為
-  trailingSlash: 'ignore',
+  // 【關鍵修正 1】改為 'always'。
+  // Cloudflare Pages 預設會幫目錄補上斜槓。強制為 always 能讓 Astro 生成的連結
+  // 與伺服器行為 100% 一致，直接消滅 307 轉向。
+  trailingSlash: 'always',
   
   build: {
-    // 【修正 2】改回 'directory'。這會產出 /about/index.html，
-    // 讓網址變成漂亮的 /about，徹底解決 .html 轉向問題
+    // 【關鍵修正 2】保持 'directory'，這與 'always' 是最佳拍檔
     format: 'directory'
   },
 
@@ -29,10 +30,11 @@ export default defineConfig({
     mdx(),
     icon(),
     sitemap({
-      // 【修正 3】強制 Sitemap 產出的網址不帶結尾斜槓，對齊 SEO 偏好
+      // 【關鍵修正 3】Sitemap 必須與網址行為一致，都要帶斜槓
+      // 這樣搜尋引擎爬到的網址就是最終跳轉後的網址，解決 Canonical 報警
       serialize(item) {
-        if (item.url.endsWith('/')) {
-          item.url = item.url.slice(0, -1);
+        if (!item.url.endsWith('/')) {
+          item.url += '/';
         }
         return item;
       },
