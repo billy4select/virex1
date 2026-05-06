@@ -1,168 +1,153 @@
-{\rtf1\ansi\ansicpg950\cocoartf2869
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\froman\fcharset0 Times-Bold;}
-{\colortbl;\red255\green255\blue255;\red109\green109\blue109;\red0\green0\blue0;\red0\green0\blue233;
-}
-{\*\expandedcolortbl;;\cssrgb\c50196\c50196\c50196;\cssrgb\c0\c0\c0;\cssrgb\c0\c0\c93333;
-}
-{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
-{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
-{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}}
-{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\deftab720
-\pard\pardeftab720\partightenfactor0
+---
+title: NotebookLM 入門完整教學：第一次用，從建立筆記本到問出有用的答案
+description: 第一次用 NotebookLM，上傳了文件、問了問題，卻覺得沒什麼感覺？問題通常不在工具，在你還不知道它的運作邏輯。這篇從零開始，帶你在 15 分鐘內真正用起來。
+publishedDate: 2026-04-29T00:00:00Z
+author: 比利陳 Billy Chen
+image: /images/blog/notebooklm-beginner-guide.webp
+tags:
+  - NotebookLM
+  - 入門教學
+  - AI工具
+  - 職場效率
+category: AI實戰
+featured: false
+boost: false
+draft: false
+schemaType: HowTo
+faq:
+  - q: NotebookLM 需要付費嗎？
+    a: >-
+      不需要。只要有 Google 帳號，前往 notebooklm.google 就能免費使用。免費版可以建立最多 100 個筆記本、每個筆記本最多 50 份來源文件、每天 50 次對話和 3 個 Audio Overview，對大多數職場使用者來說完全夠用。
+  - q: NotebookLM 跟 ChatGPT 有什麼不同？
+    a: >-
+      最關鍵的差異是：ChatGPT 回答的是它從網路上學到的東西，NotebookLM 只回答你上傳的文件裡有的東西。這讓它的答案更有依據、更不容易出現幻覺，但也代表你需要先上傳資料，它才有東西可以回答。
+  - q: 什麼格式的文件可以上傳？
+    a: >-
+      支援 PDF、Google 文件、Google 簡報、網頁連結、YouTube 影片連結、音訊檔案，以及直接貼上的文字。最常用的是 PDF 和 Google 文件，記得確認 PDF 是可以選取文字的版本，掃描版圖片 PDF 會讀不到內容。
+steps:
+  - name: 登入並建立第一個筆記本
+    text: 前往 notebooklm.google，用 Google 帳號登入，點「+ 新增筆記本」，取一個有意義的名稱，例如「2026 競品研究」或「客戶 A 提案資料」。
+  - name: 上傳你的第一份文件
+    text: 點左側的「+ 新增來源」，上傳一份你最近需要讀的 PDF 或貼上一個網頁連結。上傳後 NotebookLM 會自動摘要，你可以先看摘要確認它有沒有讀到重點。
+  - name: 問一個你真正想知道的問題
+    text: 不要問「這份文件在說什麼」，要問一個你自己也不確定答案的問題，例如「這份報告裡有沒有跟一般認知不一樣的地方？」看它的回答有沒有讓你多想一下。
+  - name: 確認引用來源
+    text: 每個回答旁邊會有引用標記，點擊可以跳到原文段落。養成確認來源的習慣，你才知道它的答案是有依據的，還是推測出來的。
+---
 
-\f0\fs24 \cf2 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 \
-\pard\pardeftab720\sa240\partightenfactor0
-\cf0 \strokec3 title: NotebookLM \uc0\u20837 \u38272 \u23436 \u25972 \u25945 \u23416 \u65306 \u31532 \u19968 \u27425 \u29992 \u65292 \u24478 \u24314 \u31435 \u31558 \u35352 \u26412 \u21040 \u21839 \u20986 \u26377 \u29992 \u30340 \u31572 \u26696  description: \u31532 \u19968 \u27425 \u29992  NotebookLM\u65292 \u19978 \u20659 \u20102 \u25991 \u20214 \u12289 \u21839 \u20102 \u21839 \u38988 \u65292 \u21371 \u35258 \u24471 \u27794 \u20160 \u40636 \u24863 \u35258 \u65311 \u21839 \u38988 \u36890 \u24120 \u19981 \u22312 \u24037 \u20855 \u65292 \u22312 \u20320 \u36996 \u19981 \u30693 \u36947 \u23427 \u30340 \u36939 \u20316 \u37007 \u36655 \u12290 \u36889 \u31687 \u24478 \u38646 \u38283 \u22987 \u65292 \u24118 \u20320 \u22312  15 \u20998 \u37912 \u20839 \u30495 \u27491 \u29992 \u36215 \u20358 \u12290  publishedDate: 2026-04-29T00:00:00Z author: \u27604 \u21033 \u38515  Billy Chen image: /images/blog/notebooklm-beginner-guide.webp tags:\
-\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
-\ls1\ilvl0\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 NotebookLM\
-\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \uc0\u20837 \u38272 \u25945 \u23416 \
-\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 AI\uc0\u24037 \u20855 \
-\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \uc0\u32887 \u22580 \u25928 \u29575  category: AI\u23526 \u25136  featured: false boost: false draft: false schemaType: HowTo faq:\
-\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 q: NotebookLM \uc0\u38656 \u35201 \u20184 \u36027 \u21966 \u65311  a: >- \u19981 \u38656 \u35201 \u12290 \u21482 \u35201 \u26377  Google \u24115 \u34399 \u65292 \u21069 \u24448  notebooklm.google \u23601 \u33021 \u20813 \u36027 \u20351 \u29992 \u12290 \u20813 \u36027 \u29256 \u21487 \u20197 \u24314 \u31435 \u26368 \u22810  100 \u20491 \u31558 \u35352 \u26412 \u12289 \u27599 \u20491 \u31558 \u35352 \u26412 \u26368 \u22810  50 \u20221 \u20358 \u28304 \u25991 \u20214 \u12289 \u27599 \u22825  50 \u27425 \u23565 \u35441 \u21644  3 \u20491  Audio Overview\u65292 \u23565 \u22823 \u22810 \u25976 \u32887 \u22580 \u20351 \u29992 \u32773 \u20358 \u35498 \u23436 \u20840 \u22816 \u29992 \u12290 \
-\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 q: NotebookLM \uc0\u36319  ChatGPT \u26377 \u20160 \u40636 \u19981 \u21516 \u65311  a: >- \u26368 \u38364 \u37749 \u30340 \u24046 \u30064 \u26159 \u65306 ChatGPT \u22238 \u31572 \u30340 \u26159 \u23427 \u24478 \u32178 \u36335 \u19978 \u23416 \u21040 \u30340 \u26481 \u35199 \u65292 NotebookLM \u21482 \u22238 \u31572 \u20320 \u19978 \u20659 \u30340 \u25991 \u20214 \u35041 \u26377 \u30340 \u26481 \u35199 \u12290 \u36889 \u35731 \u23427 \u30340 \u31572 \u26696 \u26356 \u26377 \u20381 \u25818 \u12289 \u26356 \u19981 \u23481 \u26131 \u20986 \u29694 \u24187 \u35258 \u65292 \u20294 \u20063 \u20195 \u34920 \u20320 \u38656 \u35201 \u20808 \u19978 \u20659 \u36039 \u26009 \u65292 \u23427 \u25165 \u26377 \u26481 \u35199 \u21487 \u20197 \u22238 \u31572 \u12290 \
-\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 q: \uc0\u20160 \u40636 \u26684 \u24335 \u30340 \u25991 \u20214 \u21487 \u20197 \u19978 \u20659 \u65311  a: >- \u25903 \u25588  PDF\u12289 Google \u25991 \u20214 \u12289 Google \u31777 \u22577 \u12289 \u32178 \u38913 \u36899 \u32080 \u12289 YouTube \u24433 \u29255 \u36899 \u32080 \u12289 \u38899 \u35338 \u27284 \u26696 \u65292 \u20197 \u21450 \u30452 \u25509 \u36028 \u19978 \u30340 \u25991 \u23383 \u12290 \u26368 \u24120 \u29992 \u30340 \u26159  PDF \u21644  Google \u25991 \u20214 \u65292 \u35352 \u24471 \u30906 \u35469  PDF \u26159 \u21487 \u20197 \u36984 \u21462 \u25991 \u23383 \u30340 \u29256 \u26412 \u65292 \u25475 \u25551 \u29256 \u22294 \u29255  PDF \u26371 \u35712 \u19981 \u21040 \u20839 \u23481 \u12290  steps:\
-\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 name: \uc0\u30331 \u20837 \u20006 \u24314 \u31435 \u31532 \u19968 \u20491 \u31558 \u35352 \u26412  text: \u21069 \u24448  notebooklm.google\u65292 \u29992  Google \u24115 \u34399 \u30331 \u20837 \u65292 \u40670 \u12300 + \u26032 \u22686 \u31558 \u35352 \u26412 \u12301 \u65292 \u21462 \u19968 \u20491 \u26377 \u24847 \u32681 \u30340 \u21517 \u31281 \u65292 \u20363 \u22914 \u12300 2026 \u31478 \u21697 \u30740 \u31350 \u12301 \u25110 \u12300 \u23458 \u25142  A \u25552 \u26696 \u36039 \u26009 \u12301 \u12290 \
-\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 name: \uc0\u19978 \u20659 \u20320 \u30340 \u31532 \u19968 \u20221 \u25991 \u20214  text: \u40670 \u24038 \u20596 \u30340 \u12300 + \u26032 \u22686 \u20358 \u28304 \u12301 \u65292 \u19978 \u20659 \u19968 \u20221 \u20320 \u26368 \u36817 \u38656 \u35201 \u35712 \u30340  PDF \u25110 \u36028 \u19978 \u19968 \u20491 \u32178 \u38913 \u36899 \u32080 \u12290 \u19978 \u20659 \u24460  NotebookLM \u26371 \u33258 \u21205 \u25688 \u35201 \u65292 \u20320 \u21487 \u20197 \u20808 \u30475 \u25688 \u35201 \u30906 \u35469 \u23427 \u26377 \u27794 \u26377 \u35712 \u21040 \u37325 \u40670 \u12290 \
-\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 name: \uc0\u21839 \u19968 \u20491 \u20320 \u30495 \u27491 \u24819 \u30693 \u36947 \u30340 \u21839 \u38988  text: \u19981 \u35201 \u21839 \u12300 \u36889 \u20221 \u25991 \u20214 \u22312 \u35498 \u20160 \u40636 \u12301 \u65292 \u35201 \u21839 \u19968 \u20491 \u20320 \u33258 \u24049 \u20063 \u19981 \u30906 \u23450 \u31572 \u26696 \u30340 \u21839 \u38988 \u65292 \u20363 \u22914 \u12300 \u36889 \u20221 \u22577 \u21578 \u35041 \u26377 \u27794 \u26377 \u36319 \u19968 \u33324 \u35469 \u30693 \u19981 \u19968 \u27171 \u30340 \u22320 \u26041 \u65311 \u12301 \u30475 \u23427 \u30340 \u22238 \u31572 \u26377 \u27794 \u26377 \u35731 \u20320 \u22810 \u24819 \u19968 \u19979 \u12290 \
-\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 name: \uc0\u30906 \u35469 \u24341 \u29992 \u20358 \u28304  text: \u27599 \u20491 \u22238 \u31572 \u26049 \u37002 \u26371 \u26377 \u24341 \u29992 \u27161 \u35352 \u65292 \u40670 \u25802 \u21487 \u20197 \u36339 \u21040 \u21407 \u25991 \u27573 \u33853 \u12290 \u39178 \u25104 \u30906 \u35469 \u20358 \u28304 \u30340 \u32722 \u24931 \u65292 \u20320 \u25165 \u30693 \u36947 \u23427 \u30340 \u31572 \u26696 \u26159 \u26377 \u20381 \u25818 \u30340 \u65292 \u36996 \u26159 \u25512 \u28204 \u20986 \u20358 \u30340 \u12290 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \strokec2 \
-\pard\pardeftab720\sa240\partightenfactor0
-\cf0 \strokec3 \uc0\u20320 \u22312 \u32178 \u36335 \u19978 \u30475 \u21040  NotebookLM \u30340 \u20171 \u32057 \u65292 \u35498 \u23427 \u21487 \u20197 \u24171 \u20320 \u35712  PDF\u12289 \u25972 \u29702 \u36039 \u26009 \u12289 \u22238 \u31572 \u21839 \u38988 \u12290 \u20320 \u35430 \u20102 \u65292 \u19978 \u20659 \u25991 \u20214 \u65292 \u21839 \u12300 \u24171 \u25105 \u25972 \u29702 \u36889 \u20221 \u22577 \u21578 \u30340 \u37325 \u40670 \u12301 \u65292 \u23427 \u32102 \u20320 \u19968 \u20491 \u25688 \u35201 \u12290 \
-\uc0\u20320 \u30475 \u20102 \u19968 \u30524 \u65292 \u35258 \u24471 \u36996 \u22909 \u12290 \u36319 \u33258 \u24049 \u35712 \u19968 \u36941 \u24046 \u19981 \u22810 \u12290 \
-\uc0\u28982 \u24460 \u20320 \u38364 \u25481 \u65292 \u35258 \u24471 \u36889 \u20491 \u24037 \u20855 \u27794 \u20160 \u40636 \u29305 \u21029 \u12290 \
-\uc0\u36889 \u26159 \u24456 \u22810 \u20154 \u31532 \u19968 \u27425 \u29992  NotebookLM \u30340 \u21453 \u25033 \u12290 \u20294 \u21839 \u38988 \u19981 \u22312 \u24037 \u20855 \u65292 \u22312 \u20320 \u36996 \u19981 \u30693 \u36947 \u23427 \u36319 \u20854 \u20182  AI \u30340 \u26681 \u26412 \u24046 \u30064 \u65292 \u20063 \u19981 \u30693 \u36947 \u35201 \u24590 \u40636 \u21839 \u25165 \u33021 \u35731 \u23427 \u32102 \u20320 \u30495 \u27491 \u26377 \u29992 \u30340 \u26481 \u35199 \u12290 \
-\uc0\u36889 \u31687 \u24478 \u38646 \u38283 \u22987 \u65292 \u35731 \u20320 \u22312  15 \u20998 \u37912 \u20839 \u30495 \u27491 \u29992 \u36215 \u20358 \u12290 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \strokec2 \
-\pard\pardeftab720\sa298\partightenfactor0
+你在網路上看到 NotebookLM 的介紹，說它可以幫你讀 PDF、整理資料、回答問題。你試了，上傳文件，問「幫我整理這份報告的重點」，它給你一個摘要。
 
-\f1\b\fs36 \cf0 \strokec3 \uc0\u20808 \u25630 \u28165 \u26970 \u23427 \u26159 \u20160 \u40636 \u65292 \u20877 \u38283 \u22987 \u29992 \
-\pard\pardeftab720\sa240\partightenfactor0
+你看了一眼，覺得還好。跟自己讀一遍差不多。
 
-\f0\b0\fs24 \cf0 NotebookLM \uc0\u19981 \u26159  ChatGPT\u65292 \u20063 \u19981 \u26159 \u25628 \u23563 \u24341 \u25806 \u12290 \
-ChatGPT \uc0\u22238 \u31572 \u30340 \u26159 \u23427 \u24478 \u32178 \u36335 \u19978 \u23416 \u21040 \u30340 \u26481 \u35199 \'97\'97\u20320 \u21839 \u23427 \u20219 \u20309 \u21839 \u38988 \u65292 \u23427 \u37117 \u33021 \u32102 \u20320 \u19968 \u20491 \u31572 \u26696 \u65292 \u20294 \u20320 \u19981 \u30693 \u36947 \u37027 \u20491 \u31572 \u26696 \u24478 \u21738 \u35041 \u20358 \u12290 \
-NotebookLM \uc0\u21482 \u22238 \u31572 \u20320 \u19978 \u20659 \u30340 \u25991 \u20214 \u35041 \u26377 \u30340 \u26481 \u35199 \u12290 \u23427 \u19981 \u26371 \u33258 \u24049 \u21435 \u26597 \u32178 \u36335 \u65292 \u19981 \u26371 \u35036 \u20837 \u23427 \u33258 \u24049 \u30340 \u30693 \u35672 \u65292 \u23427 \u30340 \u25152 \u26377 \u31572 \u26696 \u37117 \u20358 \u33258 \u20320 \u32102 \u23427 \u30340 \u36039 \u26009 \u65292 \u32780 \u19988 \u27599 \u20491 \u22238 \u31572 \u37117 \u26371 \u27161 \u31034 \u20358 \u28304 \u22312 \u21738 \u19968 \u20221 \u25991 \u20214 \u30340 \u21738 \u20491 \u27573 \u33853 \u12290 \
-\uc0\u36889 \u20491 \u24046 \u30064 \u24456 \u37325 \u35201 \u12290 \u23427 \u20195 \u34920  NotebookLM \u33021 \u20570 \u30340 \u20107 \u65292 \u26159 \u12300 \u24171 \u20320 \u28145 \u20837 \u25366 \u25496 \u20320 \u24050 \u32147 \u26377 \u30340 \u36039 \u26009 \u12301 \u65292 \u19981 \u26159 \u12300 \u24171 \u20320 \u25214 \u20320 \u27794 \u26377 \u30340 \u36039 \u35338 \u12301 \u12290 \
-\uc0\u25630 \u28165 \u26970 \u36889 \u20214 \u20107 \u65292 \u20320 \u25165 \u26371 \u30693 \u36947 \u20160 \u40636 \u26178 \u20505 \u35442 \u29992 \u23427 \u12289 \u20160 \u40636 \u26178 \u20505 \u35442 \u29992 \u20854 \u20182 \u24037 \u20855 \u12290 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \strokec2 \
-\pard\pardeftab720\sa298\partightenfactor0
+然後你關掉，覺得這個工具沒什麼特別。
 
-\f1\b\fs36 \cf0 \strokec3 \uc0\u31532 \u19968 \u27493 \u65306 \u30331 \u20837 \u65292 \u24314 \u31435 \u20320 \u30340 \u31532 \u19968 \u20491 \u31558 \u35352 \u26412 \
-\pard\pardeftab720\sa240\partightenfactor0
+這是很多人第一次用 NotebookLM 的反應。但問題不在工具，在你還不知道它跟其他 AI 的根本差異，也不知道要怎麼問才能讓它給你真正有用的東西。
 
-\f0\b0\fs24 \cf0 \uc0\u21069 \u24448  notebooklm.google\u65292 \u29992  Google \u24115 \u34399 \u30452 \u25509 \u30331 \u20837 \u65292 \u19981 \u38656 \u35201 \u38989 \u22806 \u30003 \u35531 \u65292 \u20063 \u19981 \u38656 \u35201 \u20449 \u29992 \u21345 \u12290 \
-\uc0\u30331 \u20837 \u24460 \u40670 \u12300 + \u26032 \u22686 \u31558 \u35352 \u26412 \u12301 \u12290 \
-\pard\pardeftab720\sa240\partightenfactor0
+這篇從零開始，讓你在 15 分鐘內真正用起來。
 
-\f1\b \cf0 \uc0\u31558 \u35352 \u26412 \u30340 \u21517 \u31281 \u24456 \u37325 \u35201 
-\f0\b0 \uc0\u65292 \u19981 \u35201 \u21483 \u12300 \u31558 \u35352 \u26412 1\u12301 \u12290 \u21462 \u19968 \u20491 \u26377 \u24847 \u32681 \u30340 \u21517 \u31281 \u65306 \u12300 2026 \u31478 \u21697 \u30740 \u31350 \u12301 \u12300 \u23458 \u25142  A \u25552 \u26696 \u36039 \u26009 \u12301 \u12300 \u34892 \u37559 \u37096  Q2 \u35215 \u21123 \u12301 \u12290 \u21517 \u31281 \u28165 \u26970 \u65292 \u20043 \u24460 \u20320 \u26377 \u22810 \u20491 \u31558 \u35352 \u26412 \u30340 \u26178 \u20505 \u25165 \u25214 \u24471 \u21040 \u12290 \
-\uc0\u19968 \u20491 \u31558 \u35352 \u26412 \u23601 \u26159 \u19968 \u20491 \u29544 \u31435 \u30340 \u30740 \u31350 \u31354 \u38291 \u12290 \u20320 \u22312 \u36889 \u20491 \u31558 \u35352 \u26412 \u35041 \u21839 \u30340 \u21839 \u38988 \u65292 \u23427 \u21482 \u24478 \u36889 \u20491 \u31558 \u35352 \u26412 \u30340 \u36039 \u26009 \u35041 \u25214 \u31572 \u26696 \u65292 \u19981 \u26371 \u36319 \u20854 \u20182 \u31558 \u35352 \u26412 \u28151 \u22312 \u19968 \u36215 \u12290 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \strokec2 \
-\pard\pardeftab720\sa298\partightenfactor0
+---
 
-\f1\b\fs36 \cf0 \strokec3 \uc0\u31532 \u20108 \u27493 \u65306 \u19978 \u20659 \u20320 \u30340 \u31532 \u19968 \u20221 \u25991 \u20214 \
-\pard\pardeftab720\sa240\partightenfactor0
+## 先搞清楚它是什麼，再開始用
 
-\f0\b0\fs24 \cf0 \uc0\u40670 \u24038 \u20596 \u38754 \u26495 \u30340 \u12300 + \u26032 \u22686 \u20358 \u28304 \u12301 \u12290 \
-\uc0\u25903 \u25588 \u30340 \u26684 \u24335 \u65306 \
-\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
-\ls2\ilvl0\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 PDF\uc0\u65288 \u26368 \u24120 \u29992 \u65292 \u30906 \u35469 \u26159 \u21487 \u20197 \u36984 \u21462 \u25991 \u23383 \u30340 \u29256 \u26412 \u65289 \
-\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 Google \uc0\u25991 \u20214 \u12289 Google \u31777 \u22577 \
-\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \uc0\u32178 \u38913 \u36899 \u32080 \u65288 \u36028 \u19978  URL \u23427 \u33258 \u21205 \u25235 \u21462 \u65289 \
-\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 YouTube \uc0\u24433 \u29255 \u36899 \u32080 \u65288 \u23427 \u26371 \u35712 \u23383 \u24149 \u65289 \
-\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \uc0\u30452 \u25509 \u36028 \u19978 \u25991 \u23383 \
-\pard\pardeftab720\sa240\partightenfactor0
-\cf0 \uc0\u31532 \u19968 \u27425 \u29992 \u65292 \u24314 \u35696 \u20808 \u19978 \u20659 \u19968 \u20221 \u20320 \u26368 \u36817 \u30495 \u30340 \u38656 \u35201 \u35712 \u30340 \u25991 \u20214 \'97\'97\u19981 \u26159 \u38568 \u20415 \u25214 \u19968 \u20221 \u20358 \u28204 \u35430 \u65292 \u26159 \u20320 \u24037 \u20316 \u19978 \u26377 \u23526 \u38555 \u38656 \u27714 \u30340 \u37027 \u31278 \u12290 \u36889 \u27171 \u20320 \u21839 \u20986 \u20358 \u30340 \u21839 \u38988 \u25165 \u26159 \u30495 \u23526 \u30340 \u65292 \u20320 \u25165 \u33021 \u21028 \u26039 \u23427 \u30340 \u31572 \u26696 \u26377 \u27794 \u26377 \u24171 \u21040 \u20320 \u12290 \
-\uc0\u19978 \u20659 \u23436 \u20043 \u24460 \u65292 \u24038 \u20596 \u38754 \u26495 \u26371 \u20986 \u29694 \u36889 \u20221 \u25991 \u20214 \u65292 NotebookLM \u20063 \u26371 \u22312 \u21491 \u20596 \u33258 \u21205 \u29983 \u25104 \u19968 \u20491 \u25688 \u35201 \u12290 \u20808 \u25226 \u25688 \u35201 \u30475 \u19968 \u36941 \u65292 \u30906 \u35469 \u23427 \u26377 \u27794 \u26377 \u35712 \u21040 \u20320 \u35469 \u28858 \u37325 \u35201 \u30340 \u37096 \u20998 \u12290 \u22914 \u26524 \u25688 \u35201 \u26041 \u21521 \u36305 \u25481 \u20102 \u65292 \u20195 \u34920 \u20320 \u30340 \u25991 \u20214 \u21487 \u33021 \u26377 \u26684 \u24335 \u21839 \u38988 \u65292 \u36889 \u20491 \u26178 \u20505 \u22238 \u21435 \u30906 \u35469  PDF \u33021 \u19981 \u33021 \u36984 \u21462 \u25991 \u23383 \u12290 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \strokec2 \
-\pard\pardeftab720\sa298\partightenfactor0
+NotebookLM 不是 ChatGPT，也不是搜尋引擎。
 
-\f1\b\fs36 \cf0 \strokec3 \uc0\u31532 \u19977 \u27493 \u65306 \u21839 \u19968 \u20491 \u30495 \u27491 \u30340 \u21839 \u38988 \
-\pard\pardeftab720\sa240\partightenfactor0
+ChatGPT 回答的是它從網路上學到的東西——你問它任何問題，它都能給你一個答案，但你不知道那個答案從哪裡來。
 
-\f0\b0\fs24 \cf0 \uc0\u36889 \u26159 \u22823 \u22810 \u25976 \u20154 \u31532 \u19968 \u27425 \u29992 \u23601 \u35258 \u24471 \u12300 \u27794 \u20160 \u40636 \u24863 \u35258 \u12301 \u30340 \u38364 \u37749 \u12290 \
-\pard\pardeftab720\sa240\partightenfactor0
+NotebookLM 只回答你上傳的文件裡有的東西。它不會自己去查網路，不會補入它自己的知識，它的所有答案都來自你給它的資料，而且每個回答都會標示來源在哪一份文件的哪個段落。
 
-\f1\b \cf0 \uc0\u19981 \u35201 \u21839 \u65306 \u12300 \u24171 \u25105 \u25972 \u29702 \u36889 \u20221 \u22577 \u21578 \u30340 \u37325 \u40670 \u12290 \u12301 
-\f0\b0 \
-\uc0\u36889 \u20491 \u21839 \u27861 \u24471 \u21040 \u30340 \u26159 \u25688 \u35201 \u65292 \u36319 \u20320 \u33258 \u24049 \u25475 \u19968 \u36941 \u25991 \u20214 \u24046 \u19981 \u22810 \u12290 \
+這個差異很重要。它代表 NotebookLM 能做的事，是「幫你深入挖掘你已經有的資料」，不是「幫你找你沒有的資訊」。
 
-\f1\b \uc0\u35201 \u21839 \u65306 \u20320 \u33258 \u24049 \u20063 \u19981 \u30906 \u23450 \u31572 \u26696 \u30340 \u21839 \u38988 \u12290 
-\f0\b0 \
-\uc0\u24190 \u20491 \u20363 \u23376 \u65306 \
-\uc0\u12300 \u36889 \u20221 \u22577 \u21578 \u35041 \u65292 \u26377 \u27794 \u26377 \u21738 \u20123 \u32080 \u35542 \u36319 \u19968 \u33324 \u35469 \u30693 \u19981 \u19968 \u27171 \u65311 \u12301 \
-\uc0\u12300 \u36889 \u20221 \u25991 \u20214 \u25552 \u21040 \u30340 \u35299 \u27861 \u65292 \u26377 \u27794 \u26377 \u20160 \u40636 \u21069 \u25552 \u26781 \u20214 \u25110 \u38480 \u21046 \u27794 \u26377 \u35498 \u28165 \u26970 \u65311 \u12301 \
-\uc0\u12300 \u22914 \u26524 \u25105 \u35201 \u25226 \u36889 \u20221 \u22577 \u21578 \u30340 \u26680 \u24515 \u35542 \u40670 \u35299 \u37323 \u32102 \u19968 \u20491 \u23436 \u20840 \u19981 \u25026 \u36889 \u20491 \u38936 \u22495 \u30340 \u20154 \u32893 \u65292 \u26368 \u37325 \u35201 \u30340 \u19977 \u20491 \u27010 \u24565 \u26159 \u20160 \u40636 \u65311 \u12301 \
-\uc0\u21839 \u27861 \u19981 \u21516 \u65292 \u25366 \u20986 \u20358 \u30340 \u26481 \u35199 \u23436 \u20840 \u19981 \u21516 \u12290 \u20320 \u21839 \u24471 \u36234 \u20855 \u39636 \u12289 \u36234 \u26377 \u35282 \u24230 \u65292 \u23427 \u32102 \u20320 \u30340 \u31572 \u26696 \u36234 \u26377 \u20729 \u20540 \u12290 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \strokec2 \
-\pard\pardeftab720\sa298\partightenfactor0
+搞清楚這件事，你才會知道什麼時候該用它、什麼時候該用其他工具。
 
-\f1\b\fs36 \cf0 \strokec3 \uc0\u31532 \u22235 \u27493 \u65306 \u30906 \u35469 \u24341 \u29992 \u20358 \u28304 \
-\pard\pardeftab720\sa240\partightenfactor0
+---
 
-\f0\b0\fs24 \cf0 \uc0\u36889 \u26159  NotebookLM \u36319 \u20854 \u20182  AI \u26368 \u19981 \u19968 \u27171 \u30340 \u22320 \u26041 \u65292 \u20063 \u26159 \u24456 \u22810 \u20154 \u27794 \u26377 \u21892 \u29992 \u30340 \u21151 \u33021 \u12290 \
-\uc0\u23427 \u30340 \u27599 \u20491 \u22238 \u31572 \u26049 \u37002 \u37117 \u26377 \u19968 \u20491 \u24341 \u29992 \u27161 \u35352 \u65288 \u36890 \u24120 \u26159 \u25976 \u23383 \u25110 \u31526 \u34399 \u65289 \u12290 \u40670 \u25802 \u36889 \u20491 \u27161 \u35352 \u65292 \u23427 \u26371 \u30452 \u25509 \u36339 \u21040 \u21407 \u25991 \u30340 \u23565 \u25033 \u27573 \u33853 \u65292 \u35731 \u20320 \u30475 \u21040 \u23427 \u30340 \u31572 \u26696 \u26159 \u24478 \u21738 \u35041 \u20358 \u30340 \u12290 \
-\uc0\u39178 \u25104 \u27599 \u27425 \u37117 \u40670 \u36914 \u21435 \u30906 \u35469 \u30340 \u32722 \u24931 \u65292 \u21407 \u22240 \u26377 \u20841 \u20491 \u65306 \
-\uc0\u31532 \u19968 \u65292 \u20320 \u21487 \u20197 \u39511 \u35657 \u23427 \u30340 \u31572 \u26696 \u26159 \u19981 \u26159 \u30495 \u30340 \u26377 \u20381 \u25818 \u65292 \u36996 \u26159 \u23427 \u22312 \u25512 \u28204 \u12290 \
-\uc0\u31532 \u20108 \u65292 \u20320 \u24120 \u24120 \u26371 \u22312 \u40670 \u36914 \u21435 \u30475 \u21407 \u25991 \u30340 \u36942 \u31243 \u20013 \u65292 \u30332 \u29694 \u19968 \u20123 \u23427 \u25688 \u35201 \u35041 \u27794 \u25552 \u21040 \u20294 \u24456 \u37325 \u35201 \u30340 \u32048 \u31680 \u12290 \u36889 \u20123 \u32048 \u31680 \u26159 \u20320 \u33258 \u24049 \u35712 \u25991 \u20214 \u30340 \u26178 \u20505 \u21487 \u33021 \u36339 \u36942 \u30340 \u22320 \u26041 \u65292 \u20294 \u34987 \u23427 \u30340 \u22238 \u31572 \u24118 \u36914 \u21435 \u20043 \u24460 \u65292 \u20320 \u23601 \u19981 \u26371 \u28431 \u25481 \u20102 \u12290 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \strokec2 \
-\pard\pardeftab720\sa298\partightenfactor0
+## 第一步：登入，建立你的第一個筆記本
 
-\f1\b\fs36 \cf0 \strokec3 \uc0\u20813 \u36027 \u29256 \u30340 \u38480 \u21046 \u20320 \u38656 \u35201 \u30693 \u36947 \
-\pard\pardeftab720\sa240\partightenfactor0
+前往 notebooklm.google，用 Google 帳號直接登入，不需要額外申請，也不需要信用卡。
 
-\f0\b0\fs24 \cf0 \uc0\u20813 \u36027 \u29256 \u27599 \u20491 \u31558 \u35352 \u26412 \u26368 \u22810 \u21487 \u20197 \u26032 \u22686  50 \u20491 \u20358 \u28304 \u65292 \u27599 \u22825 \u26368 \u22810  50 \u27425 \u23565 \u35441 \u65292 \u20197 \u21450 \u29983 \u25104  3 \u20491  Audio Overview\u12290 \
-\uc0\u23565 \u22823 \u22810 \u25976 \u32887 \u22580 \u20351 \u29992 \u32773 \u20358 \u35498 \u65292 \u36889 \u20491 \u38989 \u24230 \u22816 \u29992 \u12290 \
-\uc0\u20320 \u38656 \u35201 \u21319 \u32026 \u30340 \u24773 \u27841 \u21482 \u26377 \u20841 \u31278 \u65306 \u20320 \u27599 \u22825 \u22823 \u37327 \u20351 \u29992 \u65292 \u38971 \u32321 \u25758 \u21040 \u23565 \u35441 \u19978 \u38480 \u65307 \u25110 \u32773 \u20320 \u38656 \u35201 \u31649 \u29702 \u36229 \u36942  100 \u20491 \u31558 \u35352 \u26412 \u12290 \u22914 \u26524 \u20320 \u21083 \u38283 \u22987 \u29992 \u65292 \u20808 \u29992 \u20813 \u36027 \u29256 \u19968 \u20491 \u26376 \u65292 \u30475 \u30475 \u33258 \u24049 \u30495 \u27491 \u30340 \u20351 \u29992 \u37327 \u65292 \u20877 \u27770 \u23450 \u35201 \u19981 \u35201 \u21319 \u32026 \u12290 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \strokec2 \
-\pard\pardeftab720\sa298\partightenfactor0
+登入後點「+ 新增筆記本」。
 
-\f1\b\fs36 \cf0 \strokec3 \uc0\u29992 \u20102 \u31532 \u19968 \u22825 \u65292 \u20320 \u25033 \u35442 \u24863 \u21463 \u21040 \u20160 \u40636 \
-\pard\pardeftab720\sa240\partightenfactor0
+**筆記本的名稱很重要**，不要叫「筆記本1」。取一個有意義的名稱：「2026 競品研究」「客戶 A 提案資料」「行銷部 Q2 規劃」。名稱清楚，之後你有多個筆記本的時候才找得到。
 
-\f0\b0\fs24 \cf0 \uc0\u22914 \u26524 \u20320 \u29992 \u23436 \u31532 \u19968 \u20491 \u31558 \u35352 \u26412 \u65292 \u21839 \u20102 \u24190 \u20491 \u21839 \u38988 \u65292 \u28982 \u24460 \u26377 \u12300 \u21407 \u20358 \u23427 \u26159 \u36889 \u27171 \u36939 \u20316 \u30340 \u12301 \u36889 \u20491 \u24863 \u35258 \'97\'97\u20320 \u23601 \u19978 \u25163 \u20102 \u12290 \
-\uc0\u22914 \u26524 \u20320 \u36996 \u26159 \u35258 \u24471 \u23427 \u36319 \u30452 \u25509 \u21839  ChatGPT \u24046 \u19981 \u22810 \u65292 \u36890 \u24120 \u26159 \u20841 \u20491 \u21407 \u22240 \u20043 \u19968 \u65306 \u20320 \u21839 \u30340 \u21839 \u38988 \u22826 \u27867 \u65292 \u25110 \u32773 \u20320 \u19978 \u20659 \u30340 \u25991 \u20214 \u26684 \u24335 \u26377 \u21839 \u38988 \u35712 \u19981 \u21040 \u20839 \u23481 \u12290 \
-\uc0\u22238 \u38957 \u23565 \u29031 \u36889 \u31687 \u30340 \u31532 \u19977 \u27493 \u65292 \u25563 \u19968 \u20491 \u26356 \u20855 \u39636 \u30340 \u21839 \u27861 \u65292 \u20877 \u35430 \u19968 \u27425 \u12290 \
-\pard\pardeftab720\partightenfactor0
-\cf2 \strokec2 \
-\pard\pardeftab720\sa240\partightenfactor0
+一個筆記本就是一個獨立的研究空間。你在這個筆記本裡問的問題，它只從這個筆記本的資料裡找答案，不會跟其他筆記本混在一起。
 
-\f1\b \cf0 \strokec3 \uc0\u24310 \u20280 \u38321 \u35712 \u65306 
-\f0\b0 \
-\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
-\ls3\ilvl0\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}{\field{\*\fldinst{HYPERLINK "https://claude.ai/blog/notebooklm-question-types/"}}{\fldrslt \expnd0\expndtw0\kerning0
-\ul \outl0\strokewidth0 \strokec4 NotebookLM \uc0\u30340 \u25552 \u21839 \u26041 \u24335 \u27770 \u23450 \u31572 \u26696 \u21697 \u36074 \u65306 \u20116 \u31278 \u21839 \u27861 \u27604 \u36611 }}\cf0 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \
-\ls3\ilvl0\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}{\field{\*\fldinst{HYPERLINK "https://claude.ai/blog/notebooklm-upload-preparation/"}}{\fldrslt \expnd0\expndtw0\kerning0
-\ul \outl0\strokewidth0 \strokec4 \uc0\u19978 \u20659 \u25991 \u20214 \u21069 \u35201 \u20570 \u30340 \u19977 \u20214 \u20107 \u65292 \u35731  NotebookLM \u35712 \u24471 \u26356 \u28310 }}\cf0 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \
-\ls3\ilvl0\cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}{\field{\*\fldinst{HYPERLINK "https://claude.ai/blog/notebooklm-complete-guide-2026/"}}{\fldrslt \expnd0\expndtw0\kerning0
-\ul \outl0\strokewidth0 \strokec4 2026 NotebookLM \uc0\u23436 \u25972 \u25915 \u30053 \u65306 \u24478 \u20837 \u38272 \u21040 \u36914 \u38542 \u65292 \u25152 \u26377 \u20320 \u38656 \u35201 \u30693 \u36947 \u30340 \u20107 }}\cf0 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec3 \
-}
+---
+
+## 第二步：上傳你的第一份文件
+
+點左側面板的「+ 新增來源」。
+
+支援的格式：
+
+- PDF（最常用，確認是可以選取文字的版本）
+- Google 文件、Google 簡報
+- 網頁連結（貼上 URL 它自動抓取）
+- YouTube 影片連結（它會讀字幕）
+- 直接貼上文字
+
+第一次用，建議先上傳一份你最近真的需要讀的文件——不是隨便找一份來測試，是你工作上有實際需求的那種。這樣你問出來的問題才是真實的，你才能判斷它的答案有沒有幫到你。
+
+上傳完之後，左側面板會出現這份文件，NotebookLM 也會在右側自動生成一個摘要。先把摘要看一遍，確認它有沒有讀到你認為重要的部分。如果摘要方向跑掉了，代表你的文件可能有格式問題，這個時候回去確認 PDF 能不能選取文字。
+
+---
+
+## 第三步：問一個真正的問題
+
+這是大多數人第一次用就覺得「沒什麼感覺」的關鍵。
+
+**不要問：「幫我整理這份報告的重點。」**
+
+這個問法得到的是摘要，跟你自己掃一遍文件差不多。
+
+**要問：你自己也不確定答案的問題。**
+
+幾個例子：
+
+「這份報告裡，有沒有哪些結論跟一般認知不一樣？」
+
+「這份文件提到的解法，有沒有什麼前提條件或限制沒有說清楚？」
+
+「如果我要把這份報告的核心論點解釋給一個完全不懂這個領域的人聽，最重要的三個概念是什麼？」
+
+問法不同，挖出來的東西完全不同。你問得越具體、越有角度，它給你的答案越有價值。
+
+---
+
+## 第四步：確認引用來源
+
+這是 NotebookLM 跟其他 AI 最不一樣的地方，也是很多人沒有善用的功能。
+
+它的每個回答旁邊都有一個引用標記（通常是數字或符號）。點擊這個標記，它會直接跳到原文的對應段落，讓你看到它的答案是從哪裡來的。
+
+養成每次都點進去確認的習慣，原因有兩個：
+
+第一，你可以驗證它的答案是不是真的有依據，還是它在推測。
+
+第二，你常常會在點進去看原文的過程中，發現一些它摘要裡沒提到但很重要的細節。這些細節是你自己讀文件的時候可能跳過的地方，但被它的回答帶進去之後，你就不會漏掉了。
+
+---
+
+## 免費版的限制你需要知道
+
+免費版每個筆記本最多可以新增 50 個來源，每天最多 50 次對話，以及生成 3 個 Audio Overview。
+
+對大多數職場使用者來說，這個額度夠用。
+
+你需要升級的情況只有兩種：你每天大量使用，頻繁撞到對話上限；或者你需要管理超過 100 個筆記本。如果你剛開始用，先用免費版一個月，看看自己真正的使用量，再決定要不要升級。
+
+---
+
+## 用了第一天，你應該感受到什麼
+
+如果你用完第一個筆記本，問了幾個問題，然後有「原來它是這樣運作的」這個感覺——你就上手了。
+
+如果你還是覺得它跟直接問 ChatGPT 差不多，通常是兩個原因之一：你問的問題太泛，或者你上傳的文件格式有問題讀不到內容。
+
+回頭對照這篇的第三步，換一個更具體的問法，再試一次。
+
+---
+
+**延伸閱讀：**
+- [NotebookLM 的提問方式決定答案品質：五種問法比較](/blog/notebooklm-question-types/)
+- [上傳文件前要做的三件事，讓 NotebookLM 讀得更準](/blog/notebooklm-upload-preparation/)
+- [2026 NotebookLM 完整攻略：從入門到進階，所有你需要知道的事](/blog/notebooklm-complete-guide-2026/)
