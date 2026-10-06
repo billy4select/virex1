@@ -1,96 +1,76 @@
 ---
-import Header from '@/components/Header.astro';
-import Footer from '@/components/Footer.astro';
-import { getCollection } from 'astro:content';
+import BlogLayout from '@/layouts/BlogLayout.astro';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
 import { siteConfig } from '@/config';
 
-interface Props {
-  title: string;
-  displayTitle?: string;
-  description?: string;
-  publishedDate?: Date;
-  author?: string;
-  image?: string;
-  tags?: string[];
-  content?: string;
-  schemaType?: string;
-  steps?: any[];
-  faq?: any[];
+type BlogPost = CollectionEntry<'blog'>;
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
 }
 
-const {
-  title,
-  displayTitle,
-  description,
-  publishedDate,
-  author,
-  image,
-  tags: currentPostTags = [],
-  content = '',
-  schemaType,
-  steps,
-  faq,
-} = Astro.props;
+const { post } = Astro.props;
+const { Content } = await render(post);
 
-// 取得所有文章並計算熱門標籤
+const seoTitle = `${post.data.title} - ${siteConfig.name}`;
+const displayTitle = post.data.title;
+
+// --- 邏輯處理：自動化相關閱讀 ---
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 
-const tagCounts = allPosts
-  .flatMap((post) => post.data.tags || [])
-  .filter((tag) => tag && tag.trim() !== "")
-  .reduce((acc, tag) => {
-    acc[tag] = (acc[tag] || 0) + 1;
-    return acc;
-  }, {} as Record<string, number>);
+const sameCategoryPosts = allPosts.filter(
+  (p) => p.id !== post.id && p.data.category === post.data.category
+);
 
-const tags = Object.keys(tagCounts)
-  .sort((a, b) => tagCounts[b] - tagCounts[a])
-  .slice(0, 12); // 只取前 12 個熱門 Tag
+const relatedPosts = sameCategoryPosts
+  .sort(() => Math.random() - 0.5)
+  .slice(0, 3);
 ---
 
-<!DOCTYPE html>
-<html lang="zh-TW">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-    <meta name="description" content={description || siteConfig.description} />
-  </head>
-  <body class="bg-white text-gray-900 antialiased">
-    <Header />
+<BlogLayout
+  title={seoTitle}
+  displayTitle={displayTitle}
+  description={post.data.description}
+  publishedDate={post.data.publishedDate}
+  author={post.data.author}
+  image={post.data.image}
+  tags={post.data.tags}
+  content={post.body || ''}
+  /* --- 注入 SEO 結構化資料所需的 Props --- */
+  schemaType={post.data.schemaType}
+  steps={post.data.steps}
+  faq={post.data.faq}
+>
+  {/* 文章主體內容 */}
+  <Content slot="content" />
 
-    <!-- 橘色 Hero 區塊與熱門標籤列 -->
-    <section class="bg-[#FF6A00] border-b border-black/10 pt-12 pb-16 md:pt-16 md:pb-24">
-      <div class="max-w-4xl mx-auto px-4 text-white">
-        <div class="flex flex-col gap-10">
-          <div class="space-y-4">
-            <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">最新實戰心得</h1>
-            <p class="text-white/80 text-sm md:text-base max-w-2xl leading-relaxed">
-              分享行銷心得、AI 工具應用與自媒體經營筆記。
-            </p>
-          </div>
+  {/* 系統自動抓取的相關閱讀 */}
+  {relatedPosts.length > 0 && (
+    <div class="mt-20 pt-10 border-t border-gray-100">
+      <h3 class="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] mb-8 flex items-center gap-3">
+        <span class="w-1 h-4 bg-[#FF6A00]"></span>
+        相關閱讀
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {relatedPosts.map((related) => (
+          <a href={`/blog/${related.id}`} class="group block">
+            <div class="flex flex-col gap-3">
+              <h4 class="font-bold text-gray-900 group-hover:text-[#FF6A00] transition-colors leading-snug">
+                {related.data.title}
+              </h4>
+              <p class="text-gray-500 text-xs line-clamp-2 leading-relaxed">
+                {related.data.description}
+              </p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
 
-          <div class="flex flex-col gap-3">
-            <span class="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em]">按主題瀏覽</span>
-            <div class="flex flex-wrap gap-2">
-              <a href="/blog" class="px-4 py-1.5 text-xs font-bold bg-white text-[#FF6A00] rounded-full">全部</a>
-              {tags.map((tag) => (
-                <a href={`/blog/tag/${tag}`} class="px-4 py-1.5 text-xs font-bold bg-white/10 border border-white/10 text-white rounded-full hover:bg-white/20 transition-all">
-                  #{tag}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 文章主要內容區塊 -->
-    <main class="max-w-4xl mx-auto px-4 py-12">
-      <slot name="content" />
-      <slot />
-    </main>
-
-    <Footer />
-  </body>
-</html>
+  <div class="py-12"></div>
+</BlogLayout>
