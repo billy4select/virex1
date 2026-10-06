@@ -12,7 +12,6 @@ const sortedPosts = allPosts.sort(
 );
 
 // 2. 篩選強推文章 (Boosted & Featured)
-// 修改點：優先撈 boost: true，次選 featured: true
 const boostedPosts = sortedPosts
   .filter(post => post.data.boost === true || post.data.featured === true)
   .slice(0, 2);
@@ -28,10 +27,18 @@ const currentPage = 1;
 const totalPages = Math.ceil(remainingPosts.length / POSTS_PER_PAGE);
 const paginatedPosts = remainingPosts.slice(0, POSTS_PER_PAGE);
 
-// 5. 標籤處理
-const tags = [...new Set(allPosts.flatMap((post) => post.data.tags || []))]
-  .filter(tag => tag && tag.trim() !== "")
-  .sort();
+// 5. 標籤處理：統計每個 Tag 出現次數，按熱門度排序並只取前 12 個
+const tagCounts = allPosts
+  .flatMap((post) => post.data.tags || [])
+  .filter((tag) => tag && tag.trim() !== "")
+  .reduce((acc, tag) => {
+    acc[tag] = (acc[tag] || 0) + 1;
+    return acc;
+  }, {} as Record<string, number>);
+
+const tags = Object.keys(tagCounts)
+  .sort((a, b) => tagCounts[b] - tagCounts[a])
+  .slice(0, 12); // 只取前 12 個熱門 Tag
 
 const featuredPostsCount = allPosts.filter(post => post.data.featured || post.data.boost).length;
 ---
@@ -66,7 +73,7 @@ const featuredPostsCount = allPosts.filter(post => post.data.featured || post.da
   <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-4">
       
-      {/* 熱門文章區塊 - 視覺風格完全保留你的原始設計 */}
+      {/* 熱門文章區塊 */}
       {boostedPosts.length > 0 && (
         <div class="mb-20">
           <div class="mb-12 border-b border-gray-100 pb-4 flex justify-between items-end">
@@ -82,7 +89,6 @@ const featuredPostsCount = allPosts.filter(post => post.data.featured || post.da
             {boostedPosts.map((post) => (
               <a href={`/blog/${post.id}`} class="group block p-7 rounded-3xl bg-gray-50 border border-gray-100 hover:border-[#FF6A00]/20 hover:bg-white hover:shadow-xl hover:shadow-[#FF6A00]/5 transition-all duration-300">
                 <div class="flex flex-col h-full gap-4">
-                  {/* 維持你的必讀標籤顏色 */}
                   <div class="text-[10px] font-bold text-[#FF6A00] uppercase tracking-[0.1em]">
                     {post.data.boost ? "必讀" : "精選"}
                   </div>
