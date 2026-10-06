@@ -6,7 +6,7 @@ export const navigation: Navigation = {
       { label: '首頁', href: '/' },
       { label: 'BLOG', href: '/blog' },
       { label: '關於我', href: '/about' },
-      { label: '訂閱電子報', href: 'https://billy4select.kit.com/profile/posts' },
+      { label: '訂閱電子報', href: 'https://billy4select.substack.com/' },
     ],
     cta: [
       { label: '加入群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw', variant: 'primary' },
@@ -28,8 +28,7 @@ export const navigation: Navigation = {
       { label: '《流量騙局》', href: 'https://portaly.cc/billyselect4/product/khu55lTbwebNRjRtUCQ3' },
     ],
     resources: [
-      { label: '索取檔案', href: 'https://billy4select.kit.com/profile/links' },
-      { label: '訂閱電子報', href: 'https://billy4select.kit.com/profile/posts' },
+      { label: '訂閱電子報', href: 'https://billy4select.substack.com/' },
     ],
     company: [
       { label: 'YouTube', href: 'https://www.youtube.com/@billyselect4' },
