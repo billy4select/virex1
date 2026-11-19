@@ -17,10 +17,8 @@ export const navigation: Navigation = {
     product: [ 
       { label: '首頁', href: '/' },
       { label: '文章', href: '/blog' },
-      { label: 'Threads教學', href: '/threads' },
-      { label: 'AI影片工具', href: '/narrative-engine/' },
       { label: '關於我', href: '/about' },
-      { label: '讀者的真實回饋', href: '/testimonials' },
+      { label: '讀者回饋', href: '/testimonials' },
       { label: '隱私權政策', href: '/privacy' },
       { label: '免責聲明', href: '/disclaimer' },
     ],
@@ -32,6 +30,8 @@ export const navigation: Navigation = {
     ],
     resources: [
       { label: '訂閱電子報', href: 'https://billy4select.substack.com/' },
+      { label: 'Threads教學', href: '/threads' },
+      { label: 'AI影片工具', href: '/narrative-engine/' },
     ],
     company: [
       { label: 'YouTube', href: 'https://www.youtube.com/@billyselect4' },
