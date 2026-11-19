@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://blog.billy4select.com/ai-work-team/sitemap.xml
