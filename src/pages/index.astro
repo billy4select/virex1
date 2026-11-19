@@ -2,18 +2,6 @@
 ---
 /**
  * Index Page - 比利陳個人網站
- *
- * 網站定位：
- * 以文章為主要內容的個人網站。
- *
- * 首頁架構：
- * 1. Hero
- * 2. 文章主題
- * 3. 最新文章
- * 4. 關於我
- * 5. 讀者與夥伴回饋
- * 6. 保持聯繫
- * 7. 電子報訂閱
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
@@ -26,20 +14,13 @@ import { siteConfig } from '@/config';
 
 type TestimonialEntry = CollectionEntry<'testimonials'>;
 
-// 讀取文章
-const posts = await getCollection('blog', ({ data }) => !data.draft);
-
-// 依發布日期排序，取最新文章
-const latestPosts = [...posts]
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 6);
-
 // 讀取真實讀者心得
 const testimonials = await getCollection(
   'testimonials',
   ({ data }: { data: TestimonialEntry['data'] }) => !data.draft
 );
 
+// 排序，將 featured 置前
 const sortedTestimonials = [...testimonials].sort((a, b) => {
   if (a.data.featured !== b.data.featured) {
     return a.data.featured ? -1 : 1;
@@ -47,33 +28,33 @@ const sortedTestimonials = [...testimonials].sort((a, b) => {
   return (a.data.order || 99) - (b.data.order || 99);
 });
 
-/** 文章主題入口 */
+/** 首頁文章主題入口 */
 const bentoItems = [
   {
     title: 'AI 與科技',
-    description: '研究 AI 工具、科技發展，以及這些新技術如何改變我們的工作與生活。',
-    icon: 'lucide:cpu',
+    description: '探索 AI、科技工具，以及正在改變工作與生活的新事物。',
+    icon: 'lucide:brain',
     size: 'large' as const,
     accent: 'primary' as const,
     href: '/blog',
   },
   {
     title: '商業與行銷',
-    description: '從企業、品牌、產品與市場案例，理解商業如何運作。',
+    description: '從企業、品牌、產品與市場案例，觀察商業如何運作。',
     icon: 'lucide:briefcase-business',
     accent: 'blue' as const,
     href: '/blog',
   },
   {
     title: '投資與市場',
-    description: '觀察企業、產業與市場變化，研究價格背後的商業邏輯。',
-    icon: 'lucide:chart-no-axes-combined',
+    description: '觀察企業、產業與市場變化，理解價格背後的商業邏輯。',
+    icon: 'lucide:trending-up',
     accent: 'green' as const,
     href: '/blog',
   },
   {
     title: '個人品牌與事業',
-    description: '探索內容創作、個人品牌、知識產品，以及一個人建立事業的各種可能。',
+    description: '分享內容創作、個人品牌與一個人建立事業的觀察。',
     icon: 'lucide:lightbulb',
     accent: 'purple' as const,
     href: '/blog',
@@ -83,85 +64,19 @@ const bentoItems = [
 
 <MarketingLayout
   title={`${siteConfig.name}`}
-  description="探索商業、科技與正在發生的變化。比利陳的文章與個人觀察。"
+  description={siteConfig.description}
 >
 
-  <!-- Hero -->
   <Hero
     title="探索商業、科技與正在發生的變化。"
   />
 
-  <!-- 文章主題 -->
   <BentoGrid
-    title="文章主題"
-    subtitle="持續探索不同領域，記錄值得理解的問題與觀察。"
+    title="我關注的主題"
+    subtitle="透過文章，分享不同領域的研究、觀察與想法。"
     items={bentoItems}
   />
 
-  <!-- 最新文章 -->
-  <section class="latest-posts">
-    <div class="section-heading">
-      <div>
-        <h2>最新文章</h2>
-        <p>最近的研究、觀察與想法。</p>
-      </div>
-      <a href="/blog" class="more-link">瀏覽所有文章 →</a>
-    </div>
-
-    <div class="post-grid">
-      {latestPosts.map((post) => (
-        <a href={`/blog/${post.slug}`} class="post-item">
-          {post.data.cover && (
-            <div class="post-image">
-              <img
-                src={post.data.cover}
-                alt={post.data.title}
-                loading="lazy"
-              />
-            </div>
-          )}
-
-          <div class="post-content">
-            <time datetime={post.data.pubDate.toISOString()}>
-              {post.data.pubDate.toLocaleDateString('zh-TW')}
-            </time>
-
-            <h3>{post.data.title}</h3>
-
-            {post.data.description && (
-              <p>{post.data.description}</p>
-            )}
-          </div>
-        </a>
-      ))}
-    </div>
-  </section>
-
-  <!-- 關於我 -->
-  <section class="about-section">
-    <div class="about-content">
-      <div class="about-label">ABOUT ME</div>
-
-      <h2>關於比利陳</h2>
-
-      <p>
-        我是一個做了十幾年行銷的人。
-        這些年持續接觸不同產業、商業模式與內容創作，
-        也出版過幾本書。
-      </p>
-
-      <p>
-        平常喜歡研究新事物，從 AI、科技、商業、行銷到投資，
-        透過閱讀、實際操作與觀察，慢慢累積自己的理解。
-      </p>
-
-      <a href="/about" class="about-link">
-        認識更多關於我 →
-      </a>
-    </div>
-  </section>
-
-  <!-- 讀者回饋 -->
   {
     sortedTestimonials.length > 0 && (
       <TestimonialsSection
@@ -180,7 +95,6 @@ const bentoItems = [
     )
   }
 
-  <!-- 保持聯繫 -->
   <CTA
     title="保持聯繫"
     description="如果你也喜歡探索新事物，歡迎透過電子報或社群，持續追蹤我的分享。"
@@ -190,152 +104,6 @@ const bentoItems = [
     }}
   />
 
-  <!-- 電子報訂閱 -->
   <Newsletter />
 
 </MarketingLayout>
-
-<style>
-  .latest-posts {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 5rem 1.5rem;
-  }
-
-  .section-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  .section-heading h2,
-  .about-content h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin: 0 0 0.5rem;
-    color: var(--color-text, #171717);
-  }
-
-  .section-heading p {
-    margin: 0;
-    color: var(--color-text-muted, #737373);
-  }
-
-  .more-link,
-  .about-link {
-    color: var(--color-primary, #2563eb);
-    text-decoration: none;
-    font-weight: 600;
-    white-space: nowrap;
-  }
-
-  .post-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 2rem 1.5rem;
-  }
-
-  .post-item {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .post-image {
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    border-radius: 0.75rem;
-    background: #f3f4f6;
-    margin-bottom: 1rem;
-  }
-
-  .post-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
-
-  .post-item:hover .post-image img {
-    transform: scale(1.03);
-  }
-
-  .post-content time {
-    font-size: 0.85rem;
-    color: var(--color-text-muted, #737373);
-  }
-
-  .post-content h3 {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    margin: 0.5rem 0;
-    font-weight: 650;
-  }
-
-  .post-content p {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: var(--color-text-muted, #737373);
-    margin: 0;
-  }
-
-  .post-item:hover h3 {
-    color: var(--color-primary, #2563eb);
-  }
-
-  .about-section {
-    background: var(--color-background-muted, #f8f8f8);
-    padding: 5rem 1.5rem;
-  }
-
-  .about-content {
-    max-width: 760px;
-    margin: 0 auto;
-  }
-
-  .about-label {
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    color: var(--color-primary, #2563eb);
-    margin-bottom: 1rem;
-  }
-
-  .about-content p {
-    font-size: 1.05rem;
-    line-height: 1.9;
-    color: var(--color-text-muted, #525252);
-    margin: 1rem 0;
-  }
-
-  .about-link {
-    display: inline-block;
-    margin-top: 1rem;
-  }
-
-  @media (max-width: 768px) {
-    .post-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.5rem 1rem;
-    }
-
-    .section-heading {
-      align-items: start;
-      flex-direction: column;
-    }
-
-    .about-section,
-    .latest-posts {
-      padding-top: 3.5rem;
-      padding-bottom: 3.5rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .post-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
