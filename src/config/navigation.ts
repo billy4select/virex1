@@ -7,10 +7,9 @@ export const navigation: Navigation = {
       { label: '文章', href: '/blog' },
       { label: 'Threads教學', href: '/threads' },
       { label: '關於我', href: '/about' },
-      { label: '訂閱電子報', href: 'https://billy4select.substack.com/' },
     ],
     cta: [
-      { label: '加入群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw', variant: 'primary' },
+      { label: '訂閱電子報', href: 'https://billy4select.substack.com/', variant: 'primary' },
     ],
   },
   footer: {
