@@ -158,57 +158,60 @@ img{ max-width:100%; }
 .crumb a{ border-bottom:1px solid transparent; }
 .crumb a:hover{ color:var(--c); border-color:var(--c); }
 
-.article-grid{ max-width:1120px; margin:0 auto; padding:0 28px 80px;
-  display:grid; grid-template-columns:minmax(0,660px) 196px; gap:72px; align-items:start; }
+.article-grid{ max-width:1120px; margin:0 auto; padding:0 28px 84px;
+  display:grid; grid-template-columns:minmax(0,600px) 196px; gap:80px; align-items:start; }
 .read{ min-width:0; }
 .art-head{ padding:26px 0 30px; border-bottom:1px solid var(--line); margin-bottom:36px; }
 .art-kicker{ font-size:11px; letter-spacing:.2em; color:var(--c); display:flex; align-items:center; gap:10px; }
 .art-kicker::before{ content:""; width:6px; height:6px; background:var(--c); display:block; }
-.art-head h1{ font-family:var(--serif); font-size:clamp(27px,3.2vw,37px); line-height:1.5;
+.art-head h1{ font-family:var(--serif); font-size:clamp(28px,3.4vw,38px); line-height:1.48;
   font-weight:600; margin:16px 0 0; letter-spacing:.01em; }
 .art-meta{ font-size:12px; color:var(--muted); margin-top:20px; display:flex; gap:14px;
   flex-wrap:wrap; letter-spacing:.04em; }
 .art-meta span::before{ content:"·"; margin-right:8px; opacity:.5; }
 .art-meta span:first-child::before{ content:""; margin:0; }
 
-.art-body{ font-size:18px; line-height:2.02; color:#2C2923; letter-spacing:.018em;
-  counter-reset:h2; }
-.art-body p{ margin:0 0 1.45em; }
+.art-body{ font-family:var(--serif); font-size:19px; line-height:1.98; color:#232019;
+  letter-spacing:.02em; counter-reset:h2; }
+.art-body p{ margin:0 0 1.15em; }
 .art-body .answer{ position:relative; font-family:var(--serif); font-size:18.5px; line-height:1.95;
   color:var(--ink); background:linear-gradient(180deg,#FFFCF4,#FAF4E6);
-  border-left:3px solid var(--c); padding:24px 26px; margin:0 0 38px; }
+  border-left:3px solid var(--c); padding:22px 26px 24px; margin:0 0 40px; }
+.art-body .answer::before{ content:"先說結論"; display:block; font-family:var(--sans);
+  font-size:10.5px; letter-spacing:.24em; color:var(--c); margin-bottom:12px; }
 .art-body .answer::after{ content:""; position:absolute; top:0; right:0; width:26px; height:26px;
   border-top:1px solid var(--line); border-right:1px solid var(--line); }
 
-.art-body h2{ counter-increment:h2; font-family:var(--serif); font-size:23px; line-height:1.55;
-  font-weight:600; margin:56px 0 16px; letter-spacing:.01em; }
+.art-body h2{ counter-increment:h2; font-family:var(--serif); font-size:26px; line-height:1.5;
+  font-weight:600; margin:46px 0 18px; letter-spacing:.015em; padding-top:24px;
+  border-top:1px solid var(--line); }
 .art-body h2::before{ content:counter(h2,decimal-leading-zero); display:block;
   font-family:var(--sans); font-size:11px; font-weight:500; letter-spacing:.24em;
-  color:var(--c); margin-bottom:12px; }
+  color:var(--c); margin-bottom:10px; }
 .art-body h3{ font-family:var(--serif); font-size:18.5px; line-height:1.7; font-weight:600;
   margin:32px 0 10px; }
 
 .bubble{ position:relative; border-left:2px solid var(--c); padding:2px 0 2px 22px;
-  font-family:var(--serif); font-size:17px; line-height:1.95; color:var(--ink-2); margin:0 0 30px; }
+  font-family:var(--serif); font-size:18px; line-height:1.95; color:var(--ink-2); margin:0 0 30px; }
 .bubble::before{ content:"“"; position:absolute; left:-12px; top:-26px; font-size:40px;
   color:var(--c); opacity:.14; font-family:Georgia,serif; }
 
 .vs{ display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--line);
   margin:6px 0 30px; background:var(--card); }
-.vs div{ padding:18px 20px; font-size:14.5px; line-height:1.9; }
+.vs div{ padding:20px 22px; font-size:15px; line-height:1.9; }
 .vs div:first-child{ background:#F8F2E7; border-right:1px solid var(--line); color:var(--muted); }
 .vs .x{ color:#A9452B; margin-right:8px; font-weight:700; }
 .vs .o{ color:var(--c); margin-right:8px; font-weight:700; }
 
 .note{ background:#FFFCF4; border:1px solid #EDE2C9; padding:26px 26px 22px; margin:0 0 30px; }
 .note .nlabel{ font-size:10.5px; letter-spacing:.24em; color:var(--c); display:block; margin-bottom:12px; }
-.note p{ font-size:14px; line-height:1.95; color:var(--ink-2); margin:0 0 8px; }
+.note p{ font-size:14.5px; line-height:1.95; color:var(--ink-2); margin:0 0 8px; }
 .note ul, .note ol{ margin:6px 0 0; padding-left:18px; }
-.note li{ font-size:14px; line-height:1.95; color:var(--ink-2); margin-bottom:6px; }
+.note li{ font-size:14.5px; line-height:1.95; color:var(--ink-2); margin-bottom:6px; }
 
 .steps{ counter-reset:step; list-style:none; padding:0; margin:0 0 30px; }
 .steps li{ counter-increment:step; position:relative; padding:0 0 18px 46px;
-  font-size:15px; line-height:1.95; color:var(--ink-2); }
+  font-size:15.5px; line-height:1.95; color:var(--ink-2); }
 .steps li b{ display:block; margin-bottom:4px; color:var(--ink); font-weight:700; }
 .steps li::before{ content:counter(step,decimal-leading-zero); position:absolute; left:0; top:1px;
   font-family:var(--serif); font-size:12px; color:var(--c); letter-spacing:.06em;
@@ -219,7 +222,7 @@ img{ max-width:100%; }
 
 .valgrid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line);
   border:1px solid var(--line); margin:6px 0 30px; }
-.valgrid div{ background:var(--card); padding:20px 18px; font-size:13.5px; line-height:1.9; color:var(--ink-2); }
+.valgrid div{ background:var(--card); padding:20px 18px; font-size:14px; line-height:1.9; color:var(--ink-2); }
 .valgrid b{ display:block; font-family:var(--serif); font-size:15.5px; font-weight:600; margin-bottom:8px; color:var(--ink); }
 
 .toc{ position:sticky; top:96px; font-size:12.5px; color:var(--muted); }
@@ -333,8 +336,8 @@ img{ max-width:100%; }
   .br-lg{ display:none; }
   .hero-facts{ gap:22px; }
   .sec{ padding:46px 0; }
-  .art-body{ font-size:17px; line-height:1.98; }
-  .art-body h2{ font-size:21px; margin-top:46px; }
+  .art-body{ font-size:17.5px; line-height:1.95; }
+  .art-body h2{ font-size:22px; margin-top:40px; }
   .vs{ grid-template-columns:1fr; }
   .vs div:first-child{ border-right:0; border-bottom:1px solid var(--line); }
   .valgrid{ grid-template-columns:1fr; }
