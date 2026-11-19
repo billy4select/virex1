@@ -1,184 +1,152 @@
 
 ---
-/**
- * Index Page - Billy Chen Personal Media
- * 個人媒體型首頁
- *
- * 修改原則：
- * 1. 以比利陳本人為核心
- * 2. 呈現跨領域的研究、內容與作品
- * 3. 保留既有 Astro 元件與資料來源
- * 4. 不將網站限定為 AI 或行銷教學
- */
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
-import Hero from '@sections/marketing/Hero.astro';
-import BentoGrid from '@sections/marketing/BentoGrid.astro';
-import PricingTable from '@sections/pricing/PricingTable.astro';
-import TestimonialsSection from '@sections/social-proof/TestimonialsSection.astro';
-import CTA from '@sections/marketing/CTA.astro';
-import Newsletter from '@sections/marketing/Newsletter.astro';
 import { siteConfig } from '@/config';
+import { calculateReadingTime } from '@/lib/utils';
 
-type TestimonialEntry = CollectionEntry<'testimonials'>;
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 
-// 讀取真實讀者心得
-const testimonials = await getCollection(
-  'testimonials',
-  ({ data }: { data: TestimonialEntry['data'] }) => !data.draft
-);
+const latestPosts = allPosts
+  .sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime())
+  .slice(0, 4);
 
-const sortedTestimonials = [...testimonials].sort((a, b) => {
-  if (a.data.featured !== b.data.featured) {
-    return a.data.featured ? -1 : 1;
-  }
-  return (a.data.order || 99) - (b.data.order || 99);
-});
-
-/** 個人媒體內容入口 */
-const bentoItems = [
-  {
-    title: 'AI 與科技',
-    description: '研究 AI 工具、科技發展，以及這些新技術如何改變我們的工作方式與生活。',
-    icon: 'lucide:cpu',
-    size: 'large' as const,
-    accent: 'primary' as const,
-    href: '/blog',
-  },
-  {
-    title: '商業與行銷',
-    description: '從企業、品牌、產品與市場案例，理解商業如何運作，以及一門生意如何成長。',
-    icon: 'lucide:briefcase-business',
-    accent: 'blue' as const,
-    href: '/blog',
-  },
-  {
-    title: '投資與市場',
-    description: '觀察企業、產業與市場變化，研究價格背後的商業邏輯。',
-    icon: 'lucide:chart-no-axes-combined',
-    accent: 'green' as const,
-    href: '/blog',
-  },
-  {
-    title: '個人品牌與事業',
-    description: '探索內容創作、個人品牌、知識產品，以及一個人建立事業的各種可能。',
-    icon: 'lucide:lightbulb',
-    accent: 'purple' as const,
-    href: '/blog',
-  },
-];
-
-/** 個人出版作品 */
-const ebookCollections = [
-  {
-    name: '《從零開始自媒體》',
-    description: '從內容開始，理解如何建立自己的媒體與影響力。',
-    monthlyPrice: null,
-    price: '',
-    customPrice: '電子書',
-    features: [
-      '自媒體經營與內容策略',
-      '個人品牌建立',
-      '內容與商業發展',
-    ],
-    cta: {
-      label: '查看書籍詳情',
-      href: 'https://portaly.cc/billyselect4/product/ioeupgO66jK7vB24yJzY',
-    },
-  },
-  {
-    name: '《AI時代職場生存法則》',
-    description: '思考 AI 時代，個人如何累積能力與知識資產。',
-    monthlyPrice: null,
-    price: '',
-    customPrice: '電子書',
-    highlighted: true,
-    features: [
-      'AI 時代的工作與能力',
-      '個人知識資產',
-      '持續學習與實踐',
-    ],
-    cta: {
-      label: '查看作品詳情',
-      href: 'https://portaly.cc/billyselect4/product/jLrib0ZgLmXWs2WOTiy8',
-    },
-  },
-  {
-    name: '其他出版作品',
-    description: '從行銷、流量到知識變現，記錄不同階段的實務經驗。',
-    monthlyPrice: null,
-    price: '',
-    features: [
-      '《流量騙局》',
-      '《人人都做得到的知識變現》',
-      '《寫給大家的行銷書》',
-    ],
-    cta: {
-      label: '瀏覽所有作品',
-      href: 'https://portaly.cc/billyselect4',
-    },
-  },
-];
+const formatDate = (date: Date) =>
+  date.toLocaleDateString('zh-TW', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
 ---
 
 <MarketingLayout
-  title={`${siteConfig.name}`}
-  description="比利陳的個人網站。分享 AI、商業、行銷、投資與個人事業的研究、實驗與觀察。"
+  title={siteConfig.name}
+  description="比利陳的個人網站。分享 AI、商業、行銷、投資與工作上的研究、實驗和觀察。"
 >
+  <main class="bg-white dark:bg-gray-950">
 
-  <Hero
-    title="探索商業、科技與正在發生的變化。"
-    subtitle="做了十幾年行銷，出版過幾本書。平常喜歡研究 AI、商業、投資、行銷，以及各種正在改變我們工作與生活的新事物。透過文章、影片與電子報，分享我的研究、實驗與觀察。"
-    primaryCTA={{
-      label: '看看我的內容',
-      href: '/blog'
-    }}
-    secondaryCTA={{
-      label: '訂閱電子報',
-      href: 'https://billy4select.substack.com/'
-    }}
-  />
+    <!-- 個人介紹 -->
+    <section class="max-w-5xl mx-auto px-6 pt-20 pb-16 md:pt-28 md:pb-24">
+      <div class="max-w-3xl">
+        <p class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-6">
+          Billy Chen
+        </p>
 
-  <BentoGrid
-    title="我關注的主題"
-    subtitle="不同領域，不同問題。持續研究值得理解的新事物。"
-    items={bentoItems}
-  />
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight leading-tight text-gray-900 dark:text-white">
+          關於 AI、商業、行銷，<br class="hidden md:block" />
+          以及正在發生的變化。
+        </h1>
 
-  <PricingTable
-    title="我的出版作品"
-    subtitle="這些年累積的行銷、自媒體、知識變現與 AI 實務經驗。"
-    plans={ebookCollections}
-    background="muted"
-  />
+        <p class="mt-8 text-lg leading-relaxed text-gray-600 dark:text-gray-300 max-w-2xl">
+          我是比利陳，做了十幾年行銷。
+          平常喜歡研究 AI、商業、投資、個人品牌，以及各種正在改變工作與生活的新事物。
+          這裡記錄我的研究、實驗與觀察。
+        </p>
 
-  {
-    sortedTestimonials.length > 0 && (
-      <TestimonialsSection
-        title="讀者與夥伴的回饋"
-        subtitle="來自過去作品與內容的交流。"
-        background="default"
-        limit={4}
-        testimonials={sortedTestimonials.map((t) => ({
-          quote: t.data.quote,
-          author: t.data.author,
-          role: t.data.role,
-          company: t.data.company,
-          avatar: t.data.avatar,
-        }))}
-      />
-    )
-  }
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a
+            href="/blog"
+            class="inline-flex items-center px-5 py-3 rounded-lg bg-gray-900 text-white dark:bg-white dark:text-gray-900 text-sm font-semibold hover:opacity-80 transition"
+          >
+            閱讀文章
+            <span class="ml-2">→</span>
+          </a>
 
-  <CTA
-    title="保持聯繫"
-    description="如果你也喜歡探索新事物，歡迎透過電子報或社群，持續追蹤我的分享。"
-    action={{
-      label: '加入 LINE 社群',
-      href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw'
-    }}
-  />
+          <a
+            href="/about"
+            class="inline-flex items-center px-5 py-3 rounded-lg border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 text-sm font-semibold hover:bg-gray-50 dark:hover:bg-gray-900 transition"
+          >
+            關於我
+          </a>
+        </div>
+      </div>
+    </section>
 
-  <Newsletter />
+    <!-- 最新文章 -->
+    <section class="border-t border-gray-100 dark:border-gray-800">
+      <div class="max-w-5xl mx-auto px-6 py-16 md:py-20">
 
+        <div class="flex items-end justify-between mb-10">
+          <div>
+            <p class="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-3">
+              Latest Articles
+            </p>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
+              最新文章
+            </h2>
+          </div>
+
+          <a
+            href="/blog"
+            class="text-sm text-gray-500 hover:text-gray-900 dark:hover:text-white transition"
+          >
+            所有文章 →
+          </a>
+        </div>
+
+        <div class="divide-y divide-gray-100 dark:divide-gray-800">
+          {latestPosts.map((post) => (
+            <article class="py-7 first:pt-0 last:pb-0">
+              <a href={`/blog/${post.id}`} class="group block">
+                <div class="flex flex-wrap items-center gap-3 text-xs text-gray-400 mb-3">
+                  <time>{formatDate(post.data.publishedDate)}</time>
+                  <span>·</span>
+                  <span>{calculateReadingTime(post.body || '')} 分鐘閱讀</span>
+                  {post.data.category && (
+                    <>
+                      <span>·</span>
+                      <span>{post.data.category}</span>
+                    </>
+                  )}
+                </div>
+
+                <h3 class="text-xl md:text-2xl font-semibold leading-snug text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+                  {post.data.title}
+                </h3>
+
+                <p class="mt-3 text-sm md:text-base leading-relaxed text-gray-500 dark:text-gray-400 max-w-3xl">
+                  {post.data.description}
+                </p>
+              </a>
+            </article>
+          ))}
+        </div>
+
+        <div class="mt-12">
+          <a
+            href="/blog"
+            class="text-sm font-semibold text-gray-900 dark:text-white hover:opacity-60 transition"
+          >
+            瀏覽所有文章 →
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 保持聯繫 -->
+    <section class="border-t border-gray-100 dark:border-gray-800">
+      <div class="max-w-5xl mx-auto px-6 py-16 md:py-20">
+        <div class="max-w-2xl">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+            保持聯繫
+          </h2>
+
+          <p class="mt-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+            如果你也喜歡探索新事物，歡迎透過社群持續交流。
+          </p>
+
+          <a
+            href="https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center mt-6 text-sm font-semibold text-gray-900 dark:text-white hover:opacity-60 transition"
+          >
+            加入 LINE 社群 →
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
 </MarketingLayout>
