@@ -338,3 +338,12 @@
 @media(max-width:800px){.use-grid,.home-path,.door-grid{grid-template-columns:1fr}.home-path{gap:0}}
 @media(max-width:520px){.use-card,.door{min-height:0;padding:20px 18px}.door h3{font-size:21px}.hp-item{gap:14px}}
 @media(max-width:520px){.hero h1{font-size:38px}}
+
+/* topic guide */
+.note b{display:block;margin-bottom:4px}
+.flow-map{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin:24px 0 10px}
+.flow-step{border:1px solid var(--line);background:var(--white);padding:12px 10px;min-height:96px;display:flex;flex-direction:column;gap:3px}
+.flow-step b{font-size:12px;color:var(--orange-dark);letter-spacing:.06em}
+.flow-step span{font-size:13px;font-weight:700;line-height:1.35}
+.flow-step small{font-size:11px;color:var(--muted);line-height:1.5}
+@media(max-width:800px){.flow-map{grid-template-columns:repeat(2,1fr)}}
