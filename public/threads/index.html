@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Threads 起步指南｜從零開始，寫出真實影響力</title>
-<meta name="description" content="給正在猶豫要不要開始寫 Threads 的你。不談爆紅公式，只處理三件事：敢不敢寫、怎麼寫得像自己、怎麼持續寫下去。四章實作指南與十個選題切入點。">
-<meta name="keywords" content="Threads 經營、Threads 怎麼養、Threads 新手教學、Threads 起步">
+<title>Threads 起步心態指南｜不夠專業、沒人看、不知道寫什麼怎麼辦</title>
+<meta name="description" content="給正在猶豫要不要經營 Threads、自媒體的你。不談爆文公式與文案範例，只處理起步最常卡住的心態：敢不敢寫、用什麼身份寫、怎麼寫得下去。行銷視角的實作指南。">
+<meta name="keywords" content="Threads 起步, Threads 心態, 不夠專業可以寫嗎, 發文沒人看, 自媒體新手, 經營 Threads, 自媒體心態">
 <meta name="theme-color" content="#2E4739">
 <link rel="canonical" href="https://blog.billy4select.com/threads/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Threads 起步指南">
-<meta property="og:title" content="Threads 起步指南｜從零開始，寫出真實影響力">
-<meta property="og:description" content="給正在猶豫要不要開始寫 Threads 的你。不談爆紅公式，只處理三件事：敢不敢寫、怎麼寫得像自己、怎麼持續寫下去。四章實作指南與十個選題切入點。">
+<meta property="og:site_name" content="Threads 起步心態指南">
+<meta property="og:title" content="Threads 起步心態指南｜不夠專業、沒人看、不知道寫什麼怎麼辦">
+<meta property="og:description" content="不談爆文公式與文案範例。只處理經營前最常把人卡住的心結：敢不敢寫、用什麼身份寫、怎麼寫得下去。">
 <meta property="og:url" content="https://blog.billy4select.com/threads/">
 <meta property="og:locale" content="zh_TW">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,8 +20,9 @@
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fontsource/noto-sans-tc@5/700.css">
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fontsource/noto-serif-tc@5/400.css">
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fontsource/noto-serif-tc@5/600.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Threads 起步指南", "url": "https://blog.billy4select.com/threads/", "inLanguage": "zh-Hant-TW", "description": "給 Threads 新手的心態與寫作指南，四章十六篇問題頁。"}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Threads 起步指南", "url": "https://blog.billy4select.com/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Threads 起步心態指南","url":"https://blog.billy4select.com/threads/","inLanguage":"zh-Hant-TW","description":"給正在猶豫經營 Threads、自媒體的人。處理起步心態：敢寫、用對身份、寫得下去。"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"billy4select","url":"https://blog.billy4select.com/","description":"行銷與自媒體經營"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"不夠專業可以開始寫 Threads 嗎？","acceptedAnswer":{"@type":"Answer","text":"可以。專業不是創作的入場券，願意開始才是。你不需要先變成老師才有資格說話。"}},{"@type":"Question","name":"Threads 發文沒人看怎麼辦？","acceptedAnswer":{"@type":"Answer","text":"會沒人看，而且很正常。那不是在說你不夠好，只是讀者還沒養成閱讀你的習慣。創作初期重點是養出自己的感覺與節奏，而不是立即被看見。"}},{"@type":"Question","name":"不知道 Threads 要寫什麼怎麼辦？","acceptedAnswer":{"@type":"Answer","text":"你不是沒內容，只是還沒找到讓你說話的起點。從正在發生的過程、卡住的小事、或別人常問你的問題開始即可。"}}]}</script>
 
 <style>
 *, *::before, *::after { box-sizing: border-box; }
@@ -132,6 +133,30 @@ img{ max-width:100%; }
 .stuck-card:hover .stuck-go::after{ transform:translateX(6px); }
 .path-hint{ margin:28px 0 0; font-size:13.5px; line-height:1.85; color:var(--muted); max-width:36em; }
 .path-hint::before{ content:""; display:inline-block; width:18px; height:1px; background:var(--c); vertical-align:middle; margin-right:10px; opacity:.5; }
+
+.side-entries{ padding-top:28px; padding-bottom:40px; }
+.side-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.side-link{ display:flex; flex-direction:column; gap:6px; padding:20px 22px; background:var(--card);
+  border:1px solid var(--line); transition:border-color .25s ease, transform .25s ease; }
+.side-link:hover{ border-color:#CFC3AA; transform:translateY(-2px); }
+.side-k{ font-size:12px; color:var(--muted); letter-spacing:.04em; }
+.side-t{ font-family:var(--serif); font-size:16px; font-weight:600; color:var(--ink); }
+
+.outcomes{ padding-bottom:20px; }
+.outcome-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.outcome{ background:var(--card); border:1px solid var(--line); padding:24px 22px; }
+.outcome b{ display:block; font-family:var(--serif); font-size:18px; font-weight:600; margin-bottom:10px; }
+.outcome p{ margin:0; font-size:13.5px; line-height:1.9; color:var(--muted); }
+
+.role-band{ border-bottom:1px solid var(--line); }
+.role-grid{ display:grid; grid-template-columns:1.4fr 1fr; gap:48px; align-items:start; }
+.role-p{ font-size:15px; line-height:1.95; color:var(--ink-2); margin:0 0 14px; max-width:34em; }
+.role-actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
+.role-note{ background:var(--card); border:1px solid var(--line); padding:26px 24px; }
+.role-list{ margin:0; padding:0; list-style:none; }
+.role-list li{ font-size:14px; line-height:1.85; color:var(--ink-2); padding:10px 0; border-bottom:1px dashed var(--line-soft); }
+.role-list li:last-child{ border-bottom:0; }
+.role-small{ margin:16px 0 0; font-size:12.5px; line-height:1.8; color:var(--muted); }
 
 .band{ background:var(--paper-2); border-bottom:1px solid var(--line); padding:56px 0; }
 .band blockquote{ margin:0; font-family:var(--serif); font-size:clamp(21px,2.6vw,30px);
@@ -323,6 +348,9 @@ img{ max-width:100%; }
   .hero-art{ display:none; }
   .grid4{ grid-template-columns:repeat(2,1fr); }
   .stuck{ grid-template-columns:1fr; }
+  .side-row{ grid-template-columns:1fr; }
+  .outcome-row{ grid-template-columns:1fr; }
+  .role-grid{ grid-template-columns:1fr; gap:28px; }
   .tool-in{ grid-template-columns:1fr; gap:28px; padding:48px 0; }
   .hero{ padding:52px 0 46px; }
   .foot-in{ grid-template-columns:1fr; gap:28px; }
@@ -370,26 +398,20 @@ img{ max-width:100%; }
   </div>
 </header>
 <main>
+  <!-- Hero：心態指南定錨 -->
   <div class="wrap">
     <div class="hero">
       <div class="hero-top">
-        <div class="eyebrow">2026 · 給正在猶豫的你</div>
-        <div class="muted" style="font-size:12px; letter-spacing:.06em;">四章實作 · 16 篇問題頁 · 一份選題庫</div>
+        <div class="eyebrow">起步心態指南 · 不是寫作手冊</div>
+        <div class="muted" style="font-size:12px; letter-spacing:.06em;">每篇約 4–6 分鐘</div>
       </div>
       <div class="hero-in">
         <div>
-          <h1>你不是等到夠專業才開始，<br class="br-lg">而是因為<em>開始了</em>，才越來越專業。</h1>
-          <p class="lead">這裡不教你怎麼爆紅，也不給一堆流量公式。只處理三件事：敢不敢寫、怎麼寫得像自己、怎麼持續寫下去。因為 Threads 不是講堂，是一個巨大的聊天室。</p>
+          <h1>經營 Threads 之前，<br class="br-lg">先把心裡那道牆拆掉。</h1>
+          <p class="lead">這裡不教爆文公式，也不堆文案範例。只處理最常讓人停在起跑線的三件事：敢不敢寫、用什麼身份寫、怎麼寫得下去。</p>
           <div class="hero-actions">
-            <a class="btn" href="#start-here">告訴我你卡在哪</a>
-            <a class="btn ghost" href="not-pro/">我怕不夠專業 → 先讀這篇</a>
-            <span class="btn-note">每篇約 4–6 分鐘</span>
-          </div>
-          <div class="hero-facts">
-            <div><b>3</b>條起步路徑</div>
-            <div><b>16</b>篇問題頁</div>
-            <div><b>10</b>個選題切入點</div>
-            <div><b>30</b>秒發文檢查</div>
+            <a class="btn" href="#start-here">從我最卡的心結開始</a>
+            <span class="btn-note">先選一個 · 讀完再決定要不要往下</span>
           </div>
         </div>
         <div class="hero-art"><svg viewBox="0 0 220 260" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
@@ -405,118 +427,192 @@ img{ max-width:100%; }
     </div>
   </div>
 
+  <!-- 會理順的三件事 -->
+  <div class="wrap sec rv outcomes">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">你會理順的事</div>
+        <h2 class="h2" style="margin-top:14px;">不是多會寫，是能走下去</h2>
+      </div>
+    </div>
+    <div class="outcome-row">
+      <div class="outcome">
+        <b>敢開始</b>
+        <p>看清「不夠專業」「沒人看」為什麼不是停寫的理由。</p>
+      </div>
+      <div class="outcome">
+        <b>用對身份</b>
+        <p>從表演給人看，轉成坐下來說話；人設是寫出來的，不是演的。</p>
+      </div>
+      <div class="outcome">
+        <b>寫得下去</b>
+        <p>價值不只來自乾貨；小改變、真實經驗，比完美輸出更能留下人。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 主決策：心結三選一 -->
   <div class="wrap sec rv" id="start-here">
     <div class="sec-head">
       <div>
-        <div class="eyebrow">第一步 · 只選一個</div>
+        <div class="eyebrow">只選一個</div>
         <h2 class="h2" style="margin-top:14px;">你現在最卡哪一句？</h2>
       </div>
-      <p>不用從第一章讀起。點最像你現在心裡的那句話，讀完通常就敢按下發布。</p>
+      <p>點最像你心裡的話。這三句幾乎是所有新手的第一道牆。</p>
     </div>
     <div class="stuck">
       <article class="stuck-card">
         <span class="stuck-tag">最常見</span>
         <h4>「我還不夠專業，好像沒資格寫。」</h4>
-        <p>專業不是入場券，願意開始才是。你正在學習、正在調整的過程，就是最好的素材。</p>
+        <p>專業不是入場券，願意開始才是。正在發生的過程，就是最好的素材。</p>
         <a class="stuck-go" href="not-pro/">讀這篇 · 約 4 分鐘</a>
       </article>
       <article class="stuck-card">
         <span class="stuck-tag">最常放棄</span>
         <h4>「我發了，根本沒人看。」</h4>
-        <p>會沒人看，而且很正常。那不是在說你不夠好，只是讀者還沒養成閱讀你的習慣。</p>
+        <p>會沒人看，而且很正常。那不是你不夠好，只是習慣還沒養成。</p>
         <a class="stuck-go" href="nobody-sees/">讀這篇 · 約 5 分鐘</a>
       </article>
       <article class="stuck-card">
         <span class="stuck-tag">最常空白</span>
         <h4>「我想寫，可是不知道寫什麼。」</h4>
-        <p>你不是沒內容，只是還沒找到讓你說話的起點。十個切入點，挑今天最有感的那一個就好。</p>
+        <p>你不是沒內容，只是還沒找到讓你說話的起點。</p>
         <a class="stuck-go" href="what-to-post/">讀這篇 · 約 6 分鐘</a>
       </article>
     </div>
-    <p class="path-hint">讀完其中一篇，再決定要不要往下走。多數人先拆掉這三道牆，就開始寫了。</p>
+    <p class="path-hint">多數人先拆掉其中一道牆，就開始寫了。技巧可以之後再補；心結不拆，寫再多也容易停。</p>
   </div>
 
+  <!-- 完整路徑：心態階段 -->
   <div class="wrap sec rv">
     <div class="sec-head">
       <div>
         <div class="eyebrow">完整路徑</div>
-        <h2 class="h2" style="margin-top:14px;">想按章節讀，從這裡進</h2>
+        <h2 class="h2" style="margin-top:14px;">四個階段，把經營的心態理順</h2>
       </div>
-      <p>四章、十六篇。適合想一次把心態與方法都理清楚的人。</p>
+      <p>想一次看完再開始，從這裡進。每一階段處理一種卡住的方式。</p>
     </div>
     <div class="grid4">
       <article class="chap" style="--a:#2E4739">
-        <span class="chap-no">CHAPTER 01</span>
-        <h3><a href="rumors/">起步階段的迷思</a></h3>
-        <p>想開始最難的不是怎麼寫，是敢不敢寫。</p>
-        <ul><li><a href="not-pro/">不夠專業也能開始嗎</a><span>01.1</span></li><li><a href="nobody-sees/">發文沒人看怎麼辦</a><span>01.2</span></li><li><a href="same-topic/">主題被講過了嗎</a><span>01.3</span></li><li><a href="persona/">要先定人設嗎</a><span>01.4</span></li></ul>
+        <span class="chap-no">階段 01</span>
+        <h3><a href="rumors/">起步的心結</a></h3>
+        <p>敢不敢寫，往往卡在資格、流量與人設。</p>
+        <ul>
+          <li><a href="not-pro/">不夠專業也能開始嗎</a><span>01</span></li>
+          <li><a href="nobody-sees/">發文沒人看怎麼辦</a><span>02</span></li>
+          <li><a href="same-topic/">主題被講過了嗎</a><span>03</span></li>
+          <li><a href="persona/">要先定人設嗎</a><span>04</span></li>
+        </ul>
       </article>
       <article class="chap" style="--a:#9C4A2A">
-        <span class="chap-no">CHAPTER 02</span>
-        <h3><a href="mindset/">寫出你自己的心態</a></h3>
-        <p>從表演給人看，轉成坐下來說話。</p>
-        <ul><li><a href="stage-vs-chat/">舞台心態 vs 聊天室</a><span>02.1</span></li><li><a href="value-types/">情緒、認知、資訊三種價值</a><span>02.2</span></li><li><a href="small-change/">怎麼讓人記住你</a><span>02.3</span></li><li><a href="selling/">做自己又能賣東西</a><span>02.4</span></li></ul>
+        <span class="chap-no">階段 02</span>
+        <h3><a href="mindset/">寫出自己的心態</a></h3>
+        <p>從舞台表演，回到聊天室裡的真實。</p>
+        <ul>
+          <li><a href="stage-vs-chat/">舞台 vs 聊天室</a><span>01</span></li>
+          <li><a href="value-types/">三種價值：情緒・認知・資訊</a><span>02</span></li>
+          <li><a href="small-change/">怎麼讓人記住你</a><span>03</span></li>
+          <li><a href="selling/">做自己又能賣東西</a><span>04</span></li>
+        </ul>
       </article>
       <article class="chap" style="--a:#2F4A5E">
-        <span class="chap-no">CHAPTER 03</span>
-        <h3><a href="writing/">實戰寫作策略</a></h3>
-        <p>停下來、共鳴感、留下來。</p>
-        <ul><li><a href="formula/">停下來、共鳴、留下來</a><span>03.1</span></li><li><a href="conversational/">怎麼寫出對話感</a><span>03.2</span></li><li><a href="cant-write/">寫不出來怎麼辦</a><span>03.3</span></li><li><a href="imitate/">從模仿到自己的聲音</a><span>03.4</span></li></ul>
+        <span class="chap-no">階段 03</span>
+        <h3><a href="writing/">怎麼表達才像人</a></h3>
+        <p>不是句型公式，是讓文字重新像在說話。</p>
+        <ul>
+          <li><a href="formula/">停下來・共鳴・留下來</a><span>01</span></li>
+          <li><a href="conversational/">寫出對話感</a><span>02</span></li>
+          <li><a href="cant-write/">寫不出來怎麼辦</a><span>03</span></li>
+          <li><a href="imitate/">從模仿到自己的聲音</a><span>04</span></li>
+        </ul>
       </article>
       <article class="chap" style="--a:#7A5A22">
-        <span class="chap-no">CHAPTER 04</span>
-        <h3><a href="rhythm/">持續經營的節奏</a></h3>
-        <p>小而穩定，勝過大而完美。</p>
-        <ul><li><a href="frequency/">一週要發幾篇</a><span>04.1</span></li><li><a href="reply/">留言怎麼回</a><span>04.2</span></li><li><a href="monetize/">自然導流與變現</a><span>04.3</span></li></ul>
+        <span class="chap-no">階段 04</span>
+        <h3><a href="rhythm/">走得長久的節奏</a></h3>
+        <p>小而穩定，勝過一次用力後消失。</p>
+        <ul>
+          <li><a href="frequency/">一週要發幾篇</a><span>01</span></li>
+          <li><a href="reply/">留言怎麼回</a><span>02</span></li>
+          <li><a href="monetize/">自然導流與變現</a><span>03</span></li>
+        </ul>
       </article>
     </div>
   </div>
 
-  <section class="band">
-    <div class="wrap">
-      <blockquote>「Threads 上最稀缺的，從來不是完美的知識，<br>而是有人願意真實地坐在你旁邊說話。」</blockquote>
-      <cite>第四章 · 持續經營的節奏</cite>
+  <!-- 次要入口 -->
+  <div class="wrap sec rv side-entries">
+    <div class="side-row">
+      <a class="side-link" href="faq/">
+        <span class="side-k">有具體問題</span>
+        <span class="side-t">常見問題整理 →</span>
+      </a>
+      <a class="side-link" href="what-to-post/">
+        <span class="side-k">想先有題目再寫</span>
+        <span class="side-t">10 個選題切入點 →</span>
+      </a>
+      <a class="side-link" href="about/">
+        <span class="side-k">這份指南怎麼來的</span>
+        <span class="side-t">關於與編輯原則 →</span>
+      </a>
     </div>
-  </section>
+  </div>
 
+  <!-- 引流輕出口 + 角色 -->
+  <div class="wrap sec rv role-band">
+    <div class="role-grid">
+      <div>
+        <div class="eyebrow">為什麼是心態，不是技巧</div>
+        <h2 class="h2" style="margin-top:14px;">先能走，再談怎麼跑</h2>
+        <p class="role-p">很多新手要的不是另一套開頭句型，而是搞懂：為什麼一想到發文就停住、為什麼寫著寫著就不像自己。這份指南從行銷與經營的角度，先處理這些心結。</p>
+        <p class="role-p">當你開始寫、開始經營之後，若卡在定位、內容方向或變現結構，那是執行與策略的問題——可以再找我一起看。</p>
+        <div class="role-actions">
+          <a class="btn ghost" href="about/">關於這份指南</a>
+          <a class="btn ghost" href="https://blog.billy4select.com/">回部落格・認識作者</a>
+        </div>
+      </div>
+      <div class="role-note">
+        <div class="eyebrow" style="margin-bottom:12px;">適合找我的時候</div>
+        <ul class="role-list">
+          <li>心態理順了，但定位與主題仍散</li>
+          <li>有在發，卻接不上信任或轉換</li>
+          <li>需要人一起看內容與經營結構</li>
+        </ul>
+        <p class="role-small">指南本身免費讀完即可；求助是可選的下一步，不是入場條件。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 發文前檢查：改為心態向 -->
   <div class="tool-band">
     <div class="wrap">
       <div class="tool-in rv">
         <div class="tool-copy">
-          <div class="eyebrow" style="margin-bottom:16px;">發文前 · 30 秒</div>
-          <h2>這篇文，有讓人想回一句話嗎？</h2>
-          <p>貼出去之前，先過這四題。不是要你寫得更專業，而是寫得更像在說話。</p>
-          <p class="muted" style="font-size:12.5px; margin-top:14px;">勾選你做到的項目，下方會給出這篇文的「對話感」分數。</p>
+          <div class="eyebrow" style="margin-bottom:16px;">發文前 · 心態檢查</div>
+          <h2>這篇，還是你在說話嗎？</h2>
+          <p>不是檢查技巧夠不夠，而是有沒有又回到「表演」或「交作業」。</p>
         </div>
         <div class="checker" id="checker">
-          <label class="ck"><input type="checkbox"> 開頭是一句觀察或感受，不是「今天來分享五個技巧」</label>
-          <label class="ck"><input type="checkbox"> 至少有一句，是對方心裡可能會「亮一下」的話</label>
-          <label class="ck"><input type="checkbox"> 句子短，換行比逗號多</label>
-          <label class="ck"><input type="checkbox"> 結尾是邀請（問一個好回答的問題），不是總結</label>
+          <label class="ck"><input type="checkbox"> 我是在分享經驗或感受，不是在證明自己很專業</label>
+          <label class="ck"><input type="checkbox"> 至少有一句，可能讓對方覺得「有人懂」</label>
+          <label class="ck"><input type="checkbox"> 語氣像跟朋友說話，不像在上台報告</label>
+          <label class="ck"><input type="checkbox"> 結尾有留下對話空間，不是把話說死</label>
           <div class="score">
             <div class="bar"><i id="bar"></i></div>
             <b id="scoreText">0 / 4</b>
           </div>
-          <div class="score-note" id="scoreNote">還沒勾選。先從最難的那一題開始檢查。</div>
+          <div class="score-note" id="scoreNote">還沒勾選。若四題都猶豫，先問自己：這篇是寫給誰聽的？</div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="wrap sec rv" style="border-bottom:0;">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow">還有問題？</div>
-        <h2 class="h2" style="margin-top:14px;">找不到對應的卡住點</h2>
-      </div>
+  <!-- 收尾 -->
+  <section class="band">
+    <div class="wrap">
+      <blockquote>「先把心結拆掉，再談技巧與流量。」</blockquote>
+      <cite>從今天開始，寫一篇就好。不用很長，不用很完美，只要真實。</cite>
     </div>
-    <div style="display:flex; flex-wrap:wrap; gap:14px; margin-top:8px;">
-      <a class="btn" href="faq/">看常見問題整理</a>
-      <a class="btn ghost" href="what-to-post/">直接看 10 個選題</a>
-      <a class="btn ghost" href="about/">關於這份指南</a>
-    </div>
-    <p class="lead" style="max-width:36em; margin-top:28px;">從今天開始，寫一篇就好。不用很長，不用很完美，只要真實。</p>
-  </div>
+  </section>
 
 <script>
 (function(){
@@ -527,11 +623,11 @@ img{ max-width:100%; }
   var txt = document.getElementById('scoreText');
   var note = document.getElementById('scoreNote');
   var notes = [
-    '還沒勾選。先從最難的那一題開始檢查。',
-    '有一點雛形了。再加一句對方心裡會「亮一下」的話。',
-    '開始像在說話了。把長句拆短，節奏會更鬆。',
-    '很接近了。最後把結尾從總結改成邀請。',
-    '這篇可以發了。剩下的，交給讀者的回應。'
+    '還沒勾選。若四題都猶豫，先問：這篇是寫給誰聽的？',
+    '有一點像在說話了。再檢查有沒有在「證明自己」。',
+    '方向對了。讓語氣再鬆一點，少一點報告感。',
+    '很接近。確認結尾有沒有留對話空間。',
+    '可以發了。真實比完美重要，剩下交給回應。'
   ];
   function update(){
     var n = 0;
@@ -549,8 +645,8 @@ img{ max-width:100%; }
   <div class="foot-in">
     <div>
       <b>Threads 起步指南</b>
-      給正在猶豫、正在摸索、正在想開始的你。<br>
-      不談爆紅公式，只談敢不敢寫、怎麼寫得像自己、怎麼持續寫下去。
+      給正在猶豫要不要經營的你。<br>
+      先處理心態，再談技巧與流量。執行與策略卡住時，可以找我。
     </div>
     <div>
       <b>章節</b>
