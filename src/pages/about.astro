@@ -1,57 +1,35 @@
+
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import PageHeader from '@sections/content/PageHeader.astro';
-import StatsSection from '@sections/social-proof/StatsSection.astro';
 import ValuesSection from '@sections/team/ValuesSection.astro';
 import TeamSection from '@sections/team/TeamSection.astro';
-import ContentSection from '@sections/content/ContentSection.astro';
 import CTA from '@sections/marketing/CTA.astro';
 import { siteConfig } from '@/config';
 
-/**
- * Threads 經營實驗
- */
-const stats = [
-  { value: '35天', label: 'Threads 從 0 到 1,000 位追蹤者' },
-  { value: '140天', label: 'Threads 突破 10,000 位追蹤者' },
-  { value: '0元', label: '廣告投放費用' },
-  { value: '10年以上', label: '行銷工作經驗' },
-];
-
-/**
- * 我對工作、內容與商業的觀察
- */
 const values = [
   {
-    title: '先理解問題，再選擇工具',
+    title: 'AI 與工作方式',
     description:
-      'AI 工具一直在變，新的功能與服務不斷出現。我更在意的是，能不能看懂自己遇到的問題，知道什麼時候該用什麼工具，以及怎麼判斷結果是否真的有用。',
+      '持續研究 AI 工具與技術的發展，也實際把 AI 用在工作、內容製作與日常任務中。我關心的是，這些工具能帶來什麼改變，以及個人如何運用它們創造新的工作機會。',
   },
   {
-    title: '經驗需要經過整理與驗證',
+    title: '內容與個人品牌',
     description:
-      '工作中累積的經驗、做過的嘗試，以及遇過的問題，都可能成為有價值的知識。但經驗不一定能直接複製，還需要理解當時的條件，才能知道哪些地方值得參考。',
+      '從自媒體、社群經營到知識變現，我一直關注個人的經驗、專業與觀點，如何透過內容累積影響力，進一步發展成品牌、服務或商業模式。',
   },
   {
-    title: '內容也有商業價值',
+    title: '行銷與商業觀察',
     description:
-      '一個人的經驗、專業與觀點，可以透過內容被更多人看見。當別人逐漸理解你能解決什麼問題，內容就有機會發展成個人品牌、服務，甚至是一門生意。',
-  },
-  {
-    title: '保留自己的判斷',
-    description:
-      '市場上有很多成功案例、流行方法與熱門觀點。我會關注它們，也會想知道背後的條件與商業邏輯。最後還是要回到自己的觀察與實際驗證，形成自己的判斷。',
+      '從產品、品牌、消費者到市場變化，研究企業如何創造價值，以及一個商業模式如何運作。我也喜歡觀察新技術與新趨勢，會如何改變原本的產業規則。',
   },
 ];
 
-/**
- * 關於比利陳
- */
 const team = [
   {
     name: '比利陳 Billy Chen',
     role: '行銷工作者、內容創作者',
-    bio: '做過產品管理、品牌行銷與數位行銷，也參與過內容、廣告投放與數位產品相關工作。出版過《從零開始自媒體》、《寫給大家的行銷書》、《人人都做得到的知識變現》等書。這些年，我持續關注行銷、內容與商業之間的關係，也在實際工作與個人創作中，摸索新的可能性。',
+    bio: '擁有十多年行銷相關工作經驗，曾參與產品管理、品牌行銷、數位行銷、內容經營與廣告投放等工作。出版過《從零開始自媒體》、《寫給大家的行銷書》、《人人都做得到的知識變現》等書。除了工作，也持續經營自己的內容平台，透過文章、影片與社群記錄觀察、研究和實際嘗試。',
     avatar: '/avatar.webp',
   },
 ];
@@ -59,53 +37,50 @@ const team = [
 
 <MarketingLayout
   title={`關於我 - ${siteConfig.name}`}
-  description="認識比利陳。分享行銷、AI、自媒體與商業觀察，以及這些領域背後的運作邏輯。"
+  description="認識比利陳。擁有十多年行銷經驗，持續研究 AI、內容、個人品牌與商業世界的變化。"
 >
-  <PageHeader title="我想弄懂，這個世界正在怎麼改變" align="center" maxWidth="lg">
+  <PageHeader title="關於比利" align="center" maxWidth="lg">
     <div class="max-w-3xl mx-auto">
       <div class="mt-6 space-y-5 text-lg text-text-muted leading-relaxed">
         <p>
-          我是比利陳，做了十幾年行銷相關工作，經歷過產品管理、品牌行銷與數位行銷，也出版過幾本書。這些年，我一直對幾件事很有興趣：一個產品為什麼有人買？一個品牌怎麼建立影響力？內容怎麼產生價值？一個人的專業，又能不能發展成自己的事業？
+          我是比利陳（Billy Chen），一個做了十多年行銷的人。過去的工作經歷涵蓋產品管理、品牌行銷與數位行銷，也出版過《從零開始自媒體》、《寫給大家的行銷書》、《人人都做得到的知識變現》等書。
         </p>
+
         <p>
-          最近幾年，AI 的出現讓很多事情開始改變。我也持續實際使用各種工具，觀察它們如何影響工作方式、內容生產，以及原本的商業模式。這個網站主要記錄我對這些事情的研究、觀察與實際經驗。有些是已經驗證的做法，有些還只是正在探索的問題。我會盡量把過程與背後的思考寫下來。
+          這些年，我一直對行銷、科技、商業與內容之間的關係很感興趣。一個產品為什麼有人買？一個品牌如何建立影響力？內容如何累積價值？當科技與市場發生變化，個人的工作和發展機會又會受到什麼影響？
+        </p>
+
+        <p>
+          最近幾年，AI 成為我投入很多時間研究的領域。我會使用不同的 AI 工具，也會把它們放進實際工作與內容製作流程中，測試哪些事情真的做得到，以及它們可能帶來什麼新的可能性。
+        </p>
+
+        <p>
+          這個網站記錄我對這些事情的研究、觀察與實際經驗。內容不會只集中在單一領域，也不會只有工具教學。我更感興趣的是，一個新技術、一種新做法或一個市場現象，背後究竟正在發生什麼變化。
         </p>
       </div>
     </div>
   </PageHeader>
 
-  <StatsSection stats={stats} background="muted" />
-
   <ValuesSection
-    title="我關注的幾件事"
+    title="我持續關注的主題"
     items={values}
     variant="card"
-    columns={2}
-    background="default"
-  />
-
-  <ContentSection
-    title="這個網站適合誰？"
-    content={[
-      "如果你也關心 AI 如何改變工作，想知道內容與個人品牌怎麼產生商業價值，或是對企業、品牌與市場的運作方式感到好奇，這裡應該會有一些值得你看的東西。",
-      "你可能是正在尋找下一步的職場工作者，也可能是想經營個人品牌、發展個人事業的創作者或專業工作者。這裡不會只有工具教學，也會談我看到的現象、遇到的問題，以及我對背後原因的理解。",
-      "我不會把每個經驗都當成通用答案。不同的人、不同的環境，做法可能完全不一樣。比起直接告訴你應該怎麼做，我更希望這些內容能提供一些新的觀察角度。"
-    ]}
+    columns={3}
     background="muted"
   />
 
   <TeamSection
-    title="關於我的經歷"
+    title="工作與創作經歷"
     members={team}
     columns={1}
     background="default"
   />
 
   <CTA
-    title="繼續保持交流"
-    description="如果你也關心 AI、內容、行銷與商業世界的變化，歡迎透過文章或社群和我交流。"
+    title="在不同平台繼續交流"
+    description="除了這個網站，我也透過 YouTube、Threads 與電子報分享研究、觀察和實際經驗。"
     action={{ label: '看看最新文章', href: '/blog' }}
-    secondaryAction={{ label: '加入 LINE 社群', href: 'https://line.me/' }}
+    secondaryAction={{ label: '前往 YouTube', href: 'https://www.youtube.com/@billyselect4' }}
     background="muted"
   />
 </MarketingLayout>
