@@ -121,14 +121,17 @@ img{ max-width:100%; }
 
 .stuck{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
 .stuck-card{ background:var(--card); border:1px solid var(--line); padding:28px 24px 24px;
-  display:flex; flex-direction:column; transition:transform .28s ease, border-color .28s ease; }
-.stuck-card:hover{ transform:translateY(-4px); border-color:#CFC3AA; }
+  display:flex; flex-direction:column; transition:transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+  border-top:3px solid var(--c); }
+.stuck-card:hover{ transform:translateY(-4px); border-color:#CFC3AA; box-shadow:0 14px 32px -20px rgba(30,28,23,.45); }
 .stuck-tag{ font-size:10.5px; letter-spacing:.2em; color:var(--mark); }
 .stuck-card h4{ font-family:var(--serif); font-size:19px; font-weight:600; line-height:1.6; margin:14px 0 12px; }
 .stuck-card p{ font-size:13.5px; line-height:1.9; color:var(--muted); margin:0 0 22px; }
-.stuck-go{ margin-top:auto; font-size:13px; color:var(--c); display:flex; gap:8px; align-items:center; }
+.stuck-go{ margin-top:auto; font-size:13.5px; font-weight:500; color:var(--c); display:flex; gap:8px; align-items:center; }
 .stuck-go::after{ content:"→"; transition:transform .25s ease; }
 .stuck-card:hover .stuck-go::after{ transform:translateX(6px); }
+.path-hint{ margin:28px 0 0; font-size:13.5px; line-height:1.85; color:var(--muted); max-width:36em; }
+.path-hint::before{ content:""; display:inline-block; width:18px; height:1px; background:var(--c); vertical-align:middle; margin-right:10px; opacity:.5; }
 
 .band{ background:var(--paper-2); border-bottom:1px solid var(--line); padding:56px 0; }
 .band blockquote{ margin:0; font-family:var(--serif); font-size:clamp(21px,2.6vw,30px);
@@ -352,7 +355,6 @@ img{ max-width:100%; }
   .read{ max-width:100%; }
 }
 </style>
-<noscript><style>.rv{opacity:1;transform:none}</style></noscript>
 
 </head>
 <body style="--c:#2E4739">
@@ -379,12 +381,12 @@ img{ max-width:100%; }
           <h1>你不是等到夠專業才開始，<br class="br-lg">而是因為<em>開始了</em>，才越來越專業。</h1>
           <p class="lead">這裡不教你怎麼爆紅，也不給一堆流量公式。只處理三件事：敢不敢寫、怎麼寫得像自己、怎麼持續寫下去。因為 Threads 不是講堂，是一個巨大的聊天室。</p>
           <div class="hero-actions">
-            <a class="btn" href="rumors/">從第一章開始讀</a>
-            <a class="btn ghost" href="what-to-post/">先看 10 個選題</a>
-            <span class="btn-note">每篇約 5 分鐘</span>
+            <a class="btn" href="#start-here">告訴我你卡在哪</a>
+            <a class="btn ghost" href="not-pro/">我怕不夠專業 → 先讀這篇</a>
+            <span class="btn-note">每篇約 4–6 分鐘</span>
           </div>
           <div class="hero-facts">
-            <div><b>4</b>章節</div>
+            <div><b>3</b>條起步路徑</div>
             <div><b>16</b>篇問題頁</div>
             <div><b>10</b>個選題切入點</div>
             <div><b>30</b>秒發文檢查</div>
@@ -403,13 +405,44 @@ img{ max-width:100%; }
     </div>
   </div>
 
+  <div class="wrap sec rv" id="start-here">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">第一步 · 只選一個</div>
+        <h2 class="h2" style="margin-top:14px;">你現在最卡哪一句？</h2>
+      </div>
+      <p>不用從第一章讀起。點最像你現在心裡的那句話，讀完通常就敢按下發布。</p>
+    </div>
+    <div class="stuck">
+      <article class="stuck-card">
+        <span class="stuck-tag">最常見</span>
+        <h4>「我還不夠專業，好像沒資格寫。」</h4>
+        <p>專業不是入場券，願意開始才是。你正在學習、正在調整的過程，就是最好的素材。</p>
+        <a class="stuck-go" href="not-pro/">讀這篇 · 約 4 分鐘</a>
+      </article>
+      <article class="stuck-card">
+        <span class="stuck-tag">最常放棄</span>
+        <h4>「我發了，根本沒人看。」</h4>
+        <p>會沒人看，而且很正常。那不是在說你不夠好，只是讀者還沒養成閱讀你的習慣。</p>
+        <a class="stuck-go" href="nobody-sees/">讀這篇 · 約 5 分鐘</a>
+      </article>
+      <article class="stuck-card">
+        <span class="stuck-tag">最常空白</span>
+        <h4>「我想寫，可是不知道寫什麼。」</h4>
+        <p>你不是沒內容，只是還沒找到讓你說話的起點。十個切入點，挑今天最有感的那一個就好。</p>
+        <a class="stuck-go" href="what-to-post/">讀這篇 · 約 6 分鐘</a>
+      </article>
+    </div>
+    <p class="path-hint">讀完其中一篇，再決定要不要往下走。多數人先拆掉這三道牆，就開始寫了。</p>
+  </div>
+
   <div class="wrap sec rv">
     <div class="sec-head">
       <div>
-        <div class="eyebrow">目錄</div>
-        <h2 class="h2" style="margin-top:14px;">從你最卡住的地方讀起</h2>
+        <div class="eyebrow">完整路徑</div>
+        <h2 class="h2" style="margin-top:14px;">想按章節讀，從這裡進</h2>
       </div>
-      <p>不需要從第一頁開始。選一個你現在最想問的問題，讀完就能動手寫。</p>
+      <p>四章、十六篇。適合想一次把心態與方法都理清楚的人。</p>
     </div>
     <div class="grid4">
       <article class="chap" style="--a:#2E4739">
@@ -435,36 +468,6 @@ img{ max-width:100%; }
         <h3><a href="rhythm/">持續經營的節奏</a></h3>
         <p>小而穩定，勝過大而完美。</p>
         <ul><li><a href="frequency/">一週要發幾篇</a><span>04.1</span></li><li><a href="reply/">留言怎麼回</a><span>04.2</span></li><li><a href="monetize/">自然導流與變現</a><span>04.3</span></li></ul>
-      </article>
-    </div>
-  </div>
-
-  <div class="wrap sec rv">
-    <div class="sec-head">
-      <div>
-        <div class="eyebrow">最多人卡住的三件事</div>
-        <h2 class="h2" style="margin-top:14px;">先讀這三篇，通常就敢按下發布了</h2>
-      </div>
-      <p>這三題幾乎是所有新手的第一道牆。先拆掉它，其他都好談。</p>
-    </div>
-    <div class="stuck">
-      <article class="stuck-card">
-        <span class="stuck-tag">01 / 起步</span>
-        <h4>Threads 發文沒人看怎麼辦？</h4>
-        <p>會沒人看，而且很正常。但那不是在說你不夠好，只是在說讀者還沒養成閱讀你的習慣。</p>
-        <a class="stuck-go" href="nobody-sees/">讀這一篇</a>
-      </article>
-      <article class="stuck-card">
-        <span class="stuck-tag">02 / 起步</span>
-        <h4>不夠專業也能寫 Threads 嗎？</h4>
-        <p>專業不是入場券，願意開始才是。你正在學習、正在調整的過程，就是最好的素材。</p>
-        <a class="stuck-go" href="not-pro/">讀這一篇</a>
-      </article>
-      <article class="stuck-card">
-        <span class="stuck-tag">03 / 選題</span>
-        <h4>Threads 不知道要寫什麼？</h4>
-        <p>你不是沒內容，只是還沒找到讓你說話的起點。十個切入點，挑今天最有感的那一個。</p>
-        <a class="stuck-go" href="what-to-post/">讀這一篇</a>
       </article>
     </div>
   </div>
@@ -503,17 +506,16 @@ img{ max-width:100%; }
   <div class="wrap sec rv" style="border-bottom:0;">
     <div class="sec-head">
       <div>
-        <div class="eyebrow">全部文章</div>
-        <h2 class="h2" style="margin-top:14px;">依章節索引</h2>
+        <div class="eyebrow">還有問題？</div>
+        <h2 class="h2" style="margin-top:14px;">找不到對應的卡住點</h2>
       </div>
-      <a class="btn ghost" href="faq/" style="padding:11px 22px;">看常見問題</a>
     </div>
-    <div style="padding-top:10px;">      <div class="about-block"><h2>01　起步階段的迷思</h2><p style="font-size:13.5px;line-height:2;color:var(--muted);"><a href="not-pro/">不夠專業也能開始嗎</a> ／ <a href="nobody-sees/">發文沒人看怎麼辦</a> ／ <a href="same-topic/">主題被講過了嗎</a> ／ <a href="persona/">要先定人設嗎</a></p></div>
-      <div class="about-block"><h2>02　寫出你自己的心態</h2><p style="font-size:13.5px;line-height:2;color:var(--muted);"><a href="stage-vs-chat/">舞台心態 vs 聊天室</a> ／ <a href="value-types/">情緒、認知、資訊三種價值</a> ／ <a href="small-change/">怎麼讓人記住你</a> ／ <a href="selling/">做自己又能賣東西</a></p></div>
-      <div class="about-block"><h2>03　實戰寫作策略</h2><p style="font-size:13.5px;line-height:2;color:var(--muted);"><a href="formula/">停下來、共鳴、留下來</a> ／ <a href="conversational/">怎麼寫出對話感</a> ／ <a href="cant-write/">寫不出來怎麼辦</a> ／ <a href="imitate/">從模仿到自己的聲音</a></p></div>
-      <div class="about-block"><h2>04　持續經營的節奏</h2><p style="font-size:13.5px;line-height:2;color:var(--muted);"><a href="frequency/">一週要發幾篇</a> ／ <a href="reply/">留言怎麼回</a> ／ <a href="monetize/">自然導流與變現</a></p></div>
-</div>
-    <p class="lead" style="max-width:40em; margin-top:10px;">從今天開始，寫一篇就好。不用很長，不用很完美，只要真實。</p>
+    <div style="display:flex; flex-wrap:wrap; gap:14px; margin-top:8px;">
+      <a class="btn" href="faq/">看常見問題整理</a>
+      <a class="btn ghost" href="what-to-post/">直接看 10 個選題</a>
+      <a class="btn ghost" href="about/">關於這份指南</a>
+    </div>
+    <p class="lead" style="max-width:36em; margin-top:28px;">從今天開始，寫一篇就好。不用很長，不用很完美，只要真實。</p>
   </div>
 
 <script>
