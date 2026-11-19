@@ -1,12 +1,20 @@
 
 ---
 /**
- * Index Page - 比利陳個人網站
+ * Index Page - Billy Chen Personal Media
+ * 個人媒體型首頁
+ *
+ * 修改原則：
+ * 1. 以比利陳本人為核心
+ * 2. 呈現跨領域的研究、內容與作品
+ * 3. 保留既有 Astro 元件與資料來源
+ * 4. 不將網站限定為 AI 或行銷教學
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Hero from '@sections/marketing/Hero.astro';
 import BentoGrid from '@sections/marketing/BentoGrid.astro';
+import PricingTable from '@sections/pricing/PricingTable.astro';
 import TestimonialsSection from '@sections/social-proof/TestimonialsSection.astro';
 import CTA from '@sections/marketing/CTA.astro';
 import Newsletter from '@sections/marketing/Newsletter.astro';
@@ -20,7 +28,6 @@ const testimonials = await getCollection(
   ({ data }: { data: TestimonialEntry['data'] }) => !data.draft
 );
 
-// 排序，將 featured 置前
 const sortedTestimonials = [...testimonials].sort((a, b) => {
   if (a.data.featured !== b.data.featured) {
     return a.data.featured ? -1 : 1;
@@ -28,60 +35,128 @@ const sortedTestimonials = [...testimonials].sort((a, b) => {
   return (a.data.order || 99) - (b.data.order || 99);
 });
 
-/** 首頁文章主題入口 */
+/** 個人媒體內容入口 */
 const bentoItems = [
   {
     title: 'AI 與科技',
-    description: '探索 AI、科技工具，以及正在改變工作與生活的新事物。',
-    icon: 'lucide:brain',
+    description: '研究 AI 工具、科技發展，以及這些新技術如何改變我們的工作方式與生活。',
+    icon: 'lucide:cpu',
     size: 'large' as const,
     accent: 'primary' as const,
     href: '/blog',
   },
   {
     title: '商業與行銷',
-    description: '從企業、品牌、產品與市場案例，觀察商業如何運作。',
+    description: '從企業、品牌、產品與市場案例，理解商業如何運作，以及一門生意如何成長。',
     icon: 'lucide:briefcase-business',
     accent: 'blue' as const,
     href: '/blog',
   },
   {
     title: '投資與市場',
-    description: '觀察企業、產業與市場變化，理解價格背後的商業邏輯。',
-    icon: 'lucide:trending-up',
+    description: '觀察企業、產業與市場變化，研究價格背後的商業邏輯。',
+    icon: 'lucide:chart-no-axes-combined',
     accent: 'green' as const,
     href: '/blog',
   },
   {
     title: '個人品牌與事業',
-    description: '分享內容創作、個人品牌與一個人建立事業的觀察。',
+    description: '探索內容創作、個人品牌、知識產品，以及一個人建立事業的各種可能。',
     icon: 'lucide:lightbulb',
     accent: 'purple' as const,
     href: '/blog',
+  },
+];
+
+/** 個人出版作品 */
+const ebookCollections = [
+  {
+    name: '《從零開始自媒體》',
+    description: '從內容開始，理解如何建立自己的媒體與影響力。',
+    monthlyPrice: null,
+    price: '',
+    customPrice: '電子書',
+    features: [
+      '自媒體經營與內容策略',
+      '個人品牌建立',
+      '內容與商業發展',
+    ],
+    cta: {
+      label: '查看書籍詳情',
+      href: 'https://portaly.cc/billyselect4/product/ioeupgO66jK7vB24yJzY',
+    },
+  },
+  {
+    name: '《AI時代職場生存法則》',
+    description: '思考 AI 時代，個人如何累積能力與知識資產。',
+    monthlyPrice: null,
+    price: '',
+    customPrice: '電子書',
+    highlighted: true,
+    features: [
+      'AI 時代的工作與能力',
+      '個人知識資產',
+      '持續學習與實踐',
+    ],
+    cta: {
+      label: '查看作品詳情',
+      href: 'https://portaly.cc/billyselect4/product/jLrib0ZgLmXWs2WOTiy8',
+    },
+  },
+  {
+    name: '其他出版作品',
+    description: '從行銷、流量到知識變現，記錄不同階段的實務經驗。',
+    monthlyPrice: null,
+    price: '',
+    features: [
+      '《流量騙局》',
+      '《人人都做得到的知識變現》',
+      '《寫給大家的行銷書》',
+    ],
+    cta: {
+      label: '瀏覽所有作品',
+      href: 'https://portaly.cc/billyselect4',
+    },
   },
 ];
 ---
 
 <MarketingLayout
   title={`${siteConfig.name}`}
-  description={siteConfig.description}
+  description="比利陳的個人網站。分享 AI、商業、行銷、投資與個人事業的研究、實驗與觀察。"
 >
 
   <Hero
     title="探索商業、科技與正在發生的變化。"
+    subtitle="做了十幾年行銷，出版過幾本書。平常喜歡研究 AI、商業、投資、行銷，以及各種正在改變我們工作與生活的新事物。透過文章、影片與電子報，分享我的研究、實驗與觀察。"
+    primaryCTA={{
+      label: '看看我的內容',
+      href: '/blog'
+    }}
+    secondaryCTA={{
+      label: '訂閱電子報',
+      href: 'https://billy4select.substack.com/'
+    }}
   />
 
   <BentoGrid
     title="我關注的主題"
-    subtitle="透過文章，分享不同領域的研究、觀察與想法。"
+    subtitle="不同領域，不同問題。持續研究值得理解的新事物。"
     items={bentoItems}
+  />
+
+  <PricingTable
+    title="我的出版作品"
+    subtitle="這些年累積的行銷、自媒體、知識變現與 AI 實務經驗。"
+    plans={ebookCollections}
+    background="muted"
   />
 
   {
     sortedTestimonials.length > 0 && (
       <TestimonialsSection
         title="讀者與夥伴的回饋"
-        subtitle=""
+        subtitle="來自過去作品與內容的交流。"
         background="default"
         limit={4}
         testimonials={sortedTestimonials.map((t) => ({
