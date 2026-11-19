@@ -18,6 +18,7 @@ export const navigation: Navigation = {
       { label: '首頁', href: '/' },
       { label: 'BLOG', href: '/blog' },
       { label: 'Threads教學', href: '/threads' },
+      { label: 'AI影片工具', href: '/narrative-engine/' },
       { label: '關於我', href: '/about' },
       { label: '讀者的真實回饋', href: '/testimonials' },
       { label: '隱私權政策', href: '/privacy' },
@@ -28,7 +29,6 @@ export const navigation: Navigation = {
       { label: '《從零開始自媒體》', href: 'https://portaly.cc/billyselect4/product/ioeupgO66jK7vB24yJzY' },
       { label: '《寫給大家的行銷書》', href: 'https://portaly.cc/billyselect4/product/FlzuxW1QbZpC79Op2zhE' },
       { label: '《流量騙局》', href: 'https://portaly.cc/billyselect4/product/khu55lTbwebNRjRtUCQ3' },
-      { label: 'AI影片工具', href: 'https://blog.billy4select.com/narrative-engine/' },
     ],
     resources: [
       { label: '訂閱電子報', href: 'https://billy4select.substack.com/' },
