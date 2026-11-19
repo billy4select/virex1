@@ -4,7 +4,7 @@ export const navigation: Navigation = {
   header: {
     main: [
       { label: '首頁', href: '/' },
-      { label: 'BLOG', href: '/blog' },
+      { label: '文章', href: '/blog' },
       { label: 'Threads教學', href: '/threads' },
       { label: '關於我', href: '/about' },
       { label: '訂閱電子報', href: 'https://billy4select.substack.com/' },
@@ -16,7 +16,7 @@ export const navigation: Navigation = {
   footer: {
     product: [ 
       { label: '首頁', href: '/' },
-      { label: 'BLOG', href: '/blog' },
+      { label: '文章', href: '/blog' },
       { label: 'Threads教學', href: '/threads' },
       { label: 'AI影片工具', href: '/narrative-engine/' },
       { label: '關於我', href: '/about' },
