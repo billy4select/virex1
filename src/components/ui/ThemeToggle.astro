@@ -49,17 +49,17 @@ import { Icon } from 'astro-icon/components';
   }
 
   function getThemePreference(): 'dark' | 'light' {
-    const stored = localStorage.getItem('theme');
+    const stored = localStorage.getItem('theme-v2');
     if (stored === 'dark' || stored === 'light') {
       return stored;
     }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return 'light';
   }
 
   function setTheme(theme: 'dark' | 'light') {
     const isDark = theme === 'dark';
     document.documentElement.classList.toggle('dark', isDark);
-    localStorage.setItem('theme', theme);
+    localStorage.setItem('theme-v2', theme);
     updateIcons(isDark);
   }
 
