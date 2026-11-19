@@ -250,22 +250,21 @@ img{ max-width:100%; }
 .pager b{ font-family:var(--serif); font-size:16px; font-weight:600; line-height:1.6; display:block; }
 .pager .right{ text-align:right; }
 
-.hub-hero{ position:relative; padding:50px 0 42px; border-bottom:1px solid var(--line); overflow:hidden; }
+.hub-shell{ max-width:720px; margin:0 auto; padding:0 28px 72px; box-sizing:border-box; }
+.hub-hero{ position:relative; padding:28px 0 32px; border-bottom:1px solid var(--line); overflow:hidden; }
 .hub-hero .eyebrow{ color:var(--c); }
-.hub-hero h1{ font-family:var(--serif); font-size:clamp(30px,4vw,44px); font-weight:600;
-  line-height:1.45; margin:16px 0 0; max-width:16em; }
-.hub-hero p{ margin:20px 0 0; max-width:31em; font-size:16.5px; line-height:2; color:var(--ink-2); }
-.hub-art{ position:absolute; right:0; top:34px; width:190px; color:var(--c); opacity:.45; }
+.hub-hero h1{ font-family:var(--serif); font-size:clamp(28px,3.4vw,36px); font-weight:700; line-height:1.35; margin:12px 0 0; letter-spacing:0; }
+.hub-hero p{ margin:16px 0 0; max-width:36em; font-size:16.5px; line-height:1.85; color:var(--ink-2); font-weight:500; }
+.hub-art{ display:none; }
 .hub-wm{ display:none; }
 
 .hub-list{ margin:0; padding:0; list-style:none; }
-.hub-item{ display:grid; grid-template-columns:1fr auto; gap:22px; align-items:center; padding:28px 0; border-bottom:1px solid var(--line-soft); transition:padding-left .25s ease; }
+.hub-item{ display:grid; grid-template-columns:1fr auto; gap:20px; align-items:center; padding:24px 0; border-bottom:1px solid var(--line-soft); }
 .hub-item:hover{ padding-left:8px; }
 .hub-no{ display:none; }
-.hub-title{ display:block; font-family:var(--serif); font-size:19.5px; font-weight:600;
-  line-height:1.6; transition:color .25s ease; }
+.hub-title{ display:block; font-family:var(--serif); font-size:18.5px; font-weight:700; line-height:1.45; color:var(--ink); }
 .hub-item:hover .hub-title{ color:var(--c); }
-.hub-desc{ display:block; font-size:13.5px; line-height:1.9; color:var(--muted); margin-top:8px; max-width:36em; }
+.hub-desc{ display:block; margin-top:6px; font-size:14.5px; line-height:1.7; color:var(--muted); font-weight:500; }
 .hub-arrow{ font-size:18px; color:var(--muted); transition:transform .25s ease, color .25s ease; }
 .hub-item:hover .hub-arrow{ color:var(--c); transform:translateX(6px); }
 
@@ -282,7 +281,7 @@ img{ max-width:100%; }
 .faq-cat{ margin:52px 0 4px; font-size:10.5px; letter-spacing:.24em; color:#A9452B; }
 
 .about-block{ margin-bottom:38px; }
-.about-block h2{ font-family:var(--sans); font-size:20px; margin:0 0 12px; font-weight:600; }
+.about-block h2{ font-family:var(--serif); font-size:20px; font-weight:700; margin:0 0 12px; }
 .about-block p{ font-size:15.5px; line-height:2.05; color:var(--ink-2); margin:0 0 12px; max-width:36em; }
 
 .foot{ background:#1A1210; color:#C9BDB0; padding:52px 0; font-size:14px; line-height:1.95; font-weight:500; }
@@ -362,7 +361,7 @@ img{ max-width:100%; }
 <main>
   <div class="wrap crumb"><a href="../">首頁</a> ／ <span>節奏</span></div>
 
-  <div class="wrap">
+  <div class="hub-shell">
     <div class="hub-hero">
       <div class="eyebrow">主題</div>
       <h1>持續經營的節奏</h1>
@@ -391,6 +390,7 @@ img{ max-width:100%; }
       </a></li>
     </ul>
     <div class="rv" style="padding:48px 0 70px;"><div class="about-block"><h2>你可能正在想</h2><p>「一週到底要發幾篇？」「留言很少，要回嗎？」「有產品想導流，又怕變成業配帳號。」</p></div><div class="about-block"><h2>讀完這一部分，你會知道</h2><p>頻率先訂做得到的；留言區是聊天室的延續；導流是留伏筆，不是丟連結。</p></div></div>
+  
   </div>
 </main>
 <footer class="foot">

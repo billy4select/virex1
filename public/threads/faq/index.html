@@ -250,12 +250,13 @@ img{ max-width:100%; }
 .pager b{ font-family:var(--serif); font-size:16px; font-weight:600; line-height:1.6; display:block; }
 .pager .right{ text-align:right; }
 
-.hub-hero{ position:relative; padding:50px 0 42px; border-bottom:1px solid var(--line); overflow:hidden; }
+.faq-body{ padding:10px 0 24px; }
+.hub-shell{ max-width:720px; margin:0 auto; padding:0 28px 72px; box-sizing:border-box; }
+.hub-hero{ position:relative; padding:28px 0 32px; border-bottom:1px solid var(--line); overflow:hidden; }
 .hub-hero .eyebrow{ color:var(--c); }
-.hub-hero h1{ font-family:var(--serif); font-size:clamp(30px,4vw,44px); font-weight:600;
-  line-height:1.45; margin:16px 0 0; max-width:16em; }
-.hub-hero p{ margin:20px 0 0; max-width:31em; font-size:16.5px; line-height:2; color:var(--ink-2); }
-.hub-art{ position:absolute; right:0; top:34px; width:190px; color:var(--c); opacity:.45; }
+.hub-hero h1{ font-family:var(--serif); font-size:clamp(28px,3.4vw,36px); font-weight:700; line-height:1.35; margin:12px 0 0; letter-spacing:0; }
+.hub-hero p{ margin:16px 0 0; max-width:36em; font-size:16.5px; line-height:1.85; color:var(--ink-2); font-weight:500; }
+.hub-art{ display:none; }
 .hub-wm{ display:none; }
 
 .hub-list{ margin:0; padding:0; list-style:none; }
@@ -270,8 +271,9 @@ img{ max-width:100%; }
 .hub-item:hover .hub-arrow{ color:var(--c); transform:translateX(6px); }
 
 .faq-item{ border-bottom:1px solid var(--line-soft); }
-.faq-item summary{ list-style:none; cursor:pointer; padding:26px 0; font-family:var(--sans);
-  font-size:17.5px; font-weight:600; line-height:1.7; display:flex; justify-content:space-between; gap:20px; }
+.faq-item summary:hover{ color:var(--ink); }
+.faq-item summary{ font-family:var(--sans); font-size:16.5px; font-weight:500; line-height:1.6;
+  padding:16px 36px 16px 0; cursor:pointer; list-style:none; color:var(--ink-2); }
 .faq-item summary::-webkit-details-marker{ display:none; }
 .faq-item summary::after{ content:"+"; color:var(--c); flex:0 0 auto; font-family:var(--sans); }
 .faq-item[open] summary::after{ content:"−"; }
@@ -279,7 +281,9 @@ img{ max-width:100%; }
 .faq-item .ans p{ margin:0 0 12px; }
 .faq-item .ans ul{ padding-left:18px; margin:0 0 12px; }
 .faq-item .ans li{ margin-bottom:6px; }
-.faq-cat{ margin:52px 0 4px; font-size:10.5px; letter-spacing:.24em; color:#A9452B; }
+.faq-cat{ font-family:var(--serif); font-size:22px; font-weight:700; letter-spacing:0;
+  color:var(--ink); margin:40px 0 12px; padding-top:8px; line-height:1.4; }
+.faq-cat:first-child{ margin-top:24px; padding-top:0; }
 
 .about-block{ margin-bottom:38px; }
 .about-block h2{ font-family:var(--sans); font-size:20px; margin:0 0 12px; font-weight:600; }
@@ -362,7 +366,7 @@ img{ max-width:100%; }
 <main>
   <div class="wrap crumb"><a href="../">首頁</a> ／ <span>常見問題</span></div>
 
-  <div class="wrap">
+  <div class="hub-shell">
     <div class="hub-hero">
       <div class="eyebrow">FAQ</div>
       <h1>Threads 經營常見問題</h1>
@@ -376,7 +380,7 @@ img{ max-width:100%; }
   <line x1="90" y1="126" x2="140" y2="126" opacity=".4"/>
 </svg></div>
     </div>
-    <div style="max-width:840px; padding:10px 0 80px;">
+    <div class="faq-body">
       <div class="faq-cat">一、定位與發文策略</div>
       <details class="faq-item">
         <summary>我不知道該怎麼幫自己定位，品牌帳號也還在摸索，該怎麼開始？</summary>
