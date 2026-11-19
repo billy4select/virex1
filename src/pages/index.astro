@@ -1,15 +1,18 @@
+
 ---
 /**
- * Index Page - 比利陳個人品牌
- * 更新重點：
- * 1. 串接真實讀者見證：自動從 src/content/testimonials 抓取留言。
- * 2. 標題視覺重塑：強化「運用頂尖 AI 工具...」的權重，解決比重過輕問題。
- * 3. 著作集模組化：移除所有軟體訂閱相關字眼，轉為專業著作展示。
+ * Index Page - Billy Chen Personal Media
+ * 個人媒體型首頁
+ *
+ * 修改原則：
+ * 1. 以比利陳本人為核心
+ * 2. 呈現跨領域的研究、內容與作品
+ * 3. 保留既有 Astro 元件與資料來源
+ * 4. 不將網站限定為 AI 或行銷教學
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Hero from '@sections/marketing/Hero.astro';
-import LogoCloud from '@sections/marketing/LogoCloud.astro';
 import BentoGrid from '@sections/marketing/BentoGrid.astro';
 import PricingTable from '@sections/pricing/PricingTable.astro';
 import TestimonialsSection from '@sections/social-proof/TestimonialsSection.astro';
@@ -19,13 +22,12 @@ import { siteConfig } from '@/config';
 
 type TestimonialEntry = CollectionEntry<'testimonials'>;
 
-// 抓取真實讀者心得
+// 讀取真實讀者心得
 const testimonials = await getCollection(
   'testimonials',
   ({ data }: { data: TestimonialEntry['data'] }) => !data.draft
 );
 
-// 依照 order 排序，並將 featured 置前
 const sortedTestimonials = [...testimonials].sort((a, b) => {
   if (a.data.featured !== b.data.featured) {
     return a.data.featured ? -1 : 1;
@@ -33,107 +35,119 @@ const sortedTestimonials = [...testimonials].sort((a, b) => {
   return (a.data.order || 99) - (b.data.order || 99);
 });
 
-/** Bento Grid：首頁導覽區塊 */
+/** 個人媒體內容入口 */
 const bentoItems = [
   {
-    title: '行銷判斷力觀點',
-    description: '行銷不是廣告，是商業決策的視覺化。 從 PM 思維到整合行銷，這裡拆解的是真正影響銷量和品牌的關鍵判斷。',
-    icon: 'lucide:brain',
+    title: 'AI 與科技',
+    description: '研究 AI 工具、科技發展，以及這些新技術如何改變我們的工作方式與生活。',
+    icon: 'lucide:cpu',
     size: 'large' as const,
     accent: 'primary' as const,
     href: '/blog',
   },
   {
-    title: 'AI 工作流實踐',
-    description: '工具越來越便宜，但判斷力沒辦法外包。這裡談的是在 AI 浪潮下，如何用整合思維做決策，讓 AI 放大你的執行力，而不是替代你的判斷。',
-    icon: 'lucide:zap',
+    title: '商業與行銷',
+    description: '從企業、品牌、產品與市場案例，理解商業如何運作，以及一門生意如何成長。',
+    icon: 'lucide:briefcase-business',
     accent: 'blue' as const,
     href: '/blog',
   },
   {
-    title: '個人品牌資產化',
-    description: '不是追演算法，是建立商業邏輯。 從定位、內容到信任累積，只有自己走過才知道哪些方法真的有用，哪些只是讓你看起來很忙。',
-    icon: 'lucide:trending-up',
+    title: '投資與市場',
+    description: '觀察企業、產業與市場變化，研究價格背後的商業邏輯。',
+    icon: 'lucide:chart-no-axes-combined',
     accent: 'green' as const,
     href: '/blog',
   },
   {
-    title: '閱讀更多文章 →',
-    description: '瀏覽所有關於行銷與職場思維的深度好文。',
-    icon: 'lucide:arrow-right',
-    size: 'medium' as const,
+    title: '個人品牌與事業',
+    description: '探索內容創作、個人品牌、知識產品，以及一個人建立事業的各種可能。',
+    icon: 'lucide:lightbulb',
     accent: 'purple' as const,
     href: '/blog',
   },
 ];
 
-/** 個人著作集配置 */
+/** 個人出版作品 */
 const ebookCollections = [
   {
     name: '《從零開始自媒體》',
-    description: '10 年品牌行銷人的經營地圖',
+    description: '從內容開始，理解如何建立自己的媒體與影響力。',
     monthlyPrice: null,
     price: '',
-    customPrice: '實戰指南',
-    features: ['零基礎經營策略', '個人品牌商業化路徑', '建立經營思維'],
-    cta: { label: '查看書籍詳情', href: 'https://portaly.cc/billyselect4/product/ioeupgO66jK7vB24yJzY' },
+    customPrice: '出版作品',
+    features: [
+      '自媒體經營與內容策略',
+      '個人品牌建立',
+      '內容與商業發展',
+    ],
+    cta: {
+      label: '查看書籍詳情',
+      href: 'https://portaly.cc/billyselect4/product/ioeupgO66jK7vB24yJzY',
+    },
   },
   {
     name: '《AI時代職場生存法則》',
-    description: '每天 1% 的資產化練習 (電子書)',
-    monthlyPrice: null, 
-    price: '', 
-    customPrice: '核心著作', 
-    highlighted: true, 
-    features: ['AI 浪潮下的自我定位', '建立個人知識資產', '不可替代的實戰練習'],
-    cta: { label: '立即前往閱讀', href: 'https://portaly.cc/billyselect4/product/jLrib0ZgLmXWs2WOTiy8' },
-  },
-  {
-    name: '更多個人著作系列',
-    description: '針對不同行銷場景的深度解析',
+    description: '思考 AI 時代，個人如何累積能力與知識資產。',
     monthlyPrice: null,
     price: '',
-    features: ['《流量騙局》', '《人人都得到知識變現》', '《寫給大家的行銷書》'],
-    cta: { label: '瀏覽所有作品', href: 'https://portaly.cc/billyselect4' },
+    customPrice: '電子書',
+    highlighted: true,
+    features: [
+      'AI 時代的工作與能力',
+      '個人知識資產',
+      '持續學習與實踐',
+    ],
+    cta: {
+      label: '查看作品詳情',
+      href: 'https://portaly.cc/billyselect4/product/jLrib0ZgLmXWs2WOTiy8',
+    },
+  },
+  {
+    name: '其他出版作品',
+    description: '從行銷、流量到知識變現，記錄不同階段的實務經驗。',
+    monthlyPrice: null,
+    price: '',
+    features: [
+      '《流量騙局》',
+      '《人人都做得到的知識變現》',
+      '《寫給大家的行銷書》',
+    ],
+    cta: {
+      label: '瀏覽所有作品',
+      href: 'https://portaly.cc/billyselect4',
+    },
   },
 ];
 ---
 
-<MarketingLayout title={`${siteConfig.name}`} description={siteConfig.description}>
-  
+<MarketingLayout
+  title={`${siteConfig.name}`}
+  description="比利陳的個人網站。分享 AI、商業、行銷、投資與個人事業的研究、實驗與觀察。"
+>
+
   <Hero
-    title="AI 時代，判斷力才是你唯一的護城河"
-    subtitle="我是比利陳。這裡記錄我如何用 AI 改善工作流程，並用思維邏輯建立不可替代的專業地位。"
-    primaryCTA={{ label: '加入 Line 群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw' }}
-    secondaryCTA={{ label: '訂閱電子報', href: 'https://billy4select.substack.com/' }}
+    title="我是比利陳，持續探索商業、科技與正在發生的變化。"
+    subtitle="做了十幾年行銷，出版過幾本書。平常喜歡研究 AI、商業、投資、行銷，以及各種正在改變我們工作與生活的新事物。透過文章、影片與電子報，分享我的研究、實驗與觀察。"
+    primaryCTA={{
+      label: '看看我的內容',
+      href: '/blog'
+    }}
+    secondaryCTA={{
+      label: '訂閱電子報',
+      href: 'https://billy4select.substack.com/'
+    }}
   />
 
-  <div class="logo-section-wrapper">
-    <LogoCloud
-      title="讓我們運用頂尖 AI 工具提升行銷效率"
-      logos={[
-        { name: 'Notion', src: '/notion-icon.svg' },
-        { name: 'ChatGPT', src: '/openai-icon.svg' }, 
-        { name: 'Claude', src: '/claude-ai-icon.svg' },
-        { name: 'Gemini', src: '/google-gemini-icon.svg' },
-        { name: 'NotebookLM', src: '/notebooklm-icon.svg' },
-        { name: 'Canva', src: '/canva-icon.svg' },
-        { name: 'Grok', src: '/grok-icon.svg' },
-      ]}
-      grayscale={true} 
-      logoSize="lg" 
-    />
-  </div>
-
   <BentoGrid
-    title="這裡在談什麼"
-    subtitle="從工具操作到頂層戰略，全方位提升你的職場競爭力。"
+    title="我關注的主題"
+    subtitle="不同領域，不同問題。持續研究值得理解的新事物。"
     items={bentoItems}
   />
 
   <PricingTable
-    title="個人著作與實戰指南"
-    subtitle="將 10 年行銷心法與AI使用心得整理，讓你少走彎路。"
+    title="我的出版作品"
+    subtitle="這些年累積的行銷、自媒體、知識變現與 AI 實務經驗。"
     plans={ebookCollections}
     background="muted"
   />
@@ -142,7 +156,7 @@ const ebookCollections = [
     sortedTestimonials.length > 0 && (
       <TestimonialsSection
         title="讀者與夥伴的回饋"
-        subtitle=""
+        subtitle="來自過去作品與內容的交流。"
         background="default"
         limit={4}
         testimonials={sortedTestimonials.map((t) => ({
@@ -157,58 +171,14 @@ const ebookCollections = [
   }
 
   <CTA
-    title="準備好開始進階了嗎？"
-    description="現在就加入社群，讓我們一起在 AI 時代保持領先。"
-    action={{ label: '立即加入 Line 群組', href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw' }}
+    title="保持聯繫"
+    description="如果你也喜歡探索新事物，歡迎透過電子報或社群，持續追蹤我的分享。"
+    action={{
+      label: '加入 LINE 社群',
+      href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw'
+    }}
   />
 
   <Newsletter />
+
 </MarketingLayout>
-
-<style is:global>
-  /** * 1. 強化 LogoCloud 標題與間距 
-   */
-  .logo-section-wrapper {
-    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.01));
-    padding: 3rem 0 5rem 0;
-  }
-
-  .logo-cloud h2 {
-    font-size: 1.2rem !important;
-    font-weight: 800 !important;
-    color: #111 !important;
-    letter-spacing: 0.15em !important;
-    margin-bottom: 4rem !important;
-    opacity: 1 !important;
-  }
-
-  .logo-cloud img {
-    filter: grayscale(100%) brightness(0.6) contrast(1.2) !important;
-    opacity: 0.8 !important;
-    max-height: 50px !important;
-    transition: all 0.4s ease;
-  }
-
-  .logo-cloud img:hover {
-    filter: grayscale(0%) brightness(1) !important;
-    opacity: 1 !important;
-    transform: translateY(-5px);
-  }
-
-  /** * 2. 讀者見證視覺美化 
-   */
-  .testimonials-section blockquote {
-    font-size: 1.05rem !important;
-    line-height: 1.7;
-    color: #333;
-    font-weight: 500;
-  }
-
-  /** * 3. 移除 PricingTable 多餘的訂閱切換 UI 
-   */
-  .pricing-switcher, 
-  [data-period="annual"], 
-  .pricing-toggle-btn {
-    display: none !important;
-  }
-</style>
