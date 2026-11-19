@@ -1,26 +1,38 @@
 
 ---
 /**
- * Index Page - Billy Chen Personal Media
- * 個人媒體型首頁
+ * Index Page - 比利陳個人網站
  *
- * 修改原則：
- * 1. 以比利陳本人為核心
- * 2. 呈現跨領域的研究、內容與作品
- * 3. 保留既有 Astro 元件與資料來源
- * 4. 不將網站限定為 AI 或行銷教學
+ * 網站定位：
+ * 以文章為主要內容的個人網站。
+ *
+ * 首頁架構：
+ * 1. Hero
+ * 2. 文章主題
+ * 3. 最新文章
+ * 4. 關於我
+ * 5. 讀者與夥伴回饋
+ * 6. 保持聯繫
+ * 7. 電子報訂閱
  */
 import { getCollection, type CollectionEntry } from 'astro:content';
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Hero from '@sections/marketing/Hero.astro';
 import BentoGrid from '@sections/marketing/BentoGrid.astro';
-import PricingTable from '@sections/pricing/PricingTable.astro';
 import TestimonialsSection from '@sections/social-proof/TestimonialsSection.astro';
 import CTA from '@sections/marketing/CTA.astro';
 import Newsletter from '@sections/marketing/Newsletter.astro';
 import { siteConfig } from '@/config';
 
 type TestimonialEntry = CollectionEntry<'testimonials'>;
+
+// 讀取文章
+const posts = await getCollection('blog', ({ data }) => !data.draft);
+
+// 依發布日期排序，取最新文章
+const latestPosts = [...posts]
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 6);
 
 // 讀取真實讀者心得
 const testimonials = await getCollection(
@@ -35,11 +47,11 @@ const sortedTestimonials = [...testimonials].sort((a, b) => {
   return (a.data.order || 99) - (b.data.order || 99);
 });
 
-/** 個人媒體內容入口 */
+/** 文章主題入口 */
 const bentoItems = [
   {
     title: 'AI 與科技',
-    description: '研究 AI 工具、科技發展，以及這些新技術如何改變我們的工作方式與生活。',
+    description: '研究 AI 工具、科技發展，以及這些新技術如何改變我們的工作與生活。',
     icon: 'lucide:cpu',
     size: 'large' as const,
     accent: 'primary' as const,
@@ -47,7 +59,7 @@ const bentoItems = [
   },
   {
     title: '商業與行銷',
-    description: '從企業、品牌、產品與市場案例，理解商業如何運作，以及一門生意如何成長。',
+    description: '從企業、品牌、產品與市場案例，理解商業如何運作。',
     icon: 'lucide:briefcase-business',
     accent: 'blue' as const,
     href: '/blog',
@@ -67,96 +79,94 @@ const bentoItems = [
     href: '/blog',
   },
 ];
-
-/** 個人出版作品 */
-const ebookCollections = [
-  {
-    name: '《從零開始自媒體》',
-    description: '從內容開始，理解如何建立自己的媒體與影響力。',
-    monthlyPrice: null,
-    price: '',
-    customPrice: '出版作品',
-    features: [
-      '自媒體經營與內容策略',
-      '個人品牌建立',
-      '內容與商業發展',
-    ],
-    cta: {
-      label: '查看書籍詳情',
-      href: 'https://portaly.cc/billyselect4/product/ioeupgO66jK7vB24yJzY',
-    },
-  },
-  {
-    name: '《AI時代職場生存法則》',
-    description: '思考 AI 時代，個人如何累積能力與知識資產。',
-    monthlyPrice: null,
-    price: '',
-    customPrice: '電子書',
-    highlighted: true,
-    features: [
-      'AI 時代的工作與能力',
-      '個人知識資產',
-      '持續學習與實踐',
-    ],
-    cta: {
-      label: '查看作品詳情',
-      href: 'https://portaly.cc/billyselect4/product/jLrib0ZgLmXWs2WOTiy8',
-    },
-  },
-  {
-    name: '其他出版作品',
-    description: '從行銷、流量到知識變現，記錄不同階段的實務經驗。',
-    monthlyPrice: null,
-    price: '',
-    features: [
-      '《流量騙局》',
-      '《人人都做得到的知識變現》',
-      '《寫給大家的行銷書》',
-    ],
-    cta: {
-      label: '瀏覽所有作品',
-      href: 'https://portaly.cc/billyselect4',
-    },
-  },
-];
 ---
 
 <MarketingLayout
   title={`${siteConfig.name}`}
-  description="比利陳的個人網站。分享 AI、商業、行銷、投資與個人事業的研究、實驗與觀察。"
+  description="探索商業、科技與正在發生的變化。比利陳的文章與個人觀察。"
 >
 
+  <!-- Hero -->
   <Hero
     title="探索商業、科技與正在發生的變化。"
-    subtitle="做了十幾年行銷，出版過幾本書。平常喜歡研究 AI、商業、投資、行銷，以及各種正在改變我們工作與生活的新事物。透過文章、影片與電子報，分享我的研究、實驗與觀察。"
-    primaryCTA={{
-      label: '看看我的內容',
-      href: '/blog'
-    }}
-    secondaryCTA={{
-      label: '訂閱電子報',
-      href: 'https://billy4select.substack.com/'
-    }}
   />
 
+  <!-- 文章主題 -->
   <BentoGrid
-    title="我關注的主題"
-    subtitle="不同領域，不同問題。持續研究值得理解的新事物。"
+    title="文章主題"
+    subtitle="持續探索不同領域，記錄值得理解的問題與觀察。"
     items={bentoItems}
   />
 
-  <PricingTable
-    title="我的出版作品"
-    subtitle="這些年累積的行銷、自媒體、知識變現與 AI 實務經驗。"
-    plans={ebookCollections}
-    background="muted"
-  />
+  <!-- 最新文章 -->
+  <section class="latest-posts">
+    <div class="section-heading">
+      <div>
+        <h2>最新文章</h2>
+        <p>最近的研究、觀察與想法。</p>
+      </div>
+      <a href="/blog" class="more-link">瀏覽所有文章 →</a>
+    </div>
 
+    <div class="post-grid">
+      {latestPosts.map((post) => (
+        <a href={`/blog/${post.slug}`} class="post-item">
+          {post.data.cover && (
+            <div class="post-image">
+              <img
+                src={post.data.cover}
+                alt={post.data.title}
+                loading="lazy"
+              />
+            </div>
+          )}
+
+          <div class="post-content">
+            <time datetime={post.data.pubDate.toISOString()}>
+              {post.data.pubDate.toLocaleDateString('zh-TW')}
+            </time>
+
+            <h3>{post.data.title}</h3>
+
+            {post.data.description && (
+              <p>{post.data.description}</p>
+            )}
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- 關於我 -->
+  <section class="about-section">
+    <div class="about-content">
+      <div class="about-label">ABOUT ME</div>
+
+      <h2>關於比利陳</h2>
+
+      <p>
+        我是一個做了十幾年行銷的人。
+        這些年持續接觸不同產業、商業模式與內容創作，
+        也出版過幾本書。
+      </p>
+
+      <p>
+        平常喜歡研究新事物，從 AI、科技、商業、行銷到投資，
+        透過閱讀、實際操作與觀察，慢慢累積自己的理解。
+      </p>
+
+      <a href="/about" class="about-link">
+        認識更多關於我 →
+      </a>
+    </div>
+  </section>
+
+  <!-- 讀者回饋 -->
   {
     sortedTestimonials.length > 0 && (
       <TestimonialsSection
         title="讀者與夥伴的回饋"
-        subtitle="來自過去作品與內容的交流。"
+        subtitle=""
         background="default"
         limit={4}
         testimonials={sortedTestimonials.map((t) => ({
@@ -170,6 +180,7 @@ const ebookCollections = [
     )
   }
 
+  <!-- 保持聯繫 -->
   <CTA
     title="保持聯繫"
     description="如果你也喜歡探索新事物，歡迎透過電子報或社群，持續追蹤我的分享。"
@@ -179,6 +190,152 @@ const ebookCollections = [
     }}
   />
 
+  <!-- 電子報訂閱 -->
   <Newsletter />
 
 </MarketingLayout>
+
+<style>
+  .latest-posts {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
+  }
+
+  .section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-heading h2,
+  .about-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    color: var(--color-text, #171717);
+  }
+
+  .section-heading p {
+    margin: 0;
+    color: var(--color-text-muted, #737373);
+  }
+
+  .more-link,
+  .about-link {
+    color: var(--color-primary, #2563eb);
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .post-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem 1.5rem;
+  }
+
+  .post-item {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .post-image {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    background: #f3f4f6;
+    margin-bottom: 1rem;
+  }
+
+  .post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .post-item:hover .post-image img {
+    transform: scale(1.03);
+  }
+
+  .post-content time {
+    font-size: 0.85rem;
+    color: var(--color-text-muted, #737373);
+  }
+
+  .post-content h3 {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: 0.5rem 0;
+    font-weight: 650;
+  }
+
+  .post-content p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--color-text-muted, #737373);
+    margin: 0;
+  }
+
+  .post-item:hover h3 {
+    color: var(--color-primary, #2563eb);
+  }
+
+  .about-section {
+    background: var(--color-background-muted, #f8f8f8);
+    padding: 5rem 1.5rem;
+  }
+
+  .about-content {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .about-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--color-primary, #2563eb);
+    margin-bottom: 1rem;
+  }
+
+  .about-content p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--color-text-muted, #525252);
+    margin: 1rem 0;
+  }
+
+  .about-link {
+    display: inline-block;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .post-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem 1rem;
+    }
+
+    .section-heading {
+      align-items: start;
+      flex-direction: column;
+    }
+
+    .about-section,
+    .latest-posts {
+      padding-top: 3.5rem;
+      padding-bottom: 3.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .post-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
