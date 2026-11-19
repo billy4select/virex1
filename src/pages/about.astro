@@ -3,7 +3,6 @@
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import PageHeader from '@sections/content/PageHeader.astro';
 import ValuesSection from '@sections/team/ValuesSection.astro';
-import TeamSection from '@sections/team/TeamSection.astro';
 import CTA from '@sections/marketing/CTA.astro';
 import { siteConfig } from '@/config';
 
@@ -11,76 +10,158 @@ const values = [
   {
     title: 'AI 與工作方式',
     description:
-      '持續研究 AI 工具與技術的發展，也實際把 AI 用在工作、內容製作與日常任務中。我關心的是，這些工具能帶來什麼改變，以及個人如何運用它們創造新的工作機會。',
+      '研究 AI 工具與技術的發展，實際測試它們在工作、內容製作與日常任務中的應用。我關心哪些事情已經可以交給 AI，哪些工作方式正在改變，以及個人如何運用這些新能力。',
   },
   {
     title: '內容與個人品牌',
     description:
-      '從自媒體、社群經營到知識變現，我一直關注個人的經驗、專業與觀點，如何透過內容累積影響力，進一步發展成品牌、服務或商業模式。',
+      '從自媒體、社群經營到知識變現，持續研究個人的經驗、專業與觀點，如何透過內容累積影響力，以及內容如何進一步發展成服務或商業模式。',
   },
   {
     title: '行銷與商業觀察',
     description:
-      '從產品、品牌、消費者到市場變化，研究企業如何創造價值，以及一個商業模式如何運作。我也喜歡觀察新技術與新趨勢，會如何改變原本的產業規則。',
+      '關注產品、品牌、消費者與市場的變化，研究企業如何創造價值，以及不同商業模式背後的運作邏輯。也會觀察科技與新趨勢如何影響原本的產業。',
   },
 ];
 
-const team = [
-  {
-    name: '比利陳 Billy Chen',
-    role: '行銷工作者、內容創作者',
-    bio: '擁有十多年行銷相關工作經驗，曾參與產品管理、品牌行銷、數位行銷、內容經營與廣告投放等工作。出版過《從零開始自媒體》、《寫給大家的行銷書》、《人人都做得到的知識變現》等書。除了工作，也持續經營自己的內容平台，透過文章、影片與社群記錄觀察、研究和實際嘗試。',
-    avatar: '/avatar.webp',
-  },
+const books = [
+  '從零開始自媒體',
+  '寫給大家的行銷書',
+  '人人都做得到的知識變現',
 ];
 ---
 
 <MarketingLayout
   title={`關於我 - ${siteConfig.name}`}
-  description="認識比利陳。擁有十多年行銷經驗，持續研究 AI、內容、個人品牌與商業世界的變化。"
+  description="比利陳，擁有十多年行銷經驗，持續研究 AI、內容、個人品牌與商業世界的變化。"
 >
-  <PageHeader title="關於比利" align="center" maxWidth="lg">
-    <div class="max-w-3xl mx-auto">
-      <div class="mt-6 space-y-5 text-lg text-text-muted leading-relaxed">
-        <p>
-          我是比利陳（Billy Chen），一個做了十多年行銷的人。過去的工作經歷涵蓋產品管理、品牌行銷與數位行銷，也出版過《從零開始自媒體》、《寫給大家的行銷書》、《人人都做得到的知識變現》等書。
-        </p>
+  <div class="max-w-6xl mx-auto px-6">
 
-        <p>
-          這些年，我一直對行銷、科技、商業與內容之間的關係很感興趣。一個產品為什麼有人買？一個品牌如何建立影響力？內容如何累積價值？當科技與市場發生變化，個人的工作和發展機會又會受到什麼影響？
-        </p>
+    <!-- 個人介紹 -->
+    <section class="py-16 md:py-20">
+      <div class="max-w-3xl">
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-text">
+          關於比利
+        </h1>
 
-        <p>
-          最近幾年，AI 成為我投入很多時間研究的領域。我會使用不同的 AI 工具，也會把它們放進實際工作與內容製作流程中，測試哪些事情真的做得到，以及它們可能帶來什麼新的可能性。
-        </p>
+        <div class="mt-8 space-y-5 text-lg text-text-muted leading-relaxed">
+          <p>
+            我是比利陳（Billy Chen），有十多年的行銷工作經驗，曾經做過產品管理、品牌行銷與數位行銷，也出版過《從零開始自媒體》、《寫給大家的行銷書》、《人人都做得到的知識變現》等書。
+          </p>
 
-        <p>
-          這個網站記錄我對這些事情的研究、觀察與實際經驗。內容不會只集中在單一領域，也不會只有工具教學。我更感興趣的是，一個新技術、一種新做法或一個市場現象，背後究竟正在發生什麼變化。
-        </p>
+          <p>
+            這些年，我接觸過不同的產業、產品與行銷工作，也持續觀察科技、內容與商業世界的變化。
+          </p>
+
+          <p>
+            近幾年，我花了不少時間研究 AI，從工具應用、內容製作到工作流程，都會親自動手嘗試。我很關心 AI 帶來的改變，也想知道當個人擁有越來越多工具與能力時，未來的工作方式和商業機會會變成什麼樣子。
+          </p>
+
+          <p>
+            這個網站主要分享我的研究、觀察與實際經驗。除了 AI，也會談行銷、個人品牌、自媒體、商業模式、科技與其他值得關注的議題。
+          </p>
+
+          <p>
+            有些內容來自工作經驗，有些來自閱讀與研究，也有些是自己動手實驗後的心得。
+          </p>
+        </div>
       </div>
-    </div>
-  </PageHeader>
+    </section>
 
-  <ValuesSection
-    title="我持續關注的主題"
-    items={values}
-    variant="card"
-    columns={3}
-    background="muted"
-  />
+    <!-- 關注主題 -->
+    <section class="py-14 border-t border-border">
+      <ValuesSection
+        title="我持續關注的主題"
+        items={values}
+        variant="card"
+        columns={3}
+        background="default"
+      />
+    </section>
 
-  <TeamSection
-    title="工作與創作經歷"
-    members={team}
-    columns={1}
-    background="default"
-  />
+    <!-- 出版作品 -->
+    <section class="py-14 border-t border-border">
+      <div class="max-w-6xl">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-text">
+          出版作品
+        </h2>
 
-  <CTA
-    title="在不同平台繼續交流"
-    description="除了這個網站，我也透過 YouTube、Threads 與電子報分享研究、觀察和實際經驗。"
-    action={{ label: '看看最新文章', href: '/blog' }}
-    secondaryAction={{ label: '前往 YouTube', href: 'https://www.youtube.com/@billyselect4' }}
-    background="muted"
-  />
+        <p class="mt-4 text-text-muted leading-relaxed">
+          曾出版幾本與行銷、內容創作及知識變現相關的書籍。
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
+          {books.map((book) => (
+            <div class="rounded-xl border border-border bg-surface p-6">
+              <p class="font-semibold text-text">{book}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 其他平台 -->
+    <section class="py-14 border-t border-border">
+      <div class="max-w-6xl">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-text">
+          在其他平台找到我
+        </h2>
+
+        <p class="mt-4 text-text-muted leading-relaxed">
+          除了這個網站，我也在不同平台分享內容。
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
+          <a
+            href="https://www.youtube.com/@billyselect4"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group rounded-xl border border-border p-5 hover:border-primary transition-colors"
+          >
+            <h3 class="font-semibold text-text group-hover:text-primary">
+              YouTube
+            </h3>
+            <p class="mt-2 text-sm text-text-muted">
+              AI、自媒體、行銷與商業相關的長篇內容。
+            </p>
+          </a>
+
+          <a
+            href="https://www.threads.net/@billyselect4"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group rounded-xl border border-border p-5 hover:border-primary transition-colors"
+          >
+            <h3 class="font-semibold text-text group-hover:text-primary">
+              Threads
+            </h3>
+            <p class="mt-2 text-sm text-text-muted">
+              日常觀察、想法與實際經驗。
+            </p>
+          </a>
+
+          <a
+            href="/newsletter/"
+            class="group rounded-xl border border-border p-5 hover:border-primary transition-colors"
+          >
+            <h3 class="font-semibold text-text group-hover:text-primary">
+              電子報
+            </h3>
+            <p class="mt-2 text-sm text-text-muted">
+              整理值得深入研究的議題與近期觀察。
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 文章入口 -->
+    <CTA
+      title="繼續探索"
+      description="看看我最近分享的文章與研究。"
+      action={{ label: '看看最新文章', href: '/blog' }}
+      background="muted"
+    />
+
+  </div>
 </MarketingLayout>
