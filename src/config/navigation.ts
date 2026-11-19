@@ -5,6 +5,7 @@ export const navigation: Navigation = {
     main: [
       { label: '首頁', href: '/' },
       { label: 'BLOG', href: '/blog' },
+      { label: 'Threads教學', href: '/threads' },
       { label: '關於我', href: '/about' },
       { label: '訂閱電子報', href: 'https://billy4select.substack.com/' },
     ],
@@ -16,6 +17,7 @@ export const navigation: Navigation = {
     product: [ 
       { label: '首頁', href: '/' },
       { label: 'BLOG', href: '/blog' },
+      { label: 'Threads教學', href: '/threads' },
       { label: '關於我', href: '/about' },
       { label: '讀者的真實回饋', href: '/testimonials' },
       { label: '隱私權政策', href: '/privacy' },
