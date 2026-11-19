@@ -288,7 +288,8 @@ img{ max-width:100%; }
 
 .foot{ background:#1A1210; color:#C9BDB0; padding:52px 0; font-size:14px; line-height:1.95; font-weight:500; }
 .foot-in{ max-width:1120px; margin:0 auto; padding:0 28px; box-sizing:border-box; display:grid;
-  grid-template-columns:1.5fr 1fr 1fr; gap:36px; }
+  grid-template-columns:1.7fr 1fr .9fr .9fr; gap:32px; }
+.foot .n{ font-size:11.5px; font-weight:700; color:#8E8074; margin-right:4px; letter-spacing:.06em; }
 .foot b{ display:block; color:#F3ECE0; font-family:var(--serif); font-size:15.5px;
   font-weight:600; margin-bottom:12px; letter-spacing:.05em; }
 .foot a:hover{ color:#F3ECE0; }
@@ -296,8 +297,6 @@ img{ max-width:100%; }
 .foot li{ padding:3px 0; }
 
 @media (prefers-reduced-motion:no-preference){
-  .rv{ opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s ease; }
-  .rv.in{ opacity:1; transform:none; }
 }
 
 @media (max-width:1080px){
@@ -322,10 +321,12 @@ img{ max-width:100%; }
 @media (max-width:640px){
   body{ font-size:16px; }
   .wrap, .head-in{ padding-left:20px; padding-right:20px; }
+  .hub-shell{ padding-left:20px; padding-right:20px; }
   .article-grid{ padding-left:20px; padding-right:20px; }
   .grid4{ grid-template-columns:1fr; }
   .head-in{ flex-wrap:wrap; row-gap:6px; padding-bottom:10px; }
-  .nav{ flex-basis:100%; justify-content:flex-start; gap:16px; font-size:12.5px; }
+  .nav{ flex-basis:100%; justify-content:flex-start; gap:12px; font-size:12.5px; }
+  .nav a{ padding:8px 4px; }
   .nav a.back{ display:none; }
   .brand-sub{ display:none; }
   .hero h1{ font-size:23.5px; line-height:1.6; }
@@ -345,6 +346,29 @@ img{ max-width:100%; }
   .band{ padding:40px 0; }
   .read{ max-width:100%; }
 }
+
+/* ── 長文閱讀版：以文字為主，不加特效 ── */
+.art-body{ font-size:18px; line-height:1.98; letter-spacing:.015em; max-width:640px; }
+.art-body p{ margin:0 0 1.3em; }
+.art-body h2{ font-size:23px; margin:52px 0 16px; }
+.art-body h2:first-of-type{ margin-top:32px; }
+.art-body .answer{ font-size:17px; line-height:1.9; }
+.art-body .steps{ margin:10px 0 30px; }
+.art-body .steps li{ font-size:17.5px; line-height:1.9; }
+.art-body .eg{ border-left:0; padding-left:0; font-size:15.5px; margin-top:8px; }
+.art-body .note{ margin:2.2em 0; }
+@media (max-width:640px){
+  .art-body{ font-size:17px; line-height:1.92; }
+  .art-body h2{ font-size:21px; margin-top:44px; }
+}
+
+.art-body .note p, .art-body .note li{ font-size:16px; line-height:1.92; }
+.art-body .note .nlabel{ font-size:11px; letter-spacing:.18em; margin-bottom:10px; }
+.art-body .note p{ margin:0 0 12px; }
+
+.nav a .n{ font-size:11px; font-weight:700; color:var(--muted); margin-right:4px; letter-spacing:.06em; }
+.nav a.on .n{ color:var(--c); }
+@media (max-width:640px){ .nav a .n{ font-size:10px; margin-right:3px; } }
 </style>
 
 </head>
@@ -356,7 +380,7 @@ img{ max-width:100%; }
       <span class="brand-sub">從零開始，寫出真實影響力</span>
     </a>
     <nav class="nav" aria-label="主要導覽">
-      <a href="../rumors/" class="">起步迷思</a><a href="../mindset/" class="">心態</a><a href="../writing/" class="on">寫作</a><a href="../rhythm/" class="">節奏</a><a href="../what-to-post/" class="">10 個選題</a><a href="../faq/" class="">常見問題</a><a class="back" href="https://blog.billy4select.com/">回部落格</a>
+      <a href="../rumors/"><span class="n">01</span>起步</a><a href="../mindset/"><span class="n">02</span>心態</a><a href="../writing/" class="on"><span class="n">03</span>寫作</a><a href="../rhythm/"><span class="n">04</span>節奏</a><a href="../what-to-post/">選題</a><a href="../faq/">FAQ</a><a class="back" href="https://blog.billy4select.com/">回首頁</a>
     </nav>
   </div>
 </header>
@@ -369,54 +393,79 @@ img{ max-width:100%; }
         <div class="art-kicker">寫作</div>
         <h1>Threads 寫作要模仿嗎？模仿架構，不要模仿句子</h1>
         <div class="art-meta">
-          <span>閱讀約 3 分鐘</span>
+          <span>閱讀約 4 分鐘</span>
           <span>最後更新 2026.11.19</span>
         </div>
       </header>
 
       <div class="art-body">
-<p class="answer">要，但只模仿架構，不要模仿句子。模仿是練肌肉，不是終點。最後要留下的，是你自己的聲音。</p>
+<p class="answer"><span class="lbl">先說結論</span>可以模仿，而且應該模仿。但模仿架構，不要模仿句子；模仿節奏，不要模仿立場。終點是讓人一看就知道「這是你寫的」。</p>
 
-<p>剛開始寫，看別人怎麼開場、怎麼鋪陳、怎麼收尾，照著學很正常。但關鍵是不能一直停在模仿。</p>
+<p>你追了幾個帳號，把他們的開頭、轉折、收尾都存下來。照著寫了一篇，發出去，反應還不錯。但你心裡有點空，因為那讀起來像別人。</p>
 
-<h2 id="s1">為什麼一開始該模仿</h2>
-<p>因為你還不知道什麼有效、怎麼表達。模仿過的句子，才會變成你寫作的選項；照著別人的格式寫過，才會慢慢養出自己的節奏。</p>
-<p>所以不用怕撞風格。真正該怕的是，你只學會了外型。</p>
+<p>這個階段幾乎每個創作者都會經過。問題不是模仿，是停在模仿。</p>
+
+<h2 id="s1">為什麼一開始要模仿</h2>
+
+<p>因為你還不知道「什麼有效」。什麼樣的開頭會讓人停下來、什麼樣的節奏讀起來舒服、什麼時候該收，這些靠想像學不會。</p>
+
+<p>模仿是一種練肌肉的方式。你照著別人的格式寫過，那個格式才會變成你的選項；你模仿過的句子，才會變成你語言的資料庫。</p>
+
+<p>所以新手不用怕撞風格，大膽模仿。但要知道，這只是起點。</p>
 
 <h2 id="s2">模仿過頭的症狀</h2>
-<p>「這三個習慣，改變了我的人生。」「99% 的人都忽略了這個小細節。」「這不是勵志，而是事實。」</p>
-<p>句子看起來很像，但內容空洞。你把「別人的語氣」搬過來了，卻沒有「自己的觀點」。寫出來的東西有型，沒魂。</p>
 
-<h2 id="s3">三條界線</h2>
+<p>第一種症狀是「有型無魂」。句子看起來都很像：「這三個習慣，改變了我的人生。」「99% 的人都忽略了這個細節。」但內容是空的，因為那是別人的語氣，不是你的觀點。</p>
+
+<p>第二種症狀是「不敢有意見」。你學會了別人的說話方式，卻也繼承了別人的立場，遇到跟自己經驗不同的地方，會下意識地閃避。</p>
+
+<p>第三種最隱蔽：你寫得越來越順，但越來越不想寫。因為那個聲音不是你，寫作變成一種扮演。</p>
+
+<p>你可以借別人的骨架，但血肉要自己長。否則你寫得再像，也只是別人的複本。</p>
+
+<h2 id="s3">三條界線，走回自己的聲音</h2>
+
+<p>從模仿走向風格，不是「不要學」，而是知道哪些可以借、哪些必須自己來。</p>
+
 <ol class="steps">
-<li><b>模仿架構，不模仿句子。</b>開場方式、轉折句、收尾格式都可以學，但內容要來自你。</li>
-<li><b>寫自己的觀點，不搬別人的金句。</b>金句是別人的結論，你要寫的是自己觀察到的東西。</li>
-<li><b>刻意保留你的碎念與節奏。</b>你講話有時候會停頓、有點幽默、有點情緒，這些就是你與眾不同的地方。</li>
+<li><b>模仿架構，不模仿句子</b>開場方式、轉折位置、收尾格式都可以學。但每一句的內容，要來自你自己的經驗。<span class="eg">例：學他「先講矛盾再講轉念」的結構，但矛盾要用你實際遇到的那一個。</span></li>
+<li><b>寫自己的觀點，不搬金句</b>不要只複製那些「看起來厲害的話」。寫你真正觀察到的、你真的經歷過的情境。<span class="eg">例：不要寫「自律帶來自由」，寫「我把鬧鐘放在浴室，才終於戒掉賴床」。</span></li>
+<li><b>刻意保留你的語氣</b>你講話會碎唸、會自嘲、會先嘆氣再說重點，這些都是辨識度。別急著改掉。<span class="eg">例：你習慣先說「好啦我知道這聽起來很蠢」，那就留著，那是你。</span></li>
 </ol>
 
-<h2 id="s4">風格不是設計出來的，是寫出來的</h2>
-<p>練寫作的最高境界，不是「寫得像誰」，而是「怎麼寫都還是像你」。因為最吸引人的創作者，不是技巧最熟練的，而是你一看就知道「這是他寫的」。</p>
-<p>那種語氣、那種觀點、那種寫法，只有你講得出來。模仿學不來，只能練出來。</p>
+<p>這三條的共同點是：把「別人怎麼說」換成「我怎麼經歷」。換得越多，你的聲音就越清楚。</p>
 
-<h2 id="s5">真正留下人的，是人生體會</h2>
-<p>專業可以查，但你的感受查不到。你怎麼發現它、怎麼卡關、怎麼突破，這些只有你經歷過。讀者不是在找老師，是在找「跟我一樣也卡住的人」。</p>
-<p>人不會記得你說了什麼金句，但會記得你讓他有過怎樣的感覺。</p>
+<h2 id="s4">風格是練出來的，不是設計出來的</h2>
+
+<p>很多人想「先設計一個風格再開始寫」，這通常會失敗。因為風格是選擇的總和，不是一個形容詞。</p>
+
+<p>你選擇寫什麼、不寫什麼、用什麼詞、留多少空白、要不要自嘲、要不要講乾話，這些累積起來，才是風格。</p>
+
+<p>所以它需要樣本。寫五篇看不出來，寫五十篇就很明顯。你回頭讀的時候，會發現有些句子「一看就是我」，那些就是你的核心。</p>
+
+<h2 id="s5">最終的標準</h2>
+
+<p>不是「寫得像誰」，而是「怎麼寫都還是像你」。</p>
+
+<p>你可以寫別人的題目、用別人的結構、甚至用別人常用的開頭。但只要那個判斷、那個例子、那個語氣是你的，讀者就會認得出來。</p>
+
+<p>所以放心去模仿，然後記得慢慢走出來。你不是影子，你是光源。</p>
 
 <div class="note">
-<span class="nlabel">小練習</span>
-<p>找一篇你喜歡的貼文，拆出它的骨架：</p>
+<span class="nlabel">一個人的風格練習</span>
+<p>挑一個你欣賞的帳號，做三件事：</p>
 <ul>
-<li>開場用什麼鉤子？</li>
-<li>中間怎麼轉折？</li>
-<li>結尾怎麼收？</li>
+<li>拆解他一篇貼文的結構（開頭／轉折／收尾各是什麼作用）。</li>
+<li>用同樣的結構，寫一件只有你經歷過的事。</li>
+<li>寫完之後，把裡面「像他」的句子圈出來，全部改成你自己的說法。</li>
 </ul>
-<p>然後用你自己的故事，重寫一次同樣的骨架。不要抄任何一句話。</p>
+<p>圈出來的越少，你離自己的聲音越近。</p>
 </div>
 
-<p>放心去模仿，然後記得慢慢走出來。你不是影子，你是光源。</p>
+<p>模仿是學走路，不是終點。總有一天你要放開扶手，那時候你會發現，你已經有自己的步伐了。</p>
       </div>
 
-<div class="rel"><small>延伸閱讀</small><ul><li><a href="../same-topic/">主題被講過了嗎</a><span>起步的心結</span></li><li><a href="../formula/">停下來、共鳴、留下來</a><span>怎麼表達才像人</span></li></ul></div>
+      <div class="rel"><small>延伸閱讀</small><ul><li><a href="../same-topic/">主題被講過了嗎</a><span>起步的心結</span></li><li><a href="../formula/">停下來、共鳴、留下來</a><span>怎麼表達才像人</span></li></ul></div>
 <div class="pager"><a href="../cant-write/"><small>上一篇</small><b>寫不出來怎麼辦</b></a><a class="right" href="../frequency/"><small>下一篇</small><b>一週要發幾篇</b></a></div>
     </article>
 <aside class="toc"><div class="toc-title">本頁導覽</div><ol><li><a href="#s1">為什麼一開始該模仿</a></li><li><a href="#s2">模仿過頭的症狀</a></li><li><a href="#s3">三條界線</a></li><li><a href="#s4">風格不是設計出來的，是寫出來的</a></li><li><a href="#s5">真正留下人的，是人生體會</a></li></ol></aside>
@@ -431,15 +480,25 @@ img{ max-width:100%; }
     </div>
     <div>
       <b>主題</b>
-      <ul><li><a href="../rumors/">起步迷思</a></li><li><a href="../mindset/">心態</a></li><li><a href="../writing/">寫作</a></li><li><a href="../rhythm/">節奏</a></li></ul>
+      <ul>
+        <li><a href="../rumors/"><span class="n">01</span>起步</a></li>
+        <li><a href="../mindset/"><span class="n">02</span>心態</a></li>
+        <li><a href="../writing/"><span class="n">03</span>寫作</a></li>
+        <li><a href="../rhythm/"><span class="n">04</span>節奏</a></li>
+      </ul>
     </div>
     <div>
       <b>索引</b>
       <ul>
-        <li>H 個選題</a></li>
-        <li><a href="../faq/">常見問題</a></li>
-        <li><a href="../about/">關於</a></li>
-        <li><a href="https://blog.billy4select.com/">回部落格</a></li>
+        <li><a href="../what-to-post/">選題</a></li>
+        <li><a href="../faq/">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <b>說明</b>
+      <ul>
+        <li><a href="../about/">指南導讀</a></li>
+        <li><a href="https://blog.billy4select.com/">回首頁</a></li>
       </ul>
     </div>
   </div>
@@ -456,15 +515,6 @@ img{ max-width:100%; }
   }
   window.addEventListener('scroll',tick,{passive:true});
   window.addEventListener('resize',tick); tick();
-  var els=document.querySelectorAll('.rv');
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)){
-    els.forEach(function(el){ el.classList.add('in'); });
-  } else {
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-    },{rootMargin:'0px 0px -6% 0px'});
-    els.forEach(function(el){ io.observe(el); });
-  }
 })();
 </script>
 

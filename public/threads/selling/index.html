@@ -288,7 +288,8 @@ img{ max-width:100%; }
 
 .foot{ background:#1A1210; color:#C9BDB0; padding:52px 0; font-size:14px; line-height:1.95; font-weight:500; }
 .foot-in{ max-width:1120px; margin:0 auto; padding:0 28px; box-sizing:border-box; display:grid;
-  grid-template-columns:1.5fr 1fr 1fr; gap:36px; }
+  grid-template-columns:1.7fr 1fr .9fr .9fr; gap:32px; }
+.foot .n{ font-size:11.5px; font-weight:700; color:#8E8074; margin-right:4px; letter-spacing:.06em; }
 .foot b{ display:block; color:#F3ECE0; font-family:var(--serif); font-size:15.5px;
   font-weight:600; margin-bottom:12px; letter-spacing:.05em; }
 .foot a:hover{ color:#F3ECE0; }
@@ -296,8 +297,6 @@ img{ max-width:100%; }
 .foot li{ padding:3px 0; }
 
 @media (prefers-reduced-motion:no-preference){
-  .rv{ opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s ease; }
-  .rv.in{ opacity:1; transform:none; }
 }
 
 @media (max-width:1080px){
@@ -322,10 +321,12 @@ img{ max-width:100%; }
 @media (max-width:640px){
   body{ font-size:16px; }
   .wrap, .head-in{ padding-left:20px; padding-right:20px; }
+  .hub-shell{ padding-left:20px; padding-right:20px; }
   .article-grid{ padding-left:20px; padding-right:20px; }
   .grid4{ grid-template-columns:1fr; }
   .head-in{ flex-wrap:wrap; row-gap:6px; padding-bottom:10px; }
-  .nav{ flex-basis:100%; justify-content:flex-start; gap:16px; font-size:12.5px; }
+  .nav{ flex-basis:100%; justify-content:flex-start; gap:12px; font-size:12.5px; }
+  .nav a{ padding:8px 4px; }
   .nav a.back{ display:none; }
   .brand-sub{ display:none; }
   .hero h1{ font-size:23.5px; line-height:1.6; }
@@ -345,6 +346,29 @@ img{ max-width:100%; }
   .band{ padding:40px 0; }
   .read{ max-width:100%; }
 }
+
+/* ── 長文閱讀版：以文字為主，不加特效 ── */
+.art-body{ font-size:18px; line-height:1.98; letter-spacing:.015em; max-width:640px; }
+.art-body p{ margin:0 0 1.3em; }
+.art-body h2{ font-size:23px; margin:52px 0 16px; }
+.art-body h2:first-of-type{ margin-top:32px; }
+.art-body .answer{ font-size:17px; line-height:1.9; }
+.art-body .steps{ margin:10px 0 30px; }
+.art-body .steps li{ font-size:17.5px; line-height:1.9; }
+.art-body .eg{ border-left:0; padding-left:0; font-size:15.5px; margin-top:8px; }
+.art-body .note{ margin:2.2em 0; }
+@media (max-width:640px){
+  .art-body{ font-size:17px; line-height:1.92; }
+  .art-body h2{ font-size:21px; margin-top:44px; }
+}
+
+.art-body .note p, .art-body .note li{ font-size:16px; line-height:1.92; }
+.art-body .note .nlabel{ font-size:11px; letter-spacing:.18em; margin-bottom:10px; }
+.art-body .note p{ margin:0 0 12px; }
+
+.nav a .n{ font-size:11px; font-weight:700; color:var(--muted); margin-right:4px; letter-spacing:.06em; }
+.nav a.on .n{ color:var(--c); }
+@media (max-width:640px){ .nav a .n{ font-size:10px; margin-right:3px; } }
 </style>
 
 </head>
@@ -356,7 +380,7 @@ img{ max-width:100%; }
       <span class="brand-sub">從零開始，寫出真實影響力</span>
     </a>
     <nav class="nav" aria-label="主要導覽">
-      <a href="../rumors/" class="">起步迷思</a><a href="../mindset/" class="on">心態</a><a href="../writing/" class="">寫作</a><a href="../rhythm/" class="">節奏</a><a href="../what-to-post/" class="">10 個選題</a><a href="../faq/" class="">常見問題</a><a class="back" href="https://blog.billy4select.com/">回部落格</a>
+      <a href="../rumors/"><span class="n">01</span>起步</a><a href="../mindset/" class="on"><span class="n">02</span>心態</a><a href="../writing/"><span class="n">03</span>寫作</a><a href="../rhythm/"><span class="n">04</span>節奏</a><a href="../what-to-post/">選題</a><a href="../faq/">FAQ</a><a class="back" href="https://blog.billy4select.com/">回首頁</a>
     </nav>
   </div>
 </header>
@@ -375,49 +399,79 @@ img{ max-width:100%; }
       </header>
 
       <div class="art-body">
-<p class="answer">可以。你可以不推銷，還是能銷售；可以做自己，也能把東西賣出去。重點不是怎麼賣，而是怎麼讓人相信你。</p>
+<p class="answer"><span class="lbl">先說結論</span>可以。你可以不推銷，還是能銷售。關鍵不是「怎麼賣」，而是「怎麼讓人相信你」。</p>
 
-<p>這是很多創作者、品牌主、自由工作者的兩難：一方面不想當硬推的業配帳號，另一方面又怕自己只聊天，別人不買單。</p>
+<p>你打了一篇介紹產品的文，讀了一次，覺得像業配，刪掉。改寫成輕鬆一點的版本，又覺得心虛，好像不講清楚就是在騙人。</p>
 
-<h2 id="s1">社群不是廣告看板，是人與人的場域</h2>
-<p>我們不會對商品動心，但我們會對「你」動心，才想支持你。你越讓人看見你的想法、選擇、掙扎，越容易建立信任。</p>
-<p>這也是為什麼同樣的產品，從一個你認識的人口中說出來，說服力完全不同。</p>
+<p>這個兩難幾乎所有有產品的人都遇過：太用力像在推銷，不用力又怕沒人知道。</p>
 
-<h2 id="s2">用分享的心態介紹產品</h2>
-<p>關鍵不是介紹規格，而是分享「你為什麼改變了看法」。</p>
+<h2 id="s1">先接受一件事：信任先於轉換</h2>
 
-<div class="bubble">「其實我一開始也不太相信某些產品的效果，直到我自己用了，才發現原來這麼簡單的保養，也能讓皮膚變得更好。我以前真的以為要像電視廣告演的一樣。」</div>
+<p>我們不會對商品動心，我們會對「人」動心，然後才想支持那個人賣的東西。</p>
 
-<p>房仲可以寫：「我自己住過不少地方，有些地方住久了就不想再住，因為周圍太吵，或房間小得讓人喘不過氣。後來搬到這裡，每個角落都特別安靜。」</p>
-<p>品牌主可以寫：「我們做這個品牌的初心很簡單：我希望自己也能穿到既舒適又不過於浮誇的衣服，穿出去能夠自信。」</p>
-<p>這些都不是在賣，而是在分享一段生活的體驗。讀者感覺得到差別。</p>
+<p>這也是為什麼硬廣在社群裡效果越來越差。不是因為人討厭買東西，而是因為人討厭被當成轉換率。</p>
 
-<h2 id="s3">品牌帳號的「個人」，邊界在哪</h2>
-<p>不是把日常生活全部攤開，而是與品牌議題有關的心態、看法與經驗。你分享的是「我為什麼這樣選」，不是「我今天去哪裡玩」。</p>
-<p>邊界縮小，信任反而更集中。因為讀者知道可以在你這裡得到什麼。</p>
+<p>反過來說，當一個人先認識你、覺得你說話可信，你再提到產品，那個訊息會被解讀成「他想分享好東西」，而不是「他想賺我的錢」。</p>
 
-<h2 id="s4">信任就是最強的成交力</h2>
-<p>先讓人認識你，再認識你的東西。你不需要一直想轉換、導購、下 CTA。你只要好好說話，就有人想聽、想支持、想跟你買。</p>
+<p>同樣一句話，前面的關係決定了後面的意思。</p>
 
-<div class="vs">
-<div><span class="x">×</span>限時優惠倒數三天，錯過不再。</div>
-<div><span class="o">○</span>這個東西我自己用了半年才敢推薦，因為我一開始也懷疑過。</div>
+<p>你賣的不是產品，是一段「從不知道到知道、從卡住到解決」的經驗。而你是這段故事裡最有說服力的角色。</p>
+
+<h2 id="s2">品牌帳號的「個人」，邊界在哪</h2>
+
+<p>很多人一聽到「做自己」就往兩個極端跑：一是完全不露臉，只發產品圖；二是把私生活全部攤開，變成日記。</p>
+
+<p>兩個都不對。品牌帳號的個人，指的是跟品牌議題有關的心態、看法與經驗。</p>
+
+<p>你可以寫：為什麼開始做這件事、你怎麼判斷品質、你曾經選錯什麼、你現在還在學什麼。這些都跟品牌有關，也都是一個人。</p>
+
+<p>不需要寫今天吃什麼、去哪裡玩。讀者要的是「可信的人」，不是「透明的人」。</p>
+
+<h2 id="s3">三個產業，三種寫法</h2>
+
+<p>把「介紹產品」換成「分享經驗」，語氣就會完全不同。以下三種可以直接對照你的行業。</p>
+
+<div class="note">
+<span class="nlabel">美容業</span>
+<p>「其實我一開始也不太相信某些產品的效果，直到我自己用了，才發現原來這麼簡單的保養，也能讓皮膚變好。我以前真的以為要像電視廣告那樣才有效。」</p>
 </div>
 
 <div class="note">
-<span class="nlabel">小練習</span>
-<p>寫一段你「從不知道到知道」的產品經驗。不要寫規格，寫三件事：</p>
-<ul>
-<li>你原本懷疑什麼？</li>
-<li>什麼時候改變了看法？</li>
-<li>現在它在你生活裡的位置是什麼？</li>
-</ul>
+<span class="nlabel">房仲業</span>
+<p>「我自己住過不少地方。有些住久了就不想再住，因為周圍太吵，或房間小得讓人喘不過氣。後來搬到這裡，才發現安靜對一個人的影響有多大。」</p>
 </div>
 
-<p>問自己一個問題就好：「這個產品，對我來說最重要的意義是什麼？」誠實回答，那就是最舒服、也最長久的寫法。</p>
+<div class="note">
+<span class="nlabel">品牌與電商</span>
+<p>「我們做這個品牌的初心很簡單：我自己也想穿到既舒適、又不過於浮誇的衣服，穿出去能自信。找不到，就自己做了。」</p>
+</div>
+
+<p>這三段的共同點是：主詞是「我」，不是「產品」。它們在講一段經歷，順便讓你看到東西。</p>
+
+<h2 id="s4">導購的正確順序</h2>
+
+<p>如果你想要更具體的操作，可以照這個順序排。</p>
+
+<ol class="steps">
+<li><b>先講問題，不講商品</b>讓對方先認出「對，我就是這樣」，他才會想知道你怎麼解。<span class="eg">例：先寫「每次換季皮膚就鬧脾氣」，而不是「新品八折」。</span></li>
+<li><b>再講你怎麼試錯</b>你用了哪些方法、哪個沒用、為什麼改。試錯過程比成功心得更有說服力。<span class="eg">例：我用過三種卸妝，最後留下的是最不刺激的那個。</span></li>
+<li><b>最後才提東西，而且低門檻</b>不要急著貼連結。先邀請對話：「你也有這個困擾嗎？我可以把我用的方式傳給你。」<span class="eg">例：一句邀請，換來的私訊比公開連結更願意成交。</span></li>
+</ol>
+
+<p>這個順序不是話術，是節奏。你先把人留在對話裡，才有後面的可能。</p>
+
+<h2 id="s5">回到那個最簡單的問題</h2>
+
+<p>如果你不知道怎麼開始，問自己一句：「這個產品，對我來說最重要的意義是什麼？」</p>
+
+<p>是它解決了你某個麻煩？是你終於找到一個不必將就的選擇？還是你想證明某種做法是可行的？</p>
+
+<p>把那個答案寫出來，就是你的第一篇「不業配的業配」。你不用一直想導購、下 CTA，因為信任本身就是最強的成交力。</p>
+
+<p>先讓人認識你，再認識你的東西。這條路比較慢，但它不會讓你在賣出第一筆之後，開始討厭自己。</p>
       </div>
 
-<div class="rel"><small>延伸閱讀</small><ul><li><a href="../persona/">要先定人設嗎</a><span>起步的心結</span></li><li><a href="../monetize/">自然導流與變現</a><span>走得長久的節奏</span></li></ul></div>
+      <div class="rel"><small>延伸閱讀</small><ul><li><a href="../persona/">要先定人設嗎</a><span>起步的心結</span></li><li><a href="../monetize/">自然導流與變現</a><span>走得長久的節奏</span></li></ul></div>
 <div class="pager"><a href="../small-change/"><small>上一篇</small><b>怎麼讓人記住你</b></a><a class="right" href="../formula/"><small>下一篇</small><b>停下來、共鳴、留下來</b></a></div>
     </article>
 <aside class="toc"><div class="toc-title">本頁導覽</div><ol><li><a href="#s1">社群不是廣告看板，是人與人的場域</a></li><li><a href="#s2">用分享的心態介紹產品</a></li><li><a href="#s3">品牌帳號的「個人」，邊界在哪</a></li><li><a href="#s4">信任就是最強的成交力</a></li></ol></aside>
@@ -432,15 +486,25 @@ img{ max-width:100%; }
     </div>
     <div>
       <b>主題</b>
-      <ul><li><a href="../rumors/">起步迷思</a></li><li><a href="../mindset/">心態</a></li><li><a href="../writing/">寫作</a></li><li><a href="../rhythm/">節奏</a></li></ul>
+      <ul>
+        <li><a href="../rumors/"><span class="n">01</span>起步</a></li>
+        <li><a href="../mindset/"><span class="n">02</span>心態</a></li>
+        <li><a href="../writing/"><span class="n">03</span>寫作</a></li>
+        <li><a href="../rhythm/"><span class="n">04</span>節奏</a></li>
+      </ul>
     </div>
     <div>
       <b>索引</b>
       <ul>
-        <li>H 個選題</a></li>
-        <li><a href="../faq/">常見問題</a></li>
-        <li><a href="../about/">關於</a></li>
-        <li><a href="https://blog.billy4select.com/">回部落格</a></li>
+        <li><a href="../what-to-post/">選題</a></li>
+        <li><a href="../faq/">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <b>說明</b>
+      <ul>
+        <li><a href="../about/">指南導讀</a></li>
+        <li><a href="https://blog.billy4select.com/">回首頁</a></li>
       </ul>
     </div>
   </div>
@@ -457,15 +521,6 @@ img{ max-width:100%; }
   }
   window.addEventListener('scroll',tick,{passive:true});
   window.addEventListener('resize',tick); tick();
-  var els=document.querySelectorAll('.rv');
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)){
-    els.forEach(function(el){ el.classList.add('in'); });
-  } else {
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-    },{rootMargin:'0px 0px -6% 0px'});
-    els.forEach(function(el){ io.observe(el); });
-  }
 })();
 </script>
 

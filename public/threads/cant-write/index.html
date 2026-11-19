@@ -288,7 +288,8 @@ img{ max-width:100%; }
 
 .foot{ background:#1A1210; color:#C9BDB0; padding:52px 0; font-size:14px; line-height:1.95; font-weight:500; }
 .foot-in{ max-width:1120px; margin:0 auto; padding:0 28px; box-sizing:border-box; display:grid;
-  grid-template-columns:1.5fr 1fr 1fr; gap:36px; }
+  grid-template-columns:1.7fr 1fr .9fr .9fr; gap:32px; }
+.foot .n{ font-size:11.5px; font-weight:700; color:#8E8074; margin-right:4px; letter-spacing:.06em; }
 .foot b{ display:block; color:#F3ECE0; font-family:var(--serif); font-size:15.5px;
   font-weight:600; margin-bottom:12px; letter-spacing:.05em; }
 .foot a:hover{ color:#F3ECE0; }
@@ -296,8 +297,6 @@ img{ max-width:100%; }
 .foot li{ padding:3px 0; }
 
 @media (prefers-reduced-motion:no-preference){
-  .rv{ opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s ease; }
-  .rv.in{ opacity:1; transform:none; }
 }
 
 @media (max-width:1080px){
@@ -322,10 +321,12 @@ img{ max-width:100%; }
 @media (max-width:640px){
   body{ font-size:16px; }
   .wrap, .head-in{ padding-left:20px; padding-right:20px; }
+  .hub-shell{ padding-left:20px; padding-right:20px; }
   .article-grid{ padding-left:20px; padding-right:20px; }
   .grid4{ grid-template-columns:1fr; }
   .head-in{ flex-wrap:wrap; row-gap:6px; padding-bottom:10px; }
-  .nav{ flex-basis:100%; justify-content:flex-start; gap:16px; font-size:12.5px; }
+  .nav{ flex-basis:100%; justify-content:flex-start; gap:12px; font-size:12.5px; }
+  .nav a{ padding:8px 4px; }
   .nav a.back{ display:none; }
   .brand-sub{ display:none; }
   .hero h1{ font-size:23.5px; line-height:1.6; }
@@ -345,6 +346,29 @@ img{ max-width:100%; }
   .band{ padding:40px 0; }
   .read{ max-width:100%; }
 }
+
+/* ── 長文閱讀版：以文字為主，不加特效 ── */
+.art-body{ font-size:18px; line-height:1.98; letter-spacing:.015em; max-width:640px; }
+.art-body p{ margin:0 0 1.3em; }
+.art-body h2{ font-size:23px; margin:52px 0 16px; }
+.art-body h2:first-of-type{ margin-top:32px; }
+.art-body .answer{ font-size:17px; line-height:1.9; }
+.art-body .steps{ margin:10px 0 30px; }
+.art-body .steps li{ font-size:17.5px; line-height:1.9; }
+.art-body .eg{ border-left:0; padding-left:0; font-size:15.5px; margin-top:8px; }
+.art-body .note{ margin:2.2em 0; }
+@media (max-width:640px){
+  .art-body{ font-size:17px; line-height:1.92; }
+  .art-body h2{ font-size:21px; margin-top:44px; }
+}
+
+.art-body .note p, .art-body .note li{ font-size:16px; line-height:1.92; }
+.art-body .note .nlabel{ font-size:11px; letter-spacing:.18em; margin-bottom:10px; }
+.art-body .note p{ margin:0 0 12px; }
+
+.nav a .n{ font-size:11px; font-weight:700; color:var(--muted); margin-right:4px; letter-spacing:.06em; }
+.nav a.on .n{ color:var(--c); }
+@media (max-width:640px){ .nav a .n{ font-size:10px; margin-right:3px; } }
 </style>
 
 </head>
@@ -356,7 +380,7 @@ img{ max-width:100%; }
       <span class="brand-sub">從零開始，寫出真實影響力</span>
     </a>
     <nav class="nav" aria-label="主要導覽">
-      <a href="../rumors/" class="">起步迷思</a><a href="../mindset/" class="">心態</a><a href="../writing/" class="on">寫作</a><a href="../rhythm/" class="">節奏</a><a href="../what-to-post/" class="">10 個選題</a><a href="../faq/" class="">常見問題</a><a class="back" href="https://blog.billy4select.com/">回部落格</a>
+      <a href="../rumors/"><span class="n">01</span>起步</a><a href="../mindset/"><span class="n">02</span>心態</a><a href="../writing/" class="on"><span class="n">03</span>寫作</a><a href="../rhythm/"><span class="n">04</span>節奏</a><a href="../what-to-post/">選題</a><a href="../faq/">FAQ</a><a class="back" href="https://blog.billy4select.com/">回首頁</a>
     </nav>
   </div>
 </header>
@@ -375,46 +399,76 @@ img{ max-width:100%; }
       </header>
 
       <div class="art-body">
-<p class="answer">卡住通常不是沒內容，而是你在一開始就想寫得「太正確」。先講出來，再整理成文字。</p>
+<p class="answer"><span class="lbl">先說結論</span>寫不出來，通常不是沒靈感，是你一開始就想寫得「太正確」。先別打字，用說的，讓第一句先有聲音。</p>
 
-<p>想太多、寫太慢、字字斟酌，還沒開頭就覺得「這樣好像不夠好」。於是一篇文卡了兩小時，最後沒發。</p>
+<p>游標在畫面左上角閃。你打了第一句，覺得太普通，刪掉。第二句，覺得太做作，再刪。十分鐘過去，畫面還是空的。</p>
 
-<h2 id="s1">為什麼「寫」比「說」慢</h2>
-<p>打字的時候，你在挑字、改句、追求漂亮文句。說話的時候，語氣、節奏、真實感會自己跑出來，反而比你刻意打字生動。</p>
+<p>這個循環很折磨人，因為它看起來像是在努力，其實是在自我審查。</p>
 
-<div class="vs">
-<div><span class="x">×</span>近期創作動能不足，時常覺得內容重複，導致靈感枯竭。</div>
-<div><span class="o">○</span>我最近真的寫不出東西，常覺得自己一直在講一樣的話，然後就更懶得寫了。</div>
-</div>
+<h2 id="s1">真正卡住的，不是內容</h2>
 
-<p>一個像在講話，一個像在發報告。而 Threads 更適合後面那一種。</p>
+<p>你其實有話想說。你只是太早要求它「好」。要順、要漂亮、要有觀點、要不像廢話。</p>
 
-<h2 id="s2">具體怎麼做：四步</h2>
+<p>但 Threads 是在說話，不是寫論文。我們的目的不是當作家，是跟人說一件你想說的事。</p>
+
+<p>只要你有話想說，那件事就可以寫成一篇。問題出在方法：你用「寫」的方式起頭，而寫的過程太慢、太容易挑剔。</p>
+
+<h2 id="s2">換一個入口：用說的</h2>
+
+<p>打開手機的語音輸入，或直接錄一段話給自己聽。不用管文法，不用管重複，先讓它流出來。</p>
+
+<p>你會發現，說出來的版本有一種自然的節奏：會停頓、會感慨、會自問自答、會碎唸。那些都是「人味」，而人味是打字時最容易消失的東西。</p>
+
 <ol class="steps">
-<li><b>開語音輸入，講 60 秒。</b>不要停、不要重講、不要修飾。就當在跟朋友抱怨或分享。</li>
-<li><b>把逐字稿貼出來，只刪贅字。</b>「就是說」「然後」可以刪，語氣詞留著，那是你的人味。</li>
-<li><b>一句一行。</b>把長段落切開，讓節奏鬆下來。通常切完就會發現，最有感的那句自己浮出來了。</li>
-<li><b>用最有感的那兩句當開頭。</b>不要按原本的順序，把最有畫面的那句搬到最前面。</li>
+<li><b>先講，不寫</b>對著語音輸入講 60 秒，主題只有一個：你最近最想抱怨或最想分享的一件事。<span class="eg">不用開頭，從中間講也可以。</span></li>
+<li><b>把它變成文字</b>語音轉文字之後，不要馬上修。先讀一遍，圈出你覺得「這句是我」的地方。<span class="eg">通常會是那些有點口語、有點不完美的句子。</span></li>
+<li><b>只修三件事</b>把重複的刪掉、把太長的句子切短、把第一句移到最前面。<span class="eg">不要重寫整篇，重寫會把聲音修掉。</span></li>
+<li><b>最後才排版</b>一句一段，或兩句一段。留白是節奏，不是浪費。<span class="eg">一段超過四行，就拆開。</span></li>
 </ol>
 
-<h2 id="s3">「說的版本」才是你的原型</h2>
-<p>你說出來的那個版本，才是真正有生命力的初稿。寫 Threads 不該一開始就追求完美，而是先讓它有聲音、有流動，再慢慢調整成平台的節奏。</p>
-<p>說話的人會停頓、會感慨、會自問自答、會碎念。這些都讓內容更有「人味」，也是 AI 生成不出來的部分。</p>
+<p>這個流程的重點是：先讓內容存在，再讓它變好看。順序顛倒，就會卡死。</p>
+
+<h2 id="s3">兩個版本，差在哪</h2>
+
+<p>同一件事，「想寫」的版本和「說出來」的版本，氣質完全不同。</p>
+
+<p><b>不要這樣寫：</b>近期創作動能不足，時常覺得內容重複，導致靈感枯竭。</p>
+<p><b>改成這樣：</b>我最近真的寫不出東西。常常覺得自己一直在講一樣的話，然後就更懶得寫了。</p>
+
+<p>「不要這樣寫」的那句像在寫報告，「改成這樣」的那句像在傳訊息。而 Threads 更適合後者。</p>
+
+<p>注意：改寫後的那句沒有比較「淺」。它只是把同一件事，用一個人會講的方式講出來。</p>
 
 <h2 id="s4">AI 是加速器，不是原動力</h2>
-<p>很多人想依賴工具「生出一篇文」。但真正讓內容有力量的，不是 AI，而是「你想說的事」。工具可以幫你潤飾、重組、優化，但寫不出你的經歷、你的情緒、你當下想說的那句話。</p>
-<p>你才是原動力。先把話說出來，再交給工具去整理，順序不要顛倒。</p>
+
+<p>很多人會想依賴工具「生一篇文」。但真正讓內容有力量的，不是 AI，是「你想說的那件事」。</p>
+
+<p>AI 可以幫你潤飾、重組、優化結構，但它寫不出你的經歷、你的情緒、你當下想說的那句話。</p>
+
+<p>所以比較好的用法是：你先說，說出那個粗糙但真實的版本，再交給工具整理。順序反了，文字就會變得很整齊，但沒有你。</p>
+
+<h2 id="s5">卡住的時候，只問這一句</h2>
+
+<p><b>「如果我在跟朋友講這件事，我會怎麼說？」</b></p>
+
+<p>這句話幾乎可以解開所有寫作卡關。因為它把場景從「發表」換成「對話」，把標準從「好」換成「真」。</p>
+
+<p>講出來，就是你最自然的第一句。有了第一句，第二句通常就會自己跟上。</p>
 
 <div class="note">
-<span class="nlabel">現在就試</span>
-<p>打開語音輸入，講 60 秒「我最近在想的一件事」。不要重講、不要修飾、不要管文法。</p>
-<p>講完之後，你手上就會有一篇草稿。剩下的只是排版。</p>
+<span class="nlabel">十五分鐘流程</span>
+<ul>
+<li>3 分鐘：對著語音輸入講今天最想講的一件事。</li>
+<li>5 分鐘：轉成文字，只刪重複、只切長句。</li>
+<li>5 分鐘：排成為一句一段，讀一次，確認「這是我在說話」。</li>
+<li>2 分鐘：發出去，不要再看第二次。</li>
+</ul>
 </div>
 
-<p>當你真的卡住，問自己這句話：「如果我在跟朋友講這件事，我會怎麼說？」那就是你最自然的第一句。</p>
+<p>寫內容不該是壓力，也不該是考試。它應該像傳訊息：說你真的想說的話，給一個你想象中會讀的人。</p>
       </div>
 
-<div class="rel"><small>延伸閱讀</small><ul><li><a href="../formula/">停下來、共鳴、留下來</a><span>怎麼表達才像人</span></li><li><a href="../frequency/">一週要發幾篇</a><span>走得長久的節奏</span></li></ul></div>
+      <div class="rel"><small>延伸閱讀</small><ul><li><a href="../formula/">停下來、共鳴、留下來</a><span>怎麼表達才像人</span></li><li><a href="../frequency/">一週要發幾篇</a><span>走得長久的節奏</span></li></ul></div>
 <div class="pager"><a href="../conversational/"><small>上一篇</small><b>怎麼寫出對話感</b></a><a class="right" href="../imitate/"><small>下一篇</small><b>從模仿到自己的聲音</b></a></div>
     </article>
 <aside class="toc"><div class="toc-title">本頁導覽</div><ol><li><a href="#s1">為什麼「寫」比「說」慢</a></li><li><a href="#s2">具體怎麼做：四步</a></li><li><a href="#s3">「說的版本」才是你的原型</a></li><li><a href="#s4">AI 是加速器，不是原動力</a></li></ol></aside>
@@ -429,15 +483,25 @@ img{ max-width:100%; }
     </div>
     <div>
       <b>主題</b>
-      <ul><li><a href="../rumors/">起步迷思</a></li><li><a href="../mindset/">心態</a></li><li><a href="../writing/">寫作</a></li><li><a href="../rhythm/">節奏</a></li></ul>
+      <ul>
+        <li><a href="../rumors/"><span class="n">01</span>起步</a></li>
+        <li><a href="../mindset/"><span class="n">02</span>心態</a></li>
+        <li><a href="../writing/"><span class="n">03</span>寫作</a></li>
+        <li><a href="../rhythm/"><span class="n">04</span>節奏</a></li>
+      </ul>
     </div>
     <div>
       <b>索引</b>
       <ul>
-        <li>H 個選題</a></li>
-        <li><a href="../faq/">常見問題</a></li>
-        <li><a href="../about/">關於</a></li>
-        <li><a href="https://blog.billy4select.com/">回部落格</a></li>
+        <li><a href="../what-to-post/">選題</a></li>
+        <li><a href="../faq/">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <b>說明</b>
+      <ul>
+        <li><a href="../about/">指南導讀</a></li>
+        <li><a href="https://blog.billy4select.com/">回首頁</a></li>
       </ul>
     </div>
   </div>
@@ -454,15 +518,6 @@ img{ max-width:100%; }
   }
   window.addEventListener('scroll',tick,{passive:true});
   window.addEventListener('resize',tick); tick();
-  var els=document.querySelectorAll('.rv');
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)){
-    els.forEach(function(el){ el.classList.add('in'); });
-  } else {
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-    },{rootMargin:'0px 0px -6% 0px'});
-    els.forEach(function(el){ io.observe(el); });
-  }
 })();
 </script>
 

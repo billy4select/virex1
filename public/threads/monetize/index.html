@@ -288,7 +288,8 @@ img{ max-width:100%; }
 
 .foot{ background:#1A1210; color:#C9BDB0; padding:52px 0; font-size:14px; line-height:1.95; font-weight:500; }
 .foot-in{ max-width:1120px; margin:0 auto; padding:0 28px; box-sizing:border-box; display:grid;
-  grid-template-columns:1.5fr 1fr 1fr; gap:36px; }
+  grid-template-columns:1.7fr 1fr .9fr .9fr; gap:32px; }
+.foot .n{ font-size:11.5px; font-weight:700; color:#8E8074; margin-right:4px; letter-spacing:.06em; }
 .foot b{ display:block; color:#F3ECE0; font-family:var(--serif); font-size:15.5px;
   font-weight:600; margin-bottom:12px; letter-spacing:.05em; }
 .foot a:hover{ color:#F3ECE0; }
@@ -296,8 +297,6 @@ img{ max-width:100%; }
 .foot li{ padding:3px 0; }
 
 @media (prefers-reduced-motion:no-preference){
-  .rv{ opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s ease; }
-  .rv.in{ opacity:1; transform:none; }
 }
 
 @media (max-width:1080px){
@@ -322,10 +321,12 @@ img{ max-width:100%; }
 @media (max-width:640px){
   body{ font-size:16px; }
   .wrap, .head-in{ padding-left:20px; padding-right:20px; }
+  .hub-shell{ padding-left:20px; padding-right:20px; }
   .article-grid{ padding-left:20px; padding-right:20px; }
   .grid4{ grid-template-columns:1fr; }
   .head-in{ flex-wrap:wrap; row-gap:6px; padding-bottom:10px; }
-  .nav{ flex-basis:100%; justify-content:flex-start; gap:16px; font-size:12.5px; }
+  .nav{ flex-basis:100%; justify-content:flex-start; gap:12px; font-size:12.5px; }
+  .nav a{ padding:8px 4px; }
   .nav a.back{ display:none; }
   .brand-sub{ display:none; }
   .hero h1{ font-size:23.5px; line-height:1.6; }
@@ -345,6 +346,29 @@ img{ max-width:100%; }
   .band{ padding:40px 0; }
   .read{ max-width:100%; }
 }
+
+/* ── 長文閱讀版：以文字為主，不加特效 ── */
+.art-body{ font-size:18px; line-height:1.98; letter-spacing:.015em; max-width:640px; }
+.art-body p{ margin:0 0 1.3em; }
+.art-body h2{ font-size:23px; margin:52px 0 16px; }
+.art-body h2:first-of-type{ margin-top:32px; }
+.art-body .answer{ font-size:17px; line-height:1.9; }
+.art-body .steps{ margin:10px 0 30px; }
+.art-body .steps li{ font-size:17.5px; line-height:1.9; }
+.art-body .eg{ border-left:0; padding-left:0; font-size:15.5px; margin-top:8px; }
+.art-body .note{ margin:2.2em 0; }
+@media (max-width:640px){
+  .art-body{ font-size:17px; line-height:1.92; }
+  .art-body h2{ font-size:21px; margin-top:44px; }
+}
+
+.art-body .note p, .art-body .note li{ font-size:16px; line-height:1.92; }
+.art-body .note .nlabel{ font-size:11px; letter-spacing:.18em; margin-bottom:10px; }
+.art-body .note p{ margin:0 0 12px; }
+
+.nav a .n{ font-size:11px; font-weight:700; color:var(--muted); margin-right:4px; letter-spacing:.06em; }
+.nav a.on .n{ color:var(--c); }
+@media (max-width:640px){ .nav a .n{ font-size:10px; margin-right:3px; } }
 </style>
 
 </head>
@@ -356,7 +380,7 @@ img{ max-width:100%; }
       <span class="brand-sub">從零開始，寫出真實影響力</span>
     </a>
     <nav class="nav" aria-label="主要導覽">
-      <a href="../rumors/" class="">起步迷思</a><a href="../mindset/" class="">心態</a><a href="../writing/" class="">寫作</a><a href="../rhythm/" class="on">節奏</a><a href="../what-to-post/" class="">10 個選題</a><a href="../faq/" class="">常見問題</a><a class="back" href="https://blog.billy4select.com/">回部落格</a>
+      <a href="../rumors/"><span class="n">01</span>起步</a><a href="../mindset/"><span class="n">02</span>心態</a><a href="../writing/"><span class="n">03</span>寫作</a><a href="../rhythm/" class="on"><span class="n">04</span>節奏</a><a href="../what-to-post/">選題</a><a href="../faq/">FAQ</a><a class="back" href="https://blog.billy4select.com/">回首頁</a>
     </nav>
   </div>
 </header>
@@ -375,51 +399,67 @@ img{ max-width:100%; }
       </header>
 
       <div class="art-body">
-<p class="answer">公開內容提供價值與共鳴，保留一部分細節作為「下一步」。信任累積夠了，轉換會變得很自然。</p>
+<p class="answer"><span class="lbl">先說結論</span>順序只有一個：先讓人認識你、信任你，再自然帶到你的東西。急著推，反而把人推遠。</p>
 
-<p>急著推，反而容易把人推遠。因為在信任還沒建立之前，任何連結都是打擾。</p>
+<p>你有產品、有服務、有一個想導流的網站。你在貼文裡放了連結，也寫了「有興趣私訊」，然後沒有人動。</p>
 
-<h2 id="s1">為什麼「先給」比「先賣」有效</h2>
-<p>讀者願意留下來，是因為你已經給過他東西：一個想法、一句安慰、一個可以馬上用的方法。這時候你再提到自己的服務，他會覺得那是延伸，不是廣告。</p>
+<p>於是你加了更多說明、更多優惠、更多「限時」。結果互動更少，因為整篇文的語氣從「分享」變成了「廣告」。</p>
 
-<h2 id="s2">三種不惹人厭的導流</h2>
+<h2 id="s1">導流不是加連結，是延續對話</h2>
+
+<p>多數人導流失敗，不是產品不好，是順序錯了。你在一段關係還沒建立之前，就要對方做決定。</p>
+
+<p>比較好的順序是：公開內容先給價值與共鳴，讓人覺得「這個人懂我」；再把一部分細節或進階做法，留成「下一步」。</p>
+
+<p>那個「下一步」不用神秘，也不用飢餓行銷。它只是「這裡講完了，如果你想要更具體的做法，我這裡有」。</p>
+
+<p>信任累積夠了，轉換會變得自然；信任不夠，任何 CTA 都像推銷。</p>
+
+<h2 id="s2">三種不惹人厭的導流方式</h2>
+
+<p>這三種都不需要你一直喊「快來買」，但都能把人帶到下一步。</p>
+
 <ol class="steps">
-<li><b>公開 80%，保留 20%。</b>分享大部分教學，把最關鍵的一步或完整流程留給下一步。不是藏私，是讓人有動機再往前。</li>
-<li><b>用「我也這樣解決過」帶出服務。</b>先講你遇到什麼問題、怎麼處理，再說「後來我把這套流程整理成……」。順序反了，味道就變了。</li>
-<li><b>文末低門檻邀請，而不是丟連結。</b>「如果你也有這個困擾，留言聊聊」比「點這裡購買」更容易讓人真的行動。</li>
+<li><b>公開七成，保留三成</b>把觀念、框架、常見錯誤講清楚，把「怎麼套用到你的情況」留給私訊或服務。<span class="eg">例：公開「怎麼判斷選題」，保留「幫你檢一次你的選題」。</span></li>
+<li><b>用經驗取代硬廣</b>不要說產品多好，說你怎麼用它解決了什麼問題、哪一次差點放棄。<span class="eg">例：「我一開始也不信，用了兩週才發現差別在哪。」</span></li>
+<li><b>低門檻邀請，不貼連結</b>文末用一句「如果你也有這個困擾，留言或私訊我，我把我用的方式傳給你」。<span class="eg">例：先換到對話，再談交易，轉換率通常更高。</span></li>
 </ol>
 
+<p>這三種的共同點是：不急。你把門打開，讓想進來的人自己走進來。</p>
+
 <h2 id="s3">「半遮半露」的分寸</h2>
-<p>不是故意不給，而是讓人感覺「你有料，想進一步了解」。差別在你有沒有先給足。給了七分，留三分，讀者會覺得合理；只給一分，就要人買，他會覺得被算計。</p>
 
-<div class="vs">
-<div><span class="x">×</span>完整教學在留言區，私訊我領取。</div>
-<div><span class="o">○</span>這套流程我做過三次才順，最卡的其實是第二步。我先寫了前兩步，第三步有興趣的人再問我。</div>
-</div>
+<p>保留細節很容易走歪，變成「想知道就付費」的吊胃口。那會傷信任。</p>
 
-<h2 id="s4">變現是定位的副產品</h2>
-<p>觀察哪一類文章最常被留言、轉分享，那就是群眾回饋給你的「可變現題材」。不是你想賣什麼，而是他們一直在問什麼。</p>
-<p>用一個主題當主軸，再從內容引導需求，先提供價值，再觀察能不能發展成服務、教學或資訊產品。</p>
+<p>比較健康的做法是：公開的內容本身就完整、可用，讀者照著做也會有成果。你保留的不是「關鍵答案」，而是「個人化調整」。</p>
 
-<h2 id="s5">三種常見的變現形式</h2>
-<p>內容累積夠了，通常會往三個方向走，門檻由低到高：</p>
-<ul>
-<li><b>服務：</b>一對一諮詢、代寫、帳號健檢。信任門檻最低，因為你已經在公開內容裡證明過一次。</li>
-<li><b>教學：</b>課程、工作坊、模板包。需要你把方法整理成別人可以照做的步驟。</li>
-<li><b>資訊產品：</b>電子書、訂閱、社群。需要穩定的主題軸心與長期承諾。</li>
-</ul>
-<p>不要三種同時開。先看哪一種詢問最多，再投入。需求是讀者給的，不是你規劃的。</p>
+<p>因為答案通常不難，難的是套用到自己的情況。你賣的其實是那個判斷，而不是資訊本身。</p>
+
+<p>所以不用怕給太多。給得夠，人才會相信你有能力給更多。</p>
+
+<h2 id="s4">什麼時候適合開始導流</h2>
+
+<p>一個粗略的判斷：當你開始收到「謝謝你，我照著做有用」這種留言時，就可以嘗試了。</p>
+
+<p>在那之前，先專心把內容寫好。因為導流只是把已有的信任轉化，沒有信任，轉化率再優化也沒用。</p>
+
+<p>如果你已經有產品，也不用等「很紅」才提。你可以在日常分享裡自然地提到它，只要主詞是「我怎麼用」，而不是「你快買」。</p>
 
 <div class="note">
-<span class="nlabel">小練習</span>
-<p>挑一篇你的教學文，把其中最關鍵的一步抽出來，改成這樣的結尾：</p>
-<p>「這一步我試了很多次才順，如果你也卡在這裡，留言跟我說，我再寫一篇細的。」</p>
+<span class="nlabel">導流文的三個檢查</span>
+<ul>
+<li>這篇如果完全沒有產品，還值得讀嗎？（要值得）</li>
+<li>有沒有一句是我自己的經驗，而不是產品說明？（要有一句）</li>
+<li>結尾是邀請，還是催促？（要是邀請）</li>
+</ul>
 </div>
 
-<p>別把自己變成推銷員。你只要回到這個問題：「我為什麼會想推薦這個東西？」誠實回答，轉換自然會發生。</p>
+<p>變現不是把讀者變成客戶，是把一段真實的關係，延伸到另一個地方。</p>
+
+<p>你先陪他走一段，他才會願意跟你走下一步。這個順序反了，什麼話術都救不回來。</p>
       </div>
 
-<div class="rel"><small>延伸閱讀</small><ul><li><a href="../selling/">做自己又能賣東西</a><span>寫出自己的心態</span></li><li><a href="../reply/">留言怎麼回</a><span>走得長久的節奏</span></li></ul></div>
+      <div class="rel"><small>延伸閱讀</small><ul><li><a href="../selling/">做自己又能賣東西</a><span>寫出自己的心態</span></li><li><a href="../reply/">留言怎麼回</a><span>走得長久的節奏</span></li></ul></div>
 <div class="pager"><a href="../reply/"><small>上一篇</small><b>留言怎麼回</b></a><a class="right" href="../what-to-post/"><small>下一篇</small><b>10 個起步選題</b></a></div>
     </article>
 <aside class="toc"><div class="toc-title">本頁導覽</div><ol><li><a href="#s1">為什麼「先給」比「先賣」有效</a></li><li><a href="#s2">三種不惹人厭的導流</a></li><li><a href="#s3">「半遮半露」的分寸</a></li><li><a href="#s4">變現是定位的副產品</a></li><li><a href="#s5">三種常見的變現形式</a></li></ol></aside>
@@ -434,15 +474,25 @@ img{ max-width:100%; }
     </div>
     <div>
       <b>主題</b>
-      <ul><li><a href="../rumors/">起步迷思</a></li><li><a href="../mindset/">心態</a></li><li><a href="../writing/">寫作</a></li><li><a href="../rhythm/">節奏</a></li></ul>
+      <ul>
+        <li><a href="../rumors/"><span class="n">01</span>起步</a></li>
+        <li><a href="../mindset/"><span class="n">02</span>心態</a></li>
+        <li><a href="../writing/"><span class="n">03</span>寫作</a></li>
+        <li><a href="../rhythm/"><span class="n">04</span>節奏</a></li>
+      </ul>
     </div>
     <div>
       <b>索引</b>
       <ul>
-        <li>H 個選題</a></li>
-        <li><a href="../faq/">常見問題</a></li>
-        <li><a href="../about/">關於</a></li>
-        <li><a href="https://blog.billy4select.com/">回部落格</a></li>
+        <li><a href="../what-to-post/">選題</a></li>
+        <li><a href="../faq/">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <b>說明</b>
+      <ul>
+        <li><a href="../about/">指南導讀</a></li>
+        <li><a href="https://blog.billy4select.com/">回首頁</a></li>
       </ul>
     </div>
   </div>
@@ -459,15 +509,6 @@ img{ max-width:100%; }
   }
   window.addEventListener('scroll',tick,{passive:true});
   window.addEventListener('resize',tick); tick();
-  var els=document.querySelectorAll('.rv');
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)){
-    els.forEach(function(el){ el.classList.add('in'); });
-  } else {
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-    },{rootMargin:'0px 0px -6% 0px'});
-    els.forEach(function(el){ io.observe(el); });
-  }
 })();
 </script>
 

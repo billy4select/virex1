@@ -365,7 +365,8 @@ img{ max-width:100%; }
 
 .foot{ background:#1A1210; color:#C9BDB0; padding:52px 0; font-size:14px; line-height:1.95; font-weight:500; }
 .foot-in{ max-width:1120px; margin:0 auto; padding:0 28px; box-sizing:border-box; display:grid;
-  grid-template-columns:1.5fr 1fr 1fr; gap:36px; }
+  grid-template-columns:1.7fr 1fr .9fr .9fr; gap:32px; }
+.foot .n{ font-size:11.5px; font-weight:700; color:#8E8074; margin-right:4px; letter-spacing:.06em; }
 .foot b{ display:block; color:#FFF8F2; font-family:var(--serif); font-size:16.5px;
   font-weight:700; margin-bottom:12px; letter-spacing:.04em; }
 .foot a:hover{ color:#F3ECE0; }
@@ -378,28 +379,8 @@ img{ max-width:100%; }
 .site-head{ transition:box-shadow .25s ease, background .25s ease; }
 .site-head.is-scrolled{ box-shadow:0 4px 20px -8px rgba(26,18,16,.14); background:rgba(255,251,247,.98); }
 
-.hero-art{ will-change:transform; transition:transform .1s linear; }
-.hero-parallax-layer{ will-change:transform; }
 
-@media (prefers-reduced-motion:no-preference){
-  .rv{ opacity:0; transform:translateY(28px); transition:opacity .85s cubic-bezier(.22,1,.36,1), transform .85s cubic-bezier(.22,1,.36,1); }
-  .rv.in{ opacity:1; transform:none; }
 
-  .rv-stagger > *{ opacity:0; transform:translateY(22px);
-    transition:opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
-  .rv.in.rv-stagger > *:nth-child(1){ transition-delay:.05s; }
-  .rv.in.rv-stagger > *:nth-child(2){ transition-delay:.14s; }
-  .rv.in.rv-stagger > *:nth-child(3){ transition-delay:.23s; }
-  .rv.in.rv-stagger > *:nth-child(4){ transition-delay:.32s; }
-  .rv.in.rv-stagger > *{ opacity:1; transform:none; }
-
-  .band blockquote{ transition:transform .4s ease; }
-}
-
-@media (prefers-reduced-motion:reduce){
-  .rv, .rv-stagger > *{ opacity:1; transform:none; transition:none; }
-  .hero-art{ transform:none !important; }
-}
 
 @media (max-width:1080px){
   .article-grid{ grid-template-columns:minmax(0,1fr); gap:0; }
@@ -426,10 +407,12 @@ img{ max-width:100%; }
 @media (max-width:640px){
   body{ font-size:16.5px; }
   .wrap, .head-in{ padding-left:20px; padding-right:20px; }
+  .hub-shell{ padding-left:20px; padding-right:20px; }
   .article-grid{ padding-left:20px; padding-right:20px; }
   .grid4{ grid-template-columns:1fr; }
   .head-in{ flex-wrap:wrap; row-gap:6px; padding-bottom:10px; }
-  .nav{ flex-basis:100%; justify-content:flex-start; gap:16px; font-size:12.5px; }
+  .nav{ flex-basis:100%; justify-content:flex-start; gap:12px; font-size:12.5px; }
+  .nav a{ padding:8px 4px; }
   .nav a.back{ display:none; }
   .brand-sub{ display:none; }
   .hero h1{ font-size:23.5px; line-height:1.6; }
@@ -449,6 +432,10 @@ img{ max-width:100%; }
   .band{ padding:40px 0; }
   .read{ max-width:100%; }
 }
+
+.nav a .n{ font-size:11px; font-weight:700; color:var(--muted); margin-right:4px; letter-spacing:.06em; }
+.nav a.on .n{ color:var(--c); }
+@media (max-width:640px){ .nav a .n{ font-size:10px; margin-right:3px; } }
 </style>
 
 </head>
@@ -460,7 +447,7 @@ img{ max-width:100%; }
       <span class="brand-sub">從零開始，寫出真實影響力</span>
     </a>
     <nav class="nav" aria-label="主要導覽">
-      <a href="rumors/" class="">起步迷思</a><a href="mindset/" class="">心態</a><a href="writing/" class="">寫作</a><a href="rhythm/" class="">節奏</a><a href="what-to-post/" class="">10 個選題</a><a href="faq/" class="">常見問題</a><a class="back" href="https://blog.billy4select.com/">回部落格</a>
+      <a href="rumors/"><span class="n">01</span>起步</a><a href="mindset/"><span class="n">02</span>心態</a><a href="writing/"><span class="n">03</span>寫作</a><a href="rhythm/"><span class="n">04</span>節奏</a><a href="what-to-post/">選題</a><a href="faq/">FAQ</a><a class="back" href="https://blog.billy4select.com/">回首頁</a>
     </nav>
   </div>
 </header>
@@ -502,7 +489,7 @@ img{ max-width:100%; }
         <h2 class="h2" style="margin-top:14px;">不是多會寫，是能走下去</h2>
       </div>
     </div>
-    <div class="outcome-row rv rv-stagger">
+    <div class="outcome-row">
       <div class="outcome">
         <b>敢開始</b>
         <p>看清「不夠專業」「沒人看」為什麼不是停寫的理由。</p>
@@ -519,7 +506,7 @@ img{ max-width:100%; }
   </div>
 
   <!-- 主決策：心結三選一 -->
-  <div class="wrap sec rv" id="start-here">
+  <div class="wrap sec" id="start-here">
     <div class="sec-head">
       <div>
         <div class="eyebrow">只選一個</div>
@@ -527,12 +514,12 @@ img{ max-width:100%; }
       </div>
       <p>點最像你心裡的話。這三句幾乎是所有新手的第一道牆。</p>
     </div>
-    <div class="stuck rv rv-stagger">
+    <div class="stuck">
       <a class="stuck-card" href="not-pro/">
         <span class="stuck-tag">最常見</span>
         <h4>「我還不夠專業，好像沒資格寫。」</h4>
         <p>專業不是入場券，願意開始才是。正在發生的過程，就是最好的素材。</p>
-        <span class="stuck-go">開始閱讀 · 4 分鐘</span>
+        <span class="stuck-go">開始閱讀 · 6 分鐘</span>
       </a>
       <a class="stuck-card" href="nobody-sees/">
         <span class="stuck-tag">最常放棄</span>
@@ -544,14 +531,14 @@ img{ max-width:100%; }
         <span class="stuck-tag">最常空白</span>
         <h4>「我想寫，可是不知道寫什麼。」</h4>
         <p>你不是沒內容，只是還沒找到讓你說話的起點。</p>
-        <span class="stuck-go">開始閱讀 · 6 分鐘</span>
+        <span class="stuck-go">開始閱讀 · 4 分鐘</span>
       </a>
     </div>
     <p class="path-hint">多數人先拆掉其中一道牆，就開始寫了。技巧可以之後再補；心結不拆，寫再多也容易停。</p>
   </div>
 
   <!-- 主題路徑 -->
-  <div class="wrap sec rv">
+  <div class="wrap sec">
     <div class="sec-head">
       <div>
         <div class="eyebrow">想一次看完</div>
@@ -559,7 +546,7 @@ img{ max-width:100%; }
       </div>
       <p>想一次看完再開始，從這裡進。每個主題處理一種卡住的方式。</p>
     </div>
-    <div class="grid4 rv rv-stagger">
+    <div class="grid4">
       <article class="chap" style="--a:#FF6600">
         <span class="chap-no">主題</span>
         <h3><a href="rumors/">起步迷思</a></h3>
@@ -607,8 +594,8 @@ img{ max-width:100%; }
   </div>
 
   <!-- 次要入口 -->
-  <div class="wrap sec rv side-entries">
-    <div class="side-row rv rv-stagger">
+  <div class="wrap sec side-entries">
+    <div class="side-row">
       <a class="side-link" href="faq/">
         <span class="side-k">有具體問題</span>
         <span class="side-t">常見問題整理 →</span>
@@ -625,7 +612,7 @@ img{ max-width:100%; }
   </div>
 
   <!-- 引流輕出口 + 角色 -->
-  <div class="wrap sec rv role-band">
+  <div class="wrap sec role-band">
     <div class="role-grid">
       <div>
         <div class="eyebrow">為什麼是心態，不是技巧</div>
@@ -633,7 +620,7 @@ img{ max-width:100%; }
         <p class="role-p">很多新手要的不是另一套開頭句型，而是搞懂：為什麼一想到發文就停住、為什麼寫著寫著就不像自己。這份指南從行銷與經營的角度，先處理這些心結。</p>
         <p class="role-p">當你開始寫、開始經營之後，若卡在定位、內容方向或變現結構，那是執行與策略的問題——可以再找我一起看。</p>
         <div class="role-actions">
-          <a class="btn ghost" href="about/">關於這份指南</a>
+          <a class="btn ghost" href="about/">指南導讀</a>
           <a class="btn ghost" href="https://blog.billy4select.com/">回部落格・認識作者</a>
         </div>
       </div>
@@ -652,7 +639,7 @@ img{ max-width:100%; }
   <!-- 發文前檢查：改為心態向 -->
   <div class="tool-band">
     <div class="wrap">
-      <div class="tool-in rv">
+      <div class="tool-in">
         <div class="tool-copy">
           <div class="eyebrow" style="margin-bottom:16px;">發文前 · 心態檢查</div>
           <h2>這篇，還是你在說話嗎？</h2>
@@ -717,15 +704,25 @@ img{ max-width:100%; }
     </div>
     <div>
       <b>主題</b>
-      <ul><li><a href="rumors/">起步迷思</a></li><li><a href="mindset/">心態</a></li><li><a href="writing/">寫作</a></li><li><a href="rhythm/">節奏</a></li></ul>
+      <ul>
+        <li><a href="rumors/"><span class="n">01</span>起步</a></li>
+        <li><a href="mindset/"><span class="n">02</span>心態</a></li>
+        <li><a href="writing/"><span class="n">03</span>寫作</a></li>
+        <li><a href="rhythm/"><span class="n">04</span>節奏</a></li>
+      </ul>
     </div>
     <div>
       <b>索引</b>
       <ul>
-        <li>H 個選題</a></li>
-        <li><a href="faq/">常見問題</a></li>
-        <li><a href="about/">關於</a></li>
-        <li><a href="https://blog.billy4select.com/">回部落格</a></li>
+        <li><a href="what-to-post/">選題</a></li>
+        <li><a href="faq/">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <b>說明</b>
+      <ul>
+        <li><a href="about/">指南導讀</a></li>
+        <li><a href="https://blog.billy4select.com/">回首頁</a></li>
       </ul>
     </div>
   </div>
@@ -734,10 +731,8 @@ img{ max-width:100%; }
 <div class="pbar"><i id="pbar"></i></div>
 <script>
 (function(){
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var bar = document.getElementById('pbar');
   var head = document.querySelector('.site-head');
-  var heroArt = document.getElementById('heroArt');
   var ticking = false;
 
   function onScroll(){
@@ -747,11 +742,6 @@ img{ max-width:100%; }
     var p = max > 0 ? Math.min(1, y / max) : 0;
     if(bar) bar.style.width = (p * 100) + '%';
     if(head) head.classList.toggle('is-scrolled', y > 12);
-    if(heroArt && !reduce){
-      // subtle parallax: art moves slower than scroll
-      var shift = Math.min(y * 0.22, 90);
-      heroArt.style.transform = 'translate3d(0,' + shift + 'px,0)';
-    }
   }
 
   function requestTick(){
@@ -764,21 +754,6 @@ img{ max-width:100%; }
   window.addEventListener('scroll', requestTick, {passive:true});
   window.addEventListener('resize', onScroll);
   onScroll();
-
-  var els = document.querySelectorAll('.rv');
-  if(reduce || !('IntersectionObserver' in window)){
-    els.forEach(function(el){ el.classList.add('in'); });
-  } else {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){
-          e.target.classList.add('in');
-          io.unobserve(e.target);
-        }
-      });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-    els.forEach(function(el){ io.observe(el); });
-  }
 })();
 </script>
 

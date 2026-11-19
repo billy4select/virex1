@@ -288,7 +288,8 @@ img{ max-width:100%; }
 
 .foot{ background:#1A1210; color:#C9BDB0; padding:52px 0; font-size:14px; line-height:1.95; font-weight:500; }
 .foot-in{ max-width:1120px; margin:0 auto; padding:0 28px; box-sizing:border-box; display:grid;
-  grid-template-columns:1.5fr 1fr 1fr; gap:36px; }
+  grid-template-columns:1.7fr 1fr .9fr .9fr; gap:32px; }
+.foot .n{ font-size:11.5px; font-weight:700; color:#8E8074; margin-right:4px; letter-spacing:.06em; }
 .foot b{ display:block; color:#F3ECE0; font-family:var(--serif); font-size:15.5px;
   font-weight:600; margin-bottom:12px; letter-spacing:.05em; }
 .foot a:hover{ color:#F3ECE0; }
@@ -296,8 +297,6 @@ img{ max-width:100%; }
 .foot li{ padding:3px 0; }
 
 @media (prefers-reduced-motion:no-preference){
-  .rv{ opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s ease; }
-  .rv.in{ opacity:1; transform:none; }
 }
 
 @media (max-width:1080px){
@@ -322,10 +321,12 @@ img{ max-width:100%; }
 @media (max-width:640px){
   body{ font-size:16px; }
   .wrap, .head-in{ padding-left:20px; padding-right:20px; }
+  .hub-shell{ padding-left:20px; padding-right:20px; }
   .article-grid{ padding-left:20px; padding-right:20px; }
   .grid4{ grid-template-columns:1fr; }
   .head-in{ flex-wrap:wrap; row-gap:6px; padding-bottom:10px; }
-  .nav{ flex-basis:100%; justify-content:flex-start; gap:16px; font-size:12.5px; }
+  .nav{ flex-basis:100%; justify-content:flex-start; gap:12px; font-size:12.5px; }
+  .nav a{ padding:8px 4px; }
   .nav a.back{ display:none; }
   .brand-sub{ display:none; }
   .hero h1{ font-size:23.5px; line-height:1.6; }
@@ -345,6 +346,29 @@ img{ max-width:100%; }
   .band{ padding:40px 0; }
   .read{ max-width:100%; }
 }
+
+/* ── 長文閱讀版：以文字為主，不加特效 ── */
+.art-body{ font-size:18px; line-height:1.98; letter-spacing:.015em; max-width:640px; }
+.art-body p{ margin:0 0 1.3em; }
+.art-body h2{ font-size:23px; margin:52px 0 16px; }
+.art-body h2:first-of-type{ margin-top:32px; }
+.art-body .answer{ font-size:17px; line-height:1.9; }
+.art-body .steps{ margin:10px 0 30px; }
+.art-body .steps li{ font-size:17.5px; line-height:1.9; }
+.art-body .eg{ border-left:0; padding-left:0; font-size:15.5px; margin-top:8px; }
+.art-body .note{ margin:2.2em 0; }
+@media (max-width:640px){
+  .art-body{ font-size:17px; line-height:1.92; }
+  .art-body h2{ font-size:21px; margin-top:44px; }
+}
+
+.art-body .note p, .art-body .note li{ font-size:16px; line-height:1.92; }
+.art-body .note .nlabel{ font-size:11px; letter-spacing:.18em; margin-bottom:10px; }
+.art-body .note p{ margin:0 0 12px; }
+
+.nav a .n{ font-size:11px; font-weight:700; color:var(--muted); margin-right:4px; letter-spacing:.06em; }
+.nav a.on .n{ color:var(--c); }
+@media (max-width:640px){ .nav a .n{ font-size:10px; margin-right:3px; } }
 </style>
 
 </head>
@@ -356,7 +380,7 @@ img{ max-width:100%; }
       <span class="brand-sub">從零開始，寫出真實影響力</span>
     </a>
     <nav class="nav" aria-label="主要導覽">
-      <a href="../rumors/" class="">起步迷思</a><a href="../mindset/" class="on">心態</a><a href="../writing/" class="">寫作</a><a href="../rhythm/" class="">節奏</a><a href="../what-to-post/" class="">10 個選題</a><a href="../faq/" class="">常見問題</a><a class="back" href="https://blog.billy4select.com/">回部落格</a>
+      <a href="../rumors/"><span class="n">01</span>起步</a><a href="../mindset/" class="on"><span class="n">02</span>心態</a><a href="../writing/"><span class="n">03</span>寫作</a><a href="../rhythm/"><span class="n">04</span>節奏</a><a href="../what-to-post/">選題</a><a href="../faq/">FAQ</a><a class="back" href="https://blog.billy4select.com/">回首頁</a>
     </nav>
   </div>
 </header>
@@ -375,44 +399,67 @@ img{ max-width:100%; }
       </header>
 
       <div class="art-body">
-<p class="answer">讓人記得你，不是因為你講得多厲害，而是他看完你的一句話，心裡「亮」了一下。</p>
+<p class="answer"><span class="lbl">先說結論</span>讓人記住你的，不是你講得多完整，而是他看完之後心裡「亮」了一下。那個微小的位移，才是影響力的起點。</p>
 
-<p>費盡心力寫了一篇，邏輯完整、結構清楚，然後大家看完就忘了。這很常見，因為我們常以為「寫得夠好，別人就會記得」，但記得是另一回事。</p>
+<p>你花了兩個小時寫一篇，邏輯清楚、例子完整、還修了三次字。發出去，二十個讚，零留言。隔天你自己都想不起來寫過什麼。</p>
+
+<p>這種失落很常見，因為我們默默相信一個公式：寫得夠好 → 別人就會記得我。但這個公式少了一個變數。</p>
 
 <h2 id="s1">「亮一下」是什麼感覺</h2>
-<p>是一種微微的改變。原本卡住的，突然懂了；原本覺得孤單的，覺得被理解了；原本沒動力的，開始想試試看。</p>
-<p>這些都不是大改變，但就是那一句「欸，我好像可以不一樣了」。這種小小的心理位移，就是價值的起點。</p>
 
-<h2 id="s2">從「我懂什麼」改成「他想改變什麼」</h2>
-<p>Threads 不是在講「我懂什麼」，而是讓人有沒有想改變什麼。你不用講得多完整，只要問一句：看完這篇，讀者會不會有一個小念頭——「我要去做點什麼」？</p>
-<p>哪怕只是想打開筆電寫一段、想重新整理筆記、想留言問你一個問題，這些行動就代表你產生了影響力。</p>
-<p>小影響 × 穩定累積 = 被記住。真正建立信任的，是你穩定帶來的那些小改變。</p>
+<p>它不是大徹大悟，是微微的位移。原本卡住的，突然懂了；原本覺得孤單的，覺得被理解了；原本沒動力的，開始想試試看。</p>
 
-<h2 id="s3">分享「我怎麼做到的」，比說你「多厲害」更有力</h2>
-<p>我們常以為要很專業、很有料，才讓人願意信任。但真正讓人留下來的，是你願不願意分享：你是怎麼走過來的？怎麼發現這方法有效？為什麼你會這樣做？</p>
+<p>那一刻很短，短到對方可能不會留言。但他會記得「有一篇文讓我那天好過一點」，然後在某個時刻想起你。</p>
 
-<div class="vs">
-<div><span class="x">×</span>我用三個月做到十萬追蹤，方法如下。</div>
-<div><span class="o">○</span>前十篇根本沒人看。後來我只改了一件事：每篇只練一個開頭。</div>
-</div>
+<p>所以真正該設計的不是「我要講多完整」，而是「讀者看完會想做點什麼」。哪怕只是打開筆電寫一段、重新整理一下筆記、多觀察自己一天，那都算。</p>
 
-<p>我們更願意相信一個「走過來的人」，而不是一個「高高在上的人」。你正在經歷的過程，本身就能幫助到正在掙扎的人。</p>
-<p>尤其是有產品、有服務的人：讓人相信「我也做得到」，比證明「我很棒」更有轉換力。</p>
+<p>影響力不是說服，是讓人心裡冒出一個「嗯，我好像可以……」。</p>
 
-<h2 id="s4">素材從哪裡來</h2>
-<p>想寫又寫不出來時，問自己：「最近我在哪件事上，有沒有什麼小突破？」「這段過程中，我學到什麼、發現什麼、修正什麼？」把這三個拆開來寫，就是你的素材庫。</p>
+<h2 id="s2">三個會讓人「亮一下」的瞬間</h2>
+
+<p>你可以從這三種句型下手，它們都很容易產生位移。</p>
+
+<ol class="steps">
+<li><b>把責備換成理解</b>「你不是懶，你只是把標準訂得自己都做不到。」<span class="eg">效果：對方鬆了一口氣，因為終於有人替他說話。</span></li>
+<li><b>把抽象換成畫面</b>「你有沒有試過，打開編輯器，打了三行，全部刪掉，然後關掉手機。」<span class="eg">效果：他會笑出來，因為那就是他昨天做的事。</span></li>
+<li><b>把結論換成一個小動作</b>「今天先不要想主題，寫你昨天最想抱怨的那件事，寫三句。」<span class="eg">效果：他真的有地方可以開始，而不是又被灌了一碗雞湯。</span></li>
+</ol>
+
+<p>這三種都不需要你很專業，只需要你記得自己卡住時，希望別人怎麼跟你說話。</p>
+
+<h2 id="s3">小影響 × 穩定累積 = 被記住</h2>
+
+<p>很多人誤會「建立個人品牌」，以為要內容很專業、資訊很滿、格局很大。但真正建立信任的，是你穩定帶來的那些小改變。</p>
+
+<p>像這種留言才是資產：「你這篇救了我今天的低潮。」「我也有一樣的困擾，謝謝你分享。」「看到你這樣說，我比較不焦慮了。」</p>
+
+<p>不是華麗的讚美，而是具體的幫助。被點亮過一次的人，很容易回來看第二次、第三次。三十個這樣的人，比三千個路過的讚更有用。</p>
+
+<h2 id="s4">分享「我怎麼做到的」，比「我多厲害」更有力</h2>
+
+<p>這是同一個道理的另一面。我們更願意相信一個「走過來的人」，而不是一個「高高在上的人」。</p>
+
+<p>所以不要急著證明自己很懂，先講你怎麼走過來的：你原本用什麼方法、撞到什麼牆、後來改成什麼、現在還在調整什麼。</p>
+
+<p>這個結構有一種天然的信任感，因為它不要求對方仰望，只邀請他對照。</p>
 
 <div class="note">
-<span class="nlabel">發文前檢查</span>
-<p>寫完不要急著發。問自己一句：</p>
+<span class="nlabel">發文前的一句話檢查</span>
+<p>寫完之後，不要急著發。問自己：</p>
 <p><b>「這篇裡面，有哪一句話，可能會讓對方心裡亮一下？」</b></p>
-<p>如果沒有，試著重寫一句。不需要更專業，而是更貼近人心。</p>
+<p>如果找不到，不要加更多內容，而是重寫其中一句。不是寫得更專業，是寫得更貼近人。</p>
 </div>
 
-<p>有些話我們不記得是誰說的，但那個「我當時突然懂了」的瞬間，一輩子都不會忘。你要寫的，就是那一句。</p>
+<h2 id="s5">你不需要被佩服，只需要被需要</h2>
+
+<p>有些話我們不記得是誰說的，但那個「我當時突然懂了」的瞬間，一輩子都不會忘。</p>
+
+<p>你要做的，就是成為那個提供瞬間的人。一次一點點，久了就會有人說：「我都在等你的文。」</p>
+
+<p>那時候你就會知道，被記住從來不是因為你有多厲害，而是因為你曾經讓誰覺得，自己可以再往前走一點。</p>
       </div>
 
-<div class="rel"><small>延伸閱讀</small><ul><li><a href="../value-types/">情緒、認知、資訊三種價值</a><span>寫出自己的心態</span></li><li><a href="../selling/">做自己又能賣東西</a><span>寫出自己的心態</span></li></ul></div>
+      <div class="rel"><small>延伸閱讀</small><ul><li><a href="../value-types/">情緒、認知、資訊三種價值</a><span>寫出自己的心態</span></li><li><a href="../selling/">做自己又能賣東西</a><span>寫出自己的心態</span></li></ul></div>
 <div class="pager"><a href="../value-types/"><small>上一篇</small><b>情緒、認知、資訊三種價值</b></a><a class="right" href="../selling/"><small>下一篇</small><b>做自己又能賣東西</b></a></div>
     </article>
 <aside class="toc"><div class="toc-title">本頁導覽</div><ol><li><a href="#s1">「亮一下」是什麼感覺</a></li><li><a href="#s2">從「我懂什麼」改成「他想改變什麼」</a></li><li><a href="#s3">分享「我怎麼做到的」，比說你「多厲害」更有力</a></li><li><a href="#s4">素材從哪裡來</a></li></ol></aside>
@@ -427,15 +474,25 @@ img{ max-width:100%; }
     </div>
     <div>
       <b>主題</b>
-      <ul><li><a href="../rumors/">起步迷思</a></li><li><a href="../mindset/">心態</a></li><li><a href="../writing/">寫作</a></li><li><a href="../rhythm/">節奏</a></li></ul>
+      <ul>
+        <li><a href="../rumors/"><span class="n">01</span>起步</a></li>
+        <li><a href="../mindset/"><span class="n">02</span>心態</a></li>
+        <li><a href="../writing/"><span class="n">03</span>寫作</a></li>
+        <li><a href="../rhythm/"><span class="n">04</span>節奏</a></li>
+      </ul>
     </div>
     <div>
       <b>索引</b>
       <ul>
-        <li>H 個選題</a></li>
-        <li><a href="../faq/">常見問題</a></li>
-        <li><a href="../about/">關於</a></li>
-        <li><a href="https://blog.billy4select.com/">回部落格</a></li>
+        <li><a href="../what-to-post/">選題</a></li>
+        <li><a href="../faq/">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <b>說明</b>
+      <ul>
+        <li><a href="../about/">指南導讀</a></li>
+        <li><a href="https://blog.billy4select.com/">回首頁</a></li>
       </ul>
     </div>
   </div>
@@ -452,15 +509,6 @@ img{ max-width:100%; }
   }
   window.addEventListener('scroll',tick,{passive:true});
   window.addEventListener('resize',tick); tick();
-  var els=document.querySelectorAll('.rv');
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)){
-    els.forEach(function(el){ el.classList.add('in'); });
-  } else {
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-    },{rootMargin:'0px 0px -6% 0px'});
-    els.forEach(function(el){ io.observe(el); });
-  }
 })();
 </script>
 

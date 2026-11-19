@@ -288,7 +288,8 @@ img{ max-width:100%; }
 
 .foot{ background:#1A1210; color:#C9BDB0; padding:52px 0; font-size:14px; line-height:1.95; font-weight:500; }
 .foot-in{ max-width:1120px; margin:0 auto; padding:0 28px; box-sizing:border-box; display:grid;
-  grid-template-columns:1.5fr 1fr 1fr; gap:36px; }
+  grid-template-columns:1.7fr 1fr .9fr .9fr; gap:32px; }
+.foot .n{ font-size:11.5px; font-weight:700; color:#8E8074; margin-right:4px; letter-spacing:.06em; }
 .foot b{ display:block; color:#F3ECE0; font-family:var(--serif); font-size:15.5px;
   font-weight:600; margin-bottom:12px; letter-spacing:.05em; }
 .foot a:hover{ color:#F3ECE0; }
@@ -296,8 +297,6 @@ img{ max-width:100%; }
 .foot li{ padding:3px 0; }
 
 @media (prefers-reduced-motion:no-preference){
-  .rv{ opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s ease; }
-  .rv.in{ opacity:1; transform:none; }
 }
 
 @media (max-width:1080px){
@@ -322,10 +321,12 @@ img{ max-width:100%; }
 @media (max-width:640px){
   body{ font-size:16px; }
   .wrap, .head-in{ padding-left:20px; padding-right:20px; }
+  .hub-shell{ padding-left:20px; padding-right:20px; }
   .article-grid{ padding-left:20px; padding-right:20px; }
   .grid4{ grid-template-columns:1fr; }
   .head-in{ flex-wrap:wrap; row-gap:6px; padding-bottom:10px; }
-  .nav{ flex-basis:100%; justify-content:flex-start; gap:16px; font-size:12.5px; }
+  .nav{ flex-basis:100%; justify-content:flex-start; gap:12px; font-size:12.5px; }
+  .nav a{ padding:8px 4px; }
   .nav a.back{ display:none; }
   .brand-sub{ display:none; }
   .hero h1{ font-size:23.5px; line-height:1.6; }
@@ -345,6 +346,29 @@ img{ max-width:100%; }
   .band{ padding:40px 0; }
   .read{ max-width:100%; }
 }
+
+/* ── 長文閱讀版：以文字為主，不加特效 ── */
+.art-body{ font-size:18px; line-height:1.98; letter-spacing:.015em; max-width:640px; }
+.art-body p{ margin:0 0 1.3em; }
+.art-body h2{ font-size:23px; margin:52px 0 16px; }
+.art-body h2:first-of-type{ margin-top:32px; }
+.art-body .answer{ font-size:17px; line-height:1.9; }
+.art-body .steps{ margin:10px 0 30px; }
+.art-body .steps li{ font-size:17.5px; line-height:1.9; }
+.art-body .eg{ border-left:0; padding-left:0; font-size:15.5px; margin-top:8px; }
+.art-body .note{ margin:2.2em 0; }
+@media (max-width:640px){
+  .art-body{ font-size:17px; line-height:1.92; }
+  .art-body h2{ font-size:21px; margin-top:44px; }
+}
+
+.art-body .note p, .art-body .note li{ font-size:16px; line-height:1.92; }
+.art-body .note .nlabel{ font-size:11px; letter-spacing:.18em; margin-bottom:10px; }
+.art-body .note p{ margin:0 0 12px; }
+
+.nav a .n{ font-size:11px; font-weight:700; color:var(--muted); margin-right:4px; letter-spacing:.06em; }
+.nav a.on .n{ color:var(--c); }
+@media (max-width:640px){ .nav a .n{ font-size:10px; margin-right:3px; } }
 </style>
 
 </head>
@@ -356,7 +380,7 @@ img{ max-width:100%; }
       <span class="brand-sub">從零開始，寫出真實影響力</span>
     </a>
     <nav class="nav" aria-label="主要導覽">
-      <a href="../rumors/" class="">起步迷思</a><a href="../mindset/" class="">心態</a><a href="../writing/" class="">寫作</a><a href="../rhythm/" class="on">節奏</a><a href="../what-to-post/" class="">10 個選題</a><a href="../faq/" class="">常見問題</a><a class="back" href="https://blog.billy4select.com/">回部落格</a>
+      <a href="../rumors/"><span class="n">01</span>起步</a><a href="../mindset/"><span class="n">02</span>心態</a><a href="../writing/"><span class="n">03</span>寫作</a><a href="../rhythm/" class="on"><span class="n">04</span>節奏</a><a href="../what-to-post/">選題</a><a href="../faq/">FAQ</a><a class="back" href="https://blog.billy4select.com/">回首頁</a>
     </nav>
   </div>
 </header>
@@ -369,54 +393,78 @@ img{ max-width:100%; }
         <div class="art-kicker">節奏</div>
         <h1>Threads 一週要發幾篇？先訂一個你做得到的頻率</h1>
         <div class="art-meta">
-          <span>閱讀約 3 分鐘</span>
+          <span>閱讀約 4 分鐘</span>
           <span>最後更新 2026.11.19</span>
         </div>
       </header>
 
       <div class="art-body">
-<p class="answer">先訂一個你真的做得到的數字，例如每週三篇。小而穩定，勝過大而完美。</p>
+<p class="answer"><span class="lbl">先說結論</span>不用每天發。先訂一個你在最忙、最累的那週也做得到的頻率，然後守住它。小而穩定，勝過大而完美。</p>
 
-<p>很多人起步時很熱情，寫了幾天就停下來。原因通常不是懶，而是「沒有可執行的節奏」。</p>
+<p>第一週，你發了七篇，覺得自己終於開始了。第二週發四篇，第三週兩篇，第四週你打開編輯器，看了一眼，關掉。</p>
 
-<h2 id="s1">為什麼「每天一篇」通常會失敗</h2>
-<p>起步的熱情大概只夠撐五天。斷掉之後的罪惡感，比從來沒開始還傷。你會開始覺得「我就是做不到」，然後連原本想寫的東西都不想寫了。</p>
-<p>頻率訂太高，等於一開始就給自己設了一個會失敗的局。</p>
+<p>然後你得出一個結論：「我果然沒有毅力。」但問題通常不是毅力，是節奏一開始就設計得太滿。</p>
 
-<h2 id="s2">三個可執行的設計</h2>
+<h2 id="s1">為什麼「每天一篇」幾乎都會斷</h2>
+
+<p>因為它預設了一件不存在的事：你每天都會有靈感、有時間、有心情。</p>
+
+<p>真實情況是，你會有加班的日子、生病的日子、什麼都不想說的日子。只要有一天斷掉，那個「連續」就破了，而人一旦覺得「已經失敗了」，通常就不會再撿回來。</p>
+
+<p>還有一個更隱蔽的原因：每天發的壓力，會讓你開始生產「交差文」。品質下降之後，你更不想發，於是斷得更快。</p>
+
+<p>所以節奏的重點不是產量，而是讓寫作成為生活的一部分，而不是額外的壓力。</p>
+
+<h2 id="s2">三個讓節奏活下來的設計</h2>
+
+<p>這三件事做完，你的頻率才會是真的，而不是願望。</p>
+
 <ol class="steps">
-<li><b>訂你真的做得到的頻率。</b>不是理想中的每天一篇，是「就算加班那天也寫得出來」的數字。每週三篇比每天一篇更容易活下來。</li>
-<li><b>建立題目庫。</b>把會被問的問題、正在學的事、最近卡關的小事寫成清單。要寫的時候直接抽，減少空白焦慮。</li>
-<li><b>允許自己有輕量日。</b>有時候只發一句觀察、一個小反思，也算在節奏裡。不是每篇都要完整。</li>
+<li><b>先訂低標，不訂理想</b>問自己：「最忙的那一週，我還做得到幾篇？」那個數字就是你的頻率。<span class="eg">例：你覺得一週三篇剛好，那就先訂兩篇，留一格緩衝。</span></li>
+<li><b>建一個題目庫</b>把被問過的問題、正在學的事、最近卡關的小事寫成清單。要寫的時候直接抽，不用從空白開始。<span class="eg">例：手機備忘錄開一則「最近在想的事」，想到就丟一句，週末再整理。</span></li>
+<li><b>允許輕量日</b>有時候只發一句觀察、一個小反思，也算在節奏裡。不是每篇都要有完整結構。<span class="eg">例：「今天發現，我寫不出來的時候通常不是沒靈感，是太累。」一句就夠。</span></li>
 </ol>
 
-<h2 id="s3">節奏的重點不是產量</h2>
-<p>是讓寫作成為你生活的一部分，而不是額外的壓力。穩定三篇寫三個月，勝過猛發兩週然後消失半年。</p>
-<p>平台需要的也不是你一次給很多，而是「這個人會一直出現」的訊號。</p>
+<p>這三個設計的核心是同件事：把「要不要寫」的決定，提前做完。決定的次數越少，你越容易持續。</p>
 
-<h2 id="s4">怎麼知道頻率對不對</h2>
-<div class="vs">
-<div><span class="x">×</span>每週都要熬夜補進度，發完只想躺平。</div>
-<div><span class="o">○</span>常常有話想說但還沒發，餘裕讓你想得起下一題。</div>
-</div>
-<p>如果每次發文都像交作業，頻率太高；如果你常常有想法但沒地方放，可以再加一點。</p>
+<h2 id="s3">節奏不是產量，是可預期</h2>
 
-<h2 id="s5">讓頻率變成習慣，而不是決心</h2>
-<p>把它綁在既有的生活節點上：通勤的最後五分鐘、睡前十分鐘、週日下午。習慣需要的是位置，不是意志力。</p>
+<p>讀者不會因為你一天發五篇就愛上你，但會因為你每週二、五都出現，慢慢養成「來看看你說什麼」的習慣。</p>
 
-<h2 id="s6">中斷了，怎麼回來</h2>
-<p>中斷不可怕，可怕的是把它解讀成「我又失敗了」。很多人一斷掉就開始補進度，一次面對十篇的壓力，然後再放棄第二次。</p>
-<p>比較好的做法是：不要補，直接寫下一篇。照原本的頻率發，節奏自己會接回來。</p>
+<p>這就是為什麼「固定」比「頻繁」重要。固定會累積期待，頻繁只會累積疲勞。</p>
+
+<p>你不需要很會寫，你只需要讓人在同一個時間，找得到你。</p>
+
+<p>如果你真的想加速，也不要加「篇數」，加「深度」。一週兩篇但每篇都有人留言，勝過七篇都沒有人記得。</p>
+
+<h2 id="s4">低潮的時候，最小行動是什麼</h2>
+
+<p>一定會有一陣子，你什麼都不想寫。那時候不要用「我就是不行」結案，先設計一個小到不費力的動作。</p>
 
 <div class="note">
-<span class="nlabel">現在寫下來</span>
-<p>一、這週我真做得到的篇數：＿＿ 篇。</p>
-<p>二、我打算在什麼時候寫：＿＿。</p>
-<p>三、先寫下三個題目（不用完整，關鍵字就好）。</p>
+<span class="nlabel">斷更時的三個最小行動</span>
+<ul>
+<li>只回留言，不發文。維持「還在」的訊號。</li>
+<li>發一句你最近看到、想到的話，不解釋。</li>
+<li>打開題目庫，補三條新題目，不寫正文。</li>
+</ul>
+<p>這些都不算「發文」，但它們讓你沒有離開牌桌。</p>
 </div>
+
+<p>創作是一條長路，斷掉幾週不會怎麼樣。真正會讓人放棄的，是「斷掉就等於失敗」這個念頭。</p>
+
+<h2 id="s5">怎麼判斷頻率是不是太高</h2>
+
+<p>有一個很簡單的訊號：如果你每次發文前都覺得「我還沒準備好」，而且發完之後沒有鬆一口氣，只有鬆懈，那可能就是太滿了。</p>
+
+<p>另一個訊號是品質。當你開始出現「這篇只是為了填時間」的感覺，就該降頻。降頻不是退步，是把力氣留給值得寫的題目。</p>
+
+<p>節奏這種事，寧可一開始被自己笑「太少」，也不要三個月後被自己放棄。</p>
+
+<p>先從一個你做得到的數字開始。做得到，就會一直做；一直做，才會變成你的東西。</p>
       </div>
 
-<div class="rel"><small>延伸閱讀</small><ul><li><a href="../nobody-sees/">發文沒人看怎麼辦</a><span>起步的心結</span></li><li><a href="../reply/">留言怎麼回</a><span>走得長久的節奏</span></li></ul></div>
+      <div class="rel"><small>延伸閱讀</small><ul><li><a href="../nobody-sees/">發文沒人看怎麼辦</a><span>起步的心結</span></li><li><a href="../reply/">留言怎麼回</a><span>走得長久的節奏</span></li></ul></div>
 <div class="pager"><a href="../imitate/"><small>上一篇</small><b>從模仿到自己的聲音</b></a><a class="right" href="../reply/"><small>下一篇</small><b>留言怎麼回</b></a></div>
     </article>
 <aside class="toc"><div class="toc-title">本頁導覽</div><ol><li><a href="#s1">為什麼「每天一篇」通常會失敗</a></li><li><a href="#s2">三個可執行的設計</a></li><li><a href="#s3">節奏的重點不是產量</a></li><li><a href="#s4">怎麼知道頻率對不對</a></li><li><a href="#s5">讓頻率變成習慣，而不是決心</a></li><li><a href="#s6">中斷了，怎麼回來</a></li></ol></aside>
@@ -431,15 +479,25 @@ img{ max-width:100%; }
     </div>
     <div>
       <b>主題</b>
-      <ul><li><a href="../rumors/">起步迷思</a></li><li><a href="../mindset/">心態</a></li><li><a href="../writing/">寫作</a></li><li><a href="../rhythm/">節奏</a></li></ul>
+      <ul>
+        <li><a href="../rumors/"><span class="n">01</span>起步</a></li>
+        <li><a href="../mindset/"><span class="n">02</span>心態</a></li>
+        <li><a href="../writing/"><span class="n">03</span>寫作</a></li>
+        <li><a href="../rhythm/"><span class="n">04</span>節奏</a></li>
+      </ul>
     </div>
     <div>
       <b>索引</b>
       <ul>
-        <li>H 個選題</a></li>
-        <li><a href="../faq/">常見問題</a></li>
-        <li><a href="../about/">關於</a></li>
-        <li><a href="https://blog.billy4select.com/">回部落格</a></li>
+        <li><a href="../what-to-post/">選題</a></li>
+        <li><a href="../faq/">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <b>說明</b>
+      <ul>
+        <li><a href="../about/">指南導讀</a></li>
+        <li><a href="https://blog.billy4select.com/">回首頁</a></li>
       </ul>
     </div>
   </div>
@@ -456,15 +514,6 @@ img{ max-width:100%; }
   }
   window.addEventListener('scroll',tick,{passive:true});
   window.addEventListener('resize',tick); tick();
-  var els=document.querySelectorAll('.rv');
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)){
-    els.forEach(function(el){ el.classList.add('in'); });
-  } else {
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-    },{rootMargin:'0px 0px -6% 0px'});
-    els.forEach(function(el){ io.observe(el); });
-  }
 })();
 </script>
 

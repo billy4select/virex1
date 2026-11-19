@@ -288,7 +288,8 @@ img{ max-width:100%; }
 
 .foot{ background:#1A1210; color:#C9BDB0; padding:52px 0; font-size:14px; line-height:1.95; font-weight:500; }
 .foot-in{ max-width:1120px; margin:0 auto; padding:0 28px; box-sizing:border-box; display:grid;
-  grid-template-columns:1.5fr 1fr 1fr; gap:36px; }
+  grid-template-columns:1.7fr 1fr .9fr .9fr; gap:32px; }
+.foot .n{ font-size:11.5px; font-weight:700; color:#8E8074; margin-right:4px; letter-spacing:.06em; }
 .foot b{ display:block; color:#F3ECE0; font-family:var(--serif); font-size:15.5px;
   font-weight:600; margin-bottom:12px; letter-spacing:.05em; }
 .foot a:hover{ color:#F3ECE0; }
@@ -296,8 +297,6 @@ img{ max-width:100%; }
 .foot li{ padding:3px 0; }
 
 @media (prefers-reduced-motion:no-preference){
-  .rv{ opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s ease; }
-  .rv.in{ opacity:1; transform:none; }
 }
 
 @media (max-width:1080px){
@@ -322,10 +321,12 @@ img{ max-width:100%; }
 @media (max-width:640px){
   body{ font-size:16px; }
   .wrap, .head-in{ padding-left:20px; padding-right:20px; }
+  .hub-shell{ padding-left:20px; padding-right:20px; }
   .article-grid{ padding-left:20px; padding-right:20px; }
   .grid4{ grid-template-columns:1fr; }
   .head-in{ flex-wrap:wrap; row-gap:6px; padding-bottom:10px; }
-  .nav{ flex-basis:100%; justify-content:flex-start; gap:16px; font-size:12.5px; }
+  .nav{ flex-basis:100%; justify-content:flex-start; gap:12px; font-size:12.5px; }
+  .nav a{ padding:8px 4px; }
   .nav a.back{ display:none; }
   .brand-sub{ display:none; }
   .hero h1{ font-size:23.5px; line-height:1.6; }
@@ -345,6 +346,29 @@ img{ max-width:100%; }
   .band{ padding:40px 0; }
   .read{ max-width:100%; }
 }
+
+/* ── 長文閱讀版：以文字為主，不加特效 ── */
+.art-body{ font-size:18px; line-height:1.98; letter-spacing:.015em; max-width:640px; }
+.art-body p{ margin:0 0 1.3em; }
+.art-body h2{ font-size:23px; margin:52px 0 16px; }
+.art-body h2:first-of-type{ margin-top:32px; }
+.art-body .answer{ font-size:17px; line-height:1.9; }
+.art-body .steps{ margin:10px 0 30px; }
+.art-body .steps li{ font-size:17.5px; line-height:1.9; }
+.art-body .eg{ border-left:0; padding-left:0; font-size:15.5px; margin-top:8px; }
+.art-body .note{ margin:2.2em 0; }
+@media (max-width:640px){
+  .art-body{ font-size:17px; line-height:1.92; }
+  .art-body h2{ font-size:21px; margin-top:44px; }
+}
+
+.art-body .note p, .art-body .note li{ font-size:16px; line-height:1.92; }
+.art-body .note .nlabel{ font-size:11px; letter-spacing:.18em; margin-bottom:10px; }
+.art-body .note p{ margin:0 0 12px; }
+
+.nav a .n{ font-size:11px; font-weight:700; color:var(--muted); margin-right:4px; letter-spacing:.06em; }
+.nav a.on .n{ color:var(--c); }
+@media (max-width:640px){ .nav a .n{ font-size:10px; margin-right:3px; } }
 </style>
 
 </head>
@@ -356,7 +380,7 @@ img{ max-width:100%; }
       <span class="brand-sub">從零開始，寫出真實影響力</span>
     </a>
     <nav class="nav" aria-label="主要導覽">
-      <a href="../rumors/" class="">起步迷思</a><a href="../mindset/" class="on">心態</a><a href="../writing/" class="">寫作</a><a href="../rhythm/" class="">節奏</a><a href="../what-to-post/" class="">10 個選題</a><a href="../faq/" class="">常見問題</a><a class="back" href="https://blog.billy4select.com/">回部落格</a>
+      <a href="../rumors/"><span class="n">01</span>起步</a><a href="../mindset/" class="on"><span class="n">02</span>心態</a><a href="../writing/"><span class="n">03</span>寫作</a><a href="../rhythm/"><span class="n">04</span>節奏</a><a href="../what-to-post/">選題</a><a href="../faq/">FAQ</a><a class="back" href="https://blog.billy4select.com/">回首頁</a>
     </nav>
   </div>
 </header>
@@ -375,56 +399,72 @@ img{ max-width:100%; }
       </header>
 
       <div class="art-body">
-<p class="answer">價值不等於知識。能讓人感覺被理解、被陪伴、被提醒的，也都是價值；而且很多時候，感受型的價值比一堆乾貨更有用。</p>
+<p class="answer"><span class="lbl">先說結論</span>價值不只來自知識。能讓人被理解、被提醒、換一個角度看的，都是價值。而且多數時候，感受型的價值比乾貨更耐放。</p>
 
-<p>「我又沒什麼專業，寫這些會不會太廢？」這種心虛，通常是因為把價值兩個字跟知識綁在一起了。</p>
+<p>「我又沒什麼專業，能寫什麼？」這個念頭，通常出現在你打開備忘錄、看到別人都在教很硬的知識的時候。</p>
 
-<h2 id="s1">價值有三種，你可能早就在提供</h2>
+<p>你腦中其實有很多感受、很多想法，但一想到要把它們寫成「內容」，就覺得：「這樣講好像沒價值？」</p>
 
-<div class="valgrid">
-<div><b>情緒價值</b>讓人覺得被懂了。「覺得自己很廢的時候，其實只是太累了。」</div>
-<div><b>認知價值</b>幫人換一個角度。「你不是沒時間，是總在回應別人的需求。」</div>
-<div><b>資訊價值</b>方法、流程、整理。教你怎麼做，給步驟與架構。</div>
-</div>
+<h2 id="s1">先拆掉「價值＝知識」這個等號</h2>
 
-<h3>情緒價值：說出別人說不出口的心情</h3>
-<p>它不講道理，只講心情。看到這種句子，人會想留言「這就是我」。你不需要專業，只需要真實。</p>
+<p>我們對「有價值」的想像太窄了。好像只有方法、步驟、架構才算數，其他都是閒聊。</p>
 
-<h3>認知價值：打開一個盲點</h3>
-<p>有時候一篇文沒教你新招式，卻讓你突然想通一件卡很久的事。這種內容不長，但每一句都像種子。</p>
+<p>但你有沒有發現，真正讓你按下收藏的，常常不是教學文。是一句「原來不是只有我這樣」、一個「我怎麼沒想過」的角度、一段「他說出我說不出口的話」。</p>
 
-<h3>資訊價值：最熟悉，也最容易被取代</h3>
-<p>AI 會寫、別人會教、搜尋也找得到。如果你的內容只有資訊，沒有情緒或觀點，讀者會覺得「有用，但不特別」。</p>
+<p>這些都沒有傳授任何技能，卻實實在在改變了你那一刻的狀態。而狀態的改變，就是價值。</p>
 
-<h2 id="s2">三種價值怎麼配</h2>
-<p>不需要每篇都三種齊全。一篇文一個主打就夠，其他兩種當配角。</p>
-<ol class="steps">
-<li><b>情緒為主：</b>收在共鳴，不要再補一段教學。多給一句道理，反而把溫度磨掉。</li>
-<li><b>認知為主：</b>給一句轉念，再用一個自己的例子證明你不是抄來的。</li>
-<li><b>資訊為主：</b>一定要有可執行步驟，並在結尾留一個「為什麼我這樣做」的觀點。</li>
-</ol>
+<h2 id="s2">三種價值，你可能早就在提供</h2>
 
-<p>你不必是老師，你可以是同路人。陪伴型、有感型、觀點型，全部都有人愛看。</p>
+<p><b>情緒價值</b>　讓人感覺被懂了。它不是說道理，是說心情。</p>
+<p><b>認知價值</b>　幫人換一個角度看事情。打開盲點，不是補資料。</p>
+<p><b>資訊價值</b>　方法、流程、整理。最實用，也最容易被取代。</p>
 
-<h2 id="s3">怎麼判斷這篇是哪一種價值</h2>
-<p>寫完之後，看讀者最可能的反應：想留言說「這就是我」是情緒；想收藏或轉給朋友是認知；想問「然後呢、怎麼做」是資訊。</p>
-<p>反應決定你要補什麼。如果三種反應都沒有，通常是開頭太抽象，還沒有具體到任何一個人身上。</p>
+<p><b>情緒價值</b>長這樣：「覺得自己很廢的時候，其實只是太累了。」「有時候不是沒人支持你，是你習慣不麻煩別人。」看到這種句子，人會想留言說「這就是我」。</p>
+
+<p><b>認知價值</b>長這樣：「你不是沒時間，是總在回應別人的需求。」「寫不出東西，不是沒靈感，是你在逼自己完美。」它不長，但會在心裡發芽。</p>
+
+<p><b>資訊價值</b>就是大家最熟悉的那種：怎麼做、步驟、工具、模板。它很有用，但也很容易被複製。</p>
+
+<h2 id="s3">為什麼資訊最容易貶值</h2>
+
+<p>因為資訊可以被搜尋、被整理、被生成。你今天寫的「五個提升效率的方法」，明天就有人寫十個，後天 AI 可以直接產出二十個。</p>
+
+<p>但「你怎麼發現這件事的」、「你卡在哪裡」、「你後來怎麼想通」，這些無法被複製。它們只存在你的時間軸上。</p>
+
+<p>所以如果你的內容只有資訊，讀者會覺得「有用，但不特別」。有用會被收藏，特別才會被記住。</p>
+
+<p>資訊讓人點頭，情緒讓人停下來，認知讓人記住你。三種都需要，但順序不一樣。</p>
+
+<h2 id="s4">比例怎麼配</h2>
+
+<p>不需要每篇都三種齊全，但可以有一個粗略的配比：情緒與認知是主菜，資訊是配菜。</p>
+
+<p>如果你的帳號全是資訊，它會變成一個資料庫，冷但有效。如果全是情緒，它會變成一個樹洞，暖但留不住人。比較好的狀態是：用情緒開門，用認知給東西，用資訊收尾。</p>
+
+<p>具體寫的時候，可以這樣排：先用一句讓人「這是我」的話開場，中段給一個換角度的觀點，最後如果有方法，再放進來。</p>
+
+<h2 id="s5">一句話檢查你在給哪種價值</h2>
+
+<p>寫完之後，問自己：「這句話，是想讓人覺得什麼？安心？驚訝？點頭？想收藏？」</p>
+
+<p>答得出來，你就知道自己這篇在給什麼。答不出來，通常代表這句話只是「正確」，還沒有「作用」。</p>
 
 <div class="note">
-<span class="nlabel">價值檢查</span>
-<p>下次動筆，先選一個開頭：</p>
+<span class="nlabel">三種開頭，直接套用</span>
 <ul>
-<li>「我最近才發現……」</li>
-<li>「你有沒有這種感覺……」</li>
-<li>「以前我一直以為……但後來……」</li>
+<li>情緒：「你有沒有這種感覺……」</li>
+<li>認知：「我以前一直以為……但後來發現……」</li>
+<li>資訊：「我最近才發現，原來只要……」</li>
 </ul>
-<p>寫完問自己：這句話，是想讓人覺得什麼？安心？驚訝？點頭？收藏？答得出來，這篇就有主打。</p>
+<p>挑一個你現在最有感的，寫三句就好。不用成篇，先確認那個「作用」有沒有出來。</p>
 </div>
 
-<p>你不是沒東西說，只是還沒確定自己說的是哪一種價值。</p>
+<p>所以你不用是老師，你可以是同路人。陪伴型、有感型、觀點型，全部都有市場。</p>
+
+<p>你只要能說出別人說不出口的心情、沒人想到的角度、實用又不囉唆的資訊，你就已經在提供價值了。</p>
       </div>
 
-<div class="rel"><small>延伸閱讀</small><ul><li><a href="../stage-vs-chat/">舞台心態 vs 聊天室</a><span>寫出自己的心態</span></li><li><a href="../small-change/">怎麼讓人記住你</a><span>寫出自己的心態</span></li></ul></div>
+      <div class="rel"><small>延伸閱讀</small><ul><li><a href="../stage-vs-chat/">舞台心態 vs 聊天室</a><span>寫出自己的心態</span></li><li><a href="../small-change/">怎麼讓人記住你</a><span>寫出自己的心態</span></li></ul></div>
 <div class="pager"><a href="../stage-vs-chat/"><small>上一篇</small><b>舞台心態 vs 聊天室</b></a><a class="right" href="../small-change/"><small>下一篇</small><b>怎麼讓人記住你</b></a></div>
     </article>
 <aside class="toc"><div class="toc-title">本頁導覽</div><ol><li><a href="#s1">價值有三種，你可能早就在提供</a></li><li><a href="#s2">三種價值怎麼配</a></li><li><a href="#s3">怎麼判斷這篇是哪一種價值</a></li></ol></aside>
@@ -439,15 +479,25 @@ img{ max-width:100%; }
     </div>
     <div>
       <b>主題</b>
-      <ul><li><a href="../rumors/">起步迷思</a></li><li><a href="../mindset/">心態</a></li><li><a href="../writing/">寫作</a></li><li><a href="../rhythm/">節奏</a></li></ul>
+      <ul>
+        <li><a href="../rumors/"><span class="n">01</span>起步</a></li>
+        <li><a href="../mindset/"><span class="n">02</span>心態</a></li>
+        <li><a href="../writing/"><span class="n">03</span>寫作</a></li>
+        <li><a href="../rhythm/"><span class="n">04</span>節奏</a></li>
+      </ul>
     </div>
     <div>
       <b>索引</b>
       <ul>
-        <li>H 個選題</a></li>
-        <li><a href="../faq/">常見問題</a></li>
-        <li><a href="../about/">關於</a></li>
-        <li><a href="https://blog.billy4select.com/">回部落格</a></li>
+        <li><a href="../what-to-post/">選題</a></li>
+        <li><a href="../faq/">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <b>說明</b>
+      <ul>
+        <li><a href="../about/">指南導讀</a></li>
+        <li><a href="https://blog.billy4select.com/">回首頁</a></li>
       </ul>
     </div>
   </div>
@@ -464,15 +514,6 @@ img{ max-width:100%; }
   }
   window.addEventListener('scroll',tick,{passive:true});
   window.addEventListener('resize',tick); tick();
-  var els=document.querySelectorAll('.rv');
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)){
-    els.forEach(function(el){ el.classList.add('in'); });
-  } else {
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-    },{rootMargin:'0px 0px -6% 0px'});
-    els.forEach(function(el){ io.observe(el); });
-  }
 })();
 </script>
 

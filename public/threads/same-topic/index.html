@@ -288,7 +288,8 @@ img{ max-width:100%; }
 
 .foot{ background:#1A1210; color:#C9BDB0; padding:52px 0; font-size:14px; line-height:1.95; font-weight:500; }
 .foot-in{ max-width:1120px; margin:0 auto; padding:0 28px; box-sizing:border-box; display:grid;
-  grid-template-columns:1.5fr 1fr 1fr; gap:36px; }
+  grid-template-columns:1.7fr 1fr .9fr .9fr; gap:32px; }
+.foot .n{ font-size:11.5px; font-weight:700; color:#8E8074; margin-right:4px; letter-spacing:.06em; }
 .foot b{ display:block; color:#F3ECE0; font-family:var(--serif); font-size:15.5px;
   font-weight:600; margin-bottom:12px; letter-spacing:.05em; }
 .foot a:hover{ color:#F3ECE0; }
@@ -296,8 +297,6 @@ img{ max-width:100%; }
 .foot li{ padding:3px 0; }
 
 @media (prefers-reduced-motion:no-preference){
-  .rv{ opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s ease; }
-  .rv.in{ opacity:1; transform:none; }
 }
 
 @media (max-width:1080px){
@@ -322,10 +321,12 @@ img{ max-width:100%; }
 @media (max-width:640px){
   body{ font-size:16px; }
   .wrap, .head-in{ padding-left:20px; padding-right:20px; }
+  .hub-shell{ padding-left:20px; padding-right:20px; }
   .article-grid{ padding-left:20px; padding-right:20px; }
   .grid4{ grid-template-columns:1fr; }
   .head-in{ flex-wrap:wrap; row-gap:6px; padding-bottom:10px; }
-  .nav{ flex-basis:100%; justify-content:flex-start; gap:16px; font-size:12.5px; }
+  .nav{ flex-basis:100%; justify-content:flex-start; gap:12px; font-size:12.5px; }
+  .nav a{ padding:8px 4px; }
   .nav a.back{ display:none; }
   .brand-sub{ display:none; }
   .hero h1{ font-size:23.5px; line-height:1.6; }
@@ -345,6 +346,29 @@ img{ max-width:100%; }
   .band{ padding:40px 0; }
   .read{ max-width:100%; }
 }
+
+/* ── 長文閱讀版：以文字為主，不加特效 ── */
+.art-body{ font-size:18px; line-height:1.98; letter-spacing:.015em; max-width:640px; }
+.art-body p{ margin:0 0 1.3em; }
+.art-body h2{ font-size:23px; margin:52px 0 16px; }
+.art-body h2:first-of-type{ margin-top:32px; }
+.art-body .answer{ font-size:17px; line-height:1.9; }
+.art-body .steps{ margin:10px 0 30px; }
+.art-body .steps li{ font-size:17.5px; line-height:1.9; }
+.art-body .eg{ border-left:0; padding-left:0; font-size:15.5px; margin-top:8px; }
+.art-body .note{ margin:2.2em 0; }
+@media (max-width:640px){
+  .art-body{ font-size:17px; line-height:1.92; }
+  .art-body h2{ font-size:21px; margin-top:44px; }
+}
+
+.art-body .note p, .art-body .note li{ font-size:16px; line-height:1.92; }
+.art-body .note .nlabel{ font-size:11px; letter-spacing:.18em; margin-bottom:10px; }
+.art-body .note p{ margin:0 0 12px; }
+
+.nav a .n{ font-size:11px; font-weight:700; color:var(--muted); margin-right:4px; letter-spacing:.06em; }
+.nav a.on .n{ color:var(--c); }
+@media (max-width:640px){ .nav a .n{ font-size:10px; margin-right:3px; } }
 </style>
 
 </head>
@@ -356,7 +380,7 @@ img{ max-width:100%; }
       <span class="brand-sub">從零開始，寫出真實影響力</span>
     </a>
     <nav class="nav" aria-label="主要導覽">
-      <a href="../rumors/" class="on">起步迷思</a><a href="../mindset/" class="">心態</a><a href="../writing/" class="">寫作</a><a href="../rhythm/" class="">節奏</a><a href="../what-to-post/" class="">10 個選題</a><a href="../faq/" class="">常見問題</a><a class="back" href="https://blog.billy4select.com/">回部落格</a>
+      <a href="../rumors/" class="on"><span class="n">01</span>起步</a><a href="../mindset/"><span class="n">02</span>心態</a><a href="../writing/"><span class="n">03</span>寫作</a><a href="../rhythm/"><span class="n">04</span>節奏</a><a href="../what-to-post/">選題</a><a href="../faq/">FAQ</a><a class="back" href="https://blog.billy4select.com/">回首頁</a>
     </nav>
   </div>
 </header>
@@ -369,56 +393,85 @@ img{ max-width:100%; }
         <div class="art-kicker">起步迷思</div>
         <h1>Threads 主題都有人講過了？內容會重複，聲音不會</h1>
         <div class="art-meta">
-          <span>閱讀約 4 分鐘</span>
+          <span>閱讀約 5 分鐘</span>
           <span>最後更新 2026.11.19</span>
         </div>
       </header>
 
       <div class="art-body">
-<p class="answer">會重複，而且一定會。但價值從來不只來自「內容的新」，而是來自「表達的方式」。內容可能重複，聲音不會。</p>
+<p class="answer"><span class="lbl">先說結論</span>會重複，而且一定會。但讀者追的從來不是「全世界唯一的觀點」，而是「你說這件事的方式」。</p>
 
-<p>「這個主題早就有人講過了，我還能講什麼？」這是一個很誠實的擔心，也是一個很容易讓人放棄的理由。</p>
+<p>你想寫「持續寫作很難」，於是你先搜了一下。結果跳出幾十篇，每一篇都比你完整，還有人做了表格。</p>
 
-<h2 id="s1">為什麼「這題已經有人講過」不是問題</h2>
-<p>現在幾乎沒有哪個主題是從沒有人講過的。自我成長、寫作技巧、自媒體經營，你想談的事，可能早就有成千上萬的人寫過。</p>
-<p>但大家追的，從來不是世界上唯一的觀點，而是那個說話讓他覺得舒服、有陪伴感、有信任感的人。</p>
+<p>你立刻覺得：「我還能說什麼？」然後把草稿刪掉。這個動作很合理，但它建立在一個錯誤的前提：寫作是為了提供新資訊。</p>
 
-<h2 id="s2">一樣的內容，兩種命運</h2>
-<p>兩個人都講「創作要持續」，但留下來的機率差很多。</p>
+<h2 id="s1">內容飽和，是這個時代的常態</h2>
 
-<div class="vs">
-<div><span class="x">×</span>創作要持續，關鍵在自律與紀律，沒有捷徑。</div>
-<div><span class="o">○</span>我也曾經一週發五天，然後整個人燒掉。後來改成每週三篇，反而寫得比較久。</div>
-</div>
+<p>現在幾乎沒有哪個主題是「從來沒有人講過」的。自我成長、寫作技巧、自媒體經營，你能想到的，可能都已經有成千上萬人寫過。</p>
 
-<p>兩個人的「內容」是一樣的，差別在詮釋。語氣、角度、舉例、用詞，這整套說法是獨一無二的。能不能留下來，就差在這裡。</p>
+<p>如果你把「新」當成唯一的價值來源，那你確實沒什麼好寫的。因為在資訊層面，你很難贏過已經寫了五年的人，更難贏過 AI。</p>
 
-<h2 id="s3">你的背景會自動替內容上色</h2>
-<p>你的職業、你踩過的坑、你現在正在學的東西，會讓同一個主題長出不同的樣子。與其問「這題還有沒有人講」，不如問「我能從哪個位置講」。</p>
+<p>但創作不是資訊競賽。同一件事，有人講得讓你點頭，有人講得讓你滑掉，這中間的差別不在內容，而在詮釋。</p>
+
+<h2 id="s2">差別在「誰說」和「怎麼說」</h2>
+
+<p>一樣在講「創作要持續」，有人用教條式的語氣：「你必須每天寫，否則不會成功。」聽完只覺得壓力很大。</p>
+
+<p>另一個人可能說：「我曾經連續寫了四十天，然後停了三個月。後來我發現，問題不是懶，是我把節奏訂得太滿。」聽完你會想回一句：「我也是。」</p>
+
+<p>兩篇的「內容」幾乎一樣，但一個讓人想關掉，一個讓你想留下。差別來自語氣、來自身份、來自他舉了哪一個例子。</p>
+
+<p>內容可能重複，但聲音不會。你的背景、你的坑、你的說法，會自動替這個主題上色。</p>
+
+<p>所以真正該問的不是「這個主題有沒有被寫過」，而是「這件事我有沒有一個別人沒有的版本」。那個版本通常不在資料裡，在你的經驗裡。</p>
+
+<h2 id="s3">把舊主題寫成你的版本：三個動作</h2>
+
+<p>不要憑空想「我的角度是什麼」，那太抽象。直接從三個地方挖，比較快。</p>
 
 <ol class="steps">
-<li><b>我在這件事上，比別多知道什麼細節？</b>不是理論，是實際操作時才會遇到的那種細節。</li>
-<li><b>我曾經誤會什麼？</b>你走錯的路，就是別人現在正在走的路。</li>
-<li><b>如果講給三年前的自己聽，我會怎麼說？</b>這個版本通常最沒有架子。</li>
+<li><b>接一個自己的故事</b>任何觀點，只要你補上「我怎麼發現的」，它就會變成你的。故事不必戲劇化，日常的卡點就夠。<span class="eg">例：大家都說要固定更新，但我是在連續斷更兩次之後，才懂為什麼要訂低標。</span></li>
+<li><b>換一個場景來說</b>把抽象的觀念放進一個具體畫面，讀者就會有感。場景是你選的，這就是你的角度。<span class="eg">例：不要說「寫作需要紀律」，說「晚上十一點，我在便利商店門口站了十分鐘，只為了想第一句話」。</span></li>
+<li><b>說出那個「但是」</b>每個常見說法都有一個被忽略的反面。把那個反面講清楚，你就有了立場。<span class="eg">例：都說要「做自己」，但如果做自己讓你更不敢發，那可能不是做自己，是躲在舒適圈。</span></li>
 </ol>
 
-<h2 id="s4">不要模仿那個「看起來比較像專家」的人</h2>
-<p>很多人一擔心重複，就開始模仿看起來最專業的語氣。結果寫出來的東西有型沒魂：句子都很漂亮，但沒有一句是你真的想說的。</p>
-<p>你可以學架構、學節奏、學他怎麼安排轉折，但內容要來自你。用自己的語氣，用自己的例子。</p>
+<p>做完這三個動作，你寫的還是同一個主題，但已經不是同一篇文章了。</p>
+
+<h2 id="s4">教條版與你的版本，差在哪</h2>
+
+<p>你可以用下面的改寫練習檢查自己的稿子：前一句是「誰都能寫」的版本，後一句是「只有你能寫」的版本。</p>
+
+<p><b>不要這樣寫：</b>持續發文很重要，能建立讀者的期待感。</p>
+<p><b>改成這樣：</b>我曾經一個月只發兩篇，結果沒有人記得我在寫什麼。後來我把「想寫什麼」換成「哪一天寫」，才穩下來。</p>
+
+<p>前一句正確、完整、無害，也不會被記住；後一句不完美、有點瑣碎，但它是真的。</p>
+
+<p>多數人不敢寫後一句，是因為它暴露了自己。但被記住的內容，幾乎都帶著一點暴露。</p>
+
+<h2 id="s5">不是為了不同而不同</h2>
+
+<p>這裡有一個常見的走偏：為了顯得有觀點，刻意唱反調，或硬要講得辛辣。</p>
+
+<p>那不是你的聲音，那只是另一種表演。讀者對「刻意的與眾不同」很敏感，通常三句就會聞出來。</p>
+
+<p>真正的差異化不需要用力。你只要誠實地回答三個問題：我實際遇到什麼？我原本以為什麼？後來我改成什麼？</p>
+
+<p>答完之後，那個主題就自動有了你的指紋。</p>
 
 <div class="note">
-<span class="nlabel">小練習</span>
-<p>找一個你常看到別人在講的主題，例如「持續寫作很難」。</p>
+<span class="nlabel">小練習：同題重寫</span>
+<p>找一個你常看到別人在講的主題（例如「持續寫作很難」）。</p>
 <ul>
-<li>用你最近的真實經驗重寫一段，不追求金句，只求真實。</li>
-<li>比較一下：你的版本，和常見的「教條版」差在哪裡？</li>
+<li>先用一句話寫出「常見的教條版」。</li>
+<li>再用你自己的真實經驗重寫一段，不追求金句，只求真實。</li>
+<li>比較兩者：你的版本多了什麼？那個「多出來的」，就是你的位置。</li>
 </ul>
 </div>
 
-<p>你不需要比別人懂更多。你只需要誠實地分享你真的經歷過、思考過、感受過的東西。那會比任何新穎的資訊，更容易讓人願意聽你說話。</p>
+<p>所以，不要因為主題被講過就閉嘴。你不需要當第一個講的人，你只需要當講得最像你自己的那一個。</p>
       </div>
 
-<div class="rel"><small>延伸閱讀</small><ul><li><a href="../persona/">要先定人設嗎</a><span>起步的心結</span></li><li><a href="../conversational/">怎麼寫出對話感</a><span>怎麼表達才像人</span></li></ul></div>
+      <div class="rel"><small>延伸閱讀</small><ul><li><a href="../persona/">要先定人設嗎</a><span>起步的心結</span></li><li><a href="../conversational/">怎麼寫出對話感</a><span>怎麼表達才像人</span></li></ul></div>
 <div class="pager"><a href="../nobody-sees/"><small>上一篇</small><b>發文沒人看怎麼辦</b></a><a class="right" href="../persona/"><small>下一篇</small><b>要先定人設嗎</b></a></div>
     </article>
 <aside class="toc"><div class="toc-title">本頁導覽</div><ol><li><a href="#s1">為什麼「這題已經有人講過」不是問題</a></li><li><a href="#s2">一樣的內容，兩種命運</a></li><li><a href="#s3">你的背景會自動替內容上色</a></li><li><a href="#s4">不要模仿那個「看起來比較像專家」的人</a></li></ol></aside>
@@ -433,15 +486,25 @@ img{ max-width:100%; }
     </div>
     <div>
       <b>主題</b>
-      <ul><li><a href="../rumors/">起步迷思</a></li><li><a href="../mindset/">心態</a></li><li><a href="../writing/">寫作</a></li><li><a href="../rhythm/">節奏</a></li></ul>
+      <ul>
+        <li><a href="../rumors/"><span class="n">01</span>起步</a></li>
+        <li><a href="../mindset/"><span class="n">02</span>心態</a></li>
+        <li><a href="../writing/"><span class="n">03</span>寫作</a></li>
+        <li><a href="../rhythm/"><span class="n">04</span>節奏</a></li>
+      </ul>
     </div>
     <div>
       <b>索引</b>
       <ul>
-        <li>H 個選題</a></li>
-        <li><a href="../faq/">常見問題</a></li>
-        <li><a href="../about/">關於</a></li>
-        <li><a href="https://blog.billy4select.com/">回部落格</a></li>
+        <li><a href="../what-to-post/">選題</a></li>
+        <li><a href="../faq/">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <b>說明</b>
+      <ul>
+        <li><a href="../about/">指南導讀</a></li>
+        <li><a href="https://blog.billy4select.com/">回首頁</a></li>
       </ul>
     </div>
   </div>
@@ -458,15 +521,6 @@ img{ max-width:100%; }
   }
   window.addEventListener('scroll',tick,{passive:true});
   window.addEventListener('resize',tick); tick();
-  var els=document.querySelectorAll('.rv');
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)){
-    els.forEach(function(el){ el.classList.add('in'); });
-  } else {
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-    },{rootMargin:'0px 0px -6% 0px'});
-    els.forEach(function(el){ io.observe(el); });
-  }
 })();
 </script>
 

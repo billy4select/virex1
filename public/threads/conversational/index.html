@@ -288,7 +288,8 @@ img{ max-width:100%; }
 
 .foot{ background:#1A1210; color:#C9BDB0; padding:52px 0; font-size:14px; line-height:1.95; font-weight:500; }
 .foot-in{ max-width:1120px; margin:0 auto; padding:0 28px; box-sizing:border-box; display:grid;
-  grid-template-columns:1.5fr 1fr 1fr; gap:36px; }
+  grid-template-columns:1.7fr 1fr .9fr .9fr; gap:32px; }
+.foot .n{ font-size:11.5px; font-weight:700; color:#8E8074; margin-right:4px; letter-spacing:.06em; }
 .foot b{ display:block; color:#F3ECE0; font-family:var(--serif); font-size:15.5px;
   font-weight:600; margin-bottom:12px; letter-spacing:.05em; }
 .foot a:hover{ color:#F3ECE0; }
@@ -296,8 +297,6 @@ img{ max-width:100%; }
 .foot li{ padding:3px 0; }
 
 @media (prefers-reduced-motion:no-preference){
-  .rv{ opacity:0; transform:translateY(14px); transition:opacity .7s ease, transform .7s ease; }
-  .rv.in{ opacity:1; transform:none; }
 }
 
 @media (max-width:1080px){
@@ -322,10 +321,12 @@ img{ max-width:100%; }
 @media (max-width:640px){
   body{ font-size:16px; }
   .wrap, .head-in{ padding-left:20px; padding-right:20px; }
+  .hub-shell{ padding-left:20px; padding-right:20px; }
   .article-grid{ padding-left:20px; padding-right:20px; }
   .grid4{ grid-template-columns:1fr; }
   .head-in{ flex-wrap:wrap; row-gap:6px; padding-bottom:10px; }
-  .nav{ flex-basis:100%; justify-content:flex-start; gap:16px; font-size:12.5px; }
+  .nav{ flex-basis:100%; justify-content:flex-start; gap:12px; font-size:12.5px; }
+  .nav a{ padding:8px 4px; }
   .nav a.back{ display:none; }
   .brand-sub{ display:none; }
   .hero h1{ font-size:23.5px; line-height:1.6; }
@@ -345,6 +346,29 @@ img{ max-width:100%; }
   .band{ padding:40px 0; }
   .read{ max-width:100%; }
 }
+
+/* ── 長文閱讀版：以文字為主，不加特效 ── */
+.art-body{ font-size:18px; line-height:1.98; letter-spacing:.015em; max-width:640px; }
+.art-body p{ margin:0 0 1.3em; }
+.art-body h2{ font-size:23px; margin:52px 0 16px; }
+.art-body h2:first-of-type{ margin-top:32px; }
+.art-body .answer{ font-size:17px; line-height:1.9; }
+.art-body .steps{ margin:10px 0 30px; }
+.art-body .steps li{ font-size:17.5px; line-height:1.9; }
+.art-body .eg{ border-left:0; padding-left:0; font-size:15.5px; margin-top:8px; }
+.art-body .note{ margin:2.2em 0; }
+@media (max-width:640px){
+  .art-body{ font-size:17px; line-height:1.92; }
+  .art-body h2{ font-size:21px; margin-top:44px; }
+}
+
+.art-body .note p, .art-body .note li{ font-size:16px; line-height:1.92; }
+.art-body .note .nlabel{ font-size:11px; letter-spacing:.18em; margin-bottom:10px; }
+.art-body .note p{ margin:0 0 12px; }
+
+.nav a .n{ font-size:11px; font-weight:700; color:var(--muted); margin-right:4px; letter-spacing:.06em; }
+.nav a.on .n{ color:var(--c); }
+@media (max-width:640px){ .nav a .n{ font-size:10px; margin-right:3px; } }
 </style>
 
 </head>
@@ -356,7 +380,7 @@ img{ max-width:100%; }
       <span class="brand-sub">從零開始，寫出真實影響力</span>
     </a>
     <nav class="nav" aria-label="主要導覽">
-      <a href="../rumors/" class="">起步迷思</a><a href="../mindset/" class="">心態</a><a href="../writing/" class="on">寫作</a><a href="../rhythm/" class="">節奏</a><a href="../what-to-post/" class="">10 個選題</a><a href="../faq/" class="">常見問題</a><a class="back" href="https://blog.billy4select.com/">回部落格</a>
+      <a href="../rumors/"><span class="n">01</span>起步</a><a href="../mindset/"><span class="n">02</span>心態</a><a href="../writing/" class="on"><span class="n">03</span>寫作</a><a href="../rhythm/"><span class="n">04</span>節奏</a><a href="../what-to-post/">選題</a><a href="../faq/">FAQ</a><a class="back" href="https://blog.billy4select.com/">回首頁</a>
     </nav>
   </div>
 </header>
@@ -369,54 +393,81 @@ img{ max-width:100%; }
         <div class="art-kicker">寫作</div>
         <h1>Threads 怎麼寫出對話感？短句、輕語氣、提問、情緒詞</h1>
         <div class="art-meta">
-          <span>閱讀約 3 分鐘</span>
+          <span>閱讀約 4 分鐘</span>
           <span>最後更新 2026.11.19</span>
         </div>
       </header>
 
       <div class="art-body">
-<p class="answer">對話感不是技巧堆疊，是讓讀者覺得「你在跟我說」，而不是「你在對我發表」。</p>
+<p class="answer"><span class="lbl">先說結論</span>對話感不是文筆，是姿態。句子短、語氣輕、多提問、加一點情緒詞，文字就會從「發表」變成「說話」。</p>
 
-<p>很多人寫 Threads 像在交報告：想證明自己講得有道理、邏輯清楚、知識豐富。但這樣寫出來的內容，讀起來像「你在上，我在下；你說，我聽」。</p>
+<p>你寫了一段，讀起來很順，邏輯也對，但就是沒人回。你開始懷疑是不是內容不夠好，於是又加了兩個例子、補了一段結論。</p>
 
-<h2 id="s1">為什麼「報告感」會把人推開</h2>
-<p>讀者被隔在外面。他不是不同意，是沒有位置進來。看完之後，他也不知道要回什麼，於是就滑走了。</p>
-<p>而真正吸引人的內容，是有對話感的內容：「你是不是也有這種感覺？」「我以前也會這樣想，但後來才發現……」。這些句子不是要說服誰，是邀請對方一起想。</p>
+<p>問題通常不在內容，在姿態。那段文字是「你在上、我在下；你說、我聽」的結構，讀者自然被隔在外面。</p>
 
-<h2 id="s2">四個可操作的調整</h2>
+<h2 id="s1">輸出感的三個特徵</h2>
+
+<p><b>句子長。</b>一句話塞了三個逗號、兩個轉折，讀者要停下來解析。社群閱讀是碎片式的，沒人想解析。</p>
+
+<p><b>名詞多。</b>「內容策略」、「轉換率」、「受眾輪廓」，這些詞很專業，但它們沒有體溫。</p>
+
+<p><b>結論式收尾。</b>「以上三點提供參考。」這種句子等於把門關上，對方沒有地方接話。</p>
+
+<p>這三件事疊在一起，就會變成一篇文章，而不是一段話。</p>
+
+<h2 id="s2">四個可以直接改的動作</h2>
+
+<p>不需要大改，一次改一個地方，差別就會出來。</p>
+
 <ol class="steps">
-<li><b>句子短。</b>不要堆疊太多逗號，改用換行與分段。一句話一個意思，讓讀者不用喘氣。</li>
-<li><b>語氣輕。</b>避免太硬的用語與術語。你不是在開會，是在社群分享。</li>
-<li><b>多用提問。</b>「你會這樣嗎？」「我們真的需要這樣嗎？」不是要他回答，是讓他跟上你的思考節奏。</li>
-<li><b>加入情緒詞。</b>「說真的」「老實說」「我也很猶豫」，這些詞會讓語氣有溫度。</li>
+<li><b>句子短</b>一句話只講一件事。長句拆成兩句，逗號換成句號或換行。<span class="eg">例：把「雖然我很努力，但因為方向錯了，所以一直沒效果」拆成三句。</span></li>
+<li><b>語氣輕</b>把「必須」、「應該」、「正確做法是」換成「我後來」、「我發現」、「你也可以試試」。<span class="eg">例：「你必須每天寫」→「我一開始也覺得要每天寫，後來發現撐不住」。</span></li>
+<li><b>多提問</b>不是要對方回答，而是讓他跟上你的思考節奏。<span class="eg">例：「你會這樣嗎？」「我們真的需要這樣嗎？」</span></li>
+<li><b>加情緒詞</b>「說真的」、「老實說」、「我也很猶豫」，這些詞會讓語氣有溫度。<span class="eg">例：「說真的，我每次按下發布前都還是會怕。」</span></li>
 </ol>
 
-<h2 id="s3">改寫示範</h2>
-<div class="vs">
-<div><span class="x">×</span>我們需要建立系統性的內容策略，提升曝光效益。</div>
-<div><span class="o">○</span>你有沒有發現，寫得越多，反而越沒人看？我後來才懂，我們缺的不是努力，是策略。</div>
-</div>
+<p>這四件事不需要一起做。先挑你最容易犯的那一個，改三篇，就會變成習慣。</p>
 
-<p>同樣的意思，第二個版本有立場、有停頓、有一句「我後來才懂」。讀者會想接話，因為你先把話說成一個可以接的樣子。</p>
+<h2 id="s3">同一個意思，兩種寫法</h2>
 
-<h2 id="s4">對話感不是討好</h2>
-<p>提問不是要對方認同你，而是把思考的門打開。你還是可以有自己的判斷，只是不要把結論砸在別人臉上。</p>
-<p>「我不確定這是不是最好的解法，但這是我目前的做法」——這句話比「正確做法是」更讓人願意聽。</p>
+<p>下面這組對照，是很多人卡住的地方：不是不會寫，而是習慣寫成前一句那樣。</p>
+
+<p><b>不要這樣寫：</b>我們需要建立系統性的內容策略，以提升曝光效益。</p>
+<p><b>改成這樣：</b>你有沒有發現，寫得越多，反而越沒人看？我後來才懂，我們缺的不是努力，是策略。</p>
+
+<p>前一句沒有錯，但它像一份提案；後一句也不夠精準，但它像一個人在說話。而人，才會被回應。</p>
+
+<p>你可以刻意做一個練習：把最近一篇稿子的第一句，改寫成「跟朋友講話的版本」。通常改完之後，整篇的語氣也會跟著鬆。</p>
+
+<h2 id="s4">口語，不等於隨便</h2>
+
+<p>這裡有一個常見的誤解：以為對話感就是打字隨便、錯字連篇、全部口語。</p>
+
+<p>不是。對話感指的是「距離近」，不是「品質低」。你還是可以有結構、有觀點，只是把它講得像人話。</p>
+
+<p>差別在於：前者是「把想法倒出來」，後者是「講給一個人聽」。</p>
+
+<p>而且，口語也不是唯一的風格。有些人講話本來就慢、就正式，那也可以。重點是「一致」：你平常怎麼說話，文字就怎麼說話，不要切成另一個人。</p>
+
+<h2 id="s5">改完之後，檢查這三件事</h2>
+
+<p><b>一，有沒有一句是「我」開頭。</b>全是「我們」、「大家」、「創作者」，會顯得很遠。偶爾讓自己出現在句子裡。</p>
+
+<p><b>二，有沒有一個地方可以讓人回話。</b>如果沒有，補一個問句或一個邀請。</p>
+
+<p><b>三，有沒有一句是你自己會想截圖的。</b>如果連你都不想留，別人大概也不會。</p>
 
 <div class="note">
-<span class="nlabel">小練習</span>
-<p>挑一篇你寫過最有「報告感」的文，只做三件事：</p>
-<ul>
-<li>把超過 25 字的句子拆成兩句。</li>
-<li>刪掉三個術語，換成日常說法。</li>
-<li>結尾加一個好回答的問題。</li>
-</ul>
+<span class="nlabel">三句改寫練習</span>
+<p>把下面這句改寫成「像在說話」的版本：</p>
+<p>「持續產出內容是經營社群的關鍵，建議制定固定排程。」</p>
+<p>參考方向：先講你自己的經驗，再講你後來的做法，最後留一個問題給對方。</p>
 </div>
 
 <p>Threads 不需要你講大道理，只需要你像個人，說人話。當你開始寫出像聊天一樣的文字，讀者也會像朋友一樣回應你。</p>
       </div>
 
-<div class="rel"><small>延伸閱讀</small><ul><li><a href="../formula/">停下來、共鳴、留下來</a><span>怎麼表達才像人</span></li><li><a href="../stage-vs-chat/">舞台心態 vs 聊天室</a><span>寫出自己的心態</span></li></ul></div>
+      <div class="rel"><small>延伸閱讀</small><ul><li><a href="../formula/">停下來、共鳴、留下來</a><span>怎麼表達才像人</span></li><li><a href="../stage-vs-chat/">舞台心態 vs 聊天室</a><span>寫出自己的心態</span></li></ul></div>
 <div class="pager"><a href="../formula/"><small>上一篇</small><b>停下來、共鳴、留下來</b></a><a class="right" href="../cant-write/"><small>下一篇</small><b>寫不出來怎麼辦</b></a></div>
     </article>
 <aside class="toc"><div class="toc-title">本頁導覽</div><ol><li><a href="#s1">為什麼「報告感」會把人推開</a></li><li><a href="#s2">四個可操作的調整</a></li><li><a href="#s3">改寫示範</a></li><li><a href="#s4">對話感不是討好</a></li></ol></aside>
@@ -431,15 +482,25 @@ img{ max-width:100%; }
     </div>
     <div>
       <b>主題</b>
-      <ul><li><a href="../rumors/">起步迷思</a></li><li><a href="../mindset/">心態</a></li><li><a href="../writing/">寫作</a></li><li><a href="../rhythm/">節奏</a></li></ul>
+      <ul>
+        <li><a href="../rumors/"><span class="n">01</span>起步</a></li>
+        <li><a href="../mindset/"><span class="n">02</span>心態</a></li>
+        <li><a href="../writing/"><span class="n">03</span>寫作</a></li>
+        <li><a href="../rhythm/"><span class="n">04</span>節奏</a></li>
+      </ul>
     </div>
     <div>
       <b>索引</b>
       <ul>
-        <li>H 個選題</a></li>
-        <li><a href="../faq/">常見問題</a></li>
-        <li><a href="../about/">關於</a></li>
-        <li><a href="https://blog.billy4select.com/">回部落格</a></li>
+        <li><a href="../what-to-post/">選題</a></li>
+        <li><a href="../faq/">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <b>說明</b>
+      <ul>
+        <li><a href="../about/">指南導讀</a></li>
+        <li><a href="https://blog.billy4select.com/">回首頁</a></li>
       </ul>
     </div>
   </div>
@@ -456,15 +517,6 @@ img{ max-width:100%; }
   }
   window.addEventListener('scroll',tick,{passive:true});
   window.addEventListener('resize',tick); tick();
-  var els=document.querySelectorAll('.rv');
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)){
-    els.forEach(function(el){ el.classList.add('in'); });
-  } else {
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-    },{rootMargin:'0px 0px -6% 0px'});
-    els.forEach(function(el){ io.observe(el); });
-  }
 })();
 </script>
 
