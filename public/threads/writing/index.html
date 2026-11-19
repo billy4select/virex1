@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fontsource/noto-serif-tc@5/400.css">
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fontsource/noto-serif-tc@5/600.css">
 <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fontsource/noto-sans-tc@5/700.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "實戰寫作策略", "description": "停下來、共鳴感、留下來。一句一句，把想說的話寫成別人願意讀完的樣子。", "inLanguage": "zh-Hant-TW", "url": "https://blog.billy4select.com/threads/writing/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "寫作", "description": "停下來、共鳴感、留下來。一句一句，把想說的話寫成別人願意讀完的樣子。", "inLanguage": "zh-Hant-TW", "url": "https://blog.billy4select.com/threads/writing/"}</script>
 
 <style>
 *, *::before, *::after { box-sizing: border-box; }
@@ -47,24 +47,26 @@ img{ max-width:100%; }
 .pbar{ position:fixed; inset:0 0 auto 0; height:3px; background:transparent; z-index:60; }
 .pbar i{ display:block; height:100%; width:0; background:linear-gradient(90deg,#FF8533,var(--c)); box-shadow:0 0 8px rgba(255,102,0,.35); }
 
-.site-head{ position:sticky; top:0; z-index:40; background:rgba(255,251,247,.92);
-  backdrop-filter:blur(12px); border-bottom:1px solid var(--line-soft); }
-.head-in{ max-width:1120px; margin:0 auto; padding:15px 28px; display:flex; align-items:center; justify-content:space-between; gap:18px; box-sizing:border-box; }
+.site-head{ position:sticky; top:0; z-index:40; background:rgba(255,251,247,.94); backdrop-filter:blur(12px); border-bottom:1px solid var(--line-soft); }
+.head-in{ max-width:1120px; margin:0 auto; padding:12px 28px; display:flex; align-items:center; justify-content:space-between; gap:20px; box-sizing:border-box; }
 .brand{ display:flex; align-items:baseline; gap:10px; flex:0 0 auto; }
 .brand-main{ font-family:var(--serif); font-weight:700; font-size:18px; letter-spacing:.02em; }
 .brand-sub{ font-size:11px; color:var(--muted); letter-spacing:.14em; }
-.nav{ display:flex; gap:6px; font-size:14.5px; font-weight:500; color:var(--ink-2);
-  overflow-x:auto; scrollbar-width:none; flex:1 1 auto; min-width:0; justify-content:flex-end; }
+.nav{ display:flex; gap:8px; font-size:14px; font-weight:500; color:var(--ink-2);
+  overflow-x:auto; scrollbar-width:none; flex:1 1 auto; min-width:0; justify-content:flex-end;
+  align-items:center; padding:0; background:transparent; border:none; border-radius:0; }
 .nav::-webkit-scrollbar{ display:none; }
-.nav a{ position:relative; padding:8px 12px; white-space:nowrap; border-radius:6px;
-  transition:color .15s ease, background .15s ease; cursor:pointer; }
-.nav a:hover{ color:var(--c); background:var(--c-soft); }
-.nav a:active{ background:rgba(255,102,0,.16); }
-.nav a.on{ color:var(--c); background:var(--c-soft); font-weight:600; }
-.nav a.on::after{ content:""; position:absolute; left:12px; right:12px; bottom:4px; height:2px;
-  background:var(--c); border-radius:1px; }
-.nav a.back{ color:var(--muted); margin-left:6px; }
-.nav a.back:hover{ color:var(--ink-2); background:rgba(30,28,23,.05); }
+.nav a{ position:relative; padding:8px 10px; white-space:nowrap; border-radius:0;
+  transition:color .15s ease; cursor:pointer; color:var(--ink-2); font-weight:500;
+  background:transparent; box-shadow:none; }
+.nav a:hover{ color:var(--c); background:transparent; box-shadow:none; }
+.nav a:active{ background:transparent; }
+.nav a.on{ color:var(--c); background:transparent; font-weight:600; box-shadow:none; }
+.nav a.on::after{ content:""; position:absolute; left:10px; right:10px; bottom:2px; height:2px;
+  background:var(--c); border-radius:1px; display:block; }
+.nav a.back{ color:var(--muted); margin-left:4px; background:transparent; }
+.nav a.back:hover{ color:var(--ink-2); background:transparent; }
+
 
 .wrap{ max-width:1120px; margin:0 auto; padding:0 28px; box-sizing:border-box; }
 .eyebrow{ font-size:12.5px; letter-spacing:.04em; color:var(--muted); font-weight:600; display:block; margin:0; padding:0; }
@@ -114,7 +116,7 @@ img{ max-width:100%; }
   padding:26px 22px 22px; display:flex; flex-direction:column; min-height:270px;
   border-top:3px solid var(--a,var(--c)); transition:transform .28s ease, box-shadow .28s ease; }
 .chap:hover{ transform:translateY(-4px); box-shadow:0 16px 34px -22px rgba(30,28,23,.55); }
-.chap-no{ font-size:10.5px; letter-spacing:.22em; color:var(--a,var(--c)); }
+.chap-no{ display:block; font-size:12px; letter-spacing:.06em; color:var(--muted); font-weight:600; margin-bottom:6px; }
 .chap h3{ font-family:var(--serif); font-size:18.5px; margin:14px 0 6px; font-weight:600; line-height:1.55; }
 .chap h3 a:hover{ color:var(--a,var(--c)); }
 .chap p{ font-size:13px; line-height:1.85; color:var(--muted); margin:0 0 16px; }
@@ -209,16 +211,11 @@ img{ max-width:100%; }
 .note ul, .note ol{ margin:6px 0 0; padding-left:18px; }
 .note li{ font-size:14.5px; line-height:1.95; color:var(--ink-2); margin-bottom:6px; }
 
-.steps{ counter-reset:step; list-style:none; padding:0; margin:0 0 30px; }
-.steps li{ counter-increment:step; position:relative; padding:0 0 18px 46px;
-  font-size:15.5px; line-height:1.95; color:var(--ink-2); }
+.steps{ margin:8px 0 28px; padding:0 0 0 1.25em; }
+.steps li{ margin:0 0 1.1em; padding:0; line-height:1.75; font-size:17px; color:var(--ink); }
 .steps li b{ display:block; margin-bottom:4px; color:var(--ink); font-weight:700; }
-.steps li::before{ content:counter(step,decimal-leading-zero); position:absolute; left:0; top:1px;
-  font-family:var(--sans); font-size:12px; color:var(--c); letter-spacing:.06em;
-  width:30px; height:30px; border:1px solid var(--line); display:flex; align-items:center;
-  justify-content:center; background:var(--card); }
-.eg{ display:block; margin-top:8px; padding-left:14px; border-left:2px solid var(--line);
-  color:var(--muted); font-size:13.5px; line-height:1.9; }
+.steps li::before{ display:none; content:none; }
+.eg{ display:block; margin-top:6px; color:var(--muted); font-size:15.5px; line-height:1.7; border-left:2px solid var(--line); padding-left:12px; }
 
 .valgrid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line);
   border:1px solid var(--line); margin:6px 0 30px; }
@@ -259,14 +256,12 @@ img{ max-width:100%; }
   line-height:1.45; margin:16px 0 0; max-width:16em; }
 .hub-hero p{ margin:20px 0 0; max-width:31em; font-size:16.5px; line-height:2; color:var(--ink-2); }
 .hub-art{ position:absolute; right:0; top:34px; width:190px; color:var(--c); opacity:.45; }
-.hub-wm{ position:absolute; right:6px; bottom:-34px; font-family:var(--sans); font-size:180px;
-  font-weight:600; color:var(--c); opacity:.05; line-height:1; pointer-events:none; }
+.hub-wm{ display:none; }
 
 .hub-list{ margin:0; padding:0; list-style:none; }
-.hub-item{ display:grid; grid-template-columns:52px 1fr auto; gap:22px; align-items:center;
-  padding:30px 0; border-bottom:1px solid var(--line-soft); transition:padding-left .25s ease; }
+.hub-item{ display:grid; grid-template-columns:1fr auto; gap:22px; align-items:center; padding:28px 0; border-bottom:1px solid var(--line-soft); transition:padding-left .25s ease; }
 .hub-item:hover{ padding-left:8px; }
-.hub-no{ font-size:10.5px; letter-spacing:.16em; color:var(--muted); white-space:nowrap; }
+.hub-no{ display:none; }
 .hub-title{ display:block; font-family:var(--serif); font-size:19.5px; font-weight:600;
   line-height:1.6; transition:color .25s ease; }
 .hub-item:hover .hub-title{ color:var(--c); }
@@ -343,8 +338,8 @@ img{ max-width:100%; }
   .valgrid{ grid-template-columns:1fr; }
   .pager{ grid-template-columns:1fr; }
   .pager a:first-child{ border-right:0; border-bottom:1px solid var(--line); }
-  .hub-wm{ font-size:130px; }
-  .hub-item{ grid-template-columns:44px 1fr; }
+  .hub-wm{ display:none; }
+  .hub-item{ grid-template-columns:1fr auto; }
   .hub-arrow{ display:none; }
   .band{ padding:40px 0; }
   .read{ max-width:100%; }
@@ -365,13 +360,13 @@ img{ max-width:100%; }
   </div>
 </header>
 <main>
-  <div class="wrap crumb"><a href="../">首頁</a> ／ <span>實戰寫作策略</span></div>
+  <div class="wrap crumb"><a href="../">首頁</a> ／ <span>寫作</span></div>
 
   <div class="wrap">
     <div class="hub-hero">
-      <div class="eyebrow">CHAPTER 03</div>
+      <div class="eyebrow">主題</div>
       <h1>實戰寫作策略</h1>
-      <p>有些貼文你會停下來看，有些直接滑過。真正讓你記住的，通常不是最厲害的技巧，而是那句話剛好講中你心裡的感覺。這一章講的就是怎麼寫出那種句子。</p>
+      <p>有些貼文你會停下來看，有些直接滑過。真正讓你記住的，通常不是最厲害的技巧，而是那句話剛好講中你心裡的感覺。這一部分講的就是怎麼寫出那種句子。</p>
       <div class="hub-art"><svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
   <line x1="20" y1="36" x2="142" y2="36" opacity=".22"/>
   <line x1="20" y1="62" x2="168" y2="62" opacity=".22"/>
@@ -380,28 +375,23 @@ img{ max-width:100%; }
   <path d="M120 168 L158 130" stroke-width="1.8"/>
   <path d="M158 130 L172 144 L134 182 L112 186 Z" stroke-width="1.5"/>
 </svg></div>
-      <div class="hub-wm">03</div>
-    </div>
+</div>
     <ul class="hub-list" style="padding-top:8px;">
       <li><a class="hub-item" href="../formula/">
-        <span class="hub-no">03.1</span>
         <span><span class="hub-title">停下來、共鳴、留下來</span><span class="hub-desc">一個可以直接套用的三段骨架：開頭讓人愣住、中段讓他覺得你懂、結尾給陪伴感。</span></span>
         <span class="hub-arrow">→</span>
       </a></li>      <li><a class="hub-item" href="../conversational/">
-        <span class="hub-no">03.2</span>
         <span><span class="hub-title">寫出對話感</span><span class="hub-desc">報告感會把人推開。</span></span>
         <span class="hub-arrow">→</span>
       </a></li>      <li><a class="hub-item" href="../cant-write/">
-        <span class="hub-no">03.3</span>
         <span><span class="hub-title">寫不出來的時候</span><span class="hub-desc">卡住不是沒靈感，是你一開始就想寫得太正確。</span></span>
         <span class="hub-arrow">→</span>
       </a></li>      <li><a class="hub-item" href="../imitate/">
-        <span class="hub-no">03.4</span>
         <span><span class="hub-title">從模仿到自己的聲音</span><span class="hub-desc">模仿是最快的學習方式，但目的是找出自己的聲音。</span></span>
         <span class="hub-arrow">→</span>
       </a></li>
     </ul>
-    <div class="rv" style="padding:48px 0 70px;"><div class="about-block"><h2>你可能正在想</h2><p>「要怎麼開頭才有人看？」「為什麼我寫起來像在交報告？」「盯著空白畫面半小時，一個字都打不出來。」「要模仿別人嗎？」</p></div><div class="about-block"><h2>讀完這一章，你會知道</h2><p>一個三段骨架、四個對話感的調整、一套「先說再寫」的流程，以及從模仿走到自己聲音的三條界線。</p></div></div>
+    <div class="rv" style="padding:48px 0 70px;"><div class="about-block"><h2>你可能正在想</h2><p>「要怎麼開頭才有人看？」「為什麼我寫起來像在交報告？」「盯著空白畫面半小時，一個字都打不出來。」「要模仿別人嗎？」</p></div><div class="about-block"><h2>讀完這一部分，你會知道</h2><p>一個三段骨架、四個對話感的調整、一套「先說再寫」的流程，以及從模仿走到自己聲音的三條界線。</p></div></div>
   </div>
 </main>
 <footer class="foot">
@@ -412,15 +402,15 @@ img{ max-width:100%; }
       不談爆紅公式，只談敢不敢寫、怎麼寫得像自己、怎麼持續寫下去。
     </div>
     <div>
-      <b>章節</b>
-      <ul><li><a href="../rumors/">第01章　起步階段的迷思</a></li><li><a href="../mindset/">第02章　寫出你自己的心態</a></li><li><a href="./">第03章　實戰寫作策略</a></li><li><a href="../rhythm/">第04章　持續經營的節奏</a></li></ul>
+      <b>主題</b>
+      <ul><li><a href="../rumors/">起步迷思</a></li><li><a href="../mindset/">心態</a></li><li><a href="./">怎麼表達才像人</a></li><li><a href="../rhythm/">節奏</a></li></ul>
     </div>
     <div>
       <b>索引</b>
       <ul>
-        <li><a href="../what-to-post/">10 個起步選題</a></li>
+        <li>H 個選題</a></li>
         <li><a href="../faq/">常見問題</a></li>
-        <li><a href="../about/">關於這份指南</a></li>
+        <li><a href="../about/">關於</a></li>
         <li><a href="https://blog.billy4select.com/">回部落格</a></li>
       </ul>
     </div>

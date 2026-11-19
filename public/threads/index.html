@@ -50,26 +50,28 @@ img{ max-width:100%; }
 .pbar{ position:fixed; inset:0 0 auto 0; height:3px; background:transparent; z-index:60; }
 .pbar i{ display:block; height:100%; width:0; background:linear-gradient(90deg,#FF8533,var(--c)); box-shadow:0 0 8px rgba(255,102,0,.35); }
 
-.site-head{ position:sticky; top:0; z-index:40; background:rgba(255,251,247,.92);
-  backdrop-filter:blur(12px); border-bottom:1px solid var(--line-soft); }
-.head-in{ max-width:1120px; margin:0 auto; padding:15px 28px; display:flex; align-items:center; justify-content:space-between; gap:18px; box-sizing:border-box; }
+.site-head{ position:sticky; top:0; z-index:40; background:rgba(255,251,247,.94); backdrop-filter:blur(12px); border-bottom:1px solid var(--line-soft); }
+.head-in{ max-width:1120px; margin:0 auto; padding:12px 28px; display:flex; align-items:center; justify-content:space-between; gap:20px; box-sizing:border-box; }
 .brand{ display:flex; align-items:baseline; gap:10px; flex:0 0 auto; cursor:pointer;
   padding:4px 0; transition:opacity .15s ease; }
 .brand:hover{ opacity:.75; }
 .brand-main{ font-family:var(--serif); font-weight:700; font-size:18px; letter-spacing:.02em; }
 .brand-sub{ font-size:11px; color:var(--muted); letter-spacing:.14em; }
-.nav{ display:flex; gap:6px; font-size:14.5px; font-weight:500; color:var(--ink-2);
-  overflow-x:auto; scrollbar-width:none; flex:1 1 auto; min-width:0; justify-content:flex-end; }
+.nav{ display:flex; gap:8px; font-size:14px; font-weight:500; color:var(--ink-2);
+  overflow-x:auto; scrollbar-width:none; flex:1 1 auto; min-width:0; justify-content:flex-end;
+  align-items:center; padding:0; background:transparent; border:none; border-radius:0; }
 .nav::-webkit-scrollbar{ display:none; }
-.nav a{ position:relative; padding:8px 12px; white-space:nowrap; border-radius:6px;
-  transition:color .15s ease, background .15s ease; cursor:pointer; }
-.nav a:hover{ color:var(--c); background:var(--c-soft); }
-.nav a:active{ background:rgba(255,102,0,.16); }
-.nav a.on{ color:var(--c); background:var(--c-soft); font-weight:600; }
-.nav a.on::after{ content:""; position:absolute; left:12px; right:12px; bottom:4px; height:2px;
-  background:var(--c); border-radius:1px; }
-.nav a.back{ color:var(--muted); margin-left:6px; }
-.nav a.back:hover{ color:var(--ink-2); background:rgba(30,28,23,.05); }
+.nav a{ position:relative; padding:8px 10px; white-space:nowrap; border-radius:0;
+  transition:color .15s ease; cursor:pointer; color:var(--ink-2); font-weight:500;
+  background:transparent; box-shadow:none; }
+.nav a:hover{ color:var(--c); background:transparent; box-shadow:none; }
+.nav a:active{ background:transparent; }
+.nav a.on{ color:var(--c); background:transparent; font-weight:600; box-shadow:none; }
+.nav a.on::after{ content:""; position:absolute; left:10px; right:10px; bottom:2px; height:2px;
+  background:var(--c); border-radius:1px; display:block; }
+.nav a.back{ color:var(--muted); margin-left:4px; background:transparent; }
+.nav a.back:hover{ color:var(--ink-2); background:transparent; }
+
 
 .wrap{ max-width:1120px; margin:0 auto; padding:0 28px; box-sizing:border-box; }
 .eyebrow{ font-size:12.5px; letter-spacing:.04em; color:var(--muted); font-weight:600; display:block; margin:0; padding:0; }
@@ -120,7 +122,7 @@ img{ max-width:100%; }
   padding:26px 22px 22px; display:flex; flex-direction:column; min-height:270px;
   border-top:3px solid var(--a,var(--c)); transition:transform .28s ease, box-shadow .28s ease; }
 .chap:hover{ transform:translateY(-4px); box-shadow:0 16px 34px -22px rgba(30,28,23,.55); }
-.chap-no{ font-size:10.5px; letter-spacing:.22em; color:var(--a,var(--c)); }
+.chap-no{ display:block; font-size:12px; letter-spacing:.06em; color:var(--muted); font-weight:600; margin-bottom:6px; }
 .chap h3{ font-family:var(--serif); font-size:19.5px; margin:14px 0 6px; font-weight:700; line-height:1.5; color:var(--ink); }
 .chap h3 a:hover{ color:var(--a,var(--c)); }
 .chap p{ font-size:14.5px; line-height:1.85; color:var(--ink-2); font-weight:500; margin:0 0 16px; }
@@ -177,7 +179,7 @@ img{ max-width:100%; }
 .outcome b{ display:block; font-family:var(--serif); font-size:19px; font-weight:700; margin-bottom:10px; color:var(--ink); }
 .outcome p{ margin:0; font-size:15px; line-height:1.85; color:var(--ink-2); font-weight:500; }
 .stuck-card{ position:relative; overflow:hidden; }
-.chap-no{ display:inline-flex; align-items:center; gap:8px; }
+.chap-no{ display:block; font-size:12px; letter-spacing:.06em; color:var(--muted); font-weight:600; margin-bottom:6px; }
 .chap-dot{ width:8px; height:8px; border-radius:50%; background:var(--a,var(--c)); flex:0 0 auto; }
 
 .sec-visual{ position:relative; }
@@ -286,16 +288,11 @@ img{ max-width:100%; }
 .note ul, .note ol{ margin:6px 0 0; padding-left:18px; }
 .note li{ font-size:14.5px; line-height:1.95; color:var(--ink-2); margin-bottom:6px; }
 
-.steps{ counter-reset:step; list-style:none; padding:0; margin:0 0 30px; }
-.steps li{ counter-increment:step; position:relative; padding:0 0 18px 46px;
-  font-size:15.5px; line-height:1.95; color:var(--ink-2); }
+.steps{ margin:8px 0 28px; padding:0 0 0 1.25em; }
+.steps li{ margin:0 0 1.1em; padding:0; line-height:1.75; font-size:17px; color:var(--ink); }
 .steps li b{ display:block; margin-bottom:4px; color:var(--ink); font-weight:700; }
-.steps li::before{ content:counter(step,decimal-leading-zero); position:absolute; left:0; top:1px;
-  font-family:var(--sans); font-size:12px; color:var(--c); letter-spacing:.06em;
-  width:30px; height:30px; border:1px solid var(--line); display:flex; align-items:center;
-  justify-content:center; background:var(--card); }
-.eg{ display:block; margin-top:8px; padding-left:14px; border-left:2px solid var(--line);
-  color:var(--muted); font-size:13.5px; line-height:1.9; }
+.steps li::before{ display:none; content:none; }
+.eg{ display:block; margin-top:6px; color:var(--muted); font-size:15.5px; line-height:1.7; border-left:2px solid var(--line); padding-left:12px; }
 
 .valgrid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line);
   border:1px solid var(--line); margin:6px 0 30px; }
@@ -336,14 +333,12 @@ img{ max-width:100%; }
   line-height:1.45; margin:16px 0 0; max-width:16em; }
 .hub-hero p{ margin:20px 0 0; max-width:31em; font-size:16.5px; line-height:2; color:var(--ink-2); }
 .hub-art{ position:absolute; right:0; top:34px; width:190px; color:var(--c); opacity:.45; }
-.hub-wm{ position:absolute; right:6px; bottom:-34px; font-family:var(--sans); font-size:180px;
-  font-weight:600; color:var(--c); opacity:.05; line-height:1; pointer-events:none; }
+.hub-wm{ display:none; }
 
 .hub-list{ margin:0; padding:0; list-style:none; }
-.hub-item{ display:grid; grid-template-columns:52px 1fr auto; gap:22px; align-items:center;
-  padding:30px 0; border-bottom:1px solid var(--line-soft); transition:padding-left .25s ease; }
+.hub-item{ display:grid; grid-template-columns:1fr auto; gap:22px; align-items:center; padding:28px 0; border-bottom:1px solid var(--line-soft); transition:padding-left .25s ease; }
 .hub-item:hover{ padding-left:8px; }
-.hub-no{ font-size:10.5px; letter-spacing:.16em; color:var(--muted); white-space:nowrap; }
+.hub-no{ display:none; }
 .hub-title{ display:block; font-family:var(--serif); font-size:19.5px; font-weight:600;
   line-height:1.6; transition:color .25s ease; }
 .hub-item:hover .hub-title{ color:var(--c); }
@@ -380,7 +375,7 @@ img{ max-width:100%; }
 .pbar i{ background:linear-gradient(90deg, #FF8533, var(--c)); box-shadow:0 0 8px rgba(255,102,0,.35); }
 
 .site-head{ transition:box-shadow .25s ease, background .25s ease; }
-.site-head.is-scrolled{ box-shadow:0 4px 20px -8px rgba(26,18,16,.12); background:rgba(255,251,247,.94); }
+.site-head.is-scrolled{ box-shadow:0 4px 20px -8px rgba(26,18,16,.14); background:rgba(255,251,247,.98); }
 
 .hero-art{ will-change:transform; transition:transform .1s linear; }
 .hero-parallax-layer{ will-change:transform; }
@@ -447,8 +442,8 @@ img{ max-width:100%; }
   .valgrid{ grid-template-columns:1fr; }
   .pager{ grid-template-columns:1fr; }
   .pager a:first-child{ border-right:0; border-bottom:1px solid var(--line); }
-  .hub-wm{ font-size:130px; }
-  .hub-item{ grid-template-columns:44px 1fr; }
+  .hub-wm{ display:none; }
+  .hub-item{ grid-template-columns:1fr auto; }
   .hub-arrow{ display:none; }
   .band{ padding:40px 0; }
   .read{ max-width:100%; }
@@ -554,19 +549,19 @@ img{ max-width:100%; }
     <p class="path-hint">多數人先拆掉其中一道牆，就開始寫了。技巧可以之後再補；心結不拆，寫再多也容易停。</p>
   </div>
 
-  <!-- 完整路徑：心態階段 -->
+  <!-- 主題路徑 -->
   <div class="wrap sec rv">
     <div class="sec-head">
       <div>
-        <div class="eyebrow">完整路徑</div>
-        <h2 class="h2" style="margin-top:14px;">四個階段，把經營的心態理順</h2>
+        <div class="eyebrow">想一次看完</div>
+        <h2 class="h2" style="margin-top:14px;">四個主題，把經營的心態理順</h2>
       </div>
-      <p>想一次看完再開始，從這裡進。每一階段處理一種卡住的方式。</p>
+      <p>想一次看完再開始，從這裡進。每個主題處理一種卡住的方式。</p>
     </div>
     <div class="grid4 rv rv-stagger">
       <article class="chap" style="--a:#FF6600">
-        <span class="chap-no">階段 01</span>
-        <h3><a href="rumors/">起步的心結</a></h3>
+        <span class="chap-no">主題</span>
+        <h3><a href="rumors/">起步迷思</a></h3>
         <p>敢不敢寫，往往卡在資格、流量與人設。</p>
         <ul>
           <li><a href="not-pro/">不夠專業也能開始嗎</a><span>01</span></li>
@@ -576,8 +571,8 @@ img{ max-width:100%; }
         </ul>
       </article>
       <article class="chap" style="--a:#E55C00">
-        <span class="chap-no">階段 02</span>
-        <h3><a href="mindset/">寫出自己的心態</a></h3>
+        <span class="chap-no">主題</span>
+        <h3><a href="mindset/">心態</a></h3>
         <p>從舞台表演，回到聊天室裡的真實。</p>
         <ul>
           <li><a href="stage-vs-chat/">舞台 vs 聊天室</a><span>01</span></li>
@@ -587,8 +582,8 @@ img{ max-width:100%; }
         </ul>
       </article>
       <article class="chap" style="--a:#FF8533">
-        <span class="chap-no">階段 03</span>
-        <h3><a href="writing/">怎麼表達才像人</a></h3>
+        <span class="chap-no">主題</span>
+        <h3><a href="writing/">寫作</a></h3>
         <p>不是句型公式，是讓文字重新像在說話。</p>
         <ul>
           <li><a href="formula/">停下來・共鳴・留下來</a><span>01</span></li>
@@ -598,8 +593,8 @@ img{ max-width:100%; }
         </ul>
       </article>
       <article class="chap" style="--a:#CC5200">
-        <span class="chap-no">階段 04</span>
-        <h3><a href="rhythm/">走得長久的節奏</a></h3>
+        <span class="chap-no">主題</span>
+        <h3><a href="rhythm/">節奏</a></h3>
         <p>小而穩定，勝過一次用力後消失。</p>
         <ul>
           <li><a href="frequency/">一週要發幾篇</a><span>01</span></li>
@@ -720,15 +715,15 @@ img{ max-width:100%; }
       先處理心態，再談技巧與流量。執行與策略卡住時，可以找我。
     </div>
     <div>
-      <b>章節</b>
-      <ul><li><a href="rumors/">第01章　起步階段的迷思</a></li><li><a href="mindset/">第02章　寫出你自己的心態</a></li><li><a href="writing/">第03章　實戰寫作策略</a></li><li><a href="rhythm/">第04章　持續經營的節奏</a></li></ul>
+      <b>主題</b>
+      <ul><li><a href="rumors/">起步迷思</a></li><li><a href="mindset/">心態</a></li><li><a href="writing/">寫作</a></li><li><a href="rhythm/">節奏</a></li></ul>
     </div>
     <div>
       <b>索引</b>
       <ul>
-        <li><a href="what-to-post/">10 個起步選題</a></li>
+        <li>H 個選題</a></li>
         <li><a href="faq/">常見問題</a></li>
-        <li><a href="about/">關於這份指南</a></li>
+        <li><a href="about/">關於</a></li>
         <li><a href="https://blog.billy4select.com/">回部落格</a></li>
       </ul>
     </div>
