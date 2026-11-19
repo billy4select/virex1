@@ -326,7 +326,7 @@
 .hp-item b{font-size:16px;line-height:1.45;transition:color .2s}
 .hp-item p{font-size:13px;color:var(--muted);margin:4px 0 0;line-height:1.65}
 .hp-arrow{margin-left:auto;color:var(--orange-dark);font-weight:800;padding-top:2px}
-.door-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
+.door-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
 .door{display:flex;flex-direction:column;border:1px solid var(--line);background:var(--white);padding:28px 26px;min-height:230px;transition:.2s}
 .door:hover{transform:translateY(-3px);border-color:#d59a76}
 .door-label{font-size:11px;letter-spacing:.12em;color:var(--orange-dark);font-weight:800}
