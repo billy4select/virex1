@@ -42,6 +42,7 @@ body{ margin:0; overflow-x:hidden; background:var(--paper); color:var(--ink);
   font-family:var(--sans); font-weight:400; font-size:16.5px;
   -webkit-font-smoothing:antialiased; letter-spacing:.012em; }
 a{ color:inherit; text-decoration:none; }
+a:focus-visible, .btn:focus-visible, .ck:focus-visible{ outline:2px solid var(--c); outline-offset:2px; }
 ::selection{ background:#E3EBDD; }
 img{ max-width:100%; }
 
@@ -52,17 +53,23 @@ img{ max-width:100%; }
   backdrop-filter:blur(12px); border-bottom:1px solid var(--line-soft); }
 .head-in{ max-width:1120px; margin:0 auto; padding:15px 28px; display:flex;
   align-items:center; justify-content:space-between; gap:18px; }
-.brand{ display:flex; align-items:baseline; gap:10px; flex:0 0 auto; }
+.brand{ display:flex; align-items:baseline; gap:10px; flex:0 0 auto; cursor:pointer;
+  padding:4px 0; transition:opacity .15s ease; }
+.brand:hover{ opacity:.75; }
 .brand-main{ font-family:var(--serif); font-weight:600; font-size:17.5px; letter-spacing:.05em; }
 .brand-sub{ font-size:11px; color:var(--muted); letter-spacing:.14em; }
-.nav{ display:flex; gap:22px; font-size:13px; color:var(--ink-2);
+.nav{ display:flex; gap:6px; font-size:13px; color:var(--ink-2);
   overflow-x:auto; scrollbar-width:none; flex:1 1 auto; min-width:0; justify-content:flex-end; }
 .nav::-webkit-scrollbar{ display:none; }
-.nav a{ position:relative; padding:5px 0; white-space:nowrap; transition:color .2s ease; }
-.nav a:hover{ color:var(--c); }
-.nav a.on{ color:var(--c); }
-.nav a.on::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--c); }
-.nav a.back{ color:var(--muted); }
+.nav a{ position:relative; padding:8px 12px; white-space:nowrap; border-radius:6px;
+  transition:color .15s ease, background .15s ease; cursor:pointer; }
+.nav a:hover{ color:var(--c); background:rgba(46,71,57,.08); }
+.nav a:active{ background:rgba(46,71,57,.14); }
+.nav a.on{ color:var(--c); background:rgba(46,71,57,.1); font-weight:500; }
+.nav a.on::after{ content:""; position:absolute; left:12px; right:12px; bottom:4px; height:2px;
+  background:var(--c); border-radius:1px; }
+.nav a.back{ color:var(--muted); margin-left:6px; }
+.nav a.back:hover{ color:var(--ink-2); background:rgba(30,28,23,.05); }
 
 .wrap{ max-width:1120px; margin:0 auto; padding:0 28px; }
 .eyebrow{ font-size:11px; letter-spacing:.24em; color:var(--muted);
@@ -74,11 +81,16 @@ img{ max-width:100%; }
 .sans{ font-family:var(--sans); }
 
 .btn{ font-size:14px; letter-spacing:.04em; padding:14px 28px; border:1px solid var(--c);
-  background:var(--c); color:#FBF8F0; display:inline-block;
-  transition:transform .22s ease, opacity .22s ease; }
-.btn:hover{ transform:translateY(-2px); opacity:.92; }
-.btn.ghost{ background:transparent; color:var(--ink); border-color:var(--line); }
-.btn.ghost:hover{ border-color:var(--c); color:var(--c); }
+  background:var(--c); color:#FBF8F0; display:inline-block; cursor:pointer;
+  border-radius:4px; font-weight:500;
+  box-shadow:0 1px 2px rgba(30,28,23,.12);
+  transition:transform .18s ease, background .18s ease, box-shadow .18s ease, border-color .18s ease; }
+.btn:hover{ transform:translateY(-2px); background:#3A5A48; box-shadow:0 6px 16px -6px rgba(46,71,57,.45); }
+.btn:active{ transform:translateY(0); box-shadow:0 1px 2px rgba(30,28,23,.12); }
+.btn.ghost{ background:var(--card); color:var(--ink); border-color:var(--line);
+  box-shadow:0 1px 2px rgba(30,28,23,.04); }
+.btn.ghost:hover{ border-color:var(--c); color:var(--c); background:#fff;
+  box-shadow:0 4px 12px -6px rgba(46,71,57,.25); }
 .btn-note{ font-size:12.5px; color:var(--muted); }
 
 .hero{ position:relative; padding:76px 0 60px; border-bottom:1px solid var(--line); overflow:hidden; }
@@ -112,35 +124,51 @@ img{ max-width:100%; }
 .chap h3 a:hover{ color:var(--a,var(--c)); }
 .chap p{ font-size:13px; line-height:1.85; color:var(--muted); margin:0 0 16px; }
 .chap ul{ margin:auto 0 0; padding:0; list-style:none; }
-.chap li{ font-size:13px; color:var(--ink-2); padding:8px 0; border-top:1px dashed var(--line-soft);
-  display:flex; justify-content:space-between; gap:10px; }
-.chap li a{ transition:color .2s ease; }
-.chap li a:hover{ color:var(--a,var(--c)); }
-.chap li span{ color:#BDB3A0; font-size:10.5px; letter-spacing:.06em; }
+.chap li{ font-size:13px; color:var(--ink-2); border-top:1px dashed var(--line-soft); }
+.chap li a{ display:flex; justify-content:space-between; gap:10px; align-items:center;
+  padding:10px 8px; margin:0 -8px; border-radius:4px; cursor:pointer;
+  transition:color .15s ease, background .15s ease; }
+.chap li a:hover{ color:var(--a,var(--c)); background:rgba(46,71,57,.06); }
+.chap li a:active{ background:rgba(46,71,57,.1); }
+.chap li span{ color:#BDB3A0; font-size:10.5px; letter-spacing:.06em; flex:0 0 auto; }
+.chap h3 a{ cursor:pointer; transition:color .15s ease; }
+.chap h3 a:hover{ color:var(--a,var(--c)); text-decoration:underline; text-underline-offset:4px; }
 .chap .wm{ position:absolute; right:12px; bottom:4px; font-family:var(--serif); font-size:62px;
   font-weight:600; color:var(--a,var(--c)); opacity:.07; pointer-events:none; line-height:1; }
 
 .stuck{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
 .stuck-card{ background:var(--card); border:1px solid var(--line); padding:28px 24px 24px;
-  display:flex; flex-direction:column; transition:transform .28s ease, border-color .28s ease, box-shadow .28s ease;
-  border-top:3px solid var(--c); }
-.stuck-card:hover{ transform:translateY(-4px); border-color:#CFC3AA; box-shadow:0 14px 32px -20px rgba(30,28,23,.45); }
+  display:flex; flex-direction:column; cursor:pointer; color:inherit; text-decoration:none;
+  transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  border-top:3px solid var(--c); border-radius:0 0 4px 4px; }
+.stuck-card:hover{ transform:translateY(-3px); border-color:var(--c);
+  box-shadow:0 12px 28px -14px rgba(46,71,57,.35); }
+.stuck-card:active{ transform:translateY(-1px); }
 .stuck-tag{ font-size:10.5px; letter-spacing:.2em; color:var(--mark); }
 .stuck-card h4{ font-family:var(--serif); font-size:19px; font-weight:600; line-height:1.6; margin:14px 0 12px; }
 .stuck-card p{ font-size:13.5px; line-height:1.9; color:var(--muted); margin:0 0 22px; }
-.stuck-go{ margin-top:auto; font-size:13.5px; font-weight:500; color:var(--c); display:flex; gap:8px; align-items:center; }
-.stuck-go::after{ content:"→"; transition:transform .25s ease; }
-.stuck-card:hover .stuck-go::after{ transform:translateX(6px); }
+.stuck-go{ margin-top:auto; font-size:13px; font-weight:500; color:#FBF8F0; background:var(--c);
+  display:inline-flex; gap:8px; align-items:center; align-self:flex-start;
+  padding:10px 16px; border-radius:4px;
+  transition:background .18s ease, transform .18s ease; }
+.stuck-go::after{ content:"→"; transition:transform .2s ease; }
+.stuck-card:hover .stuck-go{ background:#3A5A48; }
+.stuck-card:hover .stuck-go::after{ transform:translateX(4px); }
 .path-hint{ margin:28px 0 0; font-size:13.5px; line-height:1.85; color:var(--muted); max-width:36em; }
 .path-hint::before{ content:""; display:inline-block; width:18px; height:1px; background:var(--c); vertical-align:middle; margin-right:10px; opacity:.5; }
 
 .side-entries{ padding-top:28px; padding-bottom:40px; }
 .side-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
 .side-link{ display:flex; flex-direction:column; gap:6px; padding:20px 22px; background:var(--card);
-  border:1px solid var(--line); transition:border-color .25s ease, transform .25s ease; }
-.side-link:hover{ border-color:#CFC3AA; transform:translateY(-2px); }
+  border:1px solid var(--line); border-radius:4px; cursor:pointer;
+  transition:border-color .18s ease, transform .18s ease, box-shadow .18s ease, background .18s ease; }
+.side-link:hover{ border-color:var(--c); transform:translateY(-2px);
+  box-shadow:0 8px 20px -12px rgba(46,71,57,.3); background:#fff; }
+.side-link:active{ transform:translateY(0); }
 .side-k{ font-size:12px; color:var(--muted); letter-spacing:.04em; }
-.side-t{ font-family:var(--serif); font-size:16px; font-weight:600; color:var(--ink); }
+.side-t{ font-family:var(--serif); font-size:16px; font-weight:600; color:var(--ink);
+  transition:color .15s ease; }
+.side-link:hover .side-t{ color:var(--c); }
 
 .outcomes{ padding-bottom:20px; }
 .outcome-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
@@ -169,8 +197,10 @@ img{ max-width:100%; }
 .tool-copy h2{ font-family:var(--serif); font-size:27px; margin:0 0 14px; font-weight:600; line-height:1.5; }
 .tool-copy p{ font-size:14px; line-height:1.95; color:var(--ink-2); margin:0 0 8px; max-width:26em; }
 .checker{ background:var(--paper); border:1px solid var(--line); padding:26px 24px; }
-.checker .ck{ display:flex; gap:12px; padding:12px 0; border-bottom:1px dashed var(--line-soft);
-  font-size:13.5px; line-height:1.75; cursor:pointer; }
+.checker .ck{ display:flex; gap:12px; padding:12px 10px; margin:0 -10px; border-bottom:1px dashed var(--line-soft);
+  font-size:13.5px; line-height:1.75; cursor:pointer; border-radius:4px;
+  transition:background .15s ease; }
+.checker .ck:hover{ background:rgba(46,71,57,.05); }
 .checker .ck:last-of-type{ border-bottom:0; }
 .checker .ck input{ appearance:none; width:16px; height:16px; border:1px solid #C9BFAC;
   margin:3px 0 0; flex:0 0 16px; cursor:pointer; position:relative; background:#fff; }
@@ -461,24 +491,24 @@ img{ max-width:100%; }
       <p>點最像你心裡的話。這三句幾乎是所有新手的第一道牆。</p>
     </div>
     <div class="stuck">
-      <article class="stuck-card">
+      <a class="stuck-card" href="not-pro/">
         <span class="stuck-tag">最常見</span>
         <h4>「我還不夠專業，好像沒資格寫。」</h4>
         <p>專業不是入場券，願意開始才是。正在發生的過程，就是最好的素材。</p>
-        <a class="stuck-go" href="not-pro/">讀這篇 · 約 4 分鐘</a>
-      </article>
-      <article class="stuck-card">
+        <span class="stuck-go">開始閱讀 · 4 分鐘</span>
+      </a>
+      <a class="stuck-card" href="nobody-sees/">
         <span class="stuck-tag">最常放棄</span>
         <h4>「我發了，根本沒人看。」</h4>
         <p>會沒人看，而且很正常。那不是你不夠好，只是習慣還沒養成。</p>
-        <a class="stuck-go" href="nobody-sees/">讀這篇 · 約 5 分鐘</a>
-      </article>
-      <article class="stuck-card">
+        <span class="stuck-go">開始閱讀 · 5 分鐘</span>
+      </a>
+      <a class="stuck-card" href="what-to-post/">
         <span class="stuck-tag">最常空白</span>
         <h4>「我想寫，可是不知道寫什麼。」</h4>
         <p>你不是沒內容，只是還沒找到讓你說話的起點。</p>
-        <a class="stuck-go" href="what-to-post/">讀這篇 · 約 6 分鐘</a>
-      </article>
+        <span class="stuck-go">開始閱讀 · 6 分鐘</span>
+      </a>
     </div>
     <p class="path-hint">多數人先拆掉其中一道牆，就開始寫了。技巧可以之後再補；心結不拆，寫再多也容易停。</p>
   </div>
