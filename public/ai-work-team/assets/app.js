@@ -1,22 +1,4 @@
 (function(){
-  // 下拉選單
-  var drop=document.querySelector('.nav-drop');
-  if(drop){
-    var toggle=drop.querySelector('.nav-toggle');
-    var menu=drop.querySelector('.nav-menu');
-    if(toggle&&menu){
-      toggle.addEventListener('click',function(e){
-        e.preventDefault();e.stopPropagation();
-        var open=drop.classList.toggle('open');
-        toggle.setAttribute('aria-expanded',open?'true':'false');
-      });
-      document.addEventListener('click',function(e){
-        if(!drop.contains(e.target)){drop.classList.remove('open');toggle.setAttribute('aria-expanded','false');}
-      });
-      document.addEventListener('keydown',function(e){if(e.key==='Escape'){drop.classList.remove('open');toggle.setAttribute('aria-expanded','false');}});
-    }
-  }
-
   // 複製 Prompt
   window.copyPrompt=function(id,btn){
     var pre=document.getElementById('prompt-text-'+id);
