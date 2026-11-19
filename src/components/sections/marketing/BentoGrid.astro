@@ -1,50 +1,24 @@
 ---
 /**
- * BentoGrid - Modern bento-style feature grid
- *
- * @description
- * Displays features in a trendy bento box layout with varying card sizes.
- * Perfect for showcasing multiple features in an engaging visual format.
- *
- * @example Basic usage
- * ```astro
- * <BentoGrid
- *   title="Platform Features"
- *   items={[
- *     { title: "Fast Deploys", description: "...", icon: "lucide:zap", size: "large" },
- *     { title: "Auto Scaling", description: "...", icon: "lucide:trending-up" },
- *   ]}
- * />
- * ```
+ * BentoGrid - Equal size card grid
  */
 
 import { Icon } from 'astro-icon/components';
 
 interface BentoItem {
-  /** Item title */
   title: string;
-  /** Item description */
   description: string;
-  /** Icon name */
   icon?: string;
-  /** Image URL (alternative to icon) */
   image?: string;
-  /** Card size */
   size?: 'small' | 'medium' | 'large';
-  /** Accent color variant */
   accent?: 'primary' | 'blue' | 'green' | 'purple' | 'orange';
-  /** Optional link */
   href?: string;
 }
 
 interface Props {
-  /** Section title */
   title?: string;
-  /** Section subtitle */
   subtitle?: string;
-  /** Array of bento items */
   items: BentoItem[];
-  /** Section background style */
   background?: 'default' | 'muted' | 'accent';
 }
 
@@ -65,17 +39,11 @@ const accentColors = {
 };
 
 const hasHeading = title || subtitle;
-
-// Determine grid placement based on size
-const getGridClass = (size: string = 'small') => {
-  if (size === 'large') return 'md:col-span-2 md:row-span-2';
-  if (size === 'medium') return 'md:col-span-2';
-  return '';
-};
 ---
 
 <section class:list={['py-section', bgClass]}>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
     {
       hasHeading && (
         <div class="text-center mb-12">
@@ -85,7 +53,9 @@ const getGridClass = (size: string = 'small') => {
       )
     }
 
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[minmax(180px,auto)]">
+    <!-- 兩欄等寬、等高卡片 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:auto-rows-fr">
+
       {
         items.map((item) => {
           const accent = item.accent || 'primary';
@@ -95,12 +65,11 @@ const getGridClass = (size: string = 'small') => {
             <Tag
               href={item.href}
               class:list={[
-                'group relative flex flex-col p-6 rounded-2xl border border-border bg-background overflow-hidden transition-all duration-300',
+                'group relative flex flex-col h-full min-h-[220px] p-8 rounded-2xl border border-border bg-background overflow-hidden transition-all duration-300',
                 item.href && 'hover:border-primary/50 hover:shadow-lg cursor-pointer',
-                getGridClass(item.size),
               ]}
             >
-              {/* Background gradient */}
+              <!-- Background gradient -->
               <div
                 class:list={[
                   'absolute inset-0 bg-linear-to-br opacity-50 transition-opacity group-hover:opacity-70',
@@ -108,11 +77,12 @@ const getGridClass = (size: string = 'small') => {
                 ]}
               />
 
-              {/* Content */}
+              <!-- Content -->
               <div class="relative z-10 flex flex-col h-full">
-                {/* Icon or Image */}
+
+                <!-- Icon or Image -->
                 {item.image ? (
-                  <div class="mb-4 -mx-6 -mt-6">
+                  <div class="mb-5 -mx-8 -mt-8">
                     <img
                       src={item.image}
                       alt={item.title}
@@ -124,44 +94,36 @@ const getGridClass = (size: string = 'small') => {
                   item.icon && (
                     <div
                       class:list={[
-                        'w-12 h-12 rounded-xl flex items-center justify-center mb-4',
+                        'w-14 h-14 rounded-xl flex items-center justify-center mb-5',
                         `bg-linear-to-br ${accentColors[accent]}`,
                       ]}
                     >
-                      <Icon name={item.icon} class="w-6 h-6" />
+                      <Icon name={item.icon} class="w-7 h-7" />
                     </div>
                   )
                 )}
 
-                <h3
-                  class:list={[
-                    'font-semibold text-text mb-2',
-                    item.size === 'large' ? 'text-2xl' : 'text-lg',
-                  ]}
-                >
+                <h3 class="text-xl font-semibold text-text mb-3">
                   {item.title}
                 </h3>
 
-                <p
-                  class:list={[
-                    'text-text-muted leading-relaxed flex-1',
-                    item.size === 'large' ? 'text-base' : 'text-sm',
-                  ]}
-                >
+                <p class="text-base text-text-muted leading-relaxed flex-1">
                   {item.description}
                 </p>
 
                 {item.href && (
-                  <div class="mt-4 flex items-center gap-1 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div class="mt-5 flex items-center gap-1 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
                     Learn more
                     <Icon name="lucide:arrow-right" class="w-4 h-4" />
                   </div>
                 )}
+
               </div>
             </Tag>
           );
         })
       }
+
     </div>
   </div>
 </section>
