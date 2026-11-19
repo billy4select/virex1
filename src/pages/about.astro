@@ -9,69 +9,72 @@ import CTA from '@sections/marketing/CTA.astro';
 import { siteConfig } from '@/config';
 
 /**
- * 2024 年的實驗數據
+ * Threads 經營實驗
  */
 const stats = [
-  { value: '35天', label: 'Threads 0 到 1,000 追蹤' },
-  { value: '140天', label: 'Threads 突破 10,000 追蹤' },
-  { value: '0元', label: '廣告費用投入' },
-  { value: '100%', label: '真實觀點' },
+  { value: '35天', label: 'Threads 從 0 到 1,000 位追蹤者' },
+  { value: '140天', label: 'Threads 突破 10,000 位追蹤者' },
+  { value: '0元', label: '廣告投放費用' },
+  { value: '10年以上', label: '行銷工作經驗' },
 ];
 
 /**
- * 我關注的四件事 (Values)
+ * 我對工作、內容與商業的觀察
  */
 const values = [
   {
-    title: '思維比工具重要',
+    title: '先理解問題，再選擇工具',
     description:
-      '你現在學的 AI 工具，可能半年後就翻新。但你怎麼拆解問題、怎麼做判斷，這是 AI 再進步也沒辦法替你的事。',
+      'AI 工具一直在變，新的功能與服務不斷出現。我更在意的是，能不能看懂自己遇到的問題，知道什麼時候該用什麼工具，以及怎麼判斷結果是否真的有用。',
   },
   {
-    title: '經驗就是你的資產',
+    title: '經驗需要經過整理與驗證',
     description:
-      '你 Line 訊息裡那些別人常來問你的問題，就是市場對你的真實需求。解決困難的過程，才是最吸引人的賣點。',
+      '工作中累積的經驗、做過的嘗試，以及遇過的問題，都可能成為有價值的知識。但經驗不一定能直接複製，還需要理解當時的條件，才能知道哪些地方值得參考。',
   },
   {
-    title: '變現是結果而非目的',
+    title: '內容也有商業價值',
     description:
-      '持續輸出有價值內容，信任自然積累，變現是過程的自然結果。從變現出發只會讓你不知道自己為了什麼在做分享。',
+      '一個人的經驗、專業與觀點，可以透過內容被更多人看見。當別人逐漸理解你能解決什麼問題，內容就有機會發展成個人品牌、服務，甚至是一門生意。',
   },
   {
-    title: '說真話的力量',
+    title: '保留自己的判斷',
     description:
-      '不追演算法、不買廣告。建立有結構的內容策略，並持續說真話，是建立影響力最短的路徑。',
+      '市場上有很多成功案例、流行方法與熱門觀點。我會關注它們，也會想知道背後的條件與商業邏輯。最後還是要回到自己的觀察與實際驗證，形成自己的判斷。',
   },
 ];
 
 /**
- * 關於比利陳 (取代原本的 Team)
+ * 關於比利陳
  */
 const team = [
   {
-    name: '比利陳 (Billy Chen)',
-    role: '行銷裡的路人甲 / 10年整合行銷實戰',
-    bio: '做過 PM、品牌行銷與整合行銷。我不是坐在辦公室看數據的理論家，我看過預算怎麼燒掉，也看過產品大賣，更理解決策背後的商業邏輯。',
-    avatar: '/public/avatar.webp', // 記得補上你的照片，或先用預設圖
-  }
+    name: '比利陳 Billy Chen',
+    role: '行銷工作者、內容創作者',
+    bio: '做過產品管理、品牌行銷與數位行銷，也參與過內容、廣告投放與數位產品相關工作。出版過《從零開始自媒體》、《寫給大家的行銷書》、《人人都做得到的知識變現》等書。這些年，我持續關注行銷、內容與商業之間的關係，也在實際工作與個人創作中，摸索新的可能性。',
+    avatar: '/avatar.webp',
+  },
 ];
 ---
 
 <MarketingLayout
   title={`關於我 - ${siteConfig.name}`}
-  description="比利陳 (行銷裡的路人甲) 的個人背景、行銷理念與 AI 時代的職場觀察。"
+  description="認識比利陳。分享行銷、AI、自媒體與商業觀察，以及這些領域背後的運作邏輯。"
 >
-  <PageHeader title="判斷力，是 AI 時代唯一的護城河" align="center" maxWidth="lg">
+  <PageHeader title="我想弄懂，這個世界正在怎麼改變" align="center" maxWidth="lg">
     <div class="max-w-3xl mx-auto">
-      <p class="mt-6 text-xl font-medium text-primary italic leading-relaxed">
-        「AI 放大你的執行力，但放大不了你對商業問題的判斷。那個判斷，才是你在這個時代真正值錢的東西。」
-      </p>
-      <div class="mt-8 space-y-4 text-lg text-text-muted leading-relaxed">
+      <div class="mt-6 space-y-5 text-lg text-text-muted leading-relaxed">
         <p>
-          我是比利陳。我在職場前線跑了超過十年。做過 <strong>PM</strong>，從市調、商品開發、成本設算到通路策略一條龍跑過；做過 <strong>品牌行銷</strong>，操盤線上線下媒體；做過 <strong>整合行銷</strong>，將內容與廣告轉化為真實銷售。
+          我是比利陳，做了十幾年行銷相關工作，經歷過產品管理、品牌行銷與數位行銷，也出版過幾本書。
         </p>
         <p>
-          我分享的多數時候只是我自己的經驗。我是這樣做的，我有效，你可以試試，但不代表我比你聰明。
+          這些年，我一直對幾件事很有興趣：一個產品為什麼有人買？一個品牌怎麼建立影響力？內容怎麼產生價值？一個人的專業，又能不能發展成自己的事業？
+        </p>
+        <p>
+          最近幾年，AI 的出現讓很多事情開始改變。我也持續實際使用各種工具，觀察它們如何影響工作方式、內容生產，以及原本的商業模式。
+        </p>
+        <p>
+          這個網站主要記錄我對這些事情的研究、觀察與實際經驗。有些是已經驗證的做法，有些還只是正在探索的問題。我會盡量把過程與背後的思考寫下來。
         </p>
       </div>
     </div>
@@ -80,7 +83,7 @@ const team = [
   <StatsSection stats={stats} background="muted" />
 
   <ValuesSection
-    title="我關注的四件事"
+    title="我關注的幾件事"
     items={values}
     variant="card"
     columns={2}
@@ -88,20 +91,27 @@ const team = [
   />
 
   <ContentSection
-    title="我在幫誰？"
+    title="這個網站適合誰？"
     content={[
-      "我有真實的積累，但這些積累還沒有轉化成可以獨立運作的資產。我在幫你做的就是這件事：把你腦袋裡的東西，變成別人看得見、認得出、願意為它付費的資產。",
-      "不論你是卡住的中階主管、想建立品牌的個人、想用 AI 提效的工作者，或是正在考慮轉型的資深工作者，這裡的內容都是為了幫你建立那道「護城河」。"
+      "如果你也關心 AI 如何改變工作，想知道內容與個人品牌怎麼產生商業價值，或是對企業、品牌與市場的運作方式感到好奇，這裡應該會有一些值得你看的東西。",
+      "你可能是正在尋找下一步的職場工作者，也可能是想經營個人品牌、發展個人事業的創作者或專業工作者。這裡不會只有工具教學，也會談我看到的現象、遇到的問題，以及我對背後原因的理解。",
+      "我不會把每個經驗都當成通用答案。不同的人、不同的環境，做法可能完全不一樣。比起直接告訴你應該怎麼做，我更希望這些內容能提供一些新的觀察角度。"
     ]}
     background="muted"
   />
 
-  <TeamSection title="創作者背景" members={team} columns={1} background="default" />
+  <TeamSection
+    title="關於我的經歷"
+    members={team}
+    columns={1}
+    background="default"
+  />
 
   <CTA
-    title="從這裡開始你的進化"
-    description="每週一篇不廢話的實踐筆記，給正在認真思考下一步的你。"
-    action={{ label: '立即訂閱電子報', href: 'https://billy4select.substack.com/' }}
+    title="繼續保持交流"
+    description="如果你也關心 AI、內容、行銷與商業世界的變化，歡迎透過文章或社群和我交流。"
+    action={{ label: '看看最新文章', href: '/blog' }}
+    secondaryAction={{ label: '加入 LINE 社群', href: 'https://line.me/' }}
     background="muted"
   />
 </MarketingLayout>
