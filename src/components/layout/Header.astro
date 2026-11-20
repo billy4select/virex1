@@ -18,13 +18,19 @@ const mainNavItems = headerNav.main.filter(
 // 分離 CTA 按鈕
 const ghostCTAs = headerNav.cta.filter((cta) => cta.variant === 'ghost');
 const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
+
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) => {
+  const normalized = href.endsWith('/') ? href : `${href}/`;
+  return normalized === '/' ? currentPath === '/' : currentPath.startsWith(normalized);
+};
 ---
 
 <header
   id="site-header"
   class="sticky top-0 z-50 p-1.5 bg-background/80 backdrop-blur-md border-b border-surface"
 >
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="主要導覽">
     <div class="flex items-center justify-between h-16">
       <a href="/" class="flex items-center gap-3 group">
         {
@@ -55,7 +61,11 @@ const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
           mainNavItems.map((item) => (
             <a
               href={item.href}
-              class="text-text-muted hover:text-text transition-colors text-sm font-medium rounded-md px-2 py-1 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background focus:outline-none"
+              aria-current={isActive(item.href) ? 'page' : undefined}
+              class:list={[
+                'transition-colors text-sm font-medium rounded-md px-2 py-1 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background focus:outline-none',
+                isActive(item.href) ? 'text-text bg-surface' : 'text-text-muted hover:text-text',
+              ]}
             >
               {item.label}
             </a>
@@ -92,7 +102,7 @@ const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
         <button
           id="mobile-menu-button"
           type="button"
-          aria-label="Toggle mobile menu"
+          aria-label="開啟導覽選單"
           aria-expanded="false"
           aria-controls="mobile-menu"
           class="p-2 rounded-md hover:bg-surface transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -120,20 +130,24 @@ const primaryCTA = headerNav.cta.find((cta) => cta.variant === 'primary');
   class="fixed inset-0 z-40 hidden md:hidden"
   role="dialog"
   aria-modal="true"
-  aria-label="Mobile navigation menu"
+  aria-label="行動版導覽選單"
 >
   <div id="mobile-menu-backdrop" class="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
   <nav
     id="mobile-menu-panel"
     class="absolute left-0 right-0 bg-surface border-b border-background shadow-lg"
-    aria-label="Mobile navigation"
+    aria-label="行動版導覽"
   >
     <div class="px-4 py-4 space-y-1">
       {
         mainNavItems.map((item) => (
           <a
             href={item.href}
-            class="block px-3 py-3 rounded-md text-text-muted hover:text-text hover:bg-background transition-colors text-base font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
+            aria-current={isActive(item.href) ? 'page' : undefined}
+            class:list={[
+              'block px-3 py-3 rounded-md transition-colors text-base font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset',
+              isActive(item.href) ? 'text-text bg-background font-semibold' : 'text-text-muted hover:text-text hover:bg-background',
+            ]}
           >
             {item.label}
           </a>

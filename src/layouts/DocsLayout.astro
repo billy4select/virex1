@@ -109,8 +109,8 @@ const currentSlug = Astro.url.pathname.replace('/docs/', '').replace(/\/$/, '');
         </nav>
       </aside>
 
-      <!-- Main content -->
-      <main class="flex-1 min-w-0">
+      <!-- Main content (MarketingLayout already provides the page's <main>) -->
+      <div class="flex-1 min-w-0">
         <article>
           <header class="mb-8 pb-6 border-b border-border">
             <p class="text-sm text-primary font-medium mb-2">{section}</p>
@@ -122,7 +122,7 @@ const currentSlug = Astro.url.pathname.replace('/docs/', '').replace(/\/$/, '');
             <slot />
           </div>
         </article>
-      </main>
+      </div>
     </div>
   </div>
 </MarketingLayout>

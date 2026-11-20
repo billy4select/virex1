@@ -6,7 +6,6 @@ import BlogSearch from '@/components/blog/BlogSearch.astro';
 import BlogTagNav from '@/components/blog/BlogTagNav.astro';
 import { getCollection } from 'astro:content';
 import type { GetStaticPaths } from 'astro';
-import { siteConfig } from '@/config';
 import { POSTS_PER_PAGE, getFeatured, getTagStats, sortByDate } from '@/lib/blog';
 
 export const getStaticPaths = (async ({ paginate }) => {
@@ -29,7 +28,7 @@ const currentPage = page.currentPage;
 
 <MarketingLayout
   title={`文章 - 第 ${currentPage} 頁`}
-  description={siteConfig.description}
+  description={`比利陳的文章第 ${currentPage} 頁。AI、商業、行銷、投資與個人事業的研究與觀察。`}
 >
   <section class="bg-background pt-10 pb-8 md:pt-14">
     <div class="max-w-4xl mx-auto px-4">

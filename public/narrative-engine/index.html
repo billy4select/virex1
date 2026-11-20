@@ -296,6 +296,9 @@ button{font:inherit;cursor:pointer}
 }
 @media(max-width:600px){
   #siteNav{height:60px;padding:0 16px;gap:8px}
+  #siteNav .nav-link:not(.nav-home){display:none}
+  #siteNav .nav-link.nav-home{font-size:12px;padding:8px 10px}
+  #siteNav .nav-cta{padding:9px 12px;font-size:12px;white-space:nowrap}
   #siteBrand .brand-text{display:none}
   #productHome{padding-top:60px}
   .home-wrap{width:min(100% - 32px,600px)}
@@ -314,6 +317,7 @@ button{font:inherit;cursor:pointer}
   <a class="nav-link active" href="#productHome">產品介紹</a>
   <a class="nav-link" href="#homeFeatures">功能特色</a>
   <a class="nav-link" href="#homeFAQ">常見問題</a>
+  <a class="nav-link nav-home" href="https://blog.billy4select.com/">回首頁</a>
   <a class="nav-cta" href="https://portaly.cc/billyselect4/product/iy9jAj9DLDS1w2kwTYNa" target="_blank" rel="noopener">開始製作　→</a>
 </nav>
 
@@ -501,7 +505,7 @@ button{font:inherit;cursor:pointer}
    </div>
    <footer class="home-footer">
     <span>Narrative Engine · AI 協助的文字轉動態影片工具</span>
-    <span>© 2026 billy4select 行銷裡的路人甲-比利陳</span>
+    <span><a href="https://blog.billy4select.com/">回首頁</a> · © 2026 billy4select 行銷裡的路人甲-比利陳</span>
    </footer>
   </div>
  </section>

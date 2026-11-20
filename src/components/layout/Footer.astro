@@ -30,6 +30,15 @@ const solutionsLinks = filterByFeature(footer.solutions);
 const resourcesLinks = filterByFeature(footer.resources);
 const companyLinks = filterByFeature(footer.company);
 const legalLinks = filterByFeature(footer.legal);
+
+const socialLinks = [
+  { href: social.youtube, label: 'YouTube', icon: 'simple-icons:youtube' },
+  { href: social.instagram, label: 'Instagram', icon: 'simple-icons:instagram' },
+  { href: social.x || social.threads, label: 'Threads', icon: 'simple-icons:threads' },
+  { href: social.twitter, label: 'X', icon: 'simple-icons:x' },
+  { href: social.github, label: 'GitHub', icon: 'simple-icons:github' },
+  { href: social.discord, label: 'Discord', icon: 'simple-icons:discord' },
+].filter((item) => item.href);
 ---
 
 <footer class="bg-surface border-t border-background">
@@ -39,7 +48,7 @@ const legalLinks = filterByFeature(footer.legal);
         <a href="/" class="inline-flex items-center gap-2 font-semibold text-lg text-text">
           {
             siteConfig.logo ? (
-              <img src={siteConfig.logo} alt={siteConfig.name} class="h-8 w-auto" />
+              <img src={siteConfig.logo} alt={siteConfig.name} width="32" height="32" loading="lazy" class="h-8 w-8 rounded-full object-cover" />
             ) : (
               siteConfig.name
             )
@@ -66,43 +75,17 @@ const legalLinks = filterByFeature(footer.legal);
         </div>
         <div class="flex items-center gap-4 mt-4">
           {
-            social.twitter && (
+            socialLinks.map((item) => (
               <a
-                href={social.twitter}
+                href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Twitter"
-                class="text-text-muted hover:text-text transition-colors"
+                aria-label={item.label}
+                class="text-text-muted hover:text-text transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md p-1"
               >
-                <Icon name="lucide:twitter" class="w-5 h-5" />
+                <Icon name={item.icon} class="w-5 h-5" aria-hidden="true" />
               </a>
-            )
-          }
-          {
-            social.github && (
-              <a
-                href={social.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                class="text-text-muted hover:text-text transition-colors"
-              >
-                <Icon name="lucide:github" class="w-5 h-5" />
-              </a>
-            )
-          }
-          {
-            social.discord && (
-              <a
-                href={social.discord}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Discord"
-                class="text-text-muted hover:text-text transition-colors"
-              >
-                <Icon name="simple-icons:discord" class="w-5 h-5" />
-              </a>
-            )
+            ))
           }
         </div>
       </div>

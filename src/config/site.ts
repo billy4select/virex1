@@ -23,7 +23,7 @@ export const author = '比利陳 Billy Chen';
 export const logo = '/avatar.webp';
 
 /** Open Graph 預覽圖路徑 (建議之後也把這張圖換成你的頭像或品牌圖) */
-export const ogImage = '/avatar.webp';
+export const ogImage = '/og-default.png';
 
 /** 社群連結 */
 export const social: SocialLinks = {

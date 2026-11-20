@@ -17,13 +17,13 @@ export const announcement: AnnouncementConfig = {
   id: 'line-group-launch',
 
   /** 公告顯示的內容文字 */
-  text: '🚀 比利陳的行銷實戰 Line 社群正式開放！立即加入交流',
+  text: '🚀 比利陳的行銷實戰 Line 社群開放',
 
   /** 連結網址 (指向你的 Line 群組) */
   href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw',
 
   /** 連結顯示的文字 */
-  linkText: "點我加入社群",
+  linkText: "加入社群",
 
   /** 視覺風格: 'primary' (主色) | 'secondary' (次色) | 'gradient' (漸層) */
   variant: 'primary',

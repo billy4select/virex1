@@ -34,6 +34,7 @@ Disallow: /
 
 # 第四部分：網站地圖
 Sitemap: ${siteConfig.url}/sitemap-index.xml
+Sitemap: ${siteConfig.url}/ai-work-team/sitemap.xml
 `;
 
   return new Response(robotsTxt, {

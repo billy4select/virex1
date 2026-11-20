@@ -74,7 +74,7 @@ const variantClasses = {
 <div
   id={`announcement-${id}`}
   class:list={[
-    'announcement-bar relative py-2.5 px-4 text-center text-sm font-medium',
+    'announcement-bar relative py-2.5 px-8 text-center text-xs sm:text-sm font-medium',
     variantClasses[variant],
   ]}
   role="banner"
@@ -100,7 +100,7 @@ const variantClasses = {
         <button
           type="button"
           class="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-md hover:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
-          aria-label="Dismiss announcement"
+          aria-label="關閉公告"
           data-dismiss-announcement={id}
         >
           <Icon name="lucide:x" class="w-4 h-4" aria-hidden="true" />

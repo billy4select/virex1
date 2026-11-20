@@ -5,6 +5,7 @@
  * 這是所有頁面的基礎結構，包含 HTML 頭部設定、SEO、主題初始化以及 Favicon。
  */
 import SEO from '@components/common/SEO.astro';
+import { siteConfig } from '@/config';
 import '../styles/global.css';
 
 interface Props {
@@ -32,7 +33,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="zh-Hant">
+<html lang="zh-Hant-TW">
   <head>
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
@@ -55,9 +56,8 @@ const {
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <link rel="icon" type="image/webp" href="/avatar.webp" />
-    <link rel="apple-touch-icon" href="/avatar.webp" />
+    <meta name="theme-color" content="#FF6A00" />
+
 
     <SEO
       title={title}
@@ -68,6 +68,13 @@ const {
       modifiedDate={modifiedDate}
       author={author}
       tags={tags}
+    />
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={`${siteConfig.name} RSS`}
+      href="/rss.xml"
     />
 
     <script is:inline>
@@ -92,6 +99,8 @@ const {
         });
       })();
     </script>
+
+    <slot name="head" />
   </head>
   <body class="min-h-screen bg-background text-text antialiased">
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVSL2LG5"
@@ -104,8 +113,6 @@ const {
       跳至主要內容
     </a>
     
-    <main id="main-content">
-      <slot />
-    </main>
+    <slot />
   </body>
 </html>

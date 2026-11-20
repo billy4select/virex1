@@ -45,6 +45,10 @@ export interface Navigation {
 }
 
 export interface SocialLinks {
+  youtube?: string;
+  instagram?: string;
+  x?: string;
+  threads?: string;
   twitter?: string;
   github?: string;
   discord?: string;
