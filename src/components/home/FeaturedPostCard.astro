@@ -17,8 +17,8 @@ const publishedDate = post.data.publishedDate.toLocaleDateString('zh-TW', {
 });
 ---
 
-<article class="mt-8 overflow-hidden rounded-3xl border border-border border-l-4 border-l-primary bg-surface">
-  <a href={postUrl(post.id)} class="group block p-6 md:p-8">
+<article class="mt-8 border-b border-border pb-8 md:pb-10">
+  <a href={postUrl(post.id)} class="group block">
     <div class="flex flex-wrap items-center gap-2 text-[11px] font-medium text-text-muted">
       <span class="rounded-full bg-primary/10 px-2.5 py-1 font-bold text-primary">
         {label}

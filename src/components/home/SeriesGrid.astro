@@ -9,7 +9,7 @@ interface Props {
 const { series } = Astro.props;
 ---
 
-<section id="series" class="bg-surface py-16 md:py-20">
+<section id="series" class="bg-background py-16 md:py-20">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
       <div class="max-w-2xl">
@@ -52,7 +52,7 @@ const { series } = Astro.props;
               {item.description}
             </p>
 
-            <div class="mt-5 rounded-2xl bg-surface p-4">
+            <div class="mt-5 rounded-2xl border border-border p-4">
               <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-primary">
                 走完你會得到
               </p>

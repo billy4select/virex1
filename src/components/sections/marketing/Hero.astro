@@ -137,11 +137,11 @@ const textClasses = needsLightText
 const minHeightClass = {
   default: 'py-section',
   compact: 'py-10 md:py-12',
-  large: 'py-24 md:py-32',
+  large: 'py-20 md:py-24 lg:min-h-[600px] lg:flex lg:items-center',
   screen: 'min-h-[80vh] flex items-center',
 }[minHeight];
 
-const contentWidthClass = minHeight === 'compact' ? 'max-w-4xl' : 'max-w-3xl';
+const contentWidthClass = minHeight === 'compact' || minHeight === 'large' ? 'max-w-4xl' : 'max-w-3xl';
 
 // Alignment classes
 const alignClass = align === 'left' ? 'text-left' : 'text-center mx-auto';
@@ -194,7 +194,7 @@ const buttonAlignClass = align === 'left' ? 'justify-start' : 'justify-center';
   <div
     class:list={[
       'relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8',
-      minHeight === 'screen' && 'w-full',
+      (minHeight === 'screen' || minHeight === 'large') && 'w-full',
     ]}
   >
     <div class:list={[contentWidthClass, alignClass]}>
