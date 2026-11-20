@@ -2,7 +2,6 @@
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import PostCard from '@ui/PostCard.astro';
-import BlogSearch from '@/components/blog/BlogSearch.astro';
 import BlogTagNav from '@/components/blog/BlogTagNav.astro';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
@@ -45,8 +44,6 @@ const { posts, tags } = Astro.props;
         <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-text">{tag}</h1>
         <span class="text-xs text-text-muted">{posts.length} 篇文章</span>
       </div>
-
-      <BlogSearch />
 
       <div class="border-b border-border pb-7">
         <BlogTagNav tags={tags} current={tag} />

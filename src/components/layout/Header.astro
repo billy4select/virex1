@@ -1,10 +1,11 @@
 ---
 /**
- * Header - 優化效能與移除搜尋後的最終修正版
+ * Header - 全站導覽與文章搜尋入口
  */
 import { siteConfig } from '@/config';
 import { Icon } from 'astro-icon/components';
 import ThemeToggle from '@ui/ThemeToggle.astro';
+import BlogSearch from '@/components/blog/BlogSearch.astro';
 import type { FeatureFlags } from '@/lib/types';
 
 const { features, navigation } = siteConfig;
@@ -74,6 +75,17 @@ const isActive = (href: string) => {
       </div>
 
       <div class="hidden md:flex items-center gap-4">
+        <button
+          type="button"
+          data-header-search-toggle
+          aria-expanded="false"
+          aria-controls="header-search-panel"
+          aria-label="搜尋文章"
+          class="inline-flex h-9 items-center gap-2 rounded-md px-2 text-sm font-medium text-text-muted transition-colors hover:bg-surface hover:text-text focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        >
+          <Icon name="lucide:search" class="h-4 w-4" aria-hidden="true" />
+          <span class="hidden xl:inline">搜尋</span>
+        </button>
         <ThemeToggle />
         {
           ghostCTAs.map((cta) => (
@@ -98,6 +110,16 @@ const isActive = (href: string) => {
       </div>
 
       <div class="flex items-center gap-2 md:hidden">
+        <button
+          type="button"
+          data-header-search-toggle
+          aria-expanded="false"
+          aria-controls="header-search-panel"
+          aria-label="搜尋文章"
+          class="rounded-md p-2 transition-colors hover:bg-surface focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        >
+          <Icon name="lucide:search" class="h-5 w-5 text-text" aria-hidden="true" />
+        </button>
         <ThemeToggle />
         <button
           id="mobile-menu-button"
@@ -124,6 +146,34 @@ const isActive = (href: string) => {
     </div>
   </nav>
 </header>
+
+<div
+  id="header-search-backdrop"
+  class="fixed inset-0 z-30 hidden bg-black/20 backdrop-blur-[2px]"
+  aria-hidden="true"
+></div>
+<div
+  id="header-search-panel"
+  hidden
+  class="fixed left-0 right-0 z-40 max-h-[calc(100vh-4.75rem)] overflow-y-auto border-b border-border bg-background shadow-xl"
+>
+  <div class="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl">
+      <div class="mb-1 flex items-center justify-between">
+        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-primary">搜尋文章</p>
+        <button
+          type="button"
+          data-header-search-close
+          aria-label="關閉搜尋"
+          class="rounded-md p-1.5 text-text-muted transition-colors hover:bg-surface hover:text-text focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        >
+          <Icon name="lucide:x" class="h-5 w-5" aria-hidden="true" />
+        </button>
+      </div>
+      <BlogSearch />
+    </div>
+  </div>
+</div>
 
 <div
   id="mobile-menu"
@@ -180,6 +230,10 @@ const isActive = (href: string) => {
 
 <script>
   const header = document.getElementById('site-header');
+  const headerSearchPanel = document.getElementById('header-search-panel');
+  const headerSearchBackdrop = document.getElementById('header-search-backdrop');
+  const headerSearchToggles = document.querySelectorAll<HTMLElement>('[data-header-search-toggle]');
+  const headerSearchClose = document.querySelector<HTMLElement>('[data-header-search-close]');
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
   const mobileMenuPanel = document.getElementById('mobile-menu-panel');
@@ -194,7 +248,52 @@ const isActive = (href: string) => {
     }
   }
 
+  function updateHeaderSearchPosition() {
+    if (header && headerSearchPanel) {
+      headerSearchPanel.style.top = `${header.getBoundingClientRect().bottom}px`;
+    }
+  }
+
+  function openHeaderSearch() {
+    if (!headerSearchPanel || !headerSearchBackdrop) return;
+    closeMobileMenu();
+    updateHeaderSearchPosition();
+    headerSearchPanel.hidden = false;
+    headerSearchBackdrop.classList.remove('hidden');
+    headerSearchToggles.forEach((button) => button.setAttribute('aria-expanded', 'true'));
+    window.setTimeout(() => {
+      headerSearchPanel.querySelector<HTMLInputElement>('input')?.focus();
+    }, 60);
+  }
+
+  function closeHeaderSearch() {
+    if (!headerSearchPanel || !headerSearchBackdrop) return;
+    headerSearchPanel.hidden = true;
+    headerSearchBackdrop.classList.add('hidden');
+    headerSearchToggles.forEach((button) => button.setAttribute('aria-expanded', 'false'));
+  }
+
+  function toggleHeaderSearch() {
+    if (!headerSearchPanel) return;
+    if (headerSearchPanel.hidden) {
+      openHeaderSearch();
+    } else {
+      closeHeaderSearch();
+    }
+  }
+
+  headerSearchToggles.forEach((button) => {
+    button.addEventListener('click', toggleHeaderSearch);
+  });
+  headerSearchBackdrop?.addEventListener('click', closeHeaderSearch);
+  headerSearchClose?.addEventListener('click', closeHeaderSearch);
+
+  window.addEventListener('resize', () => {
+    if (headerSearchPanel && !headerSearchPanel.hidden) updateHeaderSearchPosition();
+  });
+
   function openMobileMenu() {
+    closeHeaderSearch();
     updateMenuPosition();
     mobileMenu?.classList.remove('hidden');
     mobileMenuButton?.setAttribute('aria-expanded', 'true');
@@ -224,6 +323,11 @@ const isActive = (href: string) => {
   mobileMenuBackdrop?.addEventListener('click', closeMobileMenu);
 
   document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && headerSearchPanel && !headerSearchPanel.hidden) {
+      closeHeaderSearch();
+      headerSearchToggles[0]?.focus();
+      return;
+    }
     if (e.key === 'Escape' && mobileMenuButton?.getAttribute('aria-expanded') === 'true') {
       closeMobileMenu();
       mobileMenuButton?.focus();

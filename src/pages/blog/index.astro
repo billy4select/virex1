@@ -2,7 +2,6 @@
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import Pagination from '@ui/Pagination.astro';
-import BlogSearchToggle from '@/components/blog/BlogSearchToggle.astro';
 import BlogTopicNav from '@/components/blog/BlogTopicNav.astro';
 import ThemePostRow from '@/components/blog/ThemePostRow.astro';
 import { getCollection } from 'astro:content';
@@ -171,7 +170,6 @@ const startHere = [
               </div>
               <div class="flex items-center gap-4 pb-1">
                 <span class="hidden text-xs text-text-muted sm:inline">{remainingPosts.length} 篇</span>
-                <BlogSearchToggle />
               </div>
             </div>
 
