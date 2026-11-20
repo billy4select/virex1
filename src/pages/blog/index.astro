@@ -18,10 +18,10 @@ const themeCounts = getThemeCounts(allPosts);
 
   <section class="border-b border-border bg-background pb-8 pt-10 md:pb-10 md:pt-14">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <h1 class="text-3xl font-extrabold tracking-tight text-text md:text-5xl">
+      <h1 class="text-3xl font-extrabold tracking-tight text-text md:text-5xl" data-blog-heading>
         所有文章
       </h1>
-      <p class="mt-4 max-w-3xl text-base leading-relaxed text-text-muted md:text-lg">
+      <p class="mt-4 max-w-3xl text-base leading-relaxed text-text-muted md:text-lg" data-blog-description>
         探索所有文章，依主題篩選，或直接搜尋想了解的問題。
       </p>
 
@@ -29,11 +29,12 @@ const themeCounts = getThemeCounts(allPosts);
         id="blog-index-search"
         wrapperClass="mt-8 mb-0 max-w-2xl"
         placeholder="搜尋文章標題或內容……"
+        pageMode
       />
     </div>
   </section>
 
-  <section class="bg-background pb-20 pt-6">
+  <section class="bg-background pb-20 pt-6" data-blog-browse>
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <BlogTopicNav items={themeCounts} variant="pills" />
 

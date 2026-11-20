@@ -3,15 +3,23 @@ interface Props {
   id?: string;
   wrapperClass?: string;
   placeholder?: string;
+  pageMode?: boolean;
 }
 
 const {
   id = 'blog-search',
   wrapperClass = 'mb-5',
   placeholder = '搜尋文章，例如：幻覺、提案、PDF',
+  pageMode = false,
 } = Astro.props;
 ---
 
 <div class={wrapperClass}>
-  <div id={id} class="blog-search-ui" data-blog-search data-placeholder={placeholder}></div>
+  <div
+    id={id}
+    class="blog-search-ui"
+    data-blog-search
+    data-blog-search-page={pageMode ? 'true' : undefined}
+    data-placeholder={placeholder}
+  ></div>
 </div>

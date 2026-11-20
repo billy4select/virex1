@@ -5,6 +5,65 @@
 
   if (!mounts.length) return;
 
+  var browseSection = document.querySelector('[data-blog-browse]');
+  var pageHeading = document.querySelector('[data-blog-heading]');
+  var pageDescription = document.querySelector('[data-blog-description]');
+  var defaultHeading = pageHeading ? pageHeading.textContent.trim() : '';
+  var defaultDescription = pageDescription ? pageDescription.textContent.trim() : '';
+
+  function setPageSearchMode(active) {
+    if (!browseSection) return;
+
+    browseSection.hidden = active;
+
+    if (pageHeading) {
+      pageHeading.textContent = active ? '搜尋文章' : defaultHeading;
+    }
+
+    if (pageDescription) {
+      pageDescription.textContent = active
+        ? '輸入關鍵字，直接找站內文章。'
+        : defaultDescription;
+    }
+  }
+
+  function bindPageSearch(mount, attempt) {
+    if (mount.dataset.blogSearchPage !== 'true') return;
+
+    var input = mount.querySelector('.pagefind-ui__search-input');
+    if (!input) {
+      if (attempt < 8) {
+        window.setTimeout(function () {
+          bindPageSearch(mount, attempt + 1);
+        }, 100);
+      }
+      return;
+    }
+
+    if (input.dataset.blogSearchBound === 'true') return;
+    input.dataset.blogSearchBound = 'true';
+
+    function sync() {
+      setPageSearchMode(input.value.trim().length > 0);
+    }
+
+    input.addEventListener('input', sync);
+    input.addEventListener('search', sync);
+
+    mount.addEventListener('click', function (event) {
+      var target = event.target;
+      if (
+        target &&
+        target.closest &&
+        target.closest('.pagefind-ui__search-clear')
+      ) {
+        window.setTimeout(sync, 0);
+      }
+    });
+
+    sync();
+  }
+
   function showFallback() {
     mounts.forEach(function (mount) {
       var fallback = mount.parentElement
@@ -40,6 +99,10 @@
           searching: '搜尋中…'
         }
       });
+
+      window.setTimeout(function () {
+        bindPageSearch(mount, 0);
+      }, 0);
     });
   }
 
