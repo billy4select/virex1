@@ -4,10 +4,8 @@ description: 同樣一份文件，上傳前有沒有處理過，NotebookLM 給�
 publishedDate: 2026-04-13T14:12:05Z
 author: 比利陳 Billy Chen
 tags:
-  - NotebookLM
-  - 文件處理
-  - AI應用
-  - 職場效率
+  - NotebookLM疑難排解
+  - NotebookLM教學
 category: AI實戰
 featured: false
 boost: false

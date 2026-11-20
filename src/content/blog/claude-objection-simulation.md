@@ -4,10 +4,7 @@ description: 簡報準備好了，但你不確定客戶會在哪裡卡住。這�
 publishedDate: 2026-04-15T14:22:10Z
 author: 比利陳 Billy Chen
 tags:
-  - AI應用
-  - 簡報提案
-  - Claude
-  - 行銷實戰
+  - AI工作流程
 category: AI實戰
 featured: false
 boost: false

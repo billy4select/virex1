@@ -4,8 +4,6 @@ description: NotebookLM 和 Gemini 在 2026 年正式打通了。但「能串」
 publishedDate: 2026-04-23T09:42:15Z
 author: 比利陳 Billy Chen
 tags:
-  - NotebookLM
-  - AI工具比較
   - AI工作流程
 category: AI實戰
 featured: false

@@ -4,7 +4,7 @@ description: "評論不是讀完就好，是要變成可排序的決策依據。
 publishedDate: 2026-10-06T00:00:00Z
 author: "比利 (Billy Chen)"
 tags:
-  - 數據分析
+  - 數據與資安
   - AI工作流程
 category: "AI實戰"
 featured: false

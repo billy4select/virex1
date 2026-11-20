@@ -4,9 +4,7 @@ description: 同樣的 prompt，給 AI 讀過受眾資料再寫，跟直接叫�
 publishedDate: 2026-04-18T14:52:13Z
 author: 比利陳 Billy Chen
 tags:
-  - AI文案
-  - 行銷實戰
-  - Prompt技巧
+  - 行銷文案
 category: AI實戰
 featured: false
 boost: false

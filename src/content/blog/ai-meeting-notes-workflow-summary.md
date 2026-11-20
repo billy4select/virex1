@@ -4,9 +4,7 @@ description: 開會兩小時，整理一小時？AI 可以讓效率提升數倍�
 publishedDate: 2026-04-10T11:22:05Z
 author: 比利陳 Billy Chen
 tags:
-  - AI應用
-  - 職場成長
-  - 職場效率
+  - AI工作流程
 category: AI實戰
 featured: false
 boost: false

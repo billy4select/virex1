@@ -4,9 +4,7 @@ description: NotebookLM 很強，但它不是萬能的。這篇整理使用三�
 publishedDate: 2026-05-06T00:00:00Z
 author: 比利陳 Billy Chen
 tags:
-  - NotebookLM
-  - AI工具
-  - 職場效率
+  - 工具比較評測
 category: AI實戰
 featured: false
 boost: false

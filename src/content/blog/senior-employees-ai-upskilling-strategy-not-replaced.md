@@ -6,8 +6,7 @@ description: >-
 publishedDate: 2026-04-10T22:30:15Z
 author: 比利陳 Billy Chen
 tags:
-  - AI應用
-  - 職場成長
+  - 職涯與心態
 category: AI實戰
 featured: true
 boost: true

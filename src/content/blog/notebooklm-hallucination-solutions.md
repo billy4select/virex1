@@ -4,9 +4,7 @@ description: NotebookLM 號稱只回答你上傳的資料，但它還是會產�
 publishedDate: 2026-05-18T00:00:00Z
 author: 比利陳 Billy Chen
 tags:
-  - NotebookLM
-  - AI工具
-  - 職場效率
+  - NotebookLM疑難排解
 category: AI實戰
 featured: false
 boost: false

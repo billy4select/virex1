@@ -4,9 +4,7 @@ description: AI 處理財務數據極快，但未公開數字涉及法律與資�
 publishedDate: 2026-04-10T10:45:12Z
 author: 比利陳 Billy Chen
 tags:
-  - AI應用
-  - 數據分析
-  - 職場成長
+  - 數據與資安
 category: AI實戰
 featured: false
 boost: false

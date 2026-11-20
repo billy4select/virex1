@@ -4,8 +4,7 @@ description: 兩個工具都能建知識庫，但它們解決的是完全不同�
 publishedDate: 2026-04-21T13:48:52Z
 author: 比利陳 Billy Chen
 tags:
-  - NotebookLM
-  - AI工具比較
+  - 工具比較評測
   - 知識管理
 category: AI工具選型
 featured: false

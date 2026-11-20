@@ -4,10 +4,7 @@ description: NotebookLM 擅長整理資料，Claude 擅長把資料寫成東西�
 publishedDate: 2026-04-22T16:18:42Z
 author: 比利陳 Billy Chen
 tags:
-  - NotebookLM
-  - Claude
   - AI工作流程
-  - 職場效率
 category: AI實戰
 featured: false
 boost: false

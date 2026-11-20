@@ -6,9 +6,8 @@ description: >-
 publishedDate: 2026-04-10T10:15:22Z
 author: 比利陳 Billy Chen
 tags:
-  - AI應用
-  - NotebookLM
-  - 職場效率
+  - 知識管理
+  - AI工作流程
 category: AI實戰
 featured: true
 boost: true

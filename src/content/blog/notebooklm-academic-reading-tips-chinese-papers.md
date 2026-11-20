@@ -4,9 +4,7 @@ description: NotebookLM 讀英文論文很強，但面對語意密集的中文�
 publishedDate: 2026-04-12T22:15:36Z
 author: 比利陳 Billy Chen
 tags:
-  - NotebookLM
-  - 職場效率
-  - AI應用
+  - NotebookLM疑難排解
 category: AI實戰
 featured: false
 boost: false

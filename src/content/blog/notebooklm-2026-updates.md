@@ -4,8 +4,7 @@ description: 2026 年 NotebookLM 更新的速度比很多人跟得上的還快�
 publishedDate: 2026-05-07T09:53:00Z
 author: 比利陳 Billy Chen
 tags:
-  - NotebookLM
-  - AI工具
+  - NotebookLM教學
 category: AI實戰
 featured: false
 boost: false

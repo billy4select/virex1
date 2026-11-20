@@ -4,7 +4,6 @@ description: 每個工具都有免費版，但免費版不代表能用。這篇�
 publishedDate: 2026-04-21T10:12:45Z
 author: 比利陳 Billy Chen
 tags:
-  - 職場效率
   - AI工作流程
 category: AI實戰
 featured: false

@@ -4,9 +4,7 @@ description: 把 PDF 上傳進 NotebookLM，問它問題卻得到空洞的答案
 publishedDate: 2026-05-27T00:00:00Z
 author: 比利陳 Billy Chen
 tags:
-  - NotebookLM
-  - 文件處理
-  - 職場效率
+  - NotebookLM疑難排解
 category: AI實戰
 featured: false
 boost: false

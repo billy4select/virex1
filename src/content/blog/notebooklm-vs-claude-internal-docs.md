@@ -6,10 +6,7 @@ description: >-
 publishedDate: 2026-04-22T15:34:21Z
 author: 比利陳 Billy Chen
 tags:
-  - AI工具比較
-  - NotebookLM
-  - Claude
-  - 職場效率
+  - 工具比較評測
 category: AI實戰
 featured: false
 boost: false

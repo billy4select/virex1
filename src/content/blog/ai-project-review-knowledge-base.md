@@ -4,8 +4,8 @@ description: "專案結束後的檢討報告，總是存進資料夾後就被遺
 publishedDate: 2026-10-06T00:00:00Z
 author: "比利 (Billy Chen)"
 tags:
-  - AI工作流程
   - 知識管理
+  - AI工作流程
 category: "AI實戰"
 featured: false
 boost: false

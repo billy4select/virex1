@@ -4,10 +4,7 @@ description: 同樣的資料，問法不同，內容深度差很多。NotebookLM
 publishedDate: 2026-04-22T11:08:32Z
 author: 比利陳 Billy Chen
 tags:
-  - NotebookLM
-  - Prompt技巧
-  - AI應用
-  - 職場效率
+  - NotebookLM教學
 category: AI實戰
 featured: false
 boost: false

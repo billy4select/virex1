@@ -4,10 +4,7 @@ description: 叫 AI 寫週會報告，它給你一份格式漂亮但你自己都
 publishedDate: 2026-04-16T08:32:15Z
 author: 比利陳 Billy Chen
 tags:
-  - AI應用
-  - 職場效率
-  - 職場成長
-  - Prompt技巧
+  - AI工作流程
 category: AI實戰
 featured: false
 boost: false

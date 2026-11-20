@@ -6,9 +6,8 @@ description: >-
 publishedDate: 2026-04-20T09:22:18Z
 author: 比利陳 Billy Chen
 tags:
-  - AI工具比較
-  - 行銷實戰
-  - 簡報提案
+  - 工具比較評測
+  - 行銷文案
 category: AI實戰
 featured: false
 boost: false

@@ -4,8 +4,7 @@ description: AI 領域沒有「太晚」的概念，因為工具每半年就迭�
 publishedDate: 2026-04-10T23:45:10Z
 author: 比利陳 Billy Chen
 tags:
-  - AI應用
-  - 職場成長
+  - 職涯與心態
 category: AI實戰
 featured: false
 boost: false

@@ -4,9 +4,8 @@ description: AI 讓分析報告從半天縮短到兩小時，但當主管問起�
 publishedDate: 2026-04-09T09:20:15Z
 author: 比利陳 Billy Chen
 tags:
-  - AI應用
-  - 職場成長
-  - 數據分析
+  - 數據與資安
+  - 職涯與心態
 category: AI實戰
 featured: true
 boost: true

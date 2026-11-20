@@ -6,9 +6,7 @@ description: >-
 publishedDate: 2026-04-23T00:00:00Z
 author: 比利陳 Billy Chen
 tags:
-  - NotebookLM
-  - AI工具
-  - 知識管理
+  - NotebookLM教學
 category: AI實戰
 featured: true
 boost: true

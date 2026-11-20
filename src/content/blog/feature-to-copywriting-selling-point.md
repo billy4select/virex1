@@ -4,9 +4,7 @@ description: "產品規格寫得再詳細，為什麼使用者就是不買單？
 publishedDate: 2026-10-06T00:00:00Z
 author: "比利 (Billy Chen)"
 tags:
-  - AI文案
-  - 行銷實戰
-  - AI工作流程
+  - 行銷文案
 category: "行銷思維"
 featured: false
 boost: false

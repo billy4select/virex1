@@ -4,10 +4,8 @@ description: NotebookLM 生成簡報很快，但快不等於好用。這篇把�
 publishedDate: 2026-04-24T10:54:00Z
 author: 比利陳 Billy Chen
 tags:
-  - NotebookLM
-  - 簡報提案
-  - AI工具
-  - 職場效率
+  - AI工作流程
+  - 工具比較評測
 category: AI實戰
 featured: false
 boost: false

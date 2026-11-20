@@ -6,10 +6,8 @@ description: >-
 publishedDate: 2026-04-19T08:45:12Z
 author: 比利陳 Billy Chen
 tags:
-  - AI文案
-  - AI工具比較
-  - Claude
-  - 行銷實戰
+  - 行銷文案
+  - 工具比較評測
 category: AI工具選型
 featured: false
 boost: false

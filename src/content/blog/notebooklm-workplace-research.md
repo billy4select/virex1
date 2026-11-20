@@ -4,9 +4,6 @@ description: 你每天在整理資料，但整理完之後呢？資料還是資�
 publishedDate: 2026-04-24T10:03:00Z
 author: 比利陳 Billy Chen
 tags:
-  - NotebookLM
-  - AI應用
-  - 職場效率
   - 知識管理
 category: AI實戰
 featured: false

@@ -5,7 +5,7 @@ description: >-
 publishedDate: 2026-04-14T15:42:08Z
 author: 比利陳 Billy Chen
 tags:
-  - 行銷實戰
+  - 行銷文案
 category: 行銷
 featured: false
 boost: false

@@ -4,8 +4,7 @@ description: 為什麼上傳 PDF 會變亂碼？為什麼 AI 會產生幻覺？�
 publishedDate: 2026-04-10T00:00:00Z
 author: 比利陳 Billy Chen
 tags:
-  - AI應用
-  - NotebookLM
+  - NotebookLM疑難排解
 category: AI實戰
 featured: true
 boost: true
