@@ -5,7 +5,7 @@ publishedDate: 2026-05-18T00:00:00Z
 author: 比利陳 Billy Chen
 tags:
   - NotebookLM疑難排解
-category: AI 與科技
+category: 能力與學習
 featured: false
 boost: false
 draft: false

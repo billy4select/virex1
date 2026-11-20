@@ -1,243 +1,28 @@
 ---
-import MarketingLayout from '@/layouts/MarketingLayout.astro';
-import Breadcrumbs from '@/components/Breadcrumbs.astro';
-import BlogTopicNav from '@/components/blog/BlogTopicNav.astro';
-import ThemePostRow from '@/components/blog/ThemePostRow.astro';
-import { getCollection } from 'astro:content';
-import { siteConfig } from '@/config';
-import { sortByDate } from '@/lib/blog';
-import {
-  blogThemes,
-  getSubclusterPosts,
-  getThemeCounts,
-  getThemePosts,
-  themeUrl,
-} from '@/lib/themes';
+import { blogThemes } from '@/lib/themes';
 
-export async function getStaticPaths() {
-  return blogThemes.map((theme) => ({
+export function getStaticPaths() {
+  const legacyTargets: Record<string, string> = {
+    'ai-tech': 'ability-learning',
+    'business-marketing': 'business-thinking',
+    'personal-brand': 'personal-growth',
+    'investment-market': '',
+  };
+
+  const current = blogThemes.map((theme) => ({
     params: { category: theme.slug },
-    props: { theme },
+    props: { target: theme.slug },
   }));
+
+  const legacy = Object.entries(legacyTargets).map(([category, target]) => ({
+    params: { category },
+    props: { target },
+  }));
+
+  return [...current, ...legacy];
 }
 
-const { theme } = Astro.props;
+const { target } = Astro.props;
 
-const allPosts = await getCollection('blog', ({ data }) => !data.draft);
-const sortedPosts = sortByDate(allPosts);
-const posts = getThemePosts(sortedPosts, theme);
-const themeCounts = getThemeCounts(allPosts);
-
-const subclusters = theme.subclusters?.map((cluster) => ({
-  ...cluster,
-  posts: getSubclusterPosts(posts, theme, cluster),
-})) ?? [];
-
-const canonical = `${siteConfig.url}${themeUrl(theme.slug)}`;
-
-const collectionSchema =
-  posts.length > 0
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'CollectionPage',
-        '@id': `${canonical}#collection`,
-        name: `${theme.name}文章`,
-        description: theme.description,
-        url: canonical,
-        inLanguage: 'zh-Hant-TW',
-        about: {
-          '@type': 'Thing',
-          name: theme.name,
-        },
-        isPartOf: {
-          '@type': 'Blog',
-          '@id': `${siteConfig.url}/blog/#blog`,
-          name: `${siteConfig.name} 文章`,
-          url: `${siteConfig.url}/blog/`,
-        },
-        mainEntity: {
-          '@type': 'ItemList',
-          itemListOrder: 'https://schema.org/ItemListOrderDescending',
-          numberOfItems: posts.length,
-          itemListElement: posts.map((post, index) => ({
-            '@type': 'ListItem',
-            position: index + 1,
-            name: post.data.title,
-            url: `${siteConfig.url}/blog/${post.id}/`,
-          })),
-        },
-      }
-    : null;
-
-const schemas = collectionSchema ? [collectionSchema] : [];
+return Astro.redirect(target ? `/topics/${target}/` : '/topics/', 301);
 ---
-
-<MarketingLayout
-  title={`${theme.name}文章 - ${siteConfig.name}`}
-  description={theme.description}
-  noindex={!theme.indexable}
-  structuredData={schemas}
->
-  <Breadcrumbs
-    items={[
-      { label: '首頁', href: '/' },
-      { label: '文章', href: '/blog/' },
-      { label: theme.name },
-    ]}
-  />
-
-  <section class="border-b border-border bg-background pb-8 pt-10 md:pb-10 md:pt-14">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
-        {theme.eyebrow}
-      </p>
-      <div class="mt-3 flex flex-wrap items-end gap-x-4 gap-y-2">
-        <h1 class="text-3xl font-extrabold tracking-tight text-text md:text-5xl">
-          {theme.name}
-          <span class="mt-2 block text-sm font-semibold tracking-normal text-text-muted md:ml-2 md:mt-0 md:inline md:align-middle md:text-base">
-            主題研究中心
-          </span>
-        </h1>
-        <span class="rounded-full bg-surface px-3 py-1 text-xs font-medium text-text-muted">
-          {posts.length} 篇文章
-        </span>
-      </div>
-      <p class="mt-4 max-w-3xl text-base leading-relaxed text-text-muted md:text-lg">
-        {theme.description}
-      </p>
-    </div>
-  </section>
-
-  <section class="bg-background pb-20 pt-6">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <BlogTopicNav items={themeCounts} current={theme.slug} variant="pills" />
-
-      <div class="mt-12 grid gap-10 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-start">
-        <div class="min-w-0">
-          <p class="max-w-3xl text-base leading-relaxed text-text-muted">
-            {theme.intro}
-          </p>
-
-          <section class="mt-10" aria-labelledby="theme-questions-title">
-            <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
-              這個主題會回答
-            </p>
-            <h2 id="theme-questions-title" class="mt-3 text-2xl font-bold tracking-tight text-text">
-              先選問題，再讀文章。
-            </h2>
-            <div class="mt-5 grid gap-3 sm:grid-cols-3">
-              {theme.questions.map((question, index) => (
-                <div class="rounded-2xl border border-border bg-surface p-4">
-                  <span class="text-[10px] font-bold tracking-[0.2em] text-primary">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                  <h3 class="mt-2 text-sm font-bold text-text">{question.title}</h3>
-                  <p class="mt-2 text-xs leading-relaxed text-text-muted">{question.text}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {
-            posts.length > 0 ? (
-              theme.subclusters ? (
-                <div class="mt-12 space-y-12">
-                  {subclusters.map((cluster) => (
-                    <section aria-labelledby={`cluster-${cluster.slug}`}>
-                      <div class="flex flex-wrap items-end justify-between gap-3 border-b border-border pb-3">
-                        <div>
-                          <h2 id={`cluster-${cluster.slug}`} class="text-2xl font-bold tracking-tight text-text">
-                            {cluster.name}
-                          </h2>
-                          <p class="mt-1 text-sm text-text-muted">{cluster.description}</p>
-                        </div>
-                        <span class="text-xs font-medium text-text-muted">{cluster.posts.length} 篇</span>
-                      </div>
-
-                      {cluster.posts.length > 0 ? (
-                        <div class="mt-2">
-                          {cluster.posts.map((post) => <ThemePostRow post={post} />)}
-                        </div>
-                      ) : (
-                        <p class="py-6 text-sm text-text-muted">這個子題正在累積文章。</p>
-                      )}
-                    </section>
-                  ))}
-                </div>
-              ) : (
-                <div class="mt-12">
-                  <div class="flex items-end justify-between border-b border-border pb-3">
-                    <h2 class="text-2xl font-bold tracking-tight text-text">文章索引</h2>
-                    <span class="text-xs font-medium text-text-muted">{posts.length} 篇</span>
-                  </div>
-                  <div class="mt-2">
-                    {posts.map((post) => <ThemePostRow post={post} />)}
-                  </div>
-                </div>
-              )
-            ) : (
-              <div class="mt-12 rounded-2xl border border-dashed border-border bg-surface/60 p-8 text-center">
-                <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">研究中</p>
-                <h2 class="mt-3 text-2xl font-bold text-text">這個主題還沒有正式文章。</h2>
-                <p class="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-text-muted">
-                  我不想為了把頁面填滿而先寫。等第一個問題有足夠的資料、案例與判斷，才會發布。
-                  如果你想第一時間收到，可以先訂閱電子報。
-                </p>
-                <a
-                  href="https://billy4select.substack.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="mt-6 inline-flex rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
-                >
-                  訂閱電子報
-                </a>
-              </div>
-            )
-          }
-        </div>
-
-        <aside class="space-y-6 lg:sticky lg:top-24">
-          <div class="rounded-2xl border border-border bg-surface p-5">
-            <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">從這裡開始</p>
-            <div class="mt-4 space-y-4">
-              {theme.resources.map((resource) => (
-                <a href={resource.href} class="group block">
-                  <span class="text-sm font-bold text-text transition-colors group-hover:text-primary">
-                    {resource.label}
-                  </span>
-                  <span class="mt-1 block text-xs leading-relaxed text-text-muted">
-                    {resource.description}
-                  </span>
-                </a>
-              ))}
-            </div>
-          </div>
-
-          <div class="rounded-2xl border border-border bg-background p-5">
-            <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">其他主題</p>
-            <div class="mt-4 space-y-3">
-              {blogThemes
-                .filter((item) => item.slug !== theme.slug)
-                .map((item) => (
-                  <a href={themeUrl(item.slug)} class="group block">
-                    <span class="text-sm font-semibold text-text transition-colors group-hover:text-primary">
-                      {item.name}
-                    </span>
-                    <span class="mt-1 block text-xs leading-relaxed text-text-muted">
-                      {item.description}
-                    </span>
-                  </a>
-                ))}
-            </div>
-          </div>
-        </aside>
-      </div>
-
-      <div class="mt-14 border-t border-border pt-6">
-        <a href="/blog/" class="text-sm font-semibold text-primary hover:opacity-70">
-          ← 回到所有文章
-        </a>
-      </div>
-    </div>
-  </section>
-</MarketingLayout>

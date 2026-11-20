@@ -5,7 +5,7 @@ publishedDate: 2026-04-10T10:45:12Z
 author: 比利陳 Billy Chen
 tags:
   - 數據與資安
-category: AI 與科技
+category: 能力與學習
 featured: false
 boost: false
 draft: false

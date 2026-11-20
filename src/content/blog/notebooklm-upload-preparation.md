@@ -6,7 +6,7 @@ author: 比利陳 Billy Chen
 tags:
   - NotebookLM疑難排解
   - NotebookLM教學
-category: AI 與科技
+category: 能力與學習
 featured: false
 boost: false
 draft: false

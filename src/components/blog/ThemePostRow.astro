@@ -2,13 +2,17 @@
 import { postUrl } from '@/lib/blog';
 import type { BlogPost } from '@/lib/blog';
 import { calculateReadingTime } from '@/lib/utils';
+import { getThemeByName } from '@/lib/themes';
 
 interface Props {
   post: BlogPost;
+  showCategory?: boolean;
 }
 
-const { post } = Astro.props;
+const { post, showCategory = true } = Astro.props;
 const readingTime = calculateReadingTime(post.body || '');
+const theme = getThemeByName(post.data.category);
+const publishedDate = post.data.publishedDate.toISOString().slice(0, 10).replaceAll('-', '.');
 ---
 
 <a
@@ -17,12 +21,14 @@ const readingTime = calculateReadingTime(post.body || '');
 >
   <div class="min-w-0">
     <div class="flex flex-wrap items-center gap-2 text-[11px] font-medium text-text-muted">
+      {showCategory && (
+        <>
+          <span>{theme.name}</span>
+          <span class="h-1 w-1 rounded-full bg-border" aria-hidden="true" />
+        </>
+      )}
       <time datetime={post.data.publishedDate.toISOString()}>
-        {post.data.publishedDate.toLocaleDateString('zh-TW', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-        })}
+        {publishedDate}
       </time>
       <span class="h-1 w-1 rounded-full bg-border" aria-hidden="true"></span>
       <span>{readingTime} 分鐘閱讀</span>

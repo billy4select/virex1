@@ -5,7 +5,7 @@ publishedDate: 2026-10-06T00:00:00Z
 author: "比利 (Billy Chen)"
 tags:
   - 行銷文案
-category: 商業與行銷
+category: 商業與思考
 featured: false
 boost: false
 draft: false

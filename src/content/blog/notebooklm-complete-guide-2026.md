@@ -7,7 +7,7 @@ publishedDate: 2026-04-23T00:00:00Z
 author: 比利陳 Billy Chen
 tags:
   - NotebookLM教學
-category: AI 與科技
+category: 能力與學習
 featured: true
 boost: true
 draft: false

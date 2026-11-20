@@ -40,8 +40,8 @@ export default defineConfig({
       },
       filter: (page) => {
         const { features } = siteConfig;
-        // 投資與市場目前是「研究中」主題頁，內容為 0 篇，先不進 sitemap。
-        if (page.includes('/blog/category/investment-market')) return false;
+        // 舊分類頁已 301 到 /topics/，不再放進 sitemap。
+        if (page.includes('/blog/category/')) return false;
         if (!features.blog && page.includes('/blog')) return false;
         if (!features.docs && page.includes('/docs')) return false;
         if (!features.changelog && page.includes('/changelog')) return false;

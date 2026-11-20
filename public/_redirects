@@ -1,0 +1,9 @@
+# 舊文章分類頁：永久導向三個主題頁
+/blog/category/ai-tech /topics/ability-learning/ 301
+/blog/category/ai-tech/ /topics/ability-learning/ 301
+/blog/category/business-marketing /topics/business-thinking/ 301
+/blog/category/business-marketing/ /topics/business-thinking/ 301
+/blog/category/personal-brand /topics/personal-growth/ 301
+/blog/category/personal-brand/ /topics/personal-growth/ 301
+/blog/category/investment-market /topics/ 301
+/blog/category/investment-market/ /topics/ 301

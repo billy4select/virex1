@@ -5,7 +5,7 @@ publishedDate: 2026-04-24T10:03:00Z
 author: 比利陳 Billy Chen
 tags:
   - 知識管理
-category: AI 與科技
+category: 能力與學習
 featured: false
 boost: false
 draft: false

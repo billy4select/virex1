@@ -6,7 +6,7 @@ author: 比利陳 Billy Chen
 tags:
   - AI工作流程
   - 工具比較評測
-category: AI 與科技
+category: 能力與學習
 featured: false
 boost: false
 draft: false

@@ -10,6 +10,7 @@ import { Icon } from 'astro-icon/components';
 import { calculateReadingTime, formatDate } from '@/lib/utils';
 import { tagUrl } from '@/lib/blog';
 import { themeUrl, type BlogTheme } from '@/lib/themes';
+import { siteConfig } from '@/config';
 
 interface Heading {
   depth: number;
@@ -87,13 +88,14 @@ const articleGridClass = 'lg:grid lg:grid-cols-[220px_minmax(0,760px)] lg:gap-12
   steps={steps}
   faq={faq}
   section={category?.name}
-  sectionUrl={category ? themeUrl(category.slug) : undefined}
+  sectionUrl={category ? `${siteConfig.url}${themeUrl(category.slug)}` : undefined}
 >
   <Breadcrumbs
     items={[
       { label: '首頁', href: '/' },
       { label: '文章', href: '/blog/' },
       ...(category ? [{ label: category.name, href: themeUrl(category.slug) }] : []),
+      { label: displayTitle },
     ]}
   />
 

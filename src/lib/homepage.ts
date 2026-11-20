@@ -11,7 +11,6 @@ export interface HomeTopic {
   eyebrow: string;
   question: string;
   description: string;
-  points: string[];
   href: string;
   category: string;
   featured: {
@@ -50,9 +49,8 @@ export const homeTopics: HomeTopic[] = [
     question: '我還能學會什麼？如何提升自己的能力？',
     description:
       '從 AI 應用、數位技能到學習方法與工作效率，整理那些真的能放進日常工作的能力。',
-    points: ['AI 應用與工具', '數位技能與工作流程', '學習方法與知識管理'],
     href: '/topics/ability-learning/',
-    category: 'ai-tech',
+    category: 'ability-learning',
     featured: [
       {
         label: '2026 NotebookLM 完整攻略',
@@ -70,12 +68,11 @@ export const homeTopics: HomeTopic[] = [
     slug: 'business-thinking',
     name: '商業與思考',
     eyebrow: '主題 02',
-    question: '我如何理解市場與商業世界？',
+    question: '我怎麼把產品價值說清楚，讓對的人願意買？',
     description:
-      '從行銷、品牌、商業模式到市場觀察，拆解一門生意為什麼成立、又如何成長。',
-    points: ['行銷與品牌', '商業模式與經營', '市場與消費者觀察'],
+      '從受眾、賣點、文案到提案，拆解行銷判斷與商業溝通。',
     href: '/topics/business-thinking/',
-    category: 'business-marketing',
+    category: 'business-thinking',
     featured: [
       {
         label: '受眾定義與廣告轉換',
@@ -95,10 +92,9 @@ export const homeTopics: HomeTopic[] = [
     eyebrow: '主題 03',
     question: '我如何用能力創造更多機會？',
     description:
-      '把能力轉化成職涯機會、個人品牌與內容事業，讓一個人也能建立可持續的發展路徑。',
-    points: ['職涯與專業發展', '個人品牌', '自媒體與知識變現'],
+      'AI 時代的職涯轉型、專業判斷與個人累積，把能力變成下一階段的機會。',
     href: '/topics/personal-growth/',
-    category: 'personal-brand',
+    category: 'personal-growth',
     featured: [
       {
         label: '35 歲學 AI 會太晚嗎',

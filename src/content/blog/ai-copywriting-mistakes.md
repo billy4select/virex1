@@ -8,7 +8,7 @@ author: 比利陳 Billy Chen
 tags:
   - 行銷文案
   - 工具比較評測
-category: 商業與行銷
+category: 商業與思考
 featured: false
 boost: false
 draft: false

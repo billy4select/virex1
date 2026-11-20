@@ -169,3 +169,106 @@ select:focus-visible {
     scroll-behavior: auto !important;
   }
 }
+
+/* Pagefind 部落格搜尋（Header 與 /blog/ 共用） */
+/* 讓搜尋框跟主站一致：膠囊圓角（同標籤）、一般字重、跟標籤同級的小字 */
+  .blog-search-ui .pagefind-ui {
+    --pagefind-ui-scale: 1;
+    --pagefind-ui-primary: #ff6a00;
+    --pagefind-ui-text: var(--color-text);
+    --pagefind-ui-background: var(--color-background);
+    --pagefind-ui-border: var(--color-border);
+    --pagefind-ui-tag: var(--color-surface);
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 9999px;
+    --pagefind-ui-font: inherit;
+  }
+
+  .blog-search-ui .pagefind-ui__search-input {
+    height: 44px;
+    padding-left: 48px;
+    padding-right: 72px;
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: var(--color-surface);
+    border: 1px solid transparent;
+    transition: border-color 0.2s, background-color 0.2s;
+  }
+  .blog-search-ui .pagefind-ui__search-input::placeholder {
+    font-weight: 400;
+    opacity: 0.6;
+  }
+  .blog-search-ui .pagefind-ui__search-input:focus {
+    outline: none;
+    border-color: #ff6a00;
+    background-color: var(--color-background);
+  }
+  .blog-search-ui .pagefind-ui__form::before {
+    top: 14px;
+    left: 18px;
+    width: 16px;
+    height: 16px;
+    opacity: 0.5;
+  }
+  .blog-search-ui .pagefind-ui__search-clear {
+    top: 0;
+    right: 8px;
+    height: 44px;
+    padding: 0 12px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    background: transparent;
+  }
+  .blog-search-ui .pagefind-ui__drawer {
+    margin-top: 8px;
+  }
+  .blog-search-ui .pagefind-ui__message {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    height: auto;
+    padding: 16px 0 8px;
+  }
+  .blog-search-ui .pagefind-ui__result {
+    padding: 18px 0;
+    border-top: 1px solid var(--color-border);
+  }
+  .blog-search-ui .pagefind-ui__result-title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  .blog-search-ui .pagefind-ui__result-link {
+    font-weight: 700;
+  }
+  .blog-search-ui .pagefind-ui__result-link:hover {
+    color: #ff6a00;
+  }
+  .blog-search-ui .pagefind-ui__result-excerpt {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+  .blog-search-ui .pagefind-ui__result-excerpt mark {
+    background: #fff0e6;
+    color: #e85d00;
+    border-radius: 3px;
+    padding: 0 2px;
+  }
+  .blog-search-ui .pagefind-ui__button {
+    height: 38px;
+    padding: 0 20px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text-muted);
+  }
+  .blog-search-ui .pagefind-ui__button:hover {
+    border-color: #ff6a00;
+    color: #ff6a00;
+    background: var(--color-background);
+  }

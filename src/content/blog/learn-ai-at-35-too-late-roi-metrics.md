@@ -5,7 +5,7 @@ publishedDate: 2026-04-10T23:45:10Z
 author: 比利陳 Billy Chen
 tags:
   - 職涯與心態
-category: 個人品牌與事業
+category: 個人發展與事業
 featured: false
 boost: false
 draft: false

@@ -56,6 +56,7 @@ const totalCount = items.reduce((sum, item) => sum + item.count, 0);
         ]}
       >
         全部文章
+        <span class="ml-1 opacity-50">{totalCount}</span>
       </a>
       {items.map(({ theme, count }) => (
         <a
