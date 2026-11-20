@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>訪談整理：用免費 AI 完成一項重複工作｜打造 AI 工作團隊</title>
+<meta name="description" content="單一角色的訪談整理任務：去識別化、分段、抓需求與引述、標記待確認，輸出固定六欄摘要。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://blog.billy4select.com/ai-work-team/workflows/tasks/interview-sort/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="打造 AI 工作團隊">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="訪談整理：用免費 AI 完成一項重複工作">
+<meta property="og:description" content="單一角色的訪談整理任務：去識別化、分段、抓需求與引述、標記待確認，輸出固定六欄摘要。">
+<meta property="og:url" content="https://blog.billy4select.com/ai-work-team/workflows/tasks/interview-sort/">
+<meta property="og:image" content="https://blog.billy4select.com/ai-work-team/assets/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f6f3ed">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f6f3ed'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%2322231f'/%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%23e87536' stroke-width='1.5'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/ai-work-team/assets/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "HowTo",
+   "name": "訪談整理",
+   "description": "單一角色的訪談整理任務：去識別化、分段、抓需求與引述、標記待確認，輸出固定六欄摘要。",
+   "totalTime": "PT30M",
+   "inLanguage": "zh-Hant-TW",
+   "step": [
+    {
+     "@type": "HowToStep",
+     "position": 1,
+     "name": "先做去識別化",
+     "text": "移除姓名、電話、公司機密與可辨識個人的細節，只留下任務需要的背景。"
+    },
+    {
+     "@type": "HowToStep",
+     "position": 2,
+     "name": "把逐字稿分成 5–8 段",
+     "text": "每段用一個主題命名，不要按時間硬切，讓後續抓重點更容易。"
+    },
+    {
+     "@type": "HowToStep",
+     "position": 3,
+     "name": "抓需求、痛點、引述、待確認",
+     "text": "每個主題最多留三個重點；引述只留最能代表原意的 1–2 句。"
+    },
+    {
+     "@type": "HowToStep",
+     "position": 4,
+     "name": "合併重複、保留差異",
+     "text": "重複出現的意見可以合併；互相矛盾的意見要並列，不要選一個喜歡的。"
+    },
+    {
+     "@type": "HowToStep",
+     "position": 5,
+     "name": "人工回原文核對引述",
+     "text": "檢查引述是否被截斷、是否改變語氣、是否把假設寫成受訪者說過的話。"
+    },
+    {
+     "@type": "HowToStep",
+     "position": 6,
+     "name": "輸出六欄摘要",
+     "text": "背景、目標、主要發現、關鍵引述、待確認、下一步，全部放在同一頁。"
+    }
+   ],
+   "tool": [
+    {
+     "@type": "HowToTool",
+     "name": "文字型 AI"
+    },
+    {
+     "@type": "HowToTool",
+     "name": "文件工具"
+    },
+    {
+     "@type": "HowToTool",
+     "name": "人工核對"
+    }
+   ],
+   "supply": [
+    {
+     "@type": "HowToSupply",
+     "name": "訪談逐字稿或詳細筆記"
+    },
+    {
+     "@type": "HowToSupply",
+     "name": "這次訪談的目的與受訪者背景"
+    },
+    {
+     "@type": "HowToSupply",
+     "name": "你希望留下的欄位"
+    },
+    {
+     "@type": "HowToSupply",
+     "name": "不能出現的個資或敏感資訊"
+    }
+   ],
+   "isPartOf": {
+    "@id": "https://blog.billy4select.com/ai-work-team/#website"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "首頁",
+     "item": "https://blog.billy4select.com/ai-work-team/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "工作流程",
+     "item": "https://blog.billy4select.com/ai-work-team/workflows/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "任務庫",
+     "item": "https://blog.billy4select.com/ai-work-team/workflows/tasks/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 4,
+     "name": "訪談整理",
+     "item": "https://blog.billy4select.com/ai-work-team/workflows/tasks/interview-sort/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/ai-work-team/">打造 <span>AI 工作團隊</span></a>
+    <nav class="site-nav"><a href="/ai-work-team/curriculum/">開始探索</a><a href="/ai-work-team/workflows/" class="active">工作流程</a><a href="/ai-work-team/resources/">實用資源</a></nav>
+  </div>
+</header>
+<main>
+
+<section class="lesson-page" id="task-interview-sort">
+  <div class="lesson-hero">
+    <div class="wrap">
+      <div class="crumb"><a href="/ai-work-team/">首頁</a>　/　<a href="/ai-work-team/workflows/">工作流程</a>　/　<a href="/ai-work-team/workflows/tasks/">任務庫</a>　/　<span>訪談整理</span></div>
+      <div class="lesson-label">任務卡 02 / 研究</div>
+      <h1>訪談整理</h1>
+      <p>把一份逐字稿整理成六欄摘要，保留原話，標記不確定，讓下一位可以直接接手。</p>
+      <div class="meta-row"><span>閱讀時間約 6 分鐘</span><span>單一角色</span><span>免費工具優先</span><span>人工檢查</span></div>
+    </div>
+  </div>
+  <div class="wrap lesson-layout">
+    <aside class="lesson-toc"><b>任務卡內容</b><a href="#t-when">什麼時候用</a><a href="#t-input">你需要準備什麼</a><a href="#t-role">用哪一個 AI 員工</a><a href="#t-tools">工具怎麼選</a><a href="#t-steps">操作步驟</a><a href="#t-output">交付格式</a><a href="#t-check">檢查表</a><a href="#t-reuse">怎麼重複使用</a><a href="#t-example">一個小範例</a></aside>
+    <article class="lesson-content">
+      <h2 id="t-when">01｜什麼時候用</h2>
+      <p>你剛完成一場產品、客服、用戶或內部訪談，手上有一份很長的逐字稿。</p>
+      <p>你需要把訪談交給企劃、設計或決策者，但不想每個人各自重讀一次。</p>
+      <div class="note"><b>不適合的情況</b><p>需要統計推論、質性編碼軟體、法律或醫療判斷的訪談，不適合只靠這個任務。涉及個資或敏感內容時，先做去識別化。</p></div>
+
+      <h2 id="t-input">02｜你需要準備什麼</h2>
+      <ul>
+        <li>訪談逐字稿或詳細筆記</li>
+        <li>這次訪談的目的與受訪者背景</li>
+        <li>你希望留下的欄位</li>
+        <li>不能出現的個資或敏感資訊</li>
+      </ul>
+
+      <h2 id="t-role">03｜用哪一個 AI 員工</h2>
+      <div class="table-wrap"><div class="table-scroll">
+        <table class="data-table"><thead><tr><th>項目</th><th>內容</th></tr></thead><tbody>
+          <tr><th>角色</th><td>訪談整理員</td></tr>
+          <tr><th>負責</th><td>把逐字稿整理成固定欄位摘要，保留關鍵引述，區分事實、意見與待確認。</td></tr>
+          <tr><th>不負責</th><td>不替受訪者下結論、不把單一意見當普遍事實、不修改引述原意。</td></tr>
+        </tbody></table>
+      </div><p class="table-hint">表格可左右滑動查看</p></div>
+      <p>這張任務卡只用一個角色。你不需要同時開很多工具，也不需要為這個任務建立一組團隊；先把這一位的角色、交付與邊界固定下來，下一次同類工作直接沿用。</p>
+
+      <h2 id="t-tools">04｜工具怎麼選</h2>
+      <div class="table-wrap"><div class="table-scroll">
+        <table class="data-table"><thead><tr><th>工具類型</th><th>用在哪裡</th></tr></thead><tbody>
+          <tr><th>文字型 AI</th><td>處理長逐字稿與欄位整理；一次只貼一份訪談，避免混淆。</td></tr>
+          <tr><th>文件工具</th><td>把摘要存成可搜尋的文件，下一份訪談沿用同一格式。</td></tr>
+          <tr><th>人工核對</th><td>引述與敏感資訊一定要回原文確認，不能只信摘要。</td></tr>
+        </tbody></table>
+      </div><p class="table-hint">表格可左右滑動查看</p></div>
+      <p>這裡不指定單一品牌。免費額度、功能與限制會變，選工具時看它能不能完成這張卡的交付，而不是看排行榜。需要換工具時，把這張卡的職務與交付格式一起帶走。</p>
+
+      <h2 id="t-steps">05｜操作步驟</h2>
+      <ol class="steps">
+        <li><b>先做去識別化</b><br>移除姓名、電話、公司機密與可辨識個人的細節，只留下任務需要的背景。</li>
+        <li><b>把逐字稿分成 5–8 段</b><br>每段用一個主題命名，不要按時間硬切，讓後續抓重點更容易。</li>
+        <li><b>抓需求、痛點、引述、待確認</b><br>每個主題最多留三個重點；引述只留最能代表原意的 1–2 句。</li>
+        <li><b>合併重複、保留差異</b><br>重複出現的意見可以合併；互相矛盾的意見要並列，不要選一個喜歡的。</li>
+        <li><b>人工回原文核對引述</b><br>檢查引述是否被截斷、是否改變語氣、是否把假設寫成受訪者說過的話。</li>
+        <li><b>輸出六欄摘要</b><br>背景、目標、主要發現、關鍵引述、待確認、下一步，全部放在同一頁。</li>
+      </ol>
+
+      <h2 id="t-output">06｜交付格式</h2>
+      <ul>
+        <li>一頁六欄摘要</li>
+        <li>3–5 個主要發現</li>
+        <li>2–4 句可回原文的引述</li>
+        <li>一份待確認與下一步清單</li>
+      </ul>
+      <div class="prompt">
+        <div class="prompt-head"><b>可複製的交付格式</b><div><button class="copy" type="button" onclick="copyResource('task-template-interview-sort',this)">複製格式</button> <button class="copy" type="button" onclick="downloadResource('task-template-interview-sort','訪談整理格式.md')">下載 .md</button></div></div>
+        <pre id="task-template-interview-sort"># 訪談摘要
+
+## 1. 訪談背景
+- 受訪者類型：
+- 訪談目的：
+- 訪談長度：
+- 已移除的個資：
+
+## 2. 主要發現
+1. 
+2. 
+3. 
+
+## 3. 關鍵引述
+&gt; 
+&gt; 
+
+## 4. 事實與意見
+- 已確認事實：
+- 受訪者觀點：
+- 可能是推論：
+
+## 5. 待確認
+- 缺少的資訊：
+- 需要再問的問題：
+
+## 6. 下一步
+- 這份摘要要交給誰：
+- 對方需要做的決定：</pre>
+      </div>
+
+      <h2 id="t-check">07｜檢查表</h2>
+      <ul class="checklist" data-group="task-interview-sort">
+        <li><input type="checkbox" data-check="interview-sort-1" data-group="task-interview-sort"> 每一句引述都能回到逐字稿原文</li>
+        <li><input type="checkbox" data-check="interview-sort-2" data-group="task-interview-sort"> 沒有把單一受訪者的意見寫成普遍事實</li>
+        <li><input type="checkbox" data-check="interview-sort-3" data-group="task-interview-sort"> 個資與敏感資訊已移除</li>
+        <li><input type="checkbox" data-check="interview-sort-4" data-group="task-interview-sort"> 互相矛盾的意見有並列，沒有被消音</li>
+        <li><input type="checkbox" data-check="interview-sort-5" data-group="task-interview-sort"> 待確認與下一步清楚</li>
+      </ul>
+      <p class="tiny-meta" data-progress="task-interview-sort"></p>
+
+      <h2 id="t-reuse">08｜怎麼重複使用</h2>
+      <ul>
+        <li>同一份職務卡可以用在產品、客服與內部訪談，只換訪談目的。</li>
+        <li>每次保留同一組欄位，兩份訪談可以直接比較。</li>
+        <li>把常出現的問題放進下一份訪談大綱。</li>
+      </ul>
+
+      <h2 id="t-example">09｜一個小範例</h2>
+      <blockquote>產品訪談裡受訪者說「我不是不想用，是每次都要重新設定」，這句話可以留成引述；「大家都不喜歡設定」則是推論，不能直接寫成發現。</blockquote>
+
+      <div class="callout"><b>相關資源</b><p style="margin:4px 0 0"><a class="text-link" href="/ai-work-team/workflows/solo-case/">單一員工反覆交付案例</a>　·　<a class="text-link" href="/ai-work-team/resources/templates/">工作流程模板</a></p></div>
+
+      <div class="lesson-nav"><a href="/ai-work-team/workflows/tasks/competitor-scan/"><small>上一個任務</small><strong>競品掃描</strong></a><a class="right" href="/ai-work-team/workflows/tasks/trend-brief/"><small>下一個任務</small><strong>趨勢摘要</strong></a></div>
+      <p class="back-home"><a href="/ai-work-team/workflows/tasks/">← 回到任務庫</a></p>
+    </article>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span>© 打造 AI 工作團隊・引導式實戰指南</span>
+    <span><a href="/ai-work-team/">首頁</a>　·　<a href="/ai-work-team/curriculum/">開始探索</a>　·　<a href="/ai-work-team/workflows/">工作流程</a>　·　<a href="/ai-work-team/resources/">實用資源</a>　·　<a href="/ai-work-team/about/">關於專題</a></span>
+  </div>
+</footer>
+<script src="/ai-work-team/assets/app.js"></script>
+</body>
+</html>

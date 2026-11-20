@@ -435,6 +435,15 @@
 @media(max-width:600px){.prompt-entry-meta{grid-template-columns:1fr;gap:10px}.prompt-entry summary{padding:14px 42px 14px 14px}.prompt-entry-body{padding:0 14px 14px}.template-order{grid-template-columns:1fr}.resource-subnav{gap:6px}.resource-subnav a{font-size:11px;padding:5px 8px}}
 .resource-list-heading{font-size:24px;line-height:1.3;letter-spacing:-.02em;margin:0 0 8px}
 
+/* solo case card */
+.case-card{display:block;border:1px solid var(--line);background:var(--white);padding:24px 26px;text-decoration:none;color:inherit;transition:border-color .2s,transform .2s}
+.case-card:hover{border-color:var(--orange);transform:translateY(-2px)}
+.case-kicker{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--orange);margin-bottom:10px}
+.case-card h3{font-size:26px;line-height:1.3;letter-spacing:-.03em;margin:0 0 10px;max-width:800px}
+.case-card p{font-size:14px;line-height:1.8;color:var(--muted);margin:0 0 8px;max-width:820px}
+.case-card .wf-facts{margin-top:14px}
+@media(max-width:700px){.case-card{padding:20px 18px}.case-card h3{font-size:22px}}
+
 /* workflow catalog facts */
 .wf-facts{list-style:none;padding:0;margin:0 0 18px;border-top:1px solid var(--line)}
 .wf-facts li{display:flex;justify-content:space-between;gap:16px;padding:7px 0;border-bottom:1px solid var(--line);font-size:12px;color:var(--muted)}
@@ -460,3 +469,30 @@
  .sample-body blockquote{font-size:13.5px}
 }
 
+
+/* task library */
+.task-filter{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+.task-filter button{border:1px solid var(--line);background:var(--white);color:#55564f;padding:8px 13px;font-size:12.5px;cursor:pointer;border-radius:2px}
+.task-filter button:hover{border-color:var(--orange)}
+.task-filter button.active{background:var(--ink);border-color:var(--ink);color:#fff}
+.task-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.task-card{min-height:250px}
+.task-card[hidden]{display:none}
+.task-card h3{font-size:24px}
+@media(max-width:900px){.task-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.task-grid{grid-template-columns:1fr}.task-filter{overflow:auto;flex-wrap:nowrap;padding-bottom:4px}.task-filter button{white-space:nowrap}.task-card{min-height:0}}
+
+/* need-based opening */
+.need-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:24px}
+.need-card{display:flex;flex-direction:column;justify-content:space-between;min-height:92px;border:1px solid var(--line);background:var(--white);padding:15px 17px;text-decoration:none;color:inherit;transition:border-color .2s,transform .2s}
+.need-card:hover{border-color:var(--orange);transform:translateY(-2px)}
+.need-card b{font-size:16px;line-height:1.4;color:var(--ink)}
+.need-card span{font-size:11.5px;color:var(--muted);margin-top:8px}
+.need-card .need-arrow{font-size:12px;color:var(--orange-dark);font-weight:800;margin-top:10px}
+@media(max-width:800px){.need-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.need-grid{grid-template-columns:1fr}.need-card{min-height:0}}
+
+/* four-column resource index */
+.audience--four{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.audience--four{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.audience--four{grid-template-columns:1fr}}

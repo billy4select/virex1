@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>競品掃描：用免費 AI 完成一項重複工作｜打造 AI 工作團隊</title>
+<meta name="description" content="單一角色的競品掃描任務：定義比較維度、整理公開來源、標記推論與待確認，輸出一頁比較表。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://blog.billy4select.com/ai-work-team/workflows/tasks/competitor-scan/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="打造 AI 工作團隊">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="競品掃描：用免費 AI 完成一項重複工作">
+<meta property="og:description" content="單一角色的競品掃描任務：定義比較維度、整理公開來源、標記推論與待確認，輸出一頁比較表。">
+<meta property="og:url" content="https://blog.billy4select.com/ai-work-team/workflows/tasks/competitor-scan/">
+<meta property="og:image" content="https://blog.billy4select.com/ai-work-team/assets/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f6f3ed">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f6f3ed'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%2322231f'/%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%23e87536' stroke-width='1.5'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/ai-work-team/assets/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "HowTo",
+   "name": "競品掃描",
+   "description": "單一角色的競品掃描任務：定義比較維度、整理公開來源、標記推論與待確認，輸出一頁比較表。",
+   "totalTime": "PT30M",
+   "inLanguage": "zh-Hant-TW",
+   "step": [
+    {
+     "@type": "HowToStep",
+     "position": 1,
+     "name": "先定 5 個比較維度",
+     "text": "維度不要超過 5 個。每個維度都要能回答一個決策問題，而不是什麼都比較。"
+    },
+    {
+     "@type": "HowToStep",
+     "position": 2,
+     "name": "只收公開且可打開的資料",
+     "text": "每個競品至少找到官網與一個近期公開來源。把連結與查看日期一起記下來。"
+    },
+    {
+     "@type": "HowToStep",
+     "position": 3,
+     "name": "事實與推論分開寫",
+     "text": "「方案包含 3 個 seats」是事實；「他們主打小團隊」是推論。兩者不要混在同一欄。"
+    },
+    {
+     "@type": "HowToStep",
+     "position": 4,
+     "name": "先填事實，再寫一句推論",
+     "text": "每個競品每個維度先填可查事實，再補一句你的解讀；沒有資料就標待確認。"
+    },
+    {
+     "@type": "HowToStep",
+     "position": 5,
+     "name": "做成橫向比較表",
+     "text": "同一列只放一個維度，讓差異一眼看出來；不要把競品介紹寫成三段長文。"
+    },
+    {
+     "@type": "HowToStep",
+     "position": 6,
+     "name": "人工選出兩個差異",
+     "text": "最後只留兩個真正影響決策的差異，其餘放到附註，避免什麼都重要。"
+    }
+   ],
+   "tool": [
+    {
+     "@type": "HowToTool",
+     "name": "搜尋與官網"
+    },
+    {
+     "@type": "HowToTool",
+     "name": "文字型 AI"
+    },
+    {
+     "@type": "HowToTool",
+     "name": "試算表"
+    }
+   ],
+   "supply": [
+    {
+     "@type": "HowToSupply",
+     "name": "3–5 個競品名稱與官網連結"
+    },
+    {
+     "@type": "HowToSupply",
+     "name": "你想比較的 5 個維度，例如定位、價格、功能、目標客群、近期動作"
+    },
+    {
+     "@type": "HowToSupply",
+     "name": "你手上的產品或服務資料"
+    },
+    {
+     "@type": "HowToSupply",
+     "name": "這次要支撐的決策問題"
+    }
+   ],
+   "isPartOf": {
+    "@id": "https://blog.billy4select.com/ai-work-team/#website"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "首頁",
+     "item": "https://blog.billy4select.com/ai-work-team/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "工作流程",
+     "item": "https://blog.billy4select.com/ai-work-team/workflows/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "任務庫",
+     "item": "https://blog.billy4select.com/ai-work-team/workflows/tasks/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 4,
+     "name": "競品掃描",
+     "item": "https://blog.billy4select.com/ai-work-team/workflows/tasks/competitor-scan/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/ai-work-team/">打造 <span>AI 工作團隊</span></a>
+    <nav class="site-nav"><a href="/ai-work-team/curriculum/">開始探索</a><a href="/ai-work-team/workflows/" class="active">工作流程</a><a href="/ai-work-team/resources/">實用資源</a></nav>
+  </div>
+</header>
+<main>
+
+<section class="lesson-page" id="task-competitor-scan">
+  <div class="lesson-hero">
+    <div class="wrap">
+      <div class="crumb"><a href="/ai-work-team/">首頁</a>　/　<a href="/ai-work-team/workflows/">工作流程</a>　/　<a href="/ai-work-team/workflows/tasks/">任務庫</a>　/　<span>競品掃描</span></div>
+      <div class="lesson-label">任務卡 01 / 研究</div>
+      <h1>競品掃描</h1>
+      <p>用公開資料快速整理 3–5 個競品，先看出差異，再決定要不要深入。</p>
+      <div class="meta-row"><span>閱讀時間約 6 分鐘</span><span>單一角色</span><span>免費工具優先</span><span>人工檢查</span></div>
+    </div>
+  </div>
+  <div class="wrap lesson-layout">
+    <aside class="lesson-toc"><b>任務卡內容</b><a href="#t-when">什麼時候用</a><a href="#t-input">你需要準備什麼</a><a href="#t-role">用哪一個 AI 員工</a><a href="#t-tools">工具怎麼選</a><a href="#t-steps">操作步驟</a><a href="#t-output">交付格式</a><a href="#t-check">檢查表</a><a href="#t-reuse">怎麼重複使用</a><a href="#t-example">一個小範例</a></aside>
+    <article class="lesson-content">
+      <h2 id="t-when">01｜什麼時候用</h2>
+      <p>你要在提案、定價或內容選題前，快速知道市場上其他人在做什麼。</p>
+      <p>你不需要完整市場報告，只需要一頁能支撐討論的比較表。</p>
+      <div class="note"><b>不適合的情況</b><p>需要財務模型、法律盡調、第一手用戶訪談或未公開數據的決策，不適合只靠這個任務完成。競品網站的文案也不能直接當成事實。</p></div>
+
+      <h2 id="t-input">02｜你需要準備什麼</h2>
+      <ul>
+        <li>3–5 個競品名稱與官網連結</li>
+        <li>你想比較的 5 個維度，例如定位、價格、功能、目標客群、近期動作</li>
+        <li>你手上的產品或服務資料</li>
+        <li>這次要支撐的決策問題</li>
+      </ul>
+
+      <h2 id="t-role">03｜用哪一個 AI 員工</h2>
+      <div class="table-wrap"><div class="table-scroll">
+        <table class="data-table"><thead><tr><th>項目</th><th>內容</th></tr></thead><tbody>
+          <tr><th>角色</th><td>競品研究員</td></tr>
+          <tr><th>負責</th><td>只整理公開資料、標記來源與日期，輸出可比較的事實與推論。</td></tr>
+          <tr><th>不負責</th><td>不做策略結論、不編造未公開數字、不把競品文案當成已驗證事實。</td></tr>
+        </tbody></table>
+      </div><p class="table-hint">表格可左右滑動查看</p></div>
+      <p>這張任務卡只用一個角色。你不需要同時開很多工具，也不需要為這個任務建立一組團隊；先把這一位的角色、交付與邊界固定下來，下一次同類工作直接沿用。</p>
+
+      <h2 id="t-tools">04｜工具怎麼選</h2>
+      <div class="table-wrap"><div class="table-scroll">
+        <table class="data-table"><thead><tr><th>工具類型</th><th>用在哪裡</th></tr></thead><tbody>
+          <tr><th>搜尋與官網</th><td>優先打開競品官網、定價頁、產品頁與公開公告，不用只看搜尋摘要。</td></tr>
+          <tr><th>文字型 AI</th><td>用來歸納與對齊欄位；貼資料時保留來源，不要只貼結論。</td></tr>
+          <tr><th>試算表</th><td>把比較表放在試算表，後續補資料與更新會比純文字容易。</td></tr>
+        </tbody></table>
+      </div><p class="table-hint">表格可左右滑動查看</p></div>
+      <p>這裡不指定單一品牌。免費額度、功能與限制會變，選工具時看它能不能完成這張卡的交付，而不是看排行榜。需要換工具時，把這張卡的職務與交付格式一起帶走。</p>
+
+      <h2 id="t-steps">05｜操作步驟</h2>
+      <ol class="steps">
+        <li><b>先定 5 個比較維度</b><br>維度不要超過 5 個。每個維度都要能回答一個決策問題，而不是什麼都比較。</li>
+        <li><b>只收公開且可打開的資料</b><br>每個競品至少找到官網與一個近期公開來源。把連結與查看日期一起記下來。</li>
+        <li><b>事實與推論分開寫</b><br>「方案包含 3 個 seats」是事實；「他們主打小團隊」是推論。兩者不要混在同一欄。</li>
+        <li><b>先填事實，再寫一句推論</b><br>每個競品每個維度先填可查事實，再補一句你的解讀；沒有資料就標待確認。</li>
+        <li><b>做成橫向比較表</b><br>同一列只放一個維度，讓差異一眼看出來；不要把競品介紹寫成三段長文。</li>
+        <li><b>人工選出兩個差異</b><br>最後只留兩個真正影響決策的差異，其餘放到附註，避免什麼都重要。</li>
+      </ol>
+
+      <h2 id="t-output">06｜交付格式</h2>
+      <ul>
+        <li>一頁橫向比較表：維度、競品 A／B／C、來源、查看日期、待確認</li>
+        <li>每個競品 3 個可查事實</li>
+        <li>兩個影響決策的差異</li>
+        <li>一份待確認清單</li>
+      </ul>
+      <div class="prompt">
+        <div class="prompt-head"><b>可複製的交付格式</b><div><button class="copy" type="button" onclick="copyResource('task-template-competitor-scan',this)">複製格式</button> <button class="copy" type="button" onclick="downloadResource('task-template-competitor-scan','競品掃描格式.md')">下載 .md</button></div></div>
+        <pre id="task-template-competitor-scan"># 競品掃描摘要
+
+## 1. 這次要回答的問題
+- 決策問題：
+- 使用場景：
+- 截止日期：
+
+## 2. 比較維度
+1. 市場定位
+2. 目標客群
+3. 價格與方案
+4. 核心功能
+5. 近期公開動作
+
+## 3. 比較表
+| 維度 | 競品 A | 競品 B | 競品 C | 來源 | 待確認 |
+| --- | --- | --- | --- | --- | --- |
+| 市場定位 |  |  |  |  |  |
+| 目標客群 |  |  |  |  |  |
+| 價格與方案 |  |  |  |  |  |
+| 核心功能 |  |  |  |  |  |
+| 近期公開動作 |  |  |  |  |  |
+
+## 4. 兩個關鍵差異
+- 差異一：
+- 差異二：
+
+## 5. 待確認
+- 缺少的資料：
+- 需要人工判斷的地方：</pre>
+      </div>
+
+      <h2 id="t-check">07｜檢查表</h2>
+      <ul class="checklist" data-group="task-competitor-scan">
+        <li><input type="checkbox" data-check="competitor-scan-1" data-group="task-competitor-scan"> 每個數字與方案內容都能回到可打開的來源</li>
+        <li><input type="checkbox" data-check="competitor-scan-2" data-group="task-competitor-scan"> 事實、推論與待確認分開標記</li>
+        <li><input type="checkbox" data-check="competitor-scan-3" data-group="task-competitor-scan"> 每個來源都有查看日期</li>
+        <li><input type="checkbox" data-check="competitor-scan-4" data-group="task-competitor-scan"> 沒有直接複製競品文案當自己的說法</li>
+        <li><input type="checkbox" data-check="competitor-scan-5" data-group="task-competitor-scan"> 沒有把推論寫成確定事實</li>
+      </ul>
+      <p class="tiny-meta" data-progress="task-competitor-scan"></p>
+
+      <h2 id="t-reuse">08｜怎麼重複使用</h2>
+      <ul>
+        <li>固定 5 個維度，下一批競品可以直接沿用同一張表。</li>
+        <li>每季更新一次，只補有變動的欄位。</li>
+        <li>把來源連結留在表內，下一次不必重新找一次。</li>
+      </ul>
+
+      <h2 id="t-example">09｜一個小範例</h2>
+      <blockquote>比較三個專案管理工具時，先填「最低方案包含幾人、是否含自動化、超額如何計價」；最後只留下「最低方案 seats 算法不同」與「自動化要往上一個方案」這兩個會影響採購的差異。</blockquote>
+
+      <div class="callout"><b>相關資源</b><p style="margin:4px 0 0"><a class="text-link" href="/ai-work-team/workflows/market-research/">市場研究流程</a>　·　<a class="text-link" href="/ai-work-team/resources/prompts/">Prompt 範本</a></p></div>
+
+      <div class="lesson-nav"><a href="/ai-work-team/workflows/tasks/"><small>任務庫</small><strong>回到任務索引</strong></a><a class="right" href="/ai-work-team/workflows/tasks/interview-sort/"><small>下一個任務</small><strong>訪談整理</strong></a></div>
+      <p class="back-home"><a href="/ai-work-team/workflows/tasks/">← 回到任務庫</a></p>
+    </article>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span>© 打造 AI 工作團隊・引導式實戰指南</span>
+    <span><a href="/ai-work-team/">首頁</a>　·　<a href="/ai-work-team/curriculum/">開始探索</a>　·　<a href="/ai-work-team/workflows/">工作流程</a>　·　<a href="/ai-work-team/resources/">實用資源</a>　·　<a href="/ai-work-team/about/">關於專題</a></span>
+  </div>
+</footer>
+<script src="/ai-work-team/assets/app.js"></script>
+</body>
+</html>

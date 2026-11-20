@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>客訴分類：用免費 AI 完成一項重複工作｜打造 AI 工作團隊</title>
+<meta name="description" content="單一角色的客訴分類任務：去識別化、分類、分級、整理時間線與待確認，不承諾賠償。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://blog.billy4select.com/ai-work-team/workflows/tasks/complaint-triage/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="打造 AI 工作團隊">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="客訴分類：用免費 AI 完成一項重複工作">
+<meta property="og:description" content="單一角色的客訴分類任務：去識別化、分類、分級、整理時間線與待確認，不承諾賠償。">
+<meta property="og:url" content="https://blog.billy4select.com/ai-work-team/workflows/tasks/complaint-triage/">
+<meta property="og:image" content="https://blog.billy4select.com/ai-work-team/assets/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f6f3ed">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f6f3ed'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%2322231f'/%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%23e87536' stroke-width='1.5'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/ai-work-team/assets/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "HowTo",
+   "name": "客訴分類",
+   "description": "單一角色的客訴分類任務：去識別化、分類、分級、整理時間線與待確認，不承諾賠償。",
+   "totalTime": "PT30M",
+   "inLanguage": "zh-Hant-TW",
+   "step": [
+    {
+     "@type": "HowToStep",
+     "position": 1,
+     "name": "先去識別化",
+     "text": "移除姓名、電話、地址、訂單編號與可辨識個人的內容。"
+    },
+    {
+     "@type": "HowToStep",
+     "position": 2,
+     "name": "分成五類",
+     "text": "產品、物流、服務、帳務、其他；每件只選一個主類，避免標籤爆炸。"
+    },
+    {
+     "@type": "HowToStep",
+     "position": 3,
+     "name": "標嚴重度",
+     "text": "高：安全、法律、公開爭議或多人受影響；中：單一客戶受阻；低：資訊不足或一般詢問。"
+    },
+    {
+     "@type": "HowToStep",
+     "position": 4,
+     "name": "把事實與情緒分開",
+     "text": "「三天沒收到」是事實；「你們很誇張」是情緒。兩者都要留，但不要混寫。"
+    },
+    {
+     "@type": "HowToStep",
+     "position": 5,
+     "name": "列待確認",
+     "text": "缺少的訂單資料、政策例外、需要主管決定的事，全部列出來。"
+    },
+    {
+     "@type": "HowToStep",
+     "position": 6,
+     "name": "人工決定處理",
+     "text": "AI 只給建議方向，實際補償、回覆與升級由人決定。"
+    }
+   ],
+   "tool": [
+    {
+     "@type": "HowToTool",
+     "name": "文字型 AI"
+    },
+    {
+     "@type": "HowToTool",
+     "name": "客服系統"
+    },
+    {
+     "@type": "HowToTool",
+     "name": "試算表"
+    }
+   ],
+   "supply": [
+    {
+     "@type": "HowToSupply",
+     "name": "客訴原文或對話紀錄"
+    },
+    {
+     "@type": "HowToSupply",
+     "name": "產品、訂單與政策資料"
+    },
+    {
+     "@type": "HowToSupply",
+     "name": "目前可提供的處理選項"
+    },
+    {
+     "@type": "HowToSupply",
+     "name": "不能承諾的條件"
+    }
+   ],
+   "isPartOf": {
+    "@id": "https://blog.billy4select.com/ai-work-team/#website"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "首頁",
+     "item": "https://blog.billy4select.com/ai-work-team/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "工作流程",
+     "item": "https://blog.billy4select.com/ai-work-team/workflows/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "任務庫",
+     "item": "https://blog.billy4select.com/ai-work-team/workflows/tasks/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 4,
+     "name": "客訴分類",
+     "item": "https://blog.billy4select.com/ai-work-team/workflows/tasks/complaint-triage/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/ai-work-team/">打造 <span>AI 工作團隊</span></a>
+    <nav class="site-nav"><a href="/ai-work-team/curriculum/">開始探索</a><a href="/ai-work-team/workflows/" class="active">工作流程</a><a href="/ai-work-team/resources/">實用資源</a></nav>
+  </div>
+</header>
+<main>
+
+<section class="lesson-page" id="task-complaint-triage">
+  <div class="lesson-hero">
+    <div class="wrap">
+      <div class="crumb"><a href="/ai-work-team/">首頁</a>　/　<a href="/ai-work-team/workflows/">工作流程</a>　/　<a href="/ai-work-team/workflows/tasks/">任務庫</a>　/　<span>客訴分類</span></div>
+      <div class="lesson-label">任務卡 07 / 客戶</div>
+      <h1>客訴分類</h1>
+      <p>把客訴拆成事實、情緒與待確認，先分級，再決定誰來處理。</p>
+      <div class="meta-row"><span>閱讀時間約 5 分鐘</span><span>單一角色</span><span>免費工具優先</span><span>人工檢查</span></div>
+    </div>
+  </div>
+  <div class="wrap lesson-layout">
+    <aside class="lesson-toc"><b>任務卡內容</b><a href="#t-when">什麼時候用</a><a href="#t-input">你需要準備什麼</a><a href="#t-role">用哪一個 AI 員工</a><a href="#t-tools">工具怎麼選</a><a href="#t-steps">操作步驟</a><a href="#t-output">交付格式</a><a href="#t-check">檢查表</a><a href="#t-reuse">怎麼重複使用</a><a href="#t-example">一個小範例</a></aside>
+    <article class="lesson-content">
+      <h2 id="t-when">01｜什麼時候用</h2>
+      <p>客服或社群收到一批客訴，需要先分類與排優先級。</p>
+      <p>你要把客訴交給產品、物流或主管，但原始訊息很長又混亂。</p>
+      <div class="note"><b>不適合的情況</b><p>涉及法律、醫療、退款金額、個資或可能公開爭議的客訴，應由人直接處理；AI 只整理背景，不決定補償。</p></div>
+
+      <h2 id="t-input">02｜你需要準備什麼</h2>
+      <ul>
+        <li>客訴原文或對話紀錄</li>
+        <li>產品、訂單與政策資料</li>
+        <li>目前可提供的處理選項</li>
+        <li>不能承諾的條件</li>
+      </ul>
+
+      <h2 id="t-role">03｜用哪一個 AI 員工</h2>
+      <div class="table-wrap"><div class="table-scroll">
+        <table class="data-table"><thead><tr><th>項目</th><th>內容</th></tr></thead><tbody>
+          <tr><th>角色</th><td>客訴整理員</td></tr>
+          <tr><th>負責</th><td>把客訴拆成事件、事實、情緒、影響與待確認，依嚴重度分級。</td></tr>
+          <tr><th>不負責</th><td>不決定賠償、不承諾交期、不回覆客戶、不散布未確認的內部資訊。</td></tr>
+        </tbody></table>
+      </div><p class="table-hint">表格可左右滑動查看</p></div>
+      <p>這張任務卡只用一個角色。你不需要同時開很多工具，也不需要為這個任務建立一組團隊；先把這一位的角色、交付與邊界固定下來，下一次同類工作直接沿用。</p>
+
+      <h2 id="t-tools">04｜工具怎麼選</h2>
+      <div class="table-wrap"><div class="table-scroll">
+        <table class="data-table"><thead><tr><th>工具類型</th><th>用在哪裡</th></tr></thead><tbody>
+          <tr><th>文字型 AI</th><td>用來整理與分類；貼資料前先移除個資。</td></tr>
+          <tr><th>客服系統</th><td>確認訂單、時間與處理紀錄，不要只靠客訴文字。</td></tr>
+          <tr><th>試算表</th><td>批次客訴用表格分類，才能看出重複問題。</td></tr>
+        </tbody></table>
+      </div><p class="table-hint">表格可左右滑動查看</p></div>
+      <p>這裡不指定單一品牌。免費額度、功能與限制會變，選工具時看它能不能完成這張卡的交付，而不是看排行榜。需要換工具時，把這張卡的職務與交付格式一起帶走。</p>
+
+      <h2 id="t-steps">05｜操作步驟</h2>
+      <ol class="steps">
+        <li><b>先去識別化</b><br>移除姓名、電話、地址、訂單編號與可辨識個人的內容。</li>
+        <li><b>分成五類</b><br>產品、物流、服務、帳務、其他；每件只選一個主類，避免標籤爆炸。</li>
+        <li><b>標嚴重度</b><br>高：安全、法律、公開爭議或多人受影響；中：單一客戶受阻；低：資訊不足或一般詢問。</li>
+        <li><b>把事實與情緒分開</b><br>「三天沒收到」是事實；「你們很誇張」是情緒。兩者都要留，但不要混寫。</li>
+        <li><b>列待確認</b><br>缺少的訂單資料、政策例外、需要主管決定的事，全部列出來。</li>
+        <li><b>人工決定處理</b><br>AI 只給建議方向，實際補償、回覆與升級由人決定。</li>
+      </ol>
+
+      <h2 id="t-output">06｜交付格式</h2>
+      <ul>
+        <li>一頁客訴摘要</li>
+        <li>分類與嚴重度</li>
+        <li>事實、情緒與待確認分欄</li>
+        <li>建議處理方向（不承諾）</li>
+      </ul>
+      <div class="prompt">
+        <div class="prompt-head"><b>可複製的交付格式</b><div><button class="copy" type="button" onclick="copyResource('task-template-complaint-triage',this)">複製格式</button> <button class="copy" type="button" onclick="downloadResource('task-template-complaint-triage','客訴分類格式.md')">下載 .md</button></div></div>
+        <pre id="task-template-complaint-triage"># 客訴摘要
+
+## 1. 基本資料
+- 案件編號：
+- 管道：
+- 發生時間：
+- 已移除的個資：
+
+## 2. 分類
+- 主類：產品／物流／服務／帳務／其他
+- 嚴重度：高／中／低
+- 受影響範圍：
+
+## 3. 事實
+- 發生了什麼：
+- 時間線：
+- 已確認的訂單或紀錄：
+
+## 4. 客戶期待
+- 客戶要求：
+- 情緒強度：
+- 不能承諾的地方：
+
+## 5. 待確認
+- 
+- 
+
+## 6. 建議處理方向
+- 立即：
+- 需要誰決定：
+- 回覆截止時間：</pre>
+      </div>
+
+      <h2 id="t-check">07｜檢查表</h2>
+      <ul class="checklist" data-group="task-complaint-triage">
+        <li><input type="checkbox" data-check="complaint-triage-1" data-group="task-complaint-triage"> 個資與訂單敏感資料已移除</li>
+        <li><input type="checkbox" data-check="complaint-triage-2" data-group="task-complaint-triage"> 每件客訴只有一個主分類</li>
+        <li><input type="checkbox" data-check="complaint-triage-3" data-group="task-complaint-triage"> 嚴重度有明確理由</li>
+        <li><input type="checkbox" data-check="complaint-triage-4" data-group="task-complaint-triage"> 事實與情緒分開</li>
+        <li><input type="checkbox" data-check="complaint-triage-5" data-group="task-complaint-triage"> 沒有承諾賠償、交期或退款</li>
+      </ul>
+      <p class="tiny-meta" data-progress="task-complaint-triage"></p>
+
+      <h2 id="t-reuse">08｜怎麼重複使用</h2>
+      <ul>
+        <li>每週批次處理，累積分類統計，找出重複問題。</li>
+        <li>同一份分類表可以給產品與客服共用。</li>
+        <li>把常見客訴寫成 FAQ 草稿，減少量。</li>
+      </ul>
+
+      <h2 id="t-example">09｜一個小範例</h2>
+      <blockquote>客戶說「等了三週還沒到，我要退費」，事實是「下單日 3/2、承諾 5 個工作天、今天 3/25 仍未出貨」；情緒與退費要求分開寫，退費由人決定。</blockquote>
+
+      <div class="callout"><b>相關資源</b><p style="margin:4px 0 0"><a class="text-link" href="/ai-work-team/workflows/customer-reply/">客戶詢問回覆流程</a>　·　<a class="text-link" href="/ai-work-team/resources/templates/">工作流程模板</a></p></div>
+
+      <div class="lesson-nav"><a href="/ai-work-team/workflows/tasks/article-outline/"><small>上一個任務</small><strong>文章大綱</strong></a><a class="right" href="/ai-work-team/workflows/tasks/faq-builder/"><small>下一個任務</small><strong>FAQ 生成</strong></a></div>
+      <p class="back-home"><a href="/ai-work-team/workflows/tasks/">← 回到任務庫</a></p>
+    </article>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span>© 打造 AI 工作團隊・引導式實戰指南</span>
+    <span><a href="/ai-work-team/">首頁</a>　·　<a href="/ai-work-team/curriculum/">開始探索</a>　·　<a href="/ai-work-team/workflows/">工作流程</a>　·　<a href="/ai-work-team/resources/">實用資源</a>　·　<a href="/ai-work-team/about/">關於專題</a></span>
+  </div>
+</footer>
+<script src="/ai-work-team/assets/app.js"></script>
+</body>
+</html>

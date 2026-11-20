@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>職務卡改版：用免費 AI 完成一項重複工作｜打造 AI 工作團隊</title>
+<meta name="description" content="單一角色的職務卡改版任務：收集問題、對照六項設定、一次改一項、測試後保存新版本。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://blog.billy4select.com/ai-work-team/workflows/tasks/role-card-revision/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="打造 AI 工作團隊">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="職務卡改版：用免費 AI 完成一項重複工作">
+<meta property="og:description" content="單一角色的職務卡改版任務：收集問題、對照六項設定、一次改一項、測試後保存新版本。">
+<meta property="og:url" content="https://blog.billy4select.com/ai-work-team/workflows/tasks/role-card-revision/">
+<meta property="og:image" content="https://blog.billy4select.com/ai-work-team/assets/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f6f3ed">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f6f3ed'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%2322231f'/%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%23e87536' stroke-width='1.5'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/ai-work-team/assets/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "HowTo",
+   "name": "職務卡改版",
+   "description": "單一角色的職務卡改版任務：收集問題、對照六項設定、一次改一項、測試後保存新版本。",
+   "totalTime": "PT30M",
+   "inLanguage": "zh-Hant-TW",
+   "step": [
+    {
+     "@type": "HowToStep",
+     "position": 1,
+     "name": "先收集問題",
+     "text": "把錯誤分成資料、指令、流程三層；不要一開始就怪模型。"
+    },
+    {
+     "@type": "HowToStep",
+     "position": 2,
+     "name": "對照六項設定",
+     "text": "角色、職責、背景、方法、交付、品質標準；找出哪一項沒寫。"
+    },
+    {
+     "@type": "HowToStep",
+     "position": 3,
+     "name": "只改一個地方",
+     "text": "這次只補品質標準或只改交付格式，不要同時動五項。"
+    },
+    {
+     "@type": "HowToStep",
+     "position": 4,
+     "name": "跑一個測試任務",
+     "text": "用類似但不同的任務，檢查新版本是否真的改善。"
+    },
+    {
+     "@type": "HowToStep",
+     "position": 5,
+     "name": "記錄結果",
+     "text": "寫下改了什麼、結果如何、還剩哪個問題。"
+    },
+    {
+     "@type": "HowToStep",
+     "position": 6,
+     "name": "保存新版本",
+     "text": "版本號、日期、適用任務與舊版位置一起留下。"
+    }
+   ],
+   "tool": [
+    {
+     "@type": "HowToTool",
+     "name": "文字型 AI"
+    },
+    {
+     "@type": "HowToTool",
+     "name": "版本紀錄"
+    },
+    {
+     "@type": "HowToTool",
+     "name": "測試任務"
+    }
+   ],
+   "supply": [
+    {
+     "@type": "HowToSupply",
+     "name": "目前職務卡"
+    },
+    {
+     "@type": "HowToSupply",
+     "name": "最近 2–3 次成果與錯誤"
+    },
+    {
+     "@type": "HowToSupply",
+     "name": "新的任務或交付要求"
+    },
+    {
+     "@type": "HowToSupply",
+     "name": "工具或額度變動"
+    }
+   ],
+   "isPartOf": {
+    "@id": "https://blog.billy4select.com/ai-work-team/#website"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "首頁",
+     "item": "https://blog.billy4select.com/ai-work-team/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "工作流程",
+     "item": "https://blog.billy4select.com/ai-work-team/workflows/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "任務庫",
+     "item": "https://blog.billy4select.com/ai-work-team/workflows/tasks/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 4,
+     "name": "職務卡改版",
+     "item": "https://blog.billy4select.com/ai-work-team/workflows/tasks/role-card-revision/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/ai-work-team/">打造 <span>AI 工作團隊</span></a>
+    <nav class="site-nav"><a href="/ai-work-team/curriculum/">開始探索</a><a href="/ai-work-team/workflows/" class="active">工作流程</a><a href="/ai-work-team/resources/">實用資源</a></nav>
+  </div>
+</header>
+<main>
+
+<section class="lesson-page" id="task-role-card-revision">
+  <div class="lesson-hero">
+    <div class="wrap">
+      <div class="crumb"><a href="/ai-work-team/">首頁</a>　/　<a href="/ai-work-team/workflows/">工作流程</a>　/　<a href="/ai-work-team/workflows/tasks/">任務庫</a>　/　<span>職務卡改版</span></div>
+      <div class="lesson-label">任務卡 17 / 個人</div>
+      <h1>職務卡改版</h1>
+      <p>根據實際錯誤與新任務，一次只改一個地方，讓 AI 員工愈用愈穩。</p>
+      <div class="meta-row"><span>閱讀時間約 5 分鐘</span><span>單一角色</span><span>免費工具優先</span><span>人工檢查</span></div>
+    </div>
+  </div>
+  <div class="wrap lesson-layout">
+    <aside class="lesson-toc"><b>任務卡內容</b><a href="#t-when">什麼時候用</a><a href="#t-input">你需要準備什麼</a><a href="#t-role">用哪一個 AI 員工</a><a href="#t-tools">工具怎麼選</a><a href="#t-steps">操作步驟</a><a href="#t-output">交付格式</a><a href="#t-check">檢查表</a><a href="#t-reuse">怎麼重複使用</a><a href="#t-example">一個小範例</a></aside>
+    <article class="lesson-content">
+      <h2 id="t-when">01｜什麼時候用</h2>
+      <p>同一個 AI 員工已經用過幾次，但錯誤反覆出現，或工作內容有變。</p>
+      <p>你要把職務卡從一次性 Prompt 變成可維護的版本。</p>
+      <div class="note"><b>不適合的情況</b><p>還沒有實際用過、沒有錯誤紀錄的階段，不適合先改卡；先跑一次再回來。</p></div>
+
+      <h2 id="t-input">02｜你需要準備什麼</h2>
+      <ul>
+        <li>目前職務卡</li>
+        <li>最近 2–3 次成果與錯誤</li>
+        <li>新的任務或交付要求</li>
+        <li>工具或額度變動</li>
+      </ul>
+
+      <h2 id="t-role">03｜用哪一個 AI 員工</h2>
+      <div class="table-wrap"><div class="table-scroll">
+        <table class="data-table"><thead><tr><th>項目</th><th>內容</th></tr></thead><tbody>
+          <tr><th>角色</th><td>職務設計顧問</td></tr>
+          <tr><th>負責</th><td>對照六項設定找缺口，提出一次只改一項的修正，並設計測試任務。</td></tr>
+          <tr><th>不負責</th><td>不一次重寫全部、不新增沒有工作依據的角色、不把工具問題當成角色問題。</td></tr>
+        </tbody></table>
+      </div><p class="table-hint">表格可左右滑動查看</p></div>
+      <p>這張任務卡只用一個角色。你不需要同時開很多工具，也不需要為這個任務建立一組團隊；先把這一位的角色、交付與邊界固定下來，下一次同類工作直接沿用。</p>
+
+      <h2 id="t-tools">04｜工具怎麼選</h2>
+      <div class="table-wrap"><div class="table-scroll">
+        <table class="data-table"><thead><tr><th>工具類型</th><th>用在哪裡</th></tr></thead><tbody>
+          <tr><th>文字型 AI</th><td>用來對照與改寫；先貼舊卡與錯誤樣本。</td></tr>
+          <tr><th>版本紀錄</th><td>每次改版保留舊版，才知道哪一次真的有效。</td></tr>
+          <tr><th>測試任務</th><td>用一個類似但不同的任務驗證，不只看一次成果。</td></tr>
+        </tbody></table>
+      </div><p class="table-hint">表格可左右滑動查看</p></div>
+      <p>這裡不指定單一品牌。免費額度、功能與限制會變，選工具時看它能不能完成這張卡的交付，而不是看排行榜。需要換工具時，把這張卡的職務與交付格式一起帶走。</p>
+
+      <h2 id="t-steps">05｜操作步驟</h2>
+      <ol class="steps">
+        <li><b>先收集問題</b><br>把錯誤分成資料、指令、流程三層；不要一開始就怪模型。</li>
+        <li><b>對照六項設定</b><br>角色、職責、背景、方法、交付、品質標準；找出哪一項沒寫。</li>
+        <li><b>只改一個地方</b><br>這次只補品質標準或只改交付格式，不要同時動五項。</li>
+        <li><b>跑一個測試任務</b><br>用類似但不同的任務，檢查新版本是否真的改善。</li>
+        <li><b>記錄結果</b><br>寫下改了什麼、結果如何、還剩哪個問題。</li>
+        <li><b>保存新版本</b><br>版本號、日期、適用任務與舊版位置一起留下。</li>
+      </ol>
+
+      <h2 id="t-output">06｜交付格式</h2>
+      <ul>
+        <li>新版職務卡</li>
+        <li>一份修改理由</li>
+        <li>一次測試任務與結果</li>
+        <li>版本紀錄與下一次檢查日</li>
+      </ul>
+      <div class="prompt">
+        <div class="prompt-head"><b>可複製的交付格式</b><div><button class="copy" type="button" onclick="copyResource('task-template-role-card-revision',this)">複製格式</button> <button class="copy" type="button" onclick="downloadResource('task-template-role-card-revision','職務卡改版格式.md')">下載 .md</button></div></div>
+        <pre id="task-template-role-card-revision"># 職務卡改版紀錄
+
+## 1. 目前版本
+- 版本：
+- 使用任務：
+- 最近問題：
+
+## 2. 六項檢查
+- 角色：
+- 職責：
+- 工作背景：
+- 執行方法：
+- 交付規格：
+- 品質標準：
+
+## 3. 這次只改
+- 改哪一項：
+- 為什麼改：
+- 改成什麼：
+
+## 4. 測試
+- 測試任務：
+- 結果：
+- 是否改善：
+- 還剩下的問題：
+
+## 5. 新版本
+- 版本：
+- 更新日期：
+- 舊版位置：
+- 下一次檢查：</pre>
+      </div>
+
+      <h2 id="t-check">07｜檢查表</h2>
+      <ul class="checklist" data-group="task-role-card-revision">
+        <li><input type="checkbox" data-check="role-card-revision-1" data-group="task-role-card-revision"> 六項設定都有對照</li>
+        <li><input type="checkbox" data-check="role-card-revision-2" data-group="task-role-card-revision"> 這次只改一個地方</li>
+        <li><input type="checkbox" data-check="role-card-revision-3" data-group="task-role-card-revision"> 有測試任務與結果</li>
+        <li><input type="checkbox" data-check="role-card-revision-4" data-group="task-role-card-revision"> 舊版有保留</li>
+        <li><input type="checkbox" data-check="role-card-revision-5" data-group="task-role-card-revision"> 下一次檢查日期已設定</li>
+      </ul>
+      <p class="tiny-meta" data-progress="task-role-card-revision"></p>
+
+      <h2 id="t-reuse">08｜怎麼重複使用</h2>
+      <ul>
+        <li>每季或每次反覆錯誤時改一次，不要每次用完都重寫。</li>
+        <li>把改版紀錄當成下一次訓練材料。</li>
+        <li>換工具時先沿用同一張卡，不急著改角色。</li>
+      </ul>
+
+      <h2 id="t-example">09｜一個小範例</h2>
+      <blockquote>簡報助手每次把結論放在最後，與其換工具，不如只改「交付規格」：要求第一頁先寫結論，再跑一個新題目測試。</blockquote>
+
+      <div class="callout"><b>相關資源</b><p style="margin:4px 0 0"><a class="text-link" href="/ai-work-team/lesson-03/">建立 AI 員工</a>　·　<a class="text-link" href="/ai-work-team/lesson-06/">測試與優化</a></p></div>
+
+      <div class="lesson-nav"><a href="/ai-work-team/workflows/tasks/work-context-update/"><small>上一個任務</small><strong>工作背景更新</strong></a><a class="right" href="/ai-work-team/workflows/tasks/tool-swap-log/"><small>下一個任務</small><strong>工具替換紀錄</strong></a></div>
+      <p class="back-home"><a href="/ai-work-team/workflows/tasks/">← 回到任務庫</a></p>
+    </article>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span>© 打造 AI 工作團隊・引導式實戰指南</span>
+    <span><a href="/ai-work-team/">首頁</a>　·　<a href="/ai-work-team/curriculum/">開始探索</a>　·　<a href="/ai-work-team/workflows/">工作流程</a>　·　<a href="/ai-work-team/resources/">實用資源</a>　·　<a href="/ai-work-team/about/">關於專題</a></span>
+  </div>
+</footer>
+<script src="/ai-work-team/assets/app.js"></script>
+</body>
+</html>
