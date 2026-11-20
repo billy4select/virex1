@@ -17,6 +17,8 @@ const publishedDate = post.data.publishedDate.toISOString().slice(0, 10).replace
 
 <a
   href={postUrl(post.id)}
+  data-blog-post
+  data-theme={theme.slug}
   class="group grid gap-4 border-b border-border py-5 transition-colors hover:border-primary/40 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"
 >
   <div class="min-w-0">

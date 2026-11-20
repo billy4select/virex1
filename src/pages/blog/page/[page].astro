@@ -1,75 +1,37 @@
 ---
-import MarketingLayout from '@/layouts/MarketingLayout.astro';
-import Breadcrumbs from '@/components/Breadcrumbs.astro';
-import Pagination from '@ui/Pagination.astro';
-import BlogTopicNav from '@/components/blog/BlogTopicNav.astro';
-import ThemePostRow from '@/components/blog/ThemePostRow.astro';
-import BlogSearch from '@/components/blog/BlogSearch.astro';
 import { getCollection } from 'astro:content';
 import type { GetStaticPaths } from 'astro';
-import { POSTS_PER_PAGE, sortByDate } from '@/lib/blog';
-import { getThemeCounts } from '@/lib/themes';
+import { POSTS_PER_PAGE } from '@/lib/blog';
 
-export const getStaticPaths = (async ({ paginate }) => {
+export const getStaticPaths = (async () => {
   const allPosts = await getCollection('blog', ({ data }) => !data.draft);
-  const sortedPosts = sortByDate(allPosts);
+  const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
 
-  // 第 1 頁就是 /blog/，這裡只產生第 2 頁以後，避免 /blog/page/1/ 變成重複頁面
-  return paginate(sortedPosts, {
-    pageSize: POSTS_PER_PAGE,
-    props: { totalCount: allPosts.length },
-  }).filter((p) => p.props.page.currentPage > 1);
+  return Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => ({
+    params: { page: String(index + 2) },
+    props: { page: index + 2 },
+  }));
 }) satisfies GetStaticPaths;
 
-const { page, totalCount } = Astro.props;
-const currentPage = page.currentPage;
-
-const allPosts = await getCollection('blog', ({ data }) => !data.draft);
-const themeCounts = getThemeCounts(allPosts);
+const { page } = Astro.props as { page: number };
+const target = `/blog/?page=${page}`;
+const canonical = 'https://blog.billy4select.com/blog/';
 ---
 
-<MarketingLayout
-  title={`所有文章 - 第 ${currentPage} 頁`}
-  description={`比利陳的全部文章，第 ${currentPage} 頁。`}
->
-  <Breadcrumbs
-    items={[
-      { label: '首頁', href: '/' },
-      { label: '文章', href: '/blog/' },
-      { label: `第 ${currentPage} 頁` },
-    ]}
-  />
-
-  <section class="border-b border-border bg-background pb-8 pt-10 md:pb-10 md:pt-14">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-wrap items-end justify-between gap-x-4 gap-y-2">
-        <h1 class="text-3xl font-extrabold tracking-tight text-text md:text-5xl">
-          所有文章
-        </h1>
-        <span class="mb-1 rounded-full bg-surface px-3 py-1 text-xs font-medium text-text-muted">
-          {totalCount} 篇文章
-        </span>
-      </div>
-
-      <BlogSearch
-        id="blog-page-search"
-        wrapperClass="mt-8 mb-0 max-w-2xl"
-        placeholder="搜尋文章標題或內容……"
-      />
-    </div>
-  </section>
-
-  <section class="bg-background pb-20 pt-6">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <BlogTopicNav items={themeCounts} variant="pills" />
-
-      <section class="mt-8 border-t border-border" aria-label="所有文章">
-        {page.data.map((post) => <ThemePostRow post={post} />)}
-
-        <div class="mt-10">
-          <Pagination currentPage={currentPage} totalPages={page.lastPage} basePath="/blog/" />
-        </div>
-      </section>
-    </div>
-  </section>
-</MarketingLayout>
+<!doctype html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>正在前往所有文章</title>
+    <meta name="robots" content="noindex,follow" />
+    <link rel="canonical" href={canonical} />
+    <meta http-equiv="refresh" content={`0;url=${target}`} />
+  </head>
+  <body>
+    <p>正在前往 <a href={target}>所有文章</a>……</p>
+    <script is:inline define:vars={{ target }}>
+      window.location.replace(target);
+    </script>
+  </body>
+</html>

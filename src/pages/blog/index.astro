@@ -1,19 +1,16 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
-import Pagination from '@ui/Pagination.astro';
 import BlogTopicNav from '@/components/blog/BlogTopicNav.astro';
 import ThemePostRow from '@/components/blog/ThemePostRow.astro';
 import BlogSearch from '@/components/blog/BlogSearch.astro';
 import { getCollection } from 'astro:content';
-import { siteConfig } from '@/config';
 import { POSTS_PER_PAGE, sortByDate } from '@/lib/blog';
 import { getThemeCounts } from '@/lib/themes';
 
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const sortedPosts = sortByDate(allPosts);
 const themeCounts = getThemeCounts(allPosts);
-const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
 ---
 
 <MarketingLayout title="所有文章" description="比利陳的全部文章。依主題篩選，或直接搜尋想了解的問題。">
@@ -40,13 +37,23 @@ const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <BlogTopicNav items={themeCounts} variant="pills" />
 
-      <section class="mt-8 border-t border-border" aria-label="所有文章">
-        {sortedPosts.slice(0, POSTS_PER_PAGE).map((post) => <ThemePostRow post={post} />)}
-
-        <div class="mt-10">
-          <Pagination currentPage={1} totalPages={totalPages} basePath="/blog/" />
-        </div>
+      <section
+        id="blog-list"
+        class="mt-8 border-t border-border"
+        data-blog-list
+        data-page-size={POSTS_PER_PAGE}
+        aria-label="所有文章"
+      >
+        {sortedPosts.map((post) => <ThemePostRow post={post} />)}
       </section>
+
+      <nav
+        class="mt-10 flex flex-wrap items-center justify-center gap-2"
+        data-blog-pagination
+        aria-label="文章分頁"
+      ></nav>
     </div>
   </section>
+
+  <script is:inline src="/js/blog-index.js" defer></script>
 </MarketingLayout>

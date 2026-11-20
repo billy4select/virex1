@@ -41,9 +41,10 @@ const totalCount = items.reduce((sum, item) => sum + item.count, 0);
       ))}
     </nav>
   ) : variant === 'pills' ? (
-    <nav aria-label="文章研究主題" class="flex flex-wrap items-center gap-2">
+    <nav aria-label="文章主題篩選" class="flex flex-wrap items-center gap-2">
       <a
         href="/blog/"
+        data-blog-filter="all"
         aria-current={!current ? 'page' : undefined}
         class:list={[
           'rounded-full border px-4 py-2 text-xs font-medium transition-all',
@@ -57,7 +58,8 @@ const totalCount = items.reduce((sum, item) => sum + item.count, 0);
       </a>
       {items.map(({ theme, count }) => (
         <a
-          href={themeUrl(theme.slug)}
+          href={`/blog/?theme=${theme.slug}`}
+          data-blog-filter={theme.slug}
           aria-current={current === theme.slug ? 'page' : undefined}
           class:list={[
             'rounded-full border px-4 py-2 text-xs font-medium transition-all',
