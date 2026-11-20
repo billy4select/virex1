@@ -30,6 +30,7 @@ export default defineConfig({
     mdx(),
     icon(),
     sitemap({
+      customPages: ['https://blog.billy4select.com/threads/'],
       // 【關鍵修正 3】Sitemap 必須與網址行為一致，都要帶斜槓
       // 這樣搜尋引擎爬到的網址就是最終跳轉後的網址，解決 Canonical 報警
       serialize(item) {

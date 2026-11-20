@@ -137,3 +137,9 @@ AI 可以幫你檢查，但不能替你負責。對外交付的責任，永遠�
 然後標記：哪一個節點最常拖延、最常出錯、最常讓你不安？那個節點就是你下一個要建立 SOP 或導入 AI 的地方。
 
 想先定義你賣的價值，可以看[如何把自己的專業變成市場價值](/blog/turn-expertise-into-market-value/)；想建立信任，可以看[個人品牌不是曝光](/blog/personal-brand-trust-not-reach/)。
+
+如果你正在思考 35 歲後的職涯，可以看[35 歲以後的職涯策略](/blog/career-strategy-after-35/)；想盤點離開公司後還帶得走什麼，則看[中階主管的可攜帶資產](/blog/mid-career-portable-assets/)。想把內容變成產品，看[從內容到產品](/blog/content-to-product-knowledge-business/)。回到[個人發展與事業](/topics/personal-growth/)可以看到整條路徑。
+
+---
+
+**延伸起點：** 想看這篇在整個專題裡的位置，回到 [打造 AI 工作團隊](/ai-work-team/)；如果你要把產出變成對外內容，再從 [Threads 起步心態指南](/threads/) 開始。

@@ -109,3 +109,7 @@ schemaType: Article
 如果這句話寫得出來，你的訊息就會清楚很多。
 
 想驗證這個需求是否真實，可以看[五個驗證市場需求的方法](/blog/validate-market-demand-five-methods/)。
+
+---
+
+**延伸起點：** 想把這篇的做法變成可持續的內容節奏，從 [Threads 起步心態指南](/threads/) 開始；想把內容工作流程化，再看 [打造 AI 工作團隊](/ai-work-team/)。

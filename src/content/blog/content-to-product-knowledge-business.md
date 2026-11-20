@@ -97,3 +97,7 @@ schemaType: Article
 先賣給三個人，不要先做給所有人。
 
 想看個人品牌如何建立信任，可以看[個人品牌不是曝光](/blog/personal-brand-trust-not-reach/)。
+
+---
+
+**延伸起點：** 想把這篇的做法變成可持續的內容節奏，從 [Threads 起步心態指南](/threads/) 開始；想把內容工作流程化，再看 [打造 AI 工作團隊](/ai-work-team/)。

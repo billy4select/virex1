@@ -91,3 +91,7 @@ schemaType: Article
 如果五個階段只做了兩個，先補最弱的那一個，不要再加新的曝光通路。
 
 想看 AI 如何改變成本與競爭，可以看[AI 正在改變哪些成本與競爭優勢](/blog/how-ai-changes-cost-and-competition/)。
+
+---
+
+**延伸起點：** 想把這篇的做法變成可持續的內容節奏，從 [Threads 起步心態指南](/threads/) 開始；想把內容工作流程化，再看 [打造 AI 工作團隊](/ai-work-team/)。

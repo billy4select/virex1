@@ -127,3 +127,9 @@ faq:
 然後檢查你的首頁、關於頁與最近三篇內容，是否都在說同一件事。如果沒有，先統一，再增加產量。
 
 想先把專業整理成可販售的 offer，可以看[如何把自己的專業變成市場價值](/blog/turn-expertise-into-market-value/)；想建立一人交付系統，可以看[一人公司 AI 工作模式](/blog/one-person-company-ai-work-system/)。
+
+想把專業變成可持續收入，看[從內容到產品](/blog/content-to-product-knowledge-business/)；如果你正在盤點離開公司後還帶得走什麼，看[中階主管的可攜帶資產](/blog/mid-career-portable-assets/)。回到[個人發展與事業](/topics/personal-growth/)可以看到整條路徑。
+
+---
+
+**延伸起點：** 想把這篇的做法變成可持續的內容節奏，從 [Threads 起步心態指南](/threads/) 開始；想把內容工作流程化，再看 [打造 AI 工作團隊](/ai-work-team/)。

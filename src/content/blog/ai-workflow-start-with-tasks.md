@@ -111,3 +111,9 @@ AI 負責：
 先跑一次，不要追求完美。工作流是從一次真實交付開始長出來的，不是從工具選單裡選出來的。
 
 如果你想先確認自己該投資哪一種能力，可以看[AI 時代的能力地圖](/blog/ai-era-capability-map/)；如果你要用 AI 學一個新領域，則可以看[用 AI 學會一個新領域](/blog/learn-new-field-with-ai-30-days/)。
+
+如果你還停在「工具很多、不知道怎麼選」，先看[AI 工具組合學](/blog/ai-tool-combination/)與[AI 工具評估法](/blog/ai-tool-evaluation/)；流程跑起來後，再用[AI 產出品質檢查](/blog/ai-output-quality-check/)確認產出能不能交。回到[能力與學習](/topics/ability-learning/)可以看到整條路徑。
+
+---
+
+**延伸起點：** 想看這篇在整個專題裡的位置，回到 [打造 AI 工作團隊](/ai-work-team/)；如果你要把產出變成對外內容，再從 [Threads 起步心態指南](/threads/) 開始。
