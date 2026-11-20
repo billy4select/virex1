@@ -3,11 +3,9 @@ title: NotebookLM 幻覺怎麼辦？三個方法讓它只說有根據的話
 description: NotebookLM 號稱只回答你上傳的資料，但它還是會產生幻覺。這篇說清楚幻覺是怎麼發生的，以及三個讓它老實說話的具體方法。
 publishedDate: 2026-05-18T00:00:00Z
 author: 比利陳 Billy Chen
-image: /images/blog/notebooklm-hallucination-solutions.webp
 tags:
   - NotebookLM
   - AI工具
-  - 幻覺
   - 職場效率
 category: AI實戰
 featured: false

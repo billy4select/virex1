@@ -3,10 +3,9 @@ title: 客戶簡報前，用 Claude 跑一遍「反對意見模擬」實戰流�
 description: 簡報準備好了，但你不確定客戶會在哪裡卡住。這篇教你在正式上場前，用 Claude 模擬客戶的反對意見，把你沒想到的漏洞提前找出來。
 publishedDate: 2026-04-15T14:22:10Z
 author: 比利陳 Billy Chen
-image: /images/blog/claude-objection-simulation.webp
 tags:
   - AI應用
-  - 簡報技巧
+  - 簡報提案
   - Claude
   - 行銷實戰
 category: AI實戰

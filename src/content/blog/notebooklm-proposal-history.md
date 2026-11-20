@@ -5,11 +5,9 @@ description: >-
   把提案歷史變成可以對話的知識庫。
 publishedDate: 2026-04-23T14:25:08Z
 author: 比利陳 Billy Chen
-image: /images/blog/notebooklm-proposal-history.webp
 tags:
   - NotebookLM
-  - 提案技巧
-  - 客戶管理
+  - 簡報提案
   - 職場效率
 category: AI實戰
 featured: false

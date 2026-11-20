@@ -3,12 +3,10 @@ title: 寫廣告文案前先給 AI 讀受眾資料，輸出品質差了一個量
 description: 同樣的 prompt，給 AI 讀過受眾資料再寫，跟直接叫它寫，結果差很多。不是 AI 變聰明了，是你給它的起點不一樣。這篇拆解如何餵資料給 AI。
 publishedDate: 2026-04-18T14:52:13Z
 author: 比利陳 Billy Chen
-image: /images/blog/ai-copywriting-audience-data.webp
 tags:
   - AI文案
   - 行銷實戰
   - Prompt技巧
-  - 受眾研究
 category: AI實戰
 featured: false
 boost: false

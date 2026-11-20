@@ -1,254 +1,83 @@
-
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Pagination from '@ui/Pagination.astro';
 import PostCard from '@ui/PostCard.astro';
+import BlogSearch from '@/components/blog/BlogSearch.astro';
+import BlogTagNav from '@/components/blog/BlogTagNav.astro';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
+import { POSTS_PER_PAGE, getFeatured, getTagStats, postUrl, sortByDate } from '@/lib/blog';
 
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const sortedPosts = sortByDate(allPosts);
+const tags = getTagStats(allPosts);
+const boostedPosts = getFeatured(sortedPosts);
 
-const sortedPosts = allPosts.sort(
-  (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
-);
-
-// 統計文章標籤
-const tagCounts = allPosts
-  .flatMap((post) => post.data.tags || [])
-  .filter((tag) => tag && tag.trim() !== '')
-  .reduce((acc, tag) => {
-    acc[tag] = (acc[tag] || 0) + 1;
-    return acc;
-  }, {} as Record<string, number>);
-
-// 依熱門度排列分類
-const tags = Object.keys(tagCounts)
-  .sort((a, b) => tagCounts[b] - tagCounts[a])
-  .slice(0, 12);
-
-// 精選文章
-const boostedPosts = sortedPosts
-  .filter(post => post.data.boost === true || post.data.featured === true)
-  .slice(0, 2);
-
-const featuredPostsCount = allPosts.filter(
-  post => post.data.featured || post.data.boost
-).length;
-
-const POSTS_PER_PAGE = 6;
-const currentPage = 1;
-const totalPages = Math.ceil(
-  (sortedPosts.length - boostedPosts.length) / POSTS_PER_PAGE
-);
+const remainingPosts = sortedPosts.filter((p) => !boostedPosts.some((b) => b.id === p.id));
+const totalPages = Math.ceil(remainingPosts.length / POSTS_PER_PAGE);
 ---
 
 <MarketingLayout title="文章" description={siteConfig.description}>
-
-  <section class="bg-white pt-10 pb-8 md:pt-14">
+  <section class="bg-background pt-10 pb-8 md:pt-14">
     <div class="max-w-4xl mx-auto px-4">
-
       <div class="flex items-center justify-between mb-6">
-        <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-gray-900">
-          文章
-        </h1>
-        <span class="text-xs text-gray-400">
-          {allPosts.length} 篇文章
-        </span>
+        <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-text">文章</h1>
+        <span class="text-xs text-text-muted">{allPosts.length} 篇文章</span>
       </div>
 
-      <div class="border-b border-gray-100 pb-7">
-        <div class="flex flex-wrap items-center gap-2" id="blog-filters">
+      <BlogSearch />
 
-          <button
-            type="button"
-            data-tag="all"
-            class="blog-filter active-filter px-4 py-2 rounded-full text-xs font-semibold transition-all"
-          >
-            全部文章
-          </button>
-
-          {tags.map((tag) => (
-            <button
-              type="button"
-              data-tag={tag}
-              class="blog-filter px-4 py-2 rounded-full text-xs font-medium transition-all"
-            >
-              {tag}
-              <span class="ml-1 opacity-50">{tagCounts[tag]}</span>
-            </button>
-          ))}
-
-        </div>
+      <div class="border-b border-border pb-7">
+        <BlogTagNav tags={tags} current="all" />
       </div>
-
     </div>
   </section>
 
-  <section class="bg-white pb-20">
+  <section class="bg-background pb-20">
     <div class="max-w-4xl mx-auto px-4">
-
-      {/* 熱門文章 */}
-      <div class="mb-16" id="featured-section">
-        <div class="mb-7 flex justify-between items-center">
-          <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.2em]">
-            熱門文章
-          </h2>
-
-          {featuredPostsCount > 2 && (
-            <a
-              href="/blog/tag/精選"
-              class="text-xs font-semibold text-[#FF6A00] hover:opacity-70 transition-opacity"
-            >
-              查看更多 →
-            </a>
-          )}
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {boostedPosts.map((post) => (
-            <a
-              href={`/blog/${post.id}`}
-              data-featured-tags={(post.data.tags || []).join('|')}
-              class="featured-card group block p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:border-[#FF6A00]/30 hover:bg-white hover:shadow-lg hover:shadow-gray-200/40 transition-all duration-300"
-            >
-              <div class="flex flex-col h-full gap-3">
-                <div class="text-[10px] font-bold text-[#FF6A00] tracking-wider">
-                  {post.data.boost ? '必讀' : '精選'}
-                </div>
-
-                <h3 class="text-lg font-bold text-gray-900 group-hover:text-[#FF6A00] transition-colors leading-snug">
-                  {post.data.title}
-                </h3>
-
-                <p class="text-gray-500 text-sm line-clamp-2 mt-auto leading-relaxed">
-                  {post.data.description}
-                </p>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
-
-      {/* 最新文章 */}
-      <div class="mb-8 flex items-center justify-between border-b border-gray-100 pb-4">
-        <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.2em]">
-          最新文章
-        </h2>
-        <span id="result-count" class="text-xs text-gray-400">
-          {sortedPosts.length - boostedPosts.length} 篇
-        </span>
-      </div>
-
-      <div class="space-y-12" id="blog-posts">
-        {sortedPosts
-          .filter(post => !boostedPosts.some(bp => bp.id === post.id))
-          .slice(0, POSTS_PER_PAGE)
-          .map((post) => (
-            <div
-              class="blog-post-item"
-              data-tags={(post.data.tags || []).join('|')}
-            >
-              <PostCard post={post} />
+      {
+        boostedPosts.length > 0 && (
+          <div class="mb-16">
+            <div class="mb-7">
+              <h2 class="text-xs font-bold text-text-muted uppercase tracking-[0.2em]">熱門文章</h2>
             </div>
-          ))}
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {boostedPosts.map((post) => (
+                <a
+                  href={postUrl(post.id)}
+                  class="group block p-6 rounded-2xl bg-surface border border-border hover:border-[#FF6A00]/40 hover:shadow-lg transition-all duration-300"
+                >
+                  <div class="flex flex-col h-full gap-3">
+                    <div class="text-[10px] font-bold text-[#FF6A00] tracking-wider">
+                      {post.data.boost ? '必讀' : '精選'}
+                    </div>
+                    <h3 class="text-lg font-bold text-text group-hover:text-[#FF6A00] transition-colors leading-snug">
+                      {post.data.title}
+                    </h3>
+                    <p class="text-text-muted text-sm line-clamp-2 mt-auto leading-relaxed">
+                      {post.data.description}
+                    </p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        )
+      }
+
+      <div class="mb-8 flex items-center justify-between border-b border-border pb-4">
+        <h2 class="text-xs font-bold text-text-muted uppercase tracking-[0.2em]">最新文章</h2>
+        <span class="text-xs text-text-muted">第 1 頁</span>
       </div>
 
-      <div
-        id="empty-state"
-        class="hidden py-16 text-center text-sm text-gray-400"
-      >
-        這個分類目前沒有其他文章。
+      <div class="space-y-12">
+        {remainingPosts.slice(0, POSTS_PER_PAGE).map((post) => <PostCard post={post} />)}
       </div>
 
-      <div class="mt-16" id="pagination">
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          basePath="/blog"
-        />
+      <div class="mt-16">
+        <Pagination currentPage={1} totalPages={totalPages} basePath="/blog/" />
       </div>
-
     </div>
   </section>
-
 </MarketingLayout>
-
-<style>
-  .blog-filter {
-    background: #f5f5f5;
-    color: #666;
-    border: 1px solid transparent;
-  }
-
-  .blog-filter:hover {
-    background: #fff0e6;
-    color: #e85d00;
-  }
-
-  .blog-filter.active-filter {
-    background: #fff0e6;
-    color: #e85d00;
-    border-color: #ff6a00;
-  }
-</style>
-
-<script>
-  const filters = document.querySelectorAll<HTMLButtonElement>('.blog-filter');
-  const posts = document.querySelectorAll<HTMLElement>('.blog-post-item');
-  const featuredCards = document.querySelectorAll<HTMLElement>('.featured-card');
-
-  const featuredSection = document.getElementById('featured-section');
-  const pagination = document.getElementById('pagination');
-  const emptyState = document.getElementById('empty-state');
-  const resultCount = document.getElementById('result-count');
-
-  filters.forEach((filter) => {
-    filter.addEventListener('click', () => {
-      const selectedTag = filter.dataset.tag || 'all';
-
-      filters.forEach((item) => {
-        item.classList.toggle('active-filter', item === filter);
-      });
-
-      let visiblePosts = 0;
-      let visibleFeatured = 0;
-
-      posts.forEach((post) => {
-        const postTags = (post.dataset.tags || '').split('|');
-        const matches = selectedTag === 'all' || postTags.includes(selectedTag);
-
-        post.classList.toggle('hidden', !matches);
-
-        if (matches) visiblePosts++;
-      });
-
-      featuredCards.forEach((card) => {
-        const cardTags = (card.dataset.featuredTags || '').split('|');
-        const matches = selectedTag === 'all' || cardTags.includes(selectedTag);
-
-        card.classList.toggle('hidden', !matches);
-
-        if (matches) visibleFeatured++;
-      });
-
-      if (featuredSection) {
-        featuredSection.classList.toggle(
-          'hidden',
-          visibleFeatured === 0
-        );
-      }
-
-      if (pagination) {
-        pagination.classList.toggle('hidden', selectedTag !== 'all');
-      }
-
-      if (emptyState) {
-        emptyState.classList.toggle('hidden', visiblePosts > 0 || visibleFeatured > 0);
-      }
-
-      if (resultCount) {
-        resultCount.textContent = `${visiblePosts} 篇`;
-      }
-    });
-  });
-</script>

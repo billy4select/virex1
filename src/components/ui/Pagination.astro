@@ -41,11 +41,12 @@ interface Props {
   nextText?: string;
 }
 
-const { currentPage, totalPages, basePath, prevText = 'Previous', nextText = 'Next' } = Astro.props;
+const { currentPage, totalPages, basePath, prevText = '上一頁', nextText = '下一頁' } = Astro.props;
 
 // Helper to generate page URL
 function getPageUrl(page: number): string {
-  return page === 1 ? basePath : `${basePath}/page/${page}`;
+  const base = basePath.replace(/\/+$/, '');
+  return page === 1 ? `${base}/` : `${base}/page/${page}/`;
 }
 
 const isPrevDisabled = currentPage === 1;

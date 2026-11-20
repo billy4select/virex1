@@ -3,7 +3,6 @@ title: 上傳文件前要做的三件事，讓 NotebookLM 讀得更準
 description: 同樣一份文件，上傳前有沒有處理過，NotebookLM 給你的答案品質差很多。不是工具的問題，是輸入的問題。這篇說清楚上傳前要做的三件事。
 publishedDate: 2026-04-13T14:12:05Z
 author: 比利陳 Billy Chen
-image: /images/blog/notebooklm-upload-preparation.webp
 tags:
   - NotebookLM
   - 文件處理

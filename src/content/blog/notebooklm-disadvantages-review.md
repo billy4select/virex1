@@ -3,11 +3,9 @@ title: NotebookLM 有哪些缺點？用了三個月之後的真實評價
 description: NotebookLM 很強，但它不是萬能的。這篇整理使用三個月之後真實遇到的缺點和限制，讓你在決定要不要用它之前，先知道它會在哪裡讓你失望。
 publishedDate: 2026-05-06T00:00:00Z
 author: 比利陳 Billy Chen
-image: /images/blog/notebooklm-disadvantages-review.webp
 tags:
   - NotebookLM
   - AI工具
-  - 工具評測
   - 職場效率
 category: AI實戰
 featured: false

@@ -3,12 +3,10 @@ title: "如何快速提煉賣點，並轉為打動用戶的文案？"
 description: "產品規格寫得再詳細，為什麼使用者就是不買單？這篇拆解「功能、特色、利益、賣點」的底層轉換邏輯，教你用四個實用視角與三步轉換法，把冷冰冰的規格編成直擊人心的感性文案。"
 publishedDate: 2026-10-06T00:00:00Z
 author: "比利 (Billy Chen)"
-image: "/images/blog/feature-to-copywriting-selling-point.webp"
 tags:
-  - 文案技巧
-  - 產品賣點
-  - 品牌行銷
-  - AI工作流
+  - AI文案
+  - 行銷實戰
+  - AI工作流程
 category: "行銷思維"
 featured: false
 boost: false

@@ -4,10 +4,10 @@ export const navigation: Navigation = {
   header: {
     main: [
       { label: '首頁', href: '/' },
-      { label: '文章', href: '/blog' },
-      { label: 'Threads教學', href: '/threads' },
-      { label: '打造AI團隊', href: '/ai-work-team' },
-      { label: '關於我', href: '/about' },
+      { label: '文章', href: '/blog/' },
+      { label: 'Threads教學', href: '/threads/' },
+      { label: '打造AI團隊', href: '/ai-work-team/' },
+      { label: '關於我', href: '/about/' },
     ],
     cta: [
       { label: '訂閱電子報', href: 'https://billy4select.substack.com/', variant: 'primary' },
@@ -16,11 +16,11 @@ export const navigation: Navigation = {
   footer: {
     product: [ 
       { label: '首頁', href: '/' },
-      { label: '文章', href: '/blog' },
-      { label: '關於我', href: '/about' },
-      { label: '讀者回饋', href: '/testimonials' },
-      { label: '隱私權政策', href: '/privacy' },
-      { label: '免責聲明', href: '/disclaimer' },
+      { label: '文章', href: '/blog/' },
+      { label: '關於我', href: '/about/' },
+      { label: '讀者回饋', href: '/testimonials/' },
+      { label: '隱私權政策', href: '/privacy/' },
+      { label: '免責聲明', href: '/disclaimer/' },
     ],
     solutions: [ 
       { label: '《AI時代職場生存法則》', href: 'https://portaly.cc/billyselect4/product/jLrib0ZgLmXWs2WOTiy8' }, 
@@ -30,8 +30,8 @@ export const navigation: Navigation = {
     ],
     resources: [
       { label: '訂閱電子報', href: 'https://billy4select.substack.com/' },
-      { label: 'Threads教學', href: '/threads' },
-      { label: '打造AI團隊', href: '/ai-work-team' },
+      { label: 'Threads教學', href: '/threads/' },
+      { label: '打造AI團隊', href: '/ai-work-team/' },
       { label: 'AI影片工具', href: '/narrative-engine/' },
     ],
     company: [
@@ -40,8 +40,8 @@ export const navigation: Navigation = {
       { label: 'Threads', href: 'https://www.threads.net/@billy4select' },
     ],
     legal: [
-      { label: 'Privacy Policy', href: '/privacy' },
-      { label: 'Terms of Service', href: '/disclaimer' },
+      { label: 'Privacy Policy', href: '/privacy/' },
+      { label: 'Terms of Service', href: '/disclaimer/' },
     ],
   },
 };

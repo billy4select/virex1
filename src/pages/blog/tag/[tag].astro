@@ -1,128 +1,61 @@
-
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import PostCard from '@ui/PostCard.astro';
+import BlogSearch from '@/components/blog/BlogSearch.astro';
+import BlogTagNav from '@/components/blog/BlogTagNav.astro';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
+import { getTagStats, sortByDate } from '@/lib/blog';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
+  const tags = getTagStats(posts);
 
-  const allTags = [...new Set(posts.flatMap((post) => post.data.tags || []))]
-    .map(tag => String(tag).trim())
-    .filter(tag => tag.length > 0)
-    .sort((a, b) => a.localeCompare(b, 'zh-Hant'));
-
-  return allTags.map((tag) => {
-    const filteredPosts = posts
-      .filter((post) => {
-        const postTags = (post.data.tags || []).map(t => String(t).trim());
-        return postTags.includes(tag);
-      })
-      .sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime());
-
-    return {
-      params: { tag },
-      props: {
-        posts: filteredPosts,
-        allTags,
-      },
-    };
-  });
+  return tags.map(({ name }) => ({
+    params: { tag: name },
+    props: {
+      posts: sortByDate(
+        posts.filter((p) => (p.data.tags || []).map((t) => String(t).trim()).includes(name))
+      ),
+      tags,
+    },
+  }));
 }
 
 const { tag } = Astro.params;
-const { posts, allTags } = Astro.props;
+const { posts, tags } = Astro.props;
 ---
 
 <MarketingLayout
   title={`${tag} - ${siteConfig.name}`}
   description={`瀏覽所有關於 ${tag} 的文章。`}
 >
-
-  {/* 頁面標題與分類 */}
-  <section class="bg-white pt-10 pb-8 md:pt-14">
+  <section class="bg-background pt-10 pb-8 md:pt-14">
     <div class="max-w-4xl mx-auto px-4">
-
-      <a
-        href="/blog"
-        class="inline-flex items-center gap-2 text-xs font-medium text-gray-400 hover:text-[#FF6A00] transition-colors mb-6"
-      >
-        ← 返回所有文章
-      </a>
-
       <div class="flex items-center justify-between mb-6">
-        <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-gray-900">
-          {tag}
-        </h1>
-
-        <span class="text-xs text-gray-400">
-          {posts.length} 篇文章
-        </span>
+        <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-text">{tag}</h1>
+        <span class="text-xs text-text-muted">{posts.length} 篇文章</span>
       </div>
 
-      <div class="border-b border-gray-100 pb-7">
-        <div class="flex flex-wrap items-center gap-2">
+      <BlogSearch />
 
-          <a
-            href="/blog"
-            class="px-4 py-2 rounded-full text-xs font-medium bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all"
-          >
-            全部文章
-          </a>
-
-          {allTags.map((t) => (
-            <a
-              href={`/blog/tag/${encodeURIComponent(t)}`}
-              aria-current={t === tag ? 'page' : undefined}
-              class={`px-4 py-2 rounded-full text-xs font-medium transition-all ${
-                t === tag
-                  ? 'bg-[#FFF0E6] text-[#E85D00] border border-[#FF6A00]'
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200 border border-transparent'
-              }`}
-            >
-              {t}
-            </a>
-          ))}
-
-        </div>
+      <div class="border-b border-border pb-7">
+        <BlogTagNav tags={tags} current={tag} />
       </div>
-
     </div>
   </section>
 
-  {/* 文章列表 */}
-  <section class="bg-white pb-20">
+  <section class="bg-background pb-20">
     <div class="max-w-4xl mx-auto px-4">
-
-      <div class="mb-8 flex items-center justify-between border-b border-gray-100 pb-4">
-        <h2 class="text-xs font-bold text-gray-400 uppercase tracking-[0.2em]">
-          最新文章
-        </h2>
+      <div class="space-y-12">
+        {posts.map((post) => <PostCard post={post} />)}
       </div>
 
-      {posts.length > 0 ? (
-        <div class="space-y-12">
-          {posts.map((post) => (
-            <PostCard post={post} />
-          ))}
-        </div>
-      ) : (
-        <div class="py-16 text-center text-sm text-gray-400">
-          目前沒有這個分類的文章。
-        </div>
-      )}
-
-      <div class="mt-16 pt-8 border-t border-gray-100">
-        <a
-          href="/blog"
-          class="text-sm font-semibold text-[#FF6A00] hover:opacity-70 transition-opacity"
-        >
+      <div class="mt-16 pt-8 border-t border-border">
+        <a href="/blog/" class="text-sm font-semibold text-[#FF6A00] hover:opacity-70 transition-opacity">
           ← 查看所有文章
         </a>
       </div>
-
     </div>
   </section>
-
 </MarketingLayout>

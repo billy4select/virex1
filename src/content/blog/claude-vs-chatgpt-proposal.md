@@ -5,11 +5,10 @@ description: >-
   Claude 和 ChatGPT 在提案寫作上的真實差異。
 publishedDate: 2026-04-20T09:22:18Z
 author: 比利陳 Billy Chen
-image: /images/blog/claude-vs-chatgpt-proposal.webp
 tags:
   - AI工具比較
   - 行銷實戰
-  - 提案技巧
+  - 簡報提案
 category: AI實戰
 featured: false
 boost: false

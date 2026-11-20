@@ -4,12 +4,8 @@ description: >-
   廣告預算一直燒，轉換率一直低，第一個被檢討的永遠是素材。但很多時候素材沒問題，是你把廣告給錯人看了。本文拆解受眾定義的常見錯誤，以及怎麼找到真正的問題在哪裡。
 publishedDate: 2026-04-14T15:42:08Z
 author: 比利陳 Billy Chen
-image: /images/blog/audience-definition-ad-conversion.webp
 tags:
-  - 行銷判斷力
-  - 廣告投放
-  - 受眾策略
-  - 轉換率
+  - 行銷實戰
 category: 行銷
 featured: false
 boost: false

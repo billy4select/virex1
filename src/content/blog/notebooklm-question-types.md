@@ -3,10 +3,9 @@ title: NotebookLM 的提問方式決定答案品質：五種問法比較
 description: 同樣的資料，問法不同，內容深度差很多。NotebookLM 不是搜尋引擎，你問它的方式決定它能幫你挖出多少東西。這篇整理五種問法，說清楚各自適合什麼場景。
 publishedDate: 2026-04-22T11:08:32Z
 author: 比利陳 Billy Chen
-image: /images/blog/notebooklm-question-types.webp
 tags:
   - NotebookLM
-  - 提問技巧
+  - Prompt技巧
   - AI應用
   - 職場效率
 category: AI實戰

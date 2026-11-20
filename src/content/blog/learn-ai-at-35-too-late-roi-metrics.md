@@ -3,11 +3,9 @@ title: 35 歲學 AI 會太晚嗎？這不是追趕，而是發揮你累積十年
 description: AI 領域沒有「太晚」的概念，因為工具每半年就迭代一次。相比年輕人，35 歲以上的職場人士擁有更強的業務直覺與問題定義能力，這才是 AI 時代最稀缺的資產。
 publishedDate: 2026-04-10T23:45:10Z
 author: 比利陳 Billy Chen
-image: /images/blog/ai-learning-age.webp
 tags:
   - AI應用
   - 職場成長
-  - 心態建立
 category: AI實戰
 featured: false
 boost: false

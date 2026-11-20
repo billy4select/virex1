@@ -3,11 +3,9 @@ title: 從旁觀者到 AI 策展人：中階主管在 AI 時代的轉型三階�
 description: AI 出現後，中階主管面臨的不是技術問題，而是定位問題。本文將告訴你如何從技術門外漢，轉型為組織中不可或缺的「AI 策展人」。
 publishedDate: 2026-04-10T08:30:15Z
 author: 比利陳 Billy Chen
-image: /images/blog/ai-manager-transformation.webp
 tags:
   - AI應用
   - 職場成長
-  - 管理轉型
 category: AI實戰
 featured: false
 boost: false

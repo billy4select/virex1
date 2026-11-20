@@ -3,8 +3,10 @@ title: NotebookLM + Gemini 的協作心法：兩個 Google 工具怎麼串
 description: NotebookLM 和 Gemini 在 2026 年正式打通了。但「能串」和「會串」是兩件事。這篇說清楚兩個工具各自擅長什麼、什麼時候該切換、以及怎麼讓它們在同一個流程裡各司其職。
 publishedDate: 2026-04-23T09:42:15Z
 author: 比利陳 Billy Chen
-image: /images/blog/notebooklm-gemini-collaboration.webp
-tags: [NotebookLM, Gemini, AI工具比較, 工作流程]
+tags:
+  - NotebookLM
+  - AI工具比較
+  - AI工作流程
 category: AI實戰
 featured: false
 boost: false

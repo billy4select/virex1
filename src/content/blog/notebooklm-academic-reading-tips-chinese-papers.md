@@ -3,11 +3,9 @@ title: 為什麼 NotebookLM 讀中文論文會漏掉重點？三招挖出深埋�
 description: NotebookLM 讀英文論文很強，但面對語意密集的中文學術寫作，常會遺漏關鍵論點。分享三個進階提問技巧，讓你從「請它整理」進化到「精準提取」。
 publishedDate: 2026-04-12T22:15:36Z
 author: 比利陳 Billy Chen
-image: /images/blog/notebooklm-academic-tips.webp
 tags:
   - NotebookLM
-  - 學術研究
-  - 生產力
+  - 職場效率
   - AI應用
 category: AI實戰
 featured: false

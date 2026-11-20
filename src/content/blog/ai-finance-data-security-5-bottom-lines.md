@@ -3,10 +3,9 @@ title: 把財報貼給 AI 真的沒問題嗎？處理敏感數據的五條安全
 description: AI 處理財務數據極快，但未公開數字涉及法律與資安風險。本文教你如何在按下送出鍵前，建立資安評估機制，保護公司也保護你自己。
 publishedDate: 2026-04-10T10:45:12Z
 author: 比利陳 Billy Chen
-image: /images/blog/ai-security-finance.webp
 tags:
   - AI應用
-  - 數據資安
+  - 數據分析
   - 職場成長
 category: AI實戰
 featured: false

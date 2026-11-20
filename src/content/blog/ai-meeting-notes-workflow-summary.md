@@ -3,11 +3,10 @@ title: 別再浪費生命寫會議記錄！AI 整理術：從逐字稿到高價�
 description: 開會兩小時，整理一小時？AI 可以讓效率提升數倍。本文教你如何透過正確指令、工具選型與資安意識，將廢紙般的紀錄轉化為真正的行動清單。
 publishedDate: 2026-04-10T11:22:05Z
 author: 比利陳 Billy Chen
-image: /images/blog/ai-meeting-notes.webp
 tags:
   - AI應用
   - 職場成長
-  - 生產力
+  - 職場效率
 category: AI實戰
 featured: false
 boost: false

@@ -3,8 +3,9 @@ title: NotebookLM 難用？解決 PDF 亂碼、幻覺與格式混亂的 7 個實
 description: 為什麼上傳 PDF 會變亂碼？為什麼 AI 會產生幻覺？本文整理了 NotebookLM 實際使用中的 7 大痛點，並提供具體的預處理與替代工具建議。
 publishedDate: 2026-04-10T00:00:00Z
 author: 比利陳 Billy Chen
-image: /images/blog/notebooklm-troubleshooting.webp
-tags: [AI應用, NotebookLM, 問題解決, 精選]
+tags:
+  - AI應用
+  - NotebookLM
 category: AI實戰
 featured: true
 boost: true

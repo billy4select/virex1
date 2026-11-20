@@ -3,8 +3,10 @@ title: 速度快了，但你站得住腳嗎？PM 使用 AI 做數據分析的生
 description: AI 讓分析報告從半天縮短到兩小時，但當主管問起「數字怎麼來的」，你能給出專業回答嗎？本文教你 PM 如何在 AI 協作中保住專業判斷力與職場信任。
 publishedDate: 2026-04-09T09:20:15Z
 author: 比利陳 Billy Chen
-image: /images/blog/pm-ai-data.webp
-tags: [AI應用, 職場成長, 數據分析]
+tags:
+  - AI應用
+  - 職場成長
+  - 數據分析
 category: AI實戰
 featured: true
 boost: true

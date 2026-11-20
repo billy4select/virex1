@@ -5,7 +5,6 @@ description: >-
   給你的東西完全不一樣。不是誰比較厲害，是它們設計來解決不同的問題。本文拆解兩者在內部文件場景的實際差異。
 publishedDate: 2026-04-22T15:34:21Z
 author: 比利陳 Billy Chen
-image: /images/blog/notebooklm-vs-claude-internal-docs.webp
 tags:
   - AI工具比較
   - NotebookLM

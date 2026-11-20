@@ -3,12 +3,9 @@ title: NotebookLM 2026 年功能更新整理：簡報生成、Gemini 串接、�
 description: 2026 年 NotebookLM 更新的速度比很多人跟得上的還快。這篇把從 2025 年底到 2026 年 4 月的所有重要更新整理成一份清單，讓你知道現在這個工具能做到哪些你以前做不到的事。
 publishedDate: 2026-05-07T09:53:00Z
 author: 比利陳 Billy Chen
-image: /images/blog/notebooklm-2026-updates.webp
 tags:
   - NotebookLM
   - AI工具
-  - 功能更新
-  - "2026"
 category: AI實戰
 featured: false
 boost: false

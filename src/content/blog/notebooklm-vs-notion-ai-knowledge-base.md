@@ -3,10 +3,8 @@ title: NotebookLM 建知識庫 vs Notion AI 建知識庫：場景不同，選法
 description: 兩個工具都能建知識庫，但它們解決的是完全不同的問題。選錯了不是工具不好，是你把錯的鑰匙插進錯的鎖。這篇把兩者的場景差異說清楚。
 publishedDate: 2026-04-21T13:48:52Z
 author: 比利陳 Billy Chen
-image: /images/blog/notebooklm-vs-notion-ai-knowledge-base.webp
 tags:
   - NotebookLM
-  - Notion AI
   - AI工具比較
   - 知識管理
 category: AI工具選型

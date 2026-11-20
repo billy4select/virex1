@@ -1,0 +1,42 @@
+---
+/**
+ * BlogTagNav - 文章分類列（全部都是真正的連結，三種頁面共用）
+ * 取代原本只在第 1 頁運作的 JS 篩選。
+ */
+import { tagUrl } from '@/lib/blog';
+
+interface Props {
+  tags: { name: string; count: number }[];
+  /** 'all' 或目前的標籤名稱 */
+  current?: string;
+}
+
+const { tags, current = 'all' } = Astro.props;
+
+const base = 'px-4 py-2 rounded-full text-xs font-medium transition-all border';
+const on = 'bg-[#FFF0E6] text-[#E85D00] border-[#FF6A00] font-semibold';
+const off = 'bg-surface text-text-muted border-transparent hover:bg-primary/10 hover:text-primary';
+---
+
+<nav aria-label="文章分類" class="flex flex-wrap items-center gap-2">
+  <a
+    href="/blog/"
+    aria-current={current === 'all' ? 'page' : undefined}
+    class:list={[base, current === 'all' ? on : off]}
+  >
+    全部文章
+  </a>
+
+  {
+    tags.map((tag) => (
+      <a
+        href={tagUrl(tag.name)}
+        aria-current={current === tag.name ? 'page' : undefined}
+        class:list={[base, current === tag.name ? on : off]}
+      >
+        {tag.name}
+        <span class="ml-1 opacity-50">{tag.count}</span>
+      </a>
+    ))
+  }
+</nav>

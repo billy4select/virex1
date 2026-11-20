@@ -3,7 +3,6 @@ title: 職場人用 NotebookLM 做工作研究的正確姿勢：不是整理資�
 description: 你每天在整理資料，但整理完之後呢？資料還是資料，不會自己變成判斷。NotebookLM 能做的不只是幫你整理，是幫你從資料裡找到你自己還沒想到的角度。
 publishedDate: 2026-04-24T10:03:00Z
 author: 比利陳 Billy Chen
-image: /images/blog/notebooklm-workplace-research.webp
 tags:
   - NotebookLM
   - AI應用

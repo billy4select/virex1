@@ -5,10 +5,8 @@ description: >-
   讓你聽。它有幾個用法大多數人沒想到，而且有些場景用它比直接閱讀文件更有效率。這篇把這些用法說清楚。
 publishedDate: 2026-04-12T09:15:23Z
 author: 比利陳 Billy Chen
-image: /images/blog/notebooklm-audio-overview-guide.webp
 tags:
   - NotebookLM
-  - Audio Overview
   - AI應用
   - 職場效率
 category: AI實戰

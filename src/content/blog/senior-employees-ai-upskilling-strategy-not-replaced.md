@@ -5,11 +5,9 @@ description: >-
   時代的價值定義者。
 publishedDate: 2026-04-10T22:30:15Z
 author: 比利陳 Billy Chen
-image: /images/blog/ai-replacement-anxiety.webp
 tags:
   - AI應用
   - 職場成長
-  - 職涯轉型
 category: AI實戰
 featured: true
 boost: true

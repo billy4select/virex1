@@ -3,11 +3,10 @@ title: 主管用 AI 準備週會報告的正確姿勢：不是叫它寫，是叫
 description: 叫 AI 寫週會報告，它給你一份格式漂亮但你自己都不確定的東西。問題不在工具，是你用錯方式了。週會報告的核心是你的判斷，AI 的角色是幫你把判斷說清楚。
 publishedDate: 2026-04-16T08:32:15Z
 author: 比利陳 Billy Chen
-image: /images/blog/ai-weekly-report-manager.webp
 tags:
   - AI應用
   - 職場效率
-  - 主管技能
+  - 職場成長
   - Prompt技巧
 category: AI實戰
 featured: false

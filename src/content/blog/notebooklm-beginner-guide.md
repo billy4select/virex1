@@ -3,10 +3,8 @@ title: NotebookLM 入門完整教學：第一次用，從建立筆記本到問�
 description: 第一次用 NotebookLM，上傳了文件、問了問題，卻覺得沒什麼感覺？問題通常不在工具，在你還不知道它的運作邏輯。這篇從零開始，帶你在 15 分鐘內真正用起來。
 publishedDate: 2026-04-29T00:00:00Z
 author: 比利陳 Billy Chen
-image: /images/blog/notebooklm-beginner-guide.webp
 tags:
   - NotebookLM
-  - 入門教學
   - AI工具
   - 職場效率
 category: AI實戰

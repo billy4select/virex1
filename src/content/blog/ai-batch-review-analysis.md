@@ -3,11 +3,8 @@ title: "AI 批量分析用戶評論，找到值得優化的方向"
 description: "評論不是讀完就好，是要變成可排序的決策依據。這篇拆解用 AI 批量分析評論的完整流程：從整理、分類、抽問題，到判斷優先順序，最後轉成真正能動手的改善清單。"
 publishedDate: 2026-10-06T00:00:00Z
 author: "比利 (Billy Chen)"
-image: "/images/blog/ai-review-analysis.webp"
 tags:
-  - AI評論分析
-  - 用戶回饋
-  - 產品優化
+  - 數據分析
   - AI工作流程
 category: "AI實戰"
 featured: false

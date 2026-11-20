@@ -3,12 +3,9 @@ title: "AI 專案複盤與知識庫：如何讓一次專案的經驗，變成下
 description: "專案結束後的檢討報告，總是存進資料夾後就被遺忘？這篇拆解如何用 AI 建立「可檢索、可理解、可執行」的團隊知識庫流程，把一次性經驗真正轉化成可複用的資產。"
 publishedDate: 2026-10-06T00:00:00Z
 author: "比利 (Billy Chen)"
-image: "/images/blog/ai-project-review-knowledge-base.webp"
 tags:
   - AI工作流程
-  - 專案管理
   - 知識管理
-  - AI實戰
 category: "AI實戰"
 featured: false
 boost: false

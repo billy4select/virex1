@@ -5,12 +5,10 @@ description: >-
   整合破碎資訊，實現一站式對話查詢。
 publishedDate: 2026-04-10T10:15:22Z
 author: 比利陳 Billy Chen
-image: /images/blog/notebooklm-integration.webp
 tags:
   - AI應用
   - NotebookLM
-  - 生產力
-  - 精選
+  - 職場效率
 category: AI實戰
 featured: true
 boost: true

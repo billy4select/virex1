@@ -5,11 +5,9 @@ description: >-
   能做的事比大多數人以為的多很多。這篇把所有用法整理在一起，讓你知道自己現在在哪個階段、下一步該學什麼。
 publishedDate: 2026-04-23T00:00:00Z
 author: 比利陳 Billy Chen
-image: /images/blog/notebooklm-complete-guide-2026.webp
 tags:
   - NotebookLM
   - AI工具
-  - 完整攻略
   - 知識管理
 category: AI實戰
 featured: true
