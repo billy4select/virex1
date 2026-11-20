@@ -14,7 +14,6 @@ import SeriesGrid from '@/components/home/SeriesGrid.astro';
 import QuestionGrid from '@/components/home/QuestionGrid.astro';
 import AboutSection from '@/components/home/AboutSection.astro';
 import ReaderFeedback from '@/components/home/ReaderFeedback.astro';
-import FeaturedPostCard from '@/components/home/FeaturedPostCard.astro';
 import ThemePostRow from '@/components/blog/ThemePostRow.astro';
 import { sortByDate } from '@/lib/blog';
 import {
@@ -27,12 +26,7 @@ import { siteConfig } from '@/config';
 
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const sortedPosts = sortByDate(allPosts);
-const featuredPost =
-  sortedPosts.find((post) => post.id === homepageConfig.featuredPostId) ??
-  sortedPosts[0];
-const latestPosts = sortedPosts
-  .filter((post) => post.id !== featuredPost?.id)
-  .slice(0, homepageConfig.latestCount);
+const latestPosts = sortedPosts.slice(0, homepageConfig.latestCount);
 
 const allTestimonials = await getCollection(
   'testimonials',
@@ -82,17 +76,9 @@ const readerFeedback = (featuredTestimonials.length > 0 ? featuredTestimonials :
   <section id="latest" class="bg-surface py-16 md:py-20" aria-labelledby="latest-title">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex flex-wrap items-end justify-between gap-4">
-        <div class="max-w-2xl">
-          <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
-            持續累積
-          </p>
-          <h2 id="latest-title" class="mt-3 text-3xl font-extrabold tracking-tight text-text md:text-4xl">
-            {homepageConfig.latestTitle}
-          </h2>
-          <p class="mt-3 text-base leading-relaxed text-text-muted">
-            {homepageConfig.latestDescription}
-          </p>
-        </div>
+        <h2 id="latest-title" class="text-3xl font-extrabold tracking-tight text-text md:text-4xl">
+          {homepageConfig.latestTitle}
+        </h2>
         <a
           href="/blog/"
           class="inline-flex items-center gap-1 text-sm font-semibold text-primary underline decoration-primary/30 decoration-1 underline-offset-4 transition-colors hover:text-primary-dark hover:decoration-primary"
@@ -102,18 +88,7 @@ const readerFeedback = (featuredTestimonials.length > 0 ? featuredTestimonials :
         </a>
       </div>
 
-      <div class="mt-8">
-        {featuredPost && (
-          <FeaturedPostCard post={featuredPost} label={homepageConfig.featuredLabel} />
-        )}
-      </div>
-
-      <div class="mt-10 flex flex-wrap items-end justify-between gap-3 border-b border-border pb-3">
-        <h3 class="text-xl font-bold tracking-tight text-text">最新文章</h3>
-        <span class="text-xs font-medium text-text-muted">依發布時間</span>
-      </div>
-
-      <div>
+      <div class="mt-6 border-t border-border">
         {
           latestPosts.map((post) => (
             <ThemePostRow post={post} />

@@ -28,11 +28,7 @@ const otherTestimonials = sortedTestimonials.filter((t: TestimonialEntry) => !t.
 >
   <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '讀者回饋' }]} />
 
-  <PageHeader
-    align="left"
-    title="讀者的真實回饋"
-    subtitle={`感謝每一位讀者的支持！這裡紀錄了大家對於 ${siteConfig.name} 的看法、學習心得與實作建議。`}
-  />
+  <PageHeader align="left" title="讀者回饋" />
 
   <TestimonialsGrid
     featured={featuredTestimonials.map((t: TestimonialEntry) => ({
@@ -54,8 +50,8 @@ const otherTestimonials = sortedTestimonials.filter((t: TestimonialEntry) => !t.
   />
 
   <CTA
-    title="也想分享您的想法嗎？"
-    description="如果您對文章有任何建議，或是我的內容對您有所啟發，歡迎隨時跟我分享。"
+    title="想分享你的想法？"
+    description="歡迎寫信給我。"
     action={{ label: '與我聯繫', href: '/contact/' }}
     background="muted"
   />

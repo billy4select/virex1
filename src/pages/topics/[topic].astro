@@ -85,10 +85,7 @@ const schemas = collectionSchema ? [collectionSchema] : [];
 
   <section class="border-b border-border bg-background pb-10 pt-10 md:pt-14">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
-        主題
-      </p>
-      <h1 class="mt-3 text-3xl font-extrabold tracking-tight text-text md:text-5xl">
+      <h1 class="text-3xl font-extrabold tracking-tight text-text md:text-5xl">
         {topic.name}
       </h1>
       <p class="mt-4 max-w-3xl text-base leading-relaxed text-text-muted">
@@ -106,14 +103,9 @@ const schemas = collectionSchema ? [collectionSchema] : [];
         topic.featured.length > 0 && (
           <section aria-labelledby="topic-featured-title">
             <div class="flex flex-wrap items-end justify-between gap-3 border-b border-border pb-3">
-              <div>
-                <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
-                  精選文章
-                </p>
-                <h2 id="topic-featured-title" class="mt-3 text-2xl font-bold tracking-tight text-text">
-                  不知道從哪裡開始，先讀這兩篇。
-                </h2>
-              </div>
+              <h2 id="topic-featured-title" class="text-2xl font-bold tracking-tight text-text">
+                精選文章
+              </h2>
               <span class="text-xs font-medium text-text-muted">
                 {topic.featured.length} 篇
               </span>
@@ -146,14 +138,9 @@ const schemas = collectionSchema ? [collectionSchema] : [];
         posts.length > 0 ? (
           <section class:list={['', topic.featured.length > 0 ? 'mt-12' : '']} aria-labelledby="topic-all-title">
             <div class="flex flex-wrap items-end justify-between gap-3 border-b border-border pb-3">
-              <div>
-                <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
-                  全部文章
-                </p>
-                <h2 id="topic-all-title" class="mt-3 text-2xl font-bold tracking-tight text-text">
-                  這個主題的所有文章。
-                </h2>
-              </div>
+              <h2 id="topic-all-title" class="text-2xl font-bold tracking-tight text-text">
+                全部文章
+              </h2>
               <span class="text-xs font-medium text-text-muted">
                 依最新發布排序
               </span>
@@ -165,8 +152,7 @@ const schemas = collectionSchema ? [collectionSchema] : [];
           </section>
         ) : (
           <div class="rounded-2xl border border-dashed border-border bg-surface/60 p-8 text-center">
-            <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">研究中</p>
-            <h2 class="mt-3 text-2xl font-bold text-text">這個主題還沒有正式文章。</h2>
+            <h2 class="text-2xl font-bold text-text">這個主題還沒有正式文章。</h2>
             <p class="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-text-muted">
               等第一個問題有足夠的資料、案例與判斷，才會發布。
             </p>

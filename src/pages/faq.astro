@@ -66,18 +66,15 @@ const faqCategories = [
 >
   <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '常見問題' }]} />
 
-  <PageHeader
-    title="常見問題"
-    subtitle={`關於 ${siteConfig.name}，您想知道的都在這裡。找不到答案嗎？`}
-  >
-    <a href="/contact/" class="text-[#FF6A00] hover:underline">直接與我聯繫</a>。
+  <PageHeader title="常見問題">
+    <a href="/contact/" class="text-[#FF6A00] hover:underline">找不到答案？直接與我聯繫。</a>
   </PageHeader>
 
   <FAQSection categories={faqCategories} variant="accordion" background="default" />
 
   <CTA
-    title="還有其他疑問嗎？"
-    description="沒關係，您可以直接聯絡我，我很樂意為您解答。"
+    title="還有其他疑問？"
+    description="直接寫信給我。"
     action={{ label: '前往聯絡頁面', href: '/contact/' }}
     secondaryAction={{ label: '加入社群討論', href: siteConfig.social.discord || '#' }}
     background="muted"

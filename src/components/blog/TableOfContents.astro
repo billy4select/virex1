@@ -48,8 +48,7 @@ const tocId = 'article-toc-mobile';
   <div class="rounded-2xl border border-border bg-background shadow-sm lg:hidden">
     <div class="flex items-center gap-3 px-3.5 py-3">
       <div class="min-w-0 flex-1">
-        <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-primary">閱讀位置</p>
-        <p class="mt-1 truncate text-sm font-semibold text-text" data-reading-current>文章開頭</p>
+        <p class="truncate text-sm font-semibold text-text" data-reading-current>文章開頭</p>
         <p class="mt-0.5 text-[11px] text-text-muted">
           <span data-reading-percent data-reading-time={readingTime}>0%</span>
           <span aria-hidden="true"> · </span>
@@ -97,12 +96,7 @@ const tocId = 'article-toc-mobile';
 
   {/* 桌面：只留 H2 */}
   <div class="hidden lg:block">
-    <p class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
-      <span class="h-px w-5 bg-primary" aria-hidden="true"></span>
-      目錄
-    </p>
-
-    <ul class="mt-4 space-y-0.5 border-l border-border pl-3">
+    <ul class="space-y-0.5 border-l border-border pl-3">
       {
         items.map((item) => (
           <li>

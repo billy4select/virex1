@@ -8,7 +8,6 @@
 export interface HomeTopic {
   slug: string;
   name: string;
-  eyebrow: string;
   question: string;
   description: string;
   href: string;
@@ -29,7 +28,6 @@ export interface HomeSeries {
   name: string;
   theme: string;
   description: string;
-  meta: string;
   href: string;
   chapters: HomeSeriesChapter[];
 }
@@ -45,7 +43,6 @@ export const homeTopics: HomeTopic[] = [
   {
     slug: 'ability-learning',
     name: '能力與學習',
-    eyebrow: '主題 01',
     question: '我還能學會什麼？如何提升自己的能力？',
     description:
       '從 AI 應用、數位技能到學習方法與工作效率，整理那些真的能放進日常工作的能力。',
@@ -67,7 +64,6 @@ export const homeTopics: HomeTopic[] = [
   {
     slug: 'business-thinking',
     name: '商業與思考',
-    eyebrow: '主題 02',
     question: '我怎麼把產品價值說清楚，讓對的人願意買？',
     description:
       '從受眾、賣點、文案到提案，拆解行銷判斷與商業溝通。',
@@ -89,7 +85,6 @@ export const homeTopics: HomeTopic[] = [
   {
     slug: 'personal-growth',
     name: '個人發展與事業',
-    eyebrow: '主題 03',
     question: '我如何用能力創造更多機會？',
     description:
       'AI 時代的職涯轉型、專業判斷與個人累積，把能力變成下一階段的機會。',
@@ -116,7 +111,6 @@ export const homeSeries: HomeSeries[] = [
     theme: '能力與學習',
     description:
       '把 AI 從單一工具，變成可分工、可交接、可重複的工作團隊。',
-    meta: '6 個主題・完整實作',
     href: '/ai-work-team/',
     chapters: [
       { label: '先找出值得交給 AI 的事', href: '/ai-work-team/lesson-01/' },
@@ -129,7 +123,6 @@ export const homeSeries: HomeSeries[] = [
     theme: '個人發展與事業',
     description:
       '從起步心態、人設定位、發文頻率到互動與變現，建立一套你做得到的內容節奏。',
-    meta: '完整專題・自媒體經營',
     href: '/threads/',
     chapters: [
       { label: '先調整起步心態，不急著完美', href: '/threads/' },
@@ -161,11 +154,7 @@ export const homeQuestions: HomeQuestion[] = [
 ];
 
 export const homepageConfig = {
-  latestCount: 4,
-  latestTitle: '最新內容',
-  latestDescription:
-    '最近的研究、實驗與觀察。先從主編精選開始，或直接看最新文章。',
-  featuredPostId: 'senior-employees-ai-upskilling-strategy-not-replaced',
-  featuredLabel: '主編精選',
+  latestCount: 5,
+  latestTitle: '最新文章',
   feedbackCount: 4,
 };
