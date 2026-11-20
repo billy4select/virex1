@@ -21,8 +21,8 @@ const totalCount = items.reduce((sum, item) => sum + item.count, 0);
           class:list={[
             'group flex min-h-36 flex-col justify-between rounded-2xl border p-5 transition-all',
             current === theme.slug
-              ? 'border-primary bg-[#FFF0E6]'
-              : 'border-border bg-surface hover:border-primary/40 hover:bg-[#FFF0E6]/40',
+              ? 'border-primary bg-primary/10'
+              : 'border-border bg-surface hover:border-primary/40 hover:bg-primary/5',
           ]}
         >
           <div>
@@ -51,7 +51,7 @@ const totalCount = items.reduce((sum, item) => sum + item.count, 0);
         class:list={[
           'rounded-full border px-4 py-2 text-xs font-medium transition-all',
           !current
-            ? 'border-[#FF6A00] bg-[#FFF0E6] font-semibold text-[#E85D00]'
+            ? 'border-primary bg-primary/10 font-semibold text-primary'
             : 'border-transparent bg-surface text-text-muted hover:bg-primary/10 hover:text-primary',
         ]}
       >
@@ -64,7 +64,7 @@ const totalCount = items.reduce((sum, item) => sum + item.count, 0);
           class:list={[
             'rounded-full border px-4 py-2 text-xs font-medium transition-all',
             current === theme.slug
-              ? 'border-[#FF6A00] bg-[#FFF0E6] font-semibold text-[#E85D00]'
+              ? 'border-primary bg-primary/10 font-semibold text-primary'
               : 'border-transparent bg-surface text-text-muted hover:bg-primary/10 hover:text-primary',
           ]}
         >
@@ -82,7 +82,7 @@ const totalCount = items.reduce((sum, item) => sum + item.count, 0);
           class:list={[
             'inline-flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs transition-colors sm:rounded-none sm:border-x-0 sm:border-t-0 sm:border-b-2 sm:px-0 sm:pb-3.5 sm:pt-0 sm:text-sm',
             !current
-              ? 'border-primary bg-[#FFF0E6] font-bold text-primary sm:border-b-primary sm:bg-transparent sm:text-text'
+              ? 'border-primary bg-primary/10 font-bold text-primary sm:border-b-primary sm:bg-transparent sm:text-text'
               : 'border-border bg-surface font-medium text-text-muted hover:text-text sm:border-b-transparent sm:bg-transparent',
           ]}
         >
@@ -104,7 +104,7 @@ const totalCount = items.reduce((sum, item) => sum + item.count, 0);
             class:list={[
               'inline-flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs transition-colors sm:rounded-none sm:border-x-0 sm:border-t-0 sm:border-b-2 sm:px-0 sm:pb-3.5 sm:pt-0 sm:text-sm',
               current === theme.slug
-                ? 'border-primary bg-[#FFF0E6] font-bold text-primary sm:border-b-primary sm:bg-transparent sm:text-text'
+                ? 'border-primary bg-primary/10 font-bold text-primary sm:border-b-primary sm:bg-transparent sm:text-text'
                 : 'border-border bg-surface font-medium text-text-muted hover:text-text sm:border-b-transparent sm:bg-transparent',
             ]}
           >

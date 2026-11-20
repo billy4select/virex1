@@ -1,9 +1,9 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Pagination from '@ui/Pagination.astro';
-import PostCard from '@ui/PostCard.astro';
 import BlogSearchToggle from '@/components/blog/BlogSearchToggle.astro';
-import ThemeQuestionGrid from '@/components/blog/ThemeQuestionGrid.astro';
+import BlogTopicNav from '@/components/blog/BlogTopicNav.astro';
+import ThemePostRow from '@/components/blog/ThemePostRow.astro';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
 import {
@@ -12,8 +12,8 @@ import {
   postUrl,
   sortByDate,
 } from '@/lib/blog';
-import { getThemeCounts } from '@/lib/themes';
-import { calculateReadingTime, formatCompactDate } from '@/lib/utils';
+import { getThemeCounts, themeUrl } from '@/lib/themes';
+import { calculateReadingTime, formatDate } from '@/lib/utils';
 
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const sortedPosts = sortByDate(allPosts);
@@ -26,102 +26,212 @@ const remainingPosts = featuredPost
 const totalPages = Math.ceil(remainingPosts.length / POSTS_PER_PAGE);
 
 const featuredDate = featuredPost
-  ? formatCompactDate(featuredPost.data.publishedDate)
+  ? formatDate(featuredPost.data.publishedDate)
   : '';
 const featuredReadingTime = featuredPost
   ? calculateReadingTime(featuredPost.body || '')
   : 0;
+
+const startHere = [
+  {
+    label: 'AI 工作團隊實驗室',
+    description: '六課 AI 工作流程教學與可下載的 SOP 模板。',
+    href: '/ai-work-team/',
+  },
+  {
+    label: 'NotebookLM 完整攻略',
+    description: '從建立筆記本到進階提問的長文起點。',
+    href: '/blog/notebooklm-complete-guide-2026/',
+  },
+  {
+    label: '關於站長',
+    description: '10 年整合行銷，寫商業、AI 與個人品牌。',
+    href: '/about/',
+  },
+];
 ---
 
 <MarketingLayout title="文章" description={siteConfig.description}>
-  <section class="bg-background pt-12 md:pt-16">
+  <section class="border-b border-border bg-background pb-8 pt-10 md:pb-10 md:pt-14">
     <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-wrap items-end justify-between gap-x-6 gap-y-3">
-        <div>
-          <h1 class="text-4xl font-extrabold tracking-[-0.03em] text-text md:text-6xl">
-            新東西很多，先讀哪一篇？
-          </h1>
-          <p class="mt-4 max-w-2xl text-base leading-relaxed text-text-muted md:text-lg">
-            不同領域，不同問題。從四個研究方向選一個入口，或直接看下面的最新文章。
-          </p>
-        </div>
-        <span class="pb-1 text-xs font-medium text-text-muted">
+      <nav aria-label="麵包屑" class="mb-5 flex flex-wrap items-center gap-1.5 text-xs font-medium text-text-muted">
+        <a href="/" class="transition-colors hover:text-primary">首頁</a>
+        <span aria-hidden="true">›</span>
+        <span class="text-text">文章</span>
+      </nav>
+
+      <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
+        文章索引
+      </p>
+
+      <div class="mt-3 flex flex-wrap items-end justify-between gap-x-4 gap-y-2">
+        <h1 class="max-w-3xl text-3xl font-extrabold tracking-tight text-text md:text-5xl">
+          新東西很多，先讀哪一篇？
+        </h1>
+        <span class="mb-1 rounded-full bg-surface px-3 py-1 text-xs font-medium text-text-muted">
           {allPosts.length} 篇文章
         </span>
       </div>
+
+      <p class="mt-4 max-w-3xl text-base leading-relaxed text-text-muted md:text-lg">
+        不同領域，不同問題。先從四個研究方向挑一個問題，或直接看下面的最新文章。
+      </p>
     </div>
   </section>
 
-  <ThemeQuestionGrid items={themeCounts} eyebrow="四個研究方向" />
-
-  <section class="bg-background pb-4 pt-8 md:pt-10">
+  <section class="bg-background pb-20 pt-6">
     <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-      {
-        featuredPost && (
-          <a
-            href={postUrl(featuredPost.id)}
-            class="group block rounded-2xl border border-border bg-surface/70 p-6 transition-colors hover:border-primary/40 md:p-8"
-          >
-            <div class="flex flex-wrap items-center gap-2.5 text-[11px] font-medium text-text-muted">
-              <span class="font-bold uppercase tracking-[0.2em] text-primary">精選文章</span>
-              <span class="h-1 w-1 rounded-full bg-border" aria-hidden="true"></span>
-              <span>{featuredPost.data.category}</span>
-            </div>
+      <BlogTopicNav items={themeCounts} variant="pills" />
 
-            <h2 class="mt-4 max-w-4xl text-[1.45rem] font-extrabold leading-[1.3] tracking-tight text-text transition-colors group-hover:text-primary md:text-[2.4rem] md:leading-[1.25]">
-              {featuredPost.data.title}
+      <div class="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-start">
+        <div class="min-w-0">
+          <p class="max-w-3xl text-base leading-relaxed text-text-muted">
+            這裡不追工具的新聞熱度，而是把值得理解的新事物拆成可判斷的線索：
+            AI 怎麼改變工作、商業怎麼成長、價格背後有什麼變數，以及一個人怎麼建立自己的事業。
+          </p>
+
+          <section class="mt-10" aria-labelledby="blog-questions-title">
+            <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
+              四個研究方向
+            </p>
+            <h2 id="blog-questions-title" class="mt-3 text-2xl font-bold tracking-tight text-text">
+              先選問題，再讀文章。
             </h2>
 
-            <p class="mt-4 max-w-3xl text-sm leading-relaxed text-text-muted md:text-base">
-              {featuredPost.data.description}
-            </p>
-
-            <div class="mt-6 flex flex-wrap items-center gap-x-2.5 gap-y-2 text-xs font-medium text-text-muted">
-              <time datetime={featuredPost.data.publishedDate.toISOString()}>
-                {featuredDate}
-              </time>
-              <span class="h-1 w-1 rounded-full bg-border" aria-hidden="true"></span>
-              <span>{featuredReadingTime} 分鐘</span>
-              <span class="ml-auto inline-flex items-center gap-2 font-semibold text-primary">
-                閱讀文章
-                <svg
-                  class="h-4 w-4"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  aria-hidden="true"
-                >
-                  <path d="M5 12h14" />
-                  <path d="m13 6 6 6-6 6" />
-                </svg>
-              </span>
+            <div class="mt-5 grid gap-3 sm:grid-cols-2">
+              {
+                themeCounts.map(({ theme, count }, index) => (
+                  <a
+                    href={themeUrl(theme.slug)}
+                    class="group rounded-2xl border border-border bg-surface p-4 transition-all hover:border-primary/40 hover:bg-primary/5"
+                  >
+                    <span class="text-[10px] font-bold tracking-[0.2em] text-primary">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <h3 class="mt-2 text-sm font-bold leading-snug text-text transition-colors group-hover:text-primary">
+                      {theme.readerQuestion}
+                    </h3>
+                    <p class="mt-2 text-xs leading-relaxed text-text-muted">
+                      {theme.name}
+                      <span class="mx-1.5 text-border" aria-hidden="true">·</span>
+                      {count > 0 ? `${count} 篇` : '研究中'}
+                    </p>
+                  </a>
+                ))
+              }
             </div>
-          </a>
-        )
-      }
-    </div>
-  </section>
+          </section>
 
-  <section class="bg-background pb-20 pt-8 md:pt-10">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-      <div class="flex items-end justify-between gap-4 border-b border-border pb-4">
-        <div>
-          <h2 class="text-xl font-bold tracking-tight text-text md:text-2xl">最新文章</h2>
-          <p class="mt-1 text-xs text-text-muted">依發布時間排序</p>
+          {
+            featuredPost && (
+              <section class="mt-12 border-y border-border py-6" aria-labelledby="featured-title">
+                <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
+                  精選文章
+                </p>
+                <a href={postUrl(featuredPost.id)} class="group mt-3 block">
+                  <h2
+                    id="featured-title"
+                    class="max-w-3xl text-2xl font-bold leading-snug tracking-tight text-text transition-colors group-hover:text-primary md:text-3xl"
+                  >
+                    {featuredPost.data.title}
+                  </h2>
+                  <p class="mt-3 max-w-3xl text-sm leading-relaxed text-text-muted line-clamp-2 md:text-[15px]">
+                    {featuredPost.data.description}
+                  </p>
+                  <div class="mt-5 flex flex-wrap items-center gap-x-2.5 gap-y-2 text-xs font-medium text-text-muted">
+                    <span>{featuredPost.data.category}</span>
+                    <span class="h-1 w-1 rounded-full bg-border" aria-hidden="true"></span>
+                    <time datetime={featuredPost.data.publishedDate.toISOString()}>
+                      {featuredDate}
+                    </time>
+                    <span class="h-1 w-1 rounded-full bg-border" aria-hidden="true"></span>
+                    <span>{featuredReadingTime} 分鐘</span>
+                    <span class="ml-auto inline-flex items-center gap-2 font-semibold text-primary">
+                      閱讀文章
+                      <svg
+                        class="h-4 w-4"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        aria-hidden="true"
+                      >
+                        <path d="M5 12h14" />
+                        <path d="m13 6 6 6-6 6" />
+                      </svg>
+                    </span>
+                  </div>
+                </a>
+              </section>
+            )
+          }
+
+          <section class="mt-12" aria-labelledby="latest-title">
+            <div class="flex items-end justify-between gap-4 border-b border-border pb-3">
+              <div>
+                <h2 id="latest-title" class="text-2xl font-bold tracking-tight text-text">最新文章</h2>
+                <p class="mt-1 text-sm text-text-muted">依發布時間排序</p>
+              </div>
+              <div class="flex items-center gap-4 pb-1">
+                <span class="hidden text-xs text-text-muted sm:inline">{remainingPosts.length} 篇</span>
+                <BlogSearchToggle />
+              </div>
+            </div>
+
+            <div class="mt-2">
+              {remainingPosts.slice(0, POSTS_PER_PAGE).map((post) => <ThemePostRow post={post} />)}
+            </div>
+
+            <div class="mt-10">
+              <Pagination currentPage={1} totalPages={totalPages} basePath="/blog/" />
+            </div>
+          </section>
         </div>
-        <div class="flex items-center gap-4 pb-1">
-          <span class="hidden text-xs text-text-muted sm:inline">{remainingPosts.length} 篇</span>
-          <BlogSearchToggle />
-        </div>
+
+        <aside class="space-y-6 lg:sticky lg:top-24">
+          <div class="rounded-2xl border border-border bg-surface p-5">
+            <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">從這裡開始</p>
+            <div class="mt-4 space-y-4">
+              {
+                startHere.map((resource) => (
+                  <a href={resource.href} class="group block">
+                    <span class="text-sm font-bold text-text transition-colors group-hover:text-primary">
+                      {resource.label}
+                    </span>
+                    <span class="mt-1 block text-xs leading-relaxed text-text-muted">
+                      {resource.description}
+                    </span>
+                  </a>
+                ))
+              }
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-border bg-background p-5">
+            <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">訂閱電子報</p>
+            <p class="mt-3 text-sm font-semibold leading-relaxed text-text">
+              每週一封，繼續研究值得理解的新事物。
+            </p>
+            <p class="mt-2 text-xs leading-relaxed text-text-muted">
+              把 AI、商業、投資與個人事業的新變化，拆成可以判斷、可以行動的線索。
+            </p>
+            <a
+              href="https://billy4select.substack.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-primary hover:opacity-70"
+            >
+              訂閱電子報
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </aside>
       </div>
 
-      <div>
-        {remainingPosts.slice(0, POSTS_PER_PAGE).map((post) => <PostCard post={post} />)}
-      </div>
-
-      <div class="mt-12">
-        <Pagination currentPage={1} totalPages={totalPages} basePath="/blog/" />
+      <div class="mt-14 border-t border-border pt-6">
+        <a href="/" class="text-sm font-semibold text-primary hover:opacity-70">
+          ← 回到首頁
+        </a>
       </div>
     </div>
   </section>

@@ -192,10 +192,52 @@ AI 與科技頁再分三個內容叢集：AI 工具選型、NotebookLM、AI 工�
 ## 第四輪 QA
 
 - Astro build 與 Pagefind 索引通過；全站 137 頁，Pagefind 索引 35 篇文章。
-- 全站 5,550 個內部連結與錨點：0 缺頁；3 個既有 `threads/*` 子頁錨點不一致，非本輪文章區改動。
+- 全站 5,561 個內部連結與錨點：0 缺頁；3 個既有 `threads/*` 子頁錨點不一致，非本輪文章區改動。
 - 1280、1024、640、390 四個寬度，首頁、`/blog/`、文章頁、主题頁均 0 橫向溢出。
 - 深色模式：問題入口、桌面 TOC、作者盒、電子報區對比正常。
 - 35 篇文章文末順序一致；`ArticleNext` 在最新文章之前都有下一篇文章。
+
+## 第四輪修正：`/blog/` 對齊主題頁
+
+問題：`/blog/` 與 `/blog/category/ai-tech/` 是兩套不同版面。索引頁是大 H1、四欄問題表、巨型精選卡；主題頁是小 header、pills、左內容右側欄、列表。讀者從索引進主题頁會覺得換了一個網站。
+
+改法：以主题頁為主，索引頁只保留自己的兩個重點：四個問題入口與一篇精選文章。
+
+### 1. Header 同一套節奏
+
+- 同為 `max-w-5xl`、`border-b`、`pb-8 pt-10 md:pb-10 md:pt-14`。
+- 補「首頁 › 文章」麵包屑。
+- eyebrow 從「四個研究方向」改成「文章索引」。
+- H1 從 `text-4xl md:text-6xl` 降為 `text-3xl md:text-5xl`，和主题頁一致；保留讀者問題「新東西很多，先讀哪一篇？」。
+- 篇數從右上角小字改成主题頁同款 pill。
+
+### 2. 主题導覽同一組 pills
+
+- `<BlogTopicNav variant="pills">`，和主题頁完全同一個元件。
+- 不再使用 `ThemeQuestionGrid` 的四欄 table 版型。
+- Active pill 改成 token 色（`border-primary bg-primary/10 text-primary`），深色模式不再出現淺底白字。
+
+### 3. 兩欄主體
+
+- `lg:grid-cols-[minmax(0,1fr)_280px]`，和主题頁相同。
+- 左欄：導言 → 四張問題卡（`sm:grid-cols-2`）→ 精選文章 → 最新文章。
+- 問題卡沿用主题頁 `rounded-2xl border border-border bg-surface p-4`，只把「主题名＋篇數」放在底部。
+- 右欄：「從這裡開始」連到 AI 工作團隊實驗室、NotebookLM 完整攻略、關於站長；另一張是電子報。
+- 右欄 `lg:sticky lg:top-24`。
+
+### 4. 精選與列表降密度
+
+- 精選文章從 `rounded-2xl bg-surface p-6 md:p-8` 巨型卡片，改成 `border-y py-6` 的編輯式區塊。
+- 標題從 `text-[2.4rem]` 降為 `text-2xl md:text-3xl`。
+- 最新文章從 `PostCard` 改為主题頁同款 `ThemePostRow`。
+- 搜尋留在「最新文章」右側，不再另成一套工具列。
+
+### 修正 QA
+
+- 1280、1024、640、390 四個寬度：`/blog/` 0 橫向溢出。
+- 1280 桌面：header、pills、兩欄、問題卡、精選、列表與主题頁同一節奏。
+- 390 手機：H1 單行、pills 自動換行、問題卡單欄、右欄降到文章列表之後。
+- 深色模式：active pill 改為橘框＋橘字，問題卡與側欄對比正常。
 
 ## 还可以再做，但這次先不動
 
