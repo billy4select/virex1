@@ -5,7 +5,7 @@ publishedDate: 2026-05-06T00:00:00Z
 author: 比利陳 Billy Chen
 tags:
   - 工具比較評測
-category: AI實戰
+category: AI 與科技
 featured: false
 boost: false
 draft: false

@@ -18,6 +18,10 @@ interface Props {
   schemaType?: 'HowTo' | 'FAQ' | 'Article';
   steps?: { name: string; text: string }[];
   faq?: { q: string; a: string }[];
+  section?: string;
+  sectionUrl?: string;
+  noindex?: boolean;
+  structuredData?: Record<string, unknown>[];
 }
 
 const {
@@ -32,6 +36,10 @@ const {
   schemaType,
   steps,
   faq,
+  section,
+  sectionUrl,
+  noindex = false,
+  structuredData = [],
 } = Astro.props;
 
 const { announcement } = siteConfig;
@@ -83,9 +91,15 @@ if (schemaType === 'HowTo' && steps && steps.length > 0) {
   modifiedDate={modifiedDate}
   author={author}
   tags={tags}
+  section={section}
+  sectionUrl={sectionUrl}
+  noindex={noindex}
 >
   <Fragment slot="head">
     {schemas.map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
+    {structuredData.map((schema) => (
       <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     ))}
   </Fragment>

@@ -6,7 +6,7 @@ author: 比利陳 Billy Chen
 tags:
   - 工具比較評測
   - 知識管理
-category: AI工具選型
+category: AI 與科技
 featured: false
 boost: false
 draft: false

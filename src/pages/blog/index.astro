@@ -4,13 +4,16 @@ import Pagination from '@ui/Pagination.astro';
 import PostCard from '@ui/PostCard.astro';
 import BlogSearch from '@/components/blog/BlogSearch.astro';
 import BlogTagNav from '@/components/blog/BlogTagNav.astro';
+import BlogTopicNav from '@/components/blog/BlogTopicNav.astro';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
 import { POSTS_PER_PAGE, getFeatured, getTagStats, postUrl, sortByDate } from '@/lib/blog';
+import { getThemeCounts } from '@/lib/themes';
 
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const sortedPosts = sortByDate(allPosts);
 const tags = getTagStats(allPosts);
+const themeCounts = getThemeCounts(allPosts);
 const boostedPosts = getFeatured(sortedPosts);
 
 const remainingPosts = sortedPosts.filter((p) => !boostedPosts.some((b) => b.id === p.id));
@@ -19,15 +22,33 @@ const totalPages = Math.ceil(remainingPosts.length / POSTS_PER_PAGE);
 
 <MarketingLayout title="文章" description={siteConfig.description}>
   <section class="bg-background pt-10 pb-8 md:pt-14">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="flex items-center justify-between mb-6">
-        <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-text">文章</h1>
-        <span class="text-xs text-text-muted">{allPosts.length} 篇文章</span>
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-4">
+        <div>
+          <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">研究文章</p>
+          <h1 class="mt-2 text-3xl font-bold tracking-tight text-text md:text-4xl">文章</h1>
+          <p class="mt-3 max-w-xl text-sm leading-relaxed text-text-muted md:text-base">
+            不同領域，不同問題。持續研究值得理解的新事物。
+          </p>
+        </div>
+        <span class="shrink-0 text-xs text-text-muted">{allPosts.length} 篇文章</span>
       </div>
 
-      <BlogSearch />
+      <div class="mt-8">
+        <p class="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-text-muted">
+          四個研究主題
+        </p>
+        <BlogTopicNav items={themeCounts} />
+      </div>
 
-      <div class="border-b border-border pb-7">
+      <div class="mt-8">
+        <BlogSearch />
+      </div>
+
+      <div class="mt-6 border-b border-border pb-7">
+        <p class="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-text-muted">
+          依標籤篩選
+        </p>
         <BlogTagNav tags={tags} current="all" />
       </div>
     </div>

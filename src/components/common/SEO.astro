@@ -6,6 +6,7 @@
  * 呼叫端可以傳入已含品牌的名稱，這裡會自動避免重複附加站名。
  */
 import { siteConfig } from '@/config';
+import { getThemeBySlug } from '@/lib/themes';
 
 interface Props {
   title: string;
@@ -16,6 +17,9 @@ interface Props {
   modifiedDate?: Date;
   author?: string;
   tags?: string[];
+  section?: string;
+  sectionUrl?: string;
+  noindex?: boolean;
 }
 
 const {
@@ -27,6 +31,9 @@ const {
   modifiedDate,
   author,
   tags = [],
+  section,
+  sectionUrl,
+  noindex = false,
 } = Astro.props;
 
 const brand = siteConfig.name;
@@ -71,15 +78,19 @@ const articleSchema =
   type === 'article' && publishedDate
     ? {
         '@context': 'https://schema.org',
-        '@type': 'Article',
+        '@type': 'BlogPosting',
         headline: cleanTitle,
         description,
         image: ogImage,
+        inLanguage: 'zh-Hant-TW',
+        ...(section ? { articleSection: section } : {}),
         datePublished: publishedDate.toISOString(),
         dateModified: (modifiedDate || publishedDate).toISOString(),
         author: {
           '@type': 'Person',
           name: author || siteConfig.author,
+          url: new URL('/about/', siteConfig.url).href,
+          ...(socialUrls.length > 0 ? { sameAs: socialUrls } : {}),
         },
         publisher: {
           '@type': 'Organization',
@@ -88,6 +99,12 @@ const articleSchema =
             '@type': 'ImageObject',
             url: new URL(siteConfig.logo, siteConfig.url).href,
           },
+        },
+        isPartOf: {
+          '@type': 'Blog',
+          '@id': `${siteConfig.url}/blog/#blog`,
+          name: `${brand} 文章`,
+          url: `${siteConfig.url}/blog/`,
         },
         mainEntityOfPage: {
           '@type': 'WebPage',
@@ -98,11 +115,28 @@ const articleSchema =
     : null;
 
 const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+const isBlogPath = pathSegments[0] === 'blog';
+const isCategoryPath =
+  isBlogPath && pathSegments[1] === 'category' && Boolean(pathSegments[2]);
+
 const breadcrumbItems = [{ name: '首頁', item: new URL('/', siteConfig.url).href }];
-if (pathSegments[0] === 'blog' && pathSegments.length > 1) {
+
+if (isBlogPath) {
   breadcrumbItems.push({ name: '文章', item: new URL('/blog/', siteConfig.url).href });
 }
-if (pathSegments.length > 0) {
+
+if (isCategoryPath) {
+  const theme = getThemeBySlug(pathSegments[2]);
+  breadcrumbItems.push({
+    name: theme?.name ?? cleanTitle,
+    item: canonicalURL.href,
+  });
+} else if (isBlogPath && pathSegments.length === 2) {
+  if (section && sectionUrl) {
+    breadcrumbItems.push({ name: section, item: sectionUrl });
+  }
+  breadcrumbItems.push({ name: cleanTitle, item: canonicalURL.href });
+} else if (pathSegments.length > 0 && !isBlogPath) {
   breadcrumbItems.push({ name: cleanTitle, item: canonicalURL.href });
 }
 const breadcrumbSchema =
@@ -123,6 +157,7 @@ const breadcrumbSchema =
 <title>{fullTitle}</title>
 <meta name="title" content={fullTitle} />
 <meta name="description" content={description} />
+{noindex && <meta name="robots" content="noindex, follow" />}
 <meta name="author" content={siteConfig.author} />
 {tags.length > 0 && <meta name="keywords" content={tags.join(', ')} />}
 

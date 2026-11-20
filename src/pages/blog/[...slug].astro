@@ -3,6 +3,7 @@ import BlogLayout from '@/layouts/BlogLayout.astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import { siteConfig } from '@/config';
 import { getRelated, postUrl } from '@/lib/blog';
+import { getThemeByName } from '@/lib/themes';
 
 type BlogPost = CollectionEntry<'blog'>;
 
@@ -15,10 +16,11 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
 
 const seoTitle = `${post.data.title} - ${siteConfig.name}`;
 const displayTitle = post.data.title;
+const category = getThemeByName(post.data.category);
 
 // --- 相關閱讀：依共同標籤排序（固定結果，不亂數） ---
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
@@ -39,6 +41,8 @@ const relatedPosts = getRelated(post, allPosts, 3);
   schemaType={post.data.schemaType}
   steps={post.data.steps}
   faq={post.data.faq}
+  headings={headings}
+  category={category}
 >
   {/* 文章主體內容 */}
   <Content slot="content" />

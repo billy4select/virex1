@@ -8,7 +8,7 @@ author: 比利陳 Billy Chen
 tags:
   - 知識管理
   - AI工作流程
-category: AI實戰
+category: AI 與科技
 featured: true
 boost: true
 draft: false

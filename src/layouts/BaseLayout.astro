@@ -18,6 +18,9 @@ interface Props {
   modifiedDate?: Date;
   author?: string;
   tags?: string[];
+  section?: string;
+  sectionUrl?: string;
+  noindex?: boolean;
 }
 
 const {
@@ -29,6 +32,9 @@ const {
   modifiedDate,
   author,
   tags,
+  section,
+  sectionUrl,
+  noindex = false,
 } = Astro.props;
 ---
 
@@ -68,6 +74,9 @@ const {
       modifiedDate={modifiedDate}
       author={author}
       tags={tags}
+      section={section}
+      sectionUrl={sectionUrl}
+      noindex={noindex}
     />
 
     <link

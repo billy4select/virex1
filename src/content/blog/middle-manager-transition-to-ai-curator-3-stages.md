@@ -5,7 +5,7 @@ publishedDate: 2026-04-10T08:30:15Z
 author: 比利陳 Billy Chen
 tags:
   - 職涯與心態
-category: AI實戰
+category: 個人品牌與事業
 featured: false
 boost: false
 draft: false

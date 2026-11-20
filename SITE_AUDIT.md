@@ -61,6 +61,38 @@ Header 與 mobile menu 會依目前路徑標記 `aria-current="page"`，視覺�
 - `narrative-engine` 補「回首頁」，並修正 390px 導覽被擠成直排的問題。
 - 公告列在手機版改為較短文案與較小字級，避免斷行。
 
+## 第二輪：文章閱讀與主題架構
+
+### 1. 四個研究主題 hub
+
+依照主站首頁的四個研究方向建立分類頁：
+
+- `/blog/category/ai-tech/`：AI 與科技，26 篇。
+- `/blog/category/business-marketing/`：商業與行銷，5 篇。
+- `/blog/category/personal-brand/`：個人品牌與事業，4 篇。
+- `/blog/category/investment-market/`：投資與市場，目前 0 篇，設為 `noindex` 且不進 sitemap；累積 3 篇後再開索引。
+
+AI 與科技頁再分三個內容叢集：AI 工具選型、NotebookLM、AI 工作流程。每篇文章只有一個主要 `category`，標籤保留為次要分類。
+
+### 2. 文章左側目錄
+
+- 使用 Astro `render()` 回傳的 `headings` 產生 H2／H3 目錄，不手寫、不 regex 爬 HTML。
+- 桌面版為 220px sticky 左側欄，`top: 6rem`，過長時可滾動。
+- 手機與平板（<1024px）改成文章上方的折疊目錄，按鈕有 `aria-expanded`。
+- 目錄也列入 FAQ 問題；scrollspy 以標題頂端 120px 判斷 active。
+- 所有 35 篇文章都有目錄；390px 無橫向溢出。
+
+### 3. FAQ 從 schema 走回讀者眼前
+
+原本 29 篇文章有 `FAQPage` JSON-LD，但文章頁沒有顯示 FAQ。現在文章底部會渲染可見的「常見問題」，並保留原本的 JSON-LD；標記與讀者看到的內容一致。
+
+### 4. Schema 與麵包屑
+
+- 文章 JSON-LD 從 `Article` 改為更精確的 `BlogPosting`，補 `articleSection`、`inLanguage`、`isPartOf`、作者 `sameAs`。
+- 文章頁補視覺化麵包屑：首頁 › 文章 › 主題 › 文章。
+- 分類頁補 `CollectionPage` + `ItemList`；`BreadcrumbList` 由 `SEO.astro` 統一輸出。
+- 主站 sitemap 目前 59 個網址；投資與市場主題頁刻意排除。
+
 ## QA 結果
 
 - 主站 56 頁：標題 0 重複、description 0 重複、`<main>` 與 `<h1>` 全部唯一。
@@ -68,6 +100,14 @@ Header 與 mobile menu 會依目前路徑標記 `aria-current="page"`，視覺�
 - 40 頁 `ai-work-team` 子專題完整保留。
 - 390px：120 頁全部無橫向溢出。
 - Astro build 與 Pagefind 索引均通過。
+
+第二輪 QA：
+
+- 全站 137 頁、4,530 個內部連結與錨點，0 壞鏈。
+- 35 篇文章全部有目錄；29 篇 FAQ 全部可見且 schema 對應。
+- 4 個主題頁文章數：26／5／4／0，合計 35。
+- 390px 抽查 41 個主要頁面，0 橫向溢出。
+- 投資與市場頁 `noindex, follow`，且不在 sitemap。
 
 ## 还可以再做，但這次先不動
 

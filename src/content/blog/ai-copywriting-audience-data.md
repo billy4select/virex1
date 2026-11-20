@@ -5,7 +5,7 @@ publishedDate: 2026-04-18T14:52:13Z
 author: 比利陳 Billy Chen
 tags:
   - 行銷文案
-category: AI實戰
+category: 商業與行銷
 featured: false
 boost: false
 draft: false

@@ -5,7 +5,7 @@ publishedDate: 2026-04-15T14:22:10Z
 author: 比利陳 Billy Chen
 tags:
   - AI工作流程
-category: AI實戰
+category: AI 與科技
 featured: false
 boost: false
 draft: false

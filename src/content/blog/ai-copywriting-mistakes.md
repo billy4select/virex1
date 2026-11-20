@@ -8,7 +8,7 @@ author: 比利陳 Billy Chen
 tags:
   - 行銷文案
   - 工具比較評測
-category: AI工具選型
+category: 商業與行銷
 featured: false
 boost: false
 draft: false

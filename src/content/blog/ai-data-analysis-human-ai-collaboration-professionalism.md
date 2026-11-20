@@ -6,7 +6,7 @@ author: 比利陳 Billy Chen
 tags:
   - 數據與資安
   - 職涯與心態
-category: AI實戰
+category: 個人品牌與事業
 featured: true
 boost: true
 draft: false

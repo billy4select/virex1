@@ -1,9 +1,17 @@
-
 ---
 import MarketingLayout from './MarketingLayout.astro';
+import TableOfContents from '@/components/blog/TableOfContents.astro';
+import ArticleFAQ from '@/components/blog/ArticleFAQ.astro';
 import { Icon } from 'astro-icon/components';
 import { calculateReadingTime, formatDate } from '@/lib/utils';
 import { tagUrl } from '@/lib/blog';
+import { themeUrl, type BlogTheme } from '@/lib/themes';
+
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
 
 interface Props {
   title: string;
@@ -17,6 +25,8 @@ interface Props {
   schemaType?: 'HowTo' | 'FAQ' | 'Article';
   steps?: { name: string; text: string }[];
   faq?: { q: string; a: string }[];
+  headings?: Heading[];
+  category?: BlogTheme;
 }
 
 const {
@@ -30,17 +40,28 @@ const {
   displayTitle: propsDisplayTitle,
   schemaType,
   steps,
-  faq
+  faq = [],
+  headings = [],
+  category,
 } = Astro.props;
 
 const readingTime = calculateReadingTime(content);
 const formattedDate = formatDate(publishedDate, {
   year: 'numeric',
   month: 'long',
-  day: 'numeric'
+  day: 'numeric',
 });
 
-const displayTitle = propsDisplayTitle || (title ? title.split(/ [\|\-] /)[0] : "");
+const displayTitle = propsDisplayTitle || (title ? title.split(/ [\|\-] /)[0] : '');
+
+const tocCount =
+  headings.filter((heading) => heading.depth === 2 || heading.depth === 3).length +
+  (faq.length > 0 ? faq.length + 1 : 0);
+const hasToc = tocCount >= 4;
+
+const articleGridClass = hasToc
+  ? 'lg:grid lg:grid-cols-[220px_minmax(0,760px)] lg:justify-center lg:gap-12'
+  : 'lg:grid lg:grid-cols-[minmax(0,760px)] lg:justify-center';
 ---
 
 <MarketingLayout
@@ -54,63 +75,87 @@ const displayTitle = propsDisplayTitle || (title ? title.split(/ [\|\-] /)[0] : 
   schemaType={schemaType}
   steps={steps}
   faq={faq}
+  section={category?.name}
+  sectionUrl={category ? themeUrl(category.slug) : undefined}
 >
-
   {/* 文章標題區 */}
   <section class="bg-background border-b border-border pt-10 pb-8 md:pt-14 md:pb-10" data-pagefind-ignore>
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class={articleGridClass}>
+        {hasToc && <div class="hidden lg:block" aria-hidden="true"></div>}
 
-      <header>
-        <h1 class="text-2xl md:text-4xl font-extrabold text-text mb-6 leading-tight tracking-tight">
-          {displayTitle}
-        </h1>
+        <header class="min-w-0 max-w-3xl">
+          <nav aria-label="麵包屑" class="mb-5 flex flex-wrap items-center gap-1.5 text-xs font-medium text-text-muted">
+            <a href="/" class="transition-colors hover:text-primary">首頁</a>
+            <span aria-hidden="true">›</span>
+            <a href="/blog/" class="transition-colors hover:text-primary">文章</a>
+            {
+              category && (
+                <>
+                  <span aria-hidden="true">›</span>
+                  <a href={themeUrl(category.slug)} class="transition-colors hover:text-primary">
+                    {category.name}
+                  </a>
+                </>
+              )
+            }
+          </nav>
 
-        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs md:text-sm text-text-muted font-medium">
+          <h1 class="mb-6 text-2xl font-extrabold leading-tight tracking-tight text-text md:text-4xl">
+            {displayTitle}
+          </h1>
 
-          <span class="flex items-center gap-1.5">
-            <Icon name="lucide:calendar" class="w-4 h-4" />
-            {formattedDate}
-          </span>
+          <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-medium text-text-muted md:text-sm">
+            <span class="flex items-center gap-1.5">
+              <Icon name="lucide:calendar" class="h-4 w-4" />
+              {formattedDate}
+            </span>
 
-          <span class="flex items-center gap-1.5">
-            <Icon name="lucide:clock" class="w-4 h-4" />
-            閱讀約 {readingTime} 分鐘
-          </span>
-
-        </div>
-
-        {tags && tags.length > 0 && (
-          <div class="flex flex-wrap gap-2 mt-6">
-            {tags.map((tag) => (
-              <a
-                href={tagUrl(tag)}
-                class="px-3 py-1.5 text-[11px] md:text-xs font-medium bg-surface text-text-muted rounded-full hover:bg-[#FFF0E6] hover:text-[#E85D00] transition-all"
-              >
-                {tag}
-              </a>
-            ))}
+            <span class="flex items-center gap-1.5">
+              <Icon name="lucide:clock" class="h-4 w-4" />
+              閱讀約 {readingTime} 分鐘
+            </span>
           </div>
-        )}
 
-      </header>
+          {
+            tags.length > 0 && (
+              <div class="mt-6 flex flex-wrap gap-2">
+                {tags.map((tag) => (
+                  <a
+                    href={tagUrl(tag)}
+                    class="rounded-full bg-surface px-3 py-1.5 text-[11px] font-medium text-text-muted transition-all hover:bg-[#FFF0E6] hover:text-[#E85D00] md:text-xs"
+                  >
+                    {tag}
+                  </a>
+                ))}
+              </div>
+            )
+          }
+        </header>
+      </div>
     </div>
   </section>
 
   {/* 文章內容 */}
-  <article class="pt-8 pb-12 md:pt-12 md:pb-16 bg-background" data-pagefind-body>
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span data-pagefind-meta="title" class="sr-only">{displayTitle}</span>
-      <div class="prose prose-slate prose-base md:prose-lg max-w-none">
-        <slot name="content" />
-        <slot />
+  <article class="bg-background pb-12 pt-8 md:pb-16 md:pt-12" data-pagefind-body>
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class={articleGridClass}>
+        {hasToc && <TableOfContents headings={headings} faq={faq} />}
+
+        <div class="min-w-0 max-w-3xl">
+          <span data-pagefind-meta="title" class="sr-only">{displayTitle}</span>
+          <div class="prose prose-slate max-w-none prose-base md:prose-lg">
+            <slot name="content" />
+            <slot />
+          </div>
+
+          <ArticleFAQ faqs={faq} />
+
+          <div data-pagefind-ignore>
+            <slot name="footer" />
+          </div>
+        </div>
       </div>
     </div>
   </article>
-
-  {/* 文章延伸內容 */}
-  <div data-pagefind-ignore>
-    <slot name="footer" />
-  </div>
-
 </MarketingLayout>
-
