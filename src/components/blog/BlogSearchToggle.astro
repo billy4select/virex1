@@ -1,0 +1,83 @@
+---
+import BlogSearch from './BlogSearch.astro';
+
+interface Props {
+  id?: string;
+}
+
+const { id = 'blog-search-panel' } = Astro.props;
+---
+
+<div class="relative">
+  <button
+    type="button"
+    data-search-toggle
+    aria-expanded="false"
+    aria-controls={id}
+    class="inline-flex items-center gap-2 text-xs font-semibold text-text-muted transition-colors hover:text-primary"
+  >
+    <svg
+      class="h-4 w-4"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.8"
+      aria-hidden="true"
+    >
+      <circle cx="11" cy="11" r="6.5"></circle>
+      <path d="m16 16 4 4"></path>
+    </svg>
+    <span>搜尋文章</span>
+  </button>
+
+  <div
+    id={id}
+    hidden
+    class="absolute right-0 top-full z-30 mt-4 w-[min(88vw,30rem)] rounded-2xl border border-border bg-background p-4 shadow-xl [&>div]:mb-0"
+  >
+    <BlogSearch />
+  </div>
+</div>
+
+<script>
+  const initSearchToggle = () => {
+    document.querySelectorAll<HTMLElement>('[data-search-toggle]').forEach((button) => {
+      const controls = button.getAttribute('aria-controls');
+      const panel = controls ? document.getElementById(controls) : null;
+      if (!panel) return;
+
+      const close = () => {
+        panel.hidden = true;
+        button.setAttribute('aria-expanded', 'false');
+      };
+
+      button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        panel.hidden = expanded;
+        button.setAttribute('aria-expanded', String(!expanded));
+
+        if (!expanded) {
+          window.setTimeout(() => {
+            panel.querySelector<HTMLInputElement>('input')?.focus();
+          }, 60);
+        }
+      });
+
+      document.addEventListener('click', (event) => {
+        const target = event.target as HTMLElement;
+        if (button.contains(target) || panel.contains(target)) return;
+        close();
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') close();
+      });
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSearchToggle);
+  } else {
+    initSearchToggle();
+  }
+</script>

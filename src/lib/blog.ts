@@ -35,6 +35,11 @@ export function getFeatured(sortedPosts: BlogPost[]): BlogPost[] {
     .slice(0, 2);
 }
 
+/** 文章索引只放一篇精選；沒有標記時退回最新一篇，避免首頁空掉。 */
+export function getFeaturedPost(sortedPosts: BlogPost[]): BlogPost | undefined {
+  return getFeatured(sortedPosts)[0] ?? sortedPosts[0];
+}
+
 /**
  * 相關閱讀：依「共同標籤數」排序（同分類加 1 分），再依日期新到舊。
  * 結果是固定的，不會每次 build 都不一樣。

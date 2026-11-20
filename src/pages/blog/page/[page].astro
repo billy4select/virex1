@@ -2,27 +2,26 @@
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Pagination from '@ui/Pagination.astro';
 import PostCard from '@ui/PostCard.astro';
-import BlogSearch from '@/components/blog/BlogSearch.astro';
-import BlogTagNav from '@/components/blog/BlogTagNav.astro';
 import { getCollection } from 'astro:content';
 import type { GetStaticPaths } from 'astro';
-import { POSTS_PER_PAGE, getFeatured, getTagStats, sortByDate } from '@/lib/blog';
+import { POSTS_PER_PAGE, getFeaturedPost, sortByDate } from '@/lib/blog';
 
 export const getStaticPaths = (async ({ paginate }) => {
   const allPosts = await getCollection('blog', ({ data }) => !data.draft);
   const sortedPosts = sortByDate(allPosts);
-  const boostedPosts = getFeatured(sortedPosts);
-  const remainingPosts = sortedPosts.filter((p) => !boostedPosts.some((b) => b.id === p.id));
-  const tags = getTagStats(allPosts);
+  const featuredPost = getFeaturedPost(sortedPosts);
+  const remainingPosts = featuredPost
+    ? sortedPosts.filter((post) => post.id !== featuredPost.id)
+    : sortedPosts;
 
   // 第 1 頁就是 /blog/，這裡只產生第 2 頁以後，避免 /blog/page/1/ 變成重複頁面
   return paginate(remainingPosts, {
     pageSize: POSTS_PER_PAGE,
-    props: { tags, totalCount: allPosts.length },
+    props: { totalCount: allPosts.length },
   }).filter((p) => p.props.page.currentPage > 1);
 }) satisfies GetStaticPaths;
 
-const { page, tags, totalCount } = Astro.props;
+const { page, totalCount } = Astro.props;
 const currentPage = page.currentPage;
 ---
 
@@ -30,33 +29,42 @@ const currentPage = page.currentPage;
   title={`文章 - 第 ${currentPage} 頁`}
   description={`比利陳的文章第 ${currentPage} 頁。AI、商業、行銷、投資與個人事業的研究與觀察。`}
 >
-  <section class="bg-background pt-10 pb-8 md:pt-14">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="flex items-center justify-between mb-6">
-        <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-text">文章</h1>
-        <span class="text-xs text-text-muted">{totalCount} 篇文章</span>
-      </div>
+  <section class="bg-background pt-12 pb-8 md:pt-16">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <nav aria-label="麵包屑" class="mb-6 flex flex-wrap items-center gap-1.5 text-xs font-medium text-text-muted">
+        <a href="/" class="transition-colors hover:text-primary">首頁</a>
+        <span aria-hidden="true">›</span>
+        <a href="/blog/" class="transition-colors hover:text-primary">文章</a>
+        <span aria-hidden="true">›</span>
+        <span class="text-text">第 {currentPage} 頁</span>
+      </nav>
 
-      <BlogSearch />
-
-      <div class="border-b border-border pb-7">
-        <BlogTagNav tags={tags} current="all" />
+      <div class="flex flex-wrap items-end justify-between gap-x-6 gap-y-3">
+        <div>
+          <h1 class="text-4xl font-extrabold tracking-[-0.03em] text-text md:text-5xl">
+            文章
+          </h1>
+          <p class="mt-3 text-sm leading-relaxed text-text-muted md:text-base">
+            第 {currentPage} 頁，繼續看之前的文章。
+          </p>
+        </div>
+        <span class="pb-1 text-xs font-medium text-text-muted">{totalCount} 篇文章</span>
       </div>
     </div>
   </section>
 
   <section class="bg-background pb-20">
-    <div class="max-w-4xl mx-auto px-4">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
       <div class="mb-8 flex items-center justify-between border-b border-border pb-4">
-        <h2 class="text-xs font-bold text-text-muted uppercase tracking-[0.2em]">最新文章</h2>
+        <h2 class="text-xl font-bold tracking-tight text-text md:text-2xl">最新文章</h2>
         <span class="text-xs text-text-muted">第 {currentPage} 頁</span>
       </div>
 
-      <div class="space-y-12">
+      <div>
         {page.data.map((post) => <PostCard post={post} />)}
       </div>
 
-      <div class="mt-16">
+      <div class="mt-12">
         <Pagination currentPage={currentPage} totalPages={page.lastPage} basePath="/blog/" />
       </div>
     </div>

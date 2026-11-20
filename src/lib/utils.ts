@@ -40,3 +40,15 @@ export function formatDate(
   // 將語系從 'en-US' 改為 'zh-TW'
   return new Intl.DateTimeFormat('zh-TW', options).format(date);
 }
+
+/** 文章索引用的緊湊日期：2026.04.23 */
+export function formatCompactDate(date: Date): string {
+  return new Intl.DateTimeFormat('zh-TW', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    timeZone: 'Asia/Taipei',
+  })
+    .format(date)
+    .replaceAll('/', '.');
+}

@@ -4,10 +4,11 @@ import { themeUrl, type BlogTheme } from '@/lib/themes';
 interface Props {
   items: { theme: BlogTheme; count: number }[];
   current?: string;
-  variant?: 'cards' | 'pills';
+  variant?: 'cards' | 'pills' | 'tabs';
 }
 
 const { items, current, variant = 'cards' } = Astro.props;
+const totalCount = items.reduce((sum, item) => sum + item.count, 0);
 ---
 
 {
@@ -42,7 +43,7 @@ const { items, current, variant = 'cards' } = Astro.props;
         </a>
       ))}
     </nav>
-  ) : (
+  ) : variant === 'pills' ? (
     <nav aria-label="文章研究主題" class="flex flex-wrap items-center gap-2">
       <a
         href="/blog/"
@@ -71,6 +72,54 @@ const { items, current, variant = 'cards' } = Astro.props;
           <span class="ml-1 opacity-50">{count}</span>
         </a>
       ))}
+    </nav>
+  ) : (
+    <nav aria-label="文章主題">
+      <div class="flex flex-wrap items-center gap-2 border-b border-border pb-4 sm:flex-nowrap sm:gap-7 sm:overflow-x-auto sm:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <a
+          href="/blog/"
+          aria-current={!current ? 'page' : undefined}
+          class:list={[
+            'inline-flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs transition-colors sm:rounded-none sm:border-x-0 sm:border-t-0 sm:border-b-2 sm:px-0 sm:pb-3.5 sm:pt-0 sm:text-sm',
+            !current
+              ? 'border-primary bg-[#FFF0E6] font-bold text-primary sm:border-b-primary sm:bg-transparent sm:text-text'
+              : 'border-border bg-surface font-medium text-text-muted hover:text-text sm:border-b-transparent sm:bg-transparent',
+          ]}
+        >
+          全部
+          <span
+            class:list={[
+              'text-[11px] font-medium tabular-nums',
+              !current ? 'text-primary' : 'text-text-muted',
+            ]}
+          >
+            {totalCount}
+          </span>
+        </a>
+
+        {items.map(({ theme, count }) => (
+          <a
+            href={themeUrl(theme.slug)}
+            aria-current={current === theme.slug ? 'page' : undefined}
+            class:list={[
+              'inline-flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs transition-colors sm:rounded-none sm:border-x-0 sm:border-t-0 sm:border-b-2 sm:px-0 sm:pb-3.5 sm:pt-0 sm:text-sm',
+              current === theme.slug
+                ? 'border-primary bg-[#FFF0E6] font-bold text-primary sm:border-b-primary sm:bg-transparent sm:text-text'
+                : 'border-border bg-surface font-medium text-text-muted hover:text-text sm:border-b-transparent sm:bg-transparent',
+            ]}
+          >
+            {theme.shortName}
+            <span
+              class:list={[
+                'text-[11px] font-medium tabular-nums',
+                current === theme.slug ? 'text-primary' : 'text-text-muted',
+              ]}
+            >
+              {count}
+            </span>
+          </a>
+        ))}
+      </div>
     </nav>
   )
 }
