@@ -5,8 +5,8 @@ export const navigation: Navigation = {
     main: [
       { label: '首頁', href: '/' },
       { label: '文章', href: '/blog' },
-      { label: 'Threads', href: '/threads' },
-      { label: 'AI-Tool', href: '/ai-work-team' },
+      { label: 'Threads教學', href: '/threads' },
+      { label: '打造AI團隊', href: '/ai-work-team' },
       { label: '關於我', href: '/about' },
     ],
     cta: [
@@ -30,8 +30,8 @@ export const navigation: Navigation = {
     ],
     resources: [
       { label: '訂閱電子報', href: 'https://billy4select.substack.com/' },
-      { label: 'Threads', href: '/threads' },
-      { label: 'AI-Tool', href: '/ai-work-team' },
+      { label: 'Threads教學', href: '/threads' },
+      { label: '打造AI團隊', href: '/ai-work-team' },
       { label: 'AI影片工具', href: '/narrative-engine/' },
     ],
     company: [
