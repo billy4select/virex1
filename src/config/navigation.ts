@@ -4,6 +4,7 @@ export const navigation: Navigation = {
   header: {
     main: [
       { label: '首頁', href: '/' },
+      { label: '主題', href: '/topics/' },
       { label: '文章', href: '/blog/' },
       { label: 'Threads教學', href: '/threads/' },
       { label: '打造AI團隊', href: '/ai-work-team/' },
@@ -16,6 +17,7 @@ export const navigation: Navigation = {
   footer: {
     product: [ 
       { label: '首頁', href: '/' },
+      { label: '主題', href: '/topics/' },
       { label: '文章', href: '/blog/' },
       { label: '關於我', href: '/about/' },
       { label: '讀者回饋', href: '/testimonials/' },

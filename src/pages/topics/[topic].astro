@@ -1,0 +1,233 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import ThemePostRow from '@/components/blog/ThemePostRow.astro';
+import { getCollection } from 'astro:content';
+import { siteConfig } from '@/config';
+import { sortByDate } from '@/lib/blog';
+import { getThemeBySlug, getThemePosts } from '@/lib/themes';
+import { homeTopics, type HomeTopic } from '@/lib/homepage';
+
+interface Props {
+  topic: HomeTopic;
+}
+
+export async function getStaticPaths() {
+  return homeTopics.map((topic) => ({
+    params: { topic: topic.slug },
+    props: { topic },
+  }));
+}
+
+const { topic } = Astro.props;
+const theme = getThemeBySlug(topic.category);
+
+if (!theme) {
+  throw new Error(`Topic ${topic.slug} 找不到對應的 theme：${topic.category}`);
+}
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const sortedPosts = sortByDate(allPosts);
+const posts = getThemePosts(sortedPosts, theme);
+const otherTopics = homeTopics.filter((item) => item.slug !== topic.slug);
+
+const topicPath = `/topics/${topic.slug}/`;
+const canonical = `${siteConfig.url}${topicPath}`;
+
+const collectionSchema =
+  posts.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        '@id': `${canonical}#collection`,
+        name: `${topic.name}文章`,
+        description: topic.description,
+        url: canonical,
+        inLanguage: 'zh-Hant-TW',
+        about: {
+          '@type': 'Thing',
+          name: topic.name,
+        },
+        isPartOf: {
+          '@type': 'Blog',
+          '@id': `${siteConfig.url}/blog/#blog`,
+          name: `${siteConfig.name} 文章`,
+          url: `${siteConfig.url}/blog/`,
+        },
+        mainEntity: {
+          '@type': 'ItemList',
+          itemListOrder: 'https://schema.org/ItemListOrderDescending',
+          numberOfItems: posts.length,
+          itemListElement: posts.map((post, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: post.data.title,
+            url: `${siteConfig.url}/blog/${post.id}/`,
+          })),
+        },
+      }
+    : null;
+
+const schemas = collectionSchema ? [collectionSchema] : [];
+---
+
+<MarketingLayout
+  title={`${topic.name} - ${siteConfig.name}`}
+  description={topic.description}
+  structuredData={schemas}
+>
+  <section class="border-b border-border bg-background pb-10 pt-10 md:pt-14">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <nav aria-label="麵包屑" class="mb-6 flex flex-wrap items-center gap-1.5 text-xs font-medium text-text-muted">
+        <a href="/" class="transition-colors hover:text-primary">首頁</a>
+        <span aria-hidden="true">›</span>
+        <a href="/topics/" class="transition-colors hover:text-primary">主題</a>
+        <span aria-hidden="true">›</span>
+        <span class="text-text">{topic.name}</span>
+      </nav>
+
+      <nav aria-label="主題切換" class="flex flex-wrap gap-2">
+        {
+          homeTopics.map((item) => (
+            <a
+              href={`/topics/${item.slug}/`}
+              class:list={[
+                'rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-colors',
+                item.slug === topic.slug
+                  ? 'border-primary bg-primary text-white'
+                  : 'border-border bg-surface text-text-muted hover:border-primary/40 hover:text-primary',
+              ]}
+            >
+              {item.name}
+            </a>
+          ))
+        }
+      </nav>
+
+      <p class="mt-8 text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
+        {topic.eyebrow}
+      </p>
+      <h1 class="mt-3 text-3xl font-extrabold tracking-tight text-text md:text-5xl">
+        {topic.name}
+        <span class="mt-2 block text-sm font-semibold tracking-normal text-text-muted md:ml-2 md:mt-0 md:inline md:align-middle md:text-base">
+          主題研究中心
+        </span>
+      </h1>
+      <p class="mt-4 max-w-3xl text-lg font-semibold leading-relaxed text-text">
+        {topic.question}
+      </p>
+      <p class="mt-3 max-w-3xl text-base leading-relaxed text-text-muted">
+        {topic.description}
+      </p>
+
+      <ul class="mt-6 flex flex-wrap gap-2">
+        {
+          topic.points.map((point) => (
+            <li class="rounded-full bg-surface px-3 py-1 text-xs font-medium text-text-muted">
+              {point}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="bg-background pb-20 pt-8">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-start">
+        <div class="min-w-0">
+          <p class="max-w-3xl text-base leading-relaxed text-text-muted">
+            {theme.intro}
+          </p>
+
+          <section class="mt-10" aria-labelledby="topic-questions-title">
+            <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
+              這個主題會回答
+            </p>
+            <h2 id="topic-questions-title" class="mt-3 text-2xl font-bold tracking-tight text-text">
+              先選問題，再讀文章。
+            </h2>
+            <div class="mt-5 grid gap-3 sm:grid-cols-3">
+              {theme.questions.map((question, index) => (
+                <div class="rounded-2xl border border-border bg-surface p-4">
+                  <span class="text-[10px] font-bold tracking-[0.2em] text-primary">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <h3 class="mt-2 text-sm font-bold text-text">{question.title}</h3>
+                  <p class="mt-2 text-xs leading-relaxed text-text-muted">{question.text}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {
+            posts.length > 0 ? (
+              <section class="mt-12" aria-labelledby="topic-posts-title">
+                <div class="flex items-end justify-between border-b border-border pb-3">
+                  <h2 id="topic-posts-title" class="text-2xl font-bold tracking-tight text-text">
+                    文章索引
+                  </h2>
+                  <span class="text-xs font-medium text-text-muted">{posts.length} 篇</span>
+                </div>
+                <div class="mt-2">
+                  {posts.map((post) => <ThemePostRow post={post} />)}
+                </div>
+              </section>
+            ) : (
+              <div class="mt-12 rounded-2xl border border-dashed border-border bg-surface/60 p-8 text-center">
+                <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">研究中</p>
+                <h2 class="mt-3 text-2xl font-bold text-text">這個主題還沒有正式文章。</h2>
+                <p class="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-text-muted">
+                  我不想為了把頁面填滿而先寫。等第一個問題有足夠的資料、案例與判斷，才會發布。
+                </p>
+              </div>
+            )
+          }
+        </div>
+
+        <aside class="space-y-6 lg:sticky lg:top-24">
+          <div class="rounded-2xl border border-border bg-surface p-5">
+            <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">從這裡開始</p>
+            <div class="mt-4 space-y-4">
+              {
+                theme.resources.map((resource) => (
+                  <a href={resource.href} class="group block">
+                    <span class="text-sm font-bold text-text transition-colors group-hover:text-primary">
+                      {resource.label}
+                    </span>
+                    <span class="mt-1 block text-xs leading-relaxed text-text-muted">
+                      {resource.description}
+                    </span>
+                  </a>
+                ))
+              }
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-border bg-background p-5">
+            <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">其他主題</p>
+            <div class="mt-4 space-y-3">
+              {
+                otherTopics.map((item) => (
+                  <a href={`/topics/${item.slug}/`} class="group block">
+                    <span class="text-sm font-semibold text-text transition-colors group-hover:text-primary">
+                      {item.name}
+                    </span>
+                    <span class="mt-1 block text-xs leading-relaxed text-text-muted">
+                      {item.question}
+                    </span>
+                  </a>
+                ))
+              }
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="mt-14 border-t border-border pt-6">
+        <a href="/topics/" class="text-sm font-semibold text-primary hover:opacity-70">
+          ← 回到所有主題
+        </a>
+      </div>
+    </div>
+  </section>
+</MarketingLayout>
