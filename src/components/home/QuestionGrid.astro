@@ -1,0 +1,58 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { HomeQuestion } from '@/lib/homepage';
+
+interface Props {
+  questions: HomeQuestion[];
+}
+
+const { questions } = Astro.props;
+---
+
+<section id="questions" class="bg-surface py-16 md:py-20">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl">
+      <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
+        從一個問題開始
+      </p>
+      <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-text md:text-4xl">
+        不知道從哪開始？先讀這三篇。
+      </h2>
+      <p class="mt-4 text-base leading-relaxed text-text-muted">
+        不是每個人都有明確的學習路線。從一個你現在真的遇到的問題開始，比從分類開始更容易。
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-4 md:grid-cols-3">
+      {
+        questions.map((item, index) => (
+          <a
+            href={item.href}
+            class="group flex h-full flex-col rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:border-primary/40 hover:bg-primary/5 hover:shadow-lg"
+          >
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-bold uppercase tracking-[0.18em] text-primary">
+                {item.label}
+              </span>
+              <span class="text-[11px] font-bold tracking-[0.2em] text-text-muted">
+                0{index + 1}
+              </span>
+            </div>
+
+            <h3 class="mt-5 text-lg font-bold leading-snug text-text transition-colors group-hover:text-primary">
+              {item.question}
+            </h3>
+            <p class="mt-3 flex-1 text-sm leading-relaxed text-text-muted">
+              {item.description}
+            </p>
+
+            <div class="mt-6 flex items-center gap-1 text-xs font-semibold text-primary">
+              讀這篇
+              <Icon name="lucide:arrow-right" class="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
