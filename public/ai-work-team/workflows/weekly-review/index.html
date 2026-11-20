@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每週工作整理流程｜從散亂待辦到一頁週報｜打造 AI 工作團隊</title>
+<meta name="description" content="用素材收集、成果整理、阻塞標記、下週優先與人類決定，把一週工作整理成一頁週報；附每週整理 Prompt 與成果樣本。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://blog.billy4select.com/ai-work-team/workflows/weekly-review/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="打造 AI 工作團隊">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="每週工作整理流程｜從散亂待辦到一頁週報｜打造 AI 工作團隊">
+<meta property="og:description" content="用素材收集、成果整理、阻塞標記、下週優先與人類決定，把一週工作整理成一頁週報；附每週整理 Prompt 與成果樣本。">
+<meta property="og:url" content="https://blog.billy4select.com/ai-work-team/workflows/weekly-review/">
+<meta property="og:image" content="https://blog.billy4select.com/ai-work-team/assets/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f6f3ed">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f6f3ed'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%2322231f'/%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%23e87536' stroke-width='1.5'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/ai-work-team/assets/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://blog.billy4select.com/ai-work-team/workflows/weekly-review/#article",
+   "headline": "每週工作整理流程",
+   "description": "用素材收集、成果整理、阻塞標記、下週優先與人類決定，把一週工作整理成一頁週報；附每週整理 Prompt 與成果樣本。",
+   "url": "https://blog.billy4select.com/ai-work-team/workflows/weekly-review/",
+   "inLanguage": "zh-Hant-TW",
+   "author": {
+    "@type": "Person",
+    "name": "比利陳 Billy Chen",
+    "url": "https://blog.billy4select.com/"
+   },
+   "isPartOf": {
+    "@type": "CollectionPage",
+    "name": "AI 工作流程",
+    "url": "https://blog.billy4select.com/ai-work-team/workflows/"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "首頁",
+     "item": "https://blog.billy4select.com/ai-work-team/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "工作流程",
+     "item": "https://blog.billy4select.com/ai-work-team/workflows/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "每週工作整理流程",
+     "item": "https://blog.billy4select.com/ai-work-team/workflows/weekly-review/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/ai-work-team/">打造 <span>AI 工作團隊</span></a>
+    <nav class="site-nav"><a href="/ai-work-team/curriculum/">開始探索</a><a href="/ai-work-team/workflows/" class="active">工作流程</a><a href="/ai-work-team/resources/">實用資源</a></nav>
+  </div>
+</header>
+<main>
+
+<section class="lesson-page" id="workflow-weekly-review">
+  <div class="lesson-hero">
+    <div class="wrap">
+      <div class="crumb"><a href="/ai-work-team/">首頁</a>　/　<a href="/ai-work-team/workflows/">工作流程</a>　/　<span>每週工作整理</span></div>
+      <div class="lesson-label">流程 06 / 每週工作整理</div>
+      <h1>每週工作整理</h1>
+      <p>把一週散落在對話、筆記與待辦裡的進度，整理成一頁可以判讀的週報。重點不是列完所有事，而是看出完成了什麼、卡在哪裡、下週先做什麼。</p>
+      <div class="meta-row"><span>閱讀時間約 8 分鐘</span><span>免費工具優先</span><span>優先順序由你決定</span></div>
+    </div>
+  </div>
+  <div class="wrap lesson-layout">
+    <aside class="lesson-toc"><b>流程內容</b><a href="#w-situation">工作情境</a><a href="#w-deliverable">最後要完成什麼</a><a href="#w-flow">工作流程圖</a><a href="#w-roles">AI 員工分工</a><a href="#w-tools">工具選擇</a><a href="#w-run">實際操作</a><a href="#w-handoff">交接與檢查</a><a href="#w-sample">成果樣本</a><a href="#w-boundary">不適合與替換</a></aside>
+    <article class="lesson-content">
+      <h2 id="w-situation">01｜工作情境</h2>
+      <p>適合每週五或週一早上，當你手上有一堆待辦、幾個進行中的專案、一些還沒回的訊息，卻不確定這週到底推進了什麼。也可能是你需要對主管、客戶或合作夥伴發一份簡短週報，但不想從零開始回想。</p>
+      <p>週報最容易變成「活動清單」：見了誰、開了什麼會、回了幾封信。真正有用的週報會回答三個問題：這週有什麼成果、哪裡卡住、下週要優先解決什麼。</p>
+      <div class="note"><b>這個流程不適合</b>正式的績效考核、人事評語或需要精確工時計算的場合。那些資料應以公司的正式紀錄為準，不要用 AI 摘要代替。</div>
+
+      <h2 id="w-deliverable">02｜最後要完成什麼</h2>
+      <p>最後要交出的是一頁式的「每週工作快照」，不是把所有任務再列一次：</p>
+      <ul>
+        <li>本週 3–5 個實際成果，盡量有數字或可檢查的產出。</li>
+        <li>進行中但還沒完成的工作，以及目前進度。</li>
+        <li>阻塞、風險與需要誰協助。</li>
+        <li>下週三個優先事項，每個都有完成標準。</li>
+        <li>一段可以直接發給主管、客戶或自己的週報訊息。</li>
+      </ul>
+      <div class="callout"><b>交付規格範例</b><p style="margin:4px 0 0">長度：一頁或 150–250 字。讀者：主管與自己。必備：成果、阻塞、下週優先。不能出現：沒有發生的事、誇大的進度、把活動當成果。</p></div>
+
+      <h2 id="w-flow">03｜工作流程圖</h2>
+      <p>五個步驟，最後一個決定由你做。AI 可以幫你整理與排序，但不能替你定義什麼算成功，也不能替你決定要放棄哪件事。</p>
+      <div class="flow-map five">
+        <div class="flow-step"><b>01</b><span>人類收集素材</span><small>待辦、筆記<br>對話、數據</small></div>
+        <div class="flow-step"><b>02</b><span>整理員</span><small>成果、進度<br>未完成</small></div>
+        <div class="flow-step"><b>03</b><span>阻塞檢查</span><small>卡點、依賴<br>風險</small></div>
+        <div class="flow-step"><b>04</b><span>優先順序</span><small>下週三件事<br>完成標準</small></div>
+        <div class="flow-step"><b>05</b><span>人類決定</span><small>取捨、發送<br>存檔</small></div>
+      </div>
+
+      <h2 id="w-roles">04｜AI 員工分工</h2>
+      <div class="table-wrap"><div class="table-scroll">
+        <table class="data-table"><thead><tr><th>角色</th><th>負責什麼</th><th>交付</th></tr></thead><tbody>
+          <tr><th>人類負責人</th><td>決定本週什麼算成果、下週要放棄什麼、週報要給誰看</td><td>目標與最後取捨</td></tr>
+          <tr><th>整理員</th><td>把待辦、筆記、對話與數據整理成成果、進行中、未開始三類</td><td>本週工作清單</td></tr>
+          <tr><th>阻塞檢查員</th><td>找出卡點、等待對象、風險與需要協助的地方</td><td>阻塞與風險清單</td></tr>
+          <tr><th>優先順序顧問</th><td>依目標、期限與依賴關係提出下週候選順序，說明取捨理由</td><td>下週優先建議</td></tr>
+          <tr><th>週報編輯</th><td>把以上內容寫成 150–250 字、可發送的版本</td><td>週報草稿</td></tr>
+        </tbody></table>
+      </div><p class="table-hint">表格可左右滑動查看</p></div>
+      <p>如果只有你一個人，可以只保留「整理員」與「優先順序顧問」兩個角色。真正重要的不是多一個 AI，而是每週固定花 20 分鐘做一次取捨。</p>
+
+      <h2 id="w-tools">05｜工具選擇</h2>
+      <div class="table-wrap"><div class="table-scroll">
+        <table class="data-table"><thead><tr><th>角色</th><th>需要的能力</th><th>可以怎麼選</th></tr></thead><tbody>
+          <tr><th>整理員</th><td>摘要、分類、合併重複項目</td><td>任何能處理長清單的免費工具；先要求它保留來源與未完成狀態。</td></tr>
+          <tr><th>阻塞檢查員</th><td>找依賴、風險、等待對象</td><td>選擅長推理與提問的工具；要求它標出「這是推測」。</td></tr>
+          <tr><th>優先順序顧問</th><td>取捨、排序、定義完成標準</td><td>能給理由與反對意見的工具；不要讓它只給鼓舞式建議。</td></tr>
+          <tr><th>週報編輯</th><td>壓縮、語氣、格式</td><td>文字順手的工具；最後由你調整成自己的說法。</td></tr>
+        </tbody></table>
+      </div><p class="table-hint">表格可左右滑動查看</p></div>
+      <p>你可以把待辦清單、行事曆摘要、專案筆記與本週產出連結貼給 AI。若資料太多，先分成「工作」、「學習」、「行政」三塊，不要一次全部倒進去。</p>
+
+      <h2 id="w-run">06｜實際操作</h2>
+      <ol class="steps">
+        <li><b>先定義這週的目標。</b>這週原本最重要的一件事是什麼？如果沒有，先從待辦中選一個，不要讓 AI 替你決定。</li>
+        <li><b>收集素材。</b>把完成的文件、寄出的信、會議決定、待辦清單與關鍵數字放在同一段對話或同一份文件裡。</li>
+        <li><b>分成三類。</b>要求 AI 分成「已完成／進行中／未開始」，每一項附上可檢查的產出或目前進度。</li>
+        <li><b>找阻塞。</b>問「哪些事情在等別人、等資料或等決定？」把每個阻塞連到一個人或一個時間。</li>
+        <li><b>排下週三個優先。</b>要求 AI 提出候選順序與取捨理由；你最後決定要保留哪三件、放棄哪一件。</li>
+        <li><b>寫成一頁週報。</b>用「成果 → 阻塞 → 下週優先 → 需要協助」四段，避免變成流水帳。</li>
+      </ol>
+      <div class="callout"><b>輸入範例</b><p style="margin:4px 0 0">本週目標：完成專題 landing page 與兩篇教學文。已完成：landing page 初稿、教學文 1 篇。進行中：第二篇教學文。阻塞：等待講師確認時程。下週優先：上線頁面、補兩張示意圖、寄出電子報。</p></div>
+<div class="prompt" id="prompt-wf-weekly">
+  <div class="prompt-head">
+    <span><span class="prompt__label">流程 Prompt</span><span class="prompt__name">每週工作整理助理</span></span>
+    <button class="copy" type="button" onclick="copyPrompt('wf-weekly',this)">複製 Prompt</button>
+  </div>
+  <pre id="prompt-text-wf-weekly">你現在是我的每週工作整理助理。
+
+你的任務是把我這一週的待辦、筆記、產出與會議決定，整理成一頁可以判讀的週報；不要替我決定價值，也不要編造進度。
+
+我會提供：
+- 這週原本的目標。
+- 待辦清單、已完成文件、會議決定或對話摘要。
+- 已知的阻塞、期限與需要協助的人。
+
+請依序輸出：
+1. 本週目標與一句話結論。
+2. 已完成：3–5 項，附可檢查的產出或數字。
+3. 進行中：目前進度、下一步、預計完成時間。
+4. 阻塞與風險：卡在哪裡、等誰、可能影響什麼。
+5. 下週優先：3 項，附完成標準與取捨理由。
+6. 一頁週報草稿：成果、阻塞、下週優先、需要協助。
+
+規則：
+- 嚴格區分「已完成」、「進行中」、「未開始」。
+- 不要把活動、會議或回信數量直接當成成果。
+- 沒有提供的數字或進度，標成「待確認」，不要推測。
+- 優先順序要給理由，也要指出被放棄或延後的事。
+- 如果資料不足，先列出缺少的資訊，不要硬湊完整週報。</pre>
+  <dl class="prompt-meta">
+    <div><dt>使用情境</dt><dd>每週需要快速回顧進度、整理週報，或決定下週要先做什麼。</dd></div>
+    <div><dt>使用方式</dt><dd>先貼這週目標與素材，再貼這段；先確認分類與阻塞，再請它寫週報。</dd></div>
+    <div><dt>預期結果</dt><dd>一份本週成果清單、阻塞清單、下週三個優先與一頁週報草稿。</dd></div>
+    <div><dt>修改提醒</dt><dd>如果週報變成流水帳，要求「只保留有產出、有決策或有阻塞的項目」。</dd></div>
+  </dl>
+</div>
+
+      <h2 id="w-handoff">07｜交接與檢查</h2>
+      <p>週報的讀者通常是你自己、主管或合作夥伴。交接重點是讓讀者在 1 分鐘內知道「這週發生什麼、下週要期待什麼」，而不是讀完所有細節。</p>
+      <div class="table-wrap"><div class="table-scroll"><table class="data-table"><caption>示範：整理員交給週報編輯的交接摘要</caption><thead><tr><th>欄位</th><th>示範內容</th></tr></thead><tbody><tr><th>本週目標</th><td>完成專題 landing page 與兩篇教學文</td></tr><tr><th>已完成</th><td>landing page 初稿、教學文 1 篇、電子報名單整理</td></tr><tr><th>進行中</th><td>第二篇教學文完成 60%，缺兩個示意圖</td></tr><tr><th>阻塞</th><td>講師時程未確認，影響活動頁上線日期</td></tr><tr><th>下週優先</th><td>上線頁面、補兩張示意圖、寄出第一封電子報</td></tr></tbody></table></div><p class="table-hint">表格可左右滑動查看</p></div>
+      <div class="table-wrap"><div class="table-scroll">
+        <table class="data-table"><thead><tr><th>檢查項目</th><th>通過標準</th></tr></thead><tbody>
+          <tr><th>成果</th><td>每一項都能指出文件、數字或決策，不只是「有處理」。</td></tr>
+          <tr><th>進度</th><td>進行中的工作有明確下一步與預計時間。</td></tr>
+          <tr><th>阻塞</th><td>每個阻塞都連到一個人、一個資料或一個決定。</td></tr>
+          <tr><th>優先</th><td>下週只留三件，並說明為什麼是這三件。</td></tr>
+          <tr><th>可讀性</th><td>讀者 1 分鐘內能抓到成果、問題與下一步。</td></tr>
+        </tbody></table>
+      </div><p class="table-hint">表格可左右滑動查看</p></div>
+
+      <h2 id="w-sample">08｜成果樣本</h2>
+      <p>下面是一份簡化後的週報。它沒有列出所有待辦，而是把成果、阻塞與下週優先放在同一個畫面裡。</p>
+      <div class="sample-box">
+        <div class="sample-head"><b>每週工作快照（節錄）</b><span>一頁 · 約 200 字</span></div>
+        <div class="sample-body">
+          <blockquote><b>本週結論：</b>主要內容已完成，但活動頁上線被講師時程卡住，下週要先解決這個依賴。</blockquote>
+          <dl>
+            <div><dt>已完成</dt><dd>專題 landing page 初稿；教學文 1 篇；電子報名單整理（新增 42 筆）。</dd></div>
+            <div><dt>進行中</dt><dd>第二篇教學文完成 60%；還缺兩張示意圖與一個案例。</dd></div>
+            <div><dt>阻塞</dt><dd>講師時程尚未確認，活動頁無法定上線日；需要本週五前拿到回覆。</dd></div>
+            <div><dt>下週優先</dt><dd>1. 確認講師時程並上線活動頁；2. 補兩張示意圖；3. 寄出第一封電子報。</dd></div>
+            <div><dt>需要協助</dt><dd>請講師提供可公開的時段；若週五前沒有回覆，先以「暫定日期」上線。</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <h2 id="w-boundary">09｜不適合與工具替換</h2>
+      <p>這條流程適合個人工作回顧與一般專案週報，不適合正式績效考核、人事評語、工時申報或法律紀錄。若週報要對外發送，請先確認哪些數字與客戶名稱可以公開。</p>
+      <div class="table-wrap"><div class="table-scroll">
+        <table class="data-table"><thead><tr><th>情況</th><th>怎麼換</th></tr></thead><tbody>
+          <tr><th>資料太散</th><td>先分成工作、學習、行政三塊，每塊只留 5–8 項；不要一次貼整年份的待辦。</td></tr>
+          <tr><th>AI 把活動當成果</th><td>要求「每一項成果都要有文件、數字或決策」，沒有就移到進行中。</td></tr>
+          <tr><th>優先順序太發散</th><td>限制「下週只留三件」，並要求它說明被延後的四件事。</td></tr>
+          <tr><th>需要對外公開</th><td>先移除客戶名稱、營收與未公開時程，再另外寫一份對外版本。</td></tr>
+        </tbody></table>
+      </div><p class="table-hint">表格可左右滑動查看</p></div>
+
+      <div class="lesson-nav"><a href="/ai-work-team/workflows/meeting-notes/"><small>上一個流程</small><strong>會議記錄與行動追蹤</strong></a><a class="right" href="/ai-work-team/workflows/"><small>回到工作流程</small><strong>選擇其他工作</strong></a></div>
+      <p class="back-home"><a href="/ai-work-team/workflows/">← 回到工作流程總覽</a></p>
+    </article>
+  </div>
+</section>
+
+</main><footer class="footer">
+  <div class="wrap footer-inner">
+    <span>© 打造 AI 工作團隊・引導式實戰指南</span>
+    <span><a href="/ai-work-team/">首頁</a>　·　<a href="/ai-work-team/curriculum/">開始探索</a>　·　<a href="/ai-work-team/workflows/">工作流程</a>　·　<a href="/ai-work-team/resources/">實用資源</a>　·　<a href="/ai-work-team/about/">關於專題</a></span>
+  </div>
+</footer>
+<script src="/ai-work-team/assets/app.js"></script>
+</body>
+</html>

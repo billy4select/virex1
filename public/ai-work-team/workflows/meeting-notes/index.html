@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>會議記錄與行動追蹤流程｜從討論到任務｜打造 AI 工作團隊</title>
+<meta name="description" content="用逐段整理、決策提煉、任務表與人類確認，把會議討論變成可追蹤的決策、負責人與下一步；附會議記錄 Prompt 與成果樣本。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://blog.billy4select.com/ai-work-team/workflows/meeting-notes/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="打造 AI 工作團隊">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="會議記錄與行動追蹤流程｜從討論到任務｜打造 AI 工作團隊">
+<meta property="og:description" content="用逐段整理、決策提煉、任務表與人類確認，把會議討論變成可追蹤的決策、負責人與下一步；附會議記錄 Prompt 與成果樣本。">
+<meta property="og:url" content="https://blog.billy4select.com/ai-work-team/workflows/meeting-notes/">
+<meta property="og:image" content="https://blog.billy4select.com/ai-work-team/assets/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f6f3ed">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f6f3ed'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%2322231f'/%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%23e87536' stroke-width='1.5'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/ai-work-team/assets/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://blog.billy4select.com/ai-work-team/workflows/meeting-notes/#article",
+   "headline": "會議記錄與行動追蹤流程",
+   "description": "用逐段整理、決策提煉、任務表與人類確認，把會議討論變成可追蹤的決策、負責人與下一步；附會議記錄 Prompt 與成果樣本。",
+   "url": "https://blog.billy4select.com/ai-work-team/workflows/meeting-notes/",
+   "inLanguage": "zh-Hant-TW",
+   "author": {
+    "@type": "Person",
+    "name": "比利陳 Billy Chen",
+    "url": "https://blog.billy4select.com/"
+   },
+   "isPartOf": {
+    "@type": "CollectionPage",
+    "name": "AI 工作流程",
+    "url": "https://blog.billy4select.com/ai-work-team/workflows/"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "首頁",
+     "item": "https://blog.billy4select.com/ai-work-team/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "工作流程",
+     "item": "https://blog.billy4select.com/ai-work-team/workflows/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "會議記錄與行動追蹤流程",
+     "item": "https://blog.billy4select.com/ai-work-team/workflows/meeting-notes/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/ai-work-team/">打造 <span>AI 工作團隊</span></a>
+    <nav class="site-nav"><a href="/ai-work-team/curriculum/">開始探索</a><a href="/ai-work-team/workflows/" class="active">工作流程</a><a href="/ai-work-team/resources/">實用資源</a></nav>
+  </div>
+</header>
+<main>
+
+<section class="lesson-page" id="workflow-meeting-notes">
+  <div class="lesson-hero">
+    <div class="wrap">
+      <div class="crumb"><a href="/ai-work-team/">首頁</a>　/　<a href="/ai-work-team/workflows/">工作流程</a>　/　<span>會議記錄與行動追蹤</span></div>
+      <div class="lesson-label">流程 05 / 會議記錄與行動追蹤</div>
+      <h1>會議記錄與行動追蹤</h1>
+      <p>把一場會議的討論、決定與待辦分開整理。重點不是記得多完整，而是會後每個人都知道誰要在什麼時候完成什麼。</p>
+      <div class="meta-row"><span>閱讀時間約 10 分鐘</span><span>免費工具優先</span><span>決策與任務由人確認</span></div>
+    </div>
+  </div>
+  <div class="wrap lesson-layout">
+    <aside class="lesson-toc"><b>流程內容</b><a href="#m-situation">工作情境</a><a href="#m-deliverable">最後要完成什麼</a><a href="#m-flow">工作流程圖</a><a href="#m-roles">AI 員工分工</a><a href="#m-tools">工具選擇</a><a href="#m-run">實際操作</a><a href="#m-handoff">交接與檢查</a><a href="#m-sample">成果樣本</a><a href="#m-boundary">不適合與替換</a></aside>
+    <article class="lesson-content">
+      <h2 id="m-situation">01｜工作情境</h2>
+      <p>適合每週例會、專案會議、客戶訪談、一對一討論，或任何「會後需要有人做事」的場合。你可能已經有錄音、手寫筆記或聊天紀錄，但沒有時間整理成一份大家看得懂、可以追蹤的版本。</p>
+      <p>會議記錄最常見的失敗，是把「討論」寫成「決定」，或把「希望」寫成「任務」。這條流程先把內容分成三層：討論、決定、待辦；沒有被明確決定的內容，就留在待確認，不自動變成任務。</p>
+      <div class="note"><b>這個流程不適合</b>涉及人事、法律、併購或未公開財務的會議，除非你已經確認錄音、資料與 AI 使用政策。沒有取得參與者同意時，也不要將會議錄音上傳到免費工具。</div>
+
+      <h2 id="m-deliverable">02｜最後要完成什麼</h2>
+      <p>最後要交出的是一頁式的會議行動摘要，不是逐字稿。基本版包含：</p>
+      <ul>
+        <li>會議目的與參與者。</li>
+        <li>3–5 個已決定事項，每個都有範圍與負責人。</li>
+        <li>尚未決定或需要再討論的問題。</li>
+        <li>任務表：任務、負責人、期限、完成標準。</li>
+        <li>風險、依賴關係與需要協助的地方。</li>
+        <li>一段可以直接發給與會者的會後訊息。</li>
+      </ul>
+      <div class="callout"><b>交付規格範例</b><p style="margin:4px 0 0">長度：一頁。必備：決定、待辦、負責人、期限。語氣：中性、可掃讀。不能出現：沒有說過的承諾、推測的負責人、逐字重現的敏感對話。</p></div>
+
+      <h2 id="m-flow">03｜工作流程圖</h2>
+      <p>六個步驟，一個關鍵人工關卡。AI 可以先整理與抽出候選項目，但「這是不是一個正式決定」與「誰負責」必須由主持人或與會者確認。</p>
+      <div class="flow-map six">
+        <div class="flow-step"><b>01</b><span>人類提供素材</span><small>筆記、錄音<br>議程</small></div>
+        <div class="flow-step"><b>02</b><span>逐段整理員</span><small>主題、發言<br>背景</small></div>
+        <div class="flow-step"><b>03</b><span>決策提煉員</span><small>決定、未決定<br>假設</small></div>
+        <div class="flow-step"><b>04</b><span>任務管理員</span><small>任務、負責人<br>期限</small></div>
+        <div class="flow-step"><b>05</b><span>人類主持人</span><small>確認決定<br>補齊負責人</small></div>
+        <div class="flow-step"><b>06</b><span>發送與追蹤</span><small>會後訊息<br>下次檢查</small></div>
+      </div>
+
+      <h2 id="m-roles">04｜AI 員工分工</h2>
+      <div class="table-wrap"><div class="table-scroll">
+        <table class="data-table"><thead><tr><th>角色</th><th>負責什麼</th><th>交付</th></tr></thead><tbody>
+          <tr><th>人類主持人</th><td>確認會議目的、決定是否有共識、指定負責人與期限</td><td>正式決定與任務所有權</td></tr>
+          <tr><th>逐段整理員</th><td>依照議程或時間順序整理主題、觀點與背景，不加入評論</td><td>結構化會議摘要</td></tr>
+          <tr><th>決策提煉員</th><td>把「已決定」、「尚未決定」、「只是想法」分開</td><td>決策清單與待確認清單</td></tr>
+          <tr><th>任務管理員</th><td>把決定轉成可執行任務，標出負責人、期限與完成標準</td><td>任務表</td></tr>
+          <tr><th>會後編輯</th><td>寫成給與會者看的短訊息，保留決策與下一步</td><td>會後訊息草稿</td></tr>
+        </tbody></table>
+      </div><p class="table-hint">表格可左右滑動查看</p></div>
+      <p>如果你是一人工作，沒有正式團隊，也可以把「負責人」換成「下一次要處理這件事的人」；重點是每項任務都有一個名字與時間，而不是停留在「之後再說」。</p>
+
+      <h2 id="m-tools">05｜工具選擇</h2>
+      <div class="table-wrap"><div class="table-scroll">
+        <table class="data-table"><thead><tr><th>角色</th><th>需要的能力</th><th>可以怎麼選</th></tr></thead><tbody>
+          <tr><th>逐段整理員</th><td>長文摘要、分段、抓主題</td><td>能處理長逐字稿的免費工具；先確認它不會自行補發言。</td></tr>
+          <tr><th>決策提煉員</th><td>分類、比對、找矛盾</td><td>選推理與結構化輸出較穩定的工具；要求它引用原文片段。</td></tr>
+          <tr><th>任務管理員</th><td>把決定轉成任務、欄位化</td><td>任何能輸出表格的工具；最後貼回你的待辦或專案管理系統。</td></tr>
+          <tr><th>會後編輯</th><td>短訊息、語氣、格式</td><td>選文字順手的工具；不要讓它把內部討論原文發給外部。</td></tr>
+        </tbody></table>
+      </div><p class="table-hint">表格可左右滑動查看</p></div>
+      <p>不需要自動錄音轉文字。你可以用會議原本的筆記、行事曆與任務清單，手動貼給 AI；這樣也比較容易控制哪些內容不該離開你的裝置。</p>
+
+      <h2 id="m-run">06｜實際操作</h2>
+      <ol class="steps">
+        <li><b>先給會議背景。</b>會議目的、參與者、議程、時間，以及這次不處理什麼。沒有背景，AI 很容易把閒聊當成決定。</li>
+        <li><b>逐段整理，不要一次摘要全文。</b>依照議程或時間分段，要求每個主題只保留「問題、選項、結論、待確認」。</li>
+        <li><b>抽出決策。</b>要求 AI 分成「已決定」、「尚未決定」、「只是想法」三類，並附上原文依據。</li>
+        <li><b>建立任務表。</b>每項任務都要有負責人、期限、完成標準與依賴對象；缺少時標成「待指定」，不要自己補名字。</li>
+        <li><b>你確認。</b>確認 decisions 是否真的被同意、任務是否有人承諾、期限是否合理；修正後才發送。</li>
+        <li><b>設定追蹤。</b>把任務放進待辦或專案板，並在下次會議前檢查一次；沒有追蹤的會議記錄，等於沒有完成。</li>
+      </ol>
+      <div class="callout"><b>輸入範例</b><p style="margin:4px 0 0">會議：每週專案例會。參與者：你、設計、業務。目的：確認發表會延期與素材交付。已知：場地已訂、主視覺未定。不處理：預算追加。</p></div>
+<div class="prompt" id="prompt-wf-meeting">
+  <div class="prompt-head">
+    <span><span class="prompt__label">流程 Prompt</span><span class="prompt__name">會議記錄與行動追蹤助理</span></span>
+    <button class="copy" type="button" onclick="copyPrompt('wf-meeting',this)">複製 Prompt</button>
+  </div>
+  <pre id="prompt-text-wf-meeting">你現在是我的會議記錄與行動追蹤助理。
+
+你的任務是把會議素材整理成一份可以發送、可以追蹤的一頁摘要，而不是逐字稿。
+
+我會提供：
+- 會議目的、參與者、議程與時間。
+- 會議筆記、逐字稿或片段。
+- 這次不處理的範圍。
+
+請依序輸出：
+1. 會議目的與一句話結論。
+2. 已決定事項：每項附範圍、負責人與生效時間。
+3. 尚未決定／待確認：列出原因與需要誰補資訊。
+4. 任務表：任務、負責人、期限、完成標準、依賴對象。
+5. 風險與需要協助的地方。
+6. 一段可以直接發給與會者的會後訊息。
+
+規則：
+- 嚴格區分「已決定」、「討論中」、「只是想法」。
+- 不要自行補負責人、期限或承諾；缺少就寫「待指定」。
+- 不要重現敏感、離題或私人對話。
+- 不要把所有發言都寫進摘要，只保留會影響行動的內容。
+- 如果素材不足，先列出缺少的資訊，不要硬湊完整記錄。</pre>
+  <dl class="prompt-meta">
+    <div><dt>使用情境</dt><dd>會後需要一份大家看得懂、可以追蹤的摘要，但不想重聽整場錄音。</dd></div>
+    <div><dt>使用方式</dt><dd>先貼會議背景與素材，再貼這段；先確認決策與任務，再請它寫會後訊息。</dd></div>
+    <div><dt>預期結果</dt><dd>一頁會議摘要、決策清單、待確認清單、任務表與會後訊息。</dd></div>
+    <div><dt>修改提醒</dt><dd>如果 AI 把討論寫成決定，要求它「只保留有明確共識的項目，其餘移到待確認」。</dd></div>
+  </dl>
+</div>
+
+      <h2 id="m-handoff">07｜交接與檢查</h2>
+      <p>會議記錄的交接對象通常不是下一位 AI，而是「下次要執行任務的人」。所以摘要要能脫離會議上下文，單獨被讀懂。</p>
+      <div class="table-wrap"><div class="table-scroll"><table class="data-table"><caption>示範：會議摘要交給任務負責人的交接資訊</caption><thead><tr><th>欄位</th><th>示範內容</th></tr></thead><tbody><tr><th>會議目的</th><td>確認發表會是否延期，以及主視覺與素材交付時間</td></tr><tr><th>已決定</th><td>發表會延到 12 月 12 日；主視覺本週五前定稿；邀請函下週一寄出</td></tr><tr><th>尚未決定</th><td>是否加開第二場；預算是否追加</td></tr><tr><th>任務與所有權</th><td>主視覺：設計／週五 18:00；邀請函：業務／下週一 12:00</td></tr><tr><th>風險與依賴</th><td>主視覺延誤會壓縮邀請函製作；場地變更需另確認</td></tr></tbody></table></div><p class="table-hint">表格可左右滑動查看</p></div>
+      <div class="table-wrap"><div class="table-scroll">
+        <table class="data-table"><thead><tr><th>檢查項目</th><th>通過標準</th></tr></thead><tbody>
+          <tr><th>決策</th><td>每一項「已決定」都有明確共識，不是 AI 推測。</td></tr>
+          <tr><th>任務</th><td>每項任務都有負責人與期限；沒有就標「待指定」。</td></tr>
+          <tr><th>完成標準</th><td>任務不只是動詞，而是可檢查的產出。</td></tr>
+          <tr><th>敏感資訊</th><td>沒有把人事、法律、私人或未公開內容放進摘要。</td></tr>
+          <tr><th>可追蹤</th><td>任務已進入待辦或專案系統，並有下次檢查時間。</td></tr>
+        </tbody></table>
+      </div><p class="table-hint">表格可左右滑動查看</p></div>
+
+      <h2 id="m-sample">08｜成果樣本</h2>
+      <p>下面是一份簡化後的會議摘要。它沒有逐字重現對話，而是把「決定」、「待確認」與「任務」分開，讓沒有參加會議的人也能接手。</p>
+      <div class="sample-box">
+        <div class="sample-head"><b>每週專案例會（節錄）</b><span>一頁 · 3 個決定 · 4 項任務</span></div>
+        <div class="sample-body">
+          <blockquote><b>一句話結論：</b>發表會延到 12 月 12 日，本週先完成主視覺與邀請函名單，下週一寄出邀請。</blockquote>
+          <dl>
+            <div><dt>已決定</dt><dd>發表會延至 12/12；主視覺週五 18:00 前定稿；邀請函下週一 12:00 前寄出。</dd></div>
+            <div><dt>待確認</dt><dd>是否加開第二場、預算是否追加，等業務確認名單規模後再討論。</dd></div>
+            <div><dt>任務</dt><dd>設計：主視覺與三張社群圖（週五 18:00）；業務：邀請名單與寄送（下週一 12:00）；你：確認場地與講者（週四）。</dd></div>
+            <div><dt>風險</dt><dd>主視覺延誤會壓縮邀請函製作；場地變更需重新確認日期。</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <h2 id="m-boundary">09｜不適合與工具替換</h2>
+      <p>如果會議涉及人事決定、法律風險、未公開財務、客戶個資或衝突調解，先不要用免費 AI 處理全文。你可以只貼去識別化後的行動項目，或改由人工撰寫摘要。任何「誰要被處理」的內容，都不適合交給自動摘要。</p>
+      <div class="table-wrap"><div class="table-scroll">
+        <table class="data-table"><thead><tr><th>情況</th><th>怎麼換</th></tr></thead><tbody>
+          <tr><th>逐字稿太長</th><td>依議程切成 3–5 段，每段只整理「問題、選項、結論」；不要一次貼完整場。</td></tr>
+          <tr><th>AI 把討論當決定</th><td>要求它先輸出「原文依據」，沒有明確共識的一律移到待確認。</td></tr>
+          <tr><th>負責人不清楚</th><td>保留「待指定」，不要讓 AI 猜名字；會後由主持人補齊。</td></tr>
+          <tr><th>敏感會議</th><td>停止上傳；改人工摘要，或只保留任務與時間，不保留發言內容。</td></tr>
+        </tbody></table>
+      </div><p class="table-hint">表格可左右滑動查看</p></div>
+
+      <div class="lesson-nav"><a href="/ai-work-team/workflows/customer-reply/"><small>上一個流程</small><strong>客戶詢問回覆</strong></a><a class="right" href="/ai-work-team/workflows/weekly-review/"><small>下一個流程</small><strong>每週工作整理</strong></a></div>
+      <p class="back-home"><a href="/ai-work-team/workflows/">← 回到工作流程總覽</a></p>
+    </article>
+  </div>
+</section>
+
+</main><footer class="footer">
+  <div class="wrap footer-inner">
+    <span>© 打造 AI 工作團隊・引導式實戰指南</span>
+    <span><a href="/ai-work-team/">首頁</a>　·　<a href="/ai-work-team/curriculum/">開始探索</a>　·　<a href="/ai-work-team/workflows/">工作流程</a>　·　<a href="/ai-work-team/resources/">實用資源</a>　·　<a href="/ai-work-team/about/">關於專題</a></span>
+  </div>
+</footer>
+<script src="/ai-work-team/assets/app.js"></script>
+</body>
+</html>
