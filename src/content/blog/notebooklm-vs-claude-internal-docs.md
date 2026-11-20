@@ -1,8 +1,7 @@
 ---
-title: NotebookLM 讀內部文件 vs Claude 讀內部文件，差在哪
+title: Claude vs NotebookLM：讀內部文件、寫報告、做研究，哪個更適合你？
 description: >-
-  同樣是把公司文件丟給 AI，NotebookLM 和 Claude
-  給你的東西完全不一樣。不是誰比較厲害，是它們設計來解決不同的問題。本文拆解兩者在內部文件場景的實際差異。
+  Claude 和 NotebookLM 都能讀內部文件，但一個擅長推理寫作，一個擅長來源整理。比較上傳限制、引用、報告輸出與實際工作流，幫你選對工具。
 publishedDate: 2026-04-22T15:34:21Z
 author: 比利陳 Billy Chen
 tags:

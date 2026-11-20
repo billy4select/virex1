@@ -1,6 +1,7 @@
 ---
-title: NotebookLM 讀不到掃描版 PDF？OCR 轉換完整解法
-description: 把 PDF 上傳進 NotebookLM，問它問題卻得到空洞的答案？問題很可能是你上傳的是掃描版圖片 PDF，不是文字版。這篇說清楚怎麼判斷、怎麼轉換、以及哪些工具免費可用。
+title: NotebookLM OCR 教學：掃描 PDF 讀不到？3 種轉換法與免費工具
+description: >-
+  NotebookLM 讀不到掃描版 PDF，通常不是模型問題，而是 PDF 沒有文字層。整理 OCR 轉換、免費工具、中文檔案與上傳前檢查。
 publishedDate: 2026-05-27T00:00:00Z
 author: 比利陳 Billy Chen
 tags:

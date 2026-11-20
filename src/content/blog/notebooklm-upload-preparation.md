@@ -1,6 +1,7 @@
 ---
-title: 上傳文件前要做的三件事，讓 NotebookLM 讀得更準
-description: 同樣一份文件，上傳前有沒有處理過，NotebookLM 給你的答案品質差很多。不是工具的問題，是輸入的問題。這篇說清楚上傳前要做的三件事。
+title: NotebookLM 上傳 PDF 前必做 3 件事：檔案限制、格式與中文檢查
+description: >-
+  NotebookLM 上傳 PDF 前先檢查這 3 件事：檔案大小與頁數、掃描檔是否有文字層、中文格式是否會亂碼。附上傳前檢查清單。
 publishedDate: 2026-04-13T14:12:05Z
 author: 比利陳 Billy Chen
 tags:

@@ -7,3 +7,7 @@
 /blog/category/personal-brand/ /topics/personal-growth/ 301
 /blog/category/investment-market /topics/ 301
 /blog/category/investment-market/ /topics/ 301
+
+# NotebookLM 簡報頁錯字網址：301 到正確頁
+/blog/otebooklm-slide-deck-review /blog/notebooklm-slide-deck-review/ 301
+/blog/otebooklm-slide-deck-review/ /blog/notebooklm-slide-deck-review/ 301

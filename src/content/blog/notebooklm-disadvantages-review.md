@@ -1,6 +1,7 @@
 ---
-title: NotebookLM 有哪些缺點？用了三個月之後的真實評價
-description: NotebookLM 很強，但它不是萬能的。這篇整理使用三個月之後真實遇到的缺點和限制，讓你在決定要不要用它之前，先知道它會在哪裡讓你失望。
+title: NotebookLM 好用嗎？優缺點、真實評價與 5 個使用限制
+description: >-
+  NotebookLM 好用嗎？從中文支援、PDF 讀取、引用準確度、Audio Overview 到付費方案，整理真實優缺點、評價與適用對象。
 publishedDate: 2026-05-06T00:00:00Z
 author: 比利陳 Billy Chen
 tags:

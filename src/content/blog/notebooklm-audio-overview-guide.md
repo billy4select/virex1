@@ -1,8 +1,7 @@
 ---
-title: NotebookLM Audio Overview 怎麼用：不只是聽，還能這樣做
+title: NotebookLM Audio Overview 怎麼用？語音摘要、Podcast 與 3 個技巧
 description: >-
-  Audio Overview 不只是把文件變成 Podcast
-  讓你聽。它有幾個用法大多數人沒想到，而且有些場景用它比直接閱讀文件更有效率。這篇把這些用法說清楚。
+  NotebookLM Audio Overview 不只是聽摘要：可以生成 Podcast、調整語氣、匯出音檔。整理中文支援、使用限制與 3 個實用技巧。
 publishedDate: 2026-04-12T09:15:23Z
 author: 比利陳 Billy Chen
 tags:

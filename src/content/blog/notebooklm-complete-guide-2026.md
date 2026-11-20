@@ -1,8 +1,7 @@
 ---
-title: 2026 NotebookLM 完整攻略：從入門到進階，所有你需要知道的事
+title: NotebookLM 全面攻略 2026：從入門、PDF 到 Audio 與簡報完整教學
 description: >-
-  一份資料上傳進去，就能問它問題、生成 Podcast、跟其他工具串接——NotebookLM
-  能做的事比大多數人以為的多很多。這篇把所有用法整理在一起，讓你知道自己現在在哪個階段、下一步該學什麼。
+  NotebookLM 2026 全面攻略：從註冊、上傳 PDF、提問、Audio Overview 到簡報生成，一篇整理完整教學、限制與常見問題。
 publishedDate: 2026-04-23T00:00:00Z
 author: 比利陳 Billy Chen
 tags:

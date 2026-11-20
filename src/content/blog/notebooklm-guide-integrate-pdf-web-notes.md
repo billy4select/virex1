@@ -1,8 +1,7 @@
 ---
-title: 專案資料散落各處？NotebookLM 跨來源整合實戰手冊
+title: NotebookLM 整合 PDF、網頁、筆記：3 個實際工作流與限制
 description: >-
-  合約在 PDF、會議記錄在 Google Docs、想法在備忘錄... 每次查資料都要翻箱倒櫃？本文教你如何用 NotebookLM
-  整合破碎資訊，實現一站式對話查詢。
+  NotebookLM 怎麼把 PDF、網頁、Google Docs 與筆記整合成一個專案？整理 3 個實際工作流、來源上限、同步限制與常見錯誤。
 publishedDate: 2026-04-10T10:15:22Z
 author: 比利陳 Billy Chen
 tags:
