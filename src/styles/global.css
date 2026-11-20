@@ -227,6 +227,12 @@ select:focus-visible {
     background: transparent;
   }
 
+  /* 搜尋展開時，Header 與面板使用同一個表面色，避免中間出現色階斷層。 */
+  #site-header[data-search-open='true'] {
+    background-color: var(--color-surface);
+    backdrop-filter: none;
+  }
+
   /* Header 搜尋面板改用和行動選單一致的表面色，欄位本身留在表面色並加邊框。 */
   #header-search-panel .blog-search-ui .pagefind-ui .pagefind-ui__search-input {
     background-color: var(--color-surface) !important;

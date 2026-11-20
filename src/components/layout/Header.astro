@@ -258,6 +258,7 @@ const isActive = (href: string) => {
   function openHeaderSearch() {
     if (!headerSearchPanel || !headerSearchBackdrop) return;
     closeMobileMenu();
+    header?.setAttribute('data-search-open', 'true');
     updateHeaderSearchPosition();
     headerSearchPanel.hidden = false;
     headerSearchBackdrop.classList.remove('hidden');
@@ -271,6 +272,7 @@ const isActive = (href: string) => {
     if (!headerSearchPanel || !headerSearchBackdrop) return;
     headerSearchPanel.hidden = true;
     headerSearchBackdrop.classList.add('hidden');
+    header?.removeAttribute('data-search-open');
     headerSearchToggles.forEach((button) => button.setAttribute('aria-expanded', 'false'));
   }
 
