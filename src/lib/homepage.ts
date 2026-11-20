@@ -14,7 +14,6 @@ export interface HomeTopic {
   points: string[];
   href: string;
   category: string;
-  icon: string;
 }
 
 export interface HomeSeriesChapter {
@@ -26,10 +25,8 @@ export interface HomeSeries {
   name: string;
   theme: string;
   description: string;
-  outcome: string;
   meta: string;
   href: string;
-  icon: string;
   chapters: HomeSeriesChapter[];
 }
 
@@ -51,7 +48,6 @@ export const homeTopics: HomeTopic[] = [
     points: ['AI 應用與工具', '數位技能與工作流程', '學習方法與知識管理'],
     href: '/topics/ability-learning/',
     category: 'ai-tech',
-    icon: 'lucide:graduation-cap',
   },
   {
     slug: 'business-thinking',
@@ -63,7 +59,6 @@ export const homeTopics: HomeTopic[] = [
     points: ['行銷與品牌', '商業模式與經營', '市場與消費者觀察'],
     href: '/topics/business-thinking/',
     category: 'business-marketing',
-    icon: 'lucide:briefcase-business',
   },
   {
     slug: 'personal-growth',
@@ -75,7 +70,6 @@ export const homeTopics: HomeTopic[] = [
     points: ['職涯與專業發展', '個人品牌', '自媒體與知識變現'],
     href: '/topics/personal-growth/',
     category: 'personal-brand',
-    icon: 'lucide:rocket',
   },
 ];
 
@@ -85,11 +79,8 @@ export const homeSeries: HomeSeries[] = [
     theme: '能力與學習',
     description:
       '把 AI 從單一工具，變成可分工、可交接、可重複的工作團隊。',
-    outcome:
-      '走完六個主題，你會有一份自己的 AI 工作說明書，以及一套能持續調整的工作流程。',
     meta: '6 個主題・完整實作',
     href: '/ai-work-team/',
-    icon: 'lucide:bot',
     chapters: [
       { label: '先找出值得交給 AI 的事', href: '/ai-work-team/lesson-01/' },
       { label: '建立角色、職責與工作說明書', href: '/ai-work-team/lesson-03/' },
@@ -101,11 +92,8 @@ export const homeSeries: HomeSeries[] = [
     theme: '個人發展與事業',
     description:
       '從起步心態、人設定位、發文頻率到互動與變現，建立一套你做得到的內容節奏。',
-    outcome:
-      '走完之後，你會知道自己的定位、發文頻率與轉換路徑，而不是只靠靈感發文。',
     meta: '完整專題・自媒體經營',
     href: '/threads/',
-    icon: 'lucide:message-circle',
     chapters: [
       { label: '先調整起步心態，不急著完美', href: '/threads/' },
       { label: '用人設與定位找到你的說法', href: '/threads/persona/' },
