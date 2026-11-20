@@ -6,6 +6,7 @@ export const navigation: Navigation = {
       { label: '首頁', href: '/' },
       { label: '主題', href: '/topics/' },
       { label: '文章', href: '/blog/' },
+      { label: '工具箱', href: '/resources/' },
       { label: 'Threads教學', href: '/threads/' },
       { label: '打造AI團隊', href: '/ai-work-team/' },
       { label: '關於我', href: '/about/' },
@@ -31,6 +32,7 @@ export const navigation: Navigation = {
       { label: '《流量騙局》', href: 'https://portaly.cc/billyselect4/product/khu55lTbwebNRjRtUCQ3' },
     ],
     resources: [
+      { label: '工具箱', href: '/resources/' },
       { label: '訂閱電子報', href: 'https://billy4select.substack.com/' },
       { label: 'Threads教學', href: '/threads/' },
       { label: '打造AI團隊', href: '/ai-work-team/' },
