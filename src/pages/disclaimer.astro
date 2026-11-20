@@ -1,49 +1,161 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import { siteConfig } from '@/config';
+
+const { legal, contact } = siteConfig;
+const contactEmail = legal.legalEmail || contact.email;
+const updatedLabel = new Intl.DateTimeFormat('zh-TW', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}).format(new Date(`${legal.lastUpdated}T00:00:00+08:00`));
+
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: '免責聲明',
+    description: '本站內容為個人研究與經驗分享，不構成投資、法律、醫療、稅務或商業專業建議。',
+    url: `${siteConfig.url}/disclaimer/`,
+    dateModified: legal.lastUpdated,
+    inLanguage: 'zh-Hant-TW',
+    isPartOf: { '@type': 'WebSite', name: siteConfig.name, url: siteConfig.url },
+  },
+];
 ---
 
-<MarketingLayout title={`免責聲明 - ${siteConfig.name}`} description="本站內容之相關責任與版權說明">
-  <section class="max-w-3xl mx-auto px-6 py-20 text-stone-800">
-    <h1 class="text-4xl font-bold mb-8 tracking-tight">免責聲明 Disclaimer</h1>
-    
-    <p class="mb-10 text-stone-500 leading-relaxed">
-      歡迎來到「行銷路人甲」（以下簡稱「本站」）。當您開始使用本站（billy4select.com）提供的內容與服務時，即代表您已閱讀並同意以下條款。
-    </p>
-
-    <div class="space-y-12">
-      <section>
-        <h2 class="text-xl font-semibold mb-4 border-l-4 border-stone-800 pl-4">1. 資訊僅供參考</h2>
-        <p class="leading-relaxed">
-          本站所發布之文章、電子書、教材及相關評論，皆基於比利陳（Billy Chen）超過 10 年之行銷實戰經驗與個人研究心得。 內容僅供一般性參考，不構成任何形式的專業投資建議、法律諮詢或商業決策依據。
+<MarketingLayout
+  title={`免責聲明 - ${siteConfig.name}`}
+  description="本站內容為個人研究與經驗分享，不構成投資、法律、醫療、稅務或商業專業建議，並說明 AI 工具實測、第三方連結、合作揭露與著作權範圍。"
+  structuredData={structuredData}
+>
+  <section class="py-section">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <header class="border-b border-border pb-8">
+        <p class="text-sm font-semibold tracking-[0.18em] text-primary">內容與責任</p>
+        <h1 class="mt-3 text-4xl font-bold tracking-tight text-text sm:text-5xl">免責聲明</h1>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-text-muted">
+          這裡分享的是我實際做過、查過、想過的<span class="whitespace-nowrap">主題</span>；但這是我個人的研究與經驗，不是替你做出決定的專業建議。
         </p>
-      </section>
+        <p class="mt-4 text-sm text-text-muted">最後更新：{updatedLabel}</p>
+      </header>
 
-      <section>
-        <h2 class="text-xl font-semibold mb-4 border-l-4 border-stone-800 pl-4">2. 投資與執行風險</h2>
-        <p class="leading-relaxed">
-          本站經常討論之數位資產化、投資工具（如 0050、TSMC）或自媒體策略，皆具備市場風險。 任何行動的最終決策權與風險皆由讀者自行承擔。本站不保證內容之絕對即時性與正確性，亦不對讀者因參考本站內容後產生的損失負責。
+      <aside class="mt-8 rounded-2xl border border-border p-6">
+        <p class="text-sm font-semibold text-primary">先看重點</p>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-text-muted">
+          <li>本站是個人知識分享，不是投資、法律、醫療、稅務或會計顧問服務。</li>
+          <li>文章提到的個股、ETF、工具或案例，都只是教學與思考範例，不是推薦。</li>
+          <li>AI 與數位工具實測會受版本、方案、地區與提示詞影響，結果不保證重現。</li>
+          <li>部分內容可能使用 AI 協助整理或校對；選題、觀點與最終內容由我負責。</li>
+          <li>若未來使用合作、贊助或聯盟連結，我會在相關頁面明確標示。</li>
+        </ul>
+      </aside>
+
+      <div class="prose prose-lg mt-12 max-w-none dark:prose-invert">
+        <p>
+          歡迎來到「行銷裡的路人甲」（以下稱「本站」）。本站由比利陳（Billy Chen）個人經營，分享整合行銷、AI 應用、商業思考與個人發展的研究、實作與觀察。
+          當你使用本站內容時，代表你理解並同意以下說明。
         </p>
-      </section>
 
-      <section>
-        <h2 class="text-xl font-semibold mb-4 border-l-4 border-stone-800 pl-4">3. 第三方連結</h2>
-        <p class="leading-relaxed">
-          為方便讀者，本站可能包含指向外部網站的連結（如 AI 工具、相關新聞等）。 這些連結僅供參考，本站無法控制該等網站之內容、準確性或隱私權政策，亦不對其造成的任何損害承擔責任。
+        <h2>一、內容性質：個人研究，不是專業建議</h2>
+        <p>
+          本站的文章、電子書、教材、專題與讀者回饋，來自我個人的工作經驗、閱讀、實驗與觀察。內容以「把複雜問題拆成可以理解和可以行動的線索」為目標，但不等於針對你的情況所做的專業診斷或顧問服務。
         </p>
-      </section>
-
-      <section>
-        <h2 class="text-xl font-semibold mb-4 border-l-4 border-stone-800 pl-4">4. 版權聲明</h2>
-        <p class="leading-relaxed">
-          本站所有原創圖文內容、數位書、研究架構之版權均屬「行銷路人甲」所有。 未經正式書面授權，禁止任何形式的抄襲、改寫或商業利用。歡迎合理範圍內的引用並註明出處（billy4select.com）。
+        <p>
+          涉及投資、法律、稅務、會計、醫療、心理、保險、職涯或人事決策時，請先諮詢具備合格資格的專業人士，並以官方文件、主管機關公告與你的實際情況為準。
+          本站內容可能因時間、法規、平台規則或產業變化而過時，我不保證每一篇都會即時更新。
         </p>
-      </section>
 
-      <section class="bg-stone-100 p-6 rounded-lg">
-        <h2 class="text-lg font-semibold mb-2 text-stone-900">最後更新日期</h2>
-        <p class="text-sm text-stone-600">2026 年 04 月 23 日</p>
-      </section>
+        <h2>二、投資與金融內容</h2>
+        <p>
+          文章中若提到台股、ETF、個股、匯率、基金、數位資產、投資工具或市場現象，通常是為了說明某個商業邏輯、分析方法或決策框架，不代表我推薦買進、賣出、持有或申購，也不構成投資招攬、顧問服務或獲利保證。
+        </p>
+        <p>
+          投資一定有風險，可能造成本金損失。過去績效不代表未來表現，任何數據、回測或案例都可能因假設、時間區間與樣本選擇而不同。
+          你的資金狀況、風險承受度與稅務情境只有你自己最清楚；任何投資決策與結果，應由你自行承擔。
+        </p>
+
+        <h2>三、AI 與數位工具實測</h2>
+        <p>
+          AI 模型、SaaS 工具與平台功能變動很快。同一段提示詞在不同模型版本、方案等級、語言、地區、上下文或資料集下，可能得到不同結果。
+          我分享的是當下實際測試的觀察，不保證你會在相同步驟得到完全一樣的輸出，也不保證工具會永久可用、免費或符合你的需求。
+        </p>
+        <p>
+          使用 AI 工具前，請自行確認它的資料處理政策、所在地、資安與合規要求。不要把客戶資料、個資、營業秘密、未公開財報、合約、病歷或其他敏感資訊貼進你無法控制的第三方服務。
+          若你要把 AI 產出用於正式出版、法律、醫療、金融或對外溝通，請保留人工審查與事實查核。
+        </p>
+
+        <h2>四、商業、行銷與職涯案例</h2>
+        <p>
+          文章中的品牌、專案、廣告、內容策略與職涯案例，可能經過改寫、去識別化或組合成教學情境。案例結果會受產業、預算、產品成熟度、受眾、時機與執行能力影響，不能直接複製到你的組織就得到相同成果。
+        </p>
+        <p>
+          我分享的是判斷方式與可操作方法，不是對你公司營收、流量、轉換率、求職結果或個人品牌成長的保證。執行前的資源評估、法規確認與風險控管，仍由你負責。
+        </p>
+
+        <h2>五、AI 協助產出的揭露</h2>
+        <p>
+          部分內容可能使用 AI 協助蒐集資料、整理架構、校對、翻譯或產生初稿。選題、觀點、案例判斷與最終發布由我負責；但我仍可能犯錯，也可能有資料過時、引用不完整或理解偏差。
+        </p>
+        <p>
+          如果你發現錯誤、斷鏈、過時資訊或有疑慮的表述，歡迎來信指正。我會在確認後修正，必要時在文章中加入更新說明。
+        </p>
+
+        <h2>六、第三方連結、合作與聯盟揭露</h2>
+        <p>
+          本站可能連到外部網站、工具、書籍、課程、新聞、影片或購買平台。這些連結是為了方便你延伸閱讀，不代表我對其內容、品質、安全性、合法性或後續服務背書。
+          外部網站的內容、價格、庫存、隱私政策與交易條款由該網站負責，本站無法控制，也不對你使用外部網站造成的損失負責。
+        </p>
+        <p>
+          目前本站沒有使用聯盟分潤連結。若未來加入聯盟行銷、贊助、產品試用、顧問合作或商業合作，我會在相關文章或頁面明確標示合作關係與可能的利益。
+          是否合作不會改變我對工具或服務的評價標準；我不接受以付費交換正面評論。
+        </p>
+        <p>
+          我的電子書與數位產品透過 Portaly 等外部平台販售，購買、付款、退款與售後服務依該平台條款處理。若你對產品內容有問題，也可以直接來信，我會協助釐清。
+        </p>
+
+        <h2>七、著作權與引用</h2>
+        <p>
+          本站的原創文章、教學架構、圖表、電子書、課程講義、專題內容與品牌視覺，除另有標示外，著作權均屬本站或比利陳所有。
+          未經書面授權，請勿全文轉載、大量複製、改寫後發表、製作付費教材、用於商業課程，或建立實質替代本站內容的服務。
+        </p>
+        <p>
+          歡迎在合理範圍內引用、節錄或分享連結，但請註明作者「比利陳」、站名「行銷裡的路人甲」與原文網址，且不得扭曲原意。
+          媒體採訪、教學使用、企業內訓、內容合作或大量引用，請先來信取得授權。
+        </p>
+        <p>
+          除法律允許的情形外，請勿將本站內容用於商業性 AI 訓練、資料集建置或模型微調；若你有這類需求，請先與我聯繫。
+        </p>
+
+        <h2>八、讀者回饋與留言</h2>
+        <p>
+          首頁與讀者回饋頁呈現的是讀者自己的使用經驗與感想，不代表本站對其成效、產品或服務背書，也不代表每位讀者都會得到相同結果。
+          我可能會為了長度、錯字或可讀性整理文字，但不會改變原本意思。
+        </p>
+        <p>
+          若讀者回饋涉及未經證實的指控、他人的個人資料或不當內容，我會移除或隱藏；如果你不希望自己的回饋繼續公開，請來信，我會盡快處理。
+        </p>
+
+        <h2>九、責任限制</h2>
+        <p>
+          我會盡力讓內容準確、可讀、可執行，但不保證本站內容完全正確、完整、即時或適用於你的特定情境。
+          在法律允許的範圍內，對於你因使用或無法使用本站內容、外部連結、工具或產品而產生的間接、附隨、特別或衍生損失，我不負賠償責任。
+        </p>
+        <p>
+          這不代表本站可以排除依法不得排除的責任。若你所在地的法律賦予你不可拋棄的消費者權利，那些權利仍然有效。
+          在做出會影響金錢、健康、工作、法律關係或他人權益的決定前，請務必自行查證並尋求合格專業協助。
+        </p>
+
+        <h2>十、更新與聯絡</h2>
+        <p>
+          本站內容與本免責聲明可能隨時調整。更新時會修改頁面上的「最後更新」日期；若變更會明顯影響你的權利，我會在網站另行公告。
+        </p>
+        <p>
+          若你對內容、引用、合作、著作權或本聲明有任何問題，請來信：
+          <a href={`mailto:${contactEmail}`}>{contactEmail}</a>。
+          我通常會在 24 小時內回覆；若涉及授權、法律或合作審查，可能需要較長時間。
+        </p>
+      </div>
     </div>
   </section>
 </MarketingLayout>

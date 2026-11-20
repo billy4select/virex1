@@ -42,5 +42,5 @@ export const social: SocialLinks = {
 export const legal: LegalConfig = {
   privacyEmail: 'billy4select@gmail.com',
   legalEmail: 'billy4select@gmail.com',
-  lastUpdated: '2026-04-09',
+  lastUpdated: '2026-11-20',
 };

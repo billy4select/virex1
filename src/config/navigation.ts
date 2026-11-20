@@ -42,8 +42,8 @@ export const navigation: Navigation = {
       { label: 'Threads', href: 'https://www.threads.net/@billy4select' },
     ],
     legal: [
-      { label: 'Privacy Policy', href: '/privacy/' },
-      { label: 'Terms of Service', href: '/disclaimer/' },
+      { label: '隱私權政策', href: '/privacy/' },
+      { label: '免責聲明', href: '/disclaimer/' },
     ],
   },
 };

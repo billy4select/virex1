@@ -1,149 +1,229 @@
 ---
-// 引入行銷版面元件與網站設定檔
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import { siteConfig } from '@/config';
 
-// 取得法律與聯絡相關資訊
 const { legal, contact } = siteConfig;
+const privacyEmail = legal.privacyEmail || contact.email;
+const updatedLabel = new Intl.DateTimeFormat('zh-TW', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}).format(new Date(`${legal.lastUpdated}T00:00:00+08:00`));
 
-// 組合成完整的聯絡地址字串
-const fullAddress = `${contact.address.state}${contact.address.city}${contact.address.street}`;
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: '隱私權政策',
+    description: '說明本站蒐集哪些個人資料、為什麼蒐集、如何處理與保存，以及你可以如何查詢、更正、刪除或退訂。',
+    url: `${siteConfig.url}/privacy/`,
+    dateModified: legal.lastUpdated,
+    inLanguage: 'zh-Hant-TW',
+    isPartOf: { '@type': 'WebSite', name: siteConfig.name, url: siteConfig.url },
+  },
+];
 ---
 
 <MarketingLayout
   title={`隱私權政策 - ${siteConfig.name}`}
-  description={`這是 ${siteConfig.name} 的隱私權政策。了解我們如何收集、使用並保護您的個人資訊。`}
+  description="說明本站蒐集哪些個人資料、為什麼蒐集、如何處理與保存，以及你可以如何查詢、更正、刪除或退訂。"
+  structuredData={structuredData}
 >
   <section class="py-section">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <header class="mb-12">
-        <h1 class="text-4xl font-bold text-text">隱私權政策</h1>
-        <p class="mt-4 text-text-muted">最後更新日期： {legal.lastUpdated}</p>
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <header class="border-b border-border pb-8">
+        <p class="text-sm font-semibold tracking-[0.18em] text-primary">法律與隱私</p>
+        <h1 class="mt-3 text-4xl font-bold tracking-tight text-text sm:text-5xl">隱私權政策</h1>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-text-muted">
+          這頁用白話說明：本站會拿到哪些資料、為什麼需要、會放在哪裡，以及你可以要求我做什麼。
+        </p>
+        <p class="mt-4 text-sm text-text-muted">最後更新：{updatedLabel}</p>
       </header>
 
-      <div class="prose prose-lg max-w-none dark:prose-invert">
+      <aside class="mt-8 rounded-2xl border border-border p-6">
+        <p class="text-sm font-semibold text-primary">先看重點</p>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-text-muted">
+          <li>本站不建立會員帳號，也不在站內處理信用卡或付款資料。</li>
+          <li>電子報由 Substack 寄送；你可以在每封信底部隨時退訂。</li>
+          <li>本站使用流量分析工具了解內容成效，但不會把資料賣給第三方。</li>
+          <li>你可以來信查詢、更正或刪除本站持有的個人資料。</li>
+        </ul>
+      </aside>
+
+      <div class="prose prose-lg mt-12 max-w-none dark:prose-invert">
         <p>
-          在 {siteConfig.name}，我們非常重視您的隱私。本隱私權政策旨在說明當您訪問我們的網站或使用我們的服務時，我們如何收集、使用、揭露及保護您的資訊。
+          本政策適用於 <a href={siteConfig.url}>{siteConfig.url.replace('https://', '')}</a>
+          及其子頁面。當你閱讀文章、點擊訂閱、寫信給我，或透過社群與我互動時，可能會產生下列資料處理情形。
+        </p>
+        <p>
+          我把「需要哪些資料」盡量寫清楚，也避免用模糊的「可能」把範圍放大。若未來新增服務或追蹤方式，我會更新這頁並修改最後更新日期。
         </p>
 
-        <h2>我們收集的資訊</h2>
-
-        <h3>個人資訊</h3>
-        <p>當您進行以下操作時，我們可能會收集您自願提供給我們的個人資訊：</p>
-        <ul>
-          <li>註冊帳戶</li>
-          <li>訂閱我們的電子報</li>
-          <li>填寫聯絡表單</li>
-          <li>進行購買或訂閱服務</li>
-          <li>參與調查或促銷活動</li>
-        </ul>
-        <p>這些資訊可能包括：</p>
-        <ul>
-          <li>姓名與電子郵件地址</li>
-          <li>帳單地址與付款資訊</li>
-          <li>公司名稱與職稱</li>
-          <li>電話號碼</li>
-        </ul>
-
-        <h3>自動收集的資訊</h3>
+        <h2>一、本站不蒐集哪些資料</h2>
         <p>
-          當您存取我們的服務時，我們會自動收集有關您裝置和使用情況的特定資訊，包括：
+          本站目前沒有會員註冊、站內購物車、線上刷卡或訂單系統，因此不會直接取得你的帳號密碼、信用卡號、帳單地址或身分證件。
+          若你購買電子書或數位產品，交易會在你的購買平台完成，請依該平台的政策與條款處理。
         </p>
-        <ul>
-          <li>IP 位址與瀏覽器類型</li>
-          <li>作業系統與裝置資訊</li>
-          <li>造訪過的頁面與停留時間</li>
-          <li>來源網站位址</li>
-          <li>點擊行為與功能使用情況</li>
-        </ul>
 
-        <h2>我們如何使用您的資訊</h2>
-        <p>我們將收集到的資訊用於：</p>
-        <ul>
-          <li>提供、維護並改進我們的服務</li>
-          <li>處理交易並發送相關資訊</li>
-          <li>發送促銷訊息（經您同意後）</li>
-          <li>回覆您的評論、問題及支援請求</li>
-          <li>監控並分析使用模式與趨勢</li>
-          <li>檢測、防止並處理技術問題與詐欺行為</li>
-          <li>遵守法律義務</li>
-        </ul>
+        <h2>二、我會蒐集哪些資料</h2>
+        <p>
+          我把資料分成「你主動提供」與「系統自動產生」兩類。這樣你比較容易判斷，哪些是為了回覆你，哪些是為了讓網站正常運作。
+        </p>
 
-        <h2>資訊共享</h2>
-        <p>我們可能會在以下情況下共享您的資訊：</p>
+        <h3>你主動提供的資料</h3>
         <ul>
           <li>
-            <strong>服務供應商：</strong> 與代表我們執行服務的第三方供應商共享（如付款處理、數據分析、郵件發送）。
+            <strong>電子報 Email：</strong>當你從本站點擊訂閱，會前往 Substack 頁面輸入 Email。本站本身不儲存訂閱名單，訂閱資料由 Substack 保管。
           </li>
           <li>
-            <strong>業務轉讓：</strong> 在涉及合併、收購或資產出售時共享。
+            <strong>來信內容：</strong>當你寄信給我，我會看到你的 Email、署名、信件內容，以及你主動附上的檔案或連結。
           </li>
           <li>
-            <strong>法律要求：</strong> 當法律要求或為了保護我們的權利與安全時共享。
+            <strong>社群訊息：</strong>若你透過 Instagram、Threads 或 Line 與我互動，我會看到你在該平台公開的帳號名稱、頭像與訊息內容。這些平台如何處理資料，取決於該平台的政策。
           </li>
-          <li><strong>經您同意：</strong> 當您給予我們明確許可時。
+          <li>
+            <strong>合作與顧問往來：</strong>若你來信洽詢演講、內訓、顧問或合作，我可能會請你提供公司名稱、職稱與聯絡方式，以便回覆與報價。
           </li>
         </ul>
-        <p>我們絕不會將您的個人資訊出售給第三方。</p>
 
-        <h2>資料安全</h2>
+        <h3>系統自動產生的資料</h3>
         <p>
-          我們實施了適當的技術與組織安全措施，以保護您的個人資訊免於未經授權的存取、更改、揭露或毀損。然而，網際網路上的傳輸方式並非 100% 安全，我們無法保證絕對的安全性。
-        </p>
-
-        <h2>資料保留</h2>
-        <p>
-          除非法律要求更長的保留期限，否則我們將在實現本隱私權政策所述目的之必要時間內保留您的個人資訊。當我們不再需要您的資訊時，我們將安全地刪除或進行匿名化處理。
-        </p>
-
-        <h2>您的權利</h2>
-        <p>根據您所在地點的不同，您可能擁有以下權利：</p>
-        <ul>
-          <li>
-            <strong>查閱權：</strong> 要求提供我們持有的關於您的個人資訊副本。
-          </li>
-          <li>
-            <strong>更正權：</strong> 要求更正不準確或不完整的資訊。
-          </li>
-          <li><strong>刪除權：</strong> 要求刪除您的個人資訊。</li>
-          <li><strong>可攜權：</strong> 要求將您的資料轉移至另一個服務。</li>
-          <li><strong>拒絕權：</strong> 隨時取消訂閱行銷資訊。</li>
-        </ul>
-        <p>如需行使這些權利，請透過下方提供的聯絡資訊與我們聯繫。</p>
-
-        <h2>Cookies 與追蹤技術</h2>
-        <p>
-          我們使用 Cookie 和類似的追蹤技術來收集有關您瀏覽活動的資訊。您可以透過瀏覽器設定來控制 Cookie。如需更多資訊，請參閱我們的 Cookie 政策。
-        </p>
-
-        <h2>第三方連結</h2>
-        <p>
-          我們的網站可能包含指向第三方網站的連結。我們對這些外部網站的隱私做法概不負責。我們建議您在提供任何個人資訊前，先查看其隱私權政策。
-        </p>
-
-        <h2>兒童隱私</h2>
-        <p>
-          我們的服務不對 16 歲以下兒童提供。我們不會刻意收集兒童的個人資訊。如果您認為我們收集了兒童的資訊，請立即與我們聯繫。
-        </p>
-
-        <h2>國際資料傳輸</h2>
-        <p>
-          您的資訊可能會在您所在國家以外的地區進行傳輸與處理。我們確保已採取適當的保護措施，使您的資訊受到本政策的保護。
-        </p>
-
-        <h2>本政策之修訂</h2>
-        <p>
-          我們可能會不定期更新本隱私權政策。如有任何更動，我們將透過在此頁面上發布新的政策並更新「最後更新日期」來通知您。我們建議您定期查看本隱私權政策。
-        </p>
-
-        <h2>聯絡我們</h2>
-        <p>
-          如果您對本隱私權政策或我們的隱私做法有任何疑問，請透過以下方式與我們聯繫：
+          當你瀏覽本站，網站代管、CDN 與分析工具可能會自動記錄下列技術資料：
         </p>
         <ul>
-          <li>電子郵件： {legal.privacyEmail}</li>
-          <li>聯絡地址： {fullAddress}</li>
+          <li>IP 位址、瀏覽器與作業系統類型</li>
+          <li>裝置類型、螢幕尺寸與語言設定</li>
+          <li>造訪頁面、停留時間、點擊與滾動等互動情形</li>
+          <li>來源網址、搜尋關鍵字或推薦連結</li>
+          <li>約略地區（通常由 IP 推估為城市層級，不會精確定位）</li>
+          <li>錯誤紀錄、資安事件與流量異常資訊</li>
         </ul>
+        <p>
+          這些資料主要用來看「哪些內容真的有人看、哪裡卡住、網站是否正常」，我不會用它來辨識你的真實身分。
+        </p>
+
+        <h2>三、蒐集目的與處理依據</h2>
+        <p>本站處理個人資料的目的包括：</p>
+        <ul>
+          <li>提供文章、頁面與網站功能，維持網站正常運作</li>
+          <li>回覆你的來信、合作洽詢與讀者回饋</li>
+          <li>寄送你主動訂閱的電子報，並讓你隨時退訂</li>
+          <li>了解內容成效、改善閱讀體驗與網站效能</li>
+          <li>偵測、防止與處理資安事件、垃圾訊息或濫用行為</li>
+          <li>遵守法令、主管機關要求或行使合法權利</li>
+        </ul>
+        <p>
+          我依《個人資料保護法》與其他適用法規處理資料。若某項處理需要你的同意，我會在該情境另外取得；你可以隨時撤回同意，但撤回不影響撤回前已完成的處理。
+        </p>
+
+        <h2>四、電子報與 Substack</h2>
+        <p>
+          本站的電子報透過 Substack 提供。當你訂閱，Substack 會處理你的 Email、訂閱時間、開信與點擊紀錄，用來寄送信件、防止濫發與提供彙總統計。
+          我可以看到訂閱狀態與整體成效，但不會取得你的付費資訊或其他非必要資料。
+        </p>
+        <p>
+          每封電子報底部都有退訂連結。退訂後，我不會再寄送電子報；Substack 可能保留一筆「已退訂」紀錄，以避免再次誤寄。
+          若你希望連同訂閱紀錄一併刪除，請直接來信，我會協助向 Substack 處理。
+        </p>
+        <p>
+          你可以參考 <a href="https://substack.com/privacy" target="_blank" rel="noopener noreferrer">Substack 隱私權政策</a>，了解它在境外如何處理訂閱資料。
+        </p>
+
+        <h2>五、Cookie 與類似技術</h2>
+        <p>
+          本站使用少量 Cookie、localStorage 與類似技術。它們大致分成兩類：
+        </p>
+        <ul>
+          <li>
+            <strong>網站功能：</strong>記住你選的深色／淺色模式，以及是否關閉過某則公告。這些設定存在你的瀏覽器，用來避免每次重新選擇。
+          </li>
+          <li>
+            <strong>流量分析：</strong>本站使用 Google Tag Manager 管理分析與追蹤標籤，可能因此產生 Google 分析相關 Cookie（例如 <code>_ga</code>、<code>_ga_*</code>，實際名稱依啟用的標籤而定），用來了解流量來源、頁面成效與使用者裝置概況。
+          </li>
+        </ul>
+        <p>
+          目前這些工具主要用於內容成效與網站改善，不用來建立你的個人輪廓。若未來啟用廣告、再行銷或其他跨站追蹤，我會更新本政策，並在適用情況下提供拒絕或調整的選項。
+        </p>
+        <p>
+          你可以用瀏覽器設定刪除或封鎖 Cookie，也可以使用 Google 提供的
+          <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics 退出工具</a>。
+          封鎖非必要 Cookie 不影響你閱讀本站文章。
+        </p>
+
+        <h2>六、資料分享與第三方服務</h2>
+        <p>
+          我不會出售、出租或交換你的個人資料。為了讓網站與電子報正常運作，下列服務商可能會接觸到必要資料：
+        </p>
+        <ul>
+          <li><strong>Cloudflare：</strong>網站代管、CDN、資安防護與流量紀錄。</li>
+          <li><strong>Google：</strong>Google Tag Manager 與流量分析相關服務。</li>
+          <li><strong>Substack：</strong>電子報寄送、訂閱名單與開信／點擊統計。</li>
+          <li><strong>你使用的社群平台：</strong>當你透過 Instagram、Threads 或 Line 與我互動，資料由該平台處理。</li>
+        </ul>
+        <p>除下列情形外，我不會任意把資料提供給其他第三人：</p>
+        <ul>
+          <li>你明確同意，或主動要求我轉介</li>
+          <li>法令要求，或為了保護網站、讀者與我的合法權益</li>
+          <li>處理資安事件、詐欺、濫用或技術問題所必要</li>
+          <li>未來若發生合併、收購或業務移轉，在符合法令與告知程序下移轉</li>
+        </ul>
+        <p>
+          這些服務商可能位於台灣以外。我會選擇具備合理安全與隱私保護措施的服務，並依適用法規處理跨境傳輸。
+        </p>
+
+        <h2>七、資料保存期間</h2>
+        <p>我只會在達成上述目的所需期間內保存資料：</p>
+        <ul>
+          <li>來信與合作往來：原則上在最後一次互動後 2 年內刪除或整理；若涉及進行中的合作或法令要求，會延長保存。</li>
+          <li>電子報訂閱：保存至你退訂為止；退訂後保留最小必要的拒寄紀錄。</li>
+          <li>流量與技術紀錄：依 Cloudflare、Google 等服務的設定與必要性保存，不另行建立長期個人資料庫。</li>
+          <li>資安與爭議紀錄：在處理事件、行使權利或遵守法令所需期間內保存。</li>
+        </ul>
+        <p>保存期間屆滿後，我會刪除、匿名化，或讓資料無法再識別特定個人。</p>
+
+        <h2>八、資料安全</h2>
+        <p>
+          本站透過 HTTPS 傳輸，並限制必要人員與服務的存取權限。我也盡量減少蒐集，只保留回覆與改善網站真正需要的資料。
+        </p>
+        <p>
+          但網際網路沒有百分之百安全。請不要透過 Email 或社群訊息傳送密碼、身分證件、信用卡號、客戶機密資料或其他高度敏感資訊。若你懷疑資料遭誤用，請立刻來信，我會盡快處理。
+        </p>
+
+        <h2>九、你的權利</h2>
+        <p>針對本站持有的你的個人資料，你可以依法行使：</p>
+        <ul>
+          <li><strong>查詢與閱覽：</strong>了解我持有哪些資料、如何使用。</li>
+          <li><strong>更正：</strong>要求更正不正確或不完整的資料。</li>
+          <li><strong>刪除：</strong>要求刪除不再需要的資料。</li>
+          <li><strong>停止蒐集、處理或利用：</strong>要求停止特定用途的資料處理。</li>
+          <li><strong>退訂與撤回同意：</strong>隨時取消電子報，或撤回你曾給予的同意。</li>
+        </ul>
+        <p>
+          請寄信到 <a href={`mailto:${privacyEmail}`}>{privacyEmail}</a>，主旨寫「個人資料請求」。
+          為了保護你的資料，我可能需要先確認你的身分，再處理請求。若依法有不能刪除或必須保留的情形，我會說明原因。
+        </p>
+        <p>
+          若你認為本站處理個人資料的方式侵害你的權益，除了與我聯繫，你也可以依法向個人資料主管機關申訴或尋求救濟。
+        </p>
+
+        <h2>十、兒童與未成年人</h2>
+        <p>
+          本站內容並非專為 16 歲以下兒童設計，也不會主動蒐集兒童的個人資料。若你未滿 18 歲，請在父母或監護人同意與陪同下使用本站、訂閱電子報或與我聯繫。
+          若我發現誤收兒童的個人資料，會盡快刪除。
+        </p>
+
+        <h2>十一、政策修訂</h2>
+        <p>
+          我可能會因服務調整、法令變更或資安需求更新本政策。更新時會修改頁面上的「最後更新」日期；若變更會明顯影響你的權利，我會在網站或以電子報另行公告。
+          建議你在重要時刻回來查看這一頁。
+        </p>
+
+        <h2>十二、聯絡我</h2>
+        <p>
+          若你對本政策、資料處理或行使權利有任何問題，請來信：
+          <a href={`mailto:${privacyEmail}`}>{privacyEmail}</a>。
+          我通常在看到訊息後 24 小時內回覆，若涉及資料查核，可能需要較長時間。
+        </p>
       </div>
     </div>
   </section>
