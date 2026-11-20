@@ -116,3 +116,19 @@
     document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},300);
   };
 })();
+
+// 資源模板複製與下載
+window.copyResource=function(id,btn){
+  var pre=document.getElementById(id); if(!pre) return;
+  var text=pre.textContent||'';
+  var label=btn.textContent;
+  function done(){btn.textContent='已複製';setTimeout(function(){btn.textContent=label;},1800);}
+  function fallback(){var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.top='-9999px';document.body.appendChild(ta);ta.select();var ok=false;try{ok=document.execCommand('copy');}catch(e){}ta.remove();if(ok)done();else{btn.textContent='請手動選取';setTimeout(function(){btn.textContent=label;},2200);}}
+  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(done).catch(fallback);}else{fallback();}
+};
+window.downloadResource=function(id,filename){
+  var pre=document.getElementById(id); if(!pre) return;
+  var blob=new Blob([pre.textContent||''],{type:'text/markdown;charset=utf-8'});
+  var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename;
+  document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},300);
+};

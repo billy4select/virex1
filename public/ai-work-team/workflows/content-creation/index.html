@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>內容製作流程｜從選題到可發布的長文｜打造 AI 工作團隊</title>
+<meta name="description" content="用選題企劃、研究員、編輯與品質檢查完成內容製作：流程圖、工具選擇、Prompt、交接摘要、工具替換與品質檢查。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://blog.billy4select.com/ai-work-team/workflows/content-creation/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="打造 AI 工作團隊">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="內容製作流程｜從選題到可發布的長文｜打造 AI 工作團隊">
+<meta property="og:description" content="用選題企劃、研究員、編輯與品質檢查完成內容製作：流程圖、工具選擇、Prompt、交接摘要、工具替換與品質檢查。">
+<meta property="og:url" content="https://blog.billy4select.com/ai-work-team/workflows/content-creation/">
+<meta property="og:image" content="https://blog.billy4select.com/ai-work-team/assets/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f6f3ed">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f6f3ed'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%2322231f'/%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%23e87536' stroke-width='1.5'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/ai-work-team/assets/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://blog.billy4select.com/ai-work-team/workflows/content-creation/#article",
+   "headline": "內容製作流程",
+   "description": "用選題企劃、研究員、編輯與品質檢查完成內容製作：流程圖、工具選擇、Prompt、交接摘要、工具替換與品質檢查。",
+   "url": "https://blog.billy4select.com/ai-work-team/workflows/content-creation/",
+   "inLanguage": "zh-Hant-TW",
+   "author": {
+    "@type": "Person",
+    "name": "比利陳 Billy Chen",
+    "url": "https://blog.billy4select.com/"
+   },
+   "isPartOf": {
+    "@type": "CollectionPage",
+    "name": "AI 工作流程",
+    "url": "https://blog.billy4select.com/ai-work-team/workflows/"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "首頁",
+     "item": "https://blog.billy4select.com/ai-work-team/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "工作流程",
+     "item": "https://blog.billy4select.com/ai-work-team/workflows/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "內容製作流程",
+     "item": "https://blog.billy4select.com/ai-work-team/workflows/content-creation/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/ai-work-team/">打造 <span>AI 工作團隊</span></a>
+    <nav class="site-nav"><a href="/ai-work-team/curriculum/">開始探索</a><a href="/ai-work-team/workflows/" class="active">工作流程</a><a href="/ai-work-team/resources/">實用資源</a></nav>
+  </div>
+</header>
+<main>
+
+<section class="lesson-page" id="workflow-content-creation">
+  <div class="lesson-hero">
+    <div class="wrap">
+      <div class="crumb"><a href="/ai-work-team/">首頁</a>　/　<a href="/ai-work-team/workflows/">工作流程</a>　/　<span>內容製作</span></div>
+      <div class="lesson-label">流程 02 / 內容製作</div>
+      <h1>內容製作</h1>
+      <p>從選題、研究到完成一篇文章。重點不是寫得快，而是選對題目、說清楚一件事，並且每個事實都查過。</p>
+      <div class="meta-row"><span>閱讀時間約 11 分鐘</span><span>免費工具優先</span><span>人工交接，不需要 API</span></div>
+    </div>
+  </div>
+  <div class="wrap lesson-layout">
+    <aside class="lesson-toc"><b>流程內容</b><a href="#c-situation">工作情境</a><a href="#c-deliverable">最後要完成什麼</a><a href="#c-flow">工作流程圖</a><a href="#c-roles">AI 員工分工</a><a href="#c-tools">工具選擇</a><a href="#c-run">實際操作</a><a href="#c-handoff">工作交接</a><a href="#c-swap">工具替換</a><a href="#c-quality">品質檢查</a></aside>
+    <article class="lesson-content">
+      <h2 id="c-situation">01｜工作情境</h2>
+      <p>適合部落格、電子報、教學文、產品說明頁，或需要一篇可以對外發布的長文時。你會有一個主題，但還沒有一個清楚的角度；你知道要寫，卻不知道讀者為什麼要讀。</p>
+      <p>內容製作最容易犯的錯，是先寫全文，再想讀者是誰。這個流程把順序反過來：先寫內容規格，再選角度、補材料、建大綱，最後才寫正文。</p>
+      <div class="note"><b>這個流程不適合</b>只是要一句社群貼文、產品短描述，或沒有讀者與目的的靈感草稿。這些任務可以更短，不需要跑完整流程。</div>
+
+      <h2 id="c-deliverable">02｜最後要完成什麼</h2>
+      <p>最後要交出的是一篇可以發布的長文，以及一組可以被檢查的素材。基本版包含：</p>
+      <ul>
+        <li>讀者、目的、發布平台與字數規格。</li>
+        <li>三個選題角度與一個明確的切入點。</li>
+        <li>文章大綱：每段只回答一個問題。</li>
+        <li>分段初稿，主要論點有來源或案例。</li>
+        <li>3 個標題版本、摘要與 CTA。</li>
+        <li>事實檢查清單與待確認事項。</li>
+      </ul>
+      <div class="callout"><b>交付規格範例</b><p style="margin:4px 0 0">讀者：接案設計師。平台：部落格。目的：讓讀者願意試一次 AI 訪談整理。字數：1,500–1,800 字。語氣：具體、直接、不要激勵式喊話。不能出現：沒有來源的數字、AI 萬能式承諾。</p></div>
+
+      <h2 id="c-flow">03｜工作流程圖</h2>
+      <div class="flow-map six">
+        <div class="flow-step"><b>01</b><span>人類定規格</span><small>讀者、目的<br>字數、語氣</small></div>
+        <div class="flow-step"><b>02</b><span>選題企劃</span><small>三個角度<br>取捨理由</small></div>
+        <div class="flow-step"><b>03</b><span>AI 研究員</span><small>來源、案例<br>反例</small></div>
+        <div class="flow-step"><b>04</b><span>AI 編輯</span><small>大綱、初稿<br>標題</small></div>
+        <div class="flow-step"><b>05</b><span>品質檢查</span><small>事實、引用<br>語氣</small></div>
+        <div class="flow-step"><b>06</b><span>人類發布</span><small>立場、風險<br>最後定稿</small></div>
+      </div>
+
+      <h2 id="c-roles">04｜AI 員工分工</h2>
+      <div class="table-wrap"><div class="table-scroll">
+        <table class="data-table"><thead><tr><th>角色</th><th>負責什麼</th><th>交付</th></tr></thead><tbody>
+          <tr><th>人類負責人</th><td>決定讀者、目的、立場與不能出現的內容</td><td>內容規格</td></tr>
+          <tr><th>選題企劃</th><td>提出 3 個角度，說明讀者為什麼會想看</td><td>選題與切入點</td></tr>
+          <tr><th>AI 研究員</th><td>找資料、案例、反例與常見誤解</td><td>來源與例子清單</td></tr>
+          <tr><th>AI 編輯</th><td>建立大綱、分段寫初稿、改寫與下標</td><td>可發布初稿</td></tr>
+          <tr><th>品質檢查</th><td>查事實、引用、語氣與格式</td><td>修正清單</td></tr>
+        </tbody></table>
+      </div><p class="table-hint">表格可左右滑動查看</p></div>
+
+      <h2 id="c-tools">05｜工具選擇</h2>
+      <p>選題、研究與寫作可以使用不同工具，也可以在同一個工具裡切換角色。重點是每個階段都有清楚的輸入與交付格式，而不是找到一個「最強寫手」。</p>
+      <div class="table-wrap"><div class="table-scroll">
+        <table class="data-table"><thead><tr><th>角色</th><th>需要的能力</th><th>可以怎麼選</th></tr></thead><tbody>
+          <tr><th>選題企劃</th><td>理解讀者、比較角度、取捨</td><td>選擅長拆解問題與給理由的免費工具。</td></tr>
+          <tr><th>AI 研究員</th><td>搜尋、來源整理、找反例</td><td>選有搜尋或引用功能的免費 AI；先測來源能不能打開。</td></tr>
+          <tr><th>AI 編輯</th><td>大綱、分段寫作、改寫、下標</td><td>選文字風格順手、能保留原意的工具。</td></tr>
+        </tbody></table>
+      </div><p class="table-hint">表格可左右滑動查看</p></div>
+      <p>ChatGPT、Gemini、Claude、Perplexity 都可以是候選，但不需要為每個角色訂閱不同平台。免費額度不足時，先換工具接手，不要降低查證標準。</p>
+
+      <h2 id="c-run">06｜實際操作</h2>
+      <ol class="steps">
+        <li><b>寫內容規格。</b>給誰看、看完要做什麼、發布在哪裡、字數、語氣、絕對不能出現什麼。</li>
+        <li><b>請企劃提三個角度。</b>同一個主題，分別用「教學」、「觀點」、「案例」切入，選一個最符合讀者需求的角度。</li>
+        <li><b>研究員補材料。</b>每個主要論點至少一個可打開的來源；同時找一個反例，避免文章只有單邊說法。</li>
+        <li><b>編輯建大綱。</b>先寫開頭的承諾、3–5 個段落主張、每段需要的證據與例子，再開始寫正文。</li>
+        <li><b>分段寫初稿。</b>一次寫一段，不要一次生成全文；每段只回答一個問題。</li>
+        <li><b>事實與品質檢查。</b>查人名、數字、引號、連結與日期；確認語氣一致、沒有前後矛盾。</li>
+      </ol>
+      <div class="callout"><b>輸入範例</b><p style="margin:4px 0 0">讀者：接案設計師。平台：部落格。目的：讓讀者試一次 AI 訪談整理。字數：1,500 字。不能出現：AI 萬能、保證省一半時間。</p></div>
+<div class="prompt" id="prompt-wf-content">
+  <div class="prompt-head">
+    <span><span class="prompt__label">流程 Prompt</span><span class="prompt__name">內容企劃與編輯</span></span>
+    <button class="copy" type="button" onclick="copyPrompt('wf-content',this)">複製 Prompt</button>
+  </div>
+  <pre id="prompt-text-wf-content">你現在是我的內容企劃與編輯。
+
+我會提供：讀者、發布平台、文章目的、字數、語氣與不能出現的內容。
+
+請先協助我完成三件事：
+1. 提出 3 個選題角度，說明讀者為什麼會想看。
+2. 選出一個最適合的角度，寫出開頭承諾與段落大綱。
+3. 依照大綱分段寫初稿，不要一次生成全文。
+
+寫作規則：
+- 每個段落只回答一個問題。
+- 主要論點至少附一個可查證的來源或案例。
+- 不明確的數字、引用或人名，標成「待確認」，不要編造。
+- 保留我的觀點，不要改成公關稿。
+- 不要使用空泛的形容詞或誇大承諾。
+
+交付格式：
+- 3 個選題角度與取捨理由
+- 文章大綱（含每段需要的證據）
+- 初稿（分段）
+- 3 個標題版本
+- 待確認與需要補圖的地方</pre>
+  <dl class="prompt-meta">
+    <div><dt>使用情境</dt><dd>已經知道讀者是誰、文章要發布在哪裡，但還沒有清楚的角度與大綱。</dd></div>
+    <div><dt>使用方式</dt><dd>先貼規格，再貼這段；它會先給角度與大綱，確認後再請它寫第一段。</dd></div>
+    <div><dt>預期結果</dt><dd>一份可編輯的大綱、分段初稿、標題版本與待確認清單。</dd></div>
+    <div><dt>修改提醒</dt><dd>如果文章太發散，要求「刪掉與讀者問題無關的段落」；如果語氣太像廣告，要求「保留原意，改成具體例子」。</dd></div>
+  </dl>
+</div>
+
+      <h2 id="c-handoff">07｜工作交接</h2>
+      <p>內容製作至少有兩次交接：研究員交給編輯，以及編輯交給品質檢查。每次都用同一份七欄位摘要，下一位才不用重讀全部資料。</p>
+      <div class="table-wrap"><div class="table-scroll"><table class="data-table"><caption>示範：研究員交給編輯的交接摘要</caption><thead><tr><th>欄位</th><th>示範內容</th></tr></thead><tbody><tr><th>工作任務</th><td>寫一篇給接案設計師看的「如何用 AI 整理客戶訪談」長文</td></tr><tr><th>已完成的工作</th><td>整理 4 個訪談案例、3 個常見錯誤、2 個可下載表格</td></tr><tr><th>結果或分析</th><td>讀者最在意「不要漏掉預算與時程」，不是「AI 多快」</td></tr><tr><th>資料來源</th><td>4 篇公開訪談、2 份工具官方說明、1 個內部示範案例</td></tr><tr><th>重要發現</th><td>與其寫工具教學，不如先給一份可照做的整理格式</td></tr><tr><th>尚未確認的資訊</th><td>大型團隊的訪談流程是否相同，樣本不足</td></tr><tr><th>需要下一位完成的事</th><td>依「問題→做法→範例→檢查」四段寫成 1,500 字初稿</td></tr></tbody></table></div><p class="table-hint">表格可左右滑動查看</p></div>
+
+      <h2 id="c-swap">08｜工具替換</h2>
+      <div class="table-wrap"><div class="table-scroll">
+        <table class="data-table"><thead><tr><th>情況</th><th>怎麼換</th></tr></thead><tbody>
+          <tr><th>研究額度不足</th><td>先完成已查證的段落；其餘標成待確認，隔天換工具補齊。</td></tr>
+          <tr><th>文章太像 AI 腔</th><td>先改指令，加入你的例句與禁用詞；不要直接換模型。</td></tr>
+          <tr><th>編輯額度不足</th><td>把文章拆成開頭、主體、結尾三次處理；每次只貼需要的段落。</td></tr>
+          <tr><th>品質不穩</th><td>把「每段只講一件事、主要論點附來源」寫進工作說明書，再用同一篇重跑。</td></tr>
+        </tbody></table>
+      </div><p class="table-hint">表格可左右滑動查看</p></div>
+
+      <h2 id="c-quality">09｜品質檢查</h2>
+      <div class="table-wrap"><div class="table-scroll">
+        <table class="data-table"><thead><tr><th>檢查項目</th><th>通過標準</th></tr></thead><tbody>
+          <tr><th>讀者承諾</th><td>開頭 100 字內說清楚讀者能得到什麼。</td></tr>
+          <tr><th>段落結構</th><td>每段只回答一個問題，段落之間有過渡。</td></tr>
+          <tr><th>事實與引用</th><td>人名、數字、引號與連結都能查到；沒有編造來源。</td></tr>
+          <tr><th>語氣</th><td>符合平台與讀者，不用空泛形容詞或過度承諾。</td></tr>
+          <tr><th>標題與 CTA</th><td>標題與內容相符；結尾有明確下一步。</td></tr>
+          <tr><th>可發布性</th><td>格式、圖片需求、摘要與 SEO 描述都準備好。</td></tr>
+        </tbody></table>
+      </div><p class="table-hint">表格可左右滑動查看</p></div>
+
+      <div class="lesson-nav"><a href="/ai-work-team/workflows/market-research/"><small>上一個流程</small><strong>市場研究</strong></a><a class="right" href="/ai-work-team/workflows/presentation/"><small>下一個流程</small><strong>簡報製作</strong></a></div>
+      <p class="back-home"><a href="/ai-work-team/workflows/">← 回到工作流程總覽</a></p>
+    </article>
+  </div>
+</section>
+
+</main><footer class="footer">
+  <div class="wrap footer-inner">
+    <span>© 打造 AI 工作團隊・引導式實戰指南</span>
+    <span><a href="/ai-work-team/">首頁</a>　·　<a href="/ai-work-team/curriculum/">開始探索</a>　·　<a href="/ai-work-team/workflows/">工作流程</a>　·　<a href="/ai-work-team/resources/">實用資源</a>　·　<a href="/ai-work-team/about/">關於專題</a></span>
+  </div>
+</footer>
+<script src="/ai-work-team/assets/app.js"></script>
+</body>
+</html>
