@@ -27,7 +27,7 @@ faq:
 
 ---
 
-## 打通了什麼
+## NotebookLM 和 Gemini 打通了什麼？
 
 Google 在 2026 年 4 月 8 日推出 Gemini Notebooks 功能。筆記本在 Gemini 和 NotebookLM 之間雙向同步——你在任何一側新增的來源，會自動出現在另一側。
 
@@ -41,7 +41,7 @@ Google 在 2026 年 4 月 8 日推出 Gemini Notebooks 功能。筆記本在 Gem
 
 ---
 
-## 兩個工具各自擅長什麼
+## 兩個工具各自擅長什麼？
 
 **NotebookLM 的強項：嚴格、有據可查**
 

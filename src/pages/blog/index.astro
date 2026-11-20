@@ -3,7 +3,7 @@ import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Pagination from '@ui/Pagination.astro';
 import PostCard from '@ui/PostCard.astro';
 import BlogSearchToggle from '@/components/blog/BlogSearchToggle.astro';
-import BlogTopicNav from '@/components/blog/BlogTopicNav.astro';
+import ThemeQuestionGrid from '@/components/blog/ThemeQuestionGrid.astro';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
 import {
@@ -39,22 +39,20 @@ const featuredReadingTime = featuredPost
       <div class="flex flex-wrap items-end justify-between gap-x-6 gap-y-3">
         <div>
           <h1 class="text-4xl font-extrabold tracking-[-0.03em] text-text md:text-6xl">
-            文章
+            新東西很多，先讀哪一篇？
           </h1>
           <p class="mt-4 max-w-2xl text-base leading-relaxed text-text-muted md:text-lg">
-            不同領域，不同問題。持續研究值得理解的新事物。
+            不同領域，不同問題。從四個研究方向選一個入口，或直接看下面的最新文章。
           </p>
         </div>
         <span class="pb-1 text-xs font-medium text-text-muted">
           {allPosts.length} 篇文章
         </span>
       </div>
-
-      <div class="mt-9">
-        <BlogTopicNav items={themeCounts} variant="tabs" />
-      </div>
     </div>
   </section>
+
+  <ThemeQuestionGrid items={themeCounts} eyebrow="四個研究方向" />
 
   <section class="bg-background pb-4 pt-8 md:pt-10">
     <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">

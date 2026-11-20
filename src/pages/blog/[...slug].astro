@@ -2,7 +2,7 @@
 import BlogLayout from '@/layouts/BlogLayout.astro';
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import { siteConfig } from '@/config';
-import { getRelated, postUrl } from '@/lib/blog';
+import { getNextPost } from '@/lib/blog';
 import { getThemeByName } from '@/lib/themes';
 
 type BlogPost = CollectionEntry<'blog'>;
@@ -25,7 +25,7 @@ const category = getThemeByName(post.data.category);
 // --- 相關閱讀：依共同標籤排序（固定結果，不亂數） ---
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 
-const relatedPosts = getRelated(post, allPosts, 3);
+const nextPost = getNextPost(post, allPosts);
 ---
 
 <BlogLayout
@@ -43,33 +43,14 @@ const relatedPosts = getRelated(post, allPosts, 3);
   faq={post.data.faq}
   headings={headings}
   category={category}
+  nextPost={nextPost ? {
+    id: nextPost.id,
+    title: nextPost.data.title,
+    description: nextPost.data.description,
+    category: nextPost.data.category,
+  } : undefined}
 >
   {/* 文章主體內容 */}
   <Content slot="content" />
 
-  {/* 系統自動抓取的相關閱讀 */}
-  {relatedPosts.length > 0 && (
-    <div class="mt-20 pt-10 border-t border-border">
-      <h3 class="text-sm font-bold text-text-muted uppercase tracking-[0.3em] mb-8 flex items-center gap-3">
-        <span class="w-1 h-4 bg-[#FF6A00]"></span>
-        相關閱讀
-      </h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {relatedPosts.map((related) => (
-          <a href={postUrl(related.id)} class="group block">
-            <div class="flex flex-col gap-3">
-              <h4 class="font-bold text-text group-hover:text-[#FF6A00] transition-colors leading-snug">
-                {related.data.title}
-              </h4>
-              <p class="text-text-muted text-xs line-clamp-2 leading-relaxed">
-                {related.data.description}
-              </p>
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  )}
-
-  <div class="py-12"></div>
 </BlogLayout>

@@ -1,0 +1,46 @@
+---
+import { siteConfig } from '@/config';
+
+const { author, authorBio, logo, social } = siteConfig;
+
+const links = [
+  { label: '關於我', href: '/about/' },
+  { label: 'Threads', href: social.x },
+  { label: 'Instagram', href: social.instagram },
+  { label: 'YouTube', href: social.youtube },
+].filter((link) => Boolean(link.href));
+---
+
+<section class="not-prose mt-8 rounded-2xl border border-border bg-surface/60 p-6 md:p-7">
+  <div class="flex flex-col gap-4 sm:flex-row sm:items-start">
+    <img
+      src={logo}
+      alt={author}
+      class="h-16 w-16 shrink-0 rounded-full border border-border object-cover"
+      loading="lazy"
+      width="64"
+      height="64"
+    />
+
+    <div class="min-w-0">
+      <p class="text-[10px] font-bold uppercase tracking-[0.22em] text-primary">關於作者</p>
+      <h2 class="mt-1 text-lg font-bold tracking-tight text-text">{author}</h2>
+      <p class="mt-2 max-w-2xl text-sm leading-relaxed text-text-muted">{authorBio}</p>
+
+      <div class="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-xs font-semibold">
+        {
+          links.map((link) => (
+            <a
+              href={link.href}
+              target={link.href.startsWith('http') ? '_blank' : undefined}
+              rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              class="text-text-muted underline decoration-border underline-offset-4 transition-colors hover:text-primary"
+            >
+              {link.label}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

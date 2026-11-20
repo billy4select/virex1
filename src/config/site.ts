@@ -19,6 +19,10 @@ export const url = 'https://blog.billy4select.com';
 /** 作者名稱 */
 export const author = '比利陳 Billy Chen';
 
+/** 文章作者盒用的短自介 */
+export const authorBio =
+  '10 年整合行銷實戰，跑過 PM、品牌、廣告投放。寫商業邏輯、AI 時代的判斷力，以及個人品牌的底層思維。';
+
 /** Logo 路徑：已換成你的個人頭像 */
 export const logo = '/avatar.webp';
 

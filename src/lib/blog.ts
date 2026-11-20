@@ -40,6 +40,19 @@ export function getFeaturedPost(sortedPosts: BlogPost[]): BlogPost | undefined {
   return getFeatured(sortedPosts)[0] ?? sortedPosts[0];
 }
 
+/** 下一篇：先找同分類中最近一篇較舊文章，沒有就退到全站較舊文章。 */
+export function getNextPost(post: BlogPost, all: BlogPost[]): BlogPost | undefined {
+  const older = sortByDate(all).filter(
+    (candidate) =>
+      candidate.id !== post.id &&
+      candidate.data.publishedDate.getTime() < post.data.publishedDate.getTime()
+  );
+
+  return (
+    older.find((candidate) => candidate.data.category === post.data.category) ?? older[0]
+  );
+}
+
 /**
  * 相關閱讀：依「共同標籤數」排序（同分類加 1 分），再依日期新到舊。
  * 結果是固定的，不會每次 build 都不一樣。

@@ -17,7 +17,7 @@ draft: false
 
 ---
 
-## 常見問題與解決方案
+## NotebookLM 常見問題怎麼解？
 
 ### 1. PDF 亂碼（最常見）
 * **原因**：PDF 內嵌字型沒有 ToUnicode 映射，AI 無法正確提取文字。
@@ -59,7 +59,7 @@ draft: false
 
 ---
 
-## 替代方案比較
+## 替代方案怎麼選？
 
 當 NotebookLM 的文件限制讓你卡關時，可以根據場景切換工具：
 
@@ -74,7 +74,7 @@ draft: false
 
 ---
 
-## NotebookLM 的正確使用姿勢
+## NotebookLM 正確的使用方式是什麼？
 
 經過測試，我建議這樣配置你的 Workflow 以發揮最大價值：
 

@@ -23,6 +23,8 @@ export interface BlogTheme {
   name: string;
   shortName: string;
   eyebrow: string;
+  /** 首頁與文章索引的四個讀者問題入口 */
+  readerQuestion: string;
   description: string;
   intro: string;
   /** 沒有內容或內容不足的主題先不進搜尋索引 */
@@ -38,6 +40,7 @@ export const blogThemes: BlogTheme[] = [
     name: 'AI 與科技',
     shortName: 'AI 與科技',
     eyebrow: '研究主題 01',
+    readerQuestion: '工具很多，哪一個真的能放進工作？',
     description: '研究 AI 工具、科技發展，以及這些新技術如何改變我們的工作方式與生活。',
     intro:
       '這裡不追工具的新聞熱度，而是研究一個更具體的問題：當 AI 真的放進工作裡，哪些環節會變快、哪些判斷不能交出去、哪些能力反而會增值。從會議紀錄、週報、專案複盤，到 NotebookLM 與 Claude 的實際使用邊界，都是這個主題正在累積的答案。',
@@ -94,6 +97,7 @@ export const blogThemes: BlogTheme[] = [
     name: '商業與行銷',
     shortName: '商業與行銷',
     eyebrow: '研究主題 02',
+    readerQuestion: '這門生意為什麼會長？利潤從哪裡來？',
     description: '從企業、品牌、產品與市場案例，理解商業如何運作，以及一門生意如何成長。',
     intro:
       '行銷不是把東西說得更好聽，而是先理解一門生意為什麼成立。這個主題從受眾、賣點、文案與提案出發，拆解那些看起來像創意問題、其實是商業判斷的問題。AI 可以幫你寫得更快，但要不要這樣寫，仍然得由人決定。',
@@ -130,6 +134,7 @@ export const blogThemes: BlogTheme[] = [
     name: '投資與市場',
     shortName: '投資與市場',
     eyebrow: '研究主題 03',
+    readerQuestion: '價格在動，背後是哪個商業變數？',
     description: '觀察企業、產業與市場變化，研究價格背後的商業邏輯。',
     intro:
       '這個主題正在研究中，目前還沒有正式發布的文章。未來會從企業、產業與市場變化出發，研究價格背後的商業邏輯，而不是追逐短線題材。如果你不想漏掉第一批內容，可以先訂閱電子報。',
@@ -166,6 +171,7 @@ export const blogThemes: BlogTheme[] = [
     name: '個人品牌與事業',
     shortName: '個人品牌與事業',
     eyebrow: '研究主題 04',
+    readerQuestion: '一個人怎麼把內容變成可持續的事業？',
     description: '探索內容創作、個人品牌、知識產品，以及一個人建立事業的各種可能。',
     intro:
       '當工具越來越便宜，真正稀缺的是判斷、觀點與持續累積的能力。這個主題談 AI 時代的職涯轉型、中階主管的角色變化、知識資產的累積，也談一個人如何用內容與知識產品建立自己的事業。',

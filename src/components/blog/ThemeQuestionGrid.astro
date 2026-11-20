@@ -1,0 +1,59 @@
+---
+import { themeUrl, type BlogTheme } from '@/lib/themes';
+
+interface Props {
+  items: { theme: BlogTheme; count: number }[];
+  id?: string;
+  eyebrow?: string;
+}
+
+const { items, id, eyebrow = '四個研究方向' } = Astro.props;
+---
+
+<section id={id} class="bg-background">
+  <div class="mx-auto max-w-5xl px-4 pb-8 pt-6 sm:px-6 md:pb-10 md:pt-12 lg:px-8">
+    {
+      eyebrow && (
+        <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
+          {eyebrow}
+        </p>
+      )
+    }
+
+    <div class="mt-5 grid border-y border-border sm:grid-cols-2 lg:grid-cols-4">
+      {
+        items.map(({ theme, count }, index) => (
+          <a
+            href={themeUrl(theme.slug)}
+            class:list={[
+              'group flex flex-col border-b border-border py-5 transition-colors hover:bg-surface/50 last:border-b-0 sm:border-b-0',
+              index % 2 === 1 && 'sm:border-l sm:pl-5',
+              index === 0 && 'sm:pl-0',
+              index === 2 && 'lg:border-l lg:pl-5',
+              index === 3 && 'lg:border-l lg:pl-5',
+              index > 0 && 'lg:pr-5',
+              index < 3 && 'lg:pr-5',
+            ]}
+          >
+            <span class="text-[10px] font-bold tabular-nums tracking-[0.22em] text-text-muted">
+              {String(index + 1).padStart(2, '0')}
+            </span>
+
+            <h3 class="mt-3 text-[15px] font-bold leading-snug tracking-tight text-text transition-colors group-hover:text-primary">
+              {theme.readerQuestion}
+            </h3>
+
+            <div class="mt-auto flex items-center gap-2 pt-5 text-[11px] font-medium text-text-muted">
+              <span>{theme.name}</span>
+              <span class="h-1 w-1 rounded-full bg-border" aria-hidden="true"></span>
+              <span>{count > 0 ? `${count} 篇` : '研究中'}</span>
+              <span class="ml-auto text-primary transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+                →
+              </span>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
