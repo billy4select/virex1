@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>實用資源：Prompt 範本、工作流程模板與 AI 名詞字典｜打造 AI 工作團隊</title>
-<meta name="description" content="六份可獨立使用的 Prompt、四份可複製或下載的工作流程模板，以及入門會遇到的 AI 名詞白話解釋。">
+<meta name="description" content="六份可獨立使用的 Prompt、四份工作流程模板，以及九個入門 AI 名詞；分成三個獨立頁面，方便查找與持續擴充。">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://blog.billy4select.com/ai-work-team/resources/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="打造 AI 工作團隊">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:title" content="實用資源：Prompt 範本、工作流程模板與 AI 名詞字典｜打造 AI 工作團隊">
-<meta property="og:description" content="六份可獨立使用的 Prompt、四份可複製或下載的工作流程模板，以及入門會遇到的 AI 名詞白話解釋。">
+<meta property="og:description" content="六份可獨立使用的 Prompt、四份工作流程模板，以及九個入門 AI 名詞；分成三個獨立頁面，方便查找與持續擴充。">
 <meta property="og:url" content="https://blog.billy4select.com/ai-work-team/resources/">
 <meta property="og:image" content="https://blog.billy4select.com/ai-work-team/assets/og-cover.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -22,9 +22,9 @@
 {
  "@context": "https://schema.org",
  "@type": "CollectionPage",
- "name": "實用資源：Prompt 範本、工作流程模板與 AI 名詞字典",
+ "name": "實用資源：Prompt 範本、工作流程模板與 AI 名詞字典｜打造 AI 工作團隊",
  "url": "https://blog.billy4select.com/ai-work-team/resources/",
- "description": "六份可獨立使用的 Prompt、四份可複製或下載的工作流程模板，以及入門會遇到的 AI 名詞白話解釋。",
+ "description": "六份可獨立使用的 Prompt、四份工作流程模板，以及九個入門 AI 名詞；分成三個獨立頁面，方便查找與持續擴充。",
  "isPartOf": {
   "@id": "https://blog.billy4select.com/ai-work-team/#website"
  }
@@ -40,353 +40,43 @@
 </header>
 <main>
 
-  <section class="lesson-hero">
-    <div class="wrap">
-      <div class="crumb"><a href="/ai-work-team/">首頁</a>　/　實用資源</div>
-      <div class="lesson-label">實用資源</div>
-      <h1>實用資源</h1>
-      <p>建立 AI 工作團隊時，可以直接使用的範本、流程與參考資料。不一定要先看完教學，也可以從這裡找到需要的東西。</p>
-    </div>
-  </section>
-
-  <div class="wrap" style="padding:40px 0 80px">
-    <div class="res-grid">
-      <div class="res-card"><span class="rc-label">01</span><h3>Prompt 範本</h3><p>六份可以獨立使用的指令，複製後就能開始。</p><a href="#lib-prompts">查看 →</a></div>
-      <div class="res-card"><span class="rc-label">02</span><h3>工作流程模板</h3><p>四份可複製、可下載的空白模板。</p><a href="#lib-templates">查看 →</a></div>
-      <div class="res-card"><span class="rc-label">03</span><h3>AI 名詞字典</h3><p>入門會遇到的九個名詞，用工作情境解釋。</p><a href="#lib-glossary">查看 →</a></div>
-    </div>
-
-    <div class="res-block" id="lib-prompts">
-      <h2>01｜Prompt 範本 <span class="res-tag">可複製</span></h2>
-      <p class="res-note">找到適合工作的指令，複製後貼到任何 AI 工具就能開始。這些範本沒有綁定 ChatGPT；你可以依工具特性調整長度與格式。</p>
-      <div class="table-scroll">
-        <table class="data-table resource-table">
-          <thead><tr><th>範本</th><th>適用情境</th><th>使用方式</th><th>操作</th></tr></thead>
-          <tbody>
-            <tr><th>工作盤點顧問</th><td data-label="適用情境">找出哪些工作可以交給 AI。</td><td data-label="使用方式">訪談式盤點，輸出 A／B／C 分類表。</td><td class="action-cell"><button class="copy" type="button" onclick="copyPrompt('p01',this)">複製</button></td></tr>
-            <tr><th>工具評估顧問</th><td data-label="適用情境">比較不同免費 AI 工具。</td><td data-label="使用方式">把工作需求翻成能力，設計同任務測試。</td><td class="action-cell"><button class="copy" type="button" onclick="copyPrompt('a1',this)">複製</button></td></tr>
-            <tr><th>AI 研究員</th><td data-label="適用情境">蒐集資料、整理來源。</td><td data-label="使用方式">輸出七欄研究資料包，適合交給分析師。</td><td class="action-cell"><button class="copy" type="button" onclick="copyPrompt('p02',this)">複製</button></td></tr>
-            <tr><th>個人工作說明書</th><td data-label="適用情境">讓 AI 了解你的背景與工作方式。</td><td data-label="使用方式">用訪談整理成 1–2 頁背景文件。</td><td class="action-cell"><button class="copy" type="button" onclick="copyPrompt('p03',this)">複製</button></td></tr>
-            <tr><th>AI 專案經理</th><td data-label="適用情境">拆解任務、安排工作分工。</td><td data-label="使用方式">輸出角色、順序、每階段交付與交接。</td><td class="action-cell"><button class="copy" type="button" onclick="copyPrompt('p04',this)">複製</button></td></tr>
-            <tr><th>AI 團隊檢查員</th><td data-label="適用情境">檢查成果與改善工作流程。</td><td data-label="使用方式">找出資料、指令與流程問題，提出修正。</td><td class="action-cell"><button class="copy" type="button" onclick="copyPrompt('p05',this)">複製</button></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="res-note">使用提醒：先讀一次指令，刪掉不適合你的角色或欄位；不要把客戶機密、名單或未公開資料直接貼進對話。</p>
-<div class="prompt-store" hidden>
-<pre id="prompt-text-p01">你現在是一位專業的工作流程顧問。
-你的任務是協助我盤點目前的工作，找出適合運用 AI 協助的工作項目。
-
-請透過訪談方式了解我的工作。
-訪談原則：
-1. 一次只問我一個問題。
-2. 不要預設我的產業、職業或工作內容。
-3. 先了解我的工作背景與職責。
-4. 逐步了解我每天、每週需要完成的任務。
-5. 了解哪些工作經常重複、耗費時間。
-6. 了解哪些工作需要專業判斷。
-7. 了解哪些工作是我不擅長但必須完成的。
-8. 不要急著推薦 AI 工具。
-
-訪談完成後，請整理成一份工作盤點表。表格欄位：
-- 工作項目
-- 工作內容
-- 執行頻率
-- 所需時間
-- 是否經常重複
-- 是否需要專業判斷
-- AI 可以協助的程度
-- 建議的處理方式
-
-最後將工作分成：
-A. 可以交給 AI。
-B. 適合人機合作。
-C. 暫時由我自己處理。
-
-請不要自行補充我沒有提供的工作資訊。</pre>
-<pre id="prompt-text-a1">你現在是我的 AI 工具評估顧問。
-
-我會提供一項工作需求，請協助我判斷需要哪些 AI 能力，以及如何比較可用工具。
-
-請依序完成：
-1. 說明這項工作需要哪些能力。
-2. 列出可以測試的 AI 工具候選，不要把品牌與職位固定綁定。
-3. 設計一個能公平比較不同工具的相同測試任務。
-4. 提供評估項目：成果完整度、正確性與來源、分析品質、操作便利性、免費方案限制。
-5. 整理成工具比較表。
-
-重要原則：
-- 優先考慮一般使用者可直接使用的免費功能。
-- 免費方案、額度與功能可能變動，沒有查證的資訊請標示「待確認」。
-- 不要宣稱任何工具永久免費或無限使用。
-- 如果無法確認最新方案，請告訴我應該到哪個官方頁面核對。
-
-最後請提供一份可持續更新的 AI 工具名冊格式。</pre>
-<pre id="prompt-text-p02">你現在是我的 AI 市場研究員。
-你的工作是協助我進行市場調查、資訊蒐集與資料整理。
-
-你的工作職責：
-1. 根據我的需求確認研究主題與範圍。
-2. 將研究主題拆解成具體問題。
-3. 蒐集相關資料，優先使用可靠且可查證的來源。
-4. 整理不同來源的資訊與觀點。
-5. 區分已確認的事實、合理推論與尚未確認的資訊。
-6. 不確定的內容要明確標示，不可以編造資料。
-
-你不負責：
-- 替我下最終決策。
-- 撰寫對外正式文件。
-- 擴大我沒有指定的研究範圍。
-
-工作流程：
-1. 先確認我想研究的問題。
-2. 如果需求不清楚，先向我提問。
-3. 確認研究範圍後再開始工作。
-4. 完成資料蒐集與整理。
-5. 檢查資料是否有來源支持。
-
-交付格式：
-- 研究主題
-- 研究範圍
-- 重要發現
-- 相關資料與來源
-- 不同觀點
-- 尚待確認的資訊
-- 給下一位工作人員的交接摘要
-
-請依照這份工作說明書執行任務，不要擅自擴大研究範圍。</pre>
-<pre id="prompt-text-p03">你現在是一位專業的個人工作訪談顧問。
-你的任務是透過訪談，幫助我整理一份個人工作說明書。
-這份文件未來會提供給不同 AI 工具，讓它們理解我的背景與工作方式。
-
-請透過一對一訪談完成。
-訪談原則：
-1. 一次只問一個問題。
-2. 不要一次提出大量問題。
-3. 不要替我推測經歷、能力或個人特質。
-4. 如果我的回答不清楚，可以繼續追問。
-5. 保留我的原始意思，不要擅自改寫成其他觀點。
-
-請逐步了解：
-- 我的工作經歷。
-- 我的專業領域。
-- 目前負責的工作。
-- 我擅長的事情。
-- 我不擅長的事情。
-- 我平常如何思考與判斷。
-- 我習慣如何處理工作。
-- 我對工作品質的要求。
-- 我不喜歡的工作方式。
-- 我希望 AI 如何協助我。
-
-訪談結束後，整理成一份個人工作說明書。
-請區分已確認的資訊與尚未確認的資訊。
-不要自行增加我沒有說過的經驗或觀點。</pre>
-<pre id="prompt-text-p04">你現在是一位專業的 AI 專案經理。
-我的工作方式是透過不同 AI 工具組成一支虛擬工作團隊。
-
-你的責任不是直接完成所有任務，而是協助我管理整個工作流程。
-
-當我提出工作需求時，請依照以下方式處理：
-1. 確認最終需要完成的成果。
-2. 將工作拆解成具體任務。
-3. 判斷需要哪些專業角色。
-4. 安排合理的工作順序。
-5. 為每位 AI 員工設計工作指令。
-6. 定義每個階段的交付成果。
-7. 設計成果檢查標準。
-8. 整理不同員工之間的交接資料。
-
-重要原則：
-- 不要假設不同 AI 工具可以直接互相溝通。
-- 預設由我複製資料進行人工交接。
-- 每個階段都要有明確的完成標準。
-- 如果工作需求不清楚，先詢問我。
-- 不要增加沒有必要的工作步驟。
-- 不要為了讓流程看起來完整而增加不必要的 AI 員工。
-
-最後請提供一份可以實際執行的工作計畫。</pre>
-<pre id="prompt-text-p05">你現在是一位 AI 工作團隊管理顧問。
-請協助我檢查目前 AI 工作團隊的執行成果。
-
-我會提供：
-- 原始工作需求。
-- 使用的 AI 員工。
-- 各階段工作成果。
-- 最後完成的內容。
-- 執行過程中遇到的問題。
-
-請協助我檢查：
-1. 每位 AI 員工是否完成原本的任務？
-2. 哪些工作成果品質良好？
-3. 哪些資料或分析需要重新確認？
-4. 哪些 Prompt 需要修改？
-5. 哪些交接流程有問題？
-6. 哪些工作不需要使用 AI？
-7. 哪些步驟可以簡化？
-8. 是否有更適合的工具或角色分工？
-
-最後請整理：
-- AI 員工表現評估。
-- 工作流程問題。
-- Prompt 修改建議。
-- 交接改善建議。
-- 可以刪除的步驟。
-- 下一次執行時的優化版本。
-
-請根據我提供的實際資料進行評估，不要自行假設執行成果。</pre>
-</div>
-    </div>
-
-    <div class="res-block" id="lib-templates">
-      <h2>02｜工作流程模板 <span class="res-tag">可下載</span></h2>
-      <p class="res-note">把自己的工作整理成可以重複使用的 SOP。先複製空白模板，填入你的工作；完整示範則留在工作流程專區。</p>
-
-      <details class="template" open>
-        <summary><b>通用工作流程模板</b><span>空白 SOP，填完即可重複使用</span></summary>
-        <div class="template-actions">
-          <button class="ws-btn primary" type="button" onclick="copyResource('res-workflow',this)">複製模板</button>
-          <button class="ws-btn" type="button" onclick="downloadResource('res-workflow','通用工作流程模板.md')">下載 .md</button>
-        </div>
-        <pre id="res-workflow"># 通用工作流程模板
-
-## 1. 基本資料
-- 工作名稱：
-- 交付對象：
-- 截止日：
-- 成功標準（一句話）：
-
-## 2. 最後要交付什麼
-- 形式與長度：
-- 必備段落或欄位：
-- 語氣：
-- 絕對不能出現：
-
-## 3. 角色與分工
-| 角色 | 負責什麼 | 不做什麼 | 交付 |
-| --- | --- | --- | --- |
-| 你（負責人） | 定義目標、範圍與最後驗收 | 不把所有工作都自己做 | 決策與定稿 |
-| AI 角色 1 |  |  |  |
-| AI 角色 2 |  |  |  |
-| AI 角色 3 |  |  |  |
-
-## 4. 工作順序
-1. 
-2. 
-3. 
-4. 
-
-## 5. 每個階段的交接
-- 這階段要交給誰：
-- 需要附上的資料：
-- 下一位要完成的事：
-- 尚未確認的資訊：
-
-## 6. 檢查點
-- 每個交接點：來源可打開／未確認有標記／格式無缺欄位
-- 定稿前：事實、立場、對外風險
-
-## 7. 常見錯誤與修正
-- 
-- 
-- </pre>
-      </details>
-
-      <details class="template">
-        <summary><b>AI 員工分工表</b><span>決定角色、職責與交付格式</span></summary>
-        <div class="template-actions">
-          <button class="ws-btn primary" type="button" onclick="copyResource('res-roles',this)">複製模板</button>
-          <button class="ws-btn" type="button" onclick="downloadResource('res-roles','AI員工分工表.md')">下載 .md</button>
-        </div>
-        <pre id="res-roles"># AI 員工分工表
-
-| 角色 | 負責什麼 | 不做什麼 | 交付格式 | 檢查點 |
-| --- | --- | --- | --- | --- |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-## 使用提醒
-- 每個角色都要能回答「沒有它會少什麼」。
-- 先建立一位，實際跑過兩次，再增加下一位。
-- 角色不綁定工具；換工具時，工作說明書與交付格式不變。</pre>
-      </details>
-
-      <details class="template">
-        <summary><b>工作交接模板</b><span>讓下一位只讀摘要就能開工</span></summary>
-        <div class="template-actions">
-          <button class="ws-btn primary" type="button" onclick="copyResource('res-handoff',this)">複製模板</button>
-          <button class="ws-btn" type="button" onclick="downloadResource('res-handoff','工作交接模板.md')">下載 .md</button>
-        </div>
-        <pre id="res-handoff"># 工作交接模板
-
-## 七欄位交接摘要
-1. 工作任務：
-2. 已完成的工作：
-3. 結果或分析：
-4. 資料來源：
-5. 重要發現：
-6. 尚未確認的資訊：
-7. 需要下一位完成的事：
-
-## 交接前檢查
-- [ ] 來源可以打開，標題與日期對得上
-- [ ] 事實、推論與假設分開標記
-- [ ] 格式沒有缺欄位
-- [ ] 下一位只讀摘要就能開工</pre>
-      </details>
-
-      <details class="template">
-        <summary><b>成果檢查表</b><span>交付前逐項確認，不靠感覺</span></summary>
-        <div class="template-actions">
-          <button class="ws-btn primary" type="button" onclick="copyResource('res-check',this)">複製模板</button>
-          <button class="ws-btn" type="button" onclick="downloadResource('res-check','成果檢查表.md')">下載 .md</button>
-        </div>
-        <pre id="res-check"># 成果檢查表
-
-## 交付前檢查
-- [ ] 是否回答原本的需求與決策問題？
-- [ ] 主要結論是否有可打開的來源？
-- [ ] 事實、推論與假設是否分開？
-- [ ] 格式、長度與必備欄位是否符合規格？
-- [ ] 語氣與讀者是否符合？
-- [ ] 是否有明確的下一步或請求？
-
-## 退回時記錄
-- 問題位置：
-- 問題類型：資料／指令／流程
-- 修正方式：
-- 需要重跑哪一階段：</pre>
-      </details>
-
-      <div class="callout" style="margin-top:24px">
-        <b>想看完整示範？</b>
-        <p style="margin:4px 0 0">工作流程專區有三個可直接照跑的版本：<a class="text-link" href="/ai-work-team/workflows/market-research/">市場研究</a>、<a class="text-link" href="/ai-work-team/workflows/content-creation/">內容製作</a>、<a class="text-link" href="/ai-work-team/workflows/presentation/">簡報製作</a>。完整 Prompt、交接與品質檢查都放在那裡，不在這頁重複。</p>
-      </div>
-    </div>
-
-    <div class="res-block" id="lib-glossary">
-      <h2>03｜AI 名詞字典 <span class="res-tag">快速查詢</span></h2>
-      <p class="res-note">只收錄建立 AI 工作團隊時真正會用到的名詞；用工作情境解釋，不追求技術定義。</p>
-      <div class="table-scroll">
-        <table class="data-table resource-table">
-          <thead><tr><th>名詞</th><th>白話解釋</th><th>什麼時候會遇到</th></tr></thead>
-          <tbody>
-            <tr><th>Prompt<br><span class="term-en">提示詞</span></th><td data-label="白話解釋">你對 AI 說的任務指令，通常包含角色、任務、限制與交付格式。</td><td data-label="什麼時候會遇到">每次下指令都會用到；寫得越具體，成果越容易檢查。</td></tr>
-            <tr><th>System Prompt<br><span class="term-en">系統提示</span></th><td data-label="白話解釋">在對話開始前設定角色與規則的指令，通常優先於一般對話。</td><td data-label="什麼時候會遇到">建立 AI 員工、固定工作說明與回覆格式時。</td></tr>
-            <tr><th>Context Window<br><span class="term-en">上下文視窗</span></th><td data-label="白話解釋">AI 一次能處理的資訊容量。貼入太多文件或對話太長，前面的內容可能被忽略。</td><td data-label="什麼時候會遇到">讓 AI 閱讀長報告，或連續處理大量資料時。</td></tr>
-            <tr><th>Token<br><span class="term-en">詞元</span></th><td data-label="白話解釋">模型計算文字長度的單位，也常用來計算使用額度。</td><td data-label="什麼時候會遇到">看到上下文上限、每月額度或「已超過長度」時。</td></tr>
-            <tr><th>AI 幻覺<br><span class="term-en">Hallucination</span></th><td data-label="白話解釋">AI 生成看起來合理但不正確的內容，或編造不存在的來源。</td><td data-label="什麼時候會遇到">引用數字、來源、法規或人名時，一定要查證。</td></tr>
-            <tr><th>AI 模型<br><span class="term-en">Model</span></th><td data-label="白話解釋">產生回答的底層引擎；不同模型在搜尋、推理與寫作上的表現不同。</td><td data-label="什麼時候會遇到">選工具或比較成果品質時。</td></tr>
-            <tr><th>AI 工具<br><span class="term-en">Tool</span></th><td data-label="白話解釋">你實際打開的產品或平台，例如聊天介面、搜尋工具或寫作工具。</td><td data-label="什麼時候會遇到">同一個模型可能被不同工具包裝，選的是能力，不只是品牌。</td></tr>
-            <tr><th>AI 員工<br><span class="term-en">AI Employee</span></th><td data-label="白話解釋">有固定職責、工作流程與交付格式的 AI 角色，不是單次問答。</td><td data-label="什麼時候會遇到">建立研究員、分析師、編輯或檢查員時。</td></tr>
-            <tr><th>Agent<br><span class="term-en">代理</span></th><td data-label="白話解釋">會自行規劃步驟、呼叫工具的 AI；需要更清楚的邊界與檢查。</td><td data-label="什麼時候會遇到">想讓 AI 自動完成多步驟工作時；入門不必先用。</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="res-note">進階名詞如 RAG、MCP、API、Fine-tuning、Temperature，等實際遇到相關需求時再查即可，不必一開始就全部讀完。</p>
-    </div>
+<section class="lesson-hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/ai-work-team/">首頁</a>　/　實用資源</div>
+    <div class="lesson-label">實用資源</div>
+    <h1>實用資源</h1>
+    <p>建立 AI 工作團隊時，可以直接使用的範本、流程與參考資料。為了方便查找與持續擴充，分成三個獨立頁面；不一定要先照順序讀完六個主題。</p>
+    <div class="resource-subnav"><a href="/ai-work-team/resources/" class="active">總覽</a><a href="/ai-work-team/resources/prompts/">Prompt 範本</a><a href="/ai-work-team/resources/templates/">工作流程模板</a><a href="/ai-work-team/resources/glossary/">AI 名詞字典</a></div>
   </div>
+</section>
+
+<div class="wrap" style="padding:40px 0 80px">
+  <div class="section-head"><div><h2>三個入口</h2></div></div>
+  <div class="resource-hub">
+    <a class="resource-hub-card" href="/ai-work-team/resources/prompts/">
+      <span class="rc-label">01</span>
+      <h3>Prompt 範本</h3>
+      <p>六份可以獨立使用的指令，從工作盤點、工具評估、研究，到團隊成果檢查。</p>
+      <ul><li>工作盤點與工具評估</li><li>研究、寫作與專案管理</li><li>團隊成果檢查</li></ul>
+      <span class="flow-link">打開 Prompt 範本 →</span>
+    </a>
+    <a class="resource-hub-card" href="/ai-work-team/resources/templates/">
+      <span class="rc-label">02</span>
+      <h3>工作流程模板</h3>
+      <p>四份可複製、可下載的空白模板，把自己的工作整理成可以重複使用的 SOP。</p>
+      <ul><li>通用工作流程模板</li><li>AI 員工分工表</li><li>工作交接與成果檢查</li></ul>
+      <span class="flow-link">打開工作流程模板 →</span>
+    </a>
+    <a class="resource-hub-card" href="/ai-work-team/resources/glossary/">
+      <span class="rc-label">03</span>
+      <h3>AI 名詞字典</h3>
+      <p>九個入門會遇到的 AI 名詞，用實際工作情境解釋，不用先讀技術文件。</p>
+      <ul><li>Prompt 與 Context Window</li><li>AI 幻覺、模型與工具</li><li>AI 員工與 Agent</li></ul>
+      <span class="flow-link">打開 AI 名詞字典 →</span>
+    </a>
+  </div>
+  <p class="res-note" style="margin-top:22px">三個頁面各自獨立，之後新增 Prompt、模板或名詞時，只要放進對應頁面，不必重新設計整頁。完整流程示範仍留在<a class="text-link" href="/ai-work-team/workflows/">工作流程專區</a>。</p>
+</div>
 
 </main>
 <footer class="footer">

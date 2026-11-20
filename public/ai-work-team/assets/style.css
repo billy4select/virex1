@@ -390,3 +390,47 @@
 .about-points b{display:block;font-size:15px;margin-bottom:3px}
 .about-points p{margin:0;font-size:14px;line-height:1.7;color:var(--muted)}
 @media(max-width:600px){.about-points li{grid-template-columns:32px 1fr;gap:6px;padding:14px 0}}
+
+/* resource hub and child pages */
+.resource-subnav{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.resource-subnav a{border:1px solid var(--line);background:transparent;padding:6px 10px;font-size:12px;color:#5e5e57}
+.resource-subnav a:hover{border-color:var(--orange);color:var(--orange-dark)}
+.resource-subnav a.active{background:var(--ink);border-color:var(--ink);color:#fff;font-weight:700}
+.resource-hub{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.resource-hub-card{border:1px solid var(--line);background:var(--white);padding:24px;display:flex;flex-direction:column;min-height:300px;transition:.2s}
+.resource-hub-card:hover{transform:translateY(-3px);border-color:#d59a76}
+.resource-hub-card .rc-label{font-size:11px;letter-spacing:.1em;color:var(--orange-dark);font-weight:800}
+.resource-hub-card h3{font-size:22px;margin:12px 0 8px;line-height:1.3}
+.resource-hub-card p{font-size:14px;color:var(--muted);margin:0 0 16px}
+.resource-hub-card ul{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.resource-hub-card li{font-size:12.5px;color:#55564f;padding:7px 0;border-bottom:1px solid var(--line)}
+.resource-hub-card li::before{content:"—";color:var(--orange);margin-right:7px}
+.prompt-list{display:flex;flex-direction:column;gap:10px}
+.prompt-entry{border:1px solid var(--line);background:var(--white)}
+.prompt-entry summary{cursor:pointer;padding:16px 48px 16px 18px;display:flex;align-items:center;position:relative}
+.prompt-entry summary::-webkit-details-marker{display:none}
+.prompt-entry[open] summary{border-bottom:1px solid var(--line)}
+.prompt-entry-title{display:flex;align-items:flex-start;gap:15px}
+.prompt-entry-title>span{font-size:12px;letter-spacing:.08em;color:var(--orange-dark);font-weight:800;padding-top:2px}
+.prompt-entry-title h3{font-size:17px;margin:0 0 3px;line-height:1.35}
+.prompt-entry-title p{font-size:12.5px;color:var(--muted);margin:0}
+.prompt-entry-body{padding:0 18px 18px}
+.prompt-entry-meta{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:15px 0 2px}
+.prompt-entry-meta b{display:block;font-size:10px;letter-spacing:.08em;color:var(--orange-dark);margin-bottom:3px}
+.prompt-entry-meta p{margin:0;font-size:13px;line-height:1.7;color:var(--muted)}
+.prompt-entry-actions{display:flex;align-items:center;gap:12px;margin:12px 0 10px}
+.prompt-entry-actions span{font-size:11px;color:var(--muted)}
+.prompt-entry pre{border:1px solid var(--line);background:var(--paper);padding:18px;margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.8 ui-monospace,SFMono-Regular,Consolas,monospace;color:#41423d}
+.template summary,.prompt-entry summary{position:relative;padding-right:48px}
+.template summary::after,.prompt-entry summary::after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:20px;font-weight:400;color:var(--orange-dark)}
+.template[open] summary::after,.prompt-entry[open] summary::after{content:"−"}
+.template summary::-webkit-details-marker{display:none}
+.template-order{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:0 0 26px}
+.template-order div{background:var(--paper);padding:14px 16px}
+.template-order b{display:block;font-size:12px;color:var(--ink);margin-bottom:4px}
+.template-order span{display:block;font-size:12px;line-height:1.6;color:var(--muted)}
+.glossary-group{margin-top:36px}
+.glossary-group h2{font-size:24px;line-height:1.3;margin:0 0 12px;letter-spacing:-.02em}
+@media(max-width:900px){.resource-hub{grid-template-columns:1fr}.resource-hub-card{min-height:0}.template-order{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.prompt-entry-meta{grid-template-columns:1fr;gap:10px}.prompt-entry summary{padding:14px 42px 14px 14px}.prompt-entry-body{padding:0 14px 14px}.template-order{grid-template-columns:1fr}.resource-subnav{gap:6px}.resource-subnav a{font-size:11px;padding:5px 8px}}
+.resource-list-heading{font-size:24px;line-height:1.3;letter-spacing:-.02em;margin:0 0 8px}
