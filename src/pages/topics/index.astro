@@ -1,5 +1,6 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import TopicGrid from '@/components/home/TopicGrid.astro';
 import { homeTopics } from '@/lib/homepage';
 import { siteConfig } from '@/config';
@@ -9,16 +10,8 @@ import { siteConfig } from '@/config';
   title={`主題 - ${siteConfig.name}`}
   description="比利陳的三個研究主題：能力與學習、商業與思考、個人發展與事業。"
 >
-  <section class="bg-background pt-10 md:pt-14">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <nav aria-label="麵包屑" class="flex flex-wrap items-center gap-1.5 text-xs font-medium text-text-muted">
-        <a href="/" class="transition-colors hover:text-primary">首頁</a>
-        <span aria-hidden="true">›</span>
-        <span class="text-text">主題</span>
-      </nav>
-      <h1 class="sr-only">主題</h1>
-    </div>
-  </section>
+  <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '主題' }]} />
+  <h1 class="sr-only">主題</h1>
 
   <TopicGrid topics={homeTopics} />
 </MarketingLayout>

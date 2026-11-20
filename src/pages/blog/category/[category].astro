@@ -1,5 +1,6 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import BlogTopicNav from '@/components/blog/BlogTopicNav.astro';
 import ThemePostRow from '@/components/blog/ThemePostRow.astro';
 import { getCollection } from 'astro:content';
@@ -77,16 +78,16 @@ const schemas = collectionSchema ? [collectionSchema] : [];
   noindex={!theme.indexable}
   structuredData={schemas}
 >
-  <section class="border-b border-border bg-background pb-8 pt-10 md:pb-10 md:pt-14">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-      <nav aria-label="麵包屑" class="mb-5 flex flex-wrap items-center gap-1.5 text-xs font-medium text-text-muted">
-        <a href="/" class="transition-colors hover:text-primary">首頁</a>
-        <span aria-hidden="true">›</span>
-        <a href="/blog/" class="transition-colors hover:text-primary">文章</a>
-        <span aria-hidden="true">›</span>
-        <span class="text-text">{theme.name}</span>
-      </nav>
+  <Breadcrumbs
+    items={[
+      { label: '首頁', href: '/' },
+      { label: '文章', href: '/blog/' },
+      { label: theme.name },
+    ]}
+  />
 
+  <section class="border-b border-border bg-background pb-8 pt-10 md:pb-10 md:pt-14">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-primary">
         {theme.eyebrow}
       </p>
@@ -108,7 +109,7 @@ const schemas = collectionSchema ? [collectionSchema] : [];
   </section>
 
   <section class="bg-background pb-20 pt-6">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <BlogTopicNav items={themeCounts} current={theme.slug} variant="pills" />
 
       <div class="mt-12 grid gap-10 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-start">

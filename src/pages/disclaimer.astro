@@ -1,5 +1,6 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import { siteConfig } from '@/config';
 
 const { legal, contact } = siteConfig;
@@ -29,8 +30,11 @@ const structuredData = [
   description="本站內容為個人研究與經驗分享，不構成投資、法律、醫療、稅務或商業專業建議，並說明 AI 工具實測、第三方連結、合作揭露與著作權範圍。"
   structuredData={structuredData}
 >
+  <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '免責聲明' }]} />
+
   <section class="py-section">
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
       <header class="border-b border-border pb-8">
         <p class="text-sm font-semibold tracking-[0.18em] text-primary">內容與責任</p>
         <h1 class="mt-3 text-4xl font-bold tracking-tight text-text sm:text-5xl">免責聲明</h1>
@@ -155,6 +159,7 @@ const structuredData = [
           <a href={`mailto:${contactEmail}`}>{contactEmail}</a>。
           我通常會在 24 小時內回覆；若涉及授權、法律或合作審查，可能需要較長時間。
         </p>
+      </div>
       </div>
     </div>
   </section>

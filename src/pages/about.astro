@@ -1,6 +1,7 @@
 
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import PageHeader from '@sections/content/PageHeader.astro';
 import ValuesSection from '@sections/team/ValuesSection.astro';
 import CTA from '@sections/marketing/CTA.astro';
@@ -35,7 +36,9 @@ const books = [
   title={`關於我 - ${siteConfig.name}`}
   description="比利陳，擁有十多年行銷經驗，持續研究 AI、內容、個人品牌與商業世界的變化。"
 >
-  <div class="max-w-6xl mx-auto px-6">
+  <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '關於我' }]} />
+
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
     <!-- 個人介紹 -->
     <section class="py-16 md:py-20">

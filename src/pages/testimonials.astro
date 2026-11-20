@@ -1,5 +1,6 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import PageHeader from '@sections/content/PageHeader.astro';
 import TestimonialsGrid from '@sections/social-proof/TestimonialsGrid.astro';
 import CTA from '@sections/marketing/CTA.astro';
@@ -25,7 +26,10 @@ const otherTestimonials = sortedTestimonials.filter((t: TestimonialEntry) => !t.
   title={`推薦與回饋 - ${siteConfig.name}`}
   description={`看看讀者與學員對 ${siteConfig.name} 的真實評價與心得。`}
 >
+  <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '讀者回饋' }]} />
+
   <PageHeader
+    align="left"
     title="讀者的真實回饋"
     subtitle={`感謝每一位讀者的支持！這裡紀錄了大家對於 ${siteConfig.name} 的看法、學習心得與實作建議。`}
   />

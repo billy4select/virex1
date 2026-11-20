@@ -1,5 +1,6 @@
 ---
 import MarketingLayout from './MarketingLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import TableOfContents from '@/components/blog/TableOfContents.astro';
 import ArticleFAQ from '@/components/blog/ArticleFAQ.astro';
 import ArticleNext from '@/components/blog/ArticleNext.astro';
@@ -71,9 +72,7 @@ const tocCount =
   (faq.length > 0 ? 1 : 0);
 const hasToc = tocCount >= 3;
 
-const articleGridClass = hasToc
-  ? 'lg:grid lg:grid-cols-[220px_minmax(0,760px)] lg:justify-center lg:gap-12'
-  : 'lg:grid lg:grid-cols-[minmax(0,760px)] lg:justify-center';
+const articleGridClass = 'lg:grid lg:grid-cols-[220px_minmax(0,760px)] lg:gap-12';
 ---
 
 <MarketingLayout
@@ -90,29 +89,18 @@ const articleGridClass = hasToc
   section={category?.name}
   sectionUrl={category ? themeUrl(category.slug) : undefined}
 >
+  <Breadcrumbs
+    items={[
+      { label: '首頁', href: '/' },
+      { label: '文章', href: '/blog/' },
+      ...(category ? [{ label: category.name, href: themeUrl(category.slug) }] : []),
+    ]}
+  />
+
   {/* 文章標題區 */}
   <section class="bg-background border-b border-border pt-10 pb-8 md:pt-14 md:pb-10" data-pagefind-ignore>
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class={articleGridClass}>
-        {hasToc && <div class="hidden lg:block" aria-hidden="true"></div>}
-
-        <header class="min-w-0 max-w-3xl">
-          <nav aria-label="麵包屑" class="mb-5 flex flex-wrap items-center gap-1.5 text-xs font-medium text-text-muted">
-            <a href="/" class="transition-colors hover:text-primary">首頁</a>
-            <span aria-hidden="true">›</span>
-            <a href="/blog/" class="transition-colors hover:text-primary">文章</a>
-            {
-              category && (
-                <>
-                  <span aria-hidden="true">›</span>
-                  <a href={themeUrl(category.slug)} class="transition-colors hover:text-primary">
-                    {category.name}
-                  </a>
-                </>
-              )
-            }
-          </nav>
-
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <header class="min-w-0 max-w-3xl">
           <h1 class="mb-4 text-2xl font-extrabold leading-tight tracking-tight text-text md:text-4xl">
             {displayTitle}
           </h1>
@@ -151,16 +139,21 @@ const articleGridClass = hasToc
               </div>
             )
           }
-        </header>
-      </div>
+      </header>
     </div>
   </section>
 
   {/* 文章內容 */}
   <article class="bg-background pb-12 pt-8 md:pb-16 md:pt-12" data-pagefind-body>
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class={articleGridClass}>
-        {hasToc && <TableOfContents headings={headings} faq={faq} readingTime={readingTime} />}
+        {
+          hasToc ? (
+            <TableOfContents headings={headings} faq={faq} readingTime={readingTime} />
+          ) : (
+            <div class="hidden lg:block" aria-hidden="true" />
+          )
+        }
 
         <div class="min-w-0 max-w-3xl">
           <span data-pagefind-meta="title" class="sr-only">{displayTitle}</span>

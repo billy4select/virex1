@@ -1,5 +1,6 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import Pagination from '@ui/Pagination.astro';
 import PostCard from '@ui/PostCard.astro';
 import { getCollection } from 'astro:content';
@@ -29,16 +30,16 @@ const currentPage = page.currentPage;
   title={`文章 - 第 ${currentPage} 頁`}
   description={`比利陳的文章第 ${currentPage} 頁。AI、商業、行銷、投資與個人事業的研究與觀察。`}
 >
-  <section class="bg-background pt-12 pb-8 md:pt-16">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-      <nav aria-label="麵包屑" class="mb-6 flex flex-wrap items-center gap-1.5 text-xs font-medium text-text-muted">
-        <a href="/" class="transition-colors hover:text-primary">首頁</a>
-        <span aria-hidden="true">›</span>
-        <a href="/blog/" class="transition-colors hover:text-primary">文章</a>
-        <span aria-hidden="true">›</span>
-        <span class="text-text">第 {currentPage} 頁</span>
-      </nav>
+  <Breadcrumbs
+    items={[
+      { label: '首頁', href: '/' },
+      { label: '文章', href: '/blog/' },
+      { label: `第 ${currentPage} 頁` },
+    ]}
+  />
 
+  <section class="bg-background pt-12 pb-8 md:pt-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex flex-wrap items-end justify-between gap-x-6 gap-y-3">
         <div>
           <h1 class="text-4xl font-extrabold tracking-[-0.03em] text-text md:text-5xl">
@@ -54,7 +55,7 @@ const currentPage = page.currentPage;
   </section>
 
   <section class="bg-background pb-20">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="mb-8 flex items-center justify-between border-b border-border pb-4">
         <h2 class="text-xl font-bold tracking-tight text-text md:text-2xl">最新文章</h2>
         <span class="text-xs text-text-muted">第 {currentPage} 頁</span>

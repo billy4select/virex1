@@ -1,5 +1,6 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import PageHeader from '@sections/content/PageHeader.astro';
 import FAQSection from '@sections/content/FAQSection.astro';
 import CTA from '@sections/marketing/CTA.astro';
@@ -63,6 +64,8 @@ const faqCategories = [
   title={`常見問題 - ${siteConfig.name}`}
   description={`關於 ${siteConfig.name} 的常見問題解答。了解本站的內容、授權規範與合作方式。`}
 >
+  <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '常見問題' }]} />
+
   <PageHeader
     title="常見問題"
     subtitle={`關於 ${siteConfig.name}，您想知道的都在這裡。找不到答案嗎？`}

@@ -1,5 +1,6 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import { siteConfig } from '@/config';
 
 const { legal, contact } = siteConfig;
@@ -29,8 +30,11 @@ const structuredData = [
   description="說明本站蒐集哪些個人資料、為什麼蒐集、如何處理與保存，以及你可以如何查詢、更正、刪除或退訂。"
   structuredData={structuredData}
 >
+  <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '隱私權政策' }]} />
+
   <section class="py-section">
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
       <header class="border-b border-border pb-8">
         <p class="text-sm font-semibold tracking-[0.18em] text-primary">法律與隱私</p>
         <h1 class="mt-3 text-4xl font-bold tracking-tight text-text sm:text-5xl">隱私權政策</h1>
@@ -224,6 +228,7 @@ const structuredData = [
           <a href={`mailto:${privacyEmail}`}>{privacyEmail}</a>。
           我通常在看到訊息後 24 小時內回覆，若涉及資料查核，可能需要較長時間。
         </p>
+      </div>
       </div>
     </div>
   </section>

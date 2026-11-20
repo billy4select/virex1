@@ -1,5 +1,6 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import PageHeader from '@sections/content/PageHeader.astro';
 import ContactForm from '@forms/ContactForm.astro';
 import { Icon } from 'astro-icon/components';
@@ -13,6 +14,8 @@ const office = contact.address;
   title={`聯絡我們 - ${siteConfig.name}`}
   description={`有任何問題或想進一步交流嗎？歡迎透過表單或社群媒體與 ${siteConfig.name} 聯繫。`}
 >
+  <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '聯絡我們' }]} />
+
   <PageHeader
     title="與我聯繫"
     subtitle={`不論是有關於 ${siteConfig.name} 的疑問，或是想洽談合作與建議，都歡迎隨時留言，我會盡快回覆你。`}
