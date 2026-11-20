@@ -52,14 +52,6 @@ const { topics } = Astro.props;
               {topic.description}
             </p>
 
-            <ul class="mt-5 space-y-2 border-t border-border pt-4">
-              {topic.points.map((point) => (
-                <li class="flex items-start gap-2 text-xs leading-relaxed text-text-muted">
-                  <span class="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary" aria-hidden="true" />
-                  <span>{point}</span>
-                </li>
-              ))}
-            </ul>
 
             <span class="mt-6 inline-flex w-fit items-center gap-1 rounded-full border border-primary/30 px-3.5 py-1.5 text-xs font-semibold text-primary transition-colors group-hover:border-primary group-hover:bg-primary group-hover:text-white">
               進入主題
