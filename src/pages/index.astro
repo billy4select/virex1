@@ -12,12 +12,11 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Hero from '@sections/marketing/Hero.astro';
+import BentoGrid from '@sections/marketing/BentoGrid.astro';
 import PricingTable from '@sections/pricing/PricingTable.astro';
 import TestimonialsSection from '@sections/social-proof/TestimonialsSection.astro';
 import CTA from '@sections/marketing/CTA.astro';
 import Newsletter from '@sections/marketing/Newsletter.astro';
-import ThemeQuestionGrid from '@/components/blog/ThemeQuestionGrid.astro';
-import { getThemeCounts } from '@/lib/themes';
 import { siteConfig } from '@/config';
 
 type TestimonialEntry = CollectionEntry<'testimonials'>;
@@ -35,9 +34,41 @@ const sortedTestimonials = [...testimonials].sort((a, b) => {
   return (a.data.order || 99) - (b.data.order || 99);
 });
 
-// 首頁的四個研究方向入口
-const blogPosts = await getCollection('blog', ({ data }) => !data.draft);
-const themeCounts = getThemeCounts(blogPosts);
+/** 個人媒體內容入口 */
+const bentoItems = [
+  {
+    title: 'AI 與科技',
+    description: '研究 AI 工具、科技發展，以及這些新技術如何改變我們的工作方式與生活。',
+    icon: 'lucide:cpu',
+    size: 'medium' as const,
+    accent: 'primary' as const,
+    href: '/blog/',
+  },
+  {
+    title: '商業與行銷',
+    description: '從企業、品牌、產品與市場案例，理解商業如何運作，以及一門生意如何成長。',
+    icon: 'lucide:briefcase-business',
+    size: 'medium' as const,
+    accent: 'primary' as const,
+    href: '/blog/',
+  },
+  {
+    title: '投資與市場',
+    description: '觀察企業、產業與市場變化，研究價格背後的商業邏輯。',
+    icon: 'lucide:chart-no-axes-combined',
+    size: 'medium' as const,
+    accent: 'primary' as const,
+    href: '/blog/',
+  },
+  {
+    title: '個人品牌與事業',
+    description: '探索內容創作、個人品牌、知識產品，以及一個人建立事業的各種可能。',
+    icon: 'lucide:lightbulb',
+    size: 'medium' as const,
+    accent: 'primary' as const,
+    href: '/blog/',
+  },
+];
 
 /** 個人出版作品 */
 const ebookCollections = [
@@ -98,20 +129,23 @@ const ebookCollections = [
 >
 
   <Hero
-    title="新東西一直出現，但你該先理解哪一個？"
-    subtitle="AI、商業、投資、個人事業，四個領域，不同問題。我不追新聞熱度，拆解值得理解的新事物背後，真正影響工作與生活的判斷。"
-    minHeight="compact"
+    title="探索商業、科技與正在發生的變化。"
+    subtitle="做了十幾年行銷，出版過幾本書。平常喜歡研究 AI、商業、投資、行銷，以及各種正在改變我們工作與生活的新事物。透過文章、影片與電子報，分享我的研究、實驗與觀察。"
     primaryCTA={{
-      label: '從四個問題開始',
-      href: '#topics'
+      label: '看看我的內容',
+      href: '/blog/'
     }}
     secondaryCTA={{
-      label: '直接看文章',
-      href: '/blog/'
+      label: '訂閱電子報',
+      href: 'https://billy4select.substack.com/'
     }}
   />
 
-  <ThemeQuestionGrid id="topics" items={themeCounts} eyebrow="四個研究方向" />
+  <BentoGrid
+    title="我關注的主題"
+    subtitle="不同領域，不同問題。持續研究值得理解的新事物。"
+    items={bentoItems}
+  />
 
   <PricingTable
     title="我的出版作品"

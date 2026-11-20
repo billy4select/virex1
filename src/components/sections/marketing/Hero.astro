@@ -82,7 +82,7 @@ interface Props {
   /** Text color scheme for image/video backgrounds */
   textColor?: 'auto' | 'light' | 'dark';
   /** Minimum height for the hero section */
-  minHeight?: 'default' | 'screen' | 'large' | 'compact';
+  minHeight?: 'default' | 'screen' | 'large';
   /** Content alignment */
   align?: 'center' | 'left';
 }
@@ -133,7 +133,6 @@ const textClasses = needsLightText
 // Min height classes
 const minHeightClass = {
   default: 'py-section',
-  compact: 'py-12 md:py-16',
   large: 'py-24 md:py-32',
   screen: 'min-h-[80vh] flex items-center',
 }[minHeight];
