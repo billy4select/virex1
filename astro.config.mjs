@@ -45,6 +45,8 @@ export default defineConfig({
         if (page.includes('/blog/category/')) return false;
         // 舊分頁網址改為導向 /blog/?page=N，不再放進 sitemap。
         if (page.includes('/blog/page/')) return false;
+        // 標籤頁僅為文章列表，noindex，不進 sitemap。
+        if (page.includes('/blog/tag/')) return false;
         if (!features.blog && page.includes('/blog')) return false;
         if (!features.docs && page.includes('/docs')) return false;
         if (!features.changelog && page.includes('/changelog')) return false;
