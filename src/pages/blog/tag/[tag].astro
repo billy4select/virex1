@@ -29,6 +29,7 @@ const { posts, tags } = Astro.props;
 <MarketingLayout
   title={`${tag} - ${siteConfig.name}`}
   description={`瀏覽所有關於 ${tag} 的文章。`}
+  noindex={true}
 >
   <Breadcrumbs
     items={[
