@@ -58,9 +58,18 @@ export const homeTopics: HomeTopic[] = [
     name: '個人發展與事業',
     question: '我如何把能力與經驗，變成下一階段的機會？',
     description:
-      'AI 時代的職涯策略、可攜帶資產與知識產品，把專業變成下一階段的事業。',
+      '從職涯策略、個人品牌到知識產品，探索如何累積專業並發展自己的事業。',
     href: '/topics/personal-growth/',
     category: 'personal-growth',
+  },
+  {
+    slug: 'marketing-brand',
+    name: '行銷與品牌',
+    question: '如何理解受眾、建立品牌，讓產品與想法被看見？',
+    description:
+      '從受眾理解、內容策略到品牌溝通與 AI 行銷，整理讓價值被市場理解的方法。',
+    href: '/topics/marketing-brand/',
+    category: 'marketing-brand',
   },
 ];
 

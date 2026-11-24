@@ -1,7 +1,7 @@
 /**
  * 主題頁編輯精選
  *
- * 三個主題頁不是第二個 /blog/。
+ * 四個主題頁不是第二個 /blog/。
  * 這裡只放經過挑選的起點與閱讀方向；完整文章留在 /blog/?theme=slug。
  *
  * 新增文章時，先判斷它值不值得進主題頁，再決定放進哪一個方向。
@@ -51,7 +51,6 @@ export const topicCurations: TopicCuration[] = [
         articleIds: [
           'ai-tool-combination',
           'ai-tool-evaluation',
-          'three-ai-brains-division',
           'ai-output-quality-check',
         ],
       },
@@ -97,8 +96,7 @@ export const topicCurations: TopicCuration[] = [
           '把模糊的市場直覺變成可驗證的需求、可描述的客群，以及能累積信任的成長路徑。',
         articleIds: [
           'validate-market-demand-five-methods',
-          'audience-is-not-a-label',
-          'content-channel-trust-growth',
+          'consumer-demand-to-business-opportunity',
         ],
       },
       {
@@ -115,7 +113,7 @@ export const topicCurations: TopicCuration[] = [
   {
     slug: 'personal-growth',
     intro:
-      '個人的職涯與事業，最後要回答的不是「我有什麼頭銜」，而是「我能為誰解決什麼問題，以及這樣的能力能不能帶走」。',
+      '從職涯選擇、專業累積到個人事業，整理如何把工作經驗轉成可持續發展的能力與機會。',
     start: [
       { id: 'turn-expertise-into-market-value', role: '核心指南' },
       { id: 'personal-brand-trust-not-reach', role: '實作入口' },
@@ -129,6 +127,7 @@ export const topicCurations: TopicCuration[] = [
         articleIds: [
           'career-strategy-after-35',
           'mid-career-portable-assets',
+          'learn-ai-at-35-too-late-roi-metrics',
         ],
       },
       {
@@ -143,6 +142,38 @@ export const topicCurations: TopicCuration[] = [
       href: '/threads/',
       note: '想用內容累積信任與機會，從這個系列開始。',
     },
+  },
+  {
+    slug: 'marketing-brand',
+    intro:
+      '行銷從理解受眾開始。這個主題整理如何辨識真實需求、提煉產品價值、規劃內容與建立品牌信任，也會討論 AI 如何協助行銷工作。',
+    start: [
+      { id: 'audience-is-not-a-label', role: '核心指南' },
+      { id: 'ai-batch-review-analysis', role: '實作入口' },
+      { id: 'content-channel-trust-growth', role: '案例入口' },
+    ],
+    directions: [
+      {
+        title: '受眾、需求與品牌信任',
+        description:
+          '從使用者情境與購買任務理解受眾，再思考內容如何累積認知、信任與選擇。',
+        articleIds: [
+          'audience-definition-ad-conversion',
+          'content-channel-trust-growth',
+        ],
+      },
+      {
+        title: 'AI 與行銷執行',
+        description:
+          '把評論、受眾資料與產品資訊交給 AI 協作，仍由人負責判斷與驗證。',
+        articleIds: [
+          'ai-batch-review-analysis',
+          'feature-to-copywriting-selling-point',
+          'ai-copywriting-audience-data',
+          'ai-copywriting-mistakes',
+        ],
+      },
+    ],
   },
 ];
 

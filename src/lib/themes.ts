@@ -10,7 +10,7 @@ export interface BlogTheme {
 }
 
 /**
- * 全站只有三個主題。
+ * 全站四個主題。
  * 文章分類、/topics/ 與 /blog/ 的篩選都使用這份定義，避免名稱分叉。
  */
 export const blogThemes: BlogTheme[] = [
@@ -35,7 +35,15 @@ export const blogThemes: BlogTheme[] = [
     name: '個人發展與事業',
     shortName: '個人發展與事業',
     readerQuestion: '一個人怎麼把能力與經驗變成下一階段的機會？',
-    description: 'AI 時代的職涯轉型、專業判斷與個人累積，讓能力變成可持續發展的路徑。',
+    description: '從職涯、個人品牌到知識產品，探索專業如何持續累積與發展。',
+    indexable: true,
+  },
+  {
+    slug: 'marketing-brand',
+    name: '行銷與品牌',
+    shortName: '行銷與品牌',
+    readerQuestion: '如何理解受眾、建立品牌，讓產品與想法被看見？',
+    description: '從受眾理解、內容策略到品牌溝通與 AI 行銷，整理行銷背後的判斷。',
     indexable: true,
   },
 ];

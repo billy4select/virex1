@@ -7,7 +7,7 @@ tags:
   - 受眾分析
   - 客群定位
   - 行銷策略
-category: 商業與思考
+category: 行銷與品牌
 featured: false
 boost: false
 draft: false

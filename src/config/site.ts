@@ -11,7 +11,7 @@ import type { SocialLinks, LegalConfig } from '../lib/types';
 export const name = '行銷裡的路人甲 | 比利陳';
 
 /** 網站描述：SEO 用，出現在搜尋結果 */
-export const description = '比利陳，10 年整合行銷實戰，跑過 PM、品牌、廣告投放的整合性行銷。這裡寫的不是趨勢報告，是真正做過才知道的商業邏輯、AI 時代的判斷力，以及個人品牌的底層思維。';
+export const description = '比利陳的自我成長知識平台。從能力與學習、商業與思考、個人發展與事業、行銷與品牌四個方向，分享研究、實驗、觀察與實務經驗。';
 
 /** 正式網址 */
 export const url = 'https://blog.billy4select.com';
@@ -21,7 +21,7 @@ export const author = '比利陳 Billy Chen';
 
 /** 文章作者盒用的短自介 */
 export const authorBio =
-  '10 年整合行銷實戰，跑過 PM、品牌、廣告投放。寫商業邏輯、AI 時代的判斷力，以及個人品牌的底層思維。';
+  '十多年行銷相關工作經驗，曾參與產品、品牌與數位行銷。持續研究學習、商業、行銷與個人發展，並分享實務觀察與實驗。';
 
 /** Logo 路徑：已換成你的個人頭像 */
 export const logo = '/avatar.webp';

@@ -1,13 +1,35 @@
-# 舊文章分類頁：永久導向三個主題頁
+# 舊文章分類頁：永久導向主題總覽或對應主題頁
 /blog/category/ai-tech /topics/ability-learning/ 301
 /blog/category/ai-tech/ /topics/ability-learning/ 301
-/blog/category/business-marketing /topics/business-thinking/ 301
-/blog/category/business-marketing/ /topics/business-thinking/ 301
+/blog/category/business-marketing /topics/ 301
+/blog/category/business-marketing/ /topics/ 301
 /blog/category/personal-brand /topics/personal-growth/ 301
 /blog/category/personal-brand/ /topics/personal-growth/ 301
 /blog/category/investment-market /topics/ 301
 /blog/category/investment-market/ /topics/ 301
 
 # NotebookLM 簡報頁錯字網址：301 到正確頁
-/blog/otebooklm-slide-deck-review /blog/notebooklm-slide-deck-review/ 301
-/blog/otebooklm-slide-deck-review/ /blog/notebooklm-slide-deck-review/ 301
+/blog/otebooklm-slide-deck-review /blog/notebooklm-complete-guide-2026/ 301
+/blog/otebooklm-slide-deck-review/ /blog/notebooklm-complete-guide-2026/ 301
+/blog/notebooklm-2026-updates /blog/notebooklm-complete-guide-2026/ 301
+/blog/notebooklm-2026-updates/ /blog/notebooklm-complete-guide-2026/ 301
+/blog/notebooklm-beginner-guide /blog/notebooklm-complete-guide-2026/ 301
+/blog/notebooklm-beginner-guide/ /blog/notebooklm-complete-guide-2026/ 301
+/blog/notebooklm-academic-reading-tips-chinese-papers /blog/notebooklm-question-types/ 301
+/blog/notebooklm-academic-reading-tips-chinese-papers/ /blog/notebooklm-question-types/ 301
+/blog/notebooklm-disadvantages-review /blog/notebooklm-problems-solutions/ 301
+/blog/notebooklm-disadvantages-review/ /blog/notebooklm-problems-solutions/ 301
+/blog/notebooklm-gemini-collaboration /blog/notebooklm-complete-guide-2026/ 301
+/blog/notebooklm-gemini-collaboration/ /blog/notebooklm-complete-guide-2026/ 301
+/blog/notebooklm-guide-integrate-pdf-web-notes /blog/notebooklm-workplace-research/ 301
+/blog/notebooklm-guide-integrate-pdf-web-notes/ /blog/notebooklm-workplace-research/ 301
+/blog/notebooklm-hallucination-solutions /blog/notebooklm-problems-solutions/ 301
+/blog/notebooklm-hallucination-solutions/ /blog/notebooklm-problems-solutions/ 301
+/blog/notebooklm-proposal-history /blog/notebooklm-workplace-research/ 301
+/blog/notebooklm-proposal-history/ /blog/notebooklm-workplace-research/ 301
+/blog/notebooklm-slide-deck-review /blog/notebooklm-complete-guide-2026/ 301
+/blog/notebooklm-slide-deck-review/ /blog/notebooklm-complete-guide-2026/ 301
+/blog/notebooklm-to-claude-research-output /blog/notebooklm-vs-claude-internal-docs/ 301
+/blog/notebooklm-to-claude-research-output/ /blog/notebooklm-vs-claude-internal-docs/ 301
+/blog/notebooklm-upload-preparation /blog/notebooklm-ocr-pdf-solution/ 301
+/blog/notebooklm-upload-preparation/ /blog/notebooklm-ocr-pdf-solution/ 301
