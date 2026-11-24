@@ -98,6 +98,8 @@ schemaType: Article
 
 想看個人品牌如何建立信任，可以看[個人品牌不是曝光](/blog/personal-brand-trust-not-reach/)。
 
+如果你還沒有內容與受眾，想先從零開始，可以看[自媒體第一個月做什麼？先定位還是先發文](/blog/self-media-first-month-positioning-or-posting/)。
+
 ---
 
 **延伸起點：** 想把這篇的做法變成可持續的內容節奏，從 [Threads 起步心態指南](/threads/) 開始；想把內容工作流程化，再看 [打造 AI 工作團隊](/ai-work-team/)。

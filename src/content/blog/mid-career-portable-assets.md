@@ -91,3 +91,5 @@ schemaType: Article
 例如：把流程寫成文件、做一個外部小專案、建立一個同業交流圈。
 
 想看 35 歲後的整體職涯策略，可以看[35 歲以後的職涯策略](/blog/career-strategy-after-35/)。
+
+如果你正好是中階主管，想看 AI 時代的角色轉換，可以看[中階主管在 AI 時代怎麼轉型？從旁觀者到策展人的 3 階段](/blog/middle-manager-transition-to-ai-curator-3-stages/)。

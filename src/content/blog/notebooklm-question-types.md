@@ -57,8 +57,6 @@ NotebookLM 跟搜尋引擎不一樣。搜尋引擎你輸入關鍵字，它找相
 
 這種問法的目的是「摸清楚地圖」，不是找到最終答案。它給你一個概覽，讓你知道後續要往哪個方向深挖。
 
-→ [專案資料散落各處？NotebookLM 跨來源整合實戰手冊](https://blog.billy4select.com/blog/notebooklm-guide-integrate-pdf-web-notes/)
-
 ---
 
 ## 第二種：什麼時候用比較對照問法？

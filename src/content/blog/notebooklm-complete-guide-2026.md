@@ -91,8 +91,6 @@ PDF 亂碼、AI 幻覺、格式混亂——這些問題有具體的解法，不�
 
 NotebookLM 讀英文文件很強，但面對中文學術或語意密集的文件，容易漏掉深層的論點。三個進階提問技巧，讓你從「請它整理」進化到「精準提取」。
 
-→ [為什麼 NotebookLM 讀中文論文會漏掉重點？三招挖出深埋在字裡行間的關鍵](https://blog.billy4select.com/blog/notebooklm-academic-reading-tips-chinese-papers/)
-
 ---
 
 ## 第三階段：Audio Overview 除了聽，還能怎麼用？
@@ -115,13 +113,9 @@ Audio Overview 是 NotebookLM 最被低估的功能之一。大多數人只是�
 
 PDF、Google Docs、網頁、備忘錄分散在各處——NotebookLM 可以把這些來源整合進同一個筆記本，讓你一站式查詢。
 
-→ [專案資料散落各處？NotebookLM 跨來源整合實戰手冊](https://blog.billy4select.com/blog/notebooklm-guide-integrate-pdf-web-notes/)
-
 **客戶提案歷史管理**
 
 每次準備新提案都要從頭翻舊資料？用 NotebookLM 把歷史提案文件、客戶反饋、會後記錄建成一個可以對話的知識庫，三個月後你對這個客戶的理解會比任何人都深。
-
-→ [用 NotebookLM 管理客戶提案歷史，六個月後你會謝謝自己](https://blog.billy4select.com/blog/notebooklm-proposal-history/)
 
 ---
 
@@ -145,13 +139,9 @@ NotebookLM 單獨用已經很有價值，但跟其他工具配合，能做的事
 
 2026 年 4 月，Google 把 NotebookLM 和 Gemini 打通了。你在任何一側加入的資料，會自動同步到另一側。NotebookLM 負責嚴格的資料整理，Gemini 負責結合外部資訊生成內容——兩個工具各司其職，不需要手動搬資料。
 
-→ [NotebookLM + Gemini 的協作心法：兩個 Google 工具怎麼串](https://blog.billy4select.com/blog/notebooklm-gemini-collaboration/)
-
 **NotebookLM 整理完，交給 Claude 改寫**
 
 NotebookLM 擅長整理，Claude 擅長生成。從研究素材到最終輸出，兩個工具接力跑完整個流程——你只需要在最需要判斷的地方出手。
-
-→ [NotebookLM 整理完，再交給 Claude 改寫：完整的研究到輸出流程](/blog/notebooklm-to-claude-research-output/)
 
 ---
 

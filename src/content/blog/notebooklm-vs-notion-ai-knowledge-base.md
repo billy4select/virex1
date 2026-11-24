@@ -44,8 +44,6 @@ Notion AI 的設計前提是：資料「本來就在那裡」。你在 Notion �
 
 這個差異決定了很多事。
 
-→ [專案資料散落各處？NotebookLM 跨來源整合實戰手冊](https://blog.billy4select.com/blog/notebooklm-guide-integrate-pdf-web-notes/)
-
 ---
 
 ## 三個場景，分別適合誰？
@@ -95,8 +93,6 @@ Notion AI 雖然也能存放大量內容，但它的強項是「工作流整合�
 → [把財報貼給 AI 真的沒問題嗎？處理敏感數據的五條安全底線](https://blog.billy4select.com/blog/ai-finance-data-security-5-bottom-lines/)
 
 **中文處理都需要注意。** NotebookLM 對中文語意密集的文件有時會漏掉重點，需要用更精確的提問方式補救。Notion AI 的中文處理相對穩定，但在大量中文資料的工作空間裡，跨頁面搜尋的準確度有時候會下降。
-
-→ [為什麼 NotebookLM 讀中文論文會漏掉重點？三招挖出深埋在字裡行間的關鍵](https://blog.billy4select.com/blog/notebooklm-academic-reading-tips-chinese-papers/)
 
 ---
 

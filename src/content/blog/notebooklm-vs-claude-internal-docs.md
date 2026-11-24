@@ -60,8 +60,6 @@ Claude 是一次對話。你把文件貼進對話框，它在這次對話裡能�
 
 Claude 做不到這件事。你沒辦法叫 Claude「記住我上個月給你的十份文件」。
 
-→ [專案資料散落各處？NotebookLM 跨來源整合實戰手冊](https://blog.billy4select.com/blog/notebooklm-guide-integrate-pdf-web-notes/)
-
 ### 場景二：你有一份文件，需要即時改寫或延伸
 
 假設你拿到一份舊版的行銷企劃書，你需要把它改寫成新客戶的版本，或者你需要從這份企劃書裡提取論點，擴充成一篇提案報告。

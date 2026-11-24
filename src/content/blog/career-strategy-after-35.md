@@ -101,3 +101,5 @@ schemaType: Article
 如果沒有人問你問題，先從建立一個可被看見的作品或案例開始。
 
 想看怎麼把能力變成收入，可以看[如何把自己的專業變成市場價值](/blog/turn-expertise-into-market-value/)。
+
+如果你的疑問是 AI 對職涯的影響，可以看[35 歲學 AI 會太晚嗎？怎麼把十年經驗變成判斷力槓桿](/blog/learn-ai-at-35-too-late-roi-metrics/)，以及[AI 會取代我的工作嗎？資深員工可以怎麼重新定位](/blog/senior-employees-ai-upskilling-strategy-not-replaced/)。

@@ -26,8 +26,6 @@ draft: false
     * **改用純文字**：直接複製文字貼到 `.txt` 檔上傳。
     * **避免掃描檔**：圖片型 PDF 需先經過 OCR 工具轉為可搜尋文字。
 
-→ [為什麼 NotebookLM 讀中文論文會漏掉重點？三招挖出深埋在字裡行間的關鍵](https://blog.billy4select.com/blog/notebooklm-academic-reading-tips-chinese-papers/)
-
 ### 2. 高度排版文件辨識差
 * **原因**：解析器對複雜表格或多欄位排版處理能力有限。
 * **解決方案**：將表格轉成 **純文字列表**，或直接上傳整理過的 `.csv` 與 Markdown 格式。
@@ -37,8 +35,6 @@ draft: false
 * **解決方案**：
     * **分割檔案**：將大檔按章節拆分。
     * **精簡來源**：優先放「高品質原始資料」。
-
-→ [專案資料散落各處？NotebookLM 跨來源整合實戰手冊](https://blog.billy4select.com/blog/notebooklm-guide-integrate-pdf-web-notes/)
 
 ### 4. AI 輸出不一致、有幻覺
 * **原因**：LLM 的隨機性與 RAG 架構在多來源處理時的注意力分散。
@@ -81,7 +77,5 @@ draft: false
 1.  **Audio Overview (Podcast) 複習**：上傳會議記錄，通勤時聽 AI 生成的對話（Audio Overview）。
 2.  **快速定位**：在海量資料中搜尋「某個特定觀點出現在哪裡」。
 3.  **初步摘要**：作為長文消化的第一輪過濾。
-
-→ [用 NotebookLM 管理客戶提案歷史，六個月後你會謝謝自己](https://blog.billy4select.com/blog/notebooklm-proposal-history/)
 
 > **核心觀點**：工具是手段，不是目的。NotebookLM 的價值在於 **「降低回憶成本」**，而非「取代你的判斷」。知道它的邊界，才能用得安心。

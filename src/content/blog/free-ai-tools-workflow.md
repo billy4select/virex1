@@ -80,8 +80,6 @@ NotebookLM 免費版可以建最多 100 個筆記本，每個筆記本最多 50 
 
 **適合拿來做的事：** Google 文件整合、快速查詢即時資訊、跟 NotebookLM 搭配使用。
 
-→ [NotebookLM + Gemini 的協作心法：兩個 Google 工具怎麼串](https://blog.billy4select.com/blog/notebooklm-gemini-collaboration/)
-
 ---
 
 ## 這四個工具怎麼串成一個工作流？
@@ -91,8 +89,6 @@ NotebookLM 免費版可以建最多 100 個筆記本，每個筆記本最多 50 
 **準備客戶提案** 先用 ChatGPT 發想三到五個切角，選出最有潛力的方向，再交給 Claude 展開成完整結構和論述。
 
 **整理大量參考資料** 把相關文件都丟進 NotebookLM，之後有問題直接問它。需要把整理出來的內容改寫成報告，再貼給 Claude 處理。
-
-→ [NotebookLM 整理完，再交給 Claude 改寫：完整的研究到輸出流程](https://blog.billy4select.com/blog/notebooklm-to-claude-research-output/)
 
 **快速掌握市場動態** 用 Gemini 查最新資訊，或直接問它整理近期相關新聞。如果需要進一步分析，把查到的資料貼給 Claude。
 

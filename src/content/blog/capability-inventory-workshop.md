@@ -115,3 +115,5 @@ schemaType: Article
 先列 15 個動作，不要寫形容詞。然後圈出三個你能獨立完成、且有成果的項目。
 
 這三個，就是你現在真正的專業核心。其他的，可能是潛力，還沒成為能力。
+
+盤點完之後，想把能力變成可販售的 offer，可以看[如何把專業變成市場價值？從能力盤點到第一個付費 offer](/blog/turn-expertise-into-market-value/)；想知道 AI 時代哪些能力值得優先投資，可以看[AI 時代該培養什麼能力？哪些在貶值、哪些會複利](/blog/ai-era-capability-map/)。
