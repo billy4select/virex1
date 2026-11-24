@@ -8,7 +8,7 @@
 import type { SocialLinks, LegalConfig } from '../lib/types';
 
 /** 網站名稱：顯示在標題、頁尾和 SEO 標籤中 */
-export const name = '行銷裡的路人甲 | 比利陳';
+export const name = '比利陳 | 行銷裡的路人甲';
 
 /** 網站描述：SEO 用，出現在搜尋結果 */
 export const description = '比利陳的自我成長知識平台。從能力與學習、商業與思考、個人發展與事業、行銷與品牌四個方向，分享研究、實驗、觀察與實務經驗。';
