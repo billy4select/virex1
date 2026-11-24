@@ -58,7 +58,7 @@ export const homeTopics: HomeTopic[] = [
     name: '個人發展與事業',
     question: '我如何把能力與經驗，變成下一階段的機會？',
     description:
-      '從職涯策略、個人品牌到知識產品，探索如何累積專業並發展自己的事業。',
+      '兩條路：職涯與可帶走的能力，以及知識如何變成收入。先選你現在卡的是哪一邊。',
     href: '/topics/personal-growth/',
     category: 'personal-growth',
   },
@@ -102,22 +102,22 @@ export const homeSeries: HomeSeries[] = [
 
 export const homeQuestions: HomeQuestion[] = [
   {
-    label: 'AI 工具',
-    question: 'AI 工具很多，哪一個真的能放進工作？',
-    description: '先從免費工具組合與實際工作流程開始，不急著追每一個新工具。',
-    href: '/blog/free-ai-tools-workflow/',
+    label: '職涯',
+    question: '離開公司後，你還帶得走什麼？',
+    description: '頭銜與預算多半留在公司；方法、信任與判斷，才是你能帶走的資產。',
+    href: '/blog/mid-career-portable-assets/',
   },
   {
-    label: '工作流程',
-    question: '會議記錄與後續追蹤，AI 能接手到什麼程度？',
-    description: '從逐字稿到行動清單，先找出哪一段最值得自動化。',
-    href: '/blog/ai-meeting-notes-workflow-summary/',
+    label: '知識變現',
+    question: '專業要怎麼變成有人願意付費的 offer？',
+    description: '從能力盤點到第一個付費方案，把累積的經驗整理成市場聽得懂的價值。',
+    href: '/blog/turn-expertise-into-market-value/',
   },
   {
-    label: '內容經營',
-    question: '想經營 Threads，先定位還是先發文？',
-    description: '人設不是想出來的，是從你持續寫的東西裡長出來的。',
-    href: '/threads/persona/',
+    label: '個人品牌',
+    question: '個人品牌怎麼做，才不是一直發文？',
+    description: '重點不是曝光量，而是讓對的人理解你、信任你、在需要時想起你。',
+    href: '/blog/personal-brand-trust-not-reach/',
   },
 ];
 
