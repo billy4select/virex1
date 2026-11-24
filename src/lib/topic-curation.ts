@@ -4,8 +4,11 @@
  * 四個主題頁不是第二個 /blog/。
  * 這裡只放經過挑選的起點與閱讀方向；完整文章留在 /blog/?theme=slug。
  *
- * 新增文章時，先判斷它值不值得進主題頁，再決定放進哪一個方向。
- * 同一個方向至少兩篇，才適合獨立成一個閱讀方向。
+ * 規則：
+ * 1. 同一篇文章在同一個主題頁只出現一次（起點與方向不重複）。
+ * 2. 同一個閱讀方向至少兩篇，才值得獨立成一個方向。
+ * 3. start 的順序就是建議閱讀順序，頁面會顯示 1、2、3。
+ * 4. 不是每篇文章都要進精選；沒進來的文章仍在 /blog/ 裡。
  */
 
 export interface TopicStartArticle {
@@ -28,6 +31,10 @@ export interface TopicSeriesLink {
 export interface TopicCuration {
   slug: string;
   intro: string;
+  /** 一句話說明這個主題適合誰讀 */
+  audience: string;
+  /** 一句話說明三篇起點文章的閱讀順序 */
+  readingOrder: string;
   start: TopicStartArticle[];
   directions: TopicDirection[];
   series?: TopicSeriesLink;
@@ -38,6 +45,10 @@ export const topicCurations: TopicCuration[] = [
     slug: 'ability-learning',
     intro:
       'AI 工具、工作流程與學習方法，最後都會回到同一個問題：你能不能把知道的東西，變成做得出來的事。這個主題從能力地圖開始，再進入工具、知識管理與練習。',
+    audience:
+      '適合想把 AI 與新知識真正放進日常工作，卻不知道從哪裡下手的上班族、行銷人與知識工作者。',
+    readingOrder:
+      '先看能力地圖，知道自己要補什麼；再挑一件工作任務動手做；最後用 30 天學一個新領域。',
     start: [
       { id: 'ai-era-capability-map', role: '核心指南' },
       { id: 'ai-workflow-start-with-tasks', role: '實作入口' },
@@ -51,7 +62,18 @@ export const topicCurations: TopicCuration[] = [
         articleIds: [
           'ai-tool-combination',
           'ai-tool-evaluation',
+          'free-ai-tools-workflow',
           'ai-output-quality-check',
+        ],
+      },
+      {
+        title: '提案、會議與日常工作',
+        description:
+          '把 AI 放進提案寫作、客戶簡報準備與會議記錄，看哪一段值得交給它、哪一段仍要自己判斷。',
+        articleIds: [
+          'claude-vs-chatgpt-proposal',
+          'claude-objection-simulation',
+          'ai-meeting-notes-workflow-summary',
         ],
       },
       {
@@ -84,26 +106,22 @@ export const topicCurations: TopicCuration[] = [
     slug: 'business-thinking',
     intro:
       '商業不是一堆名詞，而是一連串選擇：為誰解決什麼問題、用什麼成本交付、靠什麼守住。這個主題從生意為什麼成立開始，再拆需求、客群、模式與成長。',
+    audience:
+      '適合想看懂一門生意怎麼運作、判斷一個想法值不值得做的人，包含產品、行銷、創業與副業的探索者。',
+    readingOrder:
+      '先理解生意為什麼成立；再學怎麼驗證需求；最後用公開資料拆解一家公司的策略。',
     start: [
       { id: 'why-business-exists-nine-questions', role: '核心指南' },
-      { id: 'consumer-demand-to-business-opportunity', role: '實作入口' },
+      { id: 'validate-market-demand-five-methods', role: '實作入口' },
       { id: 'analyze-company-strategy-public-info', role: '案例入口' },
     ],
     directions: [
       {
-        title: '需求、客群與成長',
+        title: '從需求到商業模式',
         description:
-          '把模糊的市場直覺變成可驗證的需求、可描述的客群，以及能累積信任的成長路徑。',
+          '把消費者需求轉成商業機會，再從收入、成本與單位經濟判斷生意能不能成立，並看 AI 改變了哪一條成本曲線。',
         articleIds: [
-          'validate-market-demand-five-methods',
           'consumer-demand-to-business-opportunity',
-        ],
-      },
-      {
-        title: '商業模式、成本與競爭',
-        description:
-          '從收入結構、成本結構與單位經濟看一門生意能不能成立，再判斷 AI 改變了哪一條成本曲線。',
-        articleIds: [
           'beyond-business-model-canvas',
           'how-ai-changes-cost-and-competition',
         ],
@@ -114,27 +132,35 @@ export const topicCurations: TopicCuration[] = [
     slug: 'personal-growth',
     intro:
       '從職涯選擇、專業累積到個人事業，整理如何把工作經驗轉成可持續發展的能力與機會。',
+    audience:
+      '適合工作已有一段時間、想把經驗累積成長期資產，或正在考慮個人品牌與獨立發展的人。',
+    readingOrder:
+      '先看專業如何變成市場價值；再理解個人品牌靠的是信任；最後從職涯策略開始盤點自己。',
     start: [
       { id: 'turn-expertise-into-market-value', role: '核心指南' },
       { id: 'personal-brand-trust-not-reach', role: '實作入口' },
-      { id: 'one-person-company-ai-work-system', role: '實作入口' },
+      { id: 'career-strategy-after-35', role: '實作入口' },
     ],
     directions: [
       {
-        title: '職涯策略與可攜帶資產',
+        title: '職涯轉換與可攜帶資產',
         description:
-          '把年資拆成判斷、關係與方法，判斷哪些能力在離開公司後仍然屬於你。',
+          '把年資拆成判斷、關係與方法，判斷哪些能力在離開公司後仍然屬於你，並看中階以上如何在 AI 時代找到位置。',
         articleIds: [
-          'career-strategy-after-35',
           'mid-career-portable-assets',
           'learn-ai-at-35-too-late-roi-metrics',
+          'middle-manager-transition-to-ai-curator-3-stages',
+          'senior-employees-ai-upskilling-strategy-not-replaced',
         ],
       },
       {
-        title: '從專業到產品',
+        title: '從專業到產品與事業',
         description:
-          '把已經解決過的問題，變成一個有明確結果、可以收費、可以重複交付的知識產品。',
-        articleIds: ['content-to-product-knowledge-business'],
+          '把已經解決過的問題，變成可以收費、可以重複交付的知識產品，並用 AI 建立一人也能運作的交付系統。',
+        articleIds: [
+          'content-to-product-knowledge-business',
+          'one-person-company-ai-work-system',
+        ],
       },
     ],
     series: {
@@ -147,6 +173,10 @@ export const topicCurations: TopicCuration[] = [
     slug: 'marketing-brand',
     intro:
       '行銷從理解受眾開始。這個主題整理如何辨識真實需求、提煉產品價值、規劃內容與建立品牌信任，也會討論 AI 如何協助行銷工作。',
+    audience:
+      '適合負責產品、廣告、內容或品牌的行銷人，以及想讓自己的產品與想法被對的人看見的經營者。',
+    readingOrder:
+      '先重新定義受眾；再用 AI 分析真實評論找方向；最後看內容如何累積信任。',
     start: [
       { id: 'audience-is-not-a-label', role: '核心指南' },
       { id: 'ai-batch-review-analysis', role: '實作入口' },
@@ -154,21 +184,19 @@ export const topicCurations: TopicCuration[] = [
     ],
     directions: [
       {
-        title: '受眾、需求與品牌信任',
+        title: '受眾與賣點',
         description:
-          '從使用者情境與購買任務理解受眾，再思考內容如何累積認知、信任與選擇。',
+          '從廣告轉換不佳的真實問題出發，回到受眾定義，再把產品功能提煉成用戶在意的賣點。',
         articleIds: [
           'audience-definition-ad-conversion',
-          'content-channel-trust-growth',
+          'feature-to-copywriting-selling-point',
         ],
       },
       {
-        title: 'AI 與行銷執行',
+        title: 'AI 與文案執行',
         description:
-          '把評論、受眾資料與產品資訊交給 AI 協作，仍由人負責判斷與驗證。',
+          '先給 AI 受眾資料，再避開常見的文案錯誤；仍由人負責判斷與驗證。',
         articleIds: [
-          'ai-batch-review-analysis',
-          'feature-to-copywriting-selling-point',
           'ai-copywriting-audience-data',
           'ai-copywriting-mistakes',
         ],

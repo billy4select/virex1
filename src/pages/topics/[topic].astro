@@ -120,6 +120,9 @@ const schemas = [collectionSchema];
       <p class="mt-4 max-w-3xl text-base leading-relaxed text-text-muted">
         {curation.intro}
       </p>
+      <p class="mt-4 max-w-3xl text-sm leading-relaxed text-text">
+        <span class="font-semibold text-primary">適合誰讀：</span>{curation.audience}
+      </p>
     </div>
   </section>
 
@@ -129,11 +132,14 @@ const schemas = [collectionSchema];
         <h2 id="topic-start-title" class="text-2xl font-bold tracking-tight text-text">
           從這裡開始
         </h2>
+        <p class="mt-2 max-w-3xl text-sm leading-relaxed text-text-muted">
+          建議照 1、2、3 的順序讀：{curation.readingOrder}
+        </p>
       </div>
 
       <div class="mt-6 grid gap-4 md:grid-cols-3">
         {
-          startPosts.map(({ post, role }) => (
+          startPosts.map(({ post, role }, startIndex) => (
             <a
               href={postUrl(post.id)}
               class:list={[
@@ -143,6 +149,9 @@ const schemas = [collectionSchema];
                   : 'border-border bg-surface hover:border-primary/40',
               ]}
             >
+              <span class="mb-3 text-3xl font-extrabold leading-none text-primary/70" aria-hidden="true">
+                {startIndex + 1}
+              </span>
               <span
                 class:list={[
                   'inline-flex w-fit rounded-full px-3 py-1 text-[11px] font-semibold',

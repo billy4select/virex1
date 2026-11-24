@@ -26,8 +26,8 @@ export const blogThemes: BlogTheme[] = [
     slug: 'business-thinking',
     name: '商業與思考',
     shortName: '商業與思考',
-    readerQuestion: '怎麼把產品價值說清楚，讓對的人願意買？',
-    description: '從受眾、賣點、文案到提案，拆解行銷判斷與商業溝通。',
+    readerQuestion: '我怎麼看懂一門生意，找到值得解決的問題？',
+    description: '從需求、客群、商業模式到成本與成長，拆解一門生意如何成立、如何被選擇。',
     indexable: true,
   },
   {

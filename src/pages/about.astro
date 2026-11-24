@@ -2,38 +2,90 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
-import ValuesSection from '@sections/team/ValuesSection.astro';
 import CTA from '@sections/marketing/CTA.astro';
 import { siteConfig } from '@/config';
 
-const values = [
+/** 經驗以工作類型呈現；作者匿名經營，不公開任職公司與客戶名稱。 */
+const experience = [
+  '產業：傳統產業、3C 等多個產業',
+  '產品：商品企劃、開發、維運',
+  '行銷：廣告策略與投放、會員經營、網站管理',
+  '內容：社群媒體、平面設計、內容製作、YouTube、Podcast',
+  '數位產品：App 相關專案',
+];
+
+/** 順序代表目前的內容重心：能力與學習最完整，其他主題持續累積。 */
+const topics = [
   {
-    title: 'AI 與工作方式',
+    name: '能力與學習',
+    href: '/topics/ability-learning/',
     description:
-      '研究 AI 工具與技術的發展，實際測試它們在工作、內容製作與日常任務中的應用。我關心哪些事情已經可以交給 AI，哪些工作方式正在改變，以及個人如何運用這些新能力。',
+      'AI 工具、工作流程、知識管理與學習方法，重點是怎麼放進實際工作，而不是追每一個新工具。',
   },
   {
-    title: '內容與個人品牌',
+    name: '個人發展與事業',
+    href: '/topics/personal-growth/',
     description:
-      '從自媒體、社群經營到知識變現，持續研究個人的經驗、專業與觀點，如何透過內容累積影響力，以及內容如何進一步發展成服務或商業模式。',
+      '職涯策略、個人品牌與知識變現，談如何把工作經驗累積成可以帶走的資產。',
   },
   {
-    title: '行銷與商業觀察',
+    name: '行銷與品牌',
+    href: '/topics/marketing-brand/',
     description:
-      '關注產品、品牌、消費者與市場的變化，研究企業如何創造價值，以及不同商業模式背後的運作邏輯。也會觀察科技與新趨勢如何影響原本的產業。',
+      '受眾理解、賣點提煉、內容與品牌信任，以及 AI 如何協助行銷執行。',
+  },
+  {
+    name: '商業與思考',
+    href: '/topics/business-thinking/',
+    description:
+      '從需求、客群、商業模式到成本與競爭，拆解一門生意為什麼成立。',
   },
 ];
 
+const sources = [
+  {
+    title: '工作經驗',
+    description:
+      '來自十多年在產品、廣告、會員、內容與平台經營上的實際判斷，包含做對的與做錯的。',
+  },
+  {
+    title: '閱讀與研究',
+    description:
+      '整理公開資料、案例與研究，並盡量說明資料從哪裡來、判斷依據是什麼。',
+  },
+  {
+    title: '親自實驗',
+    description:
+      'AI 工具、工作流程與內容經營，我會先自己動手試，再寫下測試條件與結果。',
+  },
+];
+
+/** 獨立出版電子書（2025–2026）。 */
 const books = [
-  '從零開始自媒體',
-  '寫給大家的行銷書',
-  '人人都做得到的知識變現',
+  {
+    title: '從零開始自媒體',
+    href: 'https://portaly.cc/billyselect4/product/ioeupgO66jK7vB24yJzY',
+    description:
+      '以行銷理論為基礎的自媒體經營指南，從目標受眾、內容、市場測試到變現與長期系統。',
+  },
+  {
+    title: '寫給大家的行銷書',
+    href: 'https://portaly.cc/billyselect4/product/FlzuxW1QbZpC79Op2zhE',
+    description:
+      '用「減法」看行銷：回到流量、轉換、客單價與回購的基本架構，先診斷問題出在哪裡。',
+  },
+  {
+    title: '人人都做得到的知識變現',
+    href: 'https://portaly.cc/billyselect4/product/icSVZ0k6BHdItavIKf9X',
+    description:
+      '為素人設計的知識整理方法，把經驗與技能萃取、結構化，做成課程或電子書等小型知識產品。',
+  },
 ];
 ---
 
 <MarketingLayout
   title={`關於我 - ${siteConfig.name}`}
-  description="比利陳，擁有十多年行銷經驗，持續研究 AI、內容、個人品牌與商業世界的變化。"
+  description="比利陳，十多年行銷與產品經驗，獨立出版三本電子書。這個網站以自我成長為核心，整理能力與學習、個人發展、行銷與商業的研究、實驗與觀察。"
 >
   <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '關於我' }]} />
 
@@ -48,37 +100,92 @@ const books = [
 
         <div class="mt-8 space-y-5 text-lg text-text-muted leading-relaxed">
           <p>
-            我是比利陳（Billy Chen），有十多年的行銷工作經驗，曾經做過產品管理、品牌行銷與數位行銷，也出版過《從零開始自媒體》、《寫給大家的行銷書》、《人人都做得到的知識變現》等書。
+            我是比利陳（Billy Chen），有十多年的行銷與產品相關工作經驗，待過傳統產業與 3C 等不同產業，做過的工作從商品企劃、開發與維運，到網站管理、廣告策略與投放、會員經營，也包含平面設計、社群媒體、內容製作，以及 App、YouTube 與 Podcast 的經營。
           </p>
 
           <p>
-            這些年，我接觸過不同的產業、產品與行銷工作，也持續觀察科技、內容與商業世界的變化。
+            因為我以匿名方式經營這個網站，不公開任職公司與合作客戶的名稱，所以這裡只談做過的工作類型，以及從中得到的判斷。
           </p>
 
           <p>
-            近幾年，我花了不少時間研究 AI，從工具應用、內容製作到工作流程，都會親自動手嘗試。我很關心 AI 帶來的改變，也想知道當個人擁有越來越多工具與能力時，未來的工作方式和商業機會會變成什麼樣子。
+            2025 到 2026 年，我獨立出版了三本電子書，也持續研究 AI 如何改變工作、內容與商業。
           </p>
+        </div>
 
+        <ul class="mt-8 space-y-2 text-base text-text-muted">
+          {experience.map((item) => (
+            <li class="flex gap-2">
+              <span class="text-primary" aria-hidden="true">•</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- 為什麼經營 -->
+    <section class="py-14 border-t border-border">
+      <div class="max-w-3xl">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-text">
+          為什麼經營這個網站
+        </h2>
+
+        <div class="mt-6 space-y-5 text-text-muted leading-relaxed">
           <p>
-            這個網站主要分享我的研究、觀察與實際經驗。除了 AI，也會談行銷、個人品牌、自媒體、商業模式、科技與其他值得關注的議題。
+            這些年做過不同工作，我發現真正有用的能力，大多不是某個工具或某個技巧，而是看懂問題、做出判斷、再把它變成行動。工具與平台一直在變，但這個過程不太會變。
           </p>
-
           <p>
-            有些內容來自工作經驗，有些來自閱讀與研究，也有些是自己動手實驗後的心得。
+            我經營這個網站，是想把自己學到、試過、做過的東西整理下來，讓同樣在工作、轉換跑道或探索發展的人，可以少走一些冤枉路。核心是自我成長：持續學習，讓自己有更多可能。
           </p>
         </div>
       </div>
     </section>
 
-    <!-- 關注主題 -->
+    <!-- 內容從哪裡來 -->
     <section class="py-14 border-t border-border">
-      <ValuesSection
-        title="我持續關注的主題"
-        items={values}
-        variant="card"
-        columns={3}
-        background="default"
-      />
+      <div class="max-w-6xl">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-text">
+          內容從哪裡來
+        </h2>
+
+        <p class="mt-4 max-w-3xl text-text-muted leading-relaxed">
+          每篇文章的觀點，主要來自下面三種來源。文章會標示發布日期；內容有實質修改時，也會標示最後更新日期。
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+          {sources.map((item) => (
+            <div class="rounded-xl border border-border bg-surface p-6">
+              <h3 class="font-semibold text-text">{item.title}</h3>
+              <p class="mt-3 text-sm text-text-muted leading-relaxed">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 四個主題 -->
+    <section class="py-14 border-t border-border">
+      <div class="max-w-6xl">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-text">
+          這裡談哪些事
+        </h2>
+
+        <p class="mt-4 max-w-3xl text-text-muted leading-relaxed">
+          以自我成長為核心，目前分成四個主題。每個主題頁都有編輯精選的閱讀起點與建議順序。
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+          {topics.map((topic) => (
+            <a
+              href={topic.href}
+              class="group rounded-xl border border-border bg-surface p-6 transition-colors hover:border-primary"
+            >
+              <h3 class="font-semibold text-text group-hover:text-primary">{topic.name}</h3>
+              <p class="mt-3 text-sm text-text-muted leading-relaxed">{topic.description}</p>
+            </a>
+          ))}
+        </div>
+      </div>
     </section>
 
     <!-- 出版作品 -->
@@ -88,15 +195,25 @@ const books = [
           出版作品
         </h2>
 
-        <p class="mt-4 text-text-muted leading-relaxed">
-          曾出版幾本與行銷、內容創作及知識變現相關的書籍。
+        <p class="mt-4 max-w-3xl text-text-muted leading-relaxed">
+          2025 到 2026 年獨立出版的三本電子書，主題是自媒體、行銷與知識變現。
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
           {books.map((book) => (
-            <div class="rounded-xl border border-border bg-surface p-6">
-              <p class="font-semibold text-text">{book}</p>
-            </div>
+            <a
+              href={book.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group rounded-xl border border-border bg-surface p-6 transition-colors hover:border-primary"
+            >
+              <h3 class="font-semibold text-text group-hover:text-primary">《{book.title}》</h3>
+              <p class="mt-3 text-sm text-text-muted leading-relaxed">{book.description}</p>
+              <span class="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-primary">
+                了解更多
+                <span aria-hidden="true">→</span>
+              </span>
+            </a>
           ))}
         </div>
       </div>
@@ -160,7 +277,7 @@ const books = [
     <!-- 文章入口 -->
     <CTA
       title="繼續探索"
-      description="最新文章與研究。"
+      description="從四個主題挑一個開始，或直接看最新文章。"
       action={{ label: '看看最新文章', href: '/blog/' }}
       background="muted"
     />

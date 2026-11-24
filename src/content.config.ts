@@ -7,6 +7,8 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string(),
     publishedDate: z.coerce.date(),
+    /** 內容有實質修改時才填；有填才會顯示「最後更新」，並輸出 dateModified */
+    updatedDate: z.coerce.date().optional(),
     author: z.string(),
     image: z.string().optional(),
     tags: z.array(z.string()).default([]),
