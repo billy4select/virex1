@@ -156,3 +156,4 @@ OCR 轉換完，不要直接上傳，先快速檢查幾個地方：
 **延伸閱讀：**
 - [上傳文件前要做的三件事，讓 NotebookLM 讀得更準](https://blog.billy4select.com/blog/notebooklm-upload-preparation/)
 - [NotebookLM 難用？解決 PDF 亂碼、幻覺與格式混亂的 7 個實戰方案](https://blog.billy4select.com/blog/notebooklm-problems-solutions/)
+- [NotebookLM 全面攻略 2026：從入門、PDF 到 Audio 與簡報完整教學](/blog/notebooklm-complete-guide-2026/)
