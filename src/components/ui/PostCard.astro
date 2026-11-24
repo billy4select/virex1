@@ -22,7 +22,11 @@ const image = post.data.image;
   >
     <div class="min-w-0">
       <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[11px] font-medium text-text-muted">
-        {category && <span class="font-semibold text-primary">{category}</span>}
+        {category && (
+          <span class="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-2 py-0.5 text-[11px] font-semibold tracking-wide text-primary">
+            {category}
+          </span>
+        )}
         <span class="h-1 w-1 rounded-full bg-border" aria-hidden="true"></span>
         <time datetime={post.data.publishedDate.toISOString()}>{publishedDate}</time>
         <span class="h-1 w-1 rounded-full bg-border" aria-hidden="true"></span>
