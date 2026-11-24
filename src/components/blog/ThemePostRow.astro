@@ -13,19 +13,27 @@ const { post, showCategory = true } = Astro.props;
 const readingTime = calculateReadingTime(post.body || '');
 const theme = getThemeByName(post.data.category);
 const publishedDate = post.data.publishedDate.toISOString().slice(0, 10).replaceAll('-', '.');
+const image = post.data.image;
 ---
 
 <a
   href={postUrl(post.id)}
   data-blog-post
   data-theme={theme.slug}
-  class="group grid gap-4 border-b border-border py-5 transition-colors hover:border-primary/40 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"
+  class:list={[
+    'group grid gap-4 border-b border-border py-5 transition-colors hover:border-primary/40 sm:items-center',
+    image
+      ? 'sm:grid-cols-[minmax(0,1fr)_140px]'
+      : 'sm:grid-cols-[minmax(0,1fr)_auto]',
+  ]}
 >
   <div class="min-w-0">
     <div class="flex flex-wrap items-center gap-2 text-[11px] font-medium text-text-muted">
       {showCategory && (
         <>
-          <span>{theme.name}</span>
+          <span class="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-2 py-0.5 text-[11px] font-semibold tracking-wide text-primary">
+            {theme.name}
+          </span>
           <span class="h-1 w-1 rounded-full bg-border" aria-hidden="true" />
         </>
       )}
@@ -42,5 +50,24 @@ const publishedDate = post.data.publishedDate.toISOString().slice(0, 10).replace
       {post.data.description}
     </p>
   </div>
-  <span class="hidden text-xs font-semibold text-primary underline decoration-primary/30 decoration-1 underline-offset-4 sm:block">閱讀文章 →</span>
+
+  {
+    image ? (
+      <div class="order-first overflow-hidden rounded-lg border border-border bg-surface sm:order-none">
+        <img
+          src={image}
+          alt=""
+          width="280"
+          height="158"
+          loading="lazy"
+          decoding="async"
+          class="aspect-[16/9] h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+        />
+      </div>
+    ) : (
+      <span class="hidden text-xs font-semibold text-primary underline decoration-primary/30 decoration-1 underline-offset-4 sm:block">
+        閱讀文章 →
+      </span>
+    )
+  }
 </a>
