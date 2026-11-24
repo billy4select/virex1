@@ -79,3 +79,5 @@ steps:
 資安並非限制，而是保護。當你清楚邊界在哪裡，使用 AI 時的背景焦慮就會消失。
 
 → [Claude vs ChatGPT：行銷人寫提案，哪個比較不會讓你改到崩潰](https://blog.billy4select.com/blog/claude-vs-chatgpt-proposal/)
+
+**延伸起點：** 專題的 [工作流程庫](/ai-work-team/workflows/) 把「對外送出、付款、簽約與涉及個資的動作永遠由人核准」寫成共通規則，每條流程都照這個邊界設計。
