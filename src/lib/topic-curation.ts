@@ -119,10 +119,11 @@ export const topicCurations: TopicCuration[] = [
       {
         title: '從需求到商業模式',
         description:
-          '把消費者需求轉成商業機會，再從收入、成本與單位經濟判斷生意能不能成立，並看 AI 改變了哪一條成本曲線。',
+          '把消費者需求轉成商業機會，再從收入、成本、定價與獲利結構判斷生意能不能賺到錢，並看 AI 改變了哪一條成本曲線。',
         articleIds: [
           'consumer-demand-to-business-opportunity',
           'beyond-business-model-canvas',
+          'pricing-and-profit-structure',
           'how-ai-changes-cost-and-competition',
         ],
       },
@@ -135,11 +136,11 @@ export const topicCurations: TopicCuration[] = [
     audience:
       '適合工作已有一段時間、想把經驗累積成長期資產，或正在考慮個人品牌與獨立發展的人。',
     readingOrder:
-      '先看專業如何變成市場價值；再理解個人品牌靠的是信任；最後從職涯策略開始盤點自己。',
+      '先看專業如何變成市場價值；再理解個人品牌靠的是信任；最後用第一個月實際開始發文。',
     start: [
       { id: 'turn-expertise-into-market-value', role: '核心指南' },
       { id: 'personal-brand-trust-not-reach', role: '實作入口' },
-      { id: 'career-strategy-after-35', role: '實作入口' },
+      { id: 'self-media-first-month-positioning-or-posting', role: '實作入口' },
     ],
     directions: [
       {
@@ -147,6 +148,7 @@ export const topicCurations: TopicCuration[] = [
         description:
           '把年資拆成判斷、關係與方法，判斷哪些能力在離開公司後仍然屬於你，並看中階以上如何在 AI 時代找到位置。',
         articleIds: [
+          'career-strategy-after-35',
           'mid-career-portable-assets',
           'learn-ai-at-35-too-late-roi-metrics',
           'middle-manager-transition-to-ai-curator-3-stages',
