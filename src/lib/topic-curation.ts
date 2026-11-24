@@ -132,36 +132,39 @@ export const topicCurations: TopicCuration[] = [
   {
     slug: 'personal-growth',
     intro:
-      '從職涯選擇、專業累積到個人事業，整理如何把工作經驗轉成可持續發展的能力與機會。',
+      '這個主題分兩條路：一條談職涯與可帶走的能力，一條談知識如何變成收入。先選你現在卡的是「下一步職涯」，還是「經驗怎麼變成產品」。',
     audience:
-      '適合工作已有一段時間、想把經驗累積成長期資產，或正在考慮個人品牌與獨立發展的人。',
+      '適合工作已有一段時間、想把經驗累積成可帶走的資產，或正在把專業做成個人事業與知識產品的人。',
     readingOrder:
-      '先看專業如何變成市場價值；再理解個人品牌靠的是信任；最後用第一個月實際開始發文。',
+      '先選路徑：職涯與可攜帶能力，或知識到收入。每條路都有一篇起點，再往下讀同方向文章。',
     start: [
+      { id: 'mid-career-portable-assets', role: '核心指南' },
       { id: 'turn-expertise-into-market-value', role: '核心指南' },
       { id: 'personal-brand-trust-not-reach', role: '實作入口' },
-      { id: 'self-media-first-month-positioning-or-posting', role: '實作入口' },
     ],
     directions: [
       {
-        title: '職涯轉換與可攜帶資產',
+        title: '職涯與可攜帶能力',
         description:
-          '把年資拆成判斷、關係與方法，判斷哪些能力在離開公司後仍然屬於你，並看中階以上如何在 AI 時代找到位置。',
+          '把年資拆成判斷、關係與方法；看哪些能力離開公司後仍屬於你，以及中階與資深員工如何重新定位。',
         articleIds: [
           'career-strategy-after-35',
-          'mid-career-portable-assets',
           'learn-ai-at-35-too-late-roi-metrics',
           'middle-manager-transition-to-ai-curator-3-stages',
           'senior-employees-ai-upskilling-strategy-not-replaced',
+          'ai-data-analysis-human-ai-collaboration-professionalism',
         ],
       },
       {
-        title: '從專業到產品與事業',
+        title: '知識到收入',
         description:
-          '把已經解決過的問題，變成可以收費、可以重複交付的知識產品，並用 AI 建立一人也能運作的交付系統。',
+          '從驗證需求、定價，到把專業做成可收費的產品與一人可運轉的交付系統。',
         articleIds: [
+          'validate-market-demand-five-methods',
           'content-to-product-knowledge-business',
+          'pricing-and-profit-structure',
           'one-person-company-ai-work-system',
+          'self-media-first-month-positioning-or-posting',
         ],
       },
     ],
