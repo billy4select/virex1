@@ -506,3 +506,52 @@
 .back-home{font-size:12px;color:var(--muted);border-left:1px solid var(--line);padding-left:12px;white-space:nowrap;letter-spacing:.02em}
 .back-home:hover{color:var(--orange-dark)}
 @media(max-width:560px){.brand-block{gap:10px}.back-home{font-size:11px;padding-left:10px}}
+
+/* ===== 主題頁（#topic-N）版面：章節、重點、觀念卡片、步驟時間軸 ===== */
+section.lesson-page[id^="topic-"] .lesson-content{font-size:16.5px;line-height:1.85}
+section.lesson-page[id^="topic-"] .lesson-content h2{display:block;margin:76px 0 24px;padding-top:26px;border-top:2px solid var(--ink);font-size:30px;line-height:1.3}
+section.lesson-page[id^="topic-"] .lesson-content h2:first-child{margin-top:0;padding-top:0;border-top:0}
+section.lesson-page[id^="topic-"] .sec-no{display:block;margin-bottom:8px;font-size:12px;font-weight:800;letter-spacing:.2em;color:var(--orange-dark)}
+section.lesson-page[id^="topic-"] .lesson-content h3{margin:34px 0 10px;padding-left:12px;border-left:4px solid var(--orange);font-size:19px;line-height:1.4}
+section.lesson-page[id^="topic-"] .lesson-content .note{margin:30px 0;padding:18px 22px;background:var(--soft);border-left:4px solid var(--orange);color:#4c4d44}
+section.lesson-page[id^="topic-"] .lesson-content .note b{margin-bottom:6px;font-size:12.5px;letter-spacing:.1em;color:var(--orange-dark)}
+/* 本篇重點 */
+.takeaway{margin:30px 0 8px;padding:20px 24px;background:var(--white);border:1px solid var(--line);border-top:3px solid var(--ink)}
+.takeaway>b{display:block;margin-bottom:8px;font-size:12.5px;letter-spacing:.14em;color:var(--muted)}
+.takeaway ol{list-style:none;counter-reset:tk;margin:0;padding:0!important}
+.takeaway li{counter-increment:tk;display:flex;gap:12px;margin:0;padding:9px 0;border-top:1px solid var(--line)}
+.takeaway li:first-child{border-top:0}
+.takeaway li:before{content:counter(tk);flex:0 0 24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;font-size:12px;font-weight:800;display:grid;place-items:center;margin-top:3px}
+.takeaway a{color:var(--ink);font-weight:700}
+.takeaway a:hover{color:var(--orange-dark)}
+/* 核心觀念卡片 */
+.concept{margin:20px 0;padding:6px 26px 18px;background:var(--white);border:1px solid var(--line)}
+section.lesson-page[id^="topic-"] .concept h3{margin:18px 0 8px;padding-left:0;border-left:0;font-size:19px}
+.concept h3:before{content:"觀念 " counter(cc);counter-increment:cc;display:block;margin-bottom:4px;font-size:11.5px;font-weight:800;letter-spacing:.16em;color:var(--orange-dark)}
+.concept-group{counter-reset:cc}
+.concept>:last-child{margin-bottom:0}
+/* 示範區塊（表格、流程圖） */
+section.lesson-page[id^="topic-"] .table-wrap{padding-left:16px;border-left:4px solid var(--green)}
+section.lesson-page[id^="topic-"] .flow-map{padding-left:16px;border-left:4px solid var(--green)}
+/* 步驟：大圓編號＋垂直連線 */
+section.lesson-page[id^="topic-"] ol.steps{margin:26px 0 30px}
+section.lesson-page[id^="topic-"] ol.steps li{padding:0 0 30px 66px;margin:0;border-bottom:0;min-height:44px;font-size:15.5px;line-height:1.8}
+section.lesson-page[id^="topic-"] ol.steps li:before{content:counter(step);left:0;top:0;width:42px;height:42px;border-radius:50%;background:var(--orange);color:#fff;font-size:17px;font-weight:800;display:grid;place-items:center}
+section.lesson-page[id^="topic-"] ol.steps li:after{content:"";position:absolute;left:20px;top:50px;bottom:8px;width:2px;background:var(--line)}
+section.lesson-page[id^="topic-"] ol.steps li:last-child{padding-bottom:6px}
+section.lesson-page[id^="topic-"] ol.steps li:last-child:after{display:none}
+section.lesson-page[id^="topic-"] ol.steps li b{display:block;margin-bottom:2px;font-size:17.5px;line-height:1.5;color:var(--ink)}
+/* 延伸閱讀清單 */
+section.lesson-page[id^="topic-"] #t1-next~ul li,section.lesson-page[id^="topic-"] #t2-next~ul li,section.lesson-page[id^="topic-"] #t3-next~ul li,section.lesson-page[id^="topic-"] #t4-next~ul li,section.lesson-page[id^="topic-"] #t5-next~ul li,section.lesson-page[id^="topic-"] #t6-next~ul li{padding:8px 0}
+@media(max-width:560px){
+ section.lesson-page[id^="topic-"] .lesson-content h2{font-size:25px;margin-top:60px}
+ section.lesson-page[id^="topic-"] ol.steps li{padding-left:56px}
+ section.lesson-page[id^="topic-"] ol.steps li:before{width:36px;height:36px;font-size:15px}
+ section.lesson-page[id^="topic-"] ol.steps li:after{left:17px;top:44px}
+ .concept{padding:2px 18px 14px}
+}
+@media(max-width:560px){
+ section.lesson-page[id^="topic-"] .table-wrap,section.lesson-page[id^="topic-"] .flow-map{padding-left:10px}
+ section.lesson-page[id^="topic-"] .table-scroll{overflow-x:auto}
+ section.lesson-page[id^="topic-"] .data-table{min-width:520px}
+}
