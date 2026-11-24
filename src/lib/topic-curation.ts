@@ -176,10 +176,10 @@ export const topicCurations: TopicCuration[] = [
     audience:
       '適合負責產品、廣告、內容或品牌的行銷人，以及想讓自己的產品與想法被對的人看見的經營者。',
     readingOrder:
-      '先重新定義受眾；再用 AI 分析真實評論找方向；最後看內容如何累積信任。',
+      '先用四個數字診斷問題出在哪一段；再重新定義受眾；最後看內容如何累積信任。',
     start: [
-      { id: 'audience-is-not-a-label', role: '核心指南' },
-      { id: 'ai-batch-review-analysis', role: '實作入口' },
+      { id: 'marketing-diagnosis-traffic-conversion-aov-repurchase', role: '核心指南' },
+      { id: 'audience-is-not-a-label', role: '實作入口' },
       { id: 'content-channel-trust-growth', role: '案例入口' },
     ],
     directions: [
@@ -195,8 +195,9 @@ export const topicCurations: TopicCuration[] = [
       {
         title: 'AI 與文案執行',
         description:
-          '先給 AI 受眾資料，再避開常見的文案錯誤；仍由人負責判斷與驗證。',
+          '用 AI 分析評論、先給它受眾資料，再避開常見的文案錯誤；仍由人負責判斷與驗證。',
         articleIds: [
+          'ai-batch-review-analysis',
           'ai-copywriting-audience-data',
           'ai-copywriting-mistakes',
         ],
