@@ -33,3 +33,16 @@
 /blog/notebooklm-to-claude-research-output/ /blog/notebooklm-vs-claude-internal-docs/ 301
 /blog/notebooklm-upload-preparation /blog/notebooklm-ocr-pdf-solution/ 301
 /blog/notebooklm-upload-preparation/ /blog/notebooklm-ocr-pdf-solution/ 301
+
+# AI 工作團隊：舊版 .html 網址永久導向目前的目錄網址
+/ai-work-team/about.html /ai-work-team/about/ 301
+/ai-work-team/curriculum.html /ai-work-team/curriculum/ 301
+/ai-work-team/resources.html /ai-work-team/resources/ 301
+/ai-work-team/workflows.html /ai-work-team/workflows/ 301
+/ai-work-team/lesson-01.html /ai-work-team/lesson-01/ 301
+/ai-work-team/lesson-02.html /ai-work-team/lesson-02/ 301
+/ai-work-team/lesson-03.html /ai-work-team/lesson-03/ 301
+/ai-work-team/lesson-04.html /ai-work-team/lesson-04/ 301
+/ai-work-team/lesson-05.html /ai-work-team/lesson-05/ 301
+/ai-work-team/lesson-06.html /ai-work-team/lesson-06/ 301
+/ai-work-team/cases.html /ai-work-team/cases/ 301
