@@ -6,6 +6,7 @@ import ArticleFAQ from '@/components/blog/ArticleFAQ.astro';
 import ArticleNext from '@/components/blog/ArticleNext.astro';
 import ArticleAuthor from '@/components/blog/ArticleAuthor.astro';
 import ArticleNewsletter from '@/components/blog/ArticleNewsletter.astro';
+import ArticleActions from '@/components/blog/ArticleActions.astro';
 import { Icon } from 'astro-icon/components';
 import { calculateReadingTime, formatDate } from '@/lib/utils';
 import { tagUrl } from '@/lib/blog';
@@ -204,6 +205,7 @@ const articleGridClass = 'lg:grid lg:grid-cols-[220px_minmax(0,760px)] lg:gap-12
           </div>
 
           <div data-pagefind-ignore>
+            <ArticleActions title={displayTitle} />
             <slot name="before-faq" />
             <ArticleFAQ faqs={faq} />
             <ArticleNext post={nextPost} />
