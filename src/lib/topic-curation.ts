@@ -30,6 +30,8 @@ export interface TopicSeriesLink {
 
 export interface TopicCuration {
   slug: string;
+  /** 主題頁開頭顯示的一句話（約 25 字內）。完整的 intro 只用在 meta description 與結構化資料 */
+  lead: string;
   intro: string;
   /** 一句話說明這個主題適合誰讀 */
   audience: string;
@@ -43,6 +45,7 @@ export interface TopicCuration {
 export const topicCurations: TopicCuration[] = [
   {
     slug: 'work-efficiency',
+    lead: '把 AI 與工具放進日常工作，變成可重複的流程。',
     intro:
       '工作不是把事情做完就好，而是用更好的方法持續產出。這個主題從任務與優先順序、個人工作系統，到 AI 工具、會議提案與知識沉澱，幫你建立可重複的工作方式。',
     audience:
@@ -105,6 +108,7 @@ export const topicCurations: TopicCuration[] = [
   },
   {
     slug: 'learning-capability',
+    lead: '學了卻用不出來？先判斷該學什麼，再把知識練成能力。',
     intro:
       '學很多不代表能力提升。這個主題從「該學什麼」與學習方法開始，進入刻意練習、判斷力與知識管理，幫你把知識轉成真正用得上的能力。',
     audience:
@@ -138,6 +142,7 @@ export const topicCurations: TopicCuration[] = [
   },
   {
     slug: 'business-marketing',
+    lead: '看懂一門生意怎麼成立，也看懂行銷卡在哪一段。',
     intro:
       '商業不是一堆名詞，而是一連串選擇：為誰解決什麼問題、用什麼成本交付、靠什麼守住。這個主題從生意為什麼成立開始，再拆需求、客群、模式與行銷診斷。',
     audience:
@@ -191,6 +196,7 @@ export const topicCurations: TopicCuration[] = [
   },
   {
     slug: 'personal-development',
+    lead: '把工作經驗整理成帶得走的資產，再慢慢長成個人事業。',
     intro:
       '這個主題談職涯與可帶走的能力，以及知識如何變成收入。兩條路可以分開看，也可以互相支援。',
     audience:
