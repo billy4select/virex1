@@ -8,7 +8,7 @@ tags:
   - 免費經濟
   - 商業模式
   - 自媒體經營
-category: 商業與思考
+category: 商業與行銷
 featured: false
 boost: false
 draft: false
