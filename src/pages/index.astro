@@ -1,81 +1,122 @@
 ---
-import MarketingLayout from '@/layouts/MarketingLayout.astro';
-import Breadcrumbs from '@/components/Breadcrumbs.astro';
+/**
+ * Index Page - 比利陳｜行銷裡的路人甲
+ * 個人知識平台首頁（2026-11 改版）
+ */
 import { getCollection } from 'astro:content';
-import { homeTopics } from '@/lib/homepage';
-import { getTopicCuration } from '@/lib/topic-curation';
+import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import Hero from '@sections/marketing/Hero.astro';
+import ExploreGrid from '@/components/home/ExploreGrid.astro';
+import ThinkingSection from '@/components/home/ThinkingSection.astro';
+import SeriesGrid from '@/components/home/SeriesGrid.astro';
+import AboutSection from '@/components/home/AboutSection.astro';
+import ReaderFeedback from '@/components/home/ReaderFeedback.astro';
+import ThemePostRow from '@/components/blog/ThemePostRow.astro';
+import { sortByDate, postUrl } from '@/lib/blog';
+import {
+  homeExploreEntries,
+  homeSeries,
+  homeThinkingPosts,
+  homepageConfig,
+} from '@/lib/homepage';
 import { siteConfig } from '@/config';
 
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
-const postById = new Map(allPosts.map((p) => [p.id, p]));
+const sortedPosts = sortByDate(allPosts);
+const latestPosts = sortedPosts.slice(0, homepageConfig.latestCount);
 
-// 每個主題：文章數 + 第一篇起點文章標題（讓讀者在進主題頁前就看到實際內容）
-const topics = homeTopics.map((topic) => {
-  const curation = getTopicCuration(topic.slug);
-  const startPost = curation ? postById.get(curation.start[0]?.id) : undefined;
-  return {
-    ...topic,
-    lead: curation?.lead ?? topic.question,
-    count: allPosts.filter((p) => p.data.category === topic.name).length,
-    startTitle: startPost?.data.title,
-  };
+const postById = new Map(allPosts.map((p) => [p.id, p]));
+const thinkingPosts = homeThinkingPosts
+  .map((id) => postById.get(id))
+  .filter((p): p is NonNullable<typeof p> => !!p)
+  .slice(0, homepageConfig.thinkingCount);
+
+// 探索入口：直接連到對應文章；找不到文章時在建置階段就報錯，避免出現死連結
+const exploreEntries = homeExploreEntries.map((entry) => {
+  const post = postById.get(entry.articleId);
+  if (!post) {
+    throw new Error(
+      `homeExploreEntries: 找不到文章「${entry.articleId}」，請檢查 src/lib/homepage.ts`
+    );
+  }
+  return { ...entry, href: postUrl(post.id), articleTitle: post.data.title };
 });
+
+const allTestimonials = await getCollection(
+  'testimonials',
+  ({ data }) => !data.draft
+);
+const featuredTestimonials = allTestimonials.filter((item) => item.data.featured);
+const readerFeedback = (featuredTestimonials.length > 0 ? featuredTestimonials : allTestimonials)
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, homepageConfig.feedbackCount)
+  .map((item) => ({
+    quote: item.data.quote,
+    author: item.data.author,
+    role: item.data.role,
+    company: item.data.company,
+    avatar: item.data.avatar,
+  }));
 ---
 
 <MarketingLayout
-  title={`主題 - ${siteConfig.name}`}
-  description="工作與效率、學習與能力、商業與行銷、個人發展與事業。從你現在想解決的問題開始。"
+  title={`${siteConfig.name}`}
+  description={siteConfig.description}
 >
-  <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '主題' }]} />
+  <Hero
+    title={"讓工作與生活，\n多一些值得探索的可能。"}
+    subtitle="分享值得使用的工具、值得學習的方法、值得閱讀的內容，以及對行銷、商業、AI、工作與個人成長的觀察。"
+    primaryCTA={{
+      label: '探索文章',
+      href: '/blog/',
+    }}
+    secondaryCTA={{
+      label: '認識比利',
+      href: '/about/',
+    }}
+    minHeight="large"
+  />
 
-  <section class="bg-background pb-10 pt-10 md:pt-14">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <h1 class="text-3xl font-extrabold tracking-tight text-text md:text-4xl lg:text-5xl">
-        四大主題
-      </h1>
-      <p class="mt-4 max-w-2xl text-base leading-relaxed text-text-muted">
-        四個方向，每個都有一篇可以直接開始讀的文章。
-      </p>
-    </div>
-  </section>
+  <!-- 01 從你感興趣的事情開始 -->
+  <ExploreGrid entries={exploreEntries} />
 
-  <section class="bg-background pb-16 pt-4 md:pb-20 md:pt-6">
+  <!-- 02 一些值得思考的事 -->
+  {thinkingPosts.length > 0 && <ThinkingSection posts={thinkingPosts} />}
+
+  <!-- 03 深入學習 -->
+  <SeriesGrid series={homeSeries} />
+
+  <!-- 04 最新文章 -->
+  <section id="latest" class="bg-background py-16 md:py-24" aria-labelledby="latest-title">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+        <div>
+          <h2 id="latest-title" class="text-2xl font-extrabold tracking-tight text-text md:text-3xl">
+            {homepageConfig.latestTitle}
+          </h2>
+        </div>
+        <a
+          href="/blog/"
+          class="inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors hover:underline"
+        >
+          查看全部文章
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="mt-10 border-t border-border">
         {
-          topics.map((topic, index) => (
-            <a
-              href={topic.href}
-              class="group flex h-full flex-col rounded-2xl border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
-            >
-              <span class="font-mono text-sm font-medium tabular-nums text-primary">
-                {String(index + 1).padStart(2, '0')}
-              </span>
-              <h2 class="mt-4 text-xl font-extrabold tracking-tight text-text transition-colors group-hover:text-primary md:text-2xl">
-                {topic.name}
-              </h2>
-              <p class="mt-3 text-sm leading-relaxed text-text-muted">
-                {topic.lead}
-              </p>
-              {topic.startTitle && (
-                <div class="mt-5 flex-1 border-t border-border pt-4">
-                  <p class="text-[11px] font-bold tracking-[0.15em] text-text-muted">從這篇開始</p>
-                  <p class="mt-1.5 text-sm font-semibold leading-snug text-text">
-                    {topic.startTitle}
-                  </p>
-                </div>
-              )}
-              <span class="mt-5 flex items-center justify-between text-sm">
-                <span class="text-xs text-text-muted">{topic.count} 篇文章</span>
-                <span class="inline-flex items-center gap-1 font-semibold text-primary">
-                  進入主題
-                  <span aria-hidden="true">→</span>
-                </span>
-              </span>
-            </a>
+          latestPosts.map((post) => (
+            <ThemePostRow post={post} />
           ))
         }
       </div>
     </div>
   </section>
+
+  <!-- 05 讀者怎麼說 -->
+  {readerFeedback.length > 0 && <ReaderFeedback testimonials={readerFeedback} />}
+
+  <!-- 06 關於比利陳 + 把新文章寄給你 -->
+  <AboutSection postCount={allPosts.length} />
 </MarketingLayout>
