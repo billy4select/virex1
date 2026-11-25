@@ -22,12 +22,10 @@ const image = post.data.image;
   data-theme={theme.slug}
   class:list={[
     'group grid gap-4 rounded-2xl border border-transparent px-3 py-5 transition-all hover:border-primary/30 hover:bg-surface sm:items-center sm:px-4',
-    image
-      ? 'sm:grid-cols-[minmax(0,1fr)_140px]'
-      : 'sm:grid-cols-[minmax(0,1fr)_auto]',
+    image ? 'sm:grid-cols-[minmax(0,1fr)_140px]' : '',
   ]}
 >
-  <div class="min-w-0">
+  <div class="flex min-w-0 flex-col">
     <div class="flex flex-wrap items-center gap-2 text-[11px] font-medium text-text-muted">
       {showCategory && (
         <>
@@ -49,10 +47,14 @@ const image = post.data.image;
     <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-text-muted">
       {post.data.description}
     </p>
+    <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+      閱讀
+      <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span>
+    </span>
   </div>
 
   {
-    image ? (
+    image && (
       <div class="order-first overflow-hidden rounded-xl border border-border bg-surface sm:order-none">
         <img
           src={image}
@@ -64,11 +66,6 @@ const image = post.data.image;
           class="aspect-[16/9] h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
         />
       </div>
-    ) : (
-      <span class="inline-flex items-center gap-1 self-center text-sm font-semibold text-primary">
-        閱讀
-        <span aria-hidden="true">→</span>
-      </span>
     )
   }
 </a>
