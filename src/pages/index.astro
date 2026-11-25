@@ -12,7 +12,7 @@ import SeriesGrid from '@/components/home/SeriesGrid.astro';
 import AboutSection from '@/components/home/AboutSection.astro';
 import ReaderFeedback from '@/components/home/ReaderFeedback.astro';
 import ThemePostRow from '@/components/blog/ThemePostRow.astro';
-import { sortByDate } from '@/lib/blog';
+import { sortByDate, postUrl } from '@/lib/blog';
 import {
   homeExploreEntries,
   homeSeries,
@@ -30,6 +30,17 @@ const thinkingPosts = homeThinkingPosts
   .map((id) => postById.get(id))
   .filter((p): p is NonNullable<typeof p> => !!p)
   .slice(0, homepageConfig.thinkingCount);
+
+// 探索入口：直接連到對應文章；找不到文章時在建置階段就報錯，避免出現死連結
+const exploreEntries = homeExploreEntries.map((entry) => {
+  const post = postById.get(entry.articleId);
+  if (!post) {
+    throw new Error(
+      `homeExploreEntries: 找不到文章「${entry.articleId}」，請檢查 src/lib/homepage.ts`
+    );
+  }
+  return { ...entry, href: postUrl(post.id), articleTitle: post.data.title };
+});
 
 const allTestimonials = await getCollection(
   'testimonials',
@@ -67,7 +78,7 @@ const readerFeedback = (featuredTestimonials.length > 0 ? featuredTestimonials :
   />
 
   <!-- 01 從你感興趣的事情開始 -->
-  <ExploreGrid entries={homeExploreEntries} />
+  <ExploreGrid entries={exploreEntries} />
 
   <!-- 02 一些值得思考的事 -->
   {thinkingPosts.length > 0 && <ThinkingSection posts={thinkingPosts} />}
