@@ -2,8 +2,10 @@
 import { Icon } from 'astro-icon/components';
 import type { HomeExploreEntry } from '@/lib/homepage';
 
+type ExploreCardEntry = HomeExploreEntry & { href: string; articleTitle: string };
+
 interface Props {
-  entries: HomeExploreEntry[];
+  entries: ExploreCardEntry[];
 }
 
 const { entries } = Astro.props;
@@ -41,8 +43,14 @@ const { entries } = Astro.props;
             <p class="mt-3 flex-1 text-sm leading-relaxed text-text-muted">
               {item.description}
             </p>
-            <span class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-primary">
-              開始探索
+            <span class="mt-5 border-t border-border pt-4 text-[11px] font-bold tracking-[0.15em] text-text-muted">
+              從這篇開始
+            </span>
+            <span class="mt-1.5 text-sm font-semibold leading-snug text-text">
+              {item.articleTitle}
+            </span>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+              閱讀這篇
               <Icon
                 name="lucide:arrow-right"
                 class="h-4 w-4 transition-transform group-hover:translate-x-0.5"
