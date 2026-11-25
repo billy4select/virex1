@@ -143,10 +143,10 @@ const schemas = [collectionSchema];
             <a
               href={postUrl(post.id)}
               class:list={[
-                'group flex h-full flex-col rounded-2xl bg-background p-6 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl md:p-7',
+                'group flex h-full flex-col rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md p-6',
                 role === '核心指南'
-                  ? 'border-2 border-primary'
-                  : 'border border-border hover:border-primary/50',
+                  ? 'border border-primary'
+                  : 'border border-border hover:border-primary/40',
               ]}
             >
               <div class="flex items-center justify-between gap-3">
@@ -212,11 +212,11 @@ const schemas = [collectionSchema];
           directions.map((direction, directionIndex) => (
             <section
               aria-labelledby={`topic-direction-${directionIndex}`}
-              class="rounded-3xl border border-border bg-background p-6 shadow-sm md:p-8"
+              class="rounded-2xl border border-border bg-background p-6"
             >
               <div class="flex items-start gap-4">
                 <span
-                  class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary text-lg font-extrabold text-white"
+                  class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-extrabold text-white"
                   aria-hidden="true"
                 >
                   {directionIndex + 1}
@@ -247,7 +247,7 @@ const schemas = [collectionSchema];
                 {direction.articles.map((post) => (
                   <a
                     href={postUrl(post.id)}
-                    class="group flex h-full flex-col rounded-xl border border-border bg-surface p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/50 hover:bg-background hover:shadow-md"
+                    class="group flex h-full flex-col rounded-2xl border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-background hover:shadow-md"
                   >
                     <h4 class="text-base font-bold leading-snug text-text transition-colors group-hover:text-primary">
                       {post.data.title}
@@ -272,7 +272,7 @@ const schemas = [collectionSchema];
   {/* 4. 下一步：白底 */}
   <section class="bg-background py-14 md:py-20">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="rounded-2xl border border-border bg-surface p-7 md:flex md:items-center md:justify-between md:gap-8 md:p-9">
+      <div class="rounded-2xl border border-border bg-surface p-6 md:flex md:items-center md:justify-between md:gap-8">
         <div>
           <h2 class="text-xl font-bold tracking-tight text-text md:text-2xl">
             看這個主題的全部文章
@@ -292,7 +292,7 @@ const schemas = [collectionSchema];
 
       {
         curation.series && (
-          <p class="mt-6 rounded-xl border border-border px-5 py-4 text-sm leading-relaxed text-text-muted">
+          <p class="mt-6 rounded-2xl border border-border p-6 text-sm leading-relaxed text-text-muted">
             <span class="font-semibold text-text">想照順序學：</span>
             <a
               href={curation.series.href}

@@ -219,7 +219,7 @@ const buttonAlignClass = align === 'left' ? 'justify-start' : 'justify-center';
       <div class:list={['mt-10 flex flex-col sm:flex-row items-center gap-4', buttonAlignClass]}>
         <a
           href={primaryCTA.href}
-          class="inline-flex items-center justify-center px-6 py-3 rounded-md bg-primary text-white font-medium hover:bg-primary-dark transition-colors w-full sm:w-auto"
+          class="inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary text-white font-medium hover:bg-primary-dark transition-colors w-full sm:w-auto"
         >
           {primaryCTA.label}
         </a>
@@ -228,7 +228,7 @@ const buttonAlignClass = align === 'left' ? 'justify-start' : 'justify-center';
             <a
               href={secondaryCTA.href}
               class:list={[
-                'inline-flex items-center justify-center px-6 py-3 rounded-md border font-medium transition-colors w-full sm:w-auto',
+                'inline-flex items-center justify-center px-6 py-3 rounded-full border font-medium transition-colors w-full sm:w-auto',
                 textClasses.button,
               ]}
             >

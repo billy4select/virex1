@@ -19,7 +19,7 @@ const totalCount = items.reduce((sum, item) => sum + item.count, 0);
           href={themeUrl(theme.slug)}
           aria-current={current === theme.slug ? 'page' : undefined}
           class:list={[
-            'group flex min-h-36 flex-col justify-between rounded-2xl border p-5 transition-all',
+            'group flex min-h-36 flex-col justify-between rounded-2xl border p-6 transition-all',
             current === theme.slug
               ? 'border-primary bg-primary/10'
               : 'border-border bg-surface hover:border-primary/40 hover:bg-primary/5',

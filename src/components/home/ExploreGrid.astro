@@ -28,7 +28,7 @@ const { entries } = Astro.props;
         entries.map((item, index) => (
           <a
             href={item.href}
-            class="group flex h-full flex-col bg-background p-6 transition-colors hover:bg-background/80 md:p-8"
+            class="group flex h-full flex-col bg-background p-6 transition-colors hover:bg-background/80 p-6"
           >
             <span class="font-mono text-3xl font-light tabular-nums text-primary/40 transition-colors group-hover:text-primary">
               {String(index + 1).padStart(2, '0')}
