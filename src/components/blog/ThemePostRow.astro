@@ -21,7 +21,7 @@ const image = post.data.image;
   data-blog-post
   data-theme={theme.slug}
   class:list={[
-    'group grid gap-4 rounded-2xl border border-transparent px-3 py-5 transition-all hover:border-primary/30 hover:bg-surface sm:items-center sm:px-4',
+    'group grid gap-4 border-b border-border py-6 transition-colors hover:bg-surface/80 sm:items-center',
     image ? 'sm:grid-cols-[minmax(0,1fr)_140px]' : '',
   ]}
 >
@@ -47,7 +47,7 @@ const image = post.data.image;
     <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-text-muted">
       {post.data.description}
     </p>
-    <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+    <span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary">
       閱讀
       <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span>
     </span>
