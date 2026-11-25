@@ -34,13 +34,17 @@ export interface HomeQuestion {
   href: string;
 }
 
-/** 首頁「從你感興趣的事情開始」四個探索入口 */
+/**
+ * 首頁「從你感興趣的事情開始」四個探索入口
+ * 每個入口直接連到一篇真正的文章（articleId），不再連到主題頁，
+ * 避免讀者點進去後面對一整頁文章清單而迷路。
+ */
 export interface HomeExploreEntry {
   label: string;
   question: string;
   description: string;
-  href: string;
-  relatedHref?: string;
+  /** 對應 src/content/blog 的文章 id（檔名，不含 .md） */
+  articleId: string;
 }
 
 export const homeTopics: HomeTopic[] = [
@@ -115,29 +119,25 @@ export const homeExploreEntries: HomeExploreEntry[] = [
     label: '工具',
     question: '有沒有值得使用的工具？',
     description: 'AI 工具、工作軟體、網站服務與數位資源。',
-    href: '/resources/',
-    relatedHref: '/blog/ai-tool-evaluation/',
+    articleId: 'free-ai-tools-workflow',
   },
   {
     label: '方法',
     question: '有沒有更好的方法？',
     description: '工作效率、學習策略、知識管理與實際應用。',
-    href: '/topics/work-efficiency/',
-    relatedHref: '/blog/ai-workflow-start-with-tasks/',
+    articleId: 'ai-workflow-start-with-tasks',
   },
   {
     label: '閱讀',
     question: '有什麼值得閱讀？',
     description: '書籍推薦、閱讀心得與值得認識的知識。',
-    href: '/topics/learning-capability/',
-    relatedHref: '/blog/personal-knowledge-system-minimal/',
+    articleId: 'personal-knowledge-system-minimal',
   },
   {
     label: '思考',
     question: '有什麼值得重新思考？',
     description: '行銷、商業、AI、工作與個人成長的觀察。',
-    href: '/topics/business-marketing/',
-    relatedHref: '/blog/why-business-exists-nine-questions/',
+    articleId: 'why-business-exists-nine-questions',
   },
 ];
 
