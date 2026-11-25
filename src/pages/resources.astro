@@ -7,63 +7,77 @@ import { siteConfig } from '@/config';
 
 const intents = [
   {
-    label: '我想開始寫 Threads',
-    title: '先拆掉心結，再談技巧',
-    description: '23 個起步主題，從「不敢寫、不知道寫什麼、發文沒人看」開始。',
-    href: '/threads/',
-    meta: 'Threads 起步指南',
+    label: '工作與效率',
+    title: '減少重複、把工具放進流程',
+    description: '工作系統、AI 流程、會議與知識沉澱，先挑一個任務開始。',
+    href: '/topics/work-efficiency/',
+    meta: '主題：工作與效率',
   },
   {
-    label: '我想用 AI 接手工作',
-    title: '先從一個真實任務開始',
-    description: '6 個 AI 員工、6 條流程、18 張任務卡，不用先學程式。',
-    href: '/ai-work-team/',
-    meta: 'AI 工作團隊',
+    label: '學習與能力',
+    title: '把學到的東西用得出來',
+    description: '學習方法、能力盤點與知識管理，對準「學了卻用不出來」。',
+    href: '/topics/learning-capability/',
+    meta: '主題：學習與能力',
   },
   {
-    label: '我想把專業變成內容',
-    title: '從內容、信任到產品',
-    description: '把「我會什麼」整理成別人聽得懂、願意付費的內容與 offer。',
-    href: '/blog/content-to-product-knowledge-business/',
-    meta: '內容與商業',
+    label: '商業與行銷',
+    title: '看懂需求、客群與生意',
+    description: '需求驗證、客群定義與行銷診斷，用框架代替感覺。',
+    href: '/topics/business-marketing/',
+    meta: '主題：商業與行銷',
   },
   {
-    label: '我想做 AI 影片',
-    title: '把分鏡變成可執行的 JSON',
-    description: 'Narrative Engine 的電影敘事結構、分鏡欄位與實作入口。',
-    href: '/narrative-engine/',
-    meta: 'AI 影片工具',
+    label: '個人發展',
+    title: '把經驗變成可帶走的資產',
+    description: '職涯、個人品牌與知識變現，整理真正屬於你的能力。',
+    href: '/topics/personal-development/',
+    meta: '主題：個人發展與事業',
   },
 ];
 
 const featured = [
   {
-    tag: '最多人從這裡開始',
-    title: 'Threads 起步心態指南',
-    description: '不談爆文公式，只處理起步最常卡住的三件事：敢不敢寫、用什麼身份寫、怎麼寫得下去。',
-    href: '/threads/',
-    action: '打開 23 個起步主題',
-    detail: '23 個主題 · 4 個起步方向',
+    tag: '可直接用',
+    title: 'AI 工具評估法',
+    description: '先找任務瓶頸，再看功能表。用五個維度判斷一個工具值不值得留下。',
+    href: '/blog/ai-tool-evaluation/',
+    action: '看評估方法',
+    detail: '工作與效率',
   },
   {
-    tag: '整套工作系統',
-    title: '打造 AI 工作團隊',
-    description: '6 個 AI 員工角色、6 條工作流程、18 張任務卡，加上可直接複製的 Prompt 與模板。',
-    href: '/ai-work-team/',
-    action: '看 6 個主題',
-    detail: '6 主題 · 6 流程 · 18 任務',
-  },
-  {
-    tag: '上傳前先檢查',
+    tag: '可直接用',
     title: 'NotebookLM 上傳檢查表',
     description: 'PDF 讀不到、表格跑掉、中文亂碼，通常不是模型問題，是上傳前少做了幾件事。',
     href: '/blog/notebooklm-upload-preparation/',
     action: '看完整檢查流程',
-    detail: 'PDF · 掃描檔 · 表格 · 中文',
+    detail: '知識整理',
+  },
+  {
+    tag: '完整專題',
+    title: '打造 AI 工作團隊',
+    description: '6 個 AI 員工角色、6 條工作流程、18 張任務卡，加上可直接複製的 Prompt 與模板。',
+    href: '/ai-work-team/',
+    action: '進入專題',
+    detail: '6 主題 · 18 任務',
   },
 ];
 
 const resources = [
+  {
+    type: '方法',
+    title: 'AI 工具評估',
+    description: '用「任務、輸入、輸出、檢查、替代成本」判斷一個工具值不值得留下。',
+    href: '/blog/ai-tool-evaluation/',
+    action: '看方法',
+  },
+  {
+    type: '檢查表',
+    title: 'NotebookLM 上傳準備',
+    description: '上傳前必做的檔案、格式與中文檢查，減少讀不到與亂碼。',
+    href: '/blog/notebooklm-upload-preparation/',
+    action: '打開檢查表',
+  },
   {
     type: '工作表',
     title: 'Threads 帳號定位',
@@ -79,44 +93,30 @@ const resources = [
     action: '打開任務庫',
   },
   {
-    type: '規劃表',
-    title: '內容支柱規劃',
-    description: '先決定三個長期支柱，再從每個支柱長出常被問的問題，不用每天重新想題目。',
-    href: '/blog/content-channel-trust-growth/',
-    action: '看規劃方法',
+    type: '方法',
+    title: '個人知識最小系統',
+    description: '從收集、理解到輸出，建立最小可行的知識系統。',
+    href: '/blog/personal-knowledge-system-minimal/',
+    action: '看方法',
   },
   {
-    type: '評估表',
-    title: 'AI 工具評估',
-    description: '用「任務、輸入、輸出、檢查、替代成本」判斷一個工具值不值得留下。',
-    href: '/blog/ai-tool-evaluation/',
-    action: '看評估框架',
-  },
-  {
-    type: '指南',
-    title: '個人品牌信任',
+    type: '方法',
+    title: '個人品牌與信任',
     description: '從觸及率轉向信任：誰記得你、為什麼找你、憑什麼相信你。',
     href: '/blog/personal-brand-trust-not-reach/',
-    action: '看信任路徑',
-  },
-  {
-    type: '工具',
-    title: 'Narrative Engine',
-    description: '用電影敘事結構與分鏡 JSON，把一個想法拆成可執行的影片腳本。',
-    href: '/narrative-engine/',
-    action: '打開工具',
+    action: '看路徑',
   },
 ];
 
 const checklists = [
   {
-    title: 'Threads 起步前',
-    note: '先確認你要開始，而不是先研究演算法。',
+    title: '開始用 AI 前',
+    note: '先對準任務，再選工具。',
     items: [
-      '我寫得出一句「我主要幫誰、解決什麼」',
-      '我選得出一個人，而不是「所有人」',
-      '我能一週寫 2 篇，連續 4 週',
-      '我知道第一個月不求流量，只求留下 8 篇可回看的內容',
+      '我能說出這次要完成的具體任務',
+      '我知道輸入是什麼、理想輸出長什麼樣',
+      '我保留自己檢查事實與邏輯的步驟',
+      '我不會把敏感資料直接貼進公開模型',
     ],
   },
   {
@@ -130,34 +130,34 @@ const checklists = [
     ],
   },
   {
-    title: '內容支柱開始前',
-    note: '先有支柱，再談產量。',
+    title: '建立學習或內容節奏前',
+    note: '先有方向，再談產量。',
     items: [
-      '三個支柱都連到同一個定位',
-      '每個支柱有 3 個常被問的問題',
-      '每篇都連回一個 hub 或一個產品',
-      '一週只推一個支柱，不混著寫',
+      '我知道這階段最想解決的一個問題',
+      '我選得出可重複使用的方法或支柱',
+      '我能維持一週至少一次輸出或複盤',
+      '我知道完成長什麼樣子，而不是一直收集',
     ],
   },
 ];
 
 const collections = [
   {
-    label: '專題資源庫 01',
+    label: '完整專題',
     title: 'Threads 起步心態指南',
     description: '23 個起步主題，從迷思、心態、寫作到節奏，適合還沒開始或一直卡住的人。',
     href: '/threads/',
     meta: '23 個主題 · 4 個起步方向',
   },
   {
-    label: '專題資源庫 02',
+    label: '完整專題',
     title: '打造 AI 工作團隊',
     description: '6 個 AI 員工、6 條流程、18 張任務卡、13 份 Prompt、13 份模板。',
     href: '/ai-work-team/',
     meta: '6 主題 · 6 流程 · 18 任務',
   },
   {
-    label: '專題資源庫 03',
+    label: '完整專題',
     title: 'Narrative Engine',
     description: '電影敘事視覺體系、分鏡 JSON Schema 與 AI 影片工具。',
     href: '/narrative-engine/',
@@ -168,23 +168,23 @@ const collections = [
 const faqs = [
   {
     question: '這些資源要付費嗎？',
-    answer: '不用。這一頁整理的都是免費入口、索引與檢查表；電子報也是自由訂閱，不會因為你下載或點開就被收費。',
+    answer: '不用。這一頁整理的都是免費入口、方法與檢查表；電子報也是自由訂閱，不會因為你點開就被收費。',
+  },
+  {
+    question: '工具箱和文章、主題有什麼不同？',
+    answer: '主題幫你選方向，文章講清楚為什麼與怎麼做；工具箱把值得重複使用的方法收成入口與檢查表，讓你先做一次，再回文章看背後的邏輯。',
   },
   {
     question: '需要留 email 才能看嗎？',
-    answer: '不需要。這一版先把入口與檢查表公開，讓你直接使用；只有想收到每月新增資源時，才需要訂電子報。',
+    answer: '不需要。入口與檢查表都公開；只有想收到更新時，才需要訂電子報。',
   },
   {
     question: '可以商用或轉貼嗎？',
     answer: '歡迎把檢查表用在自己的工作與團隊內，也可以引用並註明來源。請不要整份轉售、包裝成自己的付費產品，或大量複製成內容農場。',
   },
   {
-    question: '多久更新一次？',
-    answer: '有新文章、新流程或新模板時會更新，通常一個月一次；頁面上的「更新日期」會標在頁尾。',
-  },
-  {
-    question: '我完全不知道從哪一個開始怎麼辦？',
-    answer: '先從最上面四個「我想……」挑一個。如果還是選不出來，選 Threads 起步指南或 AI 工作團隊，兩個都是從零開始的入口。',
+    question: '我不知道從哪一個開始怎麼辦？',
+    answer: '先從最上面四個主題方向挑一個你現在最卡的。若需要整套流程，再進「完整專題」裡的 AI 工作團隊或 Threads 指南。',
   },
 ];
 
@@ -192,10 +192,10 @@ const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   name: '工具箱',
-  description: '把文章裡的方法，整理成入口、索引與檢查表。',
+  description: '把值得重複使用的方法，收成可直接用的入口與檢查表。',
   url: 'https://blog.billy4select.com/resources/',
   inLanguage: 'zh-Hant-TW',
-  dateModified: '2026-11-20',
+  dateModified: '2026-11-25',
   mainEntity: {
     '@type': 'ItemList',
     name: '工具箱資源',
@@ -213,7 +213,7 @@ const collectionSchema = {
 
 <MarketingLayout
   title={`工具箱 - ${siteConfig.name}`}
-  description="把文章裡的方法，整理成入口、索引與檢查表。從 Threads 起步、AI 工作團隊、內容規劃到 NotebookLM 上傳，挑一個現在最卡的地方開始。"
+  description="把值得重複使用的方法，收成可直接用的入口與檢查表。對齊工作、學習、商業與個人發展，先做一次，再回文章看為什麼。"
   faq={faqs.map((item) => ({ q: item.question, a: item.answer }))}
   structuredData={[collectionSchema]}
 >
@@ -224,13 +224,13 @@ const collectionSchema = {
       <div class="max-w-3xl">
         <p class="text-xs font-bold uppercase tracking-[0.18em] text-primary">工具箱</p>
         <h1 class="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-text md:text-4xl lg:text-5xl">
-          不用先讀完 61 篇，<br class="hidden md:block" />先拿走一個能用的東西。
+          先拿走一個能用的東西，<br class="hidden md:block" />再決定要不要往下讀。
         </h1>
         <p class="mt-5 text-base leading-relaxed text-text-muted md:text-lg">
-          這裡把文章裡的方法，整理成入口、索引與檢查表。挑一個你現在最卡的地方，先做一次；做完再回到文章看背後的為什麼。
+          工具箱把值得重複使用的方法，收成入口與檢查表。不取代文章，是文章的實作入口——先做一次，再回主題與文章看背後的為什麼。
         </p>
         <p class="mt-6 text-sm font-semibold text-text-muted">
-          6 個資源入口 · 3 份檢查表 · 3 個專題資源庫
+          對齊四大主題 · 可直接用的方法 · 完整專題在下方
         </p>
       </div>
 
@@ -238,7 +238,7 @@ const collectionSchema = {
         {intents.map((item) => (
           <a
             href={item.href}
-            class="group flex h-full flex-col rounded-2xl border border-border bg-background p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-lg"
+            class="group flex h-full flex-col rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-lg"
           >
             <span class="text-[11px] font-bold uppercase tracking-[0.14em] text-primary">{item.label}</span>
             <h2 class="mt-3 text-lg font-extrabold leading-snug tracking-tight text-text transition-colors group-hover:text-primary">
@@ -259,7 +259,7 @@ const collectionSchema = {
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex flex-wrap items-end justify-between gap-4">
         <div class="max-w-2xl">
-          <p class="text-xs font-bold uppercase tracking-[0.18em] text-primary">先從這三個開始</p>
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-primary">精選入口</p>
           <h2 id="featured-title" class="mt-3 text-2xl font-extrabold tracking-tight text-text md:text-3xl">
             不確定要選哪個，就從這裡。
           </h2>
@@ -309,7 +309,7 @@ const collectionSchema = {
         {resources.map((item) => (
           <a
             href={item.href}
-            class="group flex h-full flex-col rounded-2xl border border-border bg-background p-5 transition-all duration-300 hover:border-primary/40 hover:shadow-md"
+            class="group flex h-full flex-col rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:border-primary/40 hover:shadow-md"
           >
             <div class="flex items-center justify-between gap-4">
               <span class="text-[11px] font-bold uppercase tracking-[0.14em] text-primary">{item.type}</span>
@@ -360,7 +360,7 @@ const collectionSchema = {
   <section class="bg-surface py-16 md:py-20" aria-labelledby="collections-title">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl">
-        <p class="text-xs font-bold uppercase tracking-[0.18em] text-primary">專題資源庫</p>
+        <p class="text-xs font-bold uppercase tracking-[0.18em] text-primary">完整專題</p>
         <h2 id="collections-title" class="mt-3 text-2xl font-extrabold tracking-tight text-text md:text-3xl">
           想從頭學一個主題，走這三個。
         </h2>
