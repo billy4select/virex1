@@ -149,16 +149,8 @@ const schemas = [collectionSchema];
               ]}
             >
               <div class="flex items-center justify-between gap-3">
-                <span
-                  class:list={[
-                    'flex h-10 w-10 items-center justify-center rounded-full text-lg font-extrabold',
-                    role === '核心指南'
-                      ? 'bg-primary text-white'
-                      : 'bg-primary/15 text-primary',
-                  ]}
-                  aria-hidden="true"
-                >
-                  {startIndex + 1}
+                <span class="font-mono text-sm font-medium tabular-nums text-primary">
+                  {String(startIndex + 1).padStart(2, '0')}
                 </span>
                 <span
                   class:list={[
@@ -212,17 +204,14 @@ const schemas = [collectionSchema];
               aria-labelledby={`topic-direction-${directionIndex}`}
               class="rounded-2xl border border-border bg-background p-6"
             >
-              <div class="flex items-start gap-4">
-                <span
-                  class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-extrabold text-white"
-                  aria-hidden="true"
-                >
-                  {directionIndex + 1}
+              <div class="flex items-start gap-3">
+                <span class="font-mono text-sm font-medium tabular-nums text-primary">
+                  {String(directionIndex + 1).padStart(2, '0')}
                 </span>
                 <div class="max-w-3xl">
                   <h3
                     id={`topic-direction-${directionIndex}`}
-                    class="mt-1 text-xl font-bold tracking-tight text-text md:text-2xl"
+                    class="text-xl font-bold tracking-tight text-text md:text-2xl"
                   >
                     {direction.title}
                   </h3>

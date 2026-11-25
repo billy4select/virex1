@@ -30,7 +30,7 @@ const { topics } = Astro.props;
             href={topic.href}
             class="group grid grid-cols-[auto_1fr_auto] items-start gap-4 border-b border-border py-7 transition-colors hover:bg-background/60 md:grid-cols-[4rem_12rem_1fr_auto] md:items-center md:gap-8 md:py-8"
           >
-            <span class="font-mono text-2xl font-light tabular-nums text-primary/40 transition-colors group-hover:text-primary md:text-3xl">
+            <span class="font-mono text-sm font-medium tabular-nums text-primary">
               {String(index + 1).padStart(2, '0')}
             </span>
 
