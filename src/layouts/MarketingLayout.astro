@@ -2,7 +2,6 @@
 import BaseLayout from './BaseLayout.astro';
 import Header from '@layout/Header.astro';
 import Footer from '@layout/Footer.astro';
-import MobileBottomNav from '@layout/MobileBottomNav.astro';
 import AnnouncementBar from '@layout/AnnouncementBar.astro';
 import { siteConfig } from '@/config';
 
@@ -105,7 +104,7 @@ if (schemaType === 'HowTo' && steps && steps.length > 0) {
     ))}
   </Fragment>
 
-  <div class="flex min-h-screen flex-col pb-16 md:pb-0">
+  <div class="flex flex-col min-h-screen">
     {
       announcement.enabled && (
         <AnnouncementBar
@@ -123,6 +122,5 @@ if (schemaType === 'HowTo' && steps && steps.length > 0) {
       <slot />
     </main>
     <Footer />
-    <MobileBottomNav />
   </div>
 </BaseLayout>
