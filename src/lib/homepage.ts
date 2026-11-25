@@ -49,7 +49,7 @@ export const homeTopics: HomeTopic[] = [
     name: '工作與效率',
     question: '如何用更好的方法，完成工作與生活中的事情？',
     description:
-      'AI 工具、工作流程、會議整理、知識沉澱與自動化，整理真正能放進日常的方法。',
+      '任務安排、工作系統、時間分配，以及 AI 工具與自動化，整理真正能放進日常的方法。',
     href: '/topics/work-efficiency/',
     category: 'work-efficiency',
   },
@@ -58,7 +58,7 @@ export const homeTopics: HomeTopic[] = [
     name: '學習與能力',
     question: '如何持續學習，培養真正用得上的能力？',
     description:
-      '學習策略、刻意練習、能力盤點與判斷力，幫助你把知識轉成實際能力。',
+      '判斷該學什麼、建立學習方法，到刻意練習與知識管理，幫助你把知識轉成實際能力。',
     href: '/topics/learning-capability/',
     category: 'learning-capability',
   },
@@ -67,7 +67,7 @@ export const homeTopics: HomeTopic[] = [
     name: '商業與行銷',
     question: '如何理解市場、顧客與一門生意的運作？',
     description:
-      '需求驗證、商業模式、受眾理解、行銷診斷與品牌信任，整理看懂市場的方法。',
+      '需求驗證、客群與商業模式，到行銷診斷與品牌信任，整理看懂市場與生意的方法。',
     href: '/topics/business-marketing/',
     category: 'business-marketing',
   },
@@ -76,7 +76,7 @@ export const homeTopics: HomeTopic[] = [
     name: '個人發展與事業',
     question: '如何運用自己的能力與經驗，探索更多發展機會？',
     description:
-      '職涯策略、可攜帶資產、個人品牌、知識變現與一人公司，探索專業如何發展。',
+      '職涯策略、可攜帶資產、個人品牌與知識變現，探索專業如何持續累積與發展。',
     href: '/topics/personal-development/',
     category: 'personal-development',
   },

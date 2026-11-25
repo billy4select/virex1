@@ -12,12 +12,6 @@ export interface BlogTheme {
 /**
  * 全站四個主題（2026-11 改版）。
  * 文章分類、/topics/ 與 /blog/ 的篩選都使用這份定義，避免名稱分叉。
- *
- * 新版四大主題：
- * 1. 工作與效率
- * 2. 學習與能力
- * 3. 商業與行銷
- * 4. 個人發展與事業
  */
 export const blogThemes: BlogTheme[] = [
   {
@@ -26,7 +20,7 @@ export const blogThemes: BlogTheme[] = [
     shortName: '工作與效率',
     readerQuestion: '如何用更好的方法，完成工作與生活中的事情？',
     description:
-      '從 AI 工具、工作流程、會議整理到知識沉澱，整理那些真正能放進日常工作的方法與系統。',
+      '從任務安排、工作系統、時間分配，到 AI 工具與自動化，整理真正能放進日常的方法。',
     indexable: true,
   },
   {
@@ -35,7 +29,7 @@ export const blogThemes: BlogTheme[] = [
     shortName: '學習與能力',
     readerQuestion: '如何持續學習，培養真正用得上的能力？',
     description:
-      '從學習策略、刻意練習、能力盤點到判斷力培養，幫助你把知識轉成實際能力。',
+      '從判斷該學什麼、建立學習方法，到刻意練習與知識管理，幫助你把知識轉成實際能力。',
     indexable: true,
   },
   {
@@ -44,7 +38,7 @@ export const blogThemes: BlogTheme[] = [
     shortName: '商業與行銷',
     readerQuestion: '如何理解市場、顧客與一門生意的運作？',
     description:
-      '從需求驗證、商業模式、受眾理解到行銷診斷與品牌信任，整理看懂市場與生意的方法。',
+      '從需求驗證、客群與商業模式，到行銷診斷與品牌信任，整理看懂市場與生意的方法。',
     indexable: true,
   },
   {
@@ -53,7 +47,7 @@ export const blogThemes: BlogTheme[] = [
     shortName: '個人發展與事業',
     readerQuestion: '如何運用自己的能力與經驗，探索更多發展機會？',
     description:
-      '從職涯策略、可攜帶資產、個人品牌到知識變現與一人公司，探索專業如何持續累積與發展。',
+      '從職涯策略、可攜帶資產、個人品牌到知識變現，探索專業如何持續累積與發展。',
     indexable: true,
   },
 ];
