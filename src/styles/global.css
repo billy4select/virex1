@@ -106,6 +106,12 @@ body {
   line-height: 1.8;
 }
 
+/* 內文第一個元素不留上邊距，讓正文與左側目錄從同一條線開始。
+   （上面的 .prose p 會蓋過 Typography 預設的 first-child 規則，所以要明確寫出來。） */
+.prose > :first-child {
+  margin-top: 0;
+}
+
 .prose > ul,
 .prose > ol {
   margin-top: 1em;
