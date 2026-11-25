@@ -94,8 +94,9 @@ const tocId = 'article-toc-mobile';
     </div>
   </div>
 
-  {/* 桌面：只留 H2 */}
-  <div class="hidden lg:block">
+  {/* 桌面：只留 H2；頂端微調 pt-1.5，讓「目錄」與正文第一行置中對齊 */}
+  <div class="hidden pt-1.5 lg:block">
+    <p class="mb-2 pl-3 text-sm font-bold tracking-wide text-text">目錄</p>
     <ul class="space-y-0.5 border-l border-border pl-3">
       {
         items.map((item) => (
