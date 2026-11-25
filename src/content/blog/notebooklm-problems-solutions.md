@@ -5,7 +5,7 @@ publishedDate: 2026-04-10T00:00:00Z
 author: 比利陳 Billy Chen
 tags:
   - NotebookLM疑難排解
-category: 能力與學習
+category: 工作與效率
 featured: true
 boost: true
 draft: false

@@ -34,51 +34,60 @@ export interface HomeQuestion {
   href: string;
 }
 
+/** 首頁「從你感興趣的事情開始」四個探索入口 */
+export interface HomeExploreEntry {
+  label: string;
+  question: string;
+  description: string;
+  href: string;
+  relatedHref?: string;
+}
+
 export const homeTopics: HomeTopic[] = [
   {
-    slug: 'ability-learning',
-    name: '能力與學習',
-    question: '我還能學會什麼，並把所學真的放進工作？',
+    slug: 'work-efficiency',
+    name: '工作與效率',
+    question: '如何用更好的方法，完成工作與生活中的事情？',
     description:
-      '從 AI 工具、知識管理到學習方法與判斷力，整理那些真的能放進日常工作的能力。',
-    href: '/topics/ability-learning/',
-    category: 'ability-learning',
+      'AI 工具、工作流程、會議整理、知識沉澱與自動化，整理真正能放進日常的方法。',
+    href: '/topics/work-efficiency/',
+    category: 'work-efficiency',
   },
   {
-    slug: 'business-thinking',
-    name: '商業與思考',
-    question: '我怎麼看懂一門生意，找到值得解決的問題？',
+    slug: 'learning-capability',
+    name: '學習與能力',
+    question: '如何持續學習，培養真正用得上的能力？',
     description:
-      '從需求、客群、商業模式到成本與成長，拆解一門生意如何成立、如何被選擇。',
-    href: '/topics/business-thinking/',
-    category: 'business-thinking',
+      '學習策略、刻意練習、能力盤點與判斷力，幫助你把知識轉成實際能力。',
+    href: '/topics/learning-capability/',
+    category: 'learning-capability',
   },
   {
-    slug: 'personal-growth',
+    slug: 'business-marketing',
+    name: '商業與行銷',
+    question: '如何理解市場、顧客與一門生意的運作？',
+    description:
+      '需求驗證、商業模式、受眾理解、行銷診斷與品牌信任，整理看懂市場的方法。',
+    href: '/topics/business-marketing/',
+    category: 'business-marketing',
+  },
+  {
+    slug: 'personal-development',
     name: '個人發展與事業',
-    question: '我如何把能力與經驗，變成下一階段的機會？',
+    question: '如何運用自己的能力與經驗，探索更多發展機會？',
     description:
-      '兩條路：職涯與可帶走的能力，以及知識如何變成收入。先選你現在卡的是哪一邊。',
-    href: '/topics/personal-growth/',
-    category: 'personal-growth',
-  },
-  {
-    slug: 'marketing-brand',
-    name: '行銷與品牌',
-    question: '如何理解受眾、建立品牌，讓產品與想法被看見？',
-    description:
-      '從受眾理解、內容策略到品牌溝通與 AI 行銷，整理讓價值被市場理解的方法。',
-    href: '/topics/marketing-brand/',
-    category: 'marketing-brand',
+      '職涯策略、可攜帶資產、個人品牌、知識變現與一人公司，探索專業如何發展。',
+    href: '/topics/personal-development/',
+    category: 'personal-development',
   },
 ];
 
 export const homeSeries: HomeSeries[] = [
   {
-    name: 'AI 工作團隊',
-    theme: '能力與學習',
+    name: '打造 AI 工作團隊',
+    theme: '工作與效率',
     description:
-      '把 AI 從單一工具，變成可分工、可交接、可重複的工作團隊。',
+      '從單一 AI 工具到可以分工、交接與重複執行的工作流程。',
     href: '/ai-work-team/',
     chapters: [
       { label: '先找出值得交給 AI 的事', href: '/ai-work-team/lesson-01/' },
@@ -87,10 +96,10 @@ export const homeSeries: HomeSeries[] = [
     ],
   },
   {
-    name: 'Threads 怎麼經營',
+    name: 'Threads 經營教學',
     theme: '個人發展與事業',
     description:
-      '從起步心態、人設定位、發文頻率到互動與變現，建立一套你做得到的內容節奏。',
+      '從帳號定位、內容規劃到互動與經營，建立一套做得到的內容節奏。',
     href: '/threads/',
     chapters: [
       { label: '先調整起步心態，不急著完美', href: '/threads/' },
@@ -100,6 +109,39 @@ export const homeSeries: HomeSeries[] = [
   },
 ];
 
+/** 首頁「從你感興趣的事情開始」 */
+export const homeExploreEntries: HomeExploreEntry[] = [
+  {
+    label: '工具',
+    question: '有沒有值得使用的工具？',
+    description: 'AI 工具、工作軟體、網站服務與數位資源。',
+    href: '/resources/',
+    relatedHref: '/blog/ai-tool-evaluation/',
+  },
+  {
+    label: '方法',
+    question: '有沒有更好的方法？',
+    description: '工作效率、學習策略、知識管理與實際應用。',
+    href: '/topics/work-efficiency/',
+    relatedHref: '/blog/ai-workflow-start-with-tasks/',
+  },
+  {
+    label: '閱讀',
+    question: '有什麼值得閱讀？',
+    description: '書籍推薦、閱讀心得與值得認識的知識。',
+    href: '/topics/learning-capability/',
+    relatedHref: '/blog/personal-knowledge-system-minimal/',
+  },
+  {
+    label: '思考',
+    question: '有什麼值得重新思考？',
+    description: '行銷、商業、AI、工作與個人成長的觀察。',
+    href: '/topics/business-marketing/',
+    relatedHref: '/blog/why-business-exists-nine-questions/',
+  },
+];
+
+/** 舊版 homeQuestions 保留相容 */
 export const homeQuestions: HomeQuestion[] = [
   {
     label: '職涯',
@@ -121,8 +163,26 @@ export const homeQuestions: HomeQuestion[] = [
   },
 ];
 
+/** 首頁「近期值得探索」精選文章 ID */
+export const homeFeaturedExplore = [
+  'ai-workflow-start-with-tasks',
+  'notebooklm-complete-guide-2026',
+  'why-business-exists-nine-questions',
+  'mid-career-portable-assets',
+];
+
+/** 首頁「一些值得思考的事」觀點文章 ID */
+export const homeThinkingPosts = [
+  'judgment-in-ai-era',
+  'ai-era-capability-map',
+  'mid-career-portable-assets',
+  'personal-brand-trust-not-reach',
+];
+
 export const homepageConfig = {
-  latestCount: 5,
+  latestCount: 6,
   latestTitle: '最新文章',
   feedbackCount: 4,
+  featuredExploreCount: 4,
+  thinkingCount: 4,
 };

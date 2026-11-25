@@ -11,7 +11,8 @@ import type { SocialLinks, LegalConfig } from '../lib/types';
 export const name = '比利陳 | 行銷裡的路人甲';
 
 /** 網站描述：SEO 用，出現在搜尋結果 */
-export const description = '比利陳的自我成長知識平台。從能力與學習、商業與思考、個人發展與事業、行銷與品牌四個方向，分享研究、實驗、觀察與實務經驗。';
+export const description =
+  '讓工作與生活，多一些值得探索的可能。分享值得使用的工具、值得學習的方法、值得閱讀的內容，以及對行銷、商業、AI、工作與個人成長的觀察。';
 
 /** 正式網址 */
 export const url = 'https://blog.billy4select.com';
@@ -42,5 +43,5 @@ export const social: SocialLinks = {
 export const legal: LegalConfig = {
   privacyEmail: 'billy4select@gmail.com',
   legalEmail: 'billy4select@gmail.com',
-  lastUpdated: '2026-11-20',
+  lastUpdated: '2026-11-25',
 };

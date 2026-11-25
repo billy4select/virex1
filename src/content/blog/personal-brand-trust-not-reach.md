@@ -131,7 +131,7 @@ faq:
 
 想先把專業整理成可販售的 offer，可以看[如何把自己的專業變成市場價值](/blog/turn-expertise-into-market-value/)；想建立一人交付系統，可以看[一人公司 AI 工作模式](/blog/one-person-company-ai-work-system/)。
 
-想把專業變成可持續收入，看[從內容到產品](/blog/content-to-product-knowledge-business/)；如果你正在盤點離開公司後還帶得走什麼，看[中階主管的可攜帶資產](/blog/mid-career-portable-assets/)。回到[個人發展與事業](/topics/personal-growth/)可以看到整條路徑。
+想把專業變成可持續收入，看[從內容到產品](/blog/content-to-product-knowledge-business/)；如果你正在盤點離開公司後還帶得走什麼，看[中階主管的可攜帶資產](/blog/mid-career-portable-assets/)。回到[個人發展與事業](/topics/personal-development/)可以看到整條路徑。
 
 ---
 

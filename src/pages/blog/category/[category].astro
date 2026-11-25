@@ -3,10 +3,15 @@ import { blogThemes } from '@/lib/themes';
 
 export function getStaticPaths() {
   const legacyTargets: Record<string, string> = {
-    'ai-tech': 'ability-learning',
-    'business-marketing': 'business-thinking',
-    'personal-brand': 'personal-growth',
+    'ai-tech': 'work-efficiency',
+    'business-marketing': 'business-marketing',
+    'personal-brand': 'personal-development',
     'investment-market': '',
+    // 舊主題 slug
+    'ability-learning': 'work-efficiency',
+    'business-thinking': 'business-marketing',
+    'personal-growth': 'personal-development',
+    'marketing-brand': 'business-marketing',
   };
 
   const current = blogThemes.map((theme) => ({

@@ -7,7 +7,7 @@ tags:
   - 商業模式
   - 商業分析
   - 行銷策略
-category: 商業與思考
+category: 商業與行銷
 featured: false
 boost: false
 draft: false

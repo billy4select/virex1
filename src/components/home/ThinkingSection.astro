@@ -1,0 +1,42 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { postUrl } from '@/lib/blog';
+
+interface Props {
+  posts: CollectionEntry<'blog'>[];
+}
+
+const { posts } = Astro.props;
+---
+
+<section id="thinking" class="bg-surface py-16 md:py-20">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl font-extrabold tracking-tight text-text md:text-4xl">
+        一些值得思考的事
+      </h2>
+      <p class="mt-3 text-base leading-relaxed text-text-muted">
+        這些文章主要呈現觀察、經驗與判斷，而不只是工具或步驟。
+      </p>
+    </div>
+
+    <div class="mt-10 space-y-0 border-t border-border">
+      {
+        posts.map((post) => (
+          <a
+            href={postUrl(post.id)}
+            class="group flex flex-col gap-1 border-b border-border py-5 transition-colors hover:bg-background/50 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
+          >
+            <h3 class="text-lg font-semibold leading-snug text-text transition-colors group-hover:text-primary md:text-xl">
+              {post.data.title}
+            </h3>
+            <p class="mt-1 max-w-xl text-sm leading-relaxed text-text-muted sm:mt-0 sm:text-right sm:text-base">
+              {post.data.description.slice(0, 80)}
+              {post.data.description.length > 80 ? '…' : ''}
+            </p>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

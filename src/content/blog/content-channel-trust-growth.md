@@ -7,7 +7,7 @@ tags:
   - 內容行銷
   - 成長策略
   - 品牌信任
-category: 行銷與品牌
+category: 商業與行銷
 featured: false
 boost: false
 draft: false

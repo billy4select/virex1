@@ -7,7 +7,7 @@ tags:
   - 商業策略
   - 企業分析
   - 商業思考
-category: 商業與思考
+category: 商業與行銷
 featured: false
 boost: false
 draft: false

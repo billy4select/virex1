@@ -7,7 +7,7 @@ tags:
   - 判斷力
   - AI時代
   - 決策方法
-category: 能力與學習
+category: 學習與能力
 featured: false
 boost: false
 draft: false

@@ -7,7 +7,7 @@ tags:
   - 商業模式
   - 單位經濟
   - 護城河
-category: 商業與思考
+category: 商業與行銷
 featured: false
 boost: false
 draft: false

@@ -7,7 +7,7 @@ tags:
   - AI學習
   - 學習方法
   - 知識管理
-category: 能力與學習
+category: 學習與能力
 featured: false
 boost: false
 draft: false

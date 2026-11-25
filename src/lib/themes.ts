@@ -10,40 +10,50 @@ export interface BlogTheme {
 }
 
 /**
- * 全站四個主題。
+ * 全站四個主題（2026-11 改版）。
  * 文章分類、/topics/ 與 /blog/ 的篩選都使用這份定義，避免名稱分叉。
+ *
+ * 新版四大主題：
+ * 1. 工作與效率
+ * 2. 學習與能力
+ * 3. 商業與行銷
+ * 4. 個人發展與事業
  */
 export const blogThemes: BlogTheme[] = [
   {
-    slug: 'ability-learning',
-    name: '能力與學習',
-    shortName: '能力與學習',
-    readerQuestion: '工具很多，哪一個真的能放進工作？',
-    description: '從 AI 工具、工作流程到學習方法，整理那些真的能放進日常工作的能力。',
+    slug: 'work-efficiency',
+    name: '工作與效率',
+    shortName: '工作與效率',
+    readerQuestion: '如何用更好的方法，完成工作與生活中的事情？',
+    description:
+      '從 AI 工具、工作流程、會議整理到知識沉澱，整理那些真正能放進日常工作的方法與系統。',
     indexable: true,
   },
   {
-    slug: 'business-thinking',
-    name: '商業與思考',
-    shortName: '商業與思考',
-    readerQuestion: '我怎麼看懂一門生意，找到值得解決的問題？',
-    description: '從需求、客群、商業模式到成本與成長，拆解一門生意如何成立、如何被選擇。',
+    slug: 'learning-capability',
+    name: '學習與能力',
+    shortName: '學習與能力',
+    readerQuestion: '如何持續學習，培養真正用得上的能力？',
+    description:
+      '從學習策略、刻意練習、能力盤點到判斷力培養，幫助你把知識轉成實際能力。',
     indexable: true,
   },
   {
-    slug: 'personal-growth',
+    slug: 'business-marketing',
+    name: '商業與行銷',
+    shortName: '商業與行銷',
+    readerQuestion: '如何理解市場、顧客與一門生意的運作？',
+    description:
+      '從需求驗證、商業模式、受眾理解到行銷診斷與品牌信任，整理看懂市場與生意的方法。',
+    indexable: true,
+  },
+  {
+    slug: 'personal-development',
     name: '個人發展與事業',
     shortName: '個人發展與事業',
-    readerQuestion: '一個人怎麼把能力與經驗變成下一階段的機會？',
-    description: '從職涯、個人品牌到知識產品，探索專業如何持續累積與發展。',
-    indexable: true,
-  },
-  {
-    slug: 'marketing-brand',
-    name: '行銷與品牌',
-    shortName: '行銷與品牌',
-    readerQuestion: '如何理解受眾、建立品牌，讓產品與想法被看見？',
-    description: '從受眾理解、內容策略到品牌溝通與 AI 行銷，整理行銷背後的判斷。',
+    readerQuestion: '如何運用自己的能力與經驗，探索更多發展機會？',
+    description:
+      '從職涯策略、可攜帶資產、個人品牌到知識變現與一人公司，探索專業如何持續累積與發展。',
     indexable: true,
   },
 ];

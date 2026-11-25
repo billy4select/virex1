@@ -14,31 +14,31 @@ const experience = [
   '數位產品：App 相關專案',
 ];
 
-/** 順序代表目前的內容重心：能力與學習最完整，其他主題持續累積。 */
+/** 新版四大主題（2026-11 改版） */
 const topics = [
   {
-    name: '能力與學習',
-    href: '/topics/ability-learning/',
+    name: '工作與效率',
+    href: '/topics/work-efficiency/',
     description:
-      'AI 工具、工作流程、知識管理與學習方法，重點是怎麼放進實際工作，而不是追每一個新工具。',
+      'AI 工具、工作流程、會議整理與知識沉澱，重點是怎麼放進實際工作，而不是追每一個新工具。',
+  },
+  {
+    name: '學習與能力',
+    href: '/topics/learning-capability/',
+    description:
+      '學習策略、刻意練習、能力盤點與判斷力，幫助把知識轉成真正用得上的能力。',
+  },
+  {
+    name: '商業與行銷',
+    href: '/topics/business-marketing/',
+    description:
+      '需求驗證、商業模式、受眾理解、行銷診斷與品牌信任，整理看懂市場與生意的方法。',
   },
   {
     name: '個人發展與事業',
-    href: '/topics/personal-growth/',
+    href: '/topics/personal-development/',
     description:
-      '職涯策略、個人品牌與知識變現，談如何把工作經驗累積成可以帶走的資產。',
-  },
-  {
-    name: '行銷與品牌',
-    href: '/topics/marketing-brand/',
-    description:
-      '受眾理解、賣點提煉、內容與品牌信任，以及 AI 如何協助行銷執行。',
-  },
-  {
-    name: '商業與思考',
-    href: '/topics/business-thinking/',
-    description:
-      '從需求、客群、商業模式到成本與競爭，拆解一門生意為什麼成立。',
+      '職涯策略、可攜帶資產、個人品牌與知識變現，談如何把工作經驗累積成可以帶走的資產。',
   },
 ];
 
@@ -85,7 +85,7 @@ const books = [
 
 <MarketingLayout
   title={`關於我 - ${siteConfig.name}`}
-  description="比利陳，十多年行銷與產品經驗，獨立出版三本電子書。這個網站以自我成長為核心，整理能力與學習、個人發展、行銷與商業的研究、實驗與觀察。"
+  description="比利陳，十多年行銷與產品經驗，獨立出版三本電子書。讓工作與生活多一些值得探索的可能，分享工具、方法、閱讀與對行銷、商業、AI、工作與個人成長的觀察。"
 >
   <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '關於我' }]} />
 
@@ -135,7 +135,7 @@ const books = [
             這些年做過不同工作，我發現真正有用的能力，大多不是某個工具或某個技巧，而是看懂問題、做出判斷、再把它變成行動。工具與平台一直在變，但這個過程不太會變。
           </p>
           <p>
-            我經營這個網站，是想把自己學到、試過、做過的東西整理下來，讓同樣在工作、轉換跑道或探索發展的人，可以少走一些冤枉路。核心是自我成長：持續學習，讓自己有更多可能。
+            我經營這個網站，是想把自己學到、試過、做過的東西整理下來，讓同樣在工作、轉換跑道或探索發展的人，可以少走一些冤枉路。核心是：讓工作與生活，多一些值得探索的可能。
           </p>
         </div>
       </div>
@@ -171,7 +171,7 @@ const books = [
         </h2>
 
         <p class="mt-4 max-w-3xl text-text-muted leading-relaxed">
-          以自我成長為核心，目前分成四個主題。每個主題頁都有編輯精選的閱讀起點與建議順序。
+          目前分成四個主題：工作與效率、學習與能力、商業與行銷、個人發展與事業。每個主題頁都有編輯精選的閱讀起點與建議順序。
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">

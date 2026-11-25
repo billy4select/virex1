@@ -7,7 +7,7 @@ tags:
   - 行銷診斷
   - 轉換率
   - 行銷策略
-category: 行銷與品牌
+category: 商業與行銷
 featured: false
 boost: false
 draft: false

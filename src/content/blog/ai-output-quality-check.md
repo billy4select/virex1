@@ -7,7 +7,7 @@ tags:
   - AI品質
   - 內容檢查
   - 工作方法
-category: 能力與學習
+category: 工作與效率
 featured: false
 boost: false
 draft: false

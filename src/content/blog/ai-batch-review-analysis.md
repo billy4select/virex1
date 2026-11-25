@@ -6,7 +6,7 @@ author: "比利 (Billy Chen)"
 tags:
   - 數據與資安
   - AI工作流程
-category: 行銷與品牌
+category: 商業與行銷
 featured: false
 boost: false
 draft: false

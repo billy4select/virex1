@@ -7,7 +7,7 @@ tags:
   - AI能力
   - 學習方法
   - 工作方法
-category: 能力與學習
+category: 學習與能力
 featured: false
 boost: false
 draft: false
@@ -120,7 +120,7 @@ Prompt 是流程裡的一個環節，不是全部。沒有輸入規格、輸出�
 
 如果你已經選好任務，下一步可以看[建立你的 AI 工作流程](/blog/ai-workflow-start-with-tasks/)，把一個任務變成一條可重複的流程；如果你想用 AI 學一個新領域，則可以看[用 AI 學會一個新領域](/blog/learn-new-field-with-ai-30-days/)。
 
-如果你想練習判斷，可以看[AI 時代的判斷力](/blog/judgment-in-ai-era/)；想盤點自己現在的能力組合，可以用[能力盤點工作坊](/blog/capability-inventory-workshop/)。如果你正想把會議與專案經驗留下來，則看[會議、專案、客戶資料如何變成可複用知識](/blog/ai-knowledge-capture-meetings-projects/)。回到[能力與學習](/topics/ability-learning/)可以看到整條路徑。
+如果你想練習判斷，可以看[AI 時代的判斷力](/blog/judgment-in-ai-era/)；想盤點自己現在的能力組合，可以用[能力盤點工作坊](/blog/capability-inventory-workshop/)。如果你正想把會議與專案經驗留下來，則看[會議、專案、客戶資料如何變成可複用知識](/blog/ai-knowledge-capture-meetings-projects/)。回到/topics/work-efficiency/(/topics/work-efficiency/)可以看到整條路徑。
 
 ---
 

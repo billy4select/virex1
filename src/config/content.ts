@@ -36,8 +36,8 @@ export const announcement: AnnouncementConfig = {
 export const content: ContentStrings = {
   /** 電子報訂閱區塊的文字 */
   newsletter: {
-    title: '掌握 AI 時代的行銷判斷力',
-    description: '每週分享整合行銷實戰、商業邏輯與個人品牌底層思維。',
+    title: '路人觀點',
+    description: '把值得探索與思考的事情，定期分享給你。每週分享工具、知識、閱讀，以及對行銷、商業、AI、工作與個人成長的觀察。',
     placeholder: '請輸入您的電子郵件',
     buttonText: '立即訂閱',
     successMessage: '感謝訂閱！請檢查您的信箱以確認訂閱。',

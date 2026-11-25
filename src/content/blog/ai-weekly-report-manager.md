@@ -5,7 +5,7 @@ publishedDate: 2026-04-16T08:32:15Z
 author: 比利陳 Billy Chen
 tags:
   - AI工作流程
-category: 能力與學習
+category: 工作與效率
 featured: false
 boost: false
 draft: false

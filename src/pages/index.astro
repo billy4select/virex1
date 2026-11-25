@@ -1,24 +1,28 @@
 ---
 /**
- * Index Page - Billy Chen Personal Media
- * 個人知識平台首頁
+ * Index Page - 比利陳｜行銷裡的路人甲
+ * 個人知識平台首頁（2026-11 改版）
  *
- * 首頁只負責組裝。主題、專題、問題入口集中在 src/lib/homepage.ts。
- * 最新文章由 blog collection 自動產生，不在首頁手動維護。
+ * 首頁只負責組裝。主題、專題、探索入口集中在 src/lib/homepage.ts。
+ * 最新文章由 blog collection 自動產生。
  */
 import { getCollection } from 'astro:content';
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Hero from '@sections/marketing/Hero.astro';
 import TopicGrid from '@/components/home/TopicGrid.astro';
 import SeriesGrid from '@/components/home/SeriesGrid.astro';
-import QuestionGrid from '@/components/home/QuestionGrid.astro';
+import ExploreGrid from '@/components/home/ExploreGrid.astro';
+import FeaturedExplore from '@/components/home/FeaturedExplore.astro';
+import ThinkingSection from '@/components/home/ThinkingSection.astro';
 import AboutSection from '@/components/home/AboutSection.astro';
 import ReaderFeedback from '@/components/home/ReaderFeedback.astro';
 import ThemePostRow from '@/components/blog/ThemePostRow.astro';
 import { sortByDate } from '@/lib/blog';
 import {
-  homeQuestions,
+  homeExploreEntries,
+  homeFeaturedExplore,
   homeSeries,
+  homeThinkingPosts,
   homeTopics,
   homepageConfig,
 } from '@/lib/homepage';
@@ -27,6 +31,18 @@ import { siteConfig } from '@/config';
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const sortedPosts = sortByDate(allPosts);
 const latestPosts = sortedPosts.slice(0, homepageConfig.latestCount);
+
+const postById = new Map(allPosts.map((p) => [p.id, p]));
+
+const featuredExplorePosts = homeFeaturedExplore
+  .map((id) => postById.get(id))
+  .filter((p): p is NonNullable<typeof p> => !!p)
+  .slice(0, homepageConfig.featuredExploreCount);
+
+const thinkingPosts = homeThinkingPosts
+  .map((id) => postById.get(id))
+  .filter((p): p is NonNullable<typeof p> => !!p)
+  .slice(0, homepageConfig.thinkingCount);
 
 const allTestimonials = await getCollection(
   'testimonials',
@@ -47,32 +63,39 @@ const readerFeedback = (featuredTestimonials.length > 0 ? featuredTestimonials :
 
 <MarketingLayout
   title={`${siteConfig.name}`}
-  description="比利陳的自我成長知識平台，從能力與學習、商業與思考、個人發展與事業、行銷與品牌四個方向，分享研究、實驗與觀察。"
+  description={siteConfig.description}
 >
-  <!-- \u2060 是零寬不換行字元，避免「更／多」在手機被拆成兩行 -->
   <Hero
-    title={"持續學習，讓自己有更\u2060多可能。"}
-    subtitle="透過知識、工具、實驗與觀察，理解正在發生的變化，提升自己的能力，探索更多發展機會。"
-    trustLine="比利陳｜十多年行銷相關經驗、獨立出版三本電子書，持續整理學習、商業、行銷與個人發展的研究、實驗與觀察。"
+    title="讓工作與生活，多一些值得探索的可能。"
+    subtitle="分享值得使用的工具、值得學習的方法、值得閱讀的內容，以及對行銷、商業、AI、工作與個人成長的觀察。"
+    trustLine="比利陳，十多年行銷與產品工作經驗，獨立出版三本電子書。持續從工作經驗、閱讀研究與親自實驗中，整理值得分享的知識與觀點。"
     primaryCTA={{
-      label: '探索主題',
-      href: '#topics'
+      label: '探索文章',
+      href: '/blog/',
     }}
     secondaryCTA={{
-      label: '從這裡開始',
-      href: '#questions'
+      label: '認識比利',
+      href: '/about/',
     }}
     minHeight="large"
   />
 
+  <!-- 從你感興趣的事情開始 -->
+  <ExploreGrid entries={homeExploreEntries} />
+
+  <!-- 近期值得探索 -->
+  {featuredExplorePosts.length > 0 && <FeaturedExplore posts={featuredExplorePosts} />}
+
+  <!-- 一些值得思考的事 -->
+  {thinkingPosts.length > 0 && <ThinkingSection posts={thinkingPosts} />}
+
+  <!-- 探索四大主題 -->
   <TopicGrid topics={homeTopics} />
 
-  <QuestionGrid questions={homeQuestions} />
-
-  {readerFeedback.length > 0 && <ReaderFeedback testimonials={readerFeedback} />}
-
+  <!-- 深入學習（專題） -->
   <SeriesGrid series={homeSeries} />
 
+  <!-- 最新文章 -->
   <section id="latest" class="bg-surface py-16 md:py-20" aria-labelledby="latest-title">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex flex-wrap items-end justify-between gap-4">
@@ -98,5 +121,9 @@ const readerFeedback = (featuredTestimonials.length > 0 ? featuredTestimonials :
     </div>
   </section>
 
+  <!-- 關於比利 -->
   <AboutSection postCount={allPosts.length} />
+
+  <!-- 讀者回饋 -->
+  {readerFeedback.length > 0 && <ReaderFeedback testimonials={readerFeedback} />}
 </MarketingLayout>

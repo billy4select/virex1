@@ -1,12 +1,22 @@
 # 舊文章分類頁：永久導向主題總覽或對應主題頁
-/blog/category/ai-tech /topics/ability-learning/ 301
-/blog/category/ai-tech/ /topics/ability-learning/ 301
-/blog/category/business-marketing /topics/ 301
-/blog/category/business-marketing/ /topics/ 301
-/blog/category/personal-brand /topics/personal-growth/ 301
-/blog/category/personal-brand/ /topics/personal-growth/ 301
+/blog/category/ai-tech /topics/work-efficiency/ 301
+/blog/category/ai-tech/ /topics/work-efficiency/ 301
+/blog/category/business-marketing /topics/business-marketing/ 301
+/blog/category/business-marketing/ /topics/business-marketing/ 301
+/blog/category/personal-brand /topics/personal-development/ 301
+/blog/category/personal-brand/ /topics/personal-development/ 301
 /blog/category/investment-market /topics/ 301
 /blog/category/investment-market/ /topics/ 301
+
+# 2026-11 主題改版：舊主題 slug 301 到新主題
+/topics/ability-learning /topics/work-efficiency/ 301
+/topics/ability-learning/ /topics/work-efficiency/ 301
+/topics/business-thinking /topics/business-marketing/ 301
+/topics/business-thinking/ /topics/business-marketing/ 301
+/topics/personal-growth /topics/personal-development/ 301
+/topics/personal-growth/ /topics/personal-development/ 301
+/topics/marketing-brand /topics/business-marketing/ 301
+/topics/marketing-brand/ /topics/business-marketing/ 301
 
 # NotebookLM 簡報頁錯字網址：301 到正確頁
 /blog/otebooklm-slide-deck-review /blog/notebooklm-complete-guide-2026/ 301
