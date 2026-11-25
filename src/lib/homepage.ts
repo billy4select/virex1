@@ -125,19 +125,19 @@ export const homeExploreEntries: HomeExploreEntry[] = [
     label: '方法',
     question: '有沒有更好的方法？',
     description: '工作效率、學習策略、知識管理與實際應用。',
-    articleId: 'ai-workflow-start-with-tasks',
+    articleId: 'personal-knowledge-system-minimal',
   },
   {
     label: '閱讀',
     question: '有什麼值得閱讀？',
     description: '書籍推薦、閱讀心得與值得認識的知識。',
-    articleId: 'personal-knowledge-system-minimal',
+    articleId: 'free-zero-price-business-models',
   },
   {
     label: '思考',
     question: '有什麼值得重新思考？',
     description: '行銷、商業、AI、工作與個人成長的觀察。',
-    articleId: 'why-business-exists-nine-questions',
+    articleId: 'ai-era-capability-map',
   },
 ];
 
