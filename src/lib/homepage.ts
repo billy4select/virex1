@@ -180,7 +180,7 @@ export const homeThinkingPosts = [
 ];
 
 export const homepageConfig = {
-  latestCount: 6,
+  latestCount: 4,
   latestTitle: '最新文章',
   feedbackCount: 4,
   featuredExploreCount: 4,

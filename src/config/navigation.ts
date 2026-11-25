@@ -3,12 +3,9 @@ import type { Navigation } from '../lib/types';
 export const navigation: Navigation = {
   header: {
     main: [
-      { label: '首頁', href: '/' },
       { label: '主題', href: '/topics/' },
       { label: '文章', href: '/blog/' },
       { label: '工具箱', href: '/resources/' },
-      { label: 'Threads教學', href: '/threads/' },
-      { label: '打造AI團隊', href: '/ai-work-team/' },
       { label: '關於我', href: '/about/' },
     ],
     cta: [
@@ -17,13 +14,11 @@ export const navigation: Navigation = {
   },
   footer: {
     product: [ 
-      { label: '首頁', href: '/' },
       { label: '主題', href: '/topics/' },
       { label: '文章', href: '/blog/' },
+      { label: '工具箱', href: '/resources/' },
       { label: '關於我', href: '/about/' },
       { label: '讀者回饋', href: '/testimonials/' },
-      { label: '隱私權政策', href: '/privacy/' },
-      { label: '免責聲明', href: '/disclaimer/' },
     ],
     solutions: [ 
       { label: '《AI時代職場生存法則》', href: 'https://portaly.cc/billyselect4/product/jLrib0ZgLmXWs2WOTiy8' }, 
