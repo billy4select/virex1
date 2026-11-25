@@ -19,7 +19,7 @@ const totalCount = items.reduce((sum, item) => sum + item.count, 0);
           href={themeUrl(theme.slug)}
           aria-current={current === theme.slug ? 'page' : undefined}
           class:list={[
-            'group flex min-h-36 flex-col justify-between rounded-2xl border p-6 transition-all',
+            'group flex min-h-36 flex-col justify-between rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md',
             current === theme.slug
               ? 'border-primary bg-primary/10'
               : 'border-border bg-surface hover:border-primary/40 hover:bg-primary/5',
@@ -47,7 +47,7 @@ const totalCount = items.reduce((sum, item) => sum + item.count, 0);
         data-blog-filter="all"
         aria-current={!current ? 'page' : undefined}
         class:list={[
-          'rounded-full border px-4 py-2 text-xs font-medium transition-all',
+          'rounded-full border px-4 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md',
           !current
             ? 'border-primary bg-primary/10 font-semibold text-primary'
             : 'border-transparent bg-surface text-text-muted hover:bg-primary/10 hover:text-primary',
@@ -62,7 +62,7 @@ const totalCount = items.reduce((sum, item) => sum + item.count, 0);
           data-blog-filter={theme.slug}
           aria-current={current === theme.slug ? 'page' : undefined}
           class:list={[
-            'rounded-full border px-4 py-2 text-xs font-medium transition-all',
+            'rounded-full border px-4 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md',
             current === theme.slug
               ? 'border-primary bg-primary/10 font-semibold text-primary'
               : 'border-transparent bg-surface text-text-muted hover:bg-primary/10 hover:text-primary',
