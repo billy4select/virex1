@@ -96,22 +96,25 @@ const readerFeedback = (featuredTestimonials.length > 0 ? featuredTestimonials :
   <SeriesGrid series={homeSeries} />
 
   <!-- 最新文章 -->
-  <section id="latest" class="bg-surface py-16 md:py-20" aria-labelledby="latest-title">
+  <section id="latest" class="bg-surface py-16 md:py-24" aria-labelledby="latest-title">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-wrap items-end justify-between gap-4">
-        <h2 id="latest-title" class="text-3xl font-extrabold tracking-tight text-text md:text-4xl">
-          {homepageConfig.latestTitle}
-        </h2>
+      <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p class="text-xs font-bold tracking-[0.2em] text-primary">06</p>
+          <h2 id="latest-title" class="mt-2 text-3xl font-extrabold tracking-tight text-text md:text-4xl">
+            {homepageConfig.latestTitle}
+          </h2>
+        </div>
         <a
           href="/blog/"
-          class="inline-flex items-center gap-1 text-sm font-semibold text-primary underline decoration-primary/30 decoration-1 underline-offset-4 transition-colors hover:text-primary-dark hover:decoration-primary"
+          class="inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors hover:underline"
         >
           查看全部文章
           <span aria-hidden="true">→</span>
         </a>
       </div>
 
-      <div class="mt-6 border-t border-border">
+      <div class="mt-12 border-t border-border">
         {
           latestPosts.map((post) => (
             <ThemePostRow post={post} />

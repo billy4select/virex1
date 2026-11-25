@@ -9,34 +9,41 @@ interface Props {
 const { posts } = Astro.props;
 ---
 
-<section id="thinking" class="bg-surface py-16 md:py-20">
+<section id="thinking" class="bg-surface py-16 md:py-24">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="max-w-2xl">
-      <h2 class="text-3xl font-extrabold tracking-tight text-text md:text-4xl">
-        一些值得思考的事
-      </h2>
-      <p class="mt-3 text-base leading-relaxed text-text-muted">
-        這些文章主要呈現觀察、經驗與判斷，而不只是工具或步驟。
+    <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+      <div class="max-w-xl">
+        <p class="text-xs font-bold tracking-[0.2em] text-primary">03</p>
+        <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-text md:text-4xl">
+          一些值得思考的事
+        </h2>
+      </div>
+      <p class="max-w-sm text-sm leading-relaxed text-text-muted md:text-right">
+        觀察、經驗與判斷，<br class="hidden md:block" />而不只是工具或步驟。
       </p>
     </div>
 
-    <div class="mt-10 space-y-0 border-t border-border">
+    <ol class="mt-12 space-y-0 border-t border-border">
       {
-        posts.map((post) => (
-          <a
-            href={postUrl(post.id)}
-            class="group flex flex-col gap-1 border-b border-border py-5 transition-colors hover:bg-background/50 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
-          >
-            <h3 class="text-lg font-semibold leading-snug text-text transition-colors group-hover:text-primary md:text-xl">
-              {post.data.title}
-            </h3>
-            <p class="mt-1 max-w-xl text-sm leading-relaxed text-text-muted sm:mt-0 sm:text-right sm:text-base">
-              {post.data.description.slice(0, 80)}
-              {post.data.description.length > 80 ? '…' : ''}
-            </p>
-          </a>
+        posts.map((post, index) => (
+          <li>
+            <a
+              href={postUrl(post.id)}
+              class="group grid grid-cols-[3rem_1fr] items-baseline gap-4 border-b border-border py-6 transition-colors hover:bg-background/50 md:grid-cols-[4rem_1fr_20rem] md:gap-8 md:py-7"
+            >
+              <span class="font-mono text-xl font-light tabular-nums text-primary/40 transition-colors group-hover:text-primary md:text-2xl">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <h3 class="text-lg font-semibold leading-snug text-text transition-colors group-hover:text-primary md:text-xl">
+                {post.data.title}
+              </h3>
+              <p class="col-start-2 mt-1 line-clamp-2 text-sm leading-relaxed text-text-muted md:col-start-3 md:mt-0 md:text-right">
+                {post.data.description}
+              </p>
+            </a>
+          </li>
         ))
       }
-    </div>
+    </ol>
   </div>
 </section>
