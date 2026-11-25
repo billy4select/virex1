@@ -100,7 +100,7 @@ export const topicCurations: TopicCuration[] = [
     series: {
       name: '打造 AI 工作團隊',
       href: '/ai-work-team/',
-      note: '想照順序建立可分工、可交接的 AI 協作系統，從這個系列開始。',
+      note: '可分工、可交接的 AI 協作系統。',
     },
   },
   {
@@ -192,7 +192,7 @@ export const topicCurations: TopicCuration[] = [
   {
     slug: 'personal-development',
     intro:
-      '這個主題分兩條路：一條談職涯與可帶走的能力，一條談知識如何變成收入。先選你現在卡的是「下一步職涯」，還是「經驗怎麼變成產品」。',
+      '這個主題談職涯與可帶走的能力，以及知識如何變成收入。兩條路可以分開看，也可以互相支援。',
     audience:
       '適合工作已有一段時間、想把經驗累積成可帶走的資產，或正在把專業做成個人事業與知識產品的人。',
     readingOrder:
@@ -229,7 +229,7 @@ export const topicCurations: TopicCuration[] = [
     series: {
       name: 'Threads 經營教學',
       href: '/threads/',
-      note: '想建立個人內容節奏與信任，可從 Threads 系列開始。',
+      note: '從定位、內容到互動與經營。',
     },
   },
 ];

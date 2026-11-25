@@ -112,24 +112,15 @@ const schemas = [collectionSchema];
   {/* 1. 這頁是什麼：淺橘底色 */}
   <section class="border-y border-border bg-surface pb-12 pt-10 md:pb-16 md:pt-14">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <p class="inline-flex rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold tracking-wide text-primary">
-        主題路徑 · 不是文章列表
+      <p class="text-sm font-semibold tracking-wide text-primary">
+        {topic.question}
       </p>
-      <h1 class="mt-4 text-3xl font-extrabold tracking-tight text-text md:text-5xl">
+      <h1 class="mt-3 text-3xl font-extrabold tracking-tight text-text md:text-5xl">
         {topic.name}
       </h1>
       <p class="mt-5 max-w-3xl text-base leading-relaxed text-text-muted md:text-lg">
         {curation.intro}
       </p>
-      <div class="mt-6 max-w-3xl rounded-xl border border-border bg-background px-4 py-3 md:px-5 md:py-4">
-        <p class="text-sm leading-relaxed text-text">
-          <span class="font-semibold text-primary">適合誰讀：</span>
-          {curation.audience}
-        </p>
-        <p class="mt-2 text-sm leading-relaxed text-text-muted">
-          這一頁只放編輯精選：先讀起點，再依方向往下。完整文章在文章庫。
-        </p>
-      </div>
     </div>
   </section>
 
@@ -137,14 +128,12 @@ const schemas = [collectionSchema];
   <section class="bg-background py-14 md:py-20" aria-labelledby="topic-start-title">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
-        <p class="inline-flex rounded-full bg-primary px-3 py-1 text-xs font-bold tracking-wide text-white">
-          第一步
-        </p>
-        <h2 id="topic-start-title" class="mt-4 text-3xl font-bold tracking-tight text-text md:text-4xl">
+        <p class="text-xs font-bold tracking-[0.2em] text-primary">01</p>
+        <h2 id="topic-start-title" class="mt-2 text-3xl font-bold tracking-tight text-text md:text-4xl">
           從這裡開始
         </h2>
         <p class="mt-3 text-base leading-relaxed text-text-muted">
-          建議照 1 → 2 → 3 的順序讀：{curation.readingOrder}
+          {curation.readingOrder}
         </p>
       </div>
 
@@ -209,14 +198,12 @@ const schemas = [collectionSchema];
   <section class="border-y border-border bg-surface py-14 md:py-20" aria-labelledby="topic-directions-title">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
-        <p class="inline-flex rounded-full bg-primary px-3 py-1 text-xs font-bold tracking-wide text-white">
-          第二步
-        </p>
-        <h2 id="topic-directions-title" class="mt-4 text-3xl font-bold tracking-tight text-text md:text-4xl">
+        <p class="text-xs font-bold tracking-[0.2em] text-primary">02</p>
+        <h2 id="topic-directions-title" class="mt-2 text-3xl font-bold tracking-tight text-text md:text-4xl">
           依方向深入
         </h2>
         <p class="mt-3 text-base leading-relaxed text-text-muted">
-          讀完起點後，選一條你現在卡的方向，不要一次全讀。
+          選一條你現在最需要的方向往下看。
         </p>
       </div>
 
@@ -235,9 +222,6 @@ const schemas = [collectionSchema];
                   {directionIndex + 1}
                 </span>
                 <div class="max-w-3xl">
-                  <p class="text-xs font-semibold tracking-wide text-primary">
-                    方向 {directionIndex + 1}
-                  </p>
                   <h3
                     id={`topic-direction-${directionIndex}`}
                     class="mt-1 text-xl font-bold tracking-tight text-text md:text-2xl"
@@ -290,14 +274,11 @@ const schemas = [collectionSchema];
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="rounded-2xl border border-border bg-surface p-7 md:flex md:items-center md:justify-between md:gap-8 md:p-9">
         <div>
-          <p class="inline-flex rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold tracking-wide text-primary">
-            看更多
-          </p>
-          <h2 class="mt-3 text-2xl font-bold tracking-tight text-text">
-            這個主題的全部文章
+          <h2 class="text-2xl font-bold tracking-tight text-text">
+            看這個主題的全部文章
           </h2>
           <p class="mt-2 max-w-xl text-sm leading-relaxed text-text-muted">
-            主題頁只放精選路徑。若要瀏覽完整列表，到文章庫篩選此主題。
+            上面是精選起點與方向，完整列表在文章庫。
           </p>
         </div>
         <a
