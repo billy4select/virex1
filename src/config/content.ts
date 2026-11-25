@@ -14,16 +14,16 @@ export const announcement: AnnouncementConfig = {
   enabled: true,
 
   /** 公告唯一的 ID - 更改此 ID 可讓已關閉公告的使用者重新看到新消息 */
-  id: 'line-group-launch',
+  id: 'newsletter-2026-11',
 
   /** 公告顯示的內容文字 */
-  text: '🚀 比利陳的行銷實戰 Line 社群開放',
+  text: '把值得探索與思考的事情，定期寄給你',
 
-  /** 連結網址 (指向你的 Line 群組) */
-  href: 'https://line.me/ti/g2/RSL2m-6lcwDLR6RJ-XfMGMZnomMixnbD3jrBUw',
+  /** 連結網址 (電子報訂閱頁) */
+  href: 'https://billy4select.substack.com/',
 
   /** 連結顯示的文字 */
-  linkText: "加入社群",
+  linkText: '訂閱電子報',
 
   /** 視覺風格: 'primary' (主色) | 'secondary' (次色) | 'gradient' (漸層) */
   variant: 'primary',
