@@ -7,7 +7,7 @@ import { siteConfig } from './src/config';
 import cloudflare from "@astrojs/cloudflare";
 import { readFileSync } from 'node:fs';
 
-const siteUrl = 'https://blog.billy4select.com';
+const siteUrl = 'https://www.billy4select.com';
 
 /**
  * public/ 底下的靜態專題頁不會被 @astrojs/sitemap 自動收錄，
