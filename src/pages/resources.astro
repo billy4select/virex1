@@ -1,208 +1,59 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
-import FAQSection from '@sections/content/FAQSection.astro';
 import { siteConfig } from '@/config';
 
-const intents = [
+const libraries = [
   {
-    label: 'AI 工作流程',
-    title: '減少重複、把工具放進流程',
-    description: '任務拆解、工具選擇、提案會議與知識沉澱，先挑一個任務開始。',
-    href: '/topics/ai-workflow/',
-    meta: '主題：AI 工作流程與工具',
+    label: 'Prompt 範本',
+    title: '可複製的 AI 指令',
+    description: '13 份實戰 Prompt，涵蓋研究、企劃、編輯與品管。複製之後換成你自己的任務就能用。',
+    href: '/ai-work-team/resources/prompts/',
+    meta: '13 份 · 可直接複製',
+    action: '打開 Prompt 範本',
   },
   {
-    label: 'NotebookLM',
-    title: '讀文件、做研究，不踩坑',
-    description: '上傳準備、提問方式、常見問題與工具比較，一次整理清楚。',
-    href: '/topics/notebooklm/',
-    meta: '主題：NotebookLM 實戰',
+    label: '工作流程模板',
+    title: 'SOP 與職務卡',
+    description: '13 份工作流程模板，把重複性工作收成標準步驟。交給 AI 或新夥伴，都能照著跑。',
+    href: '/ai-work-team/resources/templates/',
+    meta: '13 份 · SOP / 職務卡',
+    action: '打開模板庫',
   },
   {
-    label: '商業與行銷',
-    title: '看懂需求、客群與生意',
-    description: '需求驗證、獲利結構與公司分析，用框架代替感覺。',
-    href: '/topics/business-model/',
-    meta: '主題：商業模式與獲利',
-  },
-  {
-    label: '職涯',
-    title: '把經驗變成可帶走的資產',
-    description: '能力盤點、職涯轉型與 AI 時代的判斷力。',
-    href: '/topics/career/',
-    meta: '主題：職涯與 AI 時代',
-  },
-];
-
-const featured = [
-  {
-    tag: '可直接用',
-    title: 'AI 工具評估法',
-    description: '先找任務瓶頸，再看功能表。用五個維度判斷一個工具值不值得留下。',
-    href: '/blog/ai-tool-evaluation/',
-    action: '看評估方法',
-    detail: 'AI 工作流程與工具',
-  },
-  {
-    tag: '可直接用',
-    title: 'NotebookLM 上傳檢查表',
-    description: 'PDF 讀不到、表格跑掉、中文亂碼，通常不是模型問題，是上傳前少做了幾件事。',
-    href: '/blog/notebooklm-upload-preparation/',
-    action: '看完整檢查流程',
-    detail: '知識整理',
-  },
-  {
-    tag: '完整專題',
-    title: '打造 AI 工作團隊',
-    description: '6 個 AI 員工角色、6 條工作流程、18 張任務卡，加上可直接複製的 Prompt 與模板。',
-    href: '/ai-work-team/',
-    action: '進入專題',
-    detail: '6 主題 · 18 任務',
-  },
-];
-
-const resources = [
-  {
-    type: '方法',
-    title: 'AI 工具評估',
-    description: '用「任務、輸入、輸出、檢查、替代成本」判斷一個工具值不值得留下。',
-    href: '/blog/ai-tool-evaluation/',
-    action: '看方法',
-  },
-  {
-    type: '檢查表',
-    title: 'NotebookLM 上傳準備',
-    description: '上傳前必做的檔案、格式與中文檢查，減少讀不到與亂碼。',
-    href: '/blog/notebooklm-upload-preparation/',
-    action: '打開檢查表',
-  },
-  {
-    type: '工作表',
-    title: 'Threads 帳號定位',
-    description: '用「我主要幫誰、解決什麼、為什麼是我」三句話，決定你要用什麼身份寫。',
-    href: '/threads/persona/',
-    action: '開始定位',
-  },
-  {
-    type: '索引',
-    title: '18 張任務卡',
-    description: '把 AI 工作拆成研究、分析、企劃、編輯、品管等單一任務，直接挑一張來跑。',
+    label: '任務卡',
+    title: '可以直接執行的任務',
+    description: '18 張單一任務卡：市場掃描、會議紀錄、貼文產出。挑一張，今天就能跑完一輪。',
     href: '/ai-work-team/workflows/tasks/',
+    meta: '18 張 · 研究 / 分析 / 企劃 / 編輯',
     action: '打開任務庫',
   },
   {
-    type: '方法',
-    title: '個人知識最小系統',
-    description: '從收集、理解到輸出，建立最小可行的知識系統。',
-    href: '/blog/personal-knowledge-system-minimal/',
-    action: '看方法',
-  },
-  {
-    type: '方法',
-    title: '個人品牌與信任',
-    description: '從觸及率轉向信任：誰記得你、為什麼找你、憑什麼相信你。',
-    href: '/blog/personal-brand-trust-not-reach/',
-    action: '看路徑',
-  },
-];
-
-const checklists = [
-  {
-    title: '開始用 AI 前',
-    note: '先對準任務，再選工具。',
-    items: [
-      '我能說出這次要完成的具體任務',
-      '我知道輸入是什麼、理想輸出長什麼樣',
-      '我保留自己檢查事實與邏輯的步驟',
-      '我不會把敏感資料直接貼進公開模型',
-    ],
-  },
-  {
-    title: 'NotebookLM 上傳前',
-    note: '多數「讀不到」不是模型問題，是檔案問題。',
-    items: [
-      'PDF 有文字層，不是純掃描圖',
-      '檔名看得懂，一份文件一個主題',
-      '頁數與檔案大小在限制內',
-      '表格、圖表已在文件裡加說明',
-    ],
-  },
-  {
-    title: '建立學習或內容節奏前',
-    note: '先有方向，再談產量。',
-    items: [
-      '我知道這階段最想解決的一個問題',
-      '我選得出可重複使用的方法或支柱',
-      '我能維持一週至少一次輸出或複盤',
-      '我知道完成長什麼樣子，而不是一直收集',
-    ],
-  },
-];
-
-const collections = [
-  {
-    label: '完整專題',
-    title: 'Threads 起步心態指南',
-    description: '23 個起步主題，從迷思、心態、寫作到節奏，適合還沒開始或一直卡住的人。',
-    href: '/threads/',
-    meta: '23 個主題 · 4 個起步方向',
-  },
-  {
-    label: '完整專題',
-    title: '打造 AI 工作團隊',
-    description: '6 個 AI 員工、6 條流程、18 張任務卡、13 份 Prompt、13 份模板。',
-    href: '/ai-work-team/',
-    meta: '6 主題 · 6 流程 · 18 任務',
-  },
-  {
-    label: '完整專題',
-    title: 'Narrative Engine',
-    description: '電影敘事視覺體系、分鏡 JSON Schema 與 AI 影片工具。',
-    href: '/narrative-engine/',
-    meta: 'AI 影片 · 分鏡 · JSON',
-  },
-];
-
-const faqs = [
-  {
-    question: '這些資源要付費嗎？',
-    answer: '不用。這一頁整理的都是免費入口、方法與檢查表；電子報也是自由訂閱，不會因為你點開就被收費。',
-  },
-  {
-    question: '工具箱和文章、主題有什麼不同？',
-    answer: '主題幫你選方向，文章講清楚為什麼與怎麼做；工具箱把值得重複使用的方法收成入口與檢查表，讓你先做一次，再回文章看背後的邏輯。',
-  },
-  {
-    question: '需要留 email 才能看嗎？',
-    answer: '不需要。入口與檢查表都公開；只有想收到更新時，才需要訂電子報。',
-  },
-  {
-    question: '可以商用或轉貼嗎？',
-    answer: '歡迎把檢查表用在自己的工作與團隊內，也可以引用並註明來源。請不要整份轉售、包裝成自己的付費產品，或大量複製成內容農場。',
-  },
-  {
-    question: '我不知道從哪一個開始怎麼辦？',
-    answer: '先從最上面四個主題方向挑一個你現在最卡的。若需要整套流程，再進「完整專題」裡的 AI 工作團隊或 Threads 指南。',
+    label: '知識字典',
+    title: 'AI 名詞與概念查詢',
+    description: '15 個入門名詞的白話解釋。看到不懂的術語，先來這裡查，不用硬猜。',
+    href: '/ai-work-team/resources/glossary/',
+    meta: '15 個名詞 · 白話解釋',
+    action: '打開知識字典',
   },
 ];
 
 const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
-  name: '工具箱',
-  description: '把值得重複使用的方法，收成可直接用的入口與檢查表。',
+  name: '免費資源',
+  description: '免費的 Prompt、工作流程模板、任務卡與知識字典，讓讀者可以直接使用。',
   url: 'https://blog.billy4select.com/resources/',
   inLanguage: 'zh-Hant-TW',
-  dateModified: '2026-11-25',
+  dateModified: '2026-11-26',
   mainEntity: {
     '@type': 'ItemList',
-    name: '工具箱資源',
-    numberOfItems: resources.length,
-    itemListElement: resources.map((item, index) => ({
+    name: '免費資源分類',
+    numberOfItems: libraries.length,
+    itemListElement: libraries.map((item, index) => ({
       '@type': 'ListItem',
       position: index + 1,
-      name: item.title,
+      name: item.label,
       description: item.description,
       url: `https://blog.billy4select.com${item.href}`,
     })),
@@ -211,77 +62,55 @@ const collectionSchema = {
 ---
 
 <MarketingLayout
-  title={`工具箱 - ${siteConfig.name}`}
-  description="把值得重複使用的方法，收成可直接用的入口與檢查表。對齊工作、學習、商業與個人發展，先做一次，再回文章看為什麼。"
-  faq={faqs.map((item) => ({ q: item.question, a: item.answer }))}
+  title={`免費資源 - ${siteConfig.name}`}
+  description="免費的 Prompt、工作流程模板、任務卡與知識字典。進來之後，直接拿走一個有用的東西。"
   structuredData={[collectionSchema]}
 >
-  <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '工具箱' }]} />
+  <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '免費資源' }]} />
 
   <section class="bg-surface pb-12 pt-10 md:pb-16 md:pt-14">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
         <h1 class="text-3xl font-extrabold leading-tight tracking-tight text-text md:text-4xl lg:text-5xl">
-          先拿走一個能用的東西，<br class="hidden md:block" />再決定要不要往下讀。
+          免費資源
         </h1>
         <p class="mt-5 text-base leading-relaxed text-text-muted md:text-lg">
-          工具箱把值得重複使用的方法，收成入口與檢查表。不取代文章，是文章的實作入口——先做一次，再回主題與文章看背後的為什麼。
+          提供免費的 Prompt、工作流程模板、任務卡與實用工具，讓你可以直接使用。這一頁不放文章、不介紹主題——想讀內容，請到「主題」與「文章」；想在這裡的，是拿走一個能用的東西。
         </p>
         <p class="mt-6 text-sm font-semibold text-text-muted">
-          對齊主題 · 可直接用的方法 · 完整專題在下方
+          全部免費 · 可直接複製或執行 · 不用留 email
         </p>
-      </div>
-
-      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {intents.map((item) => (
-          <a
-            href={item.href}
-            class="group flex h-full flex-col rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
-          >
-            <span class="text-[11px] font-bold uppercase tracking-[0.14em] text-primary">{item.label}</span>
-            <h2 class="mt-3 text-lg font-extrabold leading-snug tracking-tight text-text transition-colors group-hover:text-primary">
-              {item.title}
-            </h2>
-            <p class="mt-2 flex-1 text-sm leading-relaxed text-text-muted">{item.description}</p>
-            <span class="mt-5 text-xs font-semibold text-text-muted">{item.meta}</span>
-            <span class="mt-2 inline-flex items-center gap-1 text-sm font-bold text-primary">
-              從這裡開始 <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span>
-            </span>
-          </a>
-        ))}
       </div>
     </div>
   </section>
 
-  <section class="bg-background py-16 md:py-20" aria-labelledby="featured-title">
+  <section class="bg-background py-16 md:py-20" aria-labelledby="library-title">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-wrap items-end justify-between gap-4">
-        <div class="max-w-2xl">
-          <p class="text-xs font-bold uppercase tracking-[0.18em] text-primary">精選入口</p>
-          <h2 id="featured-title" class="mt-3 text-2xl font-extrabold tracking-tight text-text md:text-3xl">
-            不確定要選哪個，就從這裡。
-          </h2>
-        </div>
-        <p class="max-w-md text-sm leading-relaxed text-text-muted">
-          這三個入口都有完整路徑，不是單篇心得。先挑一個，跑完一輪再回來。
+      <div class="max-w-2xl">
+        <p class="text-xs font-bold uppercase tracking-[0.18em] text-primary">免費資源分類</p>
+        <h2 id="library-title" class="mt-3 text-2xl font-extrabold tracking-tight text-text md:text-3xl">
+          四種可以直接拿走的東西。
+        </h2>
+        <p class="mt-4 text-sm leading-relaxed text-text-muted md:text-base">
+          不用照順序看。先想你現在要完成的任務，再挑一個分類進去。
         </p>
       </div>
 
-      <div class="mt-8 grid gap-4 lg:grid-cols-3">
-        {featured.map((item, index) => (
+      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {libraries.map((item, index) => (
           <a
             href={item.href}
             class="group flex h-full flex-col rounded-2xl border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
           >
             <div class="flex items-center justify-between gap-4">
-              <span class="rounded-full bg-primary/10 px-3 py-1 text-[11px] font-bold text-primary">{item.tag}</span>
+              <span class="text-[11px] font-bold uppercase tracking-[0.14em] text-primary">{item.label}</span>
               <span class="text-xs font-bold text-text-muted">0{index + 1}</span>
             </div>
-            <h3 class="mt-5 text-2xl font-extrabold leading-tight tracking-tight text-text transition-colors group-hover:text-primary">
+            <h3 class="mt-4 text-xl font-extrabold leading-tight tracking-tight text-text transition-colors group-hover:text-primary">
               {item.title}
             </h3>
             <p class="mt-3 flex-1 text-sm leading-relaxed text-text-muted">{item.description}</p>
-            <p class="mt-5 text-xs font-semibold text-text-muted">{item.detail}</p>
+            <p class="mt-5 text-xs font-semibold text-text-muted">{item.meta}</p>
             <span class="mt-3 inline-flex items-center gap-1 text-sm font-bold text-primary">
               {item.action} <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span>
             </span>
@@ -291,148 +120,27 @@ const collectionSchema = {
     </div>
   </section>
 
-  <section class="bg-surface py-16 md:py-20" aria-labelledby="all-resources-title">
+  <section class="bg-surface py-16 md:py-20" aria-labelledby="tools-title">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl">
-        <p class="text-xs font-bold uppercase tracking-[0.18em] text-primary">全部資源</p>
-        <h2 id="all-resources-title" class="mt-3 text-2xl font-extrabold tracking-tight text-text md:text-3xl">
-          從工作任務，找到對應的工具。
+        <p class="text-xs font-bold uppercase tracking-[0.18em] text-primary">其他免費工具</p>
+        <h2 id="tools-title" class="mt-3 text-2xl font-extrabold tracking-tight text-text md:text-3xl">
+          可以操作、會產生結果的工具。
         </h2>
-        <p class="mt-4 text-sm leading-relaxed text-text-muted md:text-base">
-          不用照順序讀。先看你現在要做的任務，再挑一個入口。
+      </div>
+
+      <div class="mt-8 rounded-2xl border border-dashed border-border bg-background p-8">
+        <p class="text-sm leading-relaxed text-text-muted">
+          這一區留給未來的獨立工具——真的可以操作、輸入後會產生結果的東西，才會放在這裡。目前還沒有，與其硬塞內容，先留空。
         </p>
       </div>
 
-      <div class="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {resources.map((item) => (
-          <a
-            href={item.href}
-            class="group flex h-full flex-col rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
-          >
-            <div class="flex items-center justify-between gap-4">
-              <span class="text-[11px] font-bold uppercase tracking-[0.14em] text-primary">{item.type}</span>
-              <span aria-hidden="true" class="text-text-muted transition-transform group-hover:translate-x-1">→</span>
-            </div>
-            <h3 class="mt-3 text-lg font-extrabold tracking-tight text-text transition-colors group-hover:text-primary">
-              {item.title}
-            </h3>
-            <p class="mt-2 flex-1 text-sm leading-relaxed text-text-muted">{item.description}</p>
-            <span class="mt-4 text-sm font-bold text-primary">{item.action}</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-background py-16 md:py-20" aria-labelledby="checklists-title">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl">
-        <p class="text-xs font-bold uppercase tracking-[0.18em] text-primary">可以直接用</p>
-        <h2 id="checklists-title" class="mt-3 text-2xl font-extrabold tracking-tight text-text md:text-3xl">
-          三份檢查表，先幫你少走一段冤枉路。
-        </h2>
-        <p class="mt-4 text-sm leading-relaxed text-text-muted md:text-base">
-          這些不是測驗，是開始前的自我檢查。勾不完也沒關係，先找出你卡住的那一項。
-        </p>
-      </div>
-
-      <div class="mt-8 grid gap-4 lg:grid-cols-3">
-        {checklists.map((list) => (
-          <div class="rounded-2xl border border-border bg-surface p-6">
-            <h3 class="text-lg font-extrabold tracking-tight text-text">{list.title}</h3>
-            <p class="mt-2 text-xs leading-relaxed text-text-muted">{list.note}</p>
-            <ul class="mt-5 space-y-3">
-              {list.items.map((item) => (
-                <li class="flex gap-3 text-sm leading-relaxed text-text-muted">
-                  <span aria-hidden="true" class="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded border border-border text-[10px] text-primary">□</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-surface py-16 md:py-20" aria-labelledby="collections-title">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="max-w-2xl">
-        <p class="text-xs font-bold uppercase tracking-[0.18em] text-primary">完整專題</p>
-        <h2 id="collections-title" class="mt-3 text-2xl font-extrabold tracking-tight text-text md:text-3xl">
-          想從頭學一個主題，走這三個。
-        </h2>
-        <p class="mt-4 text-sm leading-relaxed text-text-muted md:text-base">
-          這一區不是單一模板，而是完整的主題入口；每個入口都有自己的目錄、步驟與延伸文章。
-        </p>
-      </div>
-
-      <div class="mt-8 grid gap-4 lg:grid-cols-3">
-        {collections.map((item) => (
-          <a
-            href={item.href}
-            class="group flex h-full flex-col rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
-          >
-            <span class="text-[11px] font-bold uppercase tracking-[0.14em] text-primary">{item.label}</span>
-            <h3 class="mt-4 text-xl font-extrabold tracking-tight text-text transition-colors group-hover:text-primary">
-              {item.title}
-            </h3>
-            <p class="mt-3 flex-1 text-sm leading-relaxed text-text-muted">{item.description}</p>
-            <p class="mt-5 text-xs font-semibold text-text-muted">{item.meta}</p>
-            <span class="mt-3 inline-flex items-center gap-1 text-sm font-bold text-primary">
-              進入專題 <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span>
-            </span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-background py-16 md:py-20" aria-labelledby="how-to-title">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-        <div>
-          <p class="text-xs font-bold uppercase tracking-[0.18em] text-primary">怎麼用</p>
-          <h2 id="how-to-title" class="mt-3 text-2xl font-extrabold tracking-tight text-text md:text-3xl">
-            一次只拿走一個東西。
-          </h2>
-          <p class="mt-4 text-sm leading-relaxed text-text-muted md:text-base">
-            這頁不是要你全部收藏。挑一個，今天用一次，再決定要不要留下。
-          </p>
-        </div>
-        <ol class="grid gap-3 sm:grid-cols-3">
-          <li class="rounded-2xl border border-border bg-surface p-5">
-            <span class="text-xs font-bold text-primary">01</span>
-            <h3 class="mt-3 text-base font-extrabold text-text">選一個卡點</h3>
-            <p class="mt-2 text-sm leading-relaxed text-text-muted">從最上面四個「我想……」裡，挑現在最痛的那一個。</p>
-          </li>
-          <li class="rounded-2xl border border-border bg-surface p-5">
-            <span class="text-xs font-bold text-primary">02</span>
-            <h3 class="mt-3 text-base font-extrabold text-text">換成你的主題</h3>
-            <p class="mt-2 text-sm leading-relaxed text-text-muted">不要照抄範例。把對象、任務與例子換成你自己的。</p>
-          </li>
-          <li class="rounded-2xl border border-border bg-surface p-5">
-            <span class="text-xs font-bold text-primary">03</span>
-            <h3 class="mt-3 text-base font-extrabold text-text">回到文章看方法</h3>
-            <p class="mt-2 text-sm leading-relaxed text-text-muted">用完一次，再讀背後的理由；這樣才會變成你的。</p>
-          </li>
-        </ol>
-      </div>
-
-      <div class="mt-10 rounded-2xl border border-border bg-surface p-5 text-sm leading-relaxed text-text-muted">
+      <div class="mt-10 rounded-2xl border border-border bg-background p-5 text-sm leading-relaxed text-text-muted">
         <p>
           <strong class="font-bold text-text">授權與更新：</strong>
-          這一頁的入口與檢查表免費使用，歡迎用在自己的工作與團隊內，引用請註明來源。請不要整份轉售、包裝成自己的付費產品，或大量複製成內容農場。最後更新：<span class="whitespace-nowrap">2026-11-20</span>。
+          這一頁的所有資源免費使用，歡迎用在自己的工作與團隊內，引用請註明來源。請不要整份轉售、包裝成自己的付費產品，或大量複製成內容農場。最後更新：<span class="whitespace-nowrap">2026-11-26</span>。
         </p>
       </div>
     </div>
   </section>
-
-  <FAQSection
-    title="關於工具箱"
-    subtitle="先看常見問題，再決定要從哪一個入口開始。"
-    faqs={faqs}
-    variant="accordion"
-    background="default"
-  />
 </MarketingLayout>
