@@ -100,4 +100,4 @@ AI 適合做分類、提取、比對與格式化。它不適合替你決定哪�
 
 想建立整體知識系統，可以看[個人知識管理系統](/blog/personal-knowledge-system-minimal/)。
 
-**延伸起點：** 想把沉澱下來的做法寫成別人也能照做的步驟，看專題的 [SOP 撰寫任務卡](/ai-work-team/workflows/tasks/sop-writer/)。
+**延伸起點：** 想把沉澱下來的做法寫成別人也能照做的步驟，看系列裡的 [SOP 撰寫任務卡](/ai-work-team/workflows/tasks/sop-writer/)。

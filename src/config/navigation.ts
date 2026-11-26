@@ -4,7 +4,7 @@ export const navigation: Navigation = {
   header: {
     main: [
       { label: '主題', href: '/topics/' },
-      { label: '專題', href: '/series/' },
+      { label: '系列', href: '/series/' },
       { label: '文章', href: '/blog/' },
       { label: '免費資源', href: '/resources/' },
       { label: '關於我', href: '/about/' },
@@ -16,7 +16,7 @@ export const navigation: Navigation = {
   footer: {
     product: [ 
       { label: '主題', href: '/topics/' },
-      { label: '專題', href: '/series/' },
+      { label: '系列', href: '/series/' },
       { label: '文章', href: '/blog/' },
       { label: '免費資源', href: '/resources/' },
       { label: '關於我', href: '/about/' },
@@ -29,7 +29,7 @@ export const navigation: Navigation = {
       { label: '《流量騙局》', href: 'https://portaly.cc/billyselect4/product/khu55lTbwebNRjRtUCQ3' },
     ],
     resources: [
-      { label: '專題總覽', href: '/series/' },
+      { label: '系列總覽', href: '/series/' },
       { label: '免費資源', href: '/resources/' },
       { label: '訂閱電子報', href: 'https://billy4select.substack.com/' },
       { label: 'Threads教學', href: '/threads/' },

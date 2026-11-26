@@ -88,4 +88,4 @@ AI 處理的前提是有文字輸入。
 
 策略應該是 **「結果高調，工具低調」**。重點在於展現你整理出的紀錄多麼清楚，而非強調你用了什麼工具。
 
-**延伸起點：** 想把這篇的做法變成可以照著跑的完整步驟，看專題的 [AI 會議記錄整理流程](/ai-work-team/workflows/meeting-notes/)；開會前的準備可搭配 [會議議程任務卡](/ai-work-team/workflows/tasks/meeting-agenda/)。
+**延伸起點：** 想把這篇的做法變成可以照著跑的完整步驟，看系列裡的 [AI 會議記錄整理流程](/ai-work-team/workflows/meeting-notes/)；開會前的準備可搭配 [會議議程任務卡](/ai-work-team/workflows/tasks/meeting-agenda/)。

@@ -100,4 +100,4 @@ AI 給你結構之後，你逐點過一遍：這個我認同、這個要改、�
 
 先倒邏輯、再讓 AI 整理、最後才做格式——這個順序多花十分鐘在前面，省的是你在會議室裡說不清楚的尷尬，和改稿改到不知道在改什麼的時間。
 
-**延伸起點：** 想把這篇的做法變成固定流程，看專題的 [AI 週報整理流程](/ai-work-team/workflows/weekly-review/)；散落的進度可先用 [專案進度追蹤任務卡](/ai-work-team/workflows/tasks/project-tracker/) 整理。
+**延伸起點：** 想把這篇的做法變成固定流程，看系列裡的 [AI 週報整理流程](/ai-work-team/workflows/weekly-review/)；散落的進度可先用 [專案進度追蹤任務卡](/ai-work-team/workflows/tasks/project-tracker/) 整理。

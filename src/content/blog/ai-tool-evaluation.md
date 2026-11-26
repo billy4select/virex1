@@ -73,6 +73,6 @@ schemaType: Article
 
 想讓工具分工更清楚，可以看[AI 工具組合學](/blog/ai-tool-combination/)。
 
-**延伸起點：** 想把評估方式用在免費方案的專長與額度限制上，看專題的 [主題 02：認識免費 AI 工具](/ai-work-team/lesson-02/)；換工具時可用 [工具替換紀錄任務卡](/ai-work-team/workflows/tasks/tool-swap-log/) 保留設定。
+**延伸起點：** 想把評估方式用在免費方案的專長與額度限制上，看系列裡的 [主題 02：認識免費 AI 工具](/ai-work-team/lesson-02/)；換工具時可用 [工具替換紀錄任務卡](/ai-work-team/workflows/tasks/tool-swap-log/) 保留設定。
 
 想把寫作、研究與知識庫的角色分開，可以看[三種 AI 大腦的分工：寫作、研究、知識庫不要混著用](/blog/three-ai-brains-division/)。
