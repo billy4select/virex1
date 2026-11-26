@@ -1,7 +1,6 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
-import Newsletter from '@sections/marketing/Newsletter.astro';
 import FAQSection from '@sections/content/FAQSection.astro';
 import { siteConfig } from '@/config';
 
@@ -222,8 +221,7 @@ const collectionSchema = {
   <section class="bg-surface pb-12 pt-10 md:pb-16 md:pt-14">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
-        <p class="text-xs font-bold uppercase tracking-[0.18em] text-primary">工具箱</p>
-        <h1 class="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-text md:text-4xl lg:text-5xl">
+        <h1 class="text-3xl font-extrabold leading-tight tracking-tight text-text md:text-4xl lg:text-5xl">
           先拿走一個能用的東西，<br class="hidden md:block" />再決定要不要往下讀。
         </h1>
         <p class="mt-5 text-base leading-relaxed text-text-muted md:text-lg">
@@ -429,13 +427,6 @@ const collectionSchema = {
       </div>
     </div>
   </section>
-
-  <Newsletter
-    title="每月新增一個可用的模板"
-    description="不必每天追網站。每月一封，整理新文章、新流程與新模板，告訴你哪一個現在值得用。"
-    buttonText="訂閱電子報"
-    background="muted"
-  />
 
   <FAQSection
     title="關於工具箱"
