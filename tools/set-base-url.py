@@ -3,12 +3,12 @@
 
 用法：
     python3 tools/set-base-url.py https://billy4select.github.io/ai-work-team/
-    python3 tools/set-base-url.py https://blog.billy4select.com/ai-work-team/
+    python3 tools/set-base-url.py https://www.billy4select.com/ai-work-team/
 """
 import sys
 from pathlib import Path
 
-OLD = "https://blog.billy4select.com/ai-work-team"
+OLD = "https://www.billy4select.com/ai-work-team"
 
 if len(sys.argv) != 2:
     raise SystemExit(__doc__)

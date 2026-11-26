@@ -4,7 +4,7 @@
 
 ## 網址結構
 
-每一頁都是「目錄式網址」：`public/ai-work-team/<路徑>/index.html` → `https://blog.billy4select.com/ai-work-team/<路徑>/`。
+每一頁都是「目錄式網址」：`public/ai-work-team/<路徑>/index.html` → `https://www.billy4select.com/ai-work-team/<路徑>/`。
 
 | 區塊 | 路徑 | 頁數 |
 |---|---|---|

@@ -9,7 +9,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const SITE = 'https://blog.billy4select.com';
+const SITE = 'https://www.billy4select.com';
 const PUBLIC_DIR = path.resolve(process.cwd(), 'public');
 const SKIP_DIRS = new Set(['_series', 'images', 'js', 'uploads', 'assets', 'css']);
 

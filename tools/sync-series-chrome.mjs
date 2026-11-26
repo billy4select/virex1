@@ -60,9 +60,9 @@ const MARK_JSONLD = /<!--SR:JSONLD START-->[\s\S]*?<!--SR:JSONLD END-->/;
 
 function jsonLd(series, currentPath) {
   const items = [
-    { name: '首頁', url: 'https://blog.billy4select.com/' },
-    { name: '教學', url: 'https://blog.billy4select.com/series/' },
-    { name: series.name, url: 'https://blog.billy4select.com' + series.root },
+    { name: '首頁', url: 'https://www.billy4select.com/' },
+    { name: '教學', url: 'https://www.billy4select.com/series/' },
+    { name: series.name, url: 'https://www.billy4select.com' + series.root },
   ];
   const chapter = series.nav.find(
     (item) => item.href !== series.root && currentPath.startsWith(item.href)
@@ -70,7 +70,7 @@ function jsonLd(series, currentPath) {
   if (chapter && currentPath !== series.root) {
     items.push({
       name: chapter.label,
-      url: 'https://blog.billy4select.com' + chapter.href,
+      url: 'https://www.billy4select.com' + chapter.href,
     });
   }
   const data = {
