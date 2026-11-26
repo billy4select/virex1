@@ -1,10 +1,9 @@
 /* ==========================================================================
    series-shell.css — 專題頁共用外殼
    套用範圍：/ai-work-team/**、/threads/**（由 tools/sync-series-chrome.mjs 注入）
-   設計 token 與主站 global.css 對齊：
-     text oklch(0.15 0 0) / muted oklch(0.45 0 0) / border oklch(0.9 0 0)
-     primary oklch(0.7 0.2 50) — 主站橘
-     容器 1280px、頁首 64px、圓角 6px、無襯線字族
+   尺寸與樣式對齊 src/components/layout/Header.astro / AnnouncementBar.astro：
+     header 64px、容器 1280px、品牌頭像 44px、導覽 14px、CTA 6px 圓角
+     primary oklch(0.7 0.2 50)、surface oklch(0.98 0.01 50)、border oklch(0.9 0 0)
    ========================================================================== */
 
 :root {
@@ -24,16 +23,80 @@
     'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
 }
 
-/* ---------- 外殼重置：蓋掉子站原本的 .site-header / .site-head 樣式 ---------- */
+/* ---------- 公告條（同 AnnouncementBar primary） ---------- */
+
+.sr-announce {
+  position: relative;
+  background: var(--sr-primary);
+  color: #fff;
+  padding: 8px 16px;
+  text-align: center;
+  font-family: var(--sr-sans);
+}
+.sr-announce p {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 32px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.sr-announce a {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.sr-announce a:hover {
+  text-decoration: none;
+}
+.sr-announce a svg {
+  width: 14px;
+  height: 14px;
+}
+.sr-announce-x {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--sr-radius);
+  background: transparent;
+  color: #fff;
+  opacity: 0.85;
+  cursor: pointer;
+}
+.sr-announce-x:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.2);
+}
+.sr-announce-x svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ---------- 頁首 ---------- */
 
 #sr-head {
   display: block;
   height: auto;
-  padding: 0;
+  padding: 6px 0 0;
   position: sticky;
   top: 0;
   z-index: 90;
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: saturate(180%) blur(12px);
   -webkit-backdrop-filter: saturate(180%) blur(12px);
   border-bottom: 1px solid var(--sr-line);
@@ -42,7 +105,6 @@
 }
 
 .sr-head a,
-.sr-crumb-in a,
 .sr-foot-in a,
 .sr-foot-bottom a {
   text-decoration: none;
@@ -51,94 +113,116 @@
 .sr-head-in {
   max-width: var(--sr-max);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
   height: var(--sr-header-h);
   display: flex;
   align-items: center;
-  gap: 18px;
+  justify-content: space-between;
+  gap: 16px;
   box-sizing: border-box;
 }
 
-/* 品牌：頭像 + 站名 + 系列名（主站與專題的關係寫在同一行） */
+/* 品牌：頭像 + 站名 + 標語，與主站頁首完全同構 */
 .sr-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   flex: 0 0 auto;
   min-width: 0;
 }
 .sr-brand img {
-  width: 34px;
-  height: 34px;
+  width: 44px;
+  height: 44px;
   border-radius: 999px;
   object-fit: cover;
   border: 2px solid color-mix(in oklch, var(--sr-primary) 22%, transparent);
   flex: 0 0 auto;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
 }
 .sr-brand-txt {
   display: flex;
   flex-direction: column;
-  line-height: 1.25;
+  justify-content: center;
+  line-height: 1;
   min-width: 0;
 }
-.sr-brand-txt small {
-  font-size: 10.5px;
-  letter-spacing: 0.02em;
-  color: var(--sr-muted);
-  font-weight: 500;
-}
 .sr-brand-txt b {
-  font-size: 15px;
-  font-weight: 800;
+  font-size: 20px;
+  font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--sr-ink);
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+}
+.sr-brand-txt small {
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--sr-muted);
+  white-space: nowrap;
 }
 
 /* 主站導覽 */
 .sr-main {
   display: flex;
   align-items: center;
-  gap: 2px;
-  margin-left: auto;
+  gap: 8px;
 }
 .sr-main a {
-  padding: 6px 10px;
+  padding: 5px 9px;
   border-radius: var(--sr-radius);
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--sr-muted);
   transition: color 0.15s ease, background 0.15s ease;
 }
 .sr-main a:hover {
   color: var(--sr-ink);
-  background: var(--sr-surface);
 }
 .sr-main a[aria-current='page'],
 .sr-main a.is-current {
-  color: var(--sr-primary-dark);
+  color: var(--sr-ink);
   background: var(--sr-surface);
-  font-weight: 700;
+  font-weight: 600;
 }
 
+/* 搜尋 / CTA */
 .sr-actions {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   flex: 0 0 auto;
+}
+.sr-search {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 8px;
+  border-radius: var(--sr-radius);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sr-muted);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.sr-search:hover {
+  background: var(--sr-surface);
+  color: var(--sr-ink);
+}
+.sr-search svg {
+  width: 16px;
+  height: 16px;
 }
 .sr-cta {
   display: inline-flex;
   align-items: center;
-  height: 34px;
-  padding: 0 14px;
+  justify-content: center;
+  height: 36px;
+  padding: 0 16px;
   border-radius: var(--sr-radius);
   background: var(--sr-primary);
   color: #fff !important;
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 500;
   transition: background 0.15s ease;
 }
 .sr-cta:hover {
@@ -146,28 +230,37 @@
 }
 .sr-burger {
   display: none;
-  width: 34px;
-  height: 34px;
-  border: 1px solid var(--sr-line);
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
   border-radius: var(--sr-radius);
-  background: #fff;
+  background: transparent;
   color: var(--sr-ink);
   cursor: pointer;
 }
+.sr-burger svg {
+  width: 20px;
+  height: 20px;
+}
+.sr-burger:hover {
+  background: var(--sr-surface);
+}
 
-/* 系列章節列 */
+/* 專題章節列：系列名稱 + 章節 */
 .sr-sub {
   border-top: 1px solid var(--sr-line-soft);
-  background: #fff;
+  background: rgba(255, 255, 255, 0.9);
 }
 .sr-sub-in {
   max-width: var(--sr-max);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
   display: flex;
   align-items: center;
-  gap: 4px;
-  height: 42px;
+  gap: 2px;
+  height: 44px;
   overflow-x: auto;
   scrollbar-width: none;
   box-sizing: border-box;
@@ -175,14 +268,42 @@
 .sr-sub-in::-webkit-scrollbar {
   display: none;
 }
+.sr-back {
+  flex: 0 0 auto;
+  padding: 4px 10px 4px 0;
+  margin-right: 10px;
+  border-right: 1px solid var(--sr-line);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--sr-muted);
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+.sr-back:hover {
+  color: var(--sr-primary);
+}
+.sr-sub-title {
+  flex: 0 0 auto;
+  margin-right: 10px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--sr-ink);
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+.sr-sub-title:hover {
+  color: var(--sr-primary);
+}
 .sr-sub a {
   flex: 0 0 auto;
   padding: 5px 10px;
   border-radius: 999px;
   font-size: 12.5px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--sr-muted);
   white-space: nowrap;
+  transition: color 0.15s ease, background 0.15s ease;
 }
 .sr-sub a:hover {
   color: var(--sr-ink);
@@ -191,6 +312,13 @@
 .sr-sub a[aria-current='page'] {
   color: #fff;
   background: var(--sr-ink);
+  font-weight: 600;
+}
+/* 系列名稱本身是當前頁時維持文字樣式，不要變成黑色藥丸 */
+.sr-sub a.sr-sub-title[aria-current='page'] {
+  color: var(--sr-ink);
+  background: transparent;
+  font-weight: 700;
 }
 .sr-sub-note {
   flex: 0 0 auto;
@@ -201,41 +329,11 @@
   white-space: nowrap;
 }
 
-/* 麵包屑 */
-#sr-crumb {
-  background: var(--sr-bg);
-  border-bottom: 1px solid var(--sr-line-soft);
-  font-family: var(--sr-sans);
-}
-.sr-crumb-in {
-  max-width: var(--sr-max);
-  margin: 0 auto;
-  padding: 9px 24px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  color: var(--sr-muted);
-  flex-wrap: wrap;
-}
-.sr-crumb-in a {
-  color: var(--sr-muted);
-}
-.sr-crumb-in a:hover {
-  color: var(--sr-primary-dark);
-}
-.sr-crumb-in .sep {
-  color: color-mix(in oklch, var(--sr-muted) 45%, transparent);
-}
-.sr-crumb-in [aria-current='page'] {
-  color: var(--sr-ink);
-  font-weight: 600;
-}
+/* ---------- 頁尾 ---------- */
 
-/* 頁尾 */
 #sr-foot {
   display: block;
-  margin-top: 64px;
+  margin-top: 72px;
   padding: 0;
   border-top: 1px solid var(--sr-line);
   background: var(--sr-bg);
@@ -246,7 +344,7 @@
 .sr-foot-in {
   max-width: var(--sr-max);
   margin: 0 auto;
-  padding: 40px 24px 24px;
+  padding: 44px 32px 28px;
   display: grid;
   grid-template-columns: 1.4fr repeat(3, 1fr);
   gap: 32px;
@@ -256,10 +354,10 @@
   display: block;
   font-size: 15px;
   color: var(--sr-ink);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 .sr-foot-brand p {
-  margin: 0 0 14px;
+  margin: 0 0 16px;
   line-height: 1.75;
   font-size: 12.5px;
 }
@@ -277,12 +375,12 @@
   color: var(--sr-muted);
 }
 .sr-foot-col a:hover {
-  color: var(--sr-primary-dark);
+  color: var(--sr-primary);
 }
 .sr-foot-bottom {
   max-width: var(--sr-max);
   margin: 0 auto;
-  padding: 14px 24px 28px;
+  padding: 14px 32px 28px;
   border-top: 1px solid var(--sr-line-soft);
   display: flex;
   flex-wrap: wrap;
@@ -297,7 +395,7 @@
   flex-wrap: wrap;
 }
 
-/* ---------- 字族與底色統一（想保留子站原本的襯線體與米色底，把這段刪掉即可） ---------- */
+/* ---------- 內文字族與底色統一 ---------- */
 body {
   font-family: var(--sr-sans);
   background: var(--sr-bg);
@@ -319,8 +417,17 @@ body h3 em {
 }
 
 /* ---------- 響應式 ---------- */
-@media (max-width: 880px) {
-  .sr-main {
+@media (max-width: 1023px) {
+  .sr-head-in,
+  .sr-sub-in {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .sr-main,
+  .sr-search span {
     display: none;
   }
   .sr-sub-note {
@@ -328,17 +435,24 @@ body h3 em {
   }
   .sr-burger {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
   }
   .sr-head-in {
     padding: 0 16px;
     gap: 12px;
   }
-  .sr-sub-in,
-  .sr-crumb-in {
+  .sr-brand img {
+    width: 40px;
+    height: 40px;
+  }
+  .sr-brand-txt b {
+    font-size: 18px;
+  }
+  .sr-sub-in {
     padding-left: 16px;
     padding-right: 16px;
+  }
+  .sr-search {
+    padding: 0 4px;
   }
   .sr-foot-in {
     grid-template-columns: 1fr 1fr;
@@ -353,9 +467,6 @@ body h3 em {
 @media (max-width: 560px) {
   .sr-cta {
     display: none;
-  }
-  .sr-brand-txt b {
-    font-size: 14px;
   }
   .sr-foot-in {
     grid-template-columns: 1fr;

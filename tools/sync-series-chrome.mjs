@@ -17,8 +17,8 @@ import path from 'node:path';
 const ROOT = path.resolve(process.cwd(), 'public');
 const MAIN_NAV = [
   { label: '主題', href: '/topics/' },
-  { label: '文章', href: '/blog/' },
   { label: '專題', href: '/series/' },
+  { label: '文章', href: '/blog/' },
   { label: '免費資源', href: '/resources/' },
   { label: '關於我', href: '/about/' },
 ];
@@ -55,6 +55,38 @@ const SERIES = {
     ],
   },
 };
+
+const MARK_JSONLD = /<!--SR:JSONLD START-->[\s\S]*?<!--SR:JSONLD END-->/;
+
+function jsonLd(series, currentPath) {
+  const items = [
+    { name: '首頁', url: 'https://blog.billy4select.com/' },
+    { name: '專題', url: 'https://blog.billy4select.com/series/' },
+    { name: series.name, url: 'https://blog.billy4select.com' + series.root },
+  ];
+  const chapter = series.nav.find(
+    (item) => item.href !== series.root && currentPath.startsWith(item.href)
+  );
+  if (chapter && currentPath !== series.root) {
+    items.push({
+      name: chapter.label,
+      url: 'https://blog.billy4select.com' + chapter.href,
+    });
+  }
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+  return `<!--SR:JSONLD START--><script type="application/ld+json">${JSON.stringify(
+    data
+  )}</script><!--SR:JSONLD END-->`;
+}
 
 const MARK_HEAD = /<!--SR:HEAD START-->[\s\S]*?<!--SR:HEAD END-->/;
 const MARK_FOOT = /<!--SR:FOOT START-->[\s\S]*?<!--SR:FOOT END-->/;
@@ -104,6 +136,7 @@ function subLinks(series, currentPath) {
     }
   }
   return series.nav
+    .filter((item) => item.href !== series.root)
     .map(
       (item) =>
         `<a href="${item.href}"${
@@ -114,44 +147,63 @@ function subLinks(series, currentPath) {
 }
 
 function headBlock(series, currentPath) {
-  const mainLinks = MAIN_NAV.map(
-    (item) =>
-      `<a href="${item.href}"${
-        item.href === '/series/' ? ' class="is-current"' : ''
-      }>${item.label}</a>`
-  ).join('');
+  // 與 src/components/layout/Header.astro 對齊：品牌＝頭像＋站名＋標語，
+  // 專題名稱只出現在章節列，不再當成第二個品牌
+  const mainLinks = MAIN_NAV.map((item) => {
+    const active =
+      item.href === '/series/' ||
+      (item.href !== '/' && currentPath.startsWith(item.href));
+    return `<a href="${item.href}"${
+      active ? ' aria-current="page"' : ''
+    }>${item.label}</a>`;
+  }).join('');
 
   const mobileLinks = MAIN_NAV.map(
     (item) => `<a href="${item.href}">${item.label}</a>`
   ).join('');
 
+  const subNav = subLinks(series, currentPath);
+
   return `<!--SR:HEAD START-->
-<header id="sr-head" class="sr-head site-head site-header">
+<div id="sr-announce" class="sr-announce" role="banner">
+  <p>
+    <span>把值得探索與思考的事情，定期寄給你</span>
+    <a href="https://billy4select.substack.com/" target="_blank" rel="noopener">訂閱電子報<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </p>
+  <button type="button" class="sr-announce-x" aria-label="關閉公告" data-sr-announce-dismiss>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+</div>
+<header id="sr-head" class="sr-head">
   <div class="sr-head-in">
-    <a class="sr-brand" href="/" aria-label="回到主站首頁">
-      <img src="/avatar.webp" alt="比利陳" width="34" height="34" loading="eager" decoding="async">
-      <span class="sr-brand-txt"><small>比利陳 · 專題</small><b>${series.shortName}</b></span>
+    <a class="sr-brand" href="/" aria-label="比利陳，回到首頁">
+      <img src="/avatar.webp" alt="比利陳" width="44" height="44" loading="eager" decoding="async">
+      <span class="sr-brand-txt"><b>比利陳</b><small>行銷裡的路人甲</small></span>
     </a>
-    <nav class="sr-main" aria-label="主站導覽">${mainLinks}</nav>
+    <nav class="sr-main" aria-label="主要導覽">${mainLinks}</nav>
     <div class="sr-actions">
+      <a class="sr-search" href="/blog/" aria-label="搜尋文章">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.2-3.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>搜尋</span>
+      </a>
       <a class="sr-cta" href="https://billy4select.substack.com/" target="_blank" rel="noopener">訂閱電子報</a>
-      <button class="sr-burger" type="button" data-sr-burger aria-expanded="false" aria-controls="sr-mobile" aria-label="開啟導覽">☰</button>
+      <button class="sr-burger" type="button" data-sr-burger aria-expanded="false" aria-controls="sr-mobile" aria-label="開啟導覽">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
     </div>
   </div>
   <div class="sr-mobile" id="sr-mobile"><div class="sr-mobile-in">${mobileLinks}</div></div>
-  <nav class="sr-sub" aria-label="系列章節">
-    <div class="sr-sub-in">${subLinks(series, currentPath)}<span class="sr-sub-note">${series.note}</span></div>
+  <nav class="sr-sub" aria-label="專題章節">
+    <div class="sr-sub-in">
+      <a class="sr-back" href="/series/" aria-label="回到專題總覽">← 專題</a>
+      <a class="sr-sub-title" href="${series.root}"${
+        currentPath === series.root ? ' aria-current="page"' : ''
+      }>${series.shortName}</a>
+      ${subNav}
+      <span class="sr-sub-note">${series.note}</span>
+    </div>
   </nav>
 </header>
-<nav id="sr-crumb" aria-label="麵包屑">
-  <div class="sr-crumb-in">
-    <a href="/">首頁</a><span class="sep">›</span>
-    <a href="/series/">專題</a><span class="sep">›</span>
-    <a href="${series.root}"${
-      currentPath === series.root ? ' aria-current="page"' : ''
-    }>${series.name}</a>
-  </div>
-</nav>
 <!--SR:HEAD END-->`;
 }
 
@@ -198,7 +250,7 @@ function footBlock(series) {
 <!--SR:FOOT END-->`;
 }
 
-function injectAssets(html) {
+function injectAssets(html, series, currentPath) {
   let out = html;
   if (!out.includes('/series-assets/series-shell.css')) {
     out = out.replace(
@@ -211,6 +263,12 @@ function injectAssets(html) {
       /<\/head>/i,
       '  <script src="/series-assets/series-shell.js" defer></script>\n</head>'
     );
+  }
+  const ld = jsonLd(series, currentPath);
+  if (MARK_JSONLD.test(out)) {
+    out = out.replace(MARK_JSONLD, ld);
+  } else {
+    out = out.replace(/<\/head>/i, ld + '\n</head>');
   }
   return out;
 }
@@ -247,7 +305,7 @@ function processFile(file) {
     html = html.replace(/<\/body>/i, `${footBlock(series)}\n</body>`);
   }
 
-  html = injectAssets(html);
+  html = injectAssets(html, series, currentPath);
   fs.writeFileSync(file, html, 'utf8');
   return rel;
 }
