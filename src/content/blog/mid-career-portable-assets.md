@@ -7,7 +7,7 @@ tags:
   - 中階主管
   - 職涯資產
   - 可遷移能力
-category: 個人發展與事業
+category: 職涯與個人事業
 featured: false
 boost: false
 draft: false

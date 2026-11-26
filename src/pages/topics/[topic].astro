@@ -4,9 +4,10 @@ import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
 import { postUrl } from '@/lib/blog';
+import TopicArticleRow from '@/components/topics/TopicArticleRow.astro';
 import { calculateReadingTime } from '@/lib/utils';
 import { getThemeBySlug } from '@/lib/themes';
-import { homeTopics, type HomeTopic } from '@/lib/homepage';
+import { homeTopics, homeSeries, type HomeTopic } from '@/lib/homepage';
 import { getTopicCuration } from '@/lib/topic-curation';
 
 interface Props {
@@ -32,6 +33,11 @@ const curation = getTopicCuration(topic.slug);
 if (!curation) {
   throw new Error(`Topic ${topic.slug} 尚未設定編輯精選。`);
 }
+
+// 這個專題底下的完整課程（例如「打造 AI 工作團隊」），章節資料來自 homeSeries
+const series = curation.series
+  ? homeSeries.find((item) => item.href === curation.series?.href)
+  : undefined;
 
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const postById = new Map(allPosts.map((post) => [post.id, post]));
@@ -66,7 +72,7 @@ const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   '@id': `${canonical}#collection`,
-  name: `${topic.name}主題`,
+  name: `${topic.name}專題`,
   description: curation.intro,
   url: canonical,
   inLanguage: 'zh-Hant-TW',
@@ -97,6 +103,10 @@ const schemas = [collectionSchema];
 
 const readTime = (post: (typeof allPosts)[number]) =>
   calculateReadingTime(post.body || '');
+/** 方向超過 3 篇時，先顯示 2 篇，其餘收在「還有 N 篇」 */
+const COLLAPSE_OVER = 3;
+const VISIBLE_WHEN_COLLAPSED = 2;
+
 const startMinutes = startPosts.reduce((sum, { post }) => sum + readTime(post), 0);
 const themeTotal = allPosts.filter((p) => p.data.category === theme.name).length;
 ---
@@ -109,7 +119,7 @@ const themeTotal = allPosts.filter((p) => p.data.category === theme.name).length
   <Breadcrumbs
     items={[
       { label: '首頁', href: '/' },
-      { label: '主題', href: '/topics/' },
+      { label: '專題', href: '/topics/' },
       { label: topic.name },
     ]}
   />
@@ -126,8 +136,52 @@ const themeTotal = allPosts.filter((p) => p.data.category === theme.name).length
     </div>
   </section>
 
-  {/* 2. 從這裡開始：單欄清單，照順序讀 */}
-  <section class="bg-background pt-12 md:pt-16" aria-labelledby="topic-start-title">
+  {/* 2. 完整課程：這個專題裡最完整的一條路線 */}
+  {
+    series && (
+      <section class="bg-background pt-12 md:pt-16" aria-labelledby="topic-series-title">
+        <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div class="rounded-2xl border border-primary/30 bg-primary/5 p-6 md:p-8">
+            <p class="text-[11px] font-bold tracking-[0.15em] text-primary">完整課程</p>
+            <h2
+              id="topic-series-title"
+              class="mt-2 text-xl font-bold tracking-tight text-text md:text-2xl"
+            >
+              {series.name}
+            </h2>
+            <p class="mt-2 text-sm leading-relaxed text-text-muted md:text-base">
+              {series.description}
+            </p>
+            <ol class="mt-5 space-y-2 text-sm text-text">
+              {series.chapters.map((chapter, chapterIndex) => (
+                <li>
+                  <a
+                    href={chapter.href}
+                    class="group inline-flex items-baseline gap-3 hover:text-primary"
+                  >
+                    <span class="font-mono text-xs tabular-nums text-primary">
+                      {String(chapterIndex + 1).padStart(2, '0')}
+                    </span>
+                    <span class="font-semibold">{chapter.label}</span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+            <a
+              href={series.href}
+              class="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+            >
+              從頭開始學
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  {/* 3. 從這裡開始：單欄清單，照順序讀 */}
+  <section class="bg-background pt-10 md:pt-12" aria-labelledby="topic-start-title">
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
       <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
         <h2 id="topic-start-title" class="text-xl font-bold tracking-tight text-text md:text-2xl">
@@ -138,7 +192,7 @@ const themeTotal = allPosts.filter((p) => p.data.category === theme.name).length
 
       <ol class="mt-5 border-y border-border">
         {
-          startPosts.map(({ post }, startIndex) => (
+          startPosts.map(({ post, outcome }, startIndex) => (
             <li class="border-b border-border last:border-b-0">
               <a
                 href={postUrl(post.id)}
@@ -151,8 +205,9 @@ const themeTotal = allPosts.filter((p) => p.data.category === theme.name).length
                   <h3 class="text-lg font-bold leading-snug text-text transition-colors group-hover:text-primary">
                     {post.data.title}
                   </h3>
-                  <p class="mt-1.5 line-clamp-2 text-sm leading-relaxed text-text-muted">
-                    {post.data.description}
+                  <p class="mt-1.5 text-sm leading-relaxed text-text-muted">
+                    <span class="font-semibold text-text">讀完你會知道：</span>
+                    {outcome}
                   </p>
                 </div>
                 <span class="col-start-2 mt-2 text-xs text-text-muted sm:col-start-3 sm:mt-1 sm:whitespace-nowrap">
@@ -166,7 +221,7 @@ const themeTotal = allPosts.filter((p) => p.data.category === theme.name).length
     </div>
   </section>
 
-  {/* 3. 依方向深入：只列標題，不重複放摘要 */}
+  {/* 4. 依方向深入：只列標題，不重複放摘要 */}
   <section class="bg-background py-12 md:py-16" aria-labelledby="topic-directions-title">
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
       <h2 id="topic-directions-title" class="text-xl font-bold tracking-tight text-text md:text-2xl">
@@ -175,61 +230,57 @@ const themeTotal = allPosts.filter((p) => p.data.category === theme.name).length
 
       <div class="mt-6 space-y-10">
         {
-          directions.map((direction) => (
-            <section>
-              <h3 class="text-base font-bold text-text md:text-lg">{direction.title}</h3>
-              <p class="mt-1 text-sm leading-relaxed text-text-muted">
-                {direction.description}
-              </p>
-              <ul class="mt-3 border-t border-border">
-                {direction.articles.map((post) => (
-                  <li class="border-b border-border">
-                    <a
+          directions.map((direction) => {
+            const collapsed = direction.articles.length > COLLAPSE_OVER;
+            const shown = collapsed
+              ? direction.articles.slice(0, VISIBLE_WHEN_COLLAPSED)
+              : direction.articles;
+            const rest = collapsed ? direction.articles.slice(VISIBLE_WHEN_COLLAPSED) : [];
+            return (
+              <section>
+                <h3 class="text-base font-bold text-text md:text-lg">
+                  {direction.title}
+                  <span class="ml-2 text-sm font-normal text-text-muted">
+                    {direction.articles.length} 篇
+                  </span>
+                </h3>
+                <p class="mt-1 text-sm leading-relaxed text-text-muted">{direction.forWho}</p>
+                <ul class="mt-3 border-t border-border">
+                  {shown.map((post) => (
+                    <TopicArticleRow
                       href={postUrl(post.id)}
-                      class="group flex items-baseline gap-3 py-3 transition-colors hover:bg-surface/70"
-                    >
-                      <span class="min-w-0 flex-1 text-[15px] font-semibold leading-snug text-text transition-colors group-hover:text-primary">
-                        {post.data.title}
-                      </span>
-                      <span class="whitespace-nowrap text-xs text-text-muted">
-                        {readTime(post)} 分鐘
-                      </span>
-                      <span
-                        aria-hidden="true"
-                        class="text-primary transition-transform group-hover:translate-x-0.5"
-                      >
-                        →
-                      </span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          ))
+                      title={post.data.title}
+                      minutes={readTime(post)}
+                    />
+                  ))}
+                </ul>
+                {rest.length > 0 && (
+                  <details class="border-b border-border">
+                    <summary class="cursor-pointer select-none py-3 text-sm font-semibold text-primary hover:text-primary-dark">
+                      還有 {rest.length} 篇
+                    </summary>
+                    <ul class="border-t border-border">
+                      {rest.map((post) => (
+                        <TopicArticleRow
+                          href={postUrl(post.id)}
+                          title={post.data.title}
+                          minutes={readTime(post)}
+                        />
+                      ))}
+                    </ul>
+                  </details>
+                )}
+              </section>
+            );
+          })
         }
       </div>
     </div>
   </section>
 
-  {/* 4. 收尾：一行連結，不再放大面板 */}
+  {/* 5. 收尾：一個連結，不再放大面板 */}
   <section class="border-t border-border bg-surface py-10 md:py-12">
-    <div class="mx-auto flex max-w-4xl flex-col gap-4 px-4 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
-      <div class="text-sm leading-relaxed text-text-muted">
-        {
-          curation.series && (
-            <p>
-              想照順序學：
-              <a
-                href={curation.series.href}
-                class="font-semibold text-primary underline decoration-primary/30 underline-offset-4 hover:text-primary-dark"
-              >
-                {curation.series.name}
-              </a>
-              <span class="ml-1">{curation.series.note}</span>
-            </p>
-          )
-        }
-      </div>
+    <div class="mx-auto flex max-w-4xl justify-end px-4 sm:px-6 lg:px-8">
       <a
         href={`/blog/?theme=${theme.slug}`}
         class="inline-flex w-fit items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"

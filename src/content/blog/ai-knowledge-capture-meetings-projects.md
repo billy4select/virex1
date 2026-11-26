@@ -7,7 +7,7 @@ tags:
   - 會議記錄
   - 專案管理
   - 知識沉澱
-category: 工作與效率
+category: AI 工作流程與工具
 featured: false
 boost: false
 draft: false

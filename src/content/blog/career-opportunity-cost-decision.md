@@ -6,7 +6,7 @@ author: 比利陳 Billy Chen
 tags:
   - 職涯發展
   - 決策思考
-category: 個人發展與事業
+category: 職涯與個人事業
 featured: false
 boost: false
 draft: false

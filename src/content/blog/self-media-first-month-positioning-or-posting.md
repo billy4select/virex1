@@ -7,7 +7,7 @@ tags:
   - 自媒體
   - 內容定位
   - Threads
-category: 個人發展與事業
+category: 職涯與個人事業
 featured: false
 boost: false
 draft: false

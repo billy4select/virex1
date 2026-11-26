@@ -5,7 +5,7 @@ publishedDate: 2026-04-24T10:03:00Z
 author: 比利陳 Billy Chen
 tags:
   - 知識管理
-category: 工作與效率
+category: NotebookLM 實戰
 featured: false
 boost: false
 draft: false

@@ -23,18 +23,18 @@ const topics = homeTopics.map((topic) => {
 ---
 
 <MarketingLayout
-  title={`主題 - ${siteConfig.name}`}
-  description="工作與效率、學習與能力、商業與行銷、個人發展與事業。從你現在想解決的問題開始。"
+  title={`專題 - ${siteConfig.name}`}
+  description="AI 工作流程與工具、NotebookLM 實戰、商業與行銷、職涯與個人事業。每個專題都有一篇可以直接開始讀的文章。"
 >
-  <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '主題' }]} />
+  <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '專題' }]} />
 
   <section class="bg-background pb-10 pt-10 md:pt-14">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <h1 class="text-3xl font-extrabold tracking-tight text-text md:text-4xl lg:text-5xl">
-        四大主題
+        專題
       </h1>
       <p class="mt-4 max-w-2xl text-base leading-relaxed text-text-muted">
-        四個方向，每個都有一篇可以直接開始讀的文章。
+        挑一個你現在需要的，從一篇文章開始讀。
       </p>
     </div>
   </section>
@@ -68,7 +68,7 @@ const topics = homeTopics.map((topic) => {
               <span class="mt-5 flex items-center justify-between text-sm">
                 <span class="text-xs text-text-muted">{topic.count} 篇文章</span>
                 <span class="inline-flex items-center gap-1 font-semibold text-primary">
-                  進入主題
+                  進入專題
                   <span aria-hidden="true">→</span>
                 </span>
               </span>

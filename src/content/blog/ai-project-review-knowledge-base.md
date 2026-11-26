@@ -6,7 +6,7 @@ author: "比利 (Billy Chen)"
 tags:
   - 知識管理
   - AI工作流程
-category: 工作與效率
+category: AI 工作流程與工具
 featured: false
 boost: false
 draft: false

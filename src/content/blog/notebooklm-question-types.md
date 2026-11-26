@@ -5,7 +5,7 @@ publishedDate: 2026-04-22T11:08:32Z
 author: 比利陳 Billy Chen
 tags:
   - NotebookLM教學
-category: 工作與效率
+category: NotebookLM 實戰
 featured: false
 boost: false
 draft: false

@@ -7,7 +7,7 @@ author: 比利陳 Billy Chen
 tags:
   - 工具比較評測
   - 知識管理
-category: 工作與效率
+category: NotebookLM 實戰
 featured: false
 boost: false
 draft: false

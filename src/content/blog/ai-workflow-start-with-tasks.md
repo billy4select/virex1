@@ -7,7 +7,7 @@ tags:
   - AI工作流
   - 工作方法
   - 生產力
-category: 工作與效率
+category: AI 工作流程與工具
 featured: false
 boost: false
 draft: false
@@ -112,7 +112,7 @@ AI 負責：
 
 如果你想先確認自己該投資哪一種能力，可以看[AI 時代的能力地圖](/blog/ai-era-capability-map/)；如果你要用 AI 學一個新領域，則可以看[用 AI 學會一個新領域](/blog/learn-new-field-with-ai-30-days/)。
 
-如果你還停在「工具很多、不知道怎麼選」，先看[AI 工具組合學](/blog/ai-tool-combination/)與[AI 工具評估法](/blog/ai-tool-evaluation/)；流程跑起來後，再用[AI 產出品質檢查](/blog/ai-output-quality-check/)確認產出能不能交。回到/topics/work-efficiency/(/topics/work-efficiency/)可以看到整條路徑。
+如果你還停在「工具很多、不知道怎麼選」，先看[AI 工具組合學](/blog/ai-tool-combination/)與[AI 工具評估法](/blog/ai-tool-evaluation/)；流程跑起來後，再用[AI 產出品質檢查](/blog/ai-output-quality-check/)確認產出能不能交。回到/topics/ai-workflow/(/topics/ai-workflow/)可以看到整條路徑。
 
 ---
 

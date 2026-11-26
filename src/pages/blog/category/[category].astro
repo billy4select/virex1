@@ -3,14 +3,17 @@ import { blogThemes } from '@/lib/themes';
 
 export function getStaticPaths() {
   const legacyTargets: Record<string, string> = {
-    'ai-tech': 'work-efficiency',
-    'business-marketing': 'business-marketing',
-    'personal-brand': 'personal-development',
+    'ai-tech': 'ai-workflow',
+    'personal-brand': 'career-business',
     'investment-market': '',
-    // 舊主題 slug
-    'ability-learning': 'work-efficiency',
+    // 2026-11 第一版主題 slug
+    'work-efficiency': 'ai-workflow',
+    'learning-capability': 'career-business',
+    'personal-development': 'career-business',
+    // 更早的主題 slug
+    'ability-learning': 'ai-workflow',
     'business-thinking': 'business-marketing',
-    'personal-growth': 'personal-development',
+    'personal-growth': 'career-business',
     'marketing-brand': 'business-marketing',
   };
 
@@ -19,7 +22,9 @@ export function getStaticPaths() {
     props: { target: theme.slug },
   }));
 
-  const legacy = Object.entries(legacyTargets).map(([category, target]) => ({
+  const legacy = Object.entries(legacyTargets)
+    .filter(([category]) => !blogThemes.some((t) => t.slug === category))
+    .map(([category, target]) => ({
     params: { category },
     props: { target },
   }));

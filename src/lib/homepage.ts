@@ -49,47 +49,43 @@ export interface HomeExploreEntry {
 
 export const homeTopics: HomeTopic[] = [
   {
-    slug: 'work-efficiency',
-    name: '工作與效率',
-    question: '如何用更好的方法，完成工作與生活中的事情？',
-    description:
-      '任務安排、工作系統、時間分配，以及 AI 工具與自動化，整理真正能放進日常的方法。',
-    href: '/topics/work-efficiency/',
-    category: 'work-efficiency',
+    slug: 'ai-workflow',
+    name: 'AI 工作流程與工具',
+    question: '怎麼把 AI 放進日常工作，而不是只停在試用？',
+    description: '任務拆解、工具選擇、提案會議與知識沉澱。',
+    href: '/topics/ai-workflow/',
+    category: 'ai-workflow',
   },
   {
-    slug: 'learning-capability',
-    name: '學習與能力',
-    question: '如何持續學習，培養真正用得上的能力？',
-    description:
-      '判斷該學什麼、建立學習方法，到刻意練習與知識管理，幫助你把知識轉成實際能力。',
-    href: '/topics/learning-capability/',
-    category: 'learning-capability',
+    slug: 'notebooklm',
+    name: 'NotebookLM 實戰',
+    question: '怎麼用 NotebookLM 讀文件、做研究，又不踩坑？',
+    description: '入門、上傳準備、提問方式與常見問題。',
+    href: '/topics/notebooklm/',
+    category: 'notebooklm',
   },
   {
     slug: 'business-marketing',
     name: '商業與行銷',
     question: '如何理解市場、顧客與一門生意的運作？',
-    description:
-      '需求驗證、客群與商業模式，到行銷診斷與品牌信任，整理看懂市場與生意的方法。',
+    description: '需求驗證、商業模式、受眾定位與行銷診斷。',
     href: '/topics/business-marketing/',
     category: 'business-marketing',
   },
   {
-    slug: 'personal-development',
-    name: '個人發展與事業',
-    question: '如何運用自己的能力與經驗，探索更多發展機會？',
-    description:
-      '職涯策略、可攜帶資產、個人品牌與知識變現，探索專業如何持續累積與發展。',
-    href: '/topics/personal-development/',
-    category: 'personal-development',
+    slug: 'career-business',
+    name: '職涯與個人事業',
+    question: '如何把能力與經驗，變成可以帶走的資產與收入？',
+    description: '能力盤點、職涯轉型、個人品牌與知識變現。',
+    href: '/topics/career-business/',
+    category: 'career-business',
   },
 ];
 
 export const homeSeries: HomeSeries[] = [
   {
     name: '打造 AI 工作團隊',
-    theme: '工作與效率',
+    theme: 'AI 工作流程與工具',
     description:
       '從單一 AI 工具到可以分工、交接與重複執行的工作流程。',
     href: '/ai-work-team/',
@@ -101,7 +97,7 @@ export const homeSeries: HomeSeries[] = [
   },
   {
     name: 'Threads 經營教學',
-    theme: '個人發展與事業',
+    theme: '職涯與個人事業',
     description:
       '從帳號定位、內容規劃到互動與經營，建立一套做得到的內容節奏。',
     href: '/threads/',

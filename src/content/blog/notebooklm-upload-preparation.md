@@ -7,7 +7,7 @@ author: 比利陳 Billy Chen
 tags:
   - NotebookLM疑難排解
   - NotebookLM教學
-category: 工作與效率
+category: NotebookLM 實戰
 featured: false
 boost: false
 draft: false

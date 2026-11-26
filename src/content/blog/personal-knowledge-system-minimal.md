@@ -7,7 +7,7 @@ tags:
   - 知識管理
   - 筆記方法
   - 學習系統
-category: 學習與能力
+category: 職涯與個人事業
 featured: false
 boost: false
 draft: false

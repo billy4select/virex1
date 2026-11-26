@@ -6,7 +6,7 @@ publishedDate: 2026-05-27T00:00:00Z
 author: 比利陳 Billy Chen
 tags:
   - NotebookLM疑難排解
-category: 工作與效率
+category: NotebookLM 實戰
 featured: false
 boost: false
 draft: false

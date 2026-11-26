@@ -7,7 +7,7 @@ tags:
   - 刻意練習
   - 知識工作
   - 作品集
-category: 學習與能力
+category: 職涯與個人事業
 featured: false
 boost: false
 draft: false

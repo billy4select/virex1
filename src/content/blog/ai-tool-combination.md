@@ -7,7 +7,7 @@ tags:
   - AI工具
   - 工具組合
   - 工作流程
-category: 工作與效率
+category: AI 工作流程與工具
 featured: false
 boost: false
 draft: false
