@@ -19,8 +19,12 @@
   --sr-radius: 6px;
   --sr-max: 1280px;
   --sr-header-h: 64px;
+  /* 與 src/styles/global.css 的 body 字族逐字相同 */
   --sr-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    'Helvetica Neue', Arial, sans-serif;
+  /* 蓋掉子站自己的變數，讓襯線體（Georgia / Noto Serif TC）不再出現 */
+  --sans: var(--sr-sans);
+  --serif: var(--sr-sans);
 }
 
 /* ---------- 公告條（同 AnnouncementBar primary） ---------- */
@@ -407,6 +411,25 @@ body h2 em,
 body h3 em {
   font-family: inherit !important;
   font-style: normal;
+}
+/* 字重與字距對齊主站：h1/h2 extrabold 800 + tracking-tight */
+body h1 {
+  font-weight: 800 !important;
+  letter-spacing: -0.025em !important;
+}
+body h2 {
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+}
+body h3 {
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+}
+body h4,
+body h5,
+body h6 {
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
 }
 
 /* ---------- 響應式 ---------- */

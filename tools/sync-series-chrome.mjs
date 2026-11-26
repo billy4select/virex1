@@ -251,8 +251,15 @@ function footBlock(series) {
 <!--SR:FOOT END-->`;
 }
 
+function stripWebfonts(html) {
+  // 子站原本從 jsdelivr 載 Noto Sans/Serif TC，與主站的系統字族不同，一律移除
+  return html
+    .replace(/<link[^>]*fontsource[^>]*>\s*/gi, '')
+    .replace(/<link[^>]*preconnect[^>]*jsdelivr[^>]*>\s*/gi, '');
+}
+
 function injectAssets(html, series, currentPath) {
-  let out = html;
+  let out = stripWebfonts(html);
   if (!out.includes('/series-assets/series-shell.css')) {
     out = out.replace(
       /<\/head>/i,
