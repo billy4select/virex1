@@ -28,7 +28,7 @@
     "check": "npm run lint && npm run format:check && astro check",
     "deploy": "npm run build && wrangler deploy",
     "cf-typegen": "wrangler types",
-    "prebuild": "node tools/collect-static-urls.mjs && node tools/sync-series-chrome.mjs",
+    "prebuild": "node tools/check-redirects.mjs && node tools/collect-static-urls.mjs && node tools/sync-series-chrome.mjs",
     "series:sync": "node tools/sync-series-chrome.mjs",
     "series:css": "node tools/extract-inline-css.mjs",
     "series:urls": "node tools/collect-static-urls.mjs"
