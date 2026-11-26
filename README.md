@@ -1,28 +1,22 @@
-# 免費資源：廣告移到「授權與更新」下方
+# 關於我：色帶改成左右滿版
 
-只覆蓋 1 個檔：`src/pages/resources.astro`
+只覆蓋 1 個檔：`src/pages/about.astro`
 
-## 改了什麼
+## 原因
 
-- 原本廣告區在頁首色帶下方（四張分類卡之前），現在整段搬到頁尾「授權與更新」卡片的正下方。
-- 廣告卡與授權卡現在是同一塊 `bg-surface` 區塊裡的兩張卡（間距 24px），不是各自獨立一條 band，所以視覺上不會再出現兩段底色。
-- 標示保留：卡片左上「廣告」字樣 + 「以下內容由 Google AdSense 提供，非本站編輯內容。」
+關於我整頁被包在一個外層容器裡：
 
-## 區塊順序（部署後應該是）
-
-1. 頁首色帶（H1 + 說明 + meta）
-2. 四張分類卡
-3. `bg-surface` 區塊：授權與更新卡 → 廣告卡（貼在它下面 24px）
-4. footer
-
-## 別忘了
-
-- 未填充時 `#ad-slot` 會自動收合（規則已保留），所以審核期間不會留空洞，也不會把授權卡頂開。
-- `ads.txt` 若還沒放上去，記得一起（`google.com, pub-3229697751722054, DIRECT, f08c47fec0942fa0`）。
-
-## 部署
-
-```bash
-npx astro build
-npx pagefind --site dist
+```astro
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  <section class="page-band"> ... </section>
 ```
+
+色帶是這個 1280px 容器的子元素，所以底色只鋪到 1280（還被 px-4 再縮），看起來就比別頁窄一截。
+
+## 修法
+
+把 `<section class="page-band">` 拉到外層，容器改成放在色帶「裡面」；色帶結束後再開一個容器包住底下的長文 section。
+
+- 色帶：`left 0 / width 1440`（1440 視窗實測滿版）
+- H1 起點仍 205px、色帶高度仍 304px，跟其他七頁一致
+- 內文左右留白不變（仍是 max-w-7xl + px）
