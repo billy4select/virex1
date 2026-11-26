@@ -186,6 +186,7 @@ function headBlock(series, currentPath) {
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.2-3.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         <span>搜尋</span>
       </a>
+      <span class="sr-theme-space" aria-hidden="true"></span>
       <a class="sr-cta" href="https://billy4select.substack.com/" target="_blank" rel="noopener">訂閱電子報</a>
       <button class="sr-burger" type="button" data-sr-burger aria-expanded="false" aria-controls="sr-mobile" aria-label="開啟導覽">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -195,7 +196,6 @@ function headBlock(series, currentPath) {
   <div class="sr-mobile" id="sr-mobile"><div class="sr-mobile-in">${mobileLinks}</div></div>
   <nav class="sr-sub" aria-label="系列章節">
     <div class="sr-sub-in">
-      <a class="sr-back" href="/series/" aria-label="回到系列總覽">← 系列</a>
       <a class="sr-sub-title" href="${series.root}"${
         currentPath === series.root ? ' aria-current="page"' : ''
       }>${series.shortName}</a>
@@ -214,6 +214,7 @@ function footBlock(series) {
     <div class="sr-foot-brand">
       <b>比利陳 Billy Chen</b>
       <p>十年整合行銷與產品經驗，獨立出版三本書。這裡把 AI、商業與個人發展的觀察，整理成可以照著走的系列。</p>
+      <span class="sr-theme-space" aria-hidden="true"></span>
       <a class="sr-cta" href="https://billy4select.substack.com/" target="_blank" rel="noopener">訂閱電子報</a>
     </div>
     <div class="sr-foot-col">

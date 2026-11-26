@@ -165,10 +165,10 @@
 .sr-main {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 24px;
 }
 .sr-main a {
-  padding: 5px 9px;
+  padding: 4px 8px;
   border-radius: var(--sr-radius);
   font-size: 14px;
   font-weight: 500;
@@ -189,7 +189,7 @@
 .sr-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   flex: 0 0 auto;
 }
 .sr-search {
@@ -211,6 +211,13 @@
 .sr-search svg {
   width: 16px;
   height: 16px;
+}
+/* 保留主站夜間模式按鈕的寬度，讓導覽與主站落在同一條垂直線上 */
+.sr-theme-space {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
 }
 .sr-cta {
   display: inline-flex;
@@ -267,20 +274,6 @@
 }
 .sr-sub-in::-webkit-scrollbar {
   display: none;
-}
-.sr-back {
-  flex: 0 0 auto;
-  padding: 4px 10px 4px 0;
-  margin-right: 10px;
-  border-right: 1px solid var(--sr-line);
-  font-size: 11.5px;
-  font-weight: 500;
-  color: var(--sr-muted);
-  white-space: nowrap;
-  transition: color 0.15s ease;
-}
-.sr-back:hover {
-  color: var(--sr-primary);
 }
 .sr-sub-title {
   flex: 0 0 auto;
