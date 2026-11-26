@@ -80,4 +80,4 @@ steps:
 
 → [Claude vs ChatGPT：行銷人寫提案，哪個比較不會讓你改到崩潰](https://blog.billy4select.com/blog/claude-vs-chatgpt-proposal/)
 
-**延伸起點：** 系列的 [工作流程庫](/ai-work-team/workflows/) 把「對外送出、付款、簽約與涉及個資的動作永遠由人核准」寫成共通規則，每條流程都照這個邊界設計。
+**延伸起點：** 教學的 [工作流程庫](/ai-work-team/workflows/) 把「對外送出、付款、簽約與涉及個資的動作永遠由人核准」寫成共通規則，每條流程都照這個邊界設計。

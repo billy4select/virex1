@@ -1,11 +1,11 @@
 /**
  * sync-series-chrome.mjs
- * 把主站樣式的外殼（頁首 / 麵包屑 / 頁尾）套用到所有系列頁。
+ * 把主站樣式的外殼（頁首 / 麵包屑 / 頁尾）套用到所有教學頁。
  *
  * 特性
  * - 只替換外殼區塊，內文、課程版型、TOC 全部不動
  * - 以 <!--SR:HEAD START--> 標記包住，可重複執行（idempotent）
- * - 自動判斷系列、自動標示當前章節
+ * - 自動判斷屬於哪套教學、自動標示當前章節
  *
  * 用法
  *   node tools/sync-series-chrome.mjs
@@ -17,7 +17,7 @@ import path from 'node:path';
 const ROOT = path.resolve(process.cwd(), 'public');
 const MAIN_NAV = [
   { label: '主題', href: '/topics/' },
-  { label: '系列', href: '/series/' },
+  { label: '教學', href: '/series/' },
   { label: '文章', href: '/blog/' },
   { label: '免費資源', href: '/resources/' },
   { label: '關於我', href: '/about/' },
@@ -30,13 +30,13 @@ const SERIES = {
     root: '/ai-work-team/',
     note: '6 個主題 · 6 條流程 · 18 張任務卡',
     nav: [
-      { label: '系列首頁', href: '/ai-work-team/' },
+      { label: '教學首頁', href: '/ai-work-team/' },
       { label: '開始探索', href: '/ai-work-team/curriculum/' },
       { label: '工作流程', href: '/ai-work-team/workflows/' },
       { label: '任務庫', href: '/ai-work-team/workflows/tasks/' },
       { label: '實用資源', href: '/ai-work-team/resources/' },
       { label: '案例', href: '/ai-work-team/cases/' },
-      { label: '關於系列', href: '/ai-work-team/about/' },
+      { label: '關於教學', href: '/ai-work-team/about/' },
     ],
   },
   threads: {
@@ -45,7 +45,7 @@ const SERIES = {
     root: '/threads/',
     note: '8 個起步主題',
     nav: [
-      { label: '系列首頁', href: '/threads/' },
+      { label: '教學首頁', href: '/threads/' },
       { label: '起步', href: '/threads/rumors/' },
       { label: '心態', href: '/threads/mindset/' },
       { label: '寫作', href: '/threads/writing/' },
@@ -61,7 +61,7 @@ const MARK_JSONLD = /<!--SR:JSONLD START-->[\s\S]*?<!--SR:JSONLD END-->/;
 function jsonLd(series, currentPath) {
   const items = [
     { name: '首頁', url: 'https://blog.billy4select.com/' },
-    { name: '系列', url: 'https://blog.billy4select.com/series/' },
+    { name: '教學', url: 'https://blog.billy4select.com/series/' },
     { name: series.name, url: 'https://blog.billy4select.com' + series.root },
   ];
   const chapter = series.nav.find(
@@ -148,7 +148,7 @@ function subLinks(series, currentPath) {
 
 function headBlock(series, currentPath) {
   // 與 src/components/layout/Header.astro 對齊：品牌＝頭像＋站名＋標語，
-  // 系列名稱只出現在章節列，不再當成第二個品牌
+  // 教學名稱只出現在章節列，不再當成第二個品牌
   const mainLinks = MAIN_NAV.map((item) => {
     const active =
       item.href === '/series/' ||
@@ -194,7 +194,7 @@ function headBlock(series, currentPath) {
     </div>
   </div>
   <div class="sr-mobile" id="sr-mobile"><div class="sr-mobile-in">${mobileLinks}</div></div>
-  <nav class="sr-sub" aria-label="系列章節">
+  <nav class="sr-sub" aria-label="教學章節">
     <div class="sr-sub-in">
       <a class="sr-sub-title" href="${series.root}"${
         currentPath === series.root ? ' aria-current="page"' : ''
@@ -213,7 +213,7 @@ function footBlock(series) {
   <div class="sr-foot-in">
     <div class="sr-foot-brand">
       <b>比利陳 Billy Chen</b>
-      <p>十年整合行銷與產品經驗，獨立出版三本書。這裡把 AI、商業與個人發展的觀察，整理成可以照著走的系列。</p>
+      <p>十年整合行銷與產品經驗，獨立出版三本書。這裡把 AI、商業與個人發展的觀察，整理成可以照著走的教學。</p>
       <span class="sr-theme-space" aria-hidden="true"></span>
       <a class="sr-cta" href="https://billy4select.substack.com/" target="_blank" rel="noopener">訂閱電子報</a>
     </div>
@@ -221,12 +221,12 @@ function footBlock(series) {
       <b>主站</b>
       <a href="/topics/">主題</a>
       <a href="/blog/">文章</a>
-      <a href="/series/">系列總覽</a>
+      <a href="/series/">教學總覽</a>
       <a href="/resources/">免費資源</a>
       <a href="/about/">關於我</a>
     </div>
     <div class="sr-foot-col">
-      <b>系列</b>
+      <b>教學</b>
       <a href="/ai-work-team/">打造 AI 工作團隊</a>
       <a href="/threads/">Threads 起步心態指南</a>
       <a href="/narrative-engine/">AI 影片工具</a>

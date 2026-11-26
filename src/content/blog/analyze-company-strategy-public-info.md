@@ -132,4 +132,4 @@ B2B 與 B2C 的策略邏輯不同。B2B 重關係、合約與轉換成本；B2C 
 
 想先建立整體商業模式的判斷框架，可以看[一門生意為什麼成立](/blog/why-business-exists-nine-questions/)；想練習從需求找機會，可以看[從消費者需求到商業機會](/blog/consumer-demand-to-business-opportunity/)。
 
-**延伸起點：** 想用公開資料快速整理 3–5 個競品，看系列裡的 [競品掃描任務卡](/ai-work-team/workflows/tasks/competitor-scan/)。
+**延伸起點：** 想用公開資料快速整理 3–5 個競品，看教學裡的 [競品掃描任務卡](/ai-work-team/workflows/tasks/competitor-scan/)。

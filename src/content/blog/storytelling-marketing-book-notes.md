@@ -215,6 +215,6 @@ faq:
 **延伸閱讀：**
 
 - 想把故事和信任放在一起看，可以讀[從內容、通路到信任：成長不是把曝光做大，而是把信任累積起來](/blog/content-channel-trust-growth/)。
-- 同系列的書籍閱讀：[《溝通的黃金法則》](/blog/laws-of-communication-book-notes/)、[《流量池》](/blog/traffic-pool-book-notes/)、[《看得見的高效思考》](/blog/visible-thinking-book-notes/)
+- 同教學的書籍閱讀：[《溝通的黃金法則》](/blog/laws-of-communication-book-notes/)、[《流量池》](/blog/traffic-pool-book-notes/)、[《看得見的高效思考》](/blog/visible-thinking-book-notes/)
 
 **資料來源：** 本篇依據李洛克《故事行銷：寫文案，先學故事，照樣造句就能寫出商業等級的爆文指南》（一心文化，2019）的內容整理，並加入我對自媒體、行銷與個人品牌的應用觀察。

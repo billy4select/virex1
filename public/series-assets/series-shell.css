@@ -1,5 +1,5 @@
 /* ==========================================================================
-   series-shell.css — 專題頁共用外殼
+   series-shell.css — 教學頁共用外殼
    套用範圍：/ai-work-team/**、/threads/**（由 tools/sync-series-chrome.mjs 注入）
    尺寸與樣式對齊 src/components/layout/Header.astro / AnnouncementBar.astro：
      header 64px、容器 1280px、品牌頭像 44px、導覽 14px、CTA 6px 圓角
@@ -255,7 +255,7 @@
   background: var(--sr-surface);
 }
 
-/* 專題章節列：系列名稱 + 章節 */
+/* 教學章節列：教學名稱 + 章節 */
 .sr-sub {
   border-top: 1px solid var(--sr-line-soft);
   background: rgba(255, 255, 255, 0.9);
@@ -307,7 +307,7 @@
   background: var(--sr-ink);
   font-weight: 600;
 }
-/* 系列名稱本身是當前頁時維持文字樣式，不要變成黑色藥丸 */
+/* 教學名稱本身是當前頁時維持文字樣式，不要變成黑色藥丸 */
 .sr-sub a.sr-sub-title[aria-current='page'] {
   color: var(--sr-ink);
   background: transparent;

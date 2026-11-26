@@ -335,6 +335,6 @@ faq:
 **延伸閱讀：**
 
 - 想把方向、能力和判斷放在 AI 時代一起想，可以看[AI 時代如何培養判斷力？從提問、證據到後果，重新看待判斷](/blog/judgment-in-ai-era/)。
-- 同系列的書籍閱讀：[《納瓦爾寶典》](/blog/almanack-of-naval-ravikant-book-notes/)、[《溝通的黃金法則》](/blog/laws-of-communication-book-notes/)、[《專家機密》](/blog/expert-secrets-book-notes/)
+- 同教學的書籍閱讀：[《納瓦爾寶典》](/blog/almanack-of-naval-ravikant-book-notes/)、[《溝通的黃金法則》](/blog/laws-of-communication-book-notes/)、[《專家機密》](/blog/expert-secrets-book-notes/)
 
 **資料來源：** 本篇依據史蒂芬．柯維（Stephen R. Covey）《與成功有約：高效能人士的七個習慣》（*The 7 Habits of Highly Effective People*，天下文化）的內容整理，並加入我對行銷工作、自媒體與個人成長的應用觀察。

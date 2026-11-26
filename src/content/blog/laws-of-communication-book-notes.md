@@ -271,6 +271,6 @@ faq:
 **延伸閱讀：**
 
 - 想看信任怎麼從內容一路累積到通路，可以看[從內容、通路到信任：成長不是把曝光做大，而是把信任累積起來](/blog/content-channel-trust-growth/)。
-- 同系列的書籍閱讀：[《看得見的高效思考》](/blog/visible-thinking-book-notes/)、[《流量池》](/blog/traffic-pool-book-notes/)、[《納瓦爾寶典》](/blog/almanack-of-naval-ravikant-book-notes/)
+- 同教學的書籍閱讀：[《看得見的高效思考》](/blog/visible-thinking-book-notes/)、[《流量池》](/blog/traffic-pool-book-notes/)、[《納瓦爾寶典》](/blog/almanack-of-naval-ravikant-book-notes/)
 
 **資料來源：** 本篇依據約翰．麥斯威爾《溝通的黃金法則：有效領導×順利提案×成功推銷》（天下文化，2024）的內容整理，並加入我對自媒體、行銷與個人品牌的應用觀察。

@@ -232,4 +232,4 @@ AI 扮演的角色，是讓「從經驗到行動」的轉換過程變得極輕�
 - [NotebookLM 的提問方式決定答案品質：五種問法比較](https://blog.billy4select.com/blog/notebooklm-question-types/)
 - [主管用 AI 準備週會報告的正確姿態：不是叫它寫，是叫它整理你的邏輯](https://blog.billy4select.com/blog/ai-weekly-report-manager/)
 
-**延伸起點：** 想用真實成果回頭調整流程與角色，看系列裡的 [主題 06：持續調整你的 AI 工作團隊](/ai-work-team/lesson-06/)。
+**延伸起點：** 想用真實成果回頭調整流程與角色，看教學裡的 [主題 06：持續調整你的 AI 工作團隊](/ai-work-team/lesson-06/)。

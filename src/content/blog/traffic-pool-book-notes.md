@@ -247,6 +247,6 @@ AARRR 是成長駭客領域常見的用戶成長模型，由五個階段組成�
 **延伸閱讀：**
 
 - 想看內容怎麼一步步變成產品與收入，可以看[知識怎麼變成收入？從內容到產品的 3 種模式](/blog/content-to-product-knowledge-business/)。
-- 同系列的書籍閱讀：[《免費！揭開零定價的獲利祕密》：免費的東西，為什麼反而能讓企業賺更多錢？](/blog/free-zero-price-business-models/)、[《不只是件白襯衫》：為什麼學會所有行銷理論，到了真實商場上卻不一定有用？](/blog/what-i-didnt-learn-in-business-school/)
+- 同教學的書籍閱讀：[《免費！揭開零定價的獲利祕密》：免費的東西，為什麼反而能讓企業賺更多錢？](/blog/free-zero-price-business-models/)、[《不只是件白襯衫》：為什麼學會所有行銷理論，到了真實商場上卻不一定有用？](/blog/what-i-didnt-learn-in-business-school/)
 
 **資料來源：** 本篇依據楊飛《流量池：品牌營銷人的必修課》的內容整理，並加入我對自媒體與行銷工作的應用觀察。

@@ -222,6 +222,6 @@ faq:
 **延伸閱讀：**
 
 - 想把專業變成第一個付費服務，可以看[如何把專業變成市場價值？從能力盤點到第一個付費 offer](/blog/turn-expertise-into-market-value/)。
-- 同系列的書籍閱讀：[《免費！揭開零定價的獲利祕密》](/blog/free-zero-price-business-models/)、[《流量池》](/blog/traffic-pool-book-notes/)、[《看得見的高效思考》](/blog/visible-thinking-book-notes/)
+- 同教學的書籍閱讀：[《免費！揭開零定價的獲利祕密》](/blog/free-zero-price-business-models/)、[《流量池》](/blog/traffic-pool-book-notes/)、[《看得見的高效思考》](/blog/visible-thinking-book-notes/)
 
 **資料來源：** 本篇依據《納瓦爾寶典》（Eric Jorgenson 整理納瓦爾・拉維肯特的文章、推文與訪談）的內容整理，並加入我對行銷、自媒體與 AI 應用的觀察。

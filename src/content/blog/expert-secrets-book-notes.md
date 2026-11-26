@@ -35,7 +35,7 @@ faq:
 
 這就是《專家機密》（*Expert Secrets*）想處理的核心問題。
 
-作者羅素．布朗森（Russell Brunson）是 ClickFunnels 的共同創辦人，也是網路行銷與銷售漏斗領域的知名企業家。《Expert Secrets》是他「Secrets」系列中的第二本，主要討論如何把專業知識、個人故事與觀點，轉化成能吸引受眾、建立信任並銷售產品的商業模式。
+作者羅素．布朗森（Russell Brunson）是 ClickFunnels 的共同創辦人，也是網路行銷與銷售漏斗領域的知名企業家。《Expert Secrets》是他「Secrets」教學中的第二本，主要討論如何把專業知識、個人故事與觀點，轉化成能吸引受眾、建立信任並銷售產品的商業模式。
 
 這本書的定位很明確：如果你有一套知識、一種方法，或是在某個領域累積了足以幫助別人的經驗，就有機會將它整理成產品或服務。但作者關注的並不只是如何開課，他更想回答的是：**如何讓一群原本不認識你的人，逐漸相信你的觀點，認同你的方法，最後願意跟著你一起完成某件事情。** 這對經營教學型自媒體、知識型品牌、顧問服務與個人事業的人來說，是很值得研究的一套思考方式。
 
@@ -387,6 +387,6 @@ Perfect Webinar 的思路則不同。它先從受眾的問題與核心觀念切�
 **延伸閱讀：**
 
 - 想先釐清個人品牌怎麼讓人理解、信任、記得你，可以看[個人品牌怎麼做才有效？讓對的人理解、信任、記得你](/blog/personal-brand-trust-not-reach/)。
-- 同系列的書籍閱讀：[《故事行銷》](/blog/storytelling-marketing-book-notes/)、[《溝通的黃金法則》](/blog/laws-of-communication-book-notes/)、[《流量池》](/blog/traffic-pool-book-notes/)
+- 同教學的書籍閱讀：[《故事行銷》](/blog/storytelling-marketing-book-notes/)、[《溝通的黃金法則》](/blog/laws-of-communication-book-notes/)、[《流量池》](/blog/traffic-pool-book-notes/)
 
 **資料來源：** 本篇依據羅素．布朗森（Russell Brunson）《專家機密》（*Expert Secrets*）的內容整理，並加入我對自媒體、行銷與個人品牌的應用觀察。銷售漏斗與價值階梯的範例表格為本文整理，不代表原書唯一流程。

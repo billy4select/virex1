@@ -216,6 +216,6 @@ faq:
 
 **延伸閱讀：**
 
-- 同系列的書籍閱讀：[《免費！揭開零定價的獲利祕密》](/blog/free-zero-price-business-models/)、[《不只是件白襯衫》](/blog/what-i-didnt-learn-in-business-school/)、[《流量池》](/blog/traffic-pool-book-notes/)
+- 同教學的書籍閱讀：[《免費！揭開零定價的獲利祕密》](/blog/free-zero-price-business-models/)、[《不只是件白襯衫》](/blog/what-i-didnt-learn-in-business-school/)、[《流量池》](/blog/traffic-pool-book-notes/)
 
 **資料來源：** 本篇依據劉奕酉《看得見的高效思考》（天下文化，2025）的內容整理，並加入我對行銷工作、影片腳本與自媒體經營的應用觀察。
