@@ -11,8 +11,8 @@ export interface BlogTheme {
 
 /**
  * 文章分類：每篇文章的主要歸屬（麵包屑、標籤、文章庫篩選用）。
- * 主題頁（/topics/）是另外編輯的文章集結，數量不設限，見 topic-curation.ts。。
- * 文章分類、/topics/ 與 /blog/ 的篩選都使用這份定義，避免名稱分叉。
+ * 主題頁（/topics/）是另外編輯的文章集結，領域與主題都比文章分類更細，見 topic-curation.ts，兩者互相獨立。
+ * 文章分類只用在文章頁麵包屑與 /blog/ 的篩選。
  */
 export const blogThemes: BlogTheme[] = [
   {
@@ -53,7 +53,8 @@ export const blogThemes: BlogTheme[] = [
   },
 ];
 
-export const themeUrl = (slug: string) => `/topics/${slug}/`;
+/** 文章分類的入口：/blog/ 的篩選（分類沒有自己的頁面） */
+export const themeUrl = (slug: string) => `/blog/?theme=${slug}`;
 
 export function getThemeBySlug(slug: string): BlogTheme | undefined {
   return blogThemes.find((theme) => theme.slug === slug);

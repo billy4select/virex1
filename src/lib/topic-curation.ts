@@ -1,8 +1,9 @@
 /**
  * 主題：依讀者需求整理的文章集結（2026-11 改版）
  *
- * 結構：領域（4 個）→ 主題（「我想…」句型，每個 3–7 篇）→ 文章。
- * - 領域 slug 與文章分類（themes.ts）相同，文章頁的麵包屑會連到領域頁。
+ * 結構：領域（7 個）→ 主題（「我想…」句型，每個 3–7 篇）→ 文章。
+ * - 領域是 /topics/ 的瀏覽分組，和文章分類（themes.ts，只用在 /blog/ 篩選）各自獨立，
+ *   所以領域可以切得比文章分類更細。
  * - 主題是為「一個讀者處境」整理的閱讀順序，一篇文章可以出現在多個主題。
  * - 每篇文章的一句「讀完你會知道」寫在 articleOutcomes，所有主題共用。
  *
@@ -105,6 +106,8 @@ export const articleOutcomes: Record<string, string> = {
   'senior-employees-ai-upskilling-strategy-not-replaced': '資深員工面對 AI，可以重新定位的三個方向。',
   'three-ai-brains-division': '研究、寫作、知識庫，為什麼不要混在同一個對話。',
   'turn-expertise-into-market-value': '六個步驟，整理出第一個可以賣的服務。',
+  'visible-thinking-book-notes': '知道很多卻說不清楚時，怎麼用結構化思考與三種視覺化，整理出自己的觀點。',
+  'what-i-didnt-learn-in-business-school': '學會所有行銷理論，為什麼到真實商場仍用不上，以及該補哪三種能力。',
   'validate-market-demand-five-methods': '做產品之前，怎麼確認有人真的願意付錢。',
   'why-business-exists-nine-questions': '用九個問題，判斷一門生意到底靠什麼活著。',
 };
@@ -114,33 +117,55 @@ export const topicAreas: TopicArea[] = [
     slug: 'ai-workflow',
     name: 'AI 工作流程與工具',
     question: '怎麼把 AI 放進日常工作，而不是只停在試用？',
-    summary: '任務拆解、工具選擇、會議提案與資料安全。',
+    summary: '任務拆解、工具搭配、會議提案、資料分析與資安。',
     lead: '把 AI 放進日常工作，變成可重複的流程。',
   },
   {
     slug: 'notebooklm',
     name: 'NotebookLM 實戰',
     question: '怎麼用 NotebookLM 讀文件、做研究，又不踩坑？',
-    summary: '入門、上傳準備、提問方式與常見問題。',
+    summary: '入門、上傳準備、提問方式、疑難排解與工具比較。',
     lead: '用 NotebookLM 讀文件、做研究，並避開常見的坑。',
   },
   {
-    slug: 'business-marketing',
-    name: '商業與行銷',
-    question: '如何理解市場、顧客與一門生意的運作？',
-    summary: '需求驗證、商業模式、行銷診斷與文案。',
-    lead: '看懂一門生意怎麼成立，也看懂行銷卡在哪一段。',
+    slug: 'business-model',
+    name: '商業模式與獲利',
+    question: '一門生意為什麼成立，又怎麼賺到錢？',
+    summary: '需求驗證、獲利結構、定價與公司分析。',
+    lead: '先看懂一門生意怎麼成立，再判斷值不值得做。',
   },
   {
-    slug: 'career-business',
-    name: '職涯與個人事業',
-    question: '如何把能力與經驗，變成可以帶走的資產與收入？',
-    summary: 'AI 時代的職涯、能力盤點、自媒體與變現。',
-    lead: '把能力與經驗整理成帶得走的資產，再慢慢長成個人事業。',
+    slug: 'marketing',
+    name: '行銷與文案',
+    question: '行銷卡住的時候，該先檢查哪一段？',
+    summary: '行銷診斷、受眾、品牌定位與文案。',
+    lead: '找出行銷卡在哪一段，再決定怎麼改。',
+  },
+  {
+    slug: 'career',
+    name: '職涯與 AI 時代',
+    question: '面對 AI 與職涯轉折，我的能力還剩下什麼價值？',
+    summary: '能力盤點、轉型決策與 AI 時代的判斷力。',
+    lead: '把十年經驗整理成帶得走的能力，再決定下一步。',
+  },
+  {
+    slug: 'learning',
+    name: '學習與知識管理',
+    question: '怎麼把讀到、學到的東西，變成自己的東西？',
+    summary: '學習方法、知識系統、思考表達與讀書心得。',
+    lead: '讓學習有產出，讓知識留得下來、用得出去。',
+  },
+  {
+    slug: 'personal-business',
+    name: '自媒體與個人事業',
+    question: '怎麼從發出第一篇內容，走到有人願意付費？',
+    summary: '自媒體起步、一人公司與知識變現。',
+    lead: '從發出第一篇內容開始，慢慢長成自己的事業。',
   },
 ];
 
 export const topics: Topic[] = [
+  // ───────── AI 工作流程與工具 ─────────
   {
     slug: 'start-with-ai',
     area: 'ai-workflow',
@@ -159,6 +184,21 @@ export const topics: Topic[] = [
     series: { name: '打造 AI 工作團隊', href: '/ai-work-team/' },
   },
   {
+    slug: 'ai-tool-stack',
+    area: 'ai-workflow',
+    name: '我想搭配多個 AI 工具，讓它們各司其職',
+    lead: '不是找一個最強的工具，而是知道每個工具該做什麼。',
+    intro:
+      'ChatGPT、Claude、NotebookLM 怎麼分工與交接？從工具評估的五個維度，到寫提案、讀內部文件時的選擇。',
+    articleIds: [
+      'ai-tool-evaluation',
+      'ai-tool-combination',
+      'three-ai-brains-division',
+      'claude-vs-chatgpt-proposal',
+      'notebooklm-vs-claude-internal-docs',
+    ],
+  },
+  {
     slug: 'ai-meetings-proposals',
     area: 'ai-workflow',
     name: '我想用 AI 處理會議、週報與提案',
@@ -175,6 +215,20 @@ export const topics: Topic[] = [
     ],
   },
   {
+    slug: 'ai-analysis',
+    area: 'ai-workflow',
+    name: '我想用 AI 做資料、評論與研究分析',
+    lead: '讓 AI 幫你處理量，判斷與結論留給自己。',
+    intro:
+      '用 AI 批次分析顧客評論、處理分析資料、從文件中長出觀點，並在交付前檢查產出的可信度。',
+    articleIds: [
+      'ai-batch-review-analysis',
+      'ai-data-analysis-human-ai-collaboration-professionalism',
+      'notebooklm-workplace-research',
+      'ai-output-quality-check',
+    ],
+  },
+  {
     slug: 'ai-data-safety',
     area: 'ai-workflow',
     name: '我想放心地用 AI 處理公司資料與數字',
@@ -188,6 +242,8 @@ export const topics: Topic[] = [
       'notebooklm-vs-claude-internal-docs',
     ],
   },
+
+  // ───────── NotebookLM 實戰 ─────────
   {
     slug: 'notebooklm-research',
     area: 'notebooklm',
@@ -206,20 +262,35 @@ export const topics: Topic[] = [
   {
     slug: 'notebooklm-troubleshooting',
     area: 'notebooklm',
-    name: '我的 NotebookLM 用起來不理想，或不確定該選哪個工具',
-    lead: '亂碼、幻覺、掃描檔讀不到，以及和其他工具的比較。',
+    name: '我的 NotebookLM 讀不到檔案、亂碼或亂回答',
+    lead: '亂碼、幻覺、掃描檔讀不到，一個一個解。',
     intro:
-      'NotebookLM 遇到亂碼、幻覺、掃描 PDF 讀不到時的解法，以及它和 Claude、Notion AI 的差異。',
+      'NotebookLM 遇到 PDF 亂碼、回答出現幻覺、掃描檔讀不到時，要先檢查什麼、怎麼轉換、有哪些免費工具可用。',
     articleIds: [
       'notebooklm-problems-solutions',
       'notebooklm-ocr-pdf-solution',
-      'notebooklm-vs-claude-internal-docs',
-      'notebooklm-vs-notion-ai-knowledge-base',
+      'notebooklm-upload-preparation',
     ],
   },
   {
+    slug: 'notebooklm-vs-others',
+    area: 'notebooklm',
+    name: '我不確定該用 NotebookLM，還是其他 AI 工具',
+    lead: '依任務選工具：讀文件、寫報告、建知識庫各有最適合的。',
+    intro:
+      'NotebookLM 與 Claude、Notion AI 的差異，以及在讀文件、寫報告、建知識庫時，怎麼分工與交接。',
+    articleIds: [
+      'notebooklm-vs-claude-internal-docs',
+      'notebooklm-vs-notion-ai-knowledge-base',
+      'ai-tool-combination',
+      'three-ai-brains-division',
+    ],
+  },
+
+  // ───────── 商業模式與獲利 ─────────
+  {
     slug: 'validate-idea',
-    area: 'business-marketing',
+    area: 'business-model',
     name: '我想驗證一個想法值不值得做',
     lead: '做產品之前，先確認這門生意成立、有人願意付錢。',
     intro:
@@ -233,22 +304,38 @@ export const topics: Topic[] = [
     ],
   },
   {
+    slug: 'profit-pricing',
+    area: 'business-model',
+    name: '我想搞懂一門生意怎麼賺錢、怎麼定價',
+    lead: '營收不差卻沒剩錢時，問題通常出在獲利結構。',
+    intro:
+      '從單筆獲利結構、商業模式畫布看不到的成本，到免費模式與 AI 帶來的成本變化，看懂一門生意怎麼賺錢。',
+    articleIds: [
+      'pricing-and-profit-structure',
+      'beyond-business-model-canvas',
+      'free-zero-price-business-models',
+      'how-ai-changes-cost-and-competition',
+    ],
+  },
+  {
     slug: 'understand-company-market',
-    area: 'business-marketing',
+    area: 'business-model',
     name: '我想看懂一家公司或一個市場',
     lead: '從公開資訊與競爭，看懂企業真正在做的選擇。',
     intro:
-      '用公開資訊分析公司策略、看品牌定位與競爭，並理解免費模式與 AI 如何改變成本與競爭優勢。',
+      '用公開資訊分析公司策略、看品牌定位與競爭、理解 AI 如何改變競爭優勢，並補上策略工具在真實商場的限制。',
     articleIds: [
       'analyze-company-strategy-public-info',
       'brand-positioning-category-competition',
       'how-ai-changes-cost-and-competition',
-      'free-zero-price-business-models',
+      'what-i-didnt-learn-in-business-school',
     ],
   },
+
+  // ───────── 行銷與文案 ─────────
   {
     slug: 'marketing-diagnosis',
-    area: 'business-marketing',
+    area: 'marketing',
     name: '我的行銷成效不好，不知道卡在哪',
     lead: '業績不好先別加預算，先找出是哪一段出問題。',
     intro:
@@ -262,8 +349,36 @@ export const topics: Topic[] = [
     ],
   },
   {
+    slug: 'know-your-audience',
+    area: 'marketing',
+    name: '我想搞懂我的受眾到底是誰',
+    lead: '受眾不是標籤，是一群有情境、任務與障礙的人。',
+    intro:
+      '從消費者需求、受眾定義到評論分析，用情境、任務、障礙與替代方案，重新看清你的受眾。',
+    articleIds: [
+      'audience-is-not-a-label',
+      'audience-definition-ad-conversion',
+      'consumer-demand-to-business-opportunity',
+      'ai-batch-review-analysis',
+    ],
+  },
+  {
+    slug: 'brand-positioning',
+    area: 'marketing',
+    name: '我想讓品牌或自己有清楚的定位',
+    lead: '顧客把你跟誰比，才是定位的起點。',
+    intro:
+      '從品類與競爭看品牌定位，再到個人品牌如何靠信任而不是觸及累積，以及內容與通路的分工。',
+    articleIds: [
+      'brand-positioning-category-competition',
+      'audience-is-not-a-label',
+      'personal-brand-trust-not-reach',
+      'content-channel-trust-growth',
+    ],
+  },
+  {
     slug: 'copywriting',
-    area: 'business-marketing',
+    area: 'marketing',
     name: '我想寫出有效的文案',
     lead: '從賣點、受眾到 AI 協作，寫出打動人的文案。',
     intro:
@@ -275,25 +390,38 @@ export const topics: Topic[] = [
       'ai-copywriting-mistakes',
     ],
   },
+
+  // ───────── 職涯與 AI 時代 ─────────
   {
     slug: 'ai-career',
-    area: 'career-business',
+    area: 'career',
     name: '我擔心 AI 時代的職涯',
     lead: '焦慮是正常的，重點是把十年經驗變成判斷力。',
     intro:
-      '35 歲、資深員工與中階主管面對 AI 時的職涯定位、機會成本與轉型路徑。',
+      '35 歲與資深員工面對 AI 時，該學什麼、經驗為什麼仍是稀缺資產，以及怎麼重新定位自己。',
     articleIds: [
       'ai-era-capability-map',
       'senior-employees-ai-upskilling-strategy-not-replaced',
       'learn-ai-at-35-too-late-roi-metrics',
+    ],
+  },
+  {
+    slug: 'career-transition',
+    area: 'career',
+    name: '我正在考慮轉職或轉型',
+    lead: '面對新機會，先把看得見與看不見的成本都算進去。',
+    intro:
+      '中階主管轉型、35 歲後的職涯策略、機會成本的算法，以及離開現職後還帶得走的資產。',
+    articleIds: [
       'middle-manager-transition-to-ai-curator-3-stages',
       'career-strategy-after-35',
       'career-opportunity-cost-decision',
+      'mid-career-portable-assets',
     ],
   },
   {
     slug: 'portable-skills',
-    area: 'career-business',
+    area: 'career',
     name: '我想盤點自己真正帶得走的能力',
     lead: '頭銜帶不走，先盤點哪些能力真正屬於你。',
     intro:
@@ -306,8 +434,24 @@ export const topics: Topic[] = [
     ],
   },
   {
+    slug: 'ai-judgment',
+    area: 'career',
+    name: '我想培養 AI 時代的判斷力',
+    lead: 'AI 能給答案，判斷要自己練。',
+    intro:
+      '用三個層次與決策紀錄訓練判斷力，並在用 AI 分析與交付時，保住專業判斷與可信度。',
+    articleIds: [
+      'judgment-in-ai-era',
+      'ai-data-analysis-human-ai-collaboration-professionalism',
+      'ai-output-quality-check',
+      'deliberate-practice-knowledge-work',
+    ],
+  },
+
+  // ───────── 學習與知識管理 ─────────
+  {
     slug: 'learn-new-things',
-    area: 'career-business',
+    area: 'learning',
     name: '我想學新東西，建立自己的學習方法',
     lead: '把學習從大量收藏，變成能交付的成果。',
     intro:
@@ -319,8 +463,51 @@ export const topics: Topic[] = [
     ],
   },
   {
+    slug: 'knowledge-system',
+    area: 'learning',
+    name: '我想建立自己的知識管理系統',
+    lead: '收集、理解、輸出，讓經驗留得下來、找得回來。',
+    intro:
+      '從最小的個人知識系統，到把會議、專案經驗沉澱成知識庫，以及知識庫工具怎麼選。',
+    articleIds: [
+      'personal-knowledge-system-minimal',
+      'ai-knowledge-capture-meetings-projects',
+      'ai-project-review-knowledge-base',
+      'notebooklm-vs-notion-ai-knowledge-base',
+    ],
+  },
+  {
+    slug: 'clear-thinking',
+    area: 'learning',
+    name: '我想把想法整理清楚，表達得有說服力',
+    lead: '說不清楚，常常是因為還沒整理出自己的觀點。',
+    intro:
+      '用結構化思考與視覺化整理觀點，再把整理邏輯的工作，用在週報、簡報演練與日常表達上。',
+    articleIds: [
+      'visible-thinking-book-notes',
+      'ai-weekly-report-manager',
+      'claude-objection-simulation',
+      'deliberate-practice-knowledge-work',
+    ],
+  },
+  {
+    slug: 'book-notes',
+    area: 'learning',
+    name: '我想找值得讀的書與讀書心得',
+    lead: '不只是書摘，而是讀完之後怎麼用。',
+    intro:
+      '讀書心得整理：結構化思考、商業策略與行銷思維、免費商業模式，每篇都談讀完之後怎麼用。',
+    articleIds: [
+      'visible-thinking-book-notes',
+      'what-i-didnt-learn-in-business-school',
+      'free-zero-price-business-models',
+    ],
+  },
+
+  // ───────── 自媒體與個人事業 ─────────
+  {
     slug: 'start-self-media',
-    area: 'career-business',
+    area: 'personal-business',
     name: '我想開始經營自媒體',
     lead: '不用等想清楚才開始，先發、再修正。',
     intro:
@@ -335,7 +522,7 @@ export const topics: Topic[] = [
   },
   {
     slug: 'monetize-expertise',
-    area: 'career-business',
+    area: 'personal-business',
     name: '我想把專業變成收入',
     lead: '專業不會自動變成收入，需要一個清楚的 offer。',
     intro:
@@ -345,6 +532,20 @@ export const topics: Topic[] = [
       'content-to-product-knowledge-business',
       'one-person-company-ai-work-system',
       'free-zero-price-business-models',
+    ],
+  },
+  {
+    slug: 'one-person-company',
+    area: 'personal-business',
+    name: '我想用一人公司的方式工作與接案',
+    lead: '一個人也能有穩定的角色分工與交付流程。',
+    intro:
+      '用五個角色與一條交付鏈建立一人公司的 AI 工作系統，從盤點能力到整理出第一個可以賣的服務。',
+    articleIds: [
+      'one-person-company-ai-work-system',
+      'capability-inventory-workshop',
+      'turn-expertise-into-market-value',
+      'ai-tool-combination',
     ],
   },
 ];

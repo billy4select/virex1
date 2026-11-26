@@ -141,7 +141,7 @@ AI 可以幫你檢查，但不能替你負責。對外交付的責任，永遠�
 
 想先定義你賣的價值，可以看[如何把自己的專業變成市場價值](/blog/turn-expertise-into-market-value/)；想建立信任，可以看[個人品牌不是曝光](/blog/personal-brand-trust-not-reach/)。
 
-如果你正在思考 35 歲後的職涯，可以看[35 歲以後的職涯策略](/blog/career-strategy-after-35/)；想盤點離開公司後還帶得走什麼，則看[中階主管的可攜帶資產](/blog/mid-career-portable-assets/)。想把內容變成產品，看[從內容到產品](/blog/content-to-product-knowledge-business/)。回到[職涯與個人事業](/topics/career-business/)可以看到整條路徑。
+如果你正在思考 35 歲後的職涯，可以看[35 歲以後的職涯策略](/blog/career-strategy-after-35/)；想盤點離開公司後還帶得走什麼，則看[中階主管的可攜帶資產](/blog/mid-career-portable-assets/)。想把內容變成產品，看[從內容到產品](/blog/content-to-product-knowledge-business/)。回到[職涯與個人事業](/topics/career/)可以看到整條路徑。
 
 ---
 

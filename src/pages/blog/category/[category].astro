@@ -2,37 +2,38 @@
 import { blogThemes } from '@/lib/themes';
 
 export function getStaticPaths() {
+  // 目前的文章分類（沒有自己的頁面）→ /blog/ 的篩選；舊 slug → 對應的新領域頁
   const legacyTargets: Record<string, string> = {
-    'ai-tech': 'ai-workflow',
-    'personal-brand': 'career-business',
-    'investment-market': '',
+    'ai-tech': '/topics/ai-workflow/',
+    'personal-brand': '/topics/personal-business/',
+    'investment-market': '/topics/',
     // 2026-11 第一版主題 slug
-    'work-efficiency': 'ai-workflow',
-    'learning-capability': 'career-business',
-    'personal-development': 'career-business',
+    'work-efficiency': '/topics/ai-workflow/',
+    'learning-capability': '/topics/learning/',
+    'personal-development': '/topics/career/',
     // 更早的主題 slug
-    'ability-learning': 'ai-workflow',
-    'business-thinking': 'business-marketing',
-    'personal-growth': 'career-business',
-    'marketing-brand': 'business-marketing',
+    'ability-learning': '/topics/learning/',
+    'business-thinking': '/topics/business-model/',
+    'personal-growth': '/topics/career/',
+    'marketing-brand': '/topics/marketing/',
   };
 
   const current = blogThemes.map((theme) => ({
     params: { category: theme.slug },
-    props: { target: theme.slug },
+    props: { target: `/blog/?theme=${theme.slug}` },
   }));
 
   const legacy = Object.entries(legacyTargets)
     .filter(([category]) => !blogThemes.some((t) => t.slug === category))
     .map(([category, target]) => ({
-    params: { category },
-    props: { target },
-  }));
+      params: { category },
+      props: { target },
+    }));
 
   return [...current, ...legacy];
 }
 
 const { target } = Astro.props;
 
-return Astro.redirect(target ? `/topics/${target}/` : '/topics/', 301);
+return Astro.redirect(target, 301);
 ---

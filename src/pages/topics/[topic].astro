@@ -3,7 +3,6 @@ import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import TopicCard from '@/components/topics/TopicCard.astro';
 import { siteConfig } from '@/config';
-import { blogThemes } from '@/lib/themes';
 import { topicAreas, getArea, getTopicsByArea, topicUrl } from '@/lib/topic-curation';
 
 interface Props {
@@ -11,14 +10,6 @@ interface Props {
 }
 
 export async function getStaticPaths() {
-  // 每個文章分類都要有同 slug 的領域頁，否則文章頁的麵包屑會連到不存在的網址
-  for (const theme of blogThemes) {
-    if (!topicAreas.some((area) => area.slug === theme.slug)) {
-      throw new Error(
-        `文章分類「${theme.name}」(${theme.slug}) 沒有對應的領域頁，請在 topic-curation.ts 的 topicAreas 補上。`
-      );
-    }
-  }
   return topicAreas.map((area) => ({
     params: { topic: area.slug },
     props: { slug: area.slug },
@@ -95,10 +86,10 @@ const schema = {
       <p class="mt-10 text-sm text-text-muted">
         想自己逛？
         <a
-          href={`/blog/?theme=${slug}`}
+          href="/blog/"
           class="font-semibold text-primary underline decoration-primary/30 underline-offset-4 hover:text-primary-dark"
         >
-          看「{area.name}」分類的全部文章
+          到文章列表自己逛
         </a>
       </p>
     </div>

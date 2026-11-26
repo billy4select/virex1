@@ -8,7 +8,7 @@ tags:
   - 商業策略
   - 行銷思維
   - 策略分析
-category: 商業與思考
+category: 商業與行銷
 featured: false
 boost: false
 draft: false

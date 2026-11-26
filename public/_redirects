@@ -1,34 +1,60 @@
-# 舊文章分類頁：永久導向主題總覽或對應主題頁
+# 舊文章分類頁：導向對應的主題領域，或文章列表的篩選
 /blog/category/ai-tech /topics/ai-workflow/ 301
 /blog/category/ai-tech/ /topics/ai-workflow/ 301
-/blog/category/business-marketing /topics/business-marketing/ 301
-/blog/category/business-marketing/ /topics/business-marketing/ 301
-/blog/category/personal-brand /topics/career-business/ 301
-/blog/category/personal-brand/ /topics/career-business/ 301
+/blog/category/business-marketing /blog/?theme=business-marketing 301
+/blog/category/business-marketing/ /blog/?theme=business-marketing 301
+/blog/category/personal-brand /topics/personal-business/ 301
+/blog/category/personal-brand/ /topics/personal-business/ 301
 /blog/category/investment-market /topics/ 301
 /blog/category/investment-market/ /topics/ 301
+/blog/category/career-business /blog/?theme=career-business 301
+/blog/category/career-business/ /blog/?theme=career-business 301
+/blog/category/ai-workflow /blog/?theme=ai-workflow 301
+/blog/category/ai-workflow/ /blog/?theme=ai-workflow 301
+/blog/category/notebooklm /blog/?theme=notebooklm 301
+/blog/category/notebooklm/ /blog/?theme=notebooklm 301
 
-# 2026-11 主題改版：舊主題 slug 301 到新主題
-/topics/ability-learning /topics/ai-workflow/ 301
-/topics/ability-learning/ /topics/ai-workflow/ 301
-/topics/business-thinking /topics/business-marketing/ 301
-/topics/business-thinking/ /topics/business-marketing/ 301
-/topics/personal-growth /topics/career-business/ 301
-/topics/personal-growth/ /topics/career-business/ 301
-/topics/marketing-brand /topics/business-marketing/ 301
-/topics/marketing-brand/ /topics/business-marketing/ 301
+# 2026-11 主題改版（7 個領域）：舊領域頁、舊主題頁 301 到新網址
+/topics/business-marketing /topics/business-model/ 301
+/topics/business-marketing/ /topics/business-model/ 301
+/topics/career-business /topics/career/ 301
+/topics/career-business/ /topics/career/ 301
+/topics/business-marketing/validate-idea /topics/business-model/validate-idea/ 301
+/topics/business-marketing/validate-idea/ /topics/business-model/validate-idea/ 301
+/topics/business-marketing/understand-company-market /topics/business-model/understand-company-market/ 301
+/topics/business-marketing/understand-company-market/ /topics/business-model/understand-company-market/ 301
+/topics/business-marketing/marketing-diagnosis /topics/marketing/marketing-diagnosis/ 301
+/topics/business-marketing/marketing-diagnosis/ /topics/marketing/marketing-diagnosis/ 301
+/topics/business-marketing/copywriting /topics/marketing/copywriting/ 301
+/topics/business-marketing/copywriting/ /topics/marketing/copywriting/ 301
+/topics/career-business/ai-career /topics/career/ai-career/ 301
+/topics/career-business/ai-career/ /topics/career/ai-career/ 301
+/topics/career-business/portable-skills /topics/career/portable-skills/ 301
+/topics/career-business/portable-skills/ /topics/career/portable-skills/ 301
+/topics/career-business/learn-new-things /topics/learning/learn-new-things/ 301
+/topics/career-business/learn-new-things/ /topics/learning/learn-new-things/ 301
+/topics/career-business/start-self-media /topics/personal-business/start-self-media/ 301
+/topics/career-business/start-self-media/ /topics/personal-business/start-self-media/ 301
+/topics/career-business/monetize-expertise /topics/personal-business/monetize-expertise/ 301
+/topics/career-business/monetize-expertise/ /topics/personal-business/monetize-expertise/ 301
 
-# 2026-11 專題改版：第一版主題 slug 301 到新專題
+# 更早的主題 slug
+/topics/ability-learning /topics/learning/ 301
+/topics/ability-learning/ /topics/learning/ 301
+/topics/business-thinking /topics/business-model/ 301
+/topics/business-thinking/ /topics/business-model/ 301
+/topics/personal-growth /topics/career/ 301
+/topics/personal-growth/ /topics/career/ 301
+/topics/marketing-brand /topics/marketing/ 301
+/topics/marketing-brand/ /topics/marketing/ 301
 /topics/work-efficiency /topics/ai-workflow/ 301
 /topics/work-efficiency/ /topics/ai-workflow/ 301
-/topics/learning-capability /topics/career-business/ 301
-/topics/learning-capability/ /topics/career-business/ 301
-/topics/personal-development /topics/career-business/ 301
-/topics/personal-development/ /topics/career-business/ 301
-
-# 主題改版：範例主題 slug
-/topics/self-media-brand /topics/career-business/start-self-media/ 301
-/topics/self-media-brand/ /topics/career-business/start-self-media/ 301
+/topics/learning-capability /topics/learning/ 301
+/topics/learning-capability/ /topics/learning/ 301
+/topics/personal-development /topics/career/ 301
+/topics/personal-development/ /topics/career/ 301
+/topics/self-media-brand /topics/personal-business/start-self-media/ 301
+/topics/self-media-brand/ /topics/personal-business/start-self-media/ 301
 
 # NotebookLM 簡報頁錯字網址：301 到正確頁
 /blog/otebooklm-slide-deck-review /blog/notebooklm-complete-guide-2026/ 301
@@ -53,8 +79,6 @@
 /blog/notebooklm-slide-deck-review/ /blog/notebooklm-complete-guide-2026/ 301
 /blog/notebooklm-to-claude-research-output /blog/notebooklm-vs-claude-internal-docs/ 301
 /blog/notebooklm-to-claude-research-output/ /blog/notebooklm-vs-claude-internal-docs/ 301
-/blog/notebooklm-upload-preparation /blog/notebooklm-ocr-pdf-solution/ 301
-/blog/notebooklm-upload-preparation/ /blog/notebooklm-ocr-pdf-solution/ 301
 
 # AI 工作團隊：舊版 .html 網址永久導向目前的目錄網址
 /ai-work-team/about.html /ai-work-team/about/ 301

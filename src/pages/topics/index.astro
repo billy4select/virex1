@@ -18,7 +18,7 @@ const areas = topicAreas.map((area) => ({
 
 <MarketingLayout
   title={`主題 - ${siteConfig.name}`}
-  description="從你現在遇到的處境開始：想用 AI 工作、讀懂 NotebookLM、驗證想法、改善行銷，或規劃職涯。每個主題都是一條整理好的閱讀路線。"
+  description="從你現在遇到的處境開始：用 AI 工作、讀懂 NotebookLM、驗證想法、改善行銷、規劃職涯、建立知識系統或經營自媒體。每個主題都是一條整理好的閱讀路線。"
 >
   <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '主題' }]} />
 
@@ -30,6 +30,19 @@ const areas = topicAreas.map((area) => ({
       <p class="mt-4 max-w-2xl text-base leading-relaxed text-text-muted">
         從你現在遇到的處境開始，每個主題都是一條整理好的閱讀路線。
       </p>
+      <nav aria-label="主題領域" class="mt-6 flex flex-wrap gap-2">
+        {
+          areas.map((area) => (
+            <a
+              href={`#area-${area.slug}`}
+              class="rounded-full border border-border bg-surface px-4 py-2 text-xs font-medium text-text-muted transition-colors hover:border-primary/40 hover:bg-primary/10 hover:text-primary"
+            >
+              {area.name}
+              <span class="ml-1 opacity-50">{area.topics.length}</span>
+            </a>
+          ))
+        }
+      </nav>
     </div>
   </section>
 
@@ -37,7 +50,7 @@ const areas = topicAreas.map((area) => ({
     <div class="mx-auto max-w-5xl space-y-14 px-4 sm:px-6 lg:px-8">
       {
         areas.map((area) => (
-          <div aria-labelledby={`area-${area.slug}`}>
+          <div aria-labelledby={`area-${area.slug}`} class="scroll-mt-24">
             <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-border pb-3">
               <h2 id={`area-${area.slug}`} class="text-xl font-bold tracking-tight text-text md:text-2xl">
                 {area.name}
@@ -49,6 +62,7 @@ const areas = topicAreas.map((area) => ({
                 看整個領域 →
               </a>
             </div>
+            <p class="mt-3 text-sm text-text-muted">{area.question}</p>
             <div class="mt-5 grid gap-4 sm:grid-cols-2">
               {area.topics.map((topic) => (
                 <TopicCard {...topic} />
