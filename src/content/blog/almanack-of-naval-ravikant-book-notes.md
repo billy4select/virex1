@@ -1,7 +1,7 @@
 ---
 title: "《納瓦爾寶典》：不要只用時間換錢，而要學會讓自己的價值持續放大"
 description: 收入只隨工作時數增加，成長終究會被時間限制。這篇讀《納瓦爾寶典》，整理財富與金錢的差別、專屬知識、三種槓桿、Productize Yourself，以及在 AI 時代怎麼應用。
-publishedDate: 2026-11-25T09:10:00+08:00
+publishedDate: 2026-11-28T09:10:00+08:00
 author: 比利陳 Billy Chen
 tags:
   - 書籍閱讀
