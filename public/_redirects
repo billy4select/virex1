@@ -81,12 +81,12 @@
 /2023/04/learn-seo.html /topics/marketing/ 301
 /2023/04/User-Intent.html /topics/marketing/ 301
 /2023/04/influencer-marketing.html /topics/marketing/ 301
-/2023/04/marketing-formula.html /topics/business-model/profit-pricing/ 301
-/2023/04/cpc-ctr-roas-calculator.html /topics/marketing/marketing-diagnosis/ 301
+/2023/04/marketing-formula.html /blog/pricing-and-profit-structure/ 301
+/2023/04/cpc-ctr-roas-calculator.html /blog/roas-formula-explained/ 301
 /2023/04/market-jobs.html /topics/marketing/ 301
-/2023/04/ig-Insights.html /topics/marketing/marketing-diagnosis/ 301
-/2023/04/CTR-CTA-ROAS.html /topics/marketing/marketing-diagnosis/ 301
-/2023/04/ctr.html /topics/marketing/marketing-diagnosis/ 301
+/2023/04/ig-Insights.html /blog/marketing-metrics-2026-what-to-track/ 301
+/2023/04/CTR-CTA-ROAS.html /blog/ctr-low-creative-or-audience/ 301
+/2023/04/ctr.html /blog/ctr-low-creative-or-audience/ 301
 /2023/03/Domain-Authority.html /topics/marketing/ 301
 /2023/03/Internet-Marketing-Platform.html /topics/marketing/ 301
 /2023/03/how-to-seo.html /topics/marketing/ 301
@@ -202,3 +202,14 @@
 /blog/notebooklm-slide-deck-review/ /blog/notebooklm-complete-guide-2026/ 301
 /blog/notebooklm-to-claude-research-output /blog/notebooklm-vs-claude-internal-docs/ 301
 /blog/notebooklm-to-claude-research-output/ /blog/notebooklm-vs-claude-internal-docs/ 301
+
+# GSC 抓回來的 keep 類網址：先導到 /resources/，避免 404（後續可各自做成實用頁）
+/2023/07/ATM.html /resources/ 301
+/2023/07/pay-except-convenience-store.html /resources/ 301
+/2023/05/Google-adsense.html /resources/ 301
+/2023/03/8-Free-Stock-Photo-Sites.html /resources/ 301
+
+# GSC 顯示仍在排名的舊頁面
+/p/about-me.html /about/ 301
+/p/disclaimer.html /disclaimer/ 301
+/p/cookie.html /privacy/ 301
