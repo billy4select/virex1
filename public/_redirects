@@ -6,10 +6,10 @@
 /2026/03/notebooklm-guide-integrate-pdf-web-notes.html /blog/notebooklm-workplace-research/ 301
 /2026/05/ultimate-threads-marketing-guide-from-zero-to-monetization.html /threads/ 301
 /2026/03/2026-marketing-metrics-trends-exposure-to-retention.html /blog/marketing-metrics-2026-what-to-track/ 301
-/2026/05/blog-post.html /topics/marketing/ 301
-/2026/03/on-page-seo-checklist-titles-h2-internal-links.html /topics/marketing/copywriting/ 301
+/2026/05/blog-post.html /blog/website-speed-seo-checks/ 301
+/2026/03/on-page-seo-checklist-titles-h2-internal-links.html /blog/on-page-seo-checklist/ 301
 /2026/03/blog-post_819.html /threads/selling/ 301
-/2026/03/internal-linking-seo-strategy-topic-clusters.html /topics/marketing/ 301
+/2026/03/internal-linking-seo-strategy-topic-clusters.html /blog/internal-linking-topic-clusters/ 301
 /2026/03/threads-monetization-no-product-income-modes.html /threads/monetize/ 301
 /2026/03/hreads-vs-instagram-2026-strategy-comparison.html /threads/ 301
 /2026/03/blog-post_422.html /threads/what-to-post/ 301
@@ -78,8 +78,8 @@
 /2023/04/personal-opinion.html /threads/writing/ 301
 /2023/04/Writing%20Skills.html /topics/marketing/copywriting/ 301
 /2023/04/howtota.html /topics/marketing/know-your-audience/ 301
-/2023/04/learn-seo.html /topics/marketing/ 301
-/2023/04/User-Intent.html /topics/marketing/ 301
+/2023/04/learn-seo.html /blog/seo-self-study-guide/ 301
+/2023/04/User-Intent.html /blog/search-intent-guide/ 301
 /2023/04/influencer-marketing.html /topics/marketing/ 301
 /2023/04/marketing-formula.html /blog/sales-forecast-4-methods/ 301
 /2023/04/cpc-ctr-roas-calculator.html /blog/roas-formula-explained/ 301
@@ -87,14 +87,14 @@
 /2023/04/ig-Insights.html /blog/ig-insights-report-guide/ 301
 /2023/04/CTR-CTA-ROAS.html /blog/ctr-low-creative-or-audience/ 301
 /2023/04/ctr.html /blog/ctr-low-creative-or-audience/ 301
-/2023/03/Domain-Authority.html /topics/marketing/ 301
-/2023/03/Internet-Marketing-Platform.html /topics/marketing/ 301
-/2023/03/how-to-seo.html /topics/marketing/ 301
-/2023/03/How-to-write-SEO-articles.html /topics/marketing/ 301
+/2023/03/Domain-Authority.html /blog/domain-authority-guide/ 301
+/2023/03/Internet-Marketing-Platform.html /blog/digital-marketing-basics/ 301
+/2023/03/how-to-seo.html /blog/free-seo-tools/ 301
+/2023/03/How-to-write-SEO-articles.html /blog/seo-writing-why-no-traffic/ 301
 /2023/03/Digital-Marketing-professional-phrases.html /topics/marketing/marketing-diagnosis/ 301
-/2023/02/5way-to-keyword.html /topics/marketing/know-your-audience/ 301
+/2023/02/5way-to-keyword.html /blog/keyword-research-purchase-intent/ 301
 /2023/02/what-is-ta.html /topics/marketing/know-your-audience/ 301
-/2023/02/How-to-learn-marketing.html /topics/marketing/ 301
+/2023/02/How-to-learn-marketing.html /blog/learn-marketing-roadmap/ 301
 /2023/02/Why-ad-not-working.html /topics/marketing/marketing-diagnosis/ 301
 /sitemap.xml /sitemap-index.xml 301
 # 2026-11 專題扁平頁收斂：*.html 一律 301 到目錄版（避免 11 組重複內容）
