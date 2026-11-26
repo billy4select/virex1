@@ -1,31 +1,39 @@
-# 流量優先更新 第 1 批
+# 主題改版：加入舊站內容後的重整
 
-覆蓋 4 個檔：
-- `public/threads/nobody-sees/index.html`（更新）
-- `public/threads/selling/index.html`（更新）
-- `src/content/blog/sales-forecast-4-methods.md`（新增）
-- `public/_redirects`（1 條改指向）
+覆蓋 1 個檔：`src/lib/topic-curation.ts`
 
-## 依 GSC 曝光排序，這批處理誰
+## 改了什麼
 
-| 舊網址 | 曝光 / 點擊 | 原本落點 | 這批做了什麼 |
+**領域文案**
+- 「行銷與文案」→「行銷、SEO 與廣告」，summary 補上 SEO 內容與廣告數據
+- 「自媒體與個人事業」summary 補上 Threads 經營
+
+**新增 5 個主題（共 156 篇引用，一篇文章可跨主題）**
+
+| 領域 | 新主題 | 篇數 | 這條路線在回答什麼 |
 |---|---|---|---|
-| Threads 沒流量 | 997 / 25 | `/threads/nobody-sees/`（內容偏薄，約 2,000 字） | 頁面擴充到 2,600 字，補「五個讓觸及真正停滯的原因」＋「先做這三件事」＋目錄與更新日 |
-| Threads 導流（blog-post_819） | 486 / 10 | `/threads/selling/`（1,700 字） | 補「四種導到官網的方法」整節（檔案連結／留言／私訊／IG 限動） |
-| 業績預估計算機 | 331 / 9，**平均排名 5.5** | 只導到 `/topics/business-model/profit-pricing/` 列表頁 | 新寫 `/blog/sales-forecast-4-methods/`，舊址改指這篇 |
-| ROAS 計算機 | 611 / 12 | 上一批已改寫 | 已指向 `/blog/roas-formula-explained/` |
+| 行銷 | `seo-from-zero` 我想讓網站開始有搜尋流量 | 7 | 自學順序 → 意圖 → 關鍵字 → on-page → 沒流量的原因 → 內鏈 → 速度 |
+| 行銷 | `seo-authority-tools` 我想搞懂網站權重跟 SEO 工具 | 4 | 權重四線索 → 九個工具 → 數位行銷三角 → 自學順序 |
+| 行銷 | `ads-numbers` 我想看懂廣告數字，決定要不要加預算 | 6 | 六個公式 → 指標層級 → ROAS → 多少算好 → 寫成報告 → 業績預估 |
+| 行銷 | `ads-cost-and-budget` 我的廣告沒效果，成本還一直漲 | 7 | 三段診斷 → CTR 診斷 → A/B → 疲勞 → CAC → CPM 上漲 → 預算比例 |
+| 自媒體 | `threads-growth` 我想在 Threads 上從零開始經營 | 5 | 140 天紀錄 → 品牌語氣 → vs IG → 貼文 SEO → 商業帳號（掛 `/threads/` 教學） |
 
-排名 5.5 那條（業績預估）是最容易拿到搜尋流量的，原本卻掉到列表頁，這次優先補成完整文章：四種方法、公式、數字範例、三種情境、四個常見錯誤。
+**既有主題補文章**
+- `know-your-audience`：加 `ta-definition-pain-moment`、`audience-broad-or-focused`
+- `brand-positioning`：加 `threads-brand-z-gen-z`
+- `copywriting`：換入 `story-marketing-emotional-connection`、`writing-persuasion-logic`
+- `marketing-diagnosis`：加 `marketing-metrics-2026-what-to-track`、`ig-insights-report-guide`、`ads-not-working-diagnosis`
+- `ai-meetings-proposals`：加 `ai-report-human-touch`
 
-## 還沒處理的高流量落點（下一批）
+**outcomes 補齊**
+原本 65 條 → 103 條，全站每篇文章都有一句「讀完你會知道」。
 
-1. 超商取貨 278 曝光、ATM 134 曝光 → 目前都導到 `/resources/`，語意不符
-2. 19 本行銷書單 210 曝光 → `/topics/book-guides/books-business-marketing/`（書單頁已存在，可補導讀）
-3. Threads 頻率 159、Threads 商業帳號 130、Threads 演算法 46 → 對應章節頁都偏薄
-4. IG 洞察 65 曝光 → 目前導到指標文章，可獨立成篇
-5. 行銷團隊分工 54 曝光 → 目前導到主題列表頁
+## 驗證
 
-要不要先把 3（Threads 章節頁群）做完？那三頁加起來約 335 曝光，跟這次的 997 是同一條主題線，一起補完比較好切。
+- 主題引用 156 筆，無缺 outcome、無不存在文章（腳本已驗）
+- `npx astro build` 通過
+- `/topics/` 仍 8 個領域；行銷 8 個主題、自媒體 4 個主題
+- 新頁實測：seo-from-zero 7 篇、ads-numbers 6、ads-cost-and-budget 7、threads-growth 5、seo-authority-tools 4
 
 ## 部署
 
