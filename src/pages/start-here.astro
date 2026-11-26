@@ -1,0 +1,229 @@
+---
+/**
+ * 開始這裡 /start-here/
+ *
+ * 新訪客分流頁：四條路徑，每條三個起點，避免一次面對 200 多頁。
+ */
+import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import { siteConfig } from '@/config';
+import { getPublishedPosts } from '@/lib/blog';
+import { seoChapters } from '@/lib/seo-series';
+import { marketingChapters } from '@/lib/marketing-series';
+
+type Step = { href: string; title: string; note: string };
+type Path = {
+  no: string;
+  title: string;
+  who: string;
+  lead: string;
+  steps: Step[];
+  seriesHref: string;
+  seriesLabel: string;
+};
+
+/** 用文章 collection 抓標題，避免手寫標題跟文章不一致 */
+const posts = await getPublishedPosts();
+const postTitle = (slug: string) => posts.find((p) => p.id === slug)?.data.title ?? slug;
+const seoTitle = (slug: string) => {
+  const chapter = seoChapters.find((c) => c.slug === slug);
+  return chapter ? `${chapter.no} ${chapter.title}` : slug;
+};
+const mkTitle = (slug: string) => {
+  const chapter = marketingChapters.find((c) => c.slug === slug);
+  return chapter ? `${chapter.no} ${chapter.title}` : slug;
+};
+
+const paths: Path[] = [
+  {
+    no: '01',
+    title: '把 AI 放進日常工作',
+    who: '每天要寫東西、開會、做簡報，想少花一點時間',
+    lead: '先盤點工作，再建立角色與說明書，最後接上流程。順序反了就變成在玩工具。',
+    steps: [
+      {
+        href: '/ai-work-team/lesson-01/',
+        title: '工作盤點：哪些事真的該交給 AI',
+        note: '先分清「可交付」與「只能自己判斷」，這一步決定後面所有設定。',
+      },
+      {
+        href: '/ai-work-team/lesson-03/',
+        title: '建立 AI 員工：角色、職責與工作說明書',
+        note: '沒有職責邊界，AI 產出的東西每一次都不一樣。',
+      },
+      {
+        href: '/ai-work-team/workflows/',
+        title: '流程庫：六條可以直接照做的流程',
+        note: '會議記錄、市場研究、簡報、內容製作，挑一條這週就用。',
+      },
+    ],
+    seriesHref: '/ai-work-team/',
+    seriesLabel: '完整 AI 工作團隊教學',
+  },
+  {
+    no: '02',
+    title: '開始經營 Threads／自媒體',
+    who: '想固定發文、累積讀者，但一直卡在「不知道寫什麼」',
+    lead: '心態先對，選題才有東西寫；有頻率才有數據；有數據才談成長。',
+    steps: [
+      {
+        href: '/threads/mindset/',
+        title: '起步心態：不夠專業、沒人看怎麼辦',
+        note: '先處理「怕寫不好」這件事，不然寫三篇就停。',
+      },
+      {
+        href: '/threads/what-to-post/',
+        title: '不知道要寫什麼：10 個起步選題',
+        note: '從你已經會的、被問過的、踩過的坑開始，不用等靈感。',
+      },
+      {
+        href: '/blog/threads-0-to-10k-140-days/',
+        title: `${postTitle('threads-0-to-10k-140-days')}`,
+        note: '140 天的完整紀錄：哪幾篇有效、什麼時候開始動、哪些做法沒用。',
+      },
+    ],
+    seriesHref: '/threads/',
+    seriesLabel: '完整 Threads 教學',
+  },
+  {
+    no: '03',
+    title: '學行銷，先學會看懂數字',
+    who: '有產品或內容要推，但不知道成效為什麼好、為什麼壞',
+    lead: '行銷不是工具清單，是需求、通路、訊息三個角，加上四個數字。從診斷開始，不是從投放開始。',
+    steps: [
+      {
+        href: '/marketing/three-corners/',
+        title: mkTitle('three-corners'),
+        note: '先把三個角分清楚，才不會用「多投一點預算」解決訊息問題。',
+      },
+      {
+        href: '/marketing/diagnosis/',
+        title: mkTitle('diagnosis'),
+        note: '流量、轉換、客單價、回購，四段哪一段在漏，決定你要修什麼。',
+      },
+      {
+        href: '/blog/marketing-calculator/',
+        title: postTitle('marketing-calculator'),
+        note: '把 ROAS、CAC、客單價算一遍，你就知道該不該加預算。',
+      },
+    ],
+    seriesHref: '/marketing/',
+    seriesLabel: '完整行銷教學',
+  },
+  {
+    no: '04',
+    title: '學 SEO，讓文章被找到',
+    who: '已經有內容，但搜尋流量一直是零',
+    lead: '不從工具開始，從 Google 怎麼處理一個頁面開始。七章走完，你能自己跑一輪。',
+    steps: [
+      {
+        href: '/seo/how-seo-works/',
+        title: seoTitle('how-seo-works'),
+        note: '爬取、索引、排序、呈現，四個階段各自會壞在哪。',
+      },
+      {
+        href: '/seo/search-intent/',
+        title: seoTitle('search-intent'),
+        note: '同一個關鍵字，意圖不同就要寫成不同的文章。',
+      },
+      {
+        href: '/seo/30-day-plan/',
+        title: seoTitle('30-day-plan'),
+        note: '一份照順序做的計畫：先修技術，再修結構，最後才寫新文章。',
+      },
+    ],
+    seriesHref: '/seo/',
+    seriesLabel: '完整 SEO 教學',
+  },
+];
+
+const quickPicks = [
+  { href: '/resources/', title: '免費資源', note: 'Prompt 範本、SOP 模板、AI 名詞字典，直接下載。' },
+  { href: '/blog/', title: '全部文章', note: '依時間排列，想看最新寫了什麼從這裡進。' },
+  { href: '/site-map/', title: '網站地圖', note: '記得標題、想找特定一篇時用這頁。' },
+];
+---
+
+<MarketingLayout
+  title={`開始這裡 - ${siteConfig.name}`}
+  description="第一次來不知道從哪讀？四條路徑：AI 工作、Threads 自媒體、行銷、SEO，每條三個起點，照順序讀完一輪。"
+>
+  <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '開始這裡', href: '/start-here/' }]} />
+
+  <section class="page-band">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <p class="text-sm font-semibold tracking-[0.15em] text-primary">開始這裡</p>
+      <h1 class="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-text md:text-4xl lg:text-5xl">
+        別從全部文章開始，先選一條路
+      </h1>
+      <p class="mt-4 max-w-2xl text-base leading-relaxed text-text-muted md:text-lg">
+        這裡有兩百多頁。第一次來，最有效的方式不是逛，是挑一條路徑走完三個起點——大約兩小時，你會知道自己接下來要讀什麼。
+      </p>
+      <p class="mt-4 text-sm text-text-muted">4 條路徑 · 12 個起點 · 每篇 6–10 分鐘</p>
+    </div>
+  </section>
+
+  <section class="bg-background pb-14 pt-10 md:pb-20 md:pt-12">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-5 md:grid-cols-2">
+        {
+          paths.map((path) => (
+            <article class="flex flex-col rounded-2xl border border-border bg-surface p-6 md:p-7">
+              <div class="flex items-baseline gap-3">
+                <span class="font-mono text-sm font-semibold tracking-wider text-primary">{path.no}</span>
+                <h2 class="text-xl font-extrabold tracking-tight text-text">{path.title}</h2>
+              </div>
+              <p class="mt-2 text-sm font-medium text-text-muted">給：{path.who}</p>
+              <p class="mt-3 text-sm leading-relaxed text-text-muted">{path.lead}</p>
+
+              <ol class="mt-5 space-y-4 border-t border-border pt-5">
+                {path.steps.map((step, index) => (
+                  <li class="flex gap-3">
+                    <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 font-mono text-xs font-bold text-primary">
+                      {index + 1}
+                    </span>
+                    <div class="min-w-0">
+                      <a class="text-sm font-bold text-text transition-colors hover:text-primary" href={step.href}>
+                        {step.title}
+                      </a>
+                      <p class="mt-1 text-sm leading-relaxed text-text-muted">{step.note}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+
+              <a
+                class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline"
+                href={path.seriesHref}
+              >
+                {path.seriesLabel} →
+              </a>
+            </article>
+          ))
+        }
+      </div>
+
+      <div class="mt-10 rounded-2xl border border-border bg-surface p-6 md:p-7">
+        <h2 class="text-lg font-extrabold tracking-tight text-text">不想照順序，只想找一個能用的東西</h2>
+        <ul class="mt-4 grid gap-4 sm:grid-cols-3">
+          {
+            quickPicks.map((item) => (
+              <li>
+                <a class="text-sm font-bold text-text hover:text-primary" href={item.href}>
+                  {item.title} →
+                </a>
+                <p class="mt-1 text-sm leading-relaxed text-text-muted">{item.note}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <p class="mt-8 text-sm leading-relaxed text-text-muted">
+        這頁是分流，不是目錄。要按分類找、或記得文章標題，走
+        <a class="font-semibold text-primary hover:underline" href="/site-map/">網站地圖</a>；
+        想知道我為什麼寫這些，讀<a class="font-semibold text-primary hover:underline" href="/about/">關於我</a>。
+      </p>
+    </div>
+  </section>
+</MarketingLayout>

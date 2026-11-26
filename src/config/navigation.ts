@@ -3,6 +3,7 @@ import type { Navigation } from '../lib/types';
 export const navigation: Navigation = {
   header: {
     main: [
+      { label: '開始這裡', href: '/start-here/' },
       { label: '主題', href: '/topics/' },
       { label: '教學', href: '/series/' },
       { label: '文章', href: '/blog/' },
@@ -15,6 +16,7 @@ export const navigation: Navigation = {
   },
   footer: {
     product: [ 
+      { label: '開始這裡', href: '/start-here/' },
       { label: '主題', href: '/topics/' },
       { label: '教學', href: '/series/' },
       { label: '文章', href: '/blog/' },

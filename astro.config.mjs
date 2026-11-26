@@ -1,6 +1,32 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
+
+import fs from 'node:fs';
+import path from 'node:path';
+
+/**
+ * 文章 sitemap lastmod：直接讀 content/blog 的 frontmatter。
+ * 有 updatedDate 用更新日，沒有就用 publishedDate。
+ * 靜態專題頁不給 lastmod（部署時檔案 mtime 不可靠，寧可省略）。
+ */
+function blogLastmodMap() {
+	const dir = path.resolve('src/content/blog');
+	const map = new Map();
+	if (!fs.existsSync(dir)) return map;
+	for (const file of fs.readdirSync(dir)) {
+		if (!/\.(md|mdx)$/.test(file)) continue;
+		const head = fs.readFileSync(path.join(dir, file), 'utf8').slice(0, 2500);
+		const updated = head.match(/^updatedDate:\s*['"]?([0-9]{4}-[0-9]{2}-[0-9]{2})/m);
+		const published = head.match(/^publishedDate:\s*['"]?([0-9]{4}-[0-9]{2}-[0-9]{2})/m);
+		const date = updated?.[1] ?? published?.[1];
+		if (date) map.set(`/blog/${file.replace(/\.(md|mdx)$/, '')}/`, date);
+	}
+	return map;
+}
+const blogLastmod = blogLastmodMap();
+
+
 import icon from 'astro-icon';
 import tailwindcss from '@tailwindcss/vite';
 import { siteConfig } from './src/config';
@@ -51,6 +77,12 @@ export default defineConfig({
       serialize(item) {
         if (!item.url.endsWith('/')) {
           item.url += '/';
+        }
+        // 文章頁帶 lastmod，讓 Google 知道內容被改寫過（大量改寫後尤其重要）
+        const pathname = new URL(item.url).pathname;
+        const lastmod = blogLastmod.get(pathname);
+        if (lastmod) {
+          item.lastmod = new Date(`${lastmod}T00:00:00Z`).toISOString();
         }
         return item;
       },
