@@ -1,7 +1,7 @@
 /**
  * 主題：依讀者需求整理的文章集結（2026-11 改版）
  *
- * 結構：領域（7 個）→ 主題（「我想…」句型，每個 3–7 篇）→ 文章。
+ * 結構：領域（8 個）→ 主題（「我想…」句型，每個 3–7 篇）→ 文章。
  * - 領域是 /topics/ 的瀏覽分組，和文章分類（themes.ts，只用在 /blog/ 篩選）各自獨立，
  *   所以領域可以切得比文章分類更細。
  * - 主題是為「一個讀者處境」整理的閱讀順序，一篇文章可以出現在多個主題。
@@ -160,6 +160,13 @@ export const topicAreas: TopicArea[] = [
     question: '怎麼把讀到、學到的東西，變成自己的東西？',
     summary: '學習方法、知識系統、思考表達與讀書心得。',
     lead: '讓學習有產出，讓知識留得下來、用得出去。',
+  },
+  {
+    slug: 'book-guides',
+    name: '書籍導讀',
+    question: '想透過一本好書，理解商業、行銷、思考與個人成長？',
+    summary: '以完整讀書心得帶你理解一本書的核心觀念，並思考如何應用在工作與生活。',
+    lead: '不只整理一本書說了什麼，也帶你看懂觀念背後的脈絡，以及可以怎麼用。',
   },
   {
     slug: 'personal-business',
@@ -501,7 +508,7 @@ export const topics: Topic[] = [
   },
   {
     slug: 'books-business-marketing',
-    area: 'learning',
+    area: 'book-guides',
     name: '我想找商業與行銷的好書',
     lead: '不只是書摘，而是讀完之後怎麼用在工作上。',
     intro:
@@ -516,7 +523,7 @@ export const topics: Topic[] = [
   },
   {
     slug: 'books-growth-expression',
-    area: 'learning',
+    area: 'book-guides',
     name: '我想找個人成長、思考與表達的好書',
     lead: '把一本書讀成自己的判斷與做法。',
     intro:

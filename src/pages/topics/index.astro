@@ -1,82 +1,88 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
-import TopicCard from '@/components/topics/TopicCard.astro';
 import { siteConfig } from '@/config';
 import { getPublishedPosts } from '@/lib/blog';
-import { topicAreas, getTopicsByArea, topicUrl } from '@/lib/topic-curation';
+import { topicAreas, getTopicsByArea } from '@/lib/topic-curation';
 
 const publishedIds = new Set((await getPublishedPosts()).map((post) => post.id));
 const countOf = (ids: string[]) => ids.filter((id) => publishedIds.has(id)).length;
 
 const areas = topicAreas
-  .map((area) => ({
-  ...area,
-  topics: getTopicsByArea(area.slug)
-    .filter((topic) => countOf(topic.articleIds) > 0)
-    .map((topic) => ({
-    href: topicUrl(topic),
-    name: topic.name,
-    lead: topic.lead,
-    count: countOf(topic.articleIds),
-  })),
-}))
-  .filter((area) => area.topics.length > 0);
+  .map((area, index) => {
+    const topics = getTopicsByArea(area.slug).filter(
+      (topic) => countOf(topic.articleIds) > 0,
+    );
+
+    return {
+      ...area,
+      index: String(index + 1).padStart(2, '0'),
+      topicCount: topics.length,
+      articleCount: new Set(
+        topics.flatMap((topic) => topic.articleIds).filter((id) => publishedIds.has(id)),
+      ).size,
+    };
+  })
+  .filter((area) => area.topicCount > 0);
 ---
 
 <MarketingLayout
   title={`主題 - ${siteConfig.name}`}
-  description="從你現在遇到的處境開始：用 AI 工作、讀懂 NotebookLM、驗證想法、改善行銷、規劃職涯、建立知識系統或經營自媒體。每個主題都是一條整理好的閱讀路線。"
+  description="探索八大知識領域，從 AI 工作流程、商業模式、行銷到自媒體與個人事業，找到適合自己的閱讀主題。"
 >
   <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '主題' }]} />
 
-  <section class="bg-background pb-8 pt-10 md:pt-14">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-      <h1 class="text-3xl font-extrabold tracking-tight text-text md:text-4xl lg:text-5xl">
-        主題
+  <section class="bg-background pb-10 pt-10 md:pb-14 md:pt-14">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <p class="text-xs font-bold tracking-[0.2em] text-primary">EXPLORE BY FIELD</p>
+      <h1 class="mt-3 text-3xl font-extrabold tracking-tight text-text md:text-4xl lg:text-5xl">
+        探索主題
       </h1>
-      <p class="mt-4 max-w-2xl text-base leading-relaxed text-text-muted">
-        從你現在遇到的處境開始，每個主題都是一條整理好的閱讀路線。
+      <p class="mt-4 max-w-2xl text-base leading-relaxed text-text-muted md:text-lg">
+        從八個知識領域開始，找到你現在想解決的問題。點進領域後，再挑選適合自己的閱讀路線。
       </p>
-      <nav aria-label="主題領域" class="mt-6 flex flex-wrap gap-2">
-        {
-          areas.map((area) => (
-            <a
-              href={`#area-${area.slug}`}
-              class="rounded-full border border-border bg-surface px-4 py-2 text-xs font-medium text-text-muted transition-colors hover:border-primary/40 hover:bg-primary/10 hover:text-primary"
-            >
-              {area.name}
-              <span class="ml-1 opacity-50">{area.topics.length}</span>
-            </a>
-          ))
-        }
-      </nav>
     </div>
   </section>
 
-  <section class="bg-background pb-16 md:pb-24">
-    <div class="mx-auto max-w-5xl space-y-14 px-4 sm:px-6 lg:px-8">
+  <section class="bg-background pb-16 md:pb-24" aria-label="八大主題領域">
+    <div class="mx-auto grid max-w-6xl gap-5 px-4 sm:px-6 md:grid-cols-2 lg:gap-6 lg:px-8">
       {
         areas.map((area) => (
-          <div aria-labelledby={`area-${area.slug}`} class="scroll-mt-24">
-            <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-border pb-3">
-              <h2 id={`area-${area.slug}`} class="text-xl font-bold tracking-tight text-text md:text-2xl">
+          <a
+            href={`/topics/${area.slug}/`}
+            class="group relative flex min-h-64 flex-col overflow-hidden rounded-3xl border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 md:min-h-72 md:p-8"
+          >
+            <div class="flex items-start justify-between gap-4">
+              <span class="font-mono text-sm font-semibold tracking-wider text-primary">
+                {area.index}
+              </span>
+              <span class="rounded-full border border-border bg-background px-3 py-1.5 text-xs font-medium text-text-muted">
+                {area.topicCount} 個主題
+              </span>
+            </div>
+
+            <div class="mt-8 flex-1">
+              <h2 class="text-xl font-bold tracking-tight text-text transition-colors group-hover:text-primary md:text-2xl">
                 {area.name}
               </h2>
-              <a
-                href={`/topics/${area.slug}/`}
-                class="text-sm font-semibold text-primary hover:text-primary-dark"
-              >
-                看整個領域 →
-              </a>
+              <p class="mt-3 text-sm font-semibold leading-relaxed text-text md:text-base">
+                {area.question}
+              </p>
+              <p class="mt-2 max-w-xl text-sm leading-relaxed text-text-muted">
+                {area.summary}
+              </p>
             </div>
-            <p class="mt-3 text-sm text-text-muted">{area.question}</p>
-            <div class="mt-5 grid gap-4 sm:grid-cols-2">
-              {area.topics.map((topic) => (
-                <TopicCard {...topic} />
-              ))}
+
+            <div class="mt-8 flex items-center justify-between border-t border-border pt-4">
+              <span class="text-xs text-text-muted">
+                收錄 {area.articleCount} 篇文章
+              </span>
+              <span class="inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                探索領域
+                <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+              </span>
             </div>
-          </div>
+          </a>
         ))
       }
     </div>
