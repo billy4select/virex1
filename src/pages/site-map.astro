@@ -1,0 +1,244 @@
+---
+/**
+ * 網站地圖（HTML 版）— /site-map/
+ *
+ * 給人看的全站索引：主要頁面、教學專題、文章分類與全部文章。
+ * 給搜尋引擎的是 /sitemap-index.xml（自動產生），這頁只是輔助導覽與內鏈。
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import { siteConfig } from '@/config';
+import { getPublishedPosts, postUrl, sortByDate } from '@/lib/blog';
+import { blogThemes, themeUrl } from '@/lib/themes';
+import { seoChapters, seoChapterUrl } from '@/lib/seo-series';
+import { marketingChapters, marketingChapterUrl } from '@/lib/marketing-series';
+
+const xmlSitemap = `${siteConfig.url}/sitemap-index.xml`;
+
+const corePages = [
+  { href: '/', label: '首頁' },
+  { href: '/about/', label: '關於我' },
+  { href: '/resources/', label: '免費資源' },
+  { href: '/blog/', label: '全部文章' },
+  { href: '/topics/', label: '主題' },
+  { href: '/series/', label: '教學系列' },
+  { href: '/faq/', label: '常見問題' },
+  { href: '/testimonials/', label: '讀者回饋' },
+  { href: '/contact/', label: '聯絡我' },
+  { href: '/privacy/', label: '隱私權政策' },
+  { href: '/disclaimer/', label: '免責聲明' },
+];
+
+const series = [
+  {
+    href: '/ai-work-team/',
+    name: '打造 AI 工作團隊',
+    desc: '角色、工具、流程與案例，把 AI 放進日常工作。',
+    chapters: [] as { href: string; label: string }[],
+  },
+  {
+    href: '/seo/',
+    name: 'SEO 從零開始',
+    desc: '從搜尋機制到 30 天計畫，七章走完一輪。',
+    chapters: seoChapters.map((c) => ({ href: seoChapterUrl(c.slug), label: `${c.no} ${c.title}` })),
+  },
+  {
+    href: '/marketing/',
+    name: '行銷從診斷開始',
+    desc: '需求、通路、訊息，加上數字與決策。',
+    chapters: marketingChapters.map((c) => ({ href: marketingChapterUrl(c.slug), label: `${c.no} ${c.title}` })),
+  },
+  {
+    href: '/threads/',
+    name: 'Threads 經營教學',
+    desc: '從 0 到 1 萬追蹤的實測與寫作方法。',
+    chapters: [] as { href: string; label: string }[],
+  },
+];
+
+/** 從 public/ 掃靜態專題頁，標題取自 <title>，用目錄前綴歸類 */
+function scanStaticPages() {
+  const root = path.resolve('public');
+  const found: { href: string; label: string }[] = [];
+  const walk = (dir: string) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        if (['assets', 'images', 'js'].includes(entry.name)) continue;
+        walk(full);
+      } else if (entry.name === 'index.html') {
+        const html = fs.readFileSync(full, 'utf8').slice(0, 6000);
+        const match = html.match(/<title>(.*?)<\/title>/s);
+        const title = match ? match[1].split('｜')[0].split('｜')[0].trim() : '';
+        const href = full.replace(root, '').replace(/index\.html$/, '');
+        if (title) found.push({ href: href.endsWith('/') ? href : `${href}/`, label: title });
+      }
+    }
+  };
+  walk(root);
+  return found;
+}
+
+const staticPages = scanStaticPages();
+for (const item of series) {
+  if (item.chapters.length > 0) continue;
+  const prefix = item.href;
+  item.chapters = staticPages
+    .filter((p) => p.href.startsWith(prefix) && p.href !== prefix)
+    // 只收第一層章節，深層的任務卡／流程頁留在該專題內
+    .filter((p) => p.href.replace(prefix, '').replace(/\/$/, '').split('/').length === 1)
+    .map((p) => ({ href: p.href, label: p.label }));
+}
+
+const soloPages = staticPages.filter((p) => p.href === '/narrative-engine/');
+
+const posts = sortByDate(await getPublishedPosts());
+const byTheme = blogThemes.map((theme) => ({
+  theme,
+  posts: posts.filter((post) => post.data.category === theme.slug),
+}));
+const unassigned = posts.filter((post) => !blogThemes.some((theme) => theme.slug === post.data.category));
+
+const totalPages = corePages.length + series.length + staticPages.length + posts.length;
+
+const breadcrumbs = [
+  { label: '首頁', href: '/' },
+  { label: '網站地圖', href: '/site-map/' },
+];
+---
+
+<MarketingLayout
+  title={`網站地圖 - ${siteConfig.name}`}
+  description={`全站 ${totalPages} 個頁面的索引：主要頁面、四套教學專題、九個文章分類與全部文章。`}
+>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <section class="page-band">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <p class="text-sm font-semibold tracking-[0.15em] text-primary">網站地圖</p>
+      <h1 class="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-text md:text-4xl">
+        全站 {totalPages} 個頁面，一次看完
+      </h1>
+      <p class="mt-4 max-w-2xl text-base leading-relaxed text-text-muted md:text-lg">
+        找不到想看的東西，從這裡開始。分成四塊：主要頁面、教學專題、文章分類、其他頁面。
+      </p>
+      <p class="mt-5 text-sm text-text-muted">
+        給 Google 的版本是 XML：<a class="font-semibold text-primary underline" href={xmlSitemap}>{xmlSitemap}</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-background pb-14 pt-10 md:pt-12">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 space-y-12">
+      <div>
+        <h2 class="text-xl font-extrabold tracking-tight text-text">主要頁面</h2>
+        <ul class="mt-4 grid grid-cols-2 gap-x-6 gap-y-2 text-sm sm:grid-cols-3">
+          {
+            corePages.map((page) => (
+              <li>
+                <a class="text-text-muted transition-colors hover:text-primary" href={page.href}>
+                  {page.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-extrabold tracking-tight text-text">教學專題</h2>
+        <p class="mt-2 text-sm text-text-muted">四套系列，各有章節順序，建議照編號讀。</p>
+        <div class="mt-5 grid gap-4 md:grid-cols-2">
+          {
+            series.map((item) => (
+              <div class="rounded-2xl border border-border bg-surface p-5">
+                <a class="font-bold text-text hover:text-primary" href={item.href}>
+                  {item.name}
+                </a>
+                <p class="mt-1 text-sm leading-relaxed text-text-muted">{item.desc}</p>
+                {item.chapters.length > 0 && (
+                  <ul class="mt-3 space-y-1.5 border-t border-border pt-3 text-sm">
+                    {item.chapters.map((chapter) => (
+                      <li>
+                        <a class="text-text-muted hover:text-primary" href={chapter.href}>
+                          {chapter.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-extrabold tracking-tight text-text">文章分類</h2>
+        <p class="mt-2 text-sm text-text-muted">{posts.length} 篇已上線文章，依主要分類排列。</p>
+        <div class="mt-5 space-y-6">
+          {
+            byTheme
+              .filter((group) => group.posts.length > 0)
+              .map((group) => (
+                <div>
+                  <div class="flex items-baseline justify-between gap-3">
+                    <h3 class="text-base font-bold text-text">{group.theme.name}</h3>
+                    <a class="text-xs text-text-muted hover:text-primary" href={themeUrl(group.theme.slug)}>
+                      {group.posts.length} 篇 →
+                    </a>
+                  </div>
+                  <ul class="mt-2 grid gap-x-6 gap-y-1.5 text-sm sm:grid-cols-2">
+                    {group.posts.map((post) => (
+                      <li>
+                        <a class="text-text-muted hover:text-primary" href={postUrl(post.id)}>
+                          {post.data.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))
+          }
+          {unassigned.length > 0 && (
+            <div>
+              <h3 class="text-base font-bold text-text">未分類</h3>
+              <ul class="mt-2 grid gap-x-6 gap-y-1.5 text-sm sm:grid-cols-2">
+                {unassigned.map((post) => (
+                  <li>
+                    <a class="text-text-muted hover:text-primary" href={postUrl(post.id)}>
+                      {post.data.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-extrabold tracking-tight text-text">其他頁面</h2>
+        <ul class="mt-4 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
+          {
+            soloPages.map((page) => (
+              <li>
+                <a class="text-text-muted hover:text-primary" href={page.href}>
+                  {page.label}
+                </a>
+              </li>
+            ))
+          }
+          <li>
+            <a class="text-text-muted hover:text-primary" href="/rss.xml">RSS 訂閱</a>
+          </li>
+          <li>
+            <a class="text-text-muted hover:text-primary" href={xmlSitemap}>XML Sitemap（給搜尋引擎）</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</MarketingLayout>

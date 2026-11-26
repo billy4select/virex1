@@ -44,6 +44,7 @@ export const navigation: Navigation = {
     legal: [
       { label: '隱私權政策', href: '/privacy/' },
       { label: '免責聲明', href: '/disclaimer/' },
+      { label: '網站地圖', href: '/site-map/' },
     ],
   },
 };
