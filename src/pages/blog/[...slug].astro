@@ -35,7 +35,7 @@ const nextPost = getNextPost(post, allPosts);
   publishedDate={post.data.publishedDate}
   updatedDate={post.data.updatedDate}
   author={post.data.author}
-  image={post.data.image}
+  image={post.data.image ?? `/og/${post.id}.png`}
   tags={post.data.tags}
   content={post.body || ''}
   /* --- 注入 SEO 結構化資料所需的 Props --- */

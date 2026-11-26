@@ -163,9 +163,9 @@ const articleGridClass = 'lg:grid lg:grid-cols-[220px_minmax(0,760px)] lg:gap-12
     </div>
   </section>
 
-  {/* 封面圖：有 image 時才顯示 */}
+  {/* 封面圖：有 image 時才顯示（自動產生的 /og/ 分享卡只給社群用，不當封面） */}
   {
-    image && (
+    image && !image.startsWith('/og/') && (
       <section class="bg-background border-b border-border" data-pagefind-ignore>
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 md:py-8">
           <div class="max-w-3xl overflow-hidden rounded-xl border border-border bg-surface">
