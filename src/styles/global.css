@@ -357,3 +357,34 @@ select:focus-visible {
     color: #ff6a00;
     background: var(--color-background);
   }
+
+  /* ── 搜尋欄統一規格（Header 面板與 /blog/ 頁面同一套）── */
+  /* 1) 關掉 Pagefind 預設會畫在欄位底部的深色線（form 與 input 都可能有一條） */
+  .blog-search-ui .pagefind-ui__form,
+  .blog-search-ui .pagefind-ui__form::after,
+  .blog-search-ui .pagefind-ui__search-input {
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+  }
+  .blog-search-ui .pagefind-ui__form::after { content: none !important; display: none !important; }
+
+  /* 2) 高度固定 40px（原本 44，跟 Header 的 36px 按鈕差太多；40 是兩邊都合的中間值） */
+  .blog-search-ui .pagefind-ui .pagefind-ui__search-input {
+    height: 40px !important;
+    border: 1px solid transparent !important;
+    border-bottom: 1px solid transparent !important;
+    border-radius: 9999px !important;
+    background-color: var(--color-surface) !important;
+  }
+  .blog-search-ui .pagefind-ui .pagefind-ui__search-input:focus {
+    border-color: #ff6a00 !important;
+    border-bottom-color: #ff6a00 !important;
+  }
+  .blog-search-ui .pagefind-ui .pagefind-ui__form::before { top: 12px !important; }
+  .blog-search-ui .pagefind-ui .pagefind-ui__search-clear { height: 40px !important; top: 0 !important; }
+
+  /* 3) Header 面板內用實線邊框，跟 /blog/ 的填色欄位區分 */
+  #header-search-panel .blog-search-ui .pagefind-ui .pagefind-ui__search-input {
+    border: 1px solid var(--color-border) !important;
+    border-bottom: 1px solid var(--color-border) !important;
+  }
