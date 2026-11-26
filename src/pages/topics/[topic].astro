@@ -3,6 +3,7 @@ import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import TopicCard from '@/components/topics/TopicCard.astro';
 import { siteConfig } from '@/config';
+import { getPublishedPosts } from '@/lib/blog';
 import { topicAreas, getArea, getTopicsByArea, topicUrl } from '@/lib/topic-curation';
 
 interface Props {
@@ -20,7 +21,9 @@ const { slug } = Astro.props;
 const area = getArea(slug);
 if (!area) throw new Error(`找不到領域：${slug}`);
 
-const areaTopics = getTopicsByArea(slug);
+const publishedIds = new Set((await getPublishedPosts()).map((post) => post.id));
+const countOf = (ids: string[]) => ids.filter((id) => publishedIds.has(id)).length;
+const areaTopics = getTopicsByArea(slug).filter((topic) => countOf(topic.articleIds) > 0);
 const canonical = `${siteConfig.url}/topics/${slug}/`;
 
 const schema = {
@@ -78,7 +81,7 @@ const schema = {
               href={topicUrl(topic)}
               name={topic.name}
               lead={topic.lead}
-              count={topic.articleIds.length}
+              count={countOf(topic.articleIds)}
             />
           ))
         }

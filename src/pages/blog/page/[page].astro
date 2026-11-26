@@ -1,10 +1,9 @@
 ---
-import { getCollection } from 'astro:content';
 import type { GetStaticPaths } from 'astro';
-import { POSTS_PER_PAGE } from '@/lib/blog';
+import { POSTS_PER_PAGE, getPublishedPosts } from '@/lib/blog';
 
 export const getStaticPaths = (async () => {
-  const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+  const allPosts = await getPublishedPosts();
   const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
 
   return Array.from({ length: Math.max(0, totalPages - 1) }, (_, index) => ({

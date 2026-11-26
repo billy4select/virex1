@@ -3,7 +3,7 @@ import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
-import { postUrl } from '@/lib/blog';
+import { postUrl, getPublishedPosts } from '@/lib/blog';
 import { calculateReadingTime } from '@/lib/utils';
 import { homeSeries } from '@/lib/homepage';
 import {
@@ -19,8 +19,11 @@ interface Props {
 }
 
 export async function getStaticPaths() {
+  const publishedIds = new Set((await getPublishedPosts()).map((post) => post.id));
   const seen = new Set<string>();
-  return topics.map((topic) => {
+  // 還沒有任何已上線文章的主題先不產生頁面（首頁與領域頁也會同步隱藏）
+  const visible = topics.filter((topic) => topic.articleIds.some((id) => publishedIds.has(id)));
+  return visible.map((topic) => {
     if (seen.has(topic.slug)) throw new Error(`主題 slug 重複：${topic.slug}`);
     seen.add(topic.slug);
     return {
@@ -37,7 +40,9 @@ if (!topic) throw new Error(`找不到主題：${topicSlug}`);
 const area = getArea(topic.area);
 if (!area) throw new Error(`主題 ${topic.slug} 的領域不存在：${topic.area}`);
 
+// 檢查用：所有非草稿文章（含排程中），確認 articleIds 沒打錯
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const publishedIds = new Set((await getPublishedPosts()).map((post) => post.id));
 const postById = new Map(allPosts.map((post) => [post.id, post]));
 
 const articles = topic.articleIds.map((id) => {
@@ -46,13 +51,15 @@ const articles = topic.articleIds.map((id) => {
   const outcome = articleOutcomes[id];
   if (!outcome) throw new Error(`文章 ${id} 缺少 articleOutcomes 的一句話`);
   return { post, outcome, minutes: calculateReadingTime(post.body || '') };
-});
+}).filter(({ post }) => publishedIds.has(post.id)); // 排程中的文章先不列出
 
 const totalMinutes = articles.reduce((sum, item) => sum + item.minutes, 0);
 const series = topic.series
   ? homeSeries.find((item) => item.href === topic.series?.href)
   : undefined;
-const siblings = getTopicsByArea(topic.area).filter((item) => item.slug !== topic.slug);
+const siblings = getTopicsByArea(topic.area).filter(
+  (item) => item.slug !== topic.slug && item.articleIds.some((id) => publishedIds.has(id))
+);
 
 const canonical = `${siteConfig.url}${topicUrl(topic)}`;
 const schema = {
@@ -201,7 +208,7 @@ const schema = {
                       {item.name}
                     </span>
                     <span class="whitespace-nowrap text-xs text-text-muted">
-                      {item.articleIds.length} 篇
+                      {item.articleIds.filter((id) => publishedIds.has(id)).length} 篇
                     </span>
                     <span aria-hidden="true" class="text-primary">→</span>
                   </a>

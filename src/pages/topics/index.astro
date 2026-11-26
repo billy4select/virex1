@@ -3,17 +3,25 @@ import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import TopicCard from '@/components/topics/TopicCard.astro';
 import { siteConfig } from '@/config';
+import { getPublishedPosts } from '@/lib/blog';
 import { topicAreas, getTopicsByArea, topicUrl } from '@/lib/topic-curation';
 
-const areas = topicAreas.map((area) => ({
+const publishedIds = new Set((await getPublishedPosts()).map((post) => post.id));
+const countOf = (ids: string[]) => ids.filter((id) => publishedIds.has(id)).length;
+
+const areas = topicAreas
+  .map((area) => ({
   ...area,
-  topics: getTopicsByArea(area.slug).map((topic) => ({
+  topics: getTopicsByArea(area.slug)
+    .filter((topic) => countOf(topic.articleIds) > 0)
+    .map((topic) => ({
     href: topicUrl(topic),
     name: topic.name,
     lead: topic.lead,
-    count: topic.articleIds.length,
+    count: countOf(topic.articleIds),
   })),
-}));
+}))
+  .filter((area) => area.topics.length > 0);
 ---
 
 <MarketingLayout

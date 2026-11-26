@@ -12,7 +12,7 @@ import SeriesGrid from '@/components/home/SeriesGrid.astro';
 import AboutSection from '@/components/home/AboutSection.astro';
 import ReaderFeedback from '@/components/home/ReaderFeedback.astro';
 import ThemePostRow from '@/components/blog/ThemePostRow.astro';
-import { sortByDate, postUrl } from '@/lib/blog';
+import { sortByDate, postUrl, getPublishedPosts } from '@/lib/blog';
 import {
   homeExploreEntries,
   homeSeries,
@@ -21,7 +21,7 @@ import {
 } from '@/lib/homepage';
 import { siteConfig } from '@/config';
 
-const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const allPosts = await getPublishedPosts();
 const sortedPosts = sortByDate(allPosts);
 const latestPosts = sortedPosts.slice(0, homepageConfig.latestCount);
 

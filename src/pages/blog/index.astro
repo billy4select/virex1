@@ -4,11 +4,10 @@ import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import BlogTopicNav from '@/components/blog/BlogTopicNav.astro';
 import ThemePostRow from '@/components/blog/ThemePostRow.astro';
 import BlogSearch from '@/components/blog/BlogSearch.astro';
-import { getCollection } from 'astro:content';
-import { POSTS_PER_PAGE, sortByDate } from '@/lib/blog';
+import { POSTS_PER_PAGE, sortByDate, getPublishedPosts } from '@/lib/blog';
 import { getThemeCounts } from '@/lib/themes';
 
-const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const allPosts = await getPublishedPosts();
 const sortedPosts = sortByDate(allPosts);
 const themeCounts = getThemeCounts(allPosts);
 ---

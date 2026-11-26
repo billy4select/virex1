@@ -1,9 +1,22 @@
-import type { CollectionEntry } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 
 export type BlogPost = CollectionEntry<'blog'>;
 
 /** 每頁文章數（/blog/ 與 /blog/page/N/ 共用，避免兩邊算法不一致） */
 export const POSTS_PER_PAGE = 6;
+
+/**
+ * 已上線的文章：不是草稿，且 publishedDate 已經到了（以建置當下的時間為準）。
+ * 所有頁面、RSS、sitemap 都該用這個，排程中的文章在到期並重新部署前完全不會出現。
+ * 注意：靜態網站只會在「重新部署」時重算，所以要有人（或排程）在文章到期後重新部署一次。
+ */
+export async function getPublishedPosts(): Promise<BlogPost[]> {
+  const now = Date.now();
+  return getCollection(
+    'blog',
+    ({ data }) => !data.draft && data.publishedDate.getTime() <= now
+  );
+}
 
 export const postUrl = (id: string) => `/blog/${id}/`;
 export const tagUrl = (tag: string) => `/blog/tag/${encodeURIComponent(tag)}/`;
