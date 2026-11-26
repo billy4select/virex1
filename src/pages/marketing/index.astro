@@ -1,14 +1,15 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
-import SeriesHome from '@/components/series/SeriesHome.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import { siteConfig } from '@/config';
-import { marketingChapters } from '@/lib/marketing-series';
+import { marketingChapters, marketingChapterUrl } from '@/lib/marketing-series';
 
 const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   name: '行銷教學',
-  description: '從三個角、業績診斷、受眾、定位、內容通路、廣告數字到決策與 90 天計畫，八章走完一輪可執行的行銷。',
+  description:
+    '從三個角、業績診斷、受眾、定位、內容渠道、廣告數字到決策與 90 天計畫，八章走完一輪可執行的行銷。',
   url: `${siteConfig.url}/marketing/`,
   inLanguage: 'zh-Hant-TW',
   mainEntity: {
@@ -18,7 +19,7 @@ const collectionSchema = {
       '@type': 'ListItem',
       position: index + 1,
       name: chapter.title,
-      url: `${siteConfig.url}/marketing/${chapter.slug}/`,
+      url: `${siteConfig.url}${marketingChapterUrl(chapter.slug)}`,
     })),
   },
 };
@@ -26,780 +27,81 @@ const collectionSchema = {
 
 <MarketingLayout
   title={`行銷教學 - ${siteConfig.name}`}
-  description="八章從診斷開始的行銷教學：需求通路訊息、四段診斷、受眾、定位、內容與通路、廣告數字、決策與 90 天計畫。照順序讀完，能自己跑一輪。"
+  description="七章從零開始的 行銷教學：搜尋機制、搜尋意圖、關鍵字、文章結構、內部連結、技術檢查與 30 天計畫。照順序讀完，能自己跑一輪。"
 >
-  <SeriesHome
-    variant="sp-marketing"
-    crumbs={[
-      { label: '首頁', href: '/' },
-      { label: '教學', href: '/series/' },
-      { label: '行銷教學', href: '/marketing/' },
-    ]}
-    eyebrow="行銷教學 · 從哪一段壞了開始"
-    titleLead="先找出哪一段掉下來，"
-    titleAccent="再決定花錢"
-    lead="工具不是起點，診斷才是。四段乘法定位問題，再處理受眾、定位、內容與廣告；八章之後，你會有一份 90 天可驗證的計畫，而不是一堆待辦清單。"
-    stats={['8 章 · 約 6,000 字', '每章 5–8 分鐘', '20 篇延伸文章']}
-    ctaHref="/marketing/three-corners/"
-    ctaLabel="從第 01 章開始"
-    secondaryHref="/blog/?theme=marketing-strategy"
-    secondaryLabel="先看行銷文章"
-    coreLabel="業績＝四段相乘"
-    artNodes={['流量', '轉換', '客單價', '回購']}
-    artNote="任何一段掉 20%，整體就掉 20%"
-    chapters={marketingChapters.map((chapter) => ({
-      slug: chapter.slug,
-      no: chapter.no,
-      title: chapter.title,
-      lead: chapter.lead,
-      outcome: chapter.outcome,
-    }))}
-    quick={[
-      { label: '先診斷再加預算', value: '通常是轉換先掉，不是流量不夠。' },
-      { label: '一次改一個變數', value: '同時改三件事，你不會知道哪件有用。' },
-      { label: 'ROAS 損益兩平', value: '等於 1 ÷ 毛利率，不是固定 3 倍。' },
-      { label: '樣本門檻', value: '50 次點擊或 10 筆轉換才有意義。' },
-    ]}
-    chapterBase="/marketing/"
-    pathSteps={[
-      { title: '診斷', desc: '先確認是流量、轉換、客單價還是回購出問題。' },
-      { title: '修一段', desc: '一次只改一個變數，其餘先不動。' },
-      { title: '驗證', desc: '50 次點擊或 10 筆轉換，才有統計意義。' },
-      { title: '放大', desc: '有效就把預算移過去，無效就換下一個假設。' },
-    ]}
-    audience={[
-      {
-        title: '這套適合你，如果',
-        items: [
-          '有產品或服務，但業績不穩定、不知道卡在哪一段。',
-          '會投廣告，卻只看 ROAS、說不出下一步該改什麼。',
-          '想把行銷從「一直試」變成「一次驗證一件事」。',
-        ],
-      },
-      {
-        title: '這套不適合，如果',
-        items: [
-          '想找一套模板套用所有品類。',
-          '還沒決定賣給誰，就想先優化轉換率。',
-          '期待加了預算就會改善，而不打算動產品或價格。',
-        ],
-      },
-    ]}
-    authorNote="十多年行銷與產品經驗；這套順序來自我自己做過的診斷與踩過的坑。"
-  />
+  <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '教學', href: '/series/' }, { label: '行銷教學', href: '/marketing/' }]} />
+
+  <section class="page-band">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <p class="text-sm font-semibold tracking-[0.15em] text-primary">行銷教學</p>
+      <h1 class="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-text md:text-4xl lg:text-5xl">
+        從哪一段壞了開始：八章學會行銷
+      </h1>
+      <p class="mt-4 max-w-2xl text-base leading-relaxed text-text-muted md:text-lg">
+        不從工具開始，從「業績是哪一段掉下來」開始。依序是三個角、診斷、受眾、定位、內容、廣告、決策，最後給一份 90 天可執行的計畫。
+      </p>
+      <p class="mt-4 text-sm text-text-muted">8 章 · 每章 5–8 分鐘 · 附深入閱讀</p>
+    </div>
+  </section>
+
+  <section class="bg-background pb-16 pt-12 md:pb-24 md:pt-14">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <ol class="space-y-4">
+        {
+          marketingChapters.map((chapter) => (
+            <li>
+              <a
+                href={marketingChapterUrl(chapter.slug)}
+                class="group flex flex-col gap-4 rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-primary/40 md:flex-row md:items-start md:gap-6 md:p-7"
+              >
+                <span class="font-mono text-sm font-semibold tracking-wider text-primary md:w-10 md:shrink-0">
+                  {chapter.no}
+                </span>
+                <div class="min-w-0">
+                  <h2 class="text-lg font-extrabold leading-snug tracking-tight text-text group-hover:text-primary md:text-xl">
+                    {chapter.title}
+                  </h2>
+                  <p class="mt-2 text-sm leading-relaxed text-text-muted md:text-base">{chapter.lead}</p>
+                  <p class="mt-3 text-xs leading-relaxed text-text-muted">
+                    <span class="font-semibold text-text">讀完你會知道：</span>
+                    {chapter.outcome}
+                  </p>
+                </div>
+                <span class="shrink-0 text-sm font-semibold text-primary md:self-center">
+                  閱讀 →
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+
+      <div class="mt-12 rounded-2xl border border-border bg-surface p-6 md:p-8">
+        <h2 class="text-lg font-extrabold tracking-tight text-text md:text-xl">這套教學適合誰</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-relaxed text-text-muted md:text-base">
+          <li>有產品或服務，但業績不穩定、不知道卡在哪一段的人。</li>
+          <li>會投廣告，但只看 ROAS、說不出下一步該改什麼的人。</li>
+          <li>想把行銷從「一直試」變成「一次驗證一件事」的人。</li>
+        </ul>
+        <p class="mt-5 text-sm leading-relaxed text-text-muted">
+          不適合：想找「一套模板套用所有品類」的人。行銷的答案會隨毛利、回購與客群改變。
+        </p>
+      </div>
+
+      <div class="mt-8 rounded-2xl border border-border bg-surface p-6 md:p-8">
+        <h2 class="text-lg font-extrabold tracking-tight text-text md:text-xl">想先讀單篇？</h2>
+        <p class="mt-3 text-sm leading-relaxed text-text-muted">
+          如果只是想解決一個具體問題，可以直接看文章：
+        </p>
+        <ul class="mt-4 grid gap-2 text-sm text-text">
+          <li><a class="text-primary hover:underline" href="/blog/marketing-diagnosis-traffic-conversion-aov-repurchase/">業績掉了先查哪一段（四段診斷）</a></li>
+          <li><a class="text-primary hover:underline" href="/blog/marketing-calculator/">行銷計算機：六個公式與換算</a></li>
+          <li><a class="text-primary hover:underline" href="/blog/ad-budget-new-vs-returning/">廣告預算怎麼分：新客與舊客</a></li>
+          <li><a class="text-primary hover:underline" href="/blog/ad-performance-reporting-stakeholders/">廣告成效報告怎麼寫</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
   <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
 </MarketingLayout>
-
-<style is:global>
-/* 專題型教學系列（SEO／行銷）共用樣式
-   設計語彙沿用站上的紙張底＋襯線標題，但每個系列有自己的主色與視覺母題。 */
-
-.sp {
-  --accent: #0f5d55;
-  --accent-dark: #0b453f;
-  --accent-soft: #e6efeb;
-  --sp-paper: #f7f6f1;
-}
-
-.sp-marketing {
-  --accent: #a8471f;
-  --accent-dark: #823417;
-  --accent-soft: #f7e9e0;
-}
-
-/* ── Hero ── */
-.sp-hero {
-  background: var(--sp-paper);
-  border-bottom: 1px solid var(--color-border, #dedbd2);
-  padding: 3.5rem 0 3rem;
-}
-
-.sp-hero-in {
-  display: grid;
-  gap: 2.5rem;
-  align-items: center;
-}
-
-@media (min-width: 900px) {
-  .sp-hero-in {
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 3.5rem;
-  }
-}
-
-.sp-eyebrow {
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  color: var(--accent);
-  text-transform: uppercase;
-}
-
-.sp-h1 {
-  margin: 1rem 0 0;
-  font-size: clamp(2.1rem, 4.6vw, 3.4rem);
-  line-height: 1.14;
-  letter-spacing: -0.04em;
-  font-weight: 800;
-  color: var(--color-text, #22231f);
-}
-
-.sp-h1 em {
-  font-family: Georgia, "Noto Serif TC", serif;
-  font-style: normal;
-  font-weight: 500;
-  color: var(--accent);
-}
-
-.sp-lead {
-  margin-top: 1.1rem;
-  max-width: 34rem;
-  font-size: 1.0625rem;
-  line-height: 1.85;
-  color: var(--color-text-muted, #74746d);
-}
-
-.sp-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.25rem;
-  margin-top: 1.5rem;
-  font-size: 0.8125rem;
-  color: var(--color-text-muted, #74746d);
-}
-
-.sp-meta span {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.sp-dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 9999px;
-  background: var(--accent);
-}
-
-.sp-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.75rem;
-}
-
-.sp-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.7rem 1.15rem;
-  border-radius: 3px;
-  background: var(--color-text, #22231f);
-  color: #fff;
-  font-size: 0.875rem;
-  font-weight: 700;
-  border: 1px solid var(--color-text, #22231f);
-  transition: 0.2s;
-}
-
-.sp-btn:hover {
-  background: var(--accent);
-  border-color: var(--accent);
-}
-
-.sp-btn-ghost {
-  background: transparent;
-  color: var(--color-text, #22231f);
-  border-color: var(--color-border, #dedbd2);
-}
-
-.sp-btn-ghost:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-  background: transparent;
-}
-
-/* ── Hero art ── */
-.sp-art {
-  position: relative;
-  min-height: 20rem;
-  display: grid;
-  place-items: center;
-}
-
-.sp-orbit {
-  position: relative;
-  width: 17rem;
-  height: 17rem;
-  border: 1px solid var(--color-border, #dedbd2);
-  border-radius: 9999px;
-  display: grid;
-  place-items: center;
-  background: #fffefa;
-}
-
-.sp-orbit::before,
-.sp-orbit::after {
-  content: "";
-  position: absolute;
-  border: 1px dashed var(--color-border, #dedbd2);
-  border-radius: 9999px;
-}
-
-.sp-orbit::before {
-  inset: 1.9rem;
-}
-
-.sp-orbit::after {
-  inset: 4rem;
-}
-
-.sp-core {
-  width: 7rem;
-  height: 7rem;
-  border-radius: 9999px;
-  background: var(--accent);
-  color: #fff;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  font-size: 0.8125rem;
-  font-weight: 800;
-  line-height: 1.45;
-  padding: 0.75rem;
-  z-index: 2;
-}
-
-.sp-node {
-  position: absolute;
-  background: #fff;
-  border: 1px solid var(--color-border, #dedbd2);
-  padding: 0.5rem 0.7rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--color-text, #22231f);
-  box-shadow: 0 4px 14px rgb(48 40 24 / 0.05);
-}
-
-.sp-n1 { top: 2%; left: 50%; transform: translateX(-50%); }
-.sp-n2 { top: 26%; right: -8%; }
-.sp-n3 { bottom: 26%; left: -10%; }
-.sp-n4 { bottom: 2%; left: 50%; transform: translateX(-50%); }
-
-.sp-tag {
-  position: absolute;
-  right: 0.25rem;
-  bottom: -1rem;
-  font-size: 0.6875rem;
-  color: var(--color-text-muted, #74746d);
-}
-
-/* ── 章節卡 ── */
-.sp-chapters {
-  background: var(--color-background, #fff);
-  padding: 3rem 0 4rem;
-}
-
-.sp-grid {
-  display: grid;
-  gap: 0.9rem;
-}
-
-@media (min-width: 760px) {
-  .sp-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.sp-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--color-border, #dedbd2);
-  background: var(--color-surface, #f7f6f1);
-  padding: 1.5rem;
-  transition: 0.2s;
-}
-
-.sp-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 26px rgb(34 35 31 / 0.06);
-}
-
-.sp-card-no {
-  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-}
-
-.sp-card h3 {
-  margin: 0.7rem 0 0.45rem;
-  font-size: 1.125rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.4;
-  color: var(--color-text, #22231f);
-}
-
-.sp-card p {
-  margin: 0;
-  font-size: 0.8125rem;
-  line-height: 1.75;
-  color: var(--color-text-muted, #74746d);
-}
-
-.sp-card-out {
-  margin-top: 0.85rem;
-  padding-top: 0.75rem;
-  border-top: 1px dashed var(--color-border, #dedbd2);
-  font-size: 0.75rem;
-  line-height: 1.7;
-  color: var(--color-text-muted, #74746d);
-}
-
-.sp-card-out b {
-  color: var(--accent);
-  font-weight: 800;
-}
-
-.sp-card-arrow {
-  margin-top: 1rem;
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  color: var(--accent);
-}
-
-/* ── 路徑帶 ── */
-.sp-path {
-  background: var(--sp-paper);
-  border-block: 1px solid var(--color-border, #dedbd2);
-  padding: 2.25rem 0;
-}
-
-.sp-path-grid {
-  display: grid;
-  gap: 1.5rem 0;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.sp-path-step {
-  position: relative;
-  border-top: 2px solid var(--accent);
-  padding: 1rem 1rem 0 0;
-}
-
-.sp-path-step::before {
-  content: "";
-  position: absolute;
-  top: -6px;
-  left: 0;
-  width: 9px;
-  height: 9px;
-  border-radius: 9999px;
-  background: var(--accent);
-}
-
-.sp-path-step b {
-  display: block;
-  font-size: 0.875rem;
-  color: var(--color-text, #22231f);
-}
-
-.sp-path-step span {
-  display: block;
-  margin-top: 0.35rem;
-  font-size: 0.75rem;
-  line-height: 1.65;
-  color: var(--color-text-muted, #74746d);
-}
-
-/* ── 適合誰 ── */
-.sp-band {
-  background: var(--color-background, #fff);
-  padding: 3rem 0;
-}
-
-.sp-two {
-  display: grid;
-  gap: 1px;
-  background: var(--color-border, #dedbd2);
-  border: 1px solid var(--color-border, #dedbd2);
-}
-
-@media (min-width: 760px) {
-  .sp-two {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.sp-two > div {
-  background: var(--sp-paper);
-  padding: 1.5rem;
-}
-
-.sp-two h2 {
-  margin: 0 0 0.75rem;
-  font-size: 0.9375rem;
-  font-weight: 800;
-  color: var(--color-text, #22231f);
-}
-
-.sp-two ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  font-size: 0.8125rem;
-  line-height: 1.85;
-  color: var(--color-text-muted, #74746d);
-}
-
-.sp-two li {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.sp-two li span:first-child {
-  color: var(--accent);
-  font-weight: 800;
-}
-
-/* ── 章節頁 ── */
-.sp-ch-hero {
-  background: var(--sp-paper);
-  border-bottom: 1px solid var(--color-border, #dedbd2);
-  padding: 2.75rem 0 2.25rem;
-}
-
-.sp-ch-hero h1 {
-  margin: 0.6rem 0 0;
-  font-size: clamp(1.9rem, 3.6vw, 2.75rem);
-  line-height: 1.22;
-  letter-spacing: -0.03em;
-  font-weight: 800;
-  color: var(--color-text, #22231f);
-}
-
-.sp-ch-lead {
-  margin-top: 0.9rem;
-  max-width: 42rem;
-  font-size: 1rem;
-  line-height: 1.85;
-  color: var(--color-text-muted, #74746d);
-}
-
-.sp-ch-body {
-  background: var(--color-background, #fff);
-  padding: 2.5rem 0 3.5rem;
-}
-
-.sp-ch-layout {
-  display: grid;
-  gap: 2rem;
-}
-
-@media (min-width: 980px) {
-  .sp-ch-layout {
-    grid-template-columns: 13rem minmax(0, 44rem);
-    gap: 3.5rem;
-    align-items: start;
-  }
-}
-
-.sp-toc {
-  font-size: 0.8125rem;
-}
-
-@media (min-width: 980px) {
-  .sp-toc {
-    position: sticky;
-    top: 6rem;
-    border-left: 1px solid var(--color-border, #dedbd2);
-    padding-left: 1.1rem;
-  }
-}
-
-.sp-toc b {
-  display: block;
-  font-size: 0.6875rem;
-  letter-spacing: 0.12em;
-  color: var(--color-text-muted, #74746d);
-  margin-bottom: 0.5rem;
-}
-
-.sp-toc a {
-  display: block;
-  padding: 0.3rem 0;
-  color: var(--color-text-muted, #74746d);
-  line-height: 1.5;
-}
-
-.sp-toc a:hover {
-  color: var(--accent);
-}
-
-.sp-outcome {
-  border: 1px solid var(--color-border, #dedbd2);
-  border-left: 3px solid var(--accent);
-  background: var(--sp-paper);
-  padding: 1.1rem 1.25rem;
-  margin-bottom: 2rem;
-}
-
-.sp-outcome b {
-  display: block;
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-  margin-bottom: 0.4rem;
-}
-
-.sp-outcome p {
-  margin: 0;
-  font-size: 0.875rem;
-  line-height: 1.8;
-  color: var(--color-text, #22231f);
-}
-
-.sp-section + .sp-section {
-  margin-top: 2.75rem;
-}
-
-.sp-section h2 {
-  font-size: 1.375rem;
-  font-weight: 800;
-  letter-spacing: -0.025em;
-  color: var(--color-text, #22231f);
-  margin: 0 0 0.85rem;
-}
-
-.sp-section p {
-  margin: 0 0 0.9rem;
-  font-size: 1rem;
-  line-height: 2;
-  color: var(--color-text-muted, #74746d);
-}
-
-.sp-list {
-  margin: 1.1rem 0 0;
-  padding: 1.1rem 1.25rem;
-  background: var(--sp-paper);
-  border: 1px solid var(--color-border, #dedbd2);
-  list-style: none;
-}
-
-.sp-list li {
-  display: flex;
-  gap: 0.6rem;
-  padding: 0.35rem 0;
-  font-size: 0.875rem;
-  line-height: 1.75;
-  color: var(--color-text, #22231f);
-}
-
-.sp-list li span:first-child {
-  color: var(--accent);
-  font-weight: 800;
-}
-
-.sp-links {
-  margin-top: 3rem;
-  border-top: 1px solid var(--color-border, #dedbd2);
-  padding-top: 1.5rem;
-}
-
-.sp-links h2 {
-  font-size: 0.9375rem;
-  font-weight: 800;
-  color: var(--color-text, #22231f);
-  margin: 0 0 0.85rem;
-}
-
-.sp-links a {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.75rem 0;
-  border-bottom: 1px dashed var(--color-border, #dedbd2);
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--accent);
-}
-
-.sp-links a:hover {
-  color: var(--accent-dark);
-}
-
-.sp-pager {
-  display: grid;
-  gap: 0.75rem;
-  margin-top: 2.5rem;
-}
-
-@media (min-width: 700px) {
-  .sp-pager {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.sp-pager a {
-  border: 1px solid var(--color-border, #dedbd2);
-  background: var(--color-surface, #f7f6f1);
-  padding: 1rem 1.15rem;
-  transition: 0.2s;
-}
-
-.sp-pager a:hover {
-  border-color: var(--accent);
-}
-
-.sp-pager small {
-  display: block;
-  font-size: 0.6875rem;
-  color: var(--color-text-muted, #74746d);
-  letter-spacing: 0.08em;
-}
-
-.sp-pager strong {
-  display: block;
-  margin-top: 0.3rem;
-  font-size: 0.875rem;
-  color: var(--color-text, #22231f);
-  line-height: 1.5;
-}
-
-.sp-pager .sp-next {
-  text-align: right;
-}
-
-/* ── 作者帶 ── */
-.sp-author {
-  border-top: 1px solid var(--color-border, #dedbd2);
-  padding: 2rem 0;
-  background: var(--sp-paper);
-}
-
-.sp-author-in {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.sp-author-in img {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 9999px;
-  object-fit: cover;
-}
-
-.sp-author-in b {
-  display: block;
-  font-size: 0.875rem;
-  color: var(--color-text, #22231f);
-}
-
-.sp-author-in span {
-  display: block;
-  margin-top: 0.2rem;
-  font-size: 0.75rem;
-  color: var(--color-text-muted, #74746d);
-}
-
-/* ── 章節進度條 ── */
-.sp-strip {
-  background: var(--color-background, #fff);
-  border-bottom: 1px solid var(--color-border, #dedbd2);
-}
-
-.sp-strip-in {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  overflow-x: auto;
-  padding: 0.6rem 0;
-  font-size: 0.75rem;
-}
-
-.sp-strip-title {
-  flex: 0 0 auto;
-  margin-right: 0.6rem;
-  font-weight: 800;
-  color: var(--accent);
-  letter-spacing: 0.04em;
-}
-
-.sp-strip-item {
-  flex: 0 0 auto;
-  display: grid;
-  place-items: center;
-  min-width: 2rem;
-  height: 2rem;
-  padding: 0 0.4rem;
-  border: 1px solid var(--color-border, #dedbd2);
-  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-  font-weight: 700;
-  color: var(--color-text-muted, #74746d);
-}
-
-.sp-strip-item:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-.sp-strip-item.is-current {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-}
-
-/* ── 30 秒摘要 ── */
-.sp-quick {
-  background: var(--color-background, #fff);
-  padding: 2.25rem 0 0;
-}
-
-.sp-quick-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border-top: 2px solid var(--color-text, #22231f);
-  border-bottom: 1px solid var(--color-border, #dedbd2);
-  margin: 0;
-}
-
-@media (min-width: 800px) {
-  .sp-quick-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.sp-quick-grid > div {
-  padding: 1rem 1.1rem 1.15rem 0;
-}
-
-@media (min-width: 800px) {
-  .sp-quick-grid > div + div {
-    border-left: 1px solid var(--color-border, #dedbd2);
-    padding-left: 1.1rem;
-  }
-}
-
-.sp-quick-grid dt {
-  font-size: 0.6875rem;
-  letter-spacing: 0.12em;
-  font-weight: 800;
-  color: var(--accent);
-  margin-bottom: 0.4rem;
-}
-
-.sp-quick-grid dd {
-  margin: 0;
-  font-size: 0.8125rem;
-  line-height: 1.7;
-  color: var(--color-text, #22231f);
-}
-
-</style>

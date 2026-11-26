@@ -1,44 +1,34 @@
-# 修 Cloudflare 建置失敗：`@/styles/series.css` 找不到
+# 教學頁還原：回到「好讀」的清單版
 
-## 原因（已確認，不是猜的）
+## 覆蓋檔案（4 個）
 
-```
-[vite]: Rollup failed to resolve import "@/styles/series.css"
-from "/opt/buildhome/repo/src/pages/seo/[chapter].astro"
-```
+- `src/pages/seo/index.astro`、`src/pages/seo/[chapter].astro`
+- `src/pages/marketing/index.astro`、`src/pages/marketing/[chapter].astro`
 
-查 GitHub 上的實際檔案：
+## 還原成什麼
 
-`https://raw.githubusercontent.com/billy4select/virex1/main/src/styles/series.css` → **404**
+就是先前那版：色帶頁首（`.page-band`）＋單欄章節清單＋每章一個「讀完這章，你會知道」框。
 
-也就是 `src/styles/series.css` **沒被推上 repo**（新資料夾 `src/styles/` 沒進 commit，本機有、GitHub 沒有），所以建置時 alias 解得到路徑、檔案卻不存在，Rollup 直接失敗。
-`src/components/series/*.astro` 有推上去（raw 抓得到），所以問題只卡在這一支 CSS。
+拿掉的東西：
+- 雙欄 hero 與軌道視覺（`sp-orbit`）
+- 30 秒摘要四格
+- 章節卡兩欄、編號大字
+- 閱讀路徑四步、適合／不適合對照帶、作者帶
+- 章節頁的 01–0N 進度條、sticky 目錄、上下章大卡
 
-## 這版怎麼修
+## 為什麼這樣更好學
 
-把 709 行的 CSS 直接以 `<style is:global>` **內嵌進四個頁面**，不再有任何外部 CSS 依賴：
+專題版把「內容」拆成很多視覺區塊，讀者要先看懂版型才看到內容。清單版視覺只有一件事：往下讀，第 01 章、第 02 章。掃讀成本低，也跟站上其他頁一致。
 
-- `src/pages/seo/index.astro`
-- `src/pages/seo/[chapter].astro`
-- `src/pages/marketing/index.astro`
-- `src/pages/marketing/[chapter].astro`
+## 依賴
 
-覆蓋這四個檔就好，**不需要** `src/styles/series.css`，也不用改 `tsconfig.json` 或 `astro.config.mjs`。
-（該檔留在本機無妨，已無人引用。）
+四頁只用 Tailwind 與 `MarketingLayout`，**不引用** `src/styles/series.css`、`SeriesHome.astro`、`SeriesChapter.astro`。
+那三個檔留著不影響建置，之後要再試別的方向可以直接用；不想留就刪掉。
 
 ## 驗證
 
-```bash
-npx astro build
+```
+npx astro build   # 通過
 ```
 
-本機：通過，`/seo/`、`/marketing/` 輸出含 `--sp-ink` 等變數，版面正常。
-
-## 下次推檔要注意
-
-新增「資料夾」時，`git add -A` 才不會漏（`git add src/pages/seo` 這種只加既有路徑的寫法會漏掉新目錄）。推完可以在 GitHub 上直接點開 `src/styles/` 確認。
-
-## 另外兩個建置警告（不影響這次）
-
-- `The base directory ".../src/content/docs/" does not exist`：`content.config.ts` 還掛著 `docs` collection，但資料夾已不存在，警告而已。
-- `Duplicate id "notebooklm-ocr-pdf-solution"`：repo 裡有兩個檔產生同一個 id（同 slug 的 `.md` 與 `.mdx`，或重複檔），後面的會蓋掉前面的。建議刪掉多餘那個，不然那篇文章的內容會不確定。
+`/seo/` 與 `/marketing/` 輸出無 `sp-*` 類別殘留，章節頁目錄與上下章為簡版樣式。
