@@ -156,6 +156,6 @@ AI 可以在這個過程中扮演極佳的**「發想助攻」**，但不能取�
 
 ## 延伸閱讀
 
-- [AI 專案複盤與知識庫：如何讓一次專案的經驗，變成下一次能直接用的知識？](https://blog.billy4select.com/blog/ai-project-review-knowledge-base/)
-- [AI 批量分析用戶評論，找到值得優化的方向](https://blog.billy4select.com/blog/ai-batch-review-analysis/)
-- [NotebookLM 的提問方式決定答案品質：五種問法比較](https://blog.billy4select.com/blog/notebooklm-question-types/)
+- [AI 專案複盤與知識庫：如何讓一次專案的經驗，變成下一次能直接用的知識？](https://www.billy4select.com/blog/ai-project-review-knowledge-base/)
+- [AI 批量分析用戶評論，找到值得優化的方向](https://www.billy4select.com/blog/ai-batch-review-analysis/)
+- [NotebookLM 的提問方式決定答案品質：五種問法比較](https://www.billy4select.com/blog/notebooklm-question-types/)

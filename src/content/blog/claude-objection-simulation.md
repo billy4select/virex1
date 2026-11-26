@@ -47,7 +47,7 @@ steps:
 
 Claude 不知道你的答案，它只看你給它的論點。它找到的疑慮，是你的論述本身產生的缺口，不是你預期的問題。
 
-→ [Claude vs ChatGPT：行銷人寫提案，哪個比較不會讓你改到崩潰](https://blog.billy4select.com/blog/claude-vs-chatgpt-proposal/)
+→ [Claude vs ChatGPT：行銷人寫提案，哪個比較不會讓你改到崩潰](https://www.billy4select.com/blog/claude-vs-chatgpt-proposal/)
 
 ---
 
@@ -65,7 +65,7 @@ Claude 不知道你的答案，它只看你給它的論點。它找到的疑慮�
 
 好的 prompt 長這樣： 「你現在是一個中型電商品牌的行銷總監，預算壓力大，老闆最近一直問 ROI。你剛剛聽完下面這份提案，請從你的角度列出你最可能有的三到五個疑慮，並說明每個疑慮背後的原因。」
 
-→ [寫廣告文案前先給 AI 讀受眾資料，輸出品質差了一個量級](https://blog.billy4select.com/blog/ai-copywriting-audience-data/)
+→ [寫廣告文案前先給 AI 讀受眾資料，輸出品質差了一個量級](https://www.billy4select.com/blog/ai-copywriting-audience-data/)
 
 ### 第三步：看它找到什麼，特別注意你沒想到的那幾條
 
@@ -81,7 +81,7 @@ Claude 給你的反對意見，你逐條看。你預期到的那些不重要，�
 
 這一步是在用 Claude 當你的第一個觀眾。它說「你的回應沒有直接回答問題」的時候，通常是真的。
 
-→ [AI 寫文案會犯的三種錯，ChatGPT 和 Claude 各有不同毛病](https://blog.billy4select.com/blog/ai-copywriting-mistakes/)
+→ [AI 寫文案會犯的三種錯，ChatGPT 和 Claude 各有不同毛病](https://www.billy4select.com/blog/ai-copywriting-mistakes/)
 
 ---
 

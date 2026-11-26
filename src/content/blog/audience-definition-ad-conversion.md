@@ -39,7 +39,7 @@ faq:
 
 很多團隊在點擊率其實還好的情況下，一直改素材，等於在用錯誤的解法處理不存在的問題。
 
-→ [寫廣告文案前先給 AI 讀受眾資料，輸出品質差了一個量級](https://blog.billy4select.com/blog/ai-copywriting-audience-data/)
+→ [寫廣告文案前先給 AI 讀受眾資料，輸出品質差了一個量級](https://www.billy4select.com/blog/ai-copywriting-audience-data/)
 
 ---
 
@@ -65,7 +65,7 @@ faq:
 
 人口特徵只是篩選工具，真正決定一個人會不會買你產品的，是他現在的處境和他在擔心什麼。受眾定義要描述的是一個「狀態」，不是一個「類型」。
 
-→ [AI 寫文案會犯的三種錯，ChatGPT 和 Claude 各有不同毛病](https://blog.billy4select.com/blog/ai-copywriting-mistakes/)
+→ [AI 寫文案會犯的三種錯，ChatGPT 和 Claude 各有不同毛病](https://www.billy4select.com/blog/ai-copywriting-mistakes/)
 
 ---
 

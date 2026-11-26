@@ -245,7 +245,7 @@ AI 批量分析評論，真正的價值不是「幫你讀完所有評論」，�
 
 ## 延伸閱讀
 
-- [NotebookLM 的提問方式決定答案品質：五種問法比較](https://blog.billy4select.com/blog/notebooklm-question-types/)
-- [主管用 AI 準備週會報告的正確姿態：不是叫它寫，是叫它整理你的邏輯](https://blog.billy4select.com/blog/ai-weekly-report-manager/)
+- [NotebookLM 的提問方式決定答案品質：五種問法比較](https://www.billy4select.com/blog/notebooklm-question-types/)
+- [主管用 AI 準備週會報告的正確姿態：不是叫它寫，是叫它整理你的邏輯](https://www.billy4select.com/blog/ai-weekly-report-manager/)
 
 **延伸起點：** 同樣是批量整理文字回饋，客訴可以用教學的 [客訴分類任務卡](/ai-work-team/workflows/tasks/complaint-triage/)，先做去識別化、分類與分級，再決定誰來處理。

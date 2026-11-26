@@ -50,7 +50,7 @@ steps:
 
 換一個用法：不是叫它寫，是叫它幫你整理你已經有的東西。
 
-→ [Claude vs ChatGPT：行銷人寫提案，哪個比較不會讓你改到崩潰](https://blog.billy4select.com/blog/claude-vs-chatgpt-proposal/)
+→ [Claude vs ChatGPT：行銷人寫提案，哪個比較不會讓你改到崩潰](https://www.billy4select.com/blog/claude-vs-chatgpt-proposal/)
 
 ---
 
@@ -70,7 +70,7 @@ steps:
 
 看它整理出來的。如果它找到的重點跟你想的一樣，你知道你的判斷是清楚的。如果它找到一個你沒想到的關聯，有時候反而會讓你看見一條你漏掉的邏輯線。如果它整理錯了，你知道你的描述哪裡不夠清楚，回去補。
 
-→ [NotebookLM 的提問方式決定答案品質：五種問法比較](https://blog.billy4select.com/blog/notebooklm-question-types/)
+→ [NotebookLM 的提問方式決定答案品質：五種問法比較](https://www.billy4select.com/blog/notebooklm-question-types/)
 
 ### 第三步：逐點加上你的立場
 
@@ -88,7 +88,7 @@ AI 給你結構之後，你逐點過一遍：這個我認同、這個要改、�
 
 這個時候它做的是排版，不是替你思考。格式是最不重要的那一層，放到最後做。
 
-→ [AI 寫文案會犯的三種錯，ChatGPT 和 Claude 各有不同毛病](https://blog.billy4select.com/blog/ai-copywriting-mistakes/)
+→ [AI 寫文案會犯的三種錯，ChatGPT 和 Claude 各有不同毛病](https://www.billy4select.com/blog/ai-copywriting-mistakes/)
 
 ---
 

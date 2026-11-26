@@ -58,7 +58,7 @@ Notion AI 的設計前提是：資料「本來就在那裡」。你在 Notion �
 
 Notion AI 做不到這件事。它讀的是你的 Notion 工作空間，不是你從外部帶進來的文件堆。
 
-→ [NotebookLM 讀內部文件 vs Claude 讀內部文件，差在哪](https://blog.billy4select.com/blog/notebooklm-vs-claude-internal-docs/)
+→ [NotebookLM 讀內部文件 vs Claude 讀內部文件，差在哪](https://www.billy4select.com/blog/notebooklm-vs-claude-internal-docs/)
 
 ---
 
@@ -90,7 +90,7 @@ Notion AI 雖然也能存放大量內容，但它的強項是「工作流整合�
 
 **都是外部雲端服務。** 公司機密文件、客戶個資、未公開的財務數字，丟進去之前需要確認公司政策。敏感內容建議先脫敏再使用。
 
-→ [把財報貼給 AI 真的沒問題嗎？處理敏感數據的五條安全底線](https://blog.billy4select.com/blog/ai-finance-data-security-5-bottom-lines/)
+→ [把財報貼給 AI 真的沒問題嗎？處理敏感數據的五條安全底線](https://www.billy4select.com/blog/ai-finance-data-security-5-bottom-lines/)
 
 **中文處理都需要注意。** NotebookLM 對中文語意密集的文件有時會漏掉重點，需要用更精確的提問方式補救。Notion AI 的中文處理相對穩定，但在大量中文資料的工作空間裡，跨頁面搜尋的準確度有時候會下降。
 

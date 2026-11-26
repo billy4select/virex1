@@ -69,7 +69,7 @@ NotebookLM 跟搜尋引擎不一樣。搜尋引擎你輸入關鍵字，它找相
 
 NotebookLM 在跨文件比較這件事上特別有用，因為它同時「讀著」所有你上傳的文件。你自己要做同樣的比較，需要來回翻很多次，它一個問題就能整合多份文件的內容。
 
-→ [NotebookLM 讀內部文件 vs Claude 讀內部文件，差在哪](https://blog.billy4select.com/blog/notebooklm-vs-claude-internal-docs/)
+→ [NotebookLM 讀內部文件 vs Claude 讀內部文件，差在哪](https://www.billy4select.com/blog/notebooklm-vs-claude-internal-docs/)
 
 ---
 
@@ -95,7 +95,7 @@ NotebookLM 在跨文件比較這件事上特別有用，因為它同時「讀著
 
 這種問法讓 NotebookLM 幫你做「壓力測試」。你不只是在問文件裡有什麼，你在問文件對特定受眾來說夠不夠用。
 
-→ [客戶簡報前，用 Claude 跑一遍「反對意見模擬」的實戰流程](https://blog.billy4select.com/blog/claude-objection-simulation/)
+→ [客戶簡報前，用 Claude 跑一遍「反對意見模擬」的實戰流程](https://www.billy4select.com/blog/claude-objection-simulation/)
 
 ---
 
@@ -109,7 +109,7 @@ NotebookLM 在跨文件比較這件事上特別有用，因為它同時「讀著
 
 這種問法的重點是「告訴它你的輸出目的」。同樣的資料，給高階主管看和給執行團隊看，重要的東西不一樣。你把輸出目的說清楚，它挑出來的重點才會跟你的需求對齊。
 
-→ [主管用 AI 準備週會報告的正確姿勢：不是叫它寫，是叫它整理你的邏輯](https://blog.billy4select.com/blog/ai-weekly-report-manager/)
+→ [主管用 AI 準備週會報告的正確姿勢：不是叫它寫，是叫它整理你的邏輯](https://www.billy4select.com/blog/ai-weekly-report-manager/)
 
 ---
 

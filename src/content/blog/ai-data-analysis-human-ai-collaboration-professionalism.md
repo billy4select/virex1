@@ -89,7 +89,7 @@ PM 的角色在組織裡很特殊。你不是數據分析師，沒人期待你�
 
 這樣的回應展現了兩件事：第一，你使用了工具（效率）；第二，你掌控了工具（專業）。
 
-→ [把財報貼給 AI 真的沒問題嗎？處理敏感數據的五條安全底線](https://blog.billy4select.com/blog/ai-finance-data-security-5-bottom-lines/)
+→ [把財報貼給 AI 真的沒問題嗎？處理敏感數據的五條安全底線](https://www.billy4select.com/blog/ai-finance-data-security-5-bottom-lines/)
 
 ---
 

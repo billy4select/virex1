@@ -96,7 +96,7 @@ NotebookLM 能做研究，不只是整理，關鍵在你怎麼問它。
 
 你問它「這個客戶現在的狀況跟三個月前比有什麼變化」，它能從不同時間點的文件裡整理出一條時間線。這種縱向的比較，是 NotebookLM 最有價值的能力之一，但它需要你持續餵資料才能發揮。
 
-→- [NotebookLM 的提問方式決定答案品質：五種問法比較](https://blog.billy4select.com/blog/notebooklm-question-types/)
+→- [NotebookLM 的提問方式決定答案品質：五種問法比較](https://www.billy4select.com/blog/notebooklm-question-types/)
 
 ---
 

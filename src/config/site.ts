@@ -15,7 +15,7 @@ export const description =
   '讓工作與生活，多一些值得探索的可能。分享值得使用的工具、值得學習的方法、值得閱讀的內容，以及對行銷、商業、AI、工作與個人成長的觀察。';
 
 /** 正式網址 */
-export const url = 'https://blog.billy4select.com';
+export const url = 'https://www.billy4select.com';
 
 /** 作者名稱 */
 export const author = '比利陳 Billy Chen';

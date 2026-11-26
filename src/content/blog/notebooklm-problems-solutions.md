@@ -65,8 +65,8 @@ draft: false
 | **Claude** | 長文理解、摘要穩定 | 學術論文、長篇報告 | 需自行切割長文 |
 | **Perplexity** | 即時搜尋、引用明確 | 驗證事實、時事查詢 | 非私有文件分析 |
 
-→ [NotebookLM 讀內部文件 vs Claude 讀內部文件，差在哪](https://blog.billy4select.com/blog/notebooklm-vs-claude-internal-docs/)
-→ [NotebookLM 建知識庫 vs Notion AI 建知識庫：場景不同，選法不同](https://blog.billy4select.com/blog/notebooklm-vs-notion-ai-knowledge-base/)
+→ [NotebookLM 讀內部文件 vs Claude 讀內部文件，差在哪](https://www.billy4select.com/blog/notebooklm-vs-claude-internal-docs/)
+→ [NotebookLM 建知識庫 vs Notion AI 建知識庫：場景不同，選法不同](https://www.billy4select.com/blog/notebooklm-vs-notion-ai-knowledge-base/)
 
 ---
 

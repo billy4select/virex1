@@ -63,7 +63,7 @@ NotebookLM 讀文件的方式跟人不一樣。人可以看圖、猜格式、根
 
 最常遇到這個問題的是掃描版 PDF。很多公司的舊合約、舊報告都是掃描進來的，看起來是 PDF，實際上是圖片。這種文件直接上傳，NotebookLM 幾乎什麼都讀不到。
 
-→ [NotebookLM 難用？解決 PDF 亂碼、幻覺與格式混亂的 7 個實戰方案](https://blog.billy4select.com/blog/notebooklm-problems-solutions/)
+→ [NotebookLM 難用？解決 PDF 亂碼、幻覺與格式混亂的 7 個實戰方案](https://www.billy4select.com/blog/notebooklm-problems-solutions/)
 
 ### 解法：用 OCR 工具進行轉換
 
@@ -79,7 +79,7 @@ NotebookLM 讀文件的方式跟人不一樣。人可以看圖、猜格式、根
 
 一個判斷標準：**如果一份文件超過三十頁，或者包含三個以上明顯不同的主題，就值得考慮拆分。**
 
-→ [NotebookLM 的提問方式決定答案品質：五種問法比較](https://blog.billy4select.com/blog/notebooklm-question-types/)
+→ [NotebookLM 的提問方式決定答案品質：五種問法比較](https://www.billy4select.com/blog/notebooklm-question-types/)
 
 ---
 
@@ -103,7 +103,7 @@ NotebookLM 在回答問題的時候，會告訴你答案的來源是哪份文件
 
 **解法：** 把重要的表格數據，在上傳之前先加一段文字說明，例如「以下表格顯示 2025 年各季度的銷售數字，Q3 比 Q2 成長了 15%」。這段文字說明會讓 NotebookLM 讀到的不只是數字，而是數字的意義。
 
-→ [寫廣告文案前先給 AI 讀受眾資料，輸出品質差了一個量級](https://blog.billy4select.com/blog/ai-copywriting-audience-data/)
+→ [寫廣告文案前先給 AI 讀受眾資料，輸出品質差了一個量級](https://www.billy4select.com/blog/ai-copywriting-audience-data/)
 
 ---
 

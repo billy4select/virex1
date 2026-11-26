@@ -71,7 +71,7 @@ NotebookLM 剛出來的時候，大多數人的反應是「就是一個可以問
 
 PDF 亂碼、AI 幻覺、格式混亂——這些問題有具體的解法，不需要放棄這個工具。
 
-→ [NotebookLM 難用？解決 PDF 亂碼、幻覺與格式混亂的 7 個實戰方案](https://blog.billy4select.com/blog/notebooklm-problems-solutions/)
+→ [NotebookLM 難用？解決 PDF 亂碼、幻覺與格式混亂的 7 個實戰方案](https://www.billy4select.com/blog/notebooklm-problems-solutions/)
 
 ---
 
@@ -127,13 +127,13 @@ NotebookLM 單獨用已經很有價值，但跟其他工具配合，能做的事
 
 兩個工具都能讀文件，但設計邏輯不同。NotebookLM 適合長期管理多份文件、反覆查詢；Claude 適合即時分析、改寫延伸。知道什麼場景該用誰，不需要來回試錯。
 
-→ [NotebookLM 讀內部文件 vs Claude 讀內部文件，差在哪](https://blog.billy4select.com/blog/notebooklm-vs-claude-internal-docs/)
+→ [NotebookLM 讀內部文件 vs Claude 讀內部文件，差在哪](https://www.billy4select.com/blog/notebooklm-vs-claude-internal-docs/)
 
 **NotebookLM vs Notion AI：知識庫的建法不同**
 
 外部帶進來的研究資料用 NotebookLM 管，工作流程產生的內部文件用 Notion AI 管——兩個工具解決的是不同問題，不是替代關係。
 
-→ [NotebookLM 建知識庫 vs Notion AI 建知識庫：場景不同，選法不同](https://blog.billy4select.com/blog/notebooklm-vs-notion-ai-knowledge-base/)
+→ [NotebookLM 建知識庫 vs Notion AI 建知識庫：場景不同，選法不同](https://www.billy4select.com/blog/notebooklm-vs-notion-ai-knowledge-base/)
 
 **NotebookLM + Gemini：資料雙向同步**
 
@@ -161,5 +161,5 @@ NotebookLM 擅長整理，Claude 擅長生成。從研究素材到最終輸出�
 
 **其他延伸閱讀：**
 
-* [免費仔的 AI 工具組合：不花錢也能跑完 80% 職場任務](https://blog.billy4select.com/blog/free-ai-tools-workflow/)
-* [把財報貼給 AI 真的沒問題嗎？處理敏感數據的五條安全底線](https://blog.billy4select.com/blog/ai-finance-data-security-5-bottom-lines/)
+* [免費仔的 AI 工具組合：不花錢也能跑完 80% 職場任務](https://www.billy4select.com/blog/free-ai-tools-workflow/)
+* [把財報貼給 AI 真的沒問題嗎？處理敏感數據的五條安全底線](https://www.billy4select.com/blog/ai-finance-data-security-5-bottom-lines/)

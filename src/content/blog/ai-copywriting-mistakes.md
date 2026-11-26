@@ -44,7 +44,7 @@ AI 寫文案預設會維持一個「專業友善」的語氣。讀起來沒問�
 
 它擅長把語氣調得很流暢，但「流暢」和「有力道」是兩件事。你叫它「寫得更直接一點」，它通常給你更短的句子，但立場還是模糊的。
 
-→ [Claude vs ChatGPT：行銷人寫提案，哪個比較不會讓你改到崩潰](https://blog.billy4select.com/blog/claude-vs-chatgpt-proposal/)
+→ [Claude vs ChatGPT：行銷人寫提案，哪個比較不會讓你改到崩潰](https://www.billy4select.com/blog/claude-vs-chatgpt-proposal/)
 
 ---
 
@@ -58,7 +58,7 @@ AI 寫文案預設會維持一個「專業友善」的語氣。讀起來沒問�
 
 Claude 對「完整論述」有執念。你叫它寫一段兩行的廣告文案，它給你三段加一個結論。你叫它精簡，它給你精簡版但結構還在。你需要明確告訴它「只要第一句」「不需要結論」「不可以有超過兩個段落」，它才會真的停下來。
 
-→ [NotebookLM 讀內部文件 vs Claude 讀內部文件，差在哪](https://blog.billy4select.com/blog/notebooklm-vs-claude-internal-docs/)
+→ [NotebookLM 讀內部文件 vs Claude 讀內部文件，差在哪](https://www.billy4select.com/blog/notebooklm-vs-claude-internal-docs/)
 
 ---
 

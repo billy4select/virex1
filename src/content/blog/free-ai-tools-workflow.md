@@ -44,7 +44,7 @@ Claude 免費版目前能用的是 Sonnet 教學，每五小時大約 15 到 40 
 
 **適合拿來做的事：** 起草報告、整理邏輯、分析上傳的文件、改寫文案。
 
-→ [Claude vs ChatGPT：行銷人寫提案，哪個比較比較不會讓你改到崩潰](https://blog.billy4select.com/blog/claude-vs-chatgpt-proposal/)
+→ [Claude vs ChatGPT：行銷人寫提案，哪個比較比較不會讓你改到崩潰](https://www.billy4select.com/blog/claude-vs-chatgpt-proposal/)
 
 ---
 
@@ -66,7 +66,7 @@ NotebookLM 免費版可以建最多 100 個筆記本，每個筆記本最多 50 
 
 **適合拿來做的事：** 管理大量參考資料、客戶訪談記錄、競品研究、多份文件跨查詢。
 
-→ [NotebookLM 難用？解決 PDF 亂碼、幻覺與格式混亂的 7 個實戰方案](https://blog.billy4select.com/blog/notebooklm-problems-solutions/)
+→ [NotebookLM 難用？解決 PDF 亂碼、幻覺與格式混亂的 7 個實戰方案](https://www.billy4select.com/blog/notebooklm-problems-solutions/)
 
 ---
 
@@ -100,7 +100,7 @@ NotebookLM 免費版可以建最多 100 個筆記本，每個筆記本最多 50 
 
 這四個工具都是外部雲端服務，公司機密文件、未公開的財務數字、客戶個資，丟進去之前需要先確認公司政策和工具的資料儲存設定。敏感文件建議先脫敏再使用。
 
-→ [把財報貼給 AI 真的沒問題嗎？處理敏感數據的五條安全底線](https://blog.billy4select.com/blog/ai-finance-data-security-5-bottom-lines/)
+→ [把財報貼給 AI 真的沒問題嗎？處理敏感數據的五條安全底線](https://www.billy4select.com/blog/ai-finance-data-security-5-bottom-lines/)
 
 ---
 

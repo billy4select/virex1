@@ -44,7 +44,7 @@ Claude 是一次對話。你把文件貼進對話框，它在這次對話裡能�
 
 這個差異決定了很多事。
 
-→ [NotebookLM 建知識庫 vs Notion AI 建知識庫：場景不同，選法不同](https://blog.billy4select.com/blog/notebooklm-vs-notion-ai-knowledge-base/)
+→ [NotebookLM 建知識庫 vs Notion AI 建知識庫：場景不同，選法不同](https://www.billy4select.com/blog/notebooklm-vs-notion-ai-knowledge-base/)
 
 ---
 
@@ -70,7 +70,7 @@ Claude 不只是讀文件，它能對文件的內容進行判斷、改寫、延�
 
 NotebookLM 的強項是查詢與整理，不是生成與改寫。叫它改寫文件，輸出品質明顯不如 Claude。
 
-→ [Claude vs ChatGPT：行銷人寫提案，哪個比較不會讓你改到崩潰](https://blog.billy4select.com/blog/claude-vs-chatgpt-proposal/)
+→ [Claude vs ChatGPT：行銷人寫提案，哪個比較不會讓你改到崩潰](https://www.billy4select.com/blog/claude-vs-chatgpt-proposal/)
 
 ### 場景三：你需要確認答案有沒有根據
 
@@ -90,11 +90,11 @@ Claude 的知識庫更廣，這既是優點也是風險。它在回答時可能�
 
 **文件格式影響理解品質。** 掃描版的 PDF、格式複雜的表格、中文排版密集的文件，兩個工具都可能讀不準。上傳前最好先確認文件是可以被文字選取的版本。
 
-→ [NotebookLM 難用？解決 PDF 亂碼、幻覺與格式混亂的 7 個實戰方案](https://blog.billy4select.com/blog/notebooklm-problems-solutions/)
+→ [NotebookLM 難用？解決 PDF 亂碼、幻覺與格式混亂的 7 個實戰方案](https://www.billy4select.com/blog/notebooklm-problems-solutions/)
 
 **敏感資料需要先評估。** 兩個工具都是外部雲端服務。公司機密文件、未公開的財務數字、客戶個資，在丟給任何 AI 之前，都需要確認公司政策和工具的資料儲存設定。
 
-→ [把財報貼給 AI 真的沒問題嗎？處理敏感數據的五條安全底線](https://blog.billy4select.com/blog/ai-finance-data-security-5-bottom-lines/)
+→ [把財報貼給 AI 真的沒問題嗎？處理敏感數據的五條安全底線](https://www.billy4select.com/blog/ai-finance-data-security-5-bottom-lines/)
 
 **中文文件的處理能力有差異。** NotebookLM 對中文學術或語意密集的文件有時會漏掉重點，需要用進階提問方式補救。Claude 在中文理解上相對穩定，但文件很長的時候，後半段的細節有時候會被稀釋。
 

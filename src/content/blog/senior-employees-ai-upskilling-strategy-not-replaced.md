@@ -32,7 +32,7 @@ draft: false
 
 AI 擅長大量生產，卻不擅長判斷「在特定情境下對不對」。資深員工的價值在於**產業直覺**與**生態理解**。建立一套屬於你的審核標準，判斷哪些輸出需要根據公司脈絡調整，這份標準是別人無法在短期內複製的資產。
 
-→ [從旁觀者到 AI 策展人：中階主管在 AI 時代的轉型三階段](https://blog.billy4select.com/blog/middle-manager-transition-to-ai-curator-3-stages/)
+→ [從旁觀者到 AI 策展人：中階主管在 AI 時代的轉型三階段](https://www.billy4select.com/blog/middle-manager-transition-to-ai-curator-3-stages/)
 
 ### 方向二：將「隱性知識」顯性化、流程化
 
@@ -54,7 +54,7 @@ AI 擅長大量生產，卻不擅長判斷「在特定情境下對不對」。�
 * 從生產者走向審核者。
 * 從執行標準的人，走向**定義標準的人**。
 
-→ [速度快了，但你站得住腳嗎？PM 使用 AI 做數據分析的生存指南](https://blog.billy4select.com/blog/ai-data-analysis-human-ai-collaboration-professionalism/)
+→ [速度快了，但你站得住腳嗎？PM 使用 AI 做數據分析的生存指南](https://www.billy4select.com/blog/ai-data-analysis-human-ai-collaboration-professionalism/)
 
 ---
 

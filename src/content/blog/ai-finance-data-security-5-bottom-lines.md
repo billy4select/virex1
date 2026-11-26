@@ -37,7 +37,7 @@ steps:
 
 未公開的財務數字涉及法律層面（如證券法規）、客戶合約的保密條款。一旦外洩，責任可能直接指向你。
 
-→ [速度快了，但你站得住腳嗎？PM 使用 AI 做數據分析的生存指南](https://blog.billy4select.com/blog/ai-data-analysis-human-ai-collaboration-professionalism/)
+→ [速度快了，但你站得住腳嗎？PM 使用 AI 做數據分析的生存指南](https://www.billy4select.com/blog/ai-data-analysis-human-ai-collaboration-professionalism/)
 
 ## 財務數據上 AI 前，要守哪五條底線？
 
@@ -78,6 +78,6 @@ steps:
 
 資安規範不會消除所有風險，但能幫助你在使用 AI 前確認資料能否外傳、應採取哪些保護措施，以及誰有權核准。
 
-→ [Claude vs ChatGPT：行銷人寫提案，哪個比較不會讓你改到崩潰](https://blog.billy4select.com/blog/claude-vs-chatgpt-proposal/)
+→ [Claude vs ChatGPT：行銷人寫提案，哪個比較不會讓你改到崩潰](https://www.billy4select.com/blog/claude-vs-chatgpt-proposal/)
 
 **延伸起點：** 教學的 [工作流程庫](/ai-work-team/workflows/) 把「對外送出、付款、簽約與涉及個資的動作永遠由人核准」寫成共通規則，每條流程都照這個邊界設計。

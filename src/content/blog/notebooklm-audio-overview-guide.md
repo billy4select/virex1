@@ -38,7 +38,7 @@ Audio Overview 把你上傳的文件轉成 AI 主持人之間的 Podcast 對話�
 * **Critique (評論模式)**：針對文件提供建設性評估，適合找漏洞或壓力測試。
 * **Debate (觀點辯論)**：從不同立場探索主題，適合具有爭議性的議題分析。
 
-→ [NotebookLM 難用？解決 PDF 亂碼、幻覺與格式混亂的 7 個實戰方案](https://blog.billy4select.com/blog/notebooklm-problems-solutions/)
+→ [NotebookLM 難用？解決 PDF 亂碼、幻覺與格式混亂的 7 個實戰方案](https://www.billy4select.com/blog/notebooklm-problems-solutions/)
 
 ---
 
@@ -58,7 +58,7 @@ Audio Overview 把你上傳的文件轉成 AI 主持人之間的 Podcast 對話�
 * 「請假設聽眾是完全的外行人，用最簡單的語言解釋。」
 * 「這份資料是給主管的，請強調結論與風險，細節省略。」
 
-→ [NotebookLM 的提問方式決定答案品質：五種問法比較](https://blog.billy4select.com/blog/notebooklm-question-types/)
+→ [NotebookLM 的提問方式決定答案品質：五種問法比較](https://www.billy4select.com/blog/notebooklm-question-types/)
 
 ---
 

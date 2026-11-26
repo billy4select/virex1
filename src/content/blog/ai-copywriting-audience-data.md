@@ -44,7 +44,7 @@ steps:
 
 AI 沒有這些。它能寫出結構完整、語氣流暢的文案，但它寫的是「給一般人看的廣告」，不是「給你的受眾看的廣告」。
 
-→ [AI 寫文案會犯的三種錯，ChatGPT 和 Claude 各有不同毛病](https://blog.billy4select.com/blog/ai-copywriting-mistakes/)
+→ [AI 寫文案會犯的三種錯，ChatGPT 和 Claude 各有不同毛病](https://www.billy4select.com/blog/ai-copywriting-mistakes/)
 
 把受眾資料給它讀，這個差距就會縮小。
 
@@ -70,7 +70,7 @@ AI 沒有這些。它能寫出結構完整、語氣流暢的文案，但它寫�
 
 把受眾資料貼進去之後，先請它用自己的話說：「這群人最在意什麼？他們對這個產品最常有哪些疑慮？」確認它理解了，再進行下一步。
 
-→ [NotebookLM 的提問方式決定答案品質：五種問法比較](https://blog.billy4select.com/blog/notebooklm-question-types/)
+→ [NotebookLM 的提問方式決定答案品質：五種問法比較](https://www.billy4select.com/blog/notebooklm-question-types/)
 
 ### 第二步：告訴它文案要放在哪裡
 
@@ -80,7 +80,7 @@ Instagram 限時動態、電子報開頭、產品頁主標題——這三個地�
 
 這點很多人沒注意到。你先給它受眾資料，然後在同一個對話裡叫它寫文案，它在寫的時候會把你前面給的資料當成背景。
 
-→ [Claude vs ChatGPT：行銷人寫提案，哪個比較不會讓你改到崩潰](https://blog.billy4select.com/blog/claude-vs-chatgpt-proposal/)
+→ [Claude vs ChatGPT：行銷人寫提案，哪個比較不會讓你改到崩潰](https://www.billy4select.com/blog/claude-vs-chatgpt-proposal/)
 
 ---
 

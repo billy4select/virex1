@@ -57,7 +57,7 @@ AI 處理的前提是有文字輸入。
 
 > **最佳實踐範例：** 「這是一份行銷策略會議逐字稿。請整理成：一、會議決策；二、各方負責行動項目與截止日期；三、待跟進問題。格式需讓主管在三分鐘內掌握全貌。」
 
-→ [NotebookLM 的提問方式決定答案品質：五種問法比較](https://blog.billy4select.com/blog/notebooklm-question-types/)
+→ [NotebookLM 的提問方式決定答案品質：五種問法比較](https://www.billy4select.com/blog/notebooklm-question-types/)
 
 ---
 
@@ -68,7 +68,7 @@ AI 處理的前提是有文字輸入。
 * 「從第一次會議到現在，預算討論發生過哪些變化？」
 * 「關於某功能的開發時程，各次會議中提到了哪些不同意見？」
 
-→ [上傳文件前要做的三件事，讓 NotebookLM 讀得更準](https://blog.billy4select.com/blog/notebooklm-upload-preparation/)
+→ [上傳文件前要做的三件事，讓 NotebookLM 讀得更準](https://www.billy4select.com/blog/notebooklm-upload-preparation/)
 
 ---
 
@@ -82,7 +82,7 @@ AI 處理的前提是有文字輸入。
 
 涉及機密數據時，請務必參考資安底線進行處理。
 
-→ [把財報貼給 AI 真的沒問題嗎？處理敏感數據的五條安全底線](https://blog.billy4select.com/blog/ai-finance-data-security-5-bottom-lines/)
+→ [把財報貼給 AI 真的沒問題嗎？處理敏感數據的五條安全底線](https://www.billy4select.com/blog/ai-finance-data-security-5-bottom-lines/)
 
 ### 2\. 職場考量
 

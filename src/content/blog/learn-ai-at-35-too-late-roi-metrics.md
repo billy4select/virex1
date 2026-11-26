@@ -28,7 +28,7 @@ AI 的學習效率，與應用場景的複雜度成正比。22 歲的學生懂�
 
 AI 的輸出常混合著正確與誤導。你在領域內的經驗，讓你知道什麼建議在真實情境中行得通。這種 **「過濾錯誤資訊」** 的能力，讓你能把 AI 當工具而非神諭。
 
-→ [主管用 AI 準備週會報告的正確姿勢：不是叫它寫，是叫它整理你的邏輯](https://blog.billy4select.com/blog/ai-weekly-report-manager/)
+→ [主管用 AI 準備週會報告的正確姿勢：不是叫它寫，是叫它整理你的邏輯](https://www.billy4select.com/blog/ai-weekly-report-manager/)
 
 ### 3\. 你知道「什麼問題值得被解決」
 
@@ -45,7 +45,7 @@ AI 的輸出常混合著正確與誤導。你在領域內的經驗，讓你知�
 * **練習時間的投入：** 每週能否撥出 3-5 小時解決「真實工作問題」？實踐比看影片更重要。
 * **成果的可見度：** 學習後能否在工作中展示出具體的效率提升？
 
-→ [別再浪費生命寫會議記錄！AI 整理術：從逐字稿到高價值決策摘要](https://blog.billy4select.com/blog/ai-meeting-notes-workflow-summary/)
+→ [別再浪費生命寫會議記錄！AI 整理術：從逐字稿到高價值決策摘要](https://www.billy4select.com/blog/ai-meeting-notes-workflow-summary/)
 
 ---
 
@@ -55,7 +55,7 @@ AI 的輸出常混合著正確與誤導。你在領域內的經驗，讓你知�
 
 最有效率的起點是：找一個你「這週」真實遇到的工作問題，試著用 ChatGPT 或 Claude 解決它一次。觀察它的輸出哪裡有用、哪裡沒用、哪裡需要你修改。這個過程會直接告訴你：**AI 在你真實工作場景裡的邊界在哪裡。**
 
-→ [客戶簡報前，用 Claude 跑一遍「反對意見模擬」實戰流程](https://blog.billy4select.com/blog/claude-objection-simulation/)
+→ [客戶簡報前，用 Claude 跑一遍「反對意見模擬」實戰流程](https://www.billy4select.com/blog/claude-objection-simulation/)
 
 ---
 

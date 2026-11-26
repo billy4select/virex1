@@ -35,7 +35,7 @@ draft: false
 
 **常見錯誤：嘗試一次失敗就停止** AI 的輸出品質與指令（Prompt）高度相關。給自己**三次嘗試**的機會，每次根據結果調整指令，你才能真正判斷這個工具的邊界。
 
-→ [主管用 AI 準備週會報告的正確姿勢：不是叫它寫，是叫它整理你的邏輯](https://blog.billy4select.com/blog/ai-weekly-report-manager/)
+→ [主管用 AI 準備週會報告的正確姿勢：不是叫它寫，是叫它整理你的邏輯](https://www.billy4select.com/blog/ai-weekly-report-manager/)
 
 ---
 
@@ -51,7 +51,7 @@ draft: false
 
 這套標準能讓團隊有共同的語言，避免過度依賴或完全抗拒 AI。
 
-→ [別再浪費生命寫會議記錄！AI 整理術：從逐字稿到高價值決策摘要](https://blog.billy4select.com/blog/ai-meeting-notes-workflow-summary/)
+→ [別再浪費生命寫會議記錄！AI 整理術：從逐字稿到高價值決策摘要](https://www.billy4select.com/blog/ai-meeting-notes-workflow-summary/)
 
 ---
 
@@ -70,6 +70,6 @@ draft: false
 
 這三個階段加起來需要三個月。雖然每週投入的時間不多（約 2-5 小時），但回報是巨大的。你將從一個可能被邊緣化的傳統主管，變成組織在 AI 轉型過程裡真正需要的**整合節點**。
 
-→ [35 歲學 AI 會太晚嗎？這不是追趕，而是發揮你累積十年的判斷力槓桿](https://blog.billy4select.com/blog/learn-ai-at-35-too-late-roi-metrics/)
+→ [35 歲學 AI 會太晚嗎？這不是追趕，而是發揮你累積十年的判斷力槓桿](https://www.billy4select.com/blog/learn-ai-at-35-too-late-roi-metrics/)
 
 想盤點離開現在的職位後還帶得走什麼，可以看[離開公司後你還剩什麼？中階主管的 5 項可攜帶資產](/blog/mid-career-portable-assets/)。

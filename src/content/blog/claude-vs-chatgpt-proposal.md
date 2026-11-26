@@ -41,7 +41,7 @@ ChatGPT 在短篇輸出上很流暢，但如果提案超過一定長度，前後
 
 如果你的提案需要「環環相扣的論述邏輯」，Claude 的輸出比較省你的校對時間。
 
-→ [主管用 AI 準備週會報告的正確姿勢：不是叫它寫，是叫它整理你的邏輯](https://blog.billy4select.com/blog/ai-weekly-report-manager/)
+→ [主管用 AI 準備週會報告的正確姿勢：不是叫它寫，是叫它整理你的邏輯](https://www.billy4select.com/blog/ai-weekly-report-manager/)
 
 ### 語感與文字風格
 
@@ -59,7 +59,7 @@ Claude 的文字比較「沉穩」，句子長一點、邏輯層次多一點。�
 
 Claude 通常會在輸出裡自動考慮中小企業的資源限制、決策者的疑慮，不用你特別說。ChatGPT 也能寫出來，但你可能需要把這些條件逐條說清楚，它才會帶進去。
 
-→ [Claude vs ChatGPT：行銷人寫提案，哪個比較比較不會讓你改到崩潰](https://blog.billy4select.com/blog/claude-vs-chatgpt-proposal/)
+→ [Claude vs ChatGPT：行銷人寫提案，哪個比較比較不會讓你改到崩潰](https://www.billy4select.com/blog/claude-vs-chatgpt-proposal/)
 
 ---
 
@@ -71,7 +71,7 @@ Claude 通常會在輸出裡自動考慮中小企業的資源限制、決策者�
 
 這裡 Claude 的優勢比較明顯。它能在長篇輸出裡維持一致的論述框架，你丟給它的背景資料也能被它比較完整地吸收進輸出裡。
 
-→ [NotebookLM 讀內部文件 vs Claude 讀內部文件，差在哪](https://blog.billy4select.com/blog/notebooklm-vs-claude-internal-docs/)
+→ [NotebookLM 讀內部文件 vs Claude 讀內部文件，差在哪](https://www.billy4select.com/blog/notebooklm-vs-claude-internal-docs/)
 
 ### 場景二：活動或促銷企劃提案
 
@@ -87,7 +87,7 @@ Claude 通常會在輸出裡自動考慮中小企業的資源限制、決策者�
 
 Claude 在這個場景有個特別有用的能力：你可以直接叫它「站在客戶的角度，列出他們看完這份提案最可能有的三個反對意見」。它給出的反對意見通常比較接近真實情境，不是那種表面上的問題。
 
-→ [客戶簡報前，用 Claude 跑一遍「反對意見模擬」的實戰流程](https://blog.billy4select.com/blog/claude-objection-simulation/)
+→ [客戶簡報前，用 Claude 跑一遍「反對意見模擬」的實戰流程](https://www.billy4select.com/blog/claude-objection-simulation/)
 
 ---
 
