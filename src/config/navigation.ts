@@ -29,6 +29,7 @@ export const navigation: Navigation = {
       { label: '《從零開始自媒體》', href: 'https://portaly.cc/billyselect4/product/ioeupgO66jK7vB24yJzY' },
       { label: '《寫給大家的行銷書》', href: 'https://portaly.cc/billyselect4/product/FlzuxW1QbZpC79Op2zhE' },
       { label: '《流量騙局》', href: 'https://portaly.cc/billyselect4/product/khu55lTbwebNRjRtUCQ3' },
+      { label: '《人人都做得到的知識變現》', href: 'https://portaly.cc/billyselect4/product/icSVZ0k6BHdItavIKf9X' },
     ],
     resources: [
       { label: '教學總覽', href: '/series/' },
