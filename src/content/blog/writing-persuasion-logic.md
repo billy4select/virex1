@@ -9,7 +9,7 @@ tags:
   - 說服力
   - 內容結構
   - 文案
-category: 商業與行銷
+category: 內容與 SEO
 featured: false
 boost: false
 draft: false

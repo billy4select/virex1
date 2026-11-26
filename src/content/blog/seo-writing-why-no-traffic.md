@@ -9,7 +9,7 @@ tags:
   - 內容寫作
   - 流量
   - 內容策略
-category: 商業與行銷
+category: 內容與 SEO
 featured: false
 boost: false
 draft: false

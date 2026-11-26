@@ -8,7 +8,7 @@ tags:
   - 廣告素材
   - 受眾設定
   - 廣告投放
-category: 商業與行銷
+category: 廣告與投放
 featured: false
 boost: false
 draft: false

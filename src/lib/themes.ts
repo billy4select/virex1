@@ -34,12 +34,39 @@ export const blogThemes: BlogTheme[] = [
     indexable: true,
   },
   {
-    slug: 'business-marketing',
-    name: '商業與行銷',
-    shortName: '商業與行銷',
-    readerQuestion: '如何理解市場、顧客與一門生意的運作？',
+    slug: 'business-model',
+    name: '商業模式與獲利',
+    shortName: '商業模式',
+    readerQuestion: '一門生意為什麼成立，又怎麼真的賺到錢？',
     description:
-      '從需求驗證、商業模式與定價，到受眾、定位、文案與行銷診斷，整理看懂市場與生意的方法。',
+      '需求驗證、商業模式畫布的限制、定價與獲利結構、公司策略分析與業績預估，看一門生意怎麼活下來。',
+    indexable: true,
+  },
+  {
+    slug: 'marketing-strategy',
+    name: '行銷策略與診斷',
+    shortName: '行銷策略',
+    readerQuestion: '行銷成效不好時，該先檢查哪一段？',
+    description:
+      '用流量、轉換、客單價、回購做診斷，再從受眾、定位、內容與通路，找出生意卡住的那一段。',
+    indexable: true,
+  },
+  {
+    slug: 'advertising',
+    name: '廣告與投放',
+    shortName: '廣告投放',
+    readerQuestion: '廣告花了錢沒效果，數字到底該怎麼看？',
+    description:
+      'CPC、CTR、ROAS 的公式與判讀，素材疲勞、成本上升、預算分配與成效報告，把投放變成可判斷的決策。',
+    indexable: true,
+  },
+  {
+    slug: 'seo-content',
+    name: '內容與 SEO',
+    shortName: 'SEO 內容',
+    readerQuestion: '怎麼寫，才能被搜到、被讀完、被記住？',
+    description:
+      '搜尋意圖、關鍵字、文章結構、內部連結與網站速度，加上文案與故事結構，讓內容累積成長期流量。',
     indexable: true,
   },
   {
@@ -48,7 +75,7 @@ export const blogThemes: BlogTheme[] = [
     shortName: '自媒體',
     readerQuestion: '怎麼從發出第一篇內容，走到有人願意付費？',
     description:
-      '自媒體起步、個人品牌、一人公司與知識變現，談內容怎麼累積成信任，再變成收入。',
+      '自媒體起步、Threads 經營、個人品牌、一人公司與知識變現，談內容怎麼累積成信任，再變成收入。',
     indexable: true,
   },
   {

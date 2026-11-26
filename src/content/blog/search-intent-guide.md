@@ -9,7 +9,7 @@ tags:
   - 搜尋意圖
   - 關鍵字
   - 內容策略
-category: 商業與行銷
+category: 內容與 SEO
 featured: false
 boost: false
 draft: false

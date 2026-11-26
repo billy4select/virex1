@@ -6,7 +6,7 @@ author: 比利陳 Billy Chen
 tags:
   - 品牌策略
   - 市場定位
-category: 商業與行銷
+category: 行銷策略與診斷
 featured: false
 boost: false
 draft: false

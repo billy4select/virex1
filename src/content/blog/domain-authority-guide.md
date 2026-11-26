@@ -9,7 +9,7 @@ tags:
   - 網站權重
   - 內容品質
   - 品牌
-category: 商業與行銷
+category: 內容與 SEO
 featured: false
 boost: false
 draft: false

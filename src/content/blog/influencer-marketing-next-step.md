@@ -9,7 +9,7 @@ tags:
   - 網紅合作
   - 轉換
   - 渠道策略
-category: 商業與行銷
+category: 廣告與投放
 featured: false
 boost: false
 draft: false

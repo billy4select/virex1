@@ -7,7 +7,7 @@ tags:
   - 市場驗證
   - 需求分析
   - 商業機會
-category: 商業與行銷
+category: 商業模式與獲利
 featured: false
 boost: false
 draft: false

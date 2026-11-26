@@ -8,7 +8,7 @@ tags:
   - AB 測試
   - 廣告素材
   - 投放優化
-category: 商業與行銷
+category: 廣告與投放
 featured: false
 boost: false
 draft: false

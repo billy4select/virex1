@@ -8,7 +8,7 @@ tags:
   - 分工
   - 組織設計
   - 行銷管理
-category: 商業與行銷
+category: 行銷策略與診斷
 featured: false
 boost: false
 draft: false

@@ -9,7 +9,7 @@ tags:
   - 入門
   - 行銷策略
   - 渠道
-category: 商業與行銷
+category: 行銷策略與診斷
 featured: false
 boost: false
 draft: false

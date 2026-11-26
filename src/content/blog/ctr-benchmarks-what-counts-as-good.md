@@ -9,7 +9,7 @@ tags:
   - ROAS
   - 廣告指標
   - 基準值
-category: 商業與行銷
+category: 廣告與投放
 featured: false
 boost: false
 draft: false

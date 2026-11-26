@@ -9,7 +9,7 @@ tags:
   - 診斷
   - 轉換率
   - 投放
-category: 商業與行銷
+category: 廣告與投放
 featured: false
 boost: false
 draft: false

@@ -8,7 +8,7 @@ tags:
   - 頻次
   - 素材輪替
   - 廣告投放
-category: 商業與行銷
+category: 廣告與投放
 featured: false
 boost: false
 draft: false

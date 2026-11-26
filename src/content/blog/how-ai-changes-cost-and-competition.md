@@ -7,7 +7,7 @@ tags:
   - AI轉型
   - 競爭策略
   - 成本結構
-category: 商業與行銷
+category: 商業模式與獲利
 featured: false
 boost: false
 draft: false

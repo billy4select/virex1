@@ -9,7 +9,7 @@ tags:
   - ROAS
   - CPC
   - 廣告計算
-category: 商業與行銷
+category: 廣告與投放
 featured: false
 boost: true
 draft: false

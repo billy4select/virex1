@@ -8,7 +8,7 @@ tags:
   - 內容優化
   - 標題
   - 內部連結
-category: 商業與行銷
+category: 內容與 SEO
 featured: false
 boost: false
 draft: false

@@ -6,7 +6,7 @@ publishedDate: 2026-04-14T15:42:08Z
 author: 比利陳 Billy Chen
 tags:
   - 行銷文案
-category: 商業與行銷
+category: 行銷策略與診斷
 featured: false
 boost: false
 draft: false

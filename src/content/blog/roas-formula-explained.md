@@ -8,7 +8,7 @@ tags:
   - 廣告投放
   - 廣告指標
   - 單位經濟
-category: 商業與行銷
+category: 廣告與投放
 featured: false
 boost: false
 draft: false

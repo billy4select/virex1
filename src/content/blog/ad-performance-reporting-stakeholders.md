@@ -8,7 +8,7 @@ tags:
   - 成效分析
   - 溝通
   - 行銷管理
-category: 商業與行銷
+category: 廣告與投放
 featured: false
 boost: false
 draft: false

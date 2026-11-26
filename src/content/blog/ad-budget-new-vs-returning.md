@@ -8,7 +8,7 @@ tags:
   - 新客獲取
   - 回購
   - 投放策略
-category: 商業與行銷
+category: 廣告與投放
 featured: false
 boost: false
 draft: false

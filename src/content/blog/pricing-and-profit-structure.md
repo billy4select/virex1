@@ -7,7 +7,7 @@ tags:
   - 定價策略
   - 獲利結構
   - 商業模式
-category: 商業與行銷
+category: 商業模式與獲利
 featured: false
 boost: false
 draft: false

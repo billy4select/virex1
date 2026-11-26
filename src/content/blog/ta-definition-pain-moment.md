@@ -9,7 +9,7 @@ tags:
   - TA
   - 定位
   - 內容策略
-category: 商業與行銷
+category: 行銷策略與診斷
 featured: false
 boost: false
 draft: false

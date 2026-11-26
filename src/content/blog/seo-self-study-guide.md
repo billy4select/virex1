@@ -9,7 +9,7 @@ tags:
   - 自學
   - 學習路徑
   - 內容行銷
-category: 商業與行銷
+category: 內容與 SEO
 featured: false
 boost: false
 draft: false

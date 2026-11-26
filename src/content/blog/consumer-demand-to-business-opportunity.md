@@ -7,7 +7,7 @@ tags:
   - 消費者需求
   - 商業機會
   - 市場驗證
-category: 商業與行銷
+category: 商業模式與獲利
 featured: false
 boost: false
 draft: false

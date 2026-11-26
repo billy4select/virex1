@@ -9,7 +9,7 @@ tags:
   - CPC
   - ROAS
   - ROI
-category: 商業與行銷
+category: 廣告與投放
 featured: false
 boost: false
 draft: false

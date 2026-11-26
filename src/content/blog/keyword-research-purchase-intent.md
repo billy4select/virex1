@@ -9,7 +9,7 @@ tags:
   - 關鍵字研究
   - 長尾關鍵字
   - 轉換
-category: 商業與行銷
+category: 內容與 SEO
 featured: false
 boost: false
 draft: false

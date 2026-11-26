@@ -8,7 +8,7 @@ tags:
   - 營收預測
   - 行銷指標
   - 商業分析
-category: 商業與行銷
+category: 商業模式與獲利
 featured: false
 boost: false
 draft: false
