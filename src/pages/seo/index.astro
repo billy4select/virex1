@@ -1,0 +1,107 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import { siteConfig } from '@/config';
+import { seoChapters, seoChapterUrl } from '@/lib/seo-series';
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'SEO 教學',
+  description:
+    '從搜尋機制、意圖、關鍵字、文章結構、內部連結、技術面到 30 天計畫，七章走完一輪可執行的 SEO。',
+  url: `${siteConfig.url}/seo/`,
+  inLanguage: 'zh-Hant-TW',
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: seoChapters.length,
+    itemListElement: seoChapters.map((chapter, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: chapter.title,
+      url: `${siteConfig.url}${seoChapterUrl(chapter.slug)}`,
+    })),
+  },
+};
+---
+
+<MarketingLayout
+  title={`SEO 教學 - ${siteConfig.name}`}
+  description="七章從零開始的 SEO 教學：搜尋機制、搜尋意圖、關鍵字、文章結構、內部連結、技術檢查與 30 天計畫。照順序讀完，能自己跑一輪。"
+>
+  <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '教學', href: '/series/' }, { label: 'SEO 教學', href: '/seo/' }]} />
+
+  <section class="page-band">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <p class="text-sm font-semibold tracking-[0.15em] text-primary">SEO 教學</p>
+      <h1 class="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-text md:text-4xl lg:text-5xl">
+        從被找到開始：七章學會 SEO
+      </h1>
+      <p class="mt-4 max-w-2xl text-base leading-relaxed text-text-muted md:text-lg">
+        不從工具開始，從「Google 怎麼處理一個頁面」開始。依序是機制、意圖、關鍵字、結構、內鏈、技術，最後給一份 30 天可執行的計畫。
+      </p>
+      <p class="mt-4 text-sm text-text-muted">7 章 · 每章 5–8 分鐘 · 附深入閱讀</p>
+    </div>
+  </section>
+
+  <section class="bg-background pb-16 pt-12 md:pb-24 md:pt-14">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <ol class="space-y-4">
+        {
+          seoChapters.map((chapter) => (
+            <li>
+              <a
+                href={seoChapterUrl(chapter.slug)}
+                class="group flex flex-col gap-4 rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-primary/40 md:flex-row md:items-start md:gap-6 md:p-7"
+              >
+                <span class="font-mono text-sm font-semibold tracking-wider text-primary md:w-10 md:shrink-0">
+                  {chapter.no}
+                </span>
+                <div class="min-w-0">
+                  <h2 class="text-lg font-extrabold leading-snug tracking-tight text-text group-hover:text-primary md:text-xl">
+                    {chapter.title}
+                  </h2>
+                  <p class="mt-2 text-sm leading-relaxed text-text-muted md:text-base">{chapter.lead}</p>
+                  <p class="mt-3 text-xs leading-relaxed text-text-muted">
+                    <span class="font-semibold text-text">讀完你會知道：</span>
+                    {chapter.outcome}
+                  </p>
+                </div>
+                <span class="shrink-0 text-sm font-semibold text-primary md:self-center">
+                  閱讀 →
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+
+      <div class="mt-12 rounded-2xl border border-border bg-surface p-6 md:p-8">
+        <h2 class="text-lg font-extrabold tracking-tight text-text md:text-xl">這套教學適合誰</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-relaxed text-text-muted md:text-base">
+          <li>有自己的網站或部落格，但文章沒有搜尋流量的人。</li>
+          <li>會用關鍵字工具，卻不知道為什麼寫了沒排名的人。</li>
+          <li>想把 SEO 當成長期資產，而不是一次性的投放。</li>
+        </ul>
+        <p class="mt-5 text-sm leading-relaxed text-text-muted">
+          不適合：想找「三個月冲上首頁」捷徑的人。這套流程的時程是 3–6 個月開始有穩定曝光。
+        </p>
+      </div>
+
+      <div class="mt-8 rounded-2xl border border-border bg-surface p-6 md:p-8">
+        <h2 class="text-lg font-extrabold tracking-tight text-text md:text-xl">想先讀單篇？</h2>
+        <p class="mt-3 text-sm leading-relaxed text-text-muted">
+          如果只是想解決一個具體問題，可以直接看文章：
+        </p>
+        <ul class="mt-4 grid gap-2 text-sm text-text">
+          <li><a class="text-primary hover:underline" href="/blog/seo-self-study-guide/">SEO 自學完整指南（四階段＋30 天計畫）</a></li>
+          <li><a class="text-primary hover:underline" href="/blog/on-page-seo-checklist/">SEO 文章優化檢查清單</a></li>
+          <li><a class="text-primary hover:underline" href="/blog/internal-linking-topic-clusters/">內部連結與主題集群</a></li>
+          <li><a class="text-primary hover:underline" href="/blog/website-speed-seo-checks/">網站速度五個檢查點</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
+</MarketingLayout>

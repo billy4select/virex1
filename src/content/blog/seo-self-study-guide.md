@@ -95,4 +95,4 @@ SEO 的知識不缺，缺的是順序。
 **三、忽略收錄**
 寫了二十篇，Index 只有五篇，其他都白做。每月檢查一次已索引數，是最便宜的健康檢查。
 
-想看意圖怎麼判斷，讀[搜尋意圖完整指南](/blog/search-intent-guide/)；想看關鍵字怎麼挖，讀[從購買前的煩惱找關鍵字](/blog/keyword-research-purchase-intent/)。
+想照順序讀完整套流程，可以從[SEO 教學：七章從零開始](/seo/)走一遍；想看意圖怎麼判斷，讀[搜尋意圖完整指南](/blog/search-intent-guide/)；想看關鍵字怎麼挖，讀[從購買前的煩惱找關鍵字](/blog/keyword-research-purchase-intent/)。

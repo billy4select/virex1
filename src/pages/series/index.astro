@@ -21,6 +21,16 @@ const series = [
   {
     no: '02',
     type: '教學',
+    label: '內容與 SEO',
+    title: 'SEO 從零開始',
+    audience: '有自己的網站，但文章沒有搜尋流量的人',
+    outcome: '一套從關鍵字到技術檢查的流程，含 30 天可執行計畫',
+    meta: '7 章 · 機制 → 意圖 → 結構 → 內鏈 → 技術 → 計畫',
+    href: '/seo/',
+  },
+  {
+    no: '03',
+    type: '教學',
     label: '內容與自媒體',
     title: 'Threads 起步心態指南',
     audience: '想開始寫，但卡在「不夠專業、沒人看、不知道寫什麼」的人',
@@ -29,7 +39,7 @@ const series = [
     href: '/threads/',
   },
   {
-    no: '03',
+    no: '04',
     type: '工具',
     label: 'AI 影片',
     title: 'Narrative Engine',
@@ -77,7 +87,7 @@ const breadcrumbSchema = {
 
 <MarketingLayout
   title={`教學 - ${siteConfig.name}`}
-  description="有順序的完整路線：AI 工作團隊、Threads 起步、AI 影片工具。每套教學都有自己的章節、任務與閱讀順序。"
+  description="有順序的完整路線：AI 工作團隊、SEO 從零開始、Threads 起步、AI 影片工具。每套教學都有自己的章節、任務與閱讀順序。"
   structuredData={[collectionSchema, breadcrumbSchema]}
 >
   <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '教學' }]} />

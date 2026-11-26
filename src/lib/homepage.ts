@@ -71,6 +71,18 @@ export const homeSeries: HomeSeries[] = [
     ],
   },
   {
+    name: 'SEO 從零開始',
+    theme: '內容與 SEO',
+    description:
+      '從搜尋機制、意圖、關鍵字、文章結構、內鏈到技術檢查，七章走完一輪可以自己執行的 SEO。',
+    href: '/seo/',
+    chapters: [
+      { label: '先搞懂搜尋怎麼運作', href: '/seo/how-seo-works/' },
+      { label: '判斷搜尋意圖', href: '/seo/search-intent/' },
+      { label: '把文章串成集群', href: '/seo/internal-links/' },
+    ],
+  },
+  {
     name: 'Threads 經營教學',
     theme: '自媒體與個人事業',
     description:

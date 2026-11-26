@@ -1,40 +1,37 @@
-# 文章分類拆細 v2：6 類 → 9 類
+# SEO 教學系列（/seo/）
 
-## 覆蓋檔案
+## 新增檔案
 
-- `src/lib/themes.ts`（分類定義，9 類）
-- `src/pages/blog/category/[category].astro`（舊 slug `business-marketing` 補 301 到新篩選）
-- `src/pages/topics/index.astro`（描述改寫）
-- `src/content/blog/*.md` 48 篇（只改 `category` 一行）
+- `src/lib/seo-series.ts`：七章內容資料（可改文字不用動頁面）
+- `src/pages/seo/index.astro`：教學首頁（七章目錄＋適合誰＋單篇入口）
+- `src/pages/seo/[chapter].astro`：章節頁（含 Article schema、上下章 pager）
 
-## 新分類與篇數
+## 修改檔案
 
-| 分類 | slug | 總篇 | 已上線 |
-|---|---|---|---|
-| AI 工作流程與工具 | `ai-workflow` | 15 | 15 |
-| NotebookLM 實戰 | `notebooklm` | 9 | 9 |
-| 商業模式與獲利 | `business-model` | 8 | 8 |
-| 行銷策略與診斷 | `marketing-strategy` | 12 | 12 |
-| 廣告與投放 | `advertising` | 15 | 15 |
-| 內容與 SEO | `seo-content` | 12 | 12 |
-| 自媒體與個人事業 | `self-media` | 10 | 10 |
-| 職涯與轉型 | `career` | 13 | 13 |
-| 書籍導讀 | `book-guides` | 9 | 3（6 篇 11/27–11/30 排程） |
+- `src/lib/homepage.ts`：`homeSeries` 加入「SEO 從零開始」（首頁深入學習卡）
+- `src/pages/series/index.astro`：教學總覽加入編號 02，原 Threads 改 03、工具改 04
+- `src/components/home/SeriesGrid.astro`：文案「兩個」→「三套」
+- `src/content/blog/seo-self-study-guide.md`：加一條導向 `/seo/` 的內鏈
 
-原本「商業與行銷」48 篇，拆成四類的邏輯：
+## 七章
 
-- **商業模式與獲利（8）**：需求驗證、畫布、定價、策略分析、業績預估
-- **行銷策略與診斷（12）**：四段診斷、受眾、定位、團隊、指標、IG 洞察
-- **廣告與投放（15）**：公式、基準值、素材診斷、疲勞、CAC、預算、報告、網紅
-- **內容與 SEO（12）**：搜尋意圖、關鍵字、on-page、內鏈、速度、文案與故事
+| # | 章節 | 重點 |
+|---|---|---|
+| 01 | 搜尋怎麼運作 | 爬取／索引／排序／呈現，各段你能控制什麼 |
+| 02 | 搜尋意圖 | 四型、兩個現場測試、一個常見誤判 |
+| 03 | 關鍵字 | 五種問句、長尾三段、一頁一種意圖 |
+| 04 | 文章結構 | 標題／首段／H2／圖片／描述／schema 六項檢查 |
+| 05 | 內部連結 | 三層集群、錨文字、3 出 1 進、孤島檢測 |
+| 06 | 技術面 | 收錄優先、canonical／301／sitemap／速度三門檻 |
+| 07 | 30 天計畫 | 四週任務、每週三個數字、不該期待的三件事 |
 
-`ai-batch-review-analysis` 從行銷移到「AI 工作流程與工具」（本質是 AI 分析流程）。
+每章末尾有「深入閱讀」2 篇，直接對應站上既有文章（12 篇 SEO 內容），章節頁與文章互為入口。
 
 ## 驗證
 
-- `/blog/` 篩選 chip 數 = 9（實測 dist）
-- `/blog/category/business-marketing/` 會 301 → `/blog/?theme=marketing-strategy`（舊連結不會 404）
-- 建置通過，sitemap 170→ 依新分類不變（分類頁不進 sitemap）
+- 建置通過；`/seo/` 與 7 個章節頁都在 `dist` 與 sitemap
+- `/series/` 顯示 4 張教學卡（AI 工作團隊、SEO 從零開始、Threads、Narrative Engine）
+- `/seo/` 目錄卡 7 張，pager 首尾正確（第一章回首頁、最後一章導 `/blog/?theme=seo-content`）
 
 ## 部署
 
