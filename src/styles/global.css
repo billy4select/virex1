@@ -388,3 +388,16 @@ select:focus-visible {
     border: 1px solid var(--color-border) !important;
     border-bottom: 1px solid var(--color-border) !important;
   }
+
+  /* ── 頁首帶（page-band）：免費資源那塊 surface 底，全站頁首共用 ── */
+  .page-band {
+    background-color: var(--color-surface);
+    padding-top: 2.5rem;
+    padding-bottom: 3rem;
+  }
+  @media (min-width: 768px) {
+    .page-band {
+      padding-top: 3.5rem;
+      padding-bottom: 4rem;
+    }
+  }

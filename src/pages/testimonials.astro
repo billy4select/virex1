@@ -1,7 +1,6 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
-import PageHeader from '@sections/content/PageHeader.astro';
 import TestimonialsGrid from '@sections/social-proof/TestimonialsGrid.astro';
 import CTA from '@sections/marketing/CTA.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
@@ -28,7 +27,13 @@ const otherTestimonials = sortedTestimonials.filter((t: TestimonialEntry) => !t.
 >
   <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '讀者回饋' }]} />
 
-  <PageHeader align="left" title="讀者回饋" />
+  <section class="page-band">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-extrabold leading-tight tracking-tight text-text md:text-4xl lg:text-5xl">
+        讀者回饋
+      </h1>
+    </div>
+  </section>
 
   <TestimonialsGrid
     featured={featuredTestimonials.map((t: TestimonialEntry) => ({
