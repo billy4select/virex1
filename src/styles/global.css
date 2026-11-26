@@ -371,10 +371,10 @@ select:focus-visible {
   /* 2) 高度固定 40px（原本 44，跟 Header 的 36px 按鈕差太多；40 是兩邊都合的中間值） */
   .blog-search-ui .pagefind-ui .pagefind-ui__search-input {
     height: 40px !important;
-    border: 1px solid transparent !important;
-    border-bottom: 1px solid transparent !important;
+    border: 1px solid var(--color-border) !important;
+    border-bottom: 1px solid var(--color-border) !important;
     border-radius: 9999px !important;
-    background-color: var(--color-surface) !important;
+    background-color: var(--color-background) !important;
   }
   .blog-search-ui .pagefind-ui .pagefind-ui__search-input:focus {
     border-color: #ff6a00 !important;
@@ -399,5 +399,6 @@ select:focus-visible {
     .page-band {
       padding-top: 3.5rem;
       padding-bottom: 4rem;
+      min-height: 19rem;
     }
   }
