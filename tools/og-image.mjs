@@ -11,6 +11,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import satori from 'satori';
 import sharp from 'sharp';
 
@@ -18,6 +19,7 @@ const ROOT = path.resolve('.');
 const BLOG_DIR = path.join(ROOT, 'src/content/blog');
 const OUT_DIR = path.join(ROOT, 'public/og');
 const FONT_DIR = path.join(ROOT, 'assets/fonts');
+const MANIFEST = path.join(ROOT, 'tools/og-manifest.json');
 
 const W = 1200;
 const H = 630;
@@ -234,6 +236,10 @@ async function main() {
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
 
+  /** 標題／摘要／分類／日期變過就重產，避免改了標題圖還留著舊字 */
+  const manifest = fs.existsSync(MANIFEST) ? JSON.parse(fs.readFileSync(MANIFEST, 'utf8')) : {};
+  const nextManifest = { ...manifest };
+
   const files = fs
     .readdirSync(BLOG_DIR)
     .filter((f) => /\.(md|mdx)$/.test(f))
@@ -245,14 +251,21 @@ async function main() {
   for (const file of files) {
     const slug = file.replace(/\.(md|mdx)$/, '');
     const out = path.join(OUT_DIR, `${slug}.png`);
-    if (!force && fs.existsSync(out)) {
-      skipped++;
-      continue;
-    }
 
     const raw = fs.readFileSync(path.join(BLOG_DIR, file), 'utf8');
     const fm = parseFrontmatter(raw);
     if (!fm.title) continue;
+
+    const hash = crypto
+      .createHash('sha1')
+      .update([fm.title, fm.description, fm.category, fm.publishedDate].join('|'))
+      .digest('hex')
+      .slice(0, 12);
+
+    if (!force && fs.existsSync(out) && manifest[slug] === hash) {
+      skipped++;
+      continue;
+    }
 
     const svg = await satori(
       template({
@@ -272,8 +285,11 @@ async function main() {
     );
 
     await sharp(Buffer.from(svg)).png({ compressionLevel: 9 }).toFile(out);
+    nextManifest[slug] = hash;
     made++;
   }
+
+  fs.writeFileSync(MANIFEST, `${JSON.stringify(nextManifest, null, 2)}\n`);
 
   console.log(`[og] 產生 ${made} 張，跳過 ${skipped} 張 → public/og/`);
 }
