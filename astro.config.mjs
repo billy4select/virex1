@@ -5,8 +5,22 @@ import icon from 'astro-icon';
 import tailwindcss from '@tailwindcss/vite';
 import { siteConfig } from './src/config';
 import cloudflare from "@astrojs/cloudflare";
+import { readFileSync } from 'node:fs';
 
 const siteUrl = 'https://blog.billy4select.com';
+
+/**
+ * public/ 底下的靜態專題頁不會被 @astrojs/sitemap 自動收錄，
+ * 由 tools/collect-static-urls.mjs 先產出 static-urls.json，這裡讀進來補進 sitemap。
+ * 檔案不存在時退回空陣列，不會擋住 build。
+ */
+const staticUrls = (() => {
+  try {
+    return JSON.parse(readFileSync(new URL('./static-urls.json', import.meta.url), 'utf8'));
+  } catch {
+    return [];
+  }
+})();
 
 export default defineConfig({
   site: siteUrl,
@@ -30,7 +44,8 @@ export default defineConfig({
     mdx(),
     icon(),
     sitemap({
-      customPages: ['https://blog.billy4select.com/threads/'],
+      // 靜態專題頁（ai-work-team / threads / narrative-engine 共 65 頁）
+      customPages: staticUrls,
       // 【關鍵修正 3】Sitemap 必須與網址行為一致，都要帶斜槓
       // 這樣搜尋引擎爬到的網址就是最終跳轉後的網址，解決 Canonical 報警
       serialize(item) {

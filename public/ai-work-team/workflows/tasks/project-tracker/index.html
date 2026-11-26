@@ -134,23 +134,42 @@
  ]
 }
 </script>
+  <link rel="stylesheet" href="/series-assets/series-shell.css">
+  <script src="/series-assets/series-shell.js" defer></script>
 </head>
 <body>
-<header class="site-header">
-  <div class="wrap header-inner">
-    <div class="brand-block">
-      <a class="brand" href="/ai-work-team/">打造 <span>AI 工作團隊</span></a>
-      <a class="back-home" href="https://blog.billy4select.com/">← 回主站首頁</a>
+<!--SR:HEAD START-->
+<header id="sr-head" class="sr-head site-head site-header">
+  <div class="sr-head-in">
+    <a class="sr-brand" href="/" aria-label="回到主站首頁">
+      <img src="/avatar.webp" alt="比利陳" width="34" height="34" loading="eager" decoding="async">
+      <span class="sr-brand-txt"><small>比利陳 · 專題</small><b>打造 AI 工作團隊</b></span>
+    </a>
+    <nav class="sr-main" aria-label="主站導覽"><a href="/topics/">主題</a><a href="/blog/">文章</a><a href="/series/" class="is-current">專題</a><a href="/resources/">免費資源</a><a href="/about/">關於我</a></nav>
+    <div class="sr-actions">
+      <a class="sr-cta" href="https://billy4select.substack.com/" target="_blank" rel="noopener">訂閱電子報</a>
+      <button class="sr-burger" type="button" data-sr-burger aria-expanded="false" aria-controls="sr-mobile" aria-label="開啟導覽">☰</button>
     </div>
-    <nav class="site-nav"><a href="/ai-work-team/curriculum/">開始探索</a><a href="/ai-work-team/workflows/">工作流程</a><a href="/ai-work-team/workflows/tasks/" class="active">任務庫</a><a href="/ai-work-team/resources/">實用資源</a></nav>
   </div>
+  <div class="sr-mobile" id="sr-mobile"><div class="sr-mobile-in"><a href="/topics/">主題</a><a href="/blog/">文章</a><a href="/series/">專題</a><a href="/resources/">免費資源</a><a href="/about/">關於我</a></div></div>
+  <nav class="sr-sub" aria-label="系列章節">
+    <div class="sr-sub-in"><a href="/ai-work-team/">專題首頁</a><a href="/ai-work-team/curriculum/">開始探索</a><a href="/ai-work-team/workflows/">工作流程</a><a href="/ai-work-team/workflows/tasks/" aria-current="page">任務庫</a><a href="/ai-work-team/resources/">實用資源</a><a href="/ai-work-team/cases/">案例</a><a href="/ai-work-team/about/">關於專題</a><span class="sr-sub-note">6 個主題 · 6 條流程 · 18 張任務卡</span></div>
+  </nav>
 </header>
+<nav id="sr-crumb" aria-label="麵包屑">
+  <div class="sr-crumb-in">
+    <a href="/">首頁</a><span class="sep">›</span>
+    <a href="/series/">專題</a><span class="sep">›</span>
+    <a href="/ai-work-team/">打造 AI 工作團隊</a>
+  </div>
+</nav>
+<!--SR:HEAD END-->
 <main>
 
 <section class="lesson-page" id="task-project-tracker">
   <div class="lesson-hero">
     <div class="wrap">
-      <div class="crumb"><a href="/ai-work-team/">首頁</a>　/　<a href="/ai-work-team/workflows/">工作流程</a>　/　<a href="/ai-work-team/workflows/tasks/">任務庫</a>　/　<span>專案進度追蹤</span></div>
+      
       <div class="lesson-label">任務卡 10 / 營運</div>
       <h1>AI 專案進度追蹤</h1>
       <p>把散落的任務、狀態與阻塞整理成一頁，先看出風險，再決定要不要改優先級。</p>
@@ -271,12 +290,46 @@
 </section>
 
 </main>
-<footer class="footer">
-  <div class="wrap footer-inner">
-    <span>© 打造 AI 工作團隊・引導式實戰指南</span>
-    <span><a href="/ai-work-team/">首頁</a>　·　<a href="/ai-work-team/curriculum/">開始探索</a>　·　<a href="/ai-work-team/workflows/">工作流程</a>　·　<a href="/ai-work-team/workflows/tasks/">任務庫</a>　·　<a href="/ai-work-team/resources/">實用資源</a>　·　<a href="/ai-work-team/cases/">案例</a>　·　<a href="/ai-work-team/about/">關於專題</a></span>
+<!--SR:FOOT START-->
+<footer id="sr-foot" class="sr-foot foot footer">
+  <div class="sr-foot-in">
+    <div class="sr-foot-brand">
+      <b>比利陳 Billy Chen</b>
+      <p>十年整合行銷與產品經驗，獨立出版三本書。這裡把 AI、商業與個人發展的觀察，整理成可以照著走的專題。</p>
+      <a class="sr-cta" href="https://billy4select.substack.com/" target="_blank" rel="noopener">訂閱電子報</a>
+    </div>
+    <div class="sr-foot-col">
+      <b>主站</b>
+      <a href="/topics/">主題</a>
+      <a href="/blog/">文章</a>
+      <a href="/series/">專題總覽</a>
+      <a href="/resources/">免費資源</a>
+      <a href="/about/">關於我</a>
+    </div>
+    <div class="sr-foot-col">
+      <b>專題</b>
+      <a href="/ai-work-team/">打造 AI 工作團隊</a>
+      <a href="/threads/">Threads 起步心態指南</a>
+      <a href="/narrative-engine/">AI 影片工具</a>
+    </div>
+    <div class="sr-foot-col">
+      <b>追蹤</b>
+      <a href="https://www.youtube.com/@billyselect4" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.instagram.com/billy4select" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.threads.net/@billy4select" target="_blank" rel="noopener">Threads</a>
+      <a href="/rss.xml">RSS</a>
+    </div>
+  </div>
+  <div class="sr-foot-bottom">
+    <span>© 2026 比利陳 · 打造 AI 工作團隊</span>
+    <nav>
+      <a href="/privacy/">隱私權政策</a>
+      <a href="/disclaimer/">免責聲明</a>
+      <a href="/contact/">聯絡我</a>
+    </nav>
   </div>
 </footer>
+<!--SR:FOOT END-->
 <script src="/ai-work-team/assets/app.js"></script>
 </body>
 </html>
