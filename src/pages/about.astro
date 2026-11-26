@@ -40,7 +40,7 @@ const sources = [
   },
 ];
 
-/** 獨立出版電子書（2025–2026），共四本。 */
+/** 獨立出版電子書（2025–2026），共五本。 */
 const books = [
   {
     title: '從零開始自媒體',
@@ -77,7 +77,7 @@ const books = [
 
 <MarketingLayout
   title={`關於我 - ${siteConfig.name}`}
-  description="比利陳，十多年行銷與產品經驗，獨立出版四本電子書。讓工作與生活多一些值得探索的可能，分享工具、方法、閱讀與對行銷、商業、AI、工作與個人成長的觀察。"
+  description="比利陳，十多年行銷與產品經驗，獨立出版五本電子書。讓工作與生活多一些值得探索的可能，分享工具、方法、閱讀與對行銷、商業、AI、工作與個人成長的觀察。"
 >
   <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '關於我' }]} />
 
@@ -108,7 +108,7 @@ const books = [
           </p>
 
           <p>
-            2025 到 2026 年，我獨立出版了四本電子書，也持續研究 AI 如何改變工作、內容與商業。
+            2025 到 2026 年，我獨立出版了五本電子書，也持續研究 AI 如何改變工作、內容與商業。
           </p>
         </div>
 
@@ -196,10 +196,10 @@ const books = [
         </h2>
 
         <p class="mt-4 max-w-3xl text-text-muted leading-relaxed">
-          2025 到 2026 年獨立出版的四本電子書：自媒體、行銷、知識變現，以及 AI 時代的工作方法與流量判讀。
+          2025 到 2026 年獨立出版的五本電子書：自媒體經營、行銷架構、知識變現、AI 時代的工作方法，以及流量判讀。
         </p>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           {books.map((book) => (
             <a
               href={book.href}
