@@ -49,7 +49,7 @@ import { Icon } from 'astro-icon/components';
   }
 
   function getThemePreference(): 'dark' | 'light' {
-    const stored = localStorage.getItem('theme-v2') || localStorage.getItem('theme');
+    const stored = localStorage.getItem('theme-v2');
     if (stored === 'dark' || stored === 'light') {
       return stored;
     }

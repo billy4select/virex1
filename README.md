@@ -1,27 +1,19 @@
-# 修「載入閃一下」
+# 修「載入先黑再白」
 
-## 根因
-深/淺色初始化被寫成兩套 key：
+## 原因（已對上你描述的現象）
+- `<head>` 初始化腳本讀的是舊 key `theme`，你瀏覽器裡剛好是 `dark` → 第一帧就是黑底。
+- `ThemeToggle.astro`（module）讀 `theme-v2`，找不到就當 `light`，載入時呼叫 `setTheme('light')` → 再變白。
 
-| 位置 | 讀的 key | 行為 |
-|---|---|---|
-| `<head>` 內嵌腳本（BaseLayout） | `theme` | 有 dark 就先加 `.dark`（避免白閃） |
-| `ThemeToggle.astro`（module，deferred） | `theme-v2` | 找不到就當 `light`，載入時呼叫 `setTheme('light')` |
-
-結果：head 套的顏色在 module 執行後被覆寫一次 → 每次載入都會「先白 → 再變深」。
-`theme-v2` 有值時更明顯（head 不認得，module 才補上 dark）。
+所以順序是「黑 → 白」，不是轉址造成。
 
 ## 改法
-1. `BaseLayout.astro`、`ErrorLayout.astro`：讀 `theme-v2`，沒有才退回舊 key `theme`。
-2. `ThemeToggle.astro`：讀同一個 key；載入時只同步太陽／月亮圖示，
-   不再呼叫 `setTheme()`（不重設 class、不覆寫 localStorage）。
+- `BaseLayout.astro`、`ErrorLayout.astro`：只認 `theme-v2`，忽略舊 key `theme`。
+- `ThemeToggle.astro`：同一個 key；載入時只同步圖示，不重設 class、不覆寫 localStorage。
 
-## 已驗證
-以 `theme-v2 = dark` 載入首頁，實測 `documentElement.className`：
-- 載入初期：`dark`
-- 1.2 秒後：`dark`
+## 實測（本機 build + 瀏覽器）
+| 情境 | 載入初期 | 0.9 秒後 |
+|---|---|---|
+| localStorage 只有舊 key `theme=dark` | 無 dark class（白） | 白 |
+| `theme-v2=dark`（使用者選過深色） | dark | dark |
 
-（修前是 `light` → `dark`，就是那一下閃。）
-
-## 提醒
-`theme` 是舊 key，若你之前在舊站用過深色，會被當成 fallback 讀到，第一次載入就會直接套深色，不會再閃。
+兩種都不再翻轉；你原本看到的是白，修完仍是白，只是不會先黑一下。
