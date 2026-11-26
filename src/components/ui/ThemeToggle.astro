@@ -49,7 +49,7 @@ import { Icon } from 'astro-icon/components';
   }
 
   function getThemePreference(): 'dark' | 'light' {
-    const stored = localStorage.getItem('theme-v2');
+    const stored = localStorage.getItem('theme-v2') || localStorage.getItem('theme');
     if (stored === 'dark' || stored === 'light') {
       return stored;
     }
@@ -63,9 +63,8 @@ import { Icon } from 'astro-icon/components';
     updateIcons(isDark);
   }
 
-  // Initialize theme on load
-  const initialTheme = getThemePreference();
-  setTheme(initialTheme);
+  // 載入時只同步圖示，不重設 class／不覆寫 localStorage（避免與 <head> 的初始設定打架造成閃爍）
+  updateIcons(document.documentElement.classList.contains('dark'));
 
   // Toggle theme on button click - attach to all toggle buttons
   themeToggles.forEach((toggle) => {
