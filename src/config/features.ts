@@ -13,8 +13,8 @@ export const features: FeatureFlags = {
   /** Enable blog section and /blog routes */
   blog: true,
 
-  /** Enable documentation section and /docs routes */
-  docs: true,
+  /** 已移除 /docs 路由（內容併入教學與文章）；保留旗標供舊設定相容 */
+  docs: false,
 
   /** Enable changelog section and /changelog route */
   changelog: true,

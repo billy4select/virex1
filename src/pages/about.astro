@@ -40,7 +40,7 @@ const sources = [
   },
 ];
 
-/** 獨立出版電子書（2025–2026）。 */
+/** 獨立出版電子書（2025–2026），共四本。 */
 const books = [
   {
     title: '從零開始自媒體',
@@ -60,12 +60,24 @@ const books = [
     description:
       '為素人設計的知識整理方法，把經驗與技能萃取、結構化，做成課程或電子書等小型知識產品。',
   },
+  {
+    title: 'AI時代職場生存法則',
+    href: 'https://portaly.cc/billyselect4/product/jLrib0ZgLmXWs2WOTiy8',
+    description:
+      '把 AI 放進日常工作的方法：任務拆解、工具選擇、協作流程與判斷邊界，讓效率提升而不是多一份焦慮。',
+  },
+  {
+    title: '流量騙局',
+    href: 'https://portaly.cc/billyselect4/product/khu55lTbwebNRjRtUCQ3',
+    description:
+      '拆解流量數字的錯覺：曝光、點擊與轉換之間差在哪，哪些指標值得追，哪些只是好看。',
+  },
 ];
 ---
 
 <MarketingLayout
   title={`關於我 - ${siteConfig.name}`}
-  description="比利陳，十多年行銷與產品經驗，獨立出版三本電子書。讓工作與生活多一些值得探索的可能，分享工具、方法、閱讀與對行銷、商業、AI、工作與個人成長的觀察。"
+  description="比利陳，十多年行銷與產品經驗，獨立出版四本電子書。讓工作與生活多一些值得探索的可能，分享工具、方法、閱讀與對行銷、商業、AI、工作與個人成長的觀察。"
 >
   <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '關於我' }]} />
 
@@ -96,7 +108,7 @@ const books = [
           </p>
 
           <p>
-            2025 到 2026 年，我獨立出版了三本電子書，也持續研究 AI 如何改變工作、內容與商業。
+            2025 到 2026 年，我獨立出版了四本電子書，也持續研究 AI 如何改變工作、內容與商業。
           </p>
         </div>
 
@@ -184,10 +196,10 @@ const books = [
         </h2>
 
         <p class="mt-4 max-w-3xl text-text-muted leading-relaxed">
-          2025 到 2026 年獨立出版的三本電子書，主題是自媒體、行銷與知識變現。
+          2025 到 2026 年獨立出版的四本電子書：自媒體、行銷、知識變現，以及 AI 時代的工作方法與流量判讀。
         </p>
 
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
           {books.map((book) => (
             <a
               href={book.href}
