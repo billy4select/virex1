@@ -1,15 +1,15 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
-import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import SeriesHome from '@/components/series/SeriesHome.astro';
+import '@/styles/series.css';
 import { siteConfig } from '@/config';
-import { seoChapters, seoChapterUrl } from '@/lib/seo-series';
+import { seoChapters } from '@/lib/seo-series';
 
 const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   name: 'SEO 教學',
-  description:
-    '從搜尋機制、意圖、關鍵字、文章結構、內部連結、技術面到 30 天計畫，七章走完一輪可執行的 SEO。',
+  description: '從搜尋機制、意圖、關鍵字、文章結構、內部連結、技術面到 30 天計畫，七章走完一輪可執行的 SEO。',
   url: `${siteConfig.url}/seo/`,
   inLanguage: 'zh-Hant-TW',
   mainEntity: {
@@ -19,7 +19,7 @@ const collectionSchema = {
       '@type': 'ListItem',
       position: index + 1,
       name: chapter.title,
-      url: `${siteConfig.url}${seoChapterUrl(chapter.slug)}`,
+      url: `${siteConfig.url}/seo/${chapter.slug}/`,
     })),
   },
 };
@@ -29,79 +29,65 @@ const collectionSchema = {
   title={`SEO 教學 - ${siteConfig.name}`}
   description="七章從零開始的 SEO 教學：搜尋機制、搜尋意圖、關鍵字、文章結構、內部連結、技術檢查與 30 天計畫。照順序讀完，能自己跑一輪。"
 >
-  <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '教學', href: '/series/' }, { label: 'SEO 教學', href: '/seo/' }]} />
-
-  <section class="page-band">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <p class="text-sm font-semibold tracking-[0.15em] text-primary">SEO 教學</p>
-      <h1 class="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-text md:text-4xl lg:text-5xl">
-        從被找到開始：七章學會 SEO
-      </h1>
-      <p class="mt-4 max-w-2xl text-base leading-relaxed text-text-muted md:text-lg">
-        不從工具開始，從「Google 怎麼處理一個頁面」開始。依序是機制、意圖、關鍵字、結構、內鏈、技術，最後給一份 30 天可執行的計畫。
-      </p>
-      <p class="mt-4 text-sm text-text-muted">7 章 · 每章 5–8 分鐘 · 附深入閱讀</p>
-    </div>
-  </section>
-
-  <section class="bg-background pb-16 pt-12 md:pb-24 md:pt-14">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-      <ol class="space-y-4">
-        {
-          seoChapters.map((chapter) => (
-            <li>
-              <a
-                href={seoChapterUrl(chapter.slug)}
-                class="group flex flex-col gap-4 rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-primary/40 md:flex-row md:items-start md:gap-6 md:p-7"
-              >
-                <span class="font-mono text-sm font-semibold tracking-wider text-primary md:w-10 md:shrink-0">
-                  {chapter.no}
-                </span>
-                <div class="min-w-0">
-                  <h2 class="text-lg font-extrabold leading-snug tracking-tight text-text group-hover:text-primary md:text-xl">
-                    {chapter.title}
-                  </h2>
-                  <p class="mt-2 text-sm leading-relaxed text-text-muted md:text-base">{chapter.lead}</p>
-                  <p class="mt-3 text-xs leading-relaxed text-text-muted">
-                    <span class="font-semibold text-text">讀完你會知道：</span>
-                    {chapter.outcome}
-                  </p>
-                </div>
-                <span class="shrink-0 text-sm font-semibold text-primary md:self-center">
-                  閱讀 →
-                </span>
-              </a>
-            </li>
-          ))
-        }
-      </ol>
-
-      <div class="mt-12 rounded-2xl border border-border bg-surface p-6 md:p-8">
-        <h2 class="text-lg font-extrabold tracking-tight text-text md:text-xl">這套教學適合誰</h2>
-        <ul class="mt-4 space-y-3 text-sm leading-relaxed text-text-muted md:text-base">
-          <li>有自己的網站或部落格，但文章沒有搜尋流量的人。</li>
-          <li>會用關鍵字工具，卻不知道為什麼寫了沒排名的人。</li>
-          <li>想把 SEO 當成長期資產，而不是一次性的投放。</li>
-        </ul>
-        <p class="mt-5 text-sm leading-relaxed text-text-muted">
-          不適合：想找「三個月冲上首頁」捷徑的人。這套流程的時程是 3–6 個月開始有穩定曝光。
-        </p>
-      </div>
-
-      <div class="mt-8 rounded-2xl border border-border bg-surface p-6 md:p-8">
-        <h2 class="text-lg font-extrabold tracking-tight text-text md:text-xl">想先讀單篇？</h2>
-        <p class="mt-3 text-sm leading-relaxed text-text-muted">
-          如果只是想解決一個具體問題，可以直接看文章：
-        </p>
-        <ul class="mt-4 grid gap-2 text-sm text-text">
-          <li><a class="text-primary hover:underline" href="/blog/seo-self-study-guide/">SEO 自學完整指南（四階段＋30 天計畫）</a></li>
-          <li><a class="text-primary hover:underline" href="/blog/on-page-seo-checklist/">SEO 文章優化檢查清單</a></li>
-          <li><a class="text-primary hover:underline" href="/blog/internal-linking-topic-clusters/">內部連結與主題集群</a></li>
-          <li><a class="text-primary hover:underline" href="/blog/website-speed-seo-checks/">網站速度五個檢查點</a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
+  <SeriesHome
+    variant="sp-seo"
+    crumbs={[
+      { label: '首頁', href: '/' },
+      { label: '教學', href: '/series/' },
+      { label: 'SEO 教學', href: '/seo/' },
+    ]}
+    eyebrow="SEO 教學 · 從被找到開始"
+    titleLead="先讓 Google 讀懂你，"
+    titleAccent="再談排名"
+    lead="不從工具開始，從「一個頁面怎麼被處理」開始。四道關卡、七個章節：機制、意圖、關鍵字、結構、內鏈、技術，最後是一份 30 天可執行的計畫。"
+    stats={['7 章 · 約 5,500 字', '每章 5–8 分鐘', '12 篇延伸文章']}
+    ctaHref="/seo/how-seo-works/"
+    ctaLabel="從第 01 章開始"
+    secondaryHref="/blog/?theme=seo-content"
+    secondaryLabel="先看 SEO 文章"
+    coreLabel="被找到"
+    artNodes={['爬取', '索引', '排序', '呈現']}
+    artNote="搜尋結果的第一屏，是這四步的結果"
+    chapters={seoChapters.map((chapter) => ({
+      slug: chapter.slug,
+      no: chapter.no,
+      title: chapter.title,
+      lead: chapter.lead,
+      outcome: chapter.outcome,
+    }))}
+    quick={[
+      { label: '排名不是第一步', value: '先確認收錄，再談排序與點擊。' },
+      { label: '一頁一種意圖', value: '資訊、比較、交易不要寫在同一頁。' },
+      { label: '內鏈你能控制', value: '3 出 1 進，權重才不會被平均掉。' },
+      { label: '時程 3–6 個月', value: '第一個月不會有主要關鍵字排名。' },
+    ]}
+    chapterBase="/seo/"
+    pathSteps={[
+      { title: '機制', desc: '爬取、索引、排序、呈現，先知道每段在修什麼。' },
+      { title: '意圖', desc: '搜這個詞的人現在想幹什麼，決定你寫哪種內容。' },
+      { title: '結構', desc: '標題、H2、內鏈、速度，把內容整理成機器讀得懂。' },
+      { title: '計畫', desc: '30 天四週任務，用曝光與索引率判斷方向。' },
+    ]}
+    audience={[
+      {
+        title: '這套適合你，如果',
+        items: [
+          '有自己的網站或部落格，但文章沒有搜尋流量。',
+          '會用關鍵字工具，卻不知道為什麼寫了沒排名。',
+          '想把 SEO 當長期資產，而不是一次性的投放。',
+        ],
+      },
+      {
+        title: '這套不適合，如果',
+        items: [
+          '想找「三個月衝上首頁」的捷徑。',
+          '期待買工具就有排名，不打算改內容結構。',
+          '網站連收錄都還沒解決，卻想先優化 CTR。',
+        ],
+      },
+    ]}
+    authorNote="十多年行銷與產品經驗，寫過三本電子書；這個站就是這套流程的實驗場。"
+  />
 
   <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
 </MarketingLayout>

@@ -11,7 +11,7 @@ import type { FeatureFlags } from '@/lib/types';
 const { features, navigation } = siteConfig;
 const { header: headerNav } = navigation;
 
-// 根據 Feature Flags 過濾導覽項目
+// 根據 Feature Flags 過濾導覽專案
 const mainNavItems = headerNav.main.filter(
   (item) => !item.feature || features[item.feature as keyof FeatureFlags]
 );

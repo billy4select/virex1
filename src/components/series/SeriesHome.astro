@@ -1,0 +1,188 @@
+---
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+
+interface Chapter {
+  slug: string;
+  no: string;
+  title: string;
+  lead: string;
+  outcome: string;
+}
+
+interface PathStep {
+  title: string;
+  desc: string;
+}
+
+interface AudienceBlock {
+  title: string;
+  items: string[];
+}
+
+interface Props {
+  /** 'sp-seo' 或 'sp-marketing'，決定主色 */
+  variant: string;
+  crumbs: { label: string; href: string }[];
+  eyebrow: string;
+  /** H1 片段：<em> 會用襯線字 */
+  titleLead: string;
+  titleAccent: string;
+  lead: string;
+  stats: string[];
+  ctaHref: string;
+  ctaLabel: string;
+  secondaryHref: string;
+  secondaryLabel: string;
+  coreLabel: string;
+  artNodes: string[];
+  artNote: string;
+  chapters: Chapter[];
+  chapterBase: string;
+  pathSteps: PathStep[];
+  audience: AudienceBlock[];
+  authorNote: string;
+  quick: { label: string; value: string }[];
+}
+
+const {
+  variant,
+  crumbs,
+  eyebrow,
+  titleLead,
+  titleAccent,
+  lead,
+  stats,
+  ctaHref,
+  ctaLabel,
+  secondaryHref,
+  secondaryLabel,
+  coreLabel,
+  artNodes,
+  artNote,
+  chapters,
+  chapterBase,
+  pathSteps,
+  audience,
+  authorNote,
+  quick,
+} = Astro.props;
+---
+
+<div class={`sp ${variant}`}>
+  <Breadcrumbs items={crumbs} />
+
+  <section class="sp-hero">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="sp-hero-in">
+        <div>
+          <p class="sp-eyebrow">{eyebrow}</p>
+          <h1 class="sp-h1">{titleLead}<em>{titleAccent}</em></h1>
+          <p class="sp-lead">{lead}</p>
+          <div class="sp-meta">
+            {stats.map((stat) => (
+              <span><i class="sp-dot" aria-hidden="true" />{stat}</span>
+            ))}
+          </div>
+          <div class="sp-actions">
+            <a class="sp-btn" href={ctaHref}>{ctaLabel} →</a>
+            <a class="sp-btn sp-btn-ghost" href={secondaryHref}>{secondaryLabel}</a>
+          </div>
+        </div>
+
+        <div class="sp-art" aria-hidden="true">
+          <div class="sp-orbit">
+            <div class="sp-core">{coreLabel}</div>
+            <span class="sp-node sp-n1">{artNodes[0]}</span>
+            <span class="sp-node sp-n2">{artNodes[1]}</span>
+            <span class="sp-node sp-n3">{artNodes[2]}</span>
+            <span class="sp-node sp-n4">{artNodes[3]}</span>
+          </div>
+          <span class="sp-tag">{artNote}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sp-quick" aria-label="三十秒摘要">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="sp-quick-grid">
+        {
+          quick.map((item) => (
+            <div>
+              <dt>{item.label}</dt>
+              <dd>{item.value}</dd>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="sp-chapters" aria-label="章節">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="sp-grid">
+        {
+          chapters.map((chapter) => (
+            <a class="sp-card" href={`${chapterBase}${chapter.slug}/`}>
+              <span class="sp-card-no">第 {chapter.no} 章</span>
+              <h3>{chapter.title}</h3>
+              <p>{chapter.lead}</p>
+              <div class="sp-card-out">
+                <b>讀完你會知道</b>
+                <br />
+                {chapter.outcome}
+              </div>
+              <span class="sp-card-arrow">閱讀這一章 →</span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="sp-path" aria-label="閱讀路徑">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="sp-path-grid">
+        {
+          pathSteps.map((step, index) => (
+            <div class="sp-path-step">
+              <b>{String(index + 1).padStart(2, '0')} · {step.title}</b>
+              <span>{step.desc}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="sp-band" aria-label="適合誰">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="sp-two">
+        {
+          audience.map((block) => (
+            <div>
+              <h2>{block.title}</h2>
+              <ul>
+                {block.items.map((item) => (
+                  <li><span>·</span><span>{item}</span></li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="sp-author">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="sp-author-in">
+        <img src="/avatar.webp" alt="比利陳" width="48" height="48" loading="lazy" />
+        <div>
+          <b>比利陳 Billy Chen</b>
+          <span>{authorNote}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

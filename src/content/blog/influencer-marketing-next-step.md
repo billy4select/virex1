@@ -8,7 +8,7 @@ tags:
   - 影響力行銷
   - 網紅合作
   - 轉換
-  - 渠道策略
+  - 管道策略
 category: 廣告與投放
 featured: false
 boost: false

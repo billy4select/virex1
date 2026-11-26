@@ -76,7 +76,7 @@ NotebookLM 免費版可以建最多 100 個筆記本，每個筆記本最多 50 
 
 此外，Gemini 免費版包含即時網路搜尋，回答時會帶上最新資訊。如果你需要快速查市場現況、近期新聞、最新數據，Gemini 比較省事。
 
-2026 年 4 月，Google 也把 Notebooks 功能開放給免費用戶，可以把 Gemini 對話直接存成 NotebookLM 來源，兩個工具之間不需要手動複製貼上。
+2026 年 4 月，Google 也把 Notebooks 功能開放給免費使用者，可以把 Gemini 對話直接存成 NotebookLM 來源，兩個工具之間不需要手動複製貼上。
 
 **適合拿來做的事：** Google 文件整合、快速查詢即時資訊、跟 NotebookLM 搭配使用。
 

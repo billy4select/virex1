@@ -1,0 +1,156 @@
+---
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+
+interface Section {
+  h2: string;
+  paras: string[];
+  list?: string[];
+}
+
+interface Link {
+  label: string;
+  href: string;
+}
+
+interface Chapter {
+  slug: string;
+  no: string;
+  short: string;
+  title: string;
+  lead: string;
+  outcome: string;
+  sections: Section[];
+  links: Link[];
+}
+
+interface Props {
+  variant: string;
+  crumbs: { label: string; href: string }[];
+  seriesLabel: string;
+  seriesHref: string;
+  chapter: Chapter;
+  chapterBase: string;
+  prev?: Chapter;
+  next?: Chapter;
+  backLabel: string;
+  endHref: string;
+  endLabel: string;
+  all: { no: string; short: string; slug: string }[];
+}
+
+const { variant, crumbs, seriesLabel, seriesHref, chapter, chapterBase, prev, next, backLabel, endHref, endLabel, all } =
+  Astro.props;
+---
+
+<div class={`sp ${variant}`}>
+  <Breadcrumbs items={crumbs} />
+
+  <section class="sp-ch-hero">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <p class="sp-eyebrow">第 {chapter.no} 章 · {chapter.short}</p>
+      <h1>{chapter.title}</h1>
+      <p class="sp-ch-lead">{chapter.lead}</p>
+    </div>
+  </section>
+
+  <nav class="sp-strip" aria-label="系列章節">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="sp-strip-in">
+        <a class="sp-strip-title" href={seriesHref}>{seriesLabel}</a>
+        {
+          all.map((item) => (
+            <a
+              href={`${chapterBase}${item.slug}/`}
+              class:list={['sp-strip-item', item.slug === chapter.slug && 'is-current']}
+              aria-current={item.slug === chapter.slug ? 'page' : undefined}
+            >
+              {item.no}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </nav>
+
+  <section class="sp-ch-body">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="sp-ch-layout">
+        <aside class="sp-toc" aria-label="本章目錄">
+          <b>本章目錄</b>
+          <a href={seriesHref}>{seriesLabel}（回目錄）</a>
+          {
+            chapter.sections.map((section, index) => (
+              <a href={`#s${index + 1}`}>{section.h2}</a>
+            ))
+          }
+        </aside>
+
+        <div>
+          <div class="sp-outcome">
+            <b>讀完這一章，你會知道</b>
+            <p>{chapter.outcome}</p>
+          </div>
+
+          <div>
+            {
+              chapter.sections.map((section, index) => (
+                <section class="sp-section" id={`s${index + 1}`}>
+                  <h2>{section.h2}</h2>
+                  {section.paras.map((para) => (
+                    <p>{para}</p>
+                  ))}
+                  {section.list && (
+                    <ul class="sp-list">
+                      {section.list.map((item) => (
+                        <li><span>·</span><span>{item}</span></li>
+                      ))}
+                    </ul>
+                  )}
+                </section>
+              ))
+            }
+          </div>
+
+          <div class="sp-links">
+            <h2>深入閱讀</h2>
+            {chapter.links.map((link) => (
+              <a href={link.href}>
+                <span>{link.label}</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            ))}
+          </div>
+
+          <nav class="sp-pager" aria-label="章節導覽">
+            {
+              prev ? (
+                <a href={`${chapterBase}${prev.slug}/`}>
+                  <small>← 上一章</small>
+                  <strong>{prev.no} {prev.short}</strong>
+                </a>
+              ) : (
+                <a href={seriesHref}>
+                  <small>← 回目錄</small>
+                  <strong>{backLabel}</strong>
+                </a>
+              )
+            }
+            {
+              next ? (
+                <a href={`${chapterBase}${next.slug}/`} class="sp-next">
+                  <small>下一章 →</small>
+                  <strong>{next.no} {next.short}</strong>
+                </a>
+              ) : (
+                <a href={endHref} class="sp-next">
+                  <small>繼續延伸 →</small>
+                  <strong>{endLabel}</strong>
+                </a>
+              )
+            }
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

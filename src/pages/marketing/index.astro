@@ -1,15 +1,15 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
-import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import SeriesHome from '@/components/series/SeriesHome.astro';
+import '@/styles/series.css';
 import { siteConfig } from '@/config';
-import { marketingChapters, marketingChapterUrl } from '@/lib/marketing-series';
+import { marketingChapters } from '@/lib/marketing-series';
 
 const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   name: '行銷教學',
-  description:
-    '從三個角、業績診斷、受眾、定位、內容渠道、廣告數字到決策與 90 天計畫，八章走完一輪可執行的行銷。',
+  description: '從三個角、業績診斷、受眾、定位、內容管道、廣告數字到決策與 90 天計畫，八章走完一輪可執行的行銷。',
   url: `${siteConfig.url}/marketing/`,
   inLanguage: 'zh-Hant-TW',
   mainEntity: {
@@ -19,7 +19,7 @@ const collectionSchema = {
       '@type': 'ListItem',
       position: index + 1,
       name: chapter.title,
-      url: `${siteConfig.url}${marketingChapterUrl(chapter.slug)}`,
+      url: `${siteConfig.url}/marketing/${chapter.slug}/`,
     })),
   },
 };
@@ -27,81 +27,67 @@ const collectionSchema = {
 
 <MarketingLayout
   title={`行銷教學 - ${siteConfig.name}`}
-  description="七章從零開始的 行銷教學：搜尋機制、搜尋意圖、關鍵字、文章結構、內部連結、技術檢查與 30 天計畫。照順序讀完，能自己跑一輪。"
+  description="八章從診斷開始的行銷教學：需求管道訊息、四段診斷、受眾、定位、內容與管道、廣告數字、決策與 90 天計畫。照順序讀完，能自己跑一輪。"
 >
-  <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '教學', href: '/series/' }, { label: '行銷教學', href: '/marketing/' }]} />
-
-  <section class="page-band">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <p class="text-sm font-semibold tracking-[0.15em] text-primary">行銷教學</p>
-      <h1 class="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-text md:text-4xl lg:text-5xl">
-        從哪一段壞了開始：八章學會行銷
-      </h1>
-      <p class="mt-4 max-w-2xl text-base leading-relaxed text-text-muted md:text-lg">
-        不從工具開始，從「業績是哪一段掉下來」開始。依序是三個角、診斷、受眾、定位、內容、廣告、決策，最後給一份 90 天可執行的計畫。
-      </p>
-      <p class="mt-4 text-sm text-text-muted">8 章 · 每章 5–8 分鐘 · 附深入閱讀</p>
-    </div>
-  </section>
-
-  <section class="bg-background pb-16 pt-12 md:pb-24 md:pt-14">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-      <ol class="space-y-4">
-        {
-          marketingChapters.map((chapter) => (
-            <li>
-              <a
-                href={marketingChapterUrl(chapter.slug)}
-                class="group flex flex-col gap-4 rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-primary/40 md:flex-row md:items-start md:gap-6 md:p-7"
-              >
-                <span class="font-mono text-sm font-semibold tracking-wider text-primary md:w-10 md:shrink-0">
-                  {chapter.no}
-                </span>
-                <div class="min-w-0">
-                  <h2 class="text-lg font-extrabold leading-snug tracking-tight text-text group-hover:text-primary md:text-xl">
-                    {chapter.title}
-                  </h2>
-                  <p class="mt-2 text-sm leading-relaxed text-text-muted md:text-base">{chapter.lead}</p>
-                  <p class="mt-3 text-xs leading-relaxed text-text-muted">
-                    <span class="font-semibold text-text">讀完你會知道：</span>
-                    {chapter.outcome}
-                  </p>
-                </div>
-                <span class="shrink-0 text-sm font-semibold text-primary md:self-center">
-                  閱讀 →
-                </span>
-              </a>
-            </li>
-          ))
-        }
-      </ol>
-
-      <div class="mt-12 rounded-2xl border border-border bg-surface p-6 md:p-8">
-        <h2 class="text-lg font-extrabold tracking-tight text-text md:text-xl">這套教學適合誰</h2>
-        <ul class="mt-4 space-y-3 text-sm leading-relaxed text-text-muted md:text-base">
-          <li>有產品或服務，但業績不穩定、不知道卡在哪一段的人。</li>
-          <li>會投廣告，但只看 ROAS、說不出下一步該改什麼的人。</li>
-          <li>想把行銷從「一直試」變成「一次驗證一件事」的人。</li>
-        </ul>
-        <p class="mt-5 text-sm leading-relaxed text-text-muted">
-          不適合：想找「一套模板套用所有品類」的人。行銷的答案會隨毛利、回購與客群改變。
-        </p>
-      </div>
-
-      <div class="mt-8 rounded-2xl border border-border bg-surface p-6 md:p-8">
-        <h2 class="text-lg font-extrabold tracking-tight text-text md:text-xl">想先讀單篇？</h2>
-        <p class="mt-3 text-sm leading-relaxed text-text-muted">
-          如果只是想解決一個具體問題，可以直接看文章：
-        </p>
-        <ul class="mt-4 grid gap-2 text-sm text-text">
-          <li><a class="text-primary hover:underline" href="/blog/marketing-diagnosis-traffic-conversion-aov-repurchase/">業績掉了先查哪一段（四段診斷）</a></li>
-          <li><a class="text-primary hover:underline" href="/blog/marketing-calculator/">行銷計算機：六個公式與換算</a></li>
-          <li><a class="text-primary hover:underline" href="/blog/ad-budget-new-vs-returning/">廣告預算怎麼分：新客與舊客</a></li>
-          <li><a class="text-primary hover:underline" href="/blog/ad-performance-reporting-stakeholders/">廣告成效報告怎麼寫</a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
+  <SeriesHome
+    variant="sp-marketing"
+    crumbs={[
+      { label: '首頁', href: '/' },
+      { label: '教學', href: '/series/' },
+      { label: '行銷教學', href: '/marketing/' },
+    ]}
+    eyebrow="行銷教學 · 從哪一段壞了開始"
+    titleLead="先找出哪一段掉下來，"
+    titleAccent="再決定花錢"
+    lead="工具不是起點，診斷才是。四段乘法定位問題，再處理受眾、定位、內容與廣告；八章之後，你會有一份 90 天可驗證的計畫，而不是一堆待辦清單。"
+    stats={['8 章 · 約 6,000 字', '每章 5–8 分鐘', '20 篇延伸文章']}
+    ctaHref="/marketing/three-corners/"
+    ctaLabel="從第 01 章開始"
+    secondaryHref="/blog/?theme=marketing-strategy"
+    secondaryLabel="先看行銷文章"
+    coreLabel="業績＝四段相乘"
+    artNodes={['流量', '轉換', '客單價', '回購']}
+    artNote="任何一段掉 20%，整體就掉 20%"
+    chapters={marketingChapters.map((chapter) => ({
+      slug: chapter.slug,
+      no: chapter.no,
+      title: chapter.title,
+      lead: chapter.lead,
+      outcome: chapter.outcome,
+    }))}
+    quick={[
+      { label: '先診斷再加預算', value: '通常是轉換先掉，不是流量不夠。' },
+      { label: '一次改一個變數', value: '同時改三件事，你不會知道哪件有用。' },
+      { label: 'ROAS 損益兩平', value: '等於 1 ÷ 毛利率，不是固定 3 倍。' },
+      { label: '樣本門檻', value: '50 次點擊或 10 筆轉換才有意義。' },
+    ]}
+    chapterBase="/marketing/"
+    pathSteps={[
+      { title: '診斷', desc: '先確認是流量、轉換、客單價還是回購出問題。' },
+      { title: '修一段', desc: '一次只改一個變數，其餘先不動。' },
+      { title: '驗證', desc: '50 次點擊或 10 筆轉換，才有統計意義。' },
+      { title: '放大', desc: '有效就把預算移過去，無效就換下一個假設。' },
+    ]}
+    audience={[
+      {
+        title: '這套適合你，如果',
+        items: [
+          '有產品或服務，但業績不穩定、不知道卡在哪一段。',
+          '會投廣告，卻只看 ROAS、說不出下一步該改什麼。',
+          '想把行銷從「一直試」變成「一次驗證一件事」。',
+        ],
+      },
+      {
+        title: '這套不適合，如果',
+        items: [
+          '想找一套模板套用所有品類。',
+          '還沒決定賣給誰，就想先優化轉換率。',
+          '期待加了預算就會改善，而不打算動產品或價格。',
+        ],
+      },
+    ]}
+    authorNote="十多年行銷與產品經驗；這套順序來自我自己做過的診斷與踩過的坑。"
+  />
 
   <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
 </MarketingLayout>
