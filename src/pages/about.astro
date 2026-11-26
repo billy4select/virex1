@@ -1,6 +1,7 @@
 
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import { topicAreas, topics as topicList } from '@/lib/topic-curation';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import CTA from '@sections/marketing/CTA.astro';
 import { siteConfig } from '@/config';
@@ -14,29 +15,12 @@ const experience = [
   '數位產品：App 相關專案',
 ];
 
-/** 專題（2026-11 改版） */
-const topics = [
-  {
-    name: 'AI 工作流程與工具',
-    href: '/topics/ai-workflow/',
-    description: '先拆任務、再選工具，把 AI 放進日常工作，而不是追每一個新工具。',
-  },
-  {
-    name: 'NotebookLM 實戰',
-    href: '/topics/notebooklm/',
-    description: '從上傳準備、提問方式到常見問題，用 NotebookLM 讀文件、做研究。',
-  },
-  {
-    name: '商業與行銷',
-    href: '/topics/business-marketing/',
-    description: '需求驗證、商業模式、受眾定位與行銷診斷，整理看懂市場與生意的方法。',
-  },
-  {
-    name: '職涯與個人事業',
-    href: '/topics/career-business/',
-    description: '能力盤點、職涯轉型、個人品牌與知識變現，談如何把經驗累積成可以帶走的資產。',
-  },
-];
+/** 領域（由 topic-curation.ts 產生，新增領域會自動出現） */
+const topics = topicAreas.map((area) => ({
+  name: area.name,
+  href: `/topics/${area.slug}/`,
+  description: area.summary,
+}));
 
 const sources = [
   {
@@ -167,7 +151,7 @@ const books = [
         </h2>
 
         <p class="mt-4 max-w-3xl text-text-muted leading-relaxed">
-          目前分成四個專題：AI 工作流程與工具、NotebookLM 實戰、商業與行銷、職涯與個人事業。每個專題都有推薦的閱讀起點。
+          目前整理了 {topicList.length} 個主題，分成 {topics.length} 個領域，每個主題都是一條照順序讀的路線。
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">

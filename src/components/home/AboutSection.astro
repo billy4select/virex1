@@ -1,12 +1,14 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { authorBio, name, social } from '@/config/site';
+import { topics } from '@/lib/topic-curation';
 
 interface Props {
   postCount: number;
 }
 
 const { postCount } = Astro.props;
+const topicCount = topics.length;
 
 ---
 
@@ -33,13 +35,13 @@ const { postCount } = Astro.props;
       </p>
       <p>
         這個網站持續分享值得使用的工具、值得學習的方法、值得閱讀的內容，以及對行銷、商業、AI、工作與個人成長的觀察。
-        從 AI 工作流程、NotebookLM、商業與行銷、職涯與個人事業，整理真正值得探索的知識。
+        把文章整理成一個個主題，挑一個你現在需要的，從一篇開始讀。
       </p>
     </div>
 
     <p class="mt-8 text-center text-sm leading-relaxed text-text-muted">
-      目前累積 <strong class="text-text">4</strong> 個專題、
-      <strong class="text-text">2</strong> 套課程系列、
+      目前累積 <strong class="text-text">{topicCount}</strong> 個主題、
+      <strong class="text-text">2</strong> 個專題、
       <strong class="text-text">{postCount}</strong> 篇文章。
     </p>
 

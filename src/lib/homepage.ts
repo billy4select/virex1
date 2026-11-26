@@ -5,13 +5,14 @@
  * 之後改主題卡、專題卡、問題入口，不需要動 index.astro。
  */
 
+import { topicAreas } from './topic-curation';
+
 export interface HomeTopic {
   slug: string;
   name: string;
   question: string;
   description: string;
   href: string;
-  category: string;
 }
 
 export interface HomeSeriesChapter {
@@ -47,40 +48,14 @@ export interface HomeExploreEntry {
   articleId: string;
 }
 
-export const homeTopics: HomeTopic[] = [
-  {
-    slug: 'ai-workflow',
-    name: 'AI 工作流程與工具',
-    question: '怎麼把 AI 放進日常工作，而不是只停在試用？',
-    description: '任務拆解、工具選擇、提案會議與知識沉澱。',
-    href: '/topics/ai-workflow/',
-    category: 'ai-workflow',
-  },
-  {
-    slug: 'notebooklm',
-    name: 'NotebookLM 實戰',
-    question: '怎麼用 NotebookLM 讀文件、做研究，又不踩坑？',
-    description: '入門、上傳準備、提問方式與常見問題。',
-    href: '/topics/notebooklm/',
-    category: 'notebooklm',
-  },
-  {
-    slug: 'business-marketing',
-    name: '商業與行銷',
-    question: '如何理解市場、顧客與一門生意的運作？',
-    description: '需求驗證、商業模式、受眾定位與行銷診斷。',
-    href: '/topics/business-marketing/',
-    category: 'business-marketing',
-  },
-  {
-    slug: 'career-business',
-    name: '職涯與個人事業',
-    question: '如何把能力與經驗，變成可以帶走的資產與收入？',
-    description: '能力盤點、職涯轉型、個人品牌與知識變現。',
-    href: '/topics/career-business/',
-    category: 'career-business',
-  },
-];
+/** 首頁的領域卡，直接由 topic-curation.ts 的 topicAreas 產生，不用維護第二份 */
+export const homeTopics: HomeTopic[] = topicAreas.map((area) => ({
+  slug: area.slug,
+  name: area.name,
+  question: area.question,
+  description: area.summary,
+  href: `/topics/${area.slug}/`,
+}));
 
 export const homeSeries: HomeSeries[] = [
   {

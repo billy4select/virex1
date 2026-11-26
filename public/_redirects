@@ -26,6 +26,10 @@
 /topics/personal-development /topics/career-business/ 301
 /topics/personal-development/ /topics/career-business/ 301
 
+# 主題改版：範例主題 slug
+/topics/self-media-brand /topics/career-business/start-self-media/ 301
+/topics/self-media-brand/ /topics/career-business/start-self-media/ 301
+
 # NotebookLM 簡報頁錯字網址：301 到正確頁
 /blog/otebooklm-slide-deck-review /blog/notebooklm-complete-guide-2026/ 301
 /blog/otebooklm-slide-deck-review/ /blog/notebooklm-complete-guide-2026/ 301

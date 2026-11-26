@@ -1,0 +1,221 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import { getCollection } from 'astro:content';
+import { siteConfig } from '@/config';
+import { postUrl } from '@/lib/blog';
+import { calculateReadingTime } from '@/lib/utils';
+import { homeSeries } from '@/lib/homepage';
+import {
+  topics,
+  articleOutcomes,
+  getArea,
+  getTopicsByArea,
+  topicUrl,
+} from '@/lib/topic-curation';
+
+interface Props {
+  topicSlug: string;
+}
+
+export async function getStaticPaths() {
+  const seen = new Set<string>();
+  return topics.map((topic) => {
+    if (seen.has(topic.slug)) throw new Error(`主題 slug 重複：${topic.slug}`);
+    seen.add(topic.slug);
+    return {
+      params: { topic: topic.area, slug: topic.slug },
+      props: { topicSlug: topic.slug },
+    };
+  });
+}
+
+const { topicSlug } = Astro.props;
+const topic = topics.find((item) => item.slug === topicSlug);
+if (!topic) throw new Error(`找不到主題：${topicSlug}`);
+
+const area = getArea(topic.area);
+if (!area) throw new Error(`主題 ${topic.slug} 的領域不存在：${topic.area}`);
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const postById = new Map(allPosts.map((post) => [post.id, post]));
+
+const articles = topic.articleIds.map((id) => {
+  const post = postById.get(id);
+  if (!post) throw new Error(`主題 ${topic.slug} 找不到文章：${id}`);
+  const outcome = articleOutcomes[id];
+  if (!outcome) throw new Error(`文章 ${id} 缺少 articleOutcomes 的一句話`);
+  return { post, outcome, minutes: calculateReadingTime(post.body || '') };
+});
+
+const totalMinutes = articles.reduce((sum, item) => sum + item.minutes, 0);
+const series = topic.series
+  ? homeSeries.find((item) => item.href === topic.series?.href)
+  : undefined;
+const siblings = getTopicsByArea(topic.area).filter((item) => item.slug !== topic.slug);
+
+const canonical = `${siteConfig.url}${topicUrl(topic)}`;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${canonical}#collection`,
+  name: topic.name,
+  description: topic.intro,
+  url: canonical,
+  inLanguage: 'zh-Hant-TW',
+  isPartOf: {
+    '@type': 'Blog',
+    '@id': `${siteConfig.url}/blog/#blog`,
+    name: `${siteConfig.name} 文章`,
+    url: `${siteConfig.url}/blog/`,
+  },
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    numberOfItems: articles.length,
+    itemListElement: articles.map(({ post }, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: post.data.title,
+      url: `${siteConfig.url}${postUrl(post.id)}`,
+    })),
+  },
+};
+---
+
+<MarketingLayout
+  title={`${topic.name} - ${siteConfig.name}`}
+  description={topic.intro}
+  structuredData={[schema]}
+>
+  <Breadcrumbs
+    items={[
+      { label: '首頁', href: '/' },
+      { label: '主題', href: '/topics/' },
+      { label: area.name, href: `/topics/${area.slug}/` },
+      { label: topic.name },
+    ]}
+  />
+
+  <section class="border-b border-border bg-surface pb-10 pt-8 md:pb-14 md:pt-12">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <p class="text-xs font-bold tracking-[0.15em] text-primary">{area.name}</p>
+      <h1 class="mt-2 text-2xl font-extrabold leading-snug tracking-tight text-text md:text-3xl lg:text-4xl">
+        {topic.name}
+      </h1>
+      <p class="mt-4 text-lg leading-relaxed text-text-muted md:text-xl">{topic.lead}</p>
+    </div>
+  </section>
+
+  {
+    series && (
+      <section class="bg-background pt-12 md:pt-16" aria-labelledby="topic-series-title">
+        <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div class="rounded-2xl border border-primary/30 bg-primary/5 p-6 md:p-8">
+            <p class="text-[11px] font-bold tracking-[0.15em] text-primary">完整專題</p>
+            <h2 id="topic-series-title" class="mt-2 text-xl font-bold tracking-tight text-text md:text-2xl">
+              {series.name}
+            </h2>
+            <p class="mt-2 text-sm leading-relaxed text-text-muted md:text-base">
+              {series.description}
+            </p>
+            <ol class="mt-5 space-y-2 text-sm text-text">
+              {series.chapters.map((chapter, chapterIndex) => (
+                <li>
+                  <a href={chapter.href} class="group inline-flex items-baseline gap-3 hover:text-primary">
+                    <span class="font-mono text-xs tabular-nums text-primary">
+                      {String(chapterIndex + 1).padStart(2, '0')}
+                    </span>
+                    <span class="font-semibold">{chapter.label}</span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+            <a
+              href={series.href}
+              class="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+            >
+              從頭開始學
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <section class="bg-background pt-10 md:pt-14" aria-labelledby="topic-articles-title">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+        <h2 id="topic-articles-title" class="text-xl font-bold tracking-tight text-text md:text-2xl">
+          照這個順序讀
+        </h2>
+        <p class="text-sm text-text-muted">共 {articles.length} 篇，約 {totalMinutes} 分鐘</p>
+      </div>
+
+      <ol class="mt-5 border-y border-border">
+        {
+          articles.map(({ post, outcome, minutes }, index) => (
+            <li class="border-b border-border last:border-b-0">
+              <a
+                href={postUrl(post.id)}
+                class="group grid grid-cols-[2rem_minmax(0,1fr)] gap-x-3 py-5 transition-colors hover:bg-surface/70 sm:grid-cols-[2.5rem_minmax(0,1fr)_auto] sm:gap-x-4"
+              >
+                <span class="pt-1 font-mono text-sm font-medium tabular-nums text-primary">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <div class="min-w-0">
+                  <h3 class="text-lg font-bold leading-snug text-text transition-colors group-hover:text-primary">
+                    {post.data.title}
+                  </h3>
+                  <p class="mt-1.5 text-sm leading-relaxed text-text-muted">
+                    <span class="font-semibold text-text">讀完你會知道：</span>
+                    {outcome}
+                  </p>
+                </div>
+                <span class="col-start-2 mt-2 text-xs text-text-muted sm:col-start-3 sm:mt-1 sm:whitespace-nowrap">
+                  {minutes} 分鐘
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="bg-background py-12 md:py-16">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      {
+        siblings.length > 0 && (
+          <div>
+            <h2 class="text-base font-bold text-text md:text-lg">{area.name}的其他主題</h2>
+            <ul class="mt-3 border-t border-border">
+              {siblings.map((item) => (
+                <li class="border-b border-border">
+                  <a
+                    href={topicUrl(item)}
+                    class="group flex items-baseline gap-3 py-3 transition-colors hover:bg-surface/70"
+                  >
+                    <span class="min-w-0 flex-1 text-[15px] font-semibold leading-snug text-text transition-colors group-hover:text-primary">
+                      {item.name}
+                    </span>
+                    <span class="whitespace-nowrap text-xs text-text-muted">
+                      {item.articleIds.length} 篇
+                    </span>
+                    <span aria-hidden="true" class="text-primary">→</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+      <p class="mt-8 text-sm text-text-muted">
+        <a href="/topics/" class="font-semibold text-primary hover:text-primary-dark">
+          ← 回到所有主題
+        </a>
+      </p>
+    </div>
+  </section>
+</MarketingLayout>

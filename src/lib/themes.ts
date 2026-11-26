@@ -10,7 +10,8 @@ export interface BlogTheme {
 }
 
 /**
- * 全站專題（2026-11 改版，數量由內容決定，不硬湊）。
+ * 文章分類：每篇文章的主要歸屬（麵包屑、標籤、文章庫篩選用）。
+ * 主題頁（/topics/）是另外編輯的文章集結，數量不設限，見 topic-curation.ts。。
  * 文章分類、/topics/ 與 /blog/ 的篩選都使用這份定義，避免名稱分叉。
  */
 export const blogThemes: BlogTheme[] = [
