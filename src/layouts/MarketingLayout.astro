@@ -102,6 +102,7 @@ if (schemaType === 'HowTo' && steps && steps.length > 0) {
     {structuredData.map((schema) => (
       <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     ))}
+    <slot name="head" />
   </Fragment>
 
   <div class="flex flex-col min-h-screen">

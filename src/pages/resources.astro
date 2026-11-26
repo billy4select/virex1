@@ -38,6 +38,12 @@ const libraries = [
   },
 ];
 
+// Google AdSense：只有本頁載入
+const ADSENSE_CLIENT = 'ca-pub-3229697751722054';
+// 填上「廣告單元」的 10 位數字（AdSense → 廣告 → 按廣告單元 → 取得程式碼裡的 data-ad-slot）
+// 留空則不顯示下方標示為「廣告」的版位（自動廣告仍會由 Google 自行插入）
+const ADSENSE_SLOT = '5433378708'; // billy4select_resources_2026
+
 const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
@@ -66,6 +72,15 @@ const collectionSchema = {
   description="免費的 Prompt、工作流程模板、任務卡與知識字典。進來之後，直接拿走一個有用的東西。"
   structuredData={[collectionSchema]}
 >
+  <Fragment slot="head">
+    <script
+      is:inline
+      async
+      src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+      crossorigin="anonymous"
+    />
+  </Fragment>
+
   <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '免費資源' }]} />
 
   <section class="bg-surface pb-12 pt-10 md:pb-16 md:pt-14">
@@ -83,6 +98,32 @@ const collectionSchema = {
       </div>
     </div>
   </section>
+
+  {
+    ADSENSE_SLOT && (
+      <section class="bg-surface py-8" aria-label="廣告版位">
+        <style is:inline>
+          .adsbygoogle[data-ad-status="unfilled"] { display: none !important; }
+          #ad-slot:has(.adsbygoogle[data-ad-status="unfilled"]) { display: none !important; }
+        </style>
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div id="ad-slot" class="rounded-2xl border border-border bg-background p-4">
+            <p class="text-[11px] font-bold uppercase tracking-[0.16em] text-text-muted">廣告</p>
+            <p class="mt-1 text-xs text-text-muted">以下內容由 Google AdSense 提供，非本站編輯內容。</p>
+            <ins
+              class="adsbygoogle mt-4 block"
+              style="display:block"
+              data-ad-client={ADSENSE_CLIENT}
+              data-ad-slot={ADSENSE_SLOT}
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            />
+            <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   <section class="bg-background py-16 md:py-20" aria-labelledby="library-title">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
