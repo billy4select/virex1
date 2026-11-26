@@ -1,0 +1,107 @@
+---
+import MarketingLayout from '@/layouts/MarketingLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import { siteConfig } from '@/config';
+import { marketingChapters, marketingChapterUrl } from '@/lib/marketing-series';
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: '行銷教學',
+  description:
+    '從三個角、業績診斷、受眾、定位、內容渠道、廣告數字到決策與 90 天計畫，八章走完一輪可執行的行銷。',
+  url: `${siteConfig.url}/marketing/`,
+  inLanguage: 'zh-Hant-TW',
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: marketingChapters.length,
+    itemListElement: marketingChapters.map((chapter, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: chapter.title,
+      url: `${siteConfig.url}${marketingChapterUrl(chapter.slug)}`,
+    })),
+  },
+};
+---
+
+<MarketingLayout
+  title={`行銷教學 - ${siteConfig.name}`}
+  description="七章從零開始的 行銷教學：搜尋機制、搜尋意圖、關鍵字、文章結構、內部連結、技術檢查與 30 天計畫。照順序讀完，能自己跑一輪。"
+>
+  <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '教學', href: '/series/' }, { label: '行銷教學', href: '/marketing/' }]} />
+
+  <section class="page-band">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <p class="text-sm font-semibold tracking-[0.15em] text-primary">行銷教學</p>
+      <h1 class="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-text md:text-4xl lg:text-5xl">
+        從哪一段壞了開始：八章學會行銷
+      </h1>
+      <p class="mt-4 max-w-2xl text-base leading-relaxed text-text-muted md:text-lg">
+        不從工具開始，從「業績是哪一段掉下來」開始。依序是三個角、診斷、受眾、定位、內容、廣告、決策，最後給一份 90 天可執行的計畫。
+      </p>
+      <p class="mt-4 text-sm text-text-muted">8 章 · 每章 5–8 分鐘 · 附深入閱讀</p>
+    </div>
+  </section>
+
+  <section class="bg-background pb-16 pt-12 md:pb-24 md:pt-14">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <ol class="space-y-4">
+        {
+          marketingChapters.map((chapter) => (
+            <li>
+              <a
+                href={marketingChapterUrl(chapter.slug)}
+                class="group flex flex-col gap-4 rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-primary/40 md:flex-row md:items-start md:gap-6 md:p-7"
+              >
+                <span class="font-mono text-sm font-semibold tracking-wider text-primary md:w-10 md:shrink-0">
+                  {chapter.no}
+                </span>
+                <div class="min-w-0">
+                  <h2 class="text-lg font-extrabold leading-snug tracking-tight text-text group-hover:text-primary md:text-xl">
+                    {chapter.title}
+                  </h2>
+                  <p class="mt-2 text-sm leading-relaxed text-text-muted md:text-base">{chapter.lead}</p>
+                  <p class="mt-3 text-xs leading-relaxed text-text-muted">
+                    <span class="font-semibold text-text">讀完你會知道：</span>
+                    {chapter.outcome}
+                  </p>
+                </div>
+                <span class="shrink-0 text-sm font-semibold text-primary md:self-center">
+                  閱讀 →
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+
+      <div class="mt-12 rounded-2xl border border-border bg-surface p-6 md:p-8">
+        <h2 class="text-lg font-extrabold tracking-tight text-text md:text-xl">這套教學適合誰</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-relaxed text-text-muted md:text-base">
+          <li>有產品或服務，但業績不穩定、不知道卡在哪一段的人。</li>
+          <li>會投廣告，但只看 ROAS、說不出下一步該改什麼的人。</li>
+          <li>想把行銷從「一直試」變成「一次驗證一件事」的人。</li>
+        </ul>
+        <p class="mt-5 text-sm leading-relaxed text-text-muted">
+          不適合：想找「一套模板套用所有品類」的人。行銷的答案會隨毛利、回購與客群改變。
+        </p>
+      </div>
+
+      <div class="mt-8 rounded-2xl border border-border bg-surface p-6 md:p-8">
+        <h2 class="text-lg font-extrabold tracking-tight text-text md:text-xl">想先讀單篇？</h2>
+        <p class="mt-3 text-sm leading-relaxed text-text-muted">
+          如果只是想解決一個具體問題，可以直接看文章：
+        </p>
+        <ul class="mt-4 grid gap-2 text-sm text-text">
+          <li><a class="text-primary hover:underline" href="/blog/marketing-diagnosis-traffic-conversion-aov-repurchase/">業績掉了先查哪一段（四段診斷）</a></li>
+          <li><a class="text-primary hover:underline" href="/blog/marketing-calculator/">行銷計算機：六個公式與換算</a></li>
+          <li><a class="text-primary hover:underline" href="/blog/ad-budget-new-vs-returning/">廣告預算怎麼分：新客與舊客</a></li>
+          <li><a class="text-primary hover:underline" href="/blog/ad-performance-reporting-stakeholders/">廣告成效報告怎麼寫</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
+</MarketingLayout>

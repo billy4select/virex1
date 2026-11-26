@@ -150,4 +150,6 @@ faq:
 - 廣告花很多、轉換卻低：[為什麼有些產品廣告燒很多、轉換率卻低](/blog/audience-definition-ad-conversion/)
 - 想讓成長靠信任而不是曝光：[從內容、通路到信任](/blog/content-channel-trust-growth/)
 
+如果你想照順序走完診斷、受眾、定位、廣告到 90 天計畫，可以從[行銷教學：八章從診斷開始](/marketing/)讀起。
+
 如果你想把這個四段架構擴充成完整的診斷方法，我在電子書[《寫給大家的行銷書》](https://portaly.cc/billyselect4/product/FlzuxW1QbZpC79Op2zhE)裡有更完整的整理。

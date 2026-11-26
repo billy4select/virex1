@@ -71,6 +71,18 @@ export const homeSeries: HomeSeries[] = [
     ],
   },
   {
+    name: '行銷從診斷開始',
+    theme: '行銷策略與診斷',
+    description:
+      '從需求、渠道、訊息三個角開始，學會用四段診斷找問題，再看廣告數字與 90 天計畫。',
+    href: '/marketing/',
+    chapters: [
+      { label: '先搞懂需求、渠道、訊息', href: '/marketing/three-corners/' },
+      { label: '業績掉了先查哪一段', href: '/marketing/diagnosis/' },
+      { label: '廣告數字怎麼看', href: '/marketing/ad-numbers/' },
+    ],
+  },
+  {
     name: 'SEO 從零開始',
     theme: '內容與 SEO',
     description:
