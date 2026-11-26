@@ -46,6 +46,7 @@
   gap: 8px;
   padding: 0 32px;
   font-size: 12px;
+  line-height: 16px; /* Tailwind text-xs 的預設行高，主站公告條高度 32px */
   font-weight: 500;
 }
 .sr-announce a {
@@ -61,8 +62,8 @@
   text-decoration: none;
 }
 .sr-announce a svg {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
 }
 .sr-announce-x {
   position: absolute;
@@ -106,6 +107,8 @@
   border-bottom: 1px solid var(--sr-line);
   color: var(--sr-ink);
   font-family: var(--sr-sans);
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .sr-head a,
@@ -152,14 +155,16 @@
 }
 .sr-brand-txt b {
   font-size: 20px;
+  line-height: 28px; /* 主站 text-xl 的 1.75rem 行高 */
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.025em;
   color: var(--sr-ink);
   white-space: nowrap;
 }
 .sr-brand-txt small {
-  margin-top: 5px;
+  margin-top: 4px;
   font-size: 12px;
+  line-height: 16px; /* 對齊主站 text-xs 的 1rem 行高 */
   font-weight: 500;
   color: var(--sr-muted);
   white-space: nowrap;
@@ -173,6 +178,7 @@
 }
 .sr-main a {
   padding: 4px 8px;
+  line-height: 20px;
   border-radius: var(--sr-radius);
   font-size: 14px;
   font-weight: 500;
@@ -186,7 +192,6 @@
 .sr-main a.is-current {
   color: var(--sr-ink);
   background: var(--sr-surface);
-  font-weight: 600;
 }
 
 /* 搜尋 / CTA */
@@ -199,9 +204,10 @@
 .sr-search {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   height: 36px;
   padding: 0 8px;
+  line-height: 20px;
   border-radius: var(--sr-radius);
   font-size: 14px;
   font-weight: 500;
@@ -228,7 +234,8 @@
   align-items: center;
   justify-content: center;
   height: 36px;
-  padding: 0 16px;
+  padding: 8px 16px;
+  line-height: 20px;
   border-radius: var(--sr-radius);
   background: var(--sr-primary);
   color: #fff !important;
