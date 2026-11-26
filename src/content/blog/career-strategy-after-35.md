@@ -7,7 +7,7 @@ tags:
   - 職涯策略
   - 中年轉職
   - 經驗價值
-category: 職涯與個人事業
+category: 職涯與轉型
 featured: false
 boost: false
 draft: false

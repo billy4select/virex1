@@ -8,7 +8,7 @@ tags:
   - 專家機密
   - 銷售漏斗
   - 知識變現
-category: 商業與行銷
+category: 書籍導讀
 featured: false
 boost: false
 draft: false

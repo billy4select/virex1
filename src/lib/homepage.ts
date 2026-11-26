@@ -2,7 +2,7 @@
  * 首頁編輯設定
  *
  * 首頁只組裝畫面，內容集中在這裡。
- * 之後改主題卡、專題卡、問題入口，不需要動 index.astro。
+ * 之後改主題卡、教學卡、問題入口，不需要動 index.astro。
  */
 
 import { topicAreas } from './topic-curation';
@@ -72,7 +72,7 @@ export const homeSeries: HomeSeries[] = [
   },
   {
     name: 'Threads 經營教學',
-    theme: '職涯與個人事業',
+    theme: '自媒體與個人事業',
     description:
       '從帳號定位、內容規劃到互動與經營，建立一套做得到的內容節奏。',
     href: '/threads/',

@@ -8,7 +8,7 @@ tags:
   - 與成功有約
   - 時間管理
   - 個人成長
-category: 職涯與個人事業
+category: 書籍導讀
 featured: false
 boost: false
 draft: false

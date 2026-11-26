@@ -8,7 +8,7 @@ tags:
   - 故事行銷
   - 文案寫作
   - 品牌定位
-category: 商業與行銷
+category: 書籍導讀
 featured: false
 boost: false
 draft: false

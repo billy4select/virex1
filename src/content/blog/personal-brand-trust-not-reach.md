@@ -8,7 +8,7 @@ tags:
   - 個人品牌
   - 內容策略
   - 專業信任
-category: 職涯與個人事業
+category: 自媒體與個人事業
 featured: false
 boost: false
 draft: false

@@ -43,12 +43,30 @@ export const blogThemes: BlogTheme[] = [
     indexable: true,
   },
   {
-    slug: 'career-business',
-    name: '職涯與個人事業',
-    shortName: '職涯與個人事業',
-    readerQuestion: '如何把能力與經驗，變成可以帶走的資產與收入？',
+    slug: 'self-media',
+    name: '自媒體與個人事業',
+    shortName: '自媒體',
+    readerQuestion: '怎麼從發出第一篇內容，走到有人願意付費？',
     description:
-      '從能力盤點與學習、職涯轉型，到個人品牌與知識變現，談專業如何持續累積並長成自己的事業。',
+      '自媒體起步、個人品牌、一人公司與知識變現，談內容怎麼累積成信任，再變成收入。',
+    indexable: true,
+  },
+  {
+    slug: 'career',
+    name: '職涯與轉型',
+    shortName: '職涯',
+    readerQuestion: '面對 AI 與職涯轉折，我的能力還剩下什麼價值？',
+    description:
+      '能力盤點、轉型決策、學習路徑與可攜帶資產，把經驗整理成帶得走的能力。',
+    indexable: true,
+  },
+  {
+    slug: 'book-guides',
+    name: '書籍導讀',
+    shortName: '書籍',
+    readerQuestion: '想透過一本好書，理解商業、行銷、思考與個人成長？',
+    description:
+      '完整的讀書心得：一本書說了什麼、背後的脈絡是什麼，以及可以怎麼用在工作與生活。',
     indexable: true,
   },
 ];

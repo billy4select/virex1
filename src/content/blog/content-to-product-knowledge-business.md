@@ -7,7 +7,7 @@ tags:
   - 知識變現
   - 內容產品
   - 個人事業
-category: 職涯與個人事業
+category: 自媒體與個人事業
 featured: false
 boost: false
 draft: false

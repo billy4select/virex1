@@ -8,7 +8,7 @@ tags:
   - 流量池
   - 裂變行銷
   - 會員經營
-category: 商業與行銷
+category: 書籍導讀
 featured: false
 boost: false
 draft: false

@@ -6,7 +6,7 @@ author: 比利陳 Billy Chen
 tags:
   - 數據與資安
   - 職涯與心態
-category: 職涯與個人事業
+category: 職涯與轉型
 featured: true
 boost: true
 draft: false

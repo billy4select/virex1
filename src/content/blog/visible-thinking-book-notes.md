@@ -8,7 +8,7 @@ tags:
   - 結構化思考
   - 視覺化表達
   - 內容創作
-category: 職涯與個人事業
+category: 書籍導讀
 featured: false
 boost: false
 draft: false

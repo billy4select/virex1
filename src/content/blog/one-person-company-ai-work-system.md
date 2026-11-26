@@ -8,7 +8,7 @@ tags:
   - 一人公司
   - AI工作流
   - 個人事業
-category: 職涯與個人事業
+category: 自媒體與個人事業
 featured: false
 boost: false
 draft: false

@@ -7,7 +7,7 @@ tags:
   - 專業價值
   - 個人事業
   - 職涯發展
-category: 職涯與個人事業
+category: 自媒體與個人事業
 featured: false
 boost: false
 draft: false

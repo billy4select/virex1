@@ -7,7 +7,7 @@ tags:
   - 能力盤點
   - 職涯發展
   - T型能力
-category: 職涯與個人事業
+category: 職涯與轉型
 featured: false
 boost: false
 draft: false

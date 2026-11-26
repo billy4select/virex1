@@ -7,7 +7,7 @@ tags:
   - 判斷力
   - AI時代
   - 決策方法
-category: 職涯與個人事業
+category: 職涯與轉型
 featured: false
 boost: false
 draft: false

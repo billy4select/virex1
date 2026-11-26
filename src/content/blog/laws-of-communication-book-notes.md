@@ -8,7 +8,7 @@ tags:
   - 溝通的黃金法則
   - 溝通表達
   - 個人品牌
-category: 職涯與個人事業
+category: 書籍導讀
 featured: false
 boost: false
 draft: false
