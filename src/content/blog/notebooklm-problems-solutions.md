@@ -85,3 +85,7 @@ NotebookLM 的優勢是以指定來源為基礎進行查詢，不代表所有任
 **延伸閱讀**
 - [NotebookLM 上傳文件前的準備](/blog/notebooklm-upload-preparation/)
 - [NotebookLM 與 Claude 的工作分工](/blog/notebooklm-vs-claude-internal-docs/)
+
+## 延伸閱讀
+
+- [NotebookLM 實戰主題總覽](/topics/notebooklm/)

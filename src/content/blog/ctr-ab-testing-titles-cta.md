@@ -100,3 +100,7 @@ CTR 高，代表更多看到廣告的人點擊了，但不代表這些人真的�
 長期累積下來，真正有價值的是你逐漸理解哪些訊息對哪些受眾有效，而不只是找到一張 CTR 特別高的圖片。
 
 若目前 CTR 偏低，可以先看[CTR 低是素材還是受眾問題](/blog/ctr-low-creative-or-audience/)；若想了解不同指標該怎麼解讀，可以參考[CTR、ROAS、CPC 多少算好](/blog/ctr-benchmarks-what-counts-as-good/)。
+
+## 延伸閱讀
+
+- [廣告數據與預算主題總覽](/topics/marketing/ads-numbers/)

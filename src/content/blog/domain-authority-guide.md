@@ -32,6 +32,8 @@ faq:
 
 這幾件事不能直接畫上等號。
 
+> **快速結論：** 不是。Domain Authority 與 Domain Rating 是第三方 SEO 工具各自建立的估算指標，不能視為 Google 的排名分數。
+
 ## DA、DR 不是 Google 的評分
 
 Moz 的 Domain Authority（DA）、Ahrefs 的 Domain Rating（DR），都是第三方工具依照自己的資料與模型估算的指標。它們可以用來比較特定資料庫中的網站連結概況，但不是 Google 公布的官方分數，也不能直接預測某個關鍵字會排第幾名。
@@ -88,3 +90,7 @@ Moz 的 Domain Authority（DA）、Ahrefs 的 Domain Rating（DR），都是第�
 網站權重不是一個可以單獨追逐的分數。把注意力放回內容、結構、使用者需求與可信的外部引用，會比每天盯著第三方指標更有實際幫助。
 
 延伸閱讀：[內部連結怎麼規劃？](/blog/internal-linking-topic-clusters/)、[SEO 自學完整指南](/blog/seo-self-study-guide/)。
+
+## 延伸閱讀
+
+- [SEO 與內容策略主題總覽](/topics/marketing/seo-from-zero/)

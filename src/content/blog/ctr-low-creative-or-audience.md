@@ -92,3 +92,7 @@ CTR 低不一定是素材不好，也不一定是受眾設定錯誤。它只是�
 | CTR 不差但轉換率下降 | 檢查到達頁、價格與購買流程 |
 
 CTR 是漏斗前段的訊號，不能單獨代表廣告成功與否。若想設計更完整的素材測試，可以接著看[CTR A/B 測試怎麼做](/blog/ctr-ab-testing-titles-cta/)；如果懷疑是廣告疲勞，可以參考[頻次與素材輪替的檢查方式](/blog/ad-fatigue-frequency-creative-rotation/)。
+
+## 延伸閱讀
+
+- [廣告數據與預算主題總覽](/topics/marketing/ads-numbers/)

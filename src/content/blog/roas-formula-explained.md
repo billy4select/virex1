@@ -86,3 +86,7 @@ ROAS 是廣告投放裡最常被提到、也最常被算錯的指標。
 這四種情況，該看的是 CAC、回購率、品牌搜尋量，而不是 ROAS。
 
 想看 ROAS 之外的整體結構，可以讀[2026 行銷指標要追什麼](/blog/marketing-metrics-2026-what-to-track/)與[業績掉了先查哪一段](/blog/marketing-diagnosis-traffic-conversion-aov-repurchase/)。
+
+## 延伸閱讀
+
+- [廣告數據與預算主題總覽](/topics/marketing/ads-numbers/)

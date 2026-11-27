@@ -92,3 +92,7 @@ faq:
 要判斷的是每一次額外曝光是否還有價值，以及是否對顧客造成干擾。這需要搭配轉換、成本、受眾反應與實際購買週期來看。
 
 如果 CTR 已經下降，可以接著看[CTR 低是素材還是受眾問題](/blog/ctr-low-creative-or-audience/)。如果成效下滑同時伴隨獲客成本上升，也可以參考[CAC 一直漲時該檢查什麼](/blog/cac-rising-5-checks/)。
+
+## 延伸閱讀
+
+- [廣告數據與預算主題總覽](/topics/marketing/ads-numbers/)

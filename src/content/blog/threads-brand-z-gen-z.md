@@ -80,3 +80,7 @@ faq:
 ---
 
 延伸閱讀：[Threads 商業帳號怎麼經營](/blog/threads-business-account/)。
+
+## 延伸閱讀
+
+- [個人事業與自媒體主題總覽](/topics/personal-business/)

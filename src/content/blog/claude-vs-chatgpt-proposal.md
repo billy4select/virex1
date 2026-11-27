@@ -80,3 +80,7 @@ Claude 和 ChatGPT 都能協助整理提案、發想切角與修改文字，但�
 提案的品質最後仍取決於你是否理解客戶、掌握證據、知道要做什麼取捨。AI 可以協助整理與挑戰你的想法，但不能替你承擔提案的判斷責任。
 
 延伸閱讀：[客戶簡報前的反對意見模擬](/blog/claude-objection-simulation/)、[AI 產出品質檢查](/blog/ai-output-quality-check/)。
+
+## 延伸閱讀
+
+- [AI 工作流程主題總覽](/topics/ai-workflow/)

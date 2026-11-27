@@ -109,3 +109,7 @@ ROAS 適合觀察平台歸因營收與廣告費的關係，但它不是利潤，
 時間久了，你會逐漸知道哪些數字是正常波動，哪些變化值得深入檢查。這比追逐一個網路上流傳的「標準值」更有用。
 
 想進一步理解指標之間的差異，可以看[CPC、CTR、ROAS、ROI 差在哪](/blog/marketing-metrics-differences/)；需要公式換算時，可以使用[行銷計算機](/blog/marketing-calculator/)。
+
+## 延伸閱讀
+
+- [廣告數據與預算主題總覽](/topics/marketing/ads-numbers/)

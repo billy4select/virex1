@@ -98,3 +98,7 @@ faq:
 至少分開觀察新客取得成本、舊客再次購買情況、兩群人的貢獻毛利，以及廣告帶來的增量效果。若舊客廣告 ROAS 很高，但沒有帶來額外購買，增加預算可能只是讓報表更好看。
 
 如果新客成本持續上升，也要往整體獲客流程檢查，不一定只是預算比例出了問題。可以接著看[Facebook 廣告成本為什麼上升](/blog/facebook-ads-cost-rising/)與[廣告沒效果怎麼診斷](/blog/ads-not-working-diagnosis/)。
+
+## 延伸閱讀
+
+- [廣告數據與預算主題總覽](/topics/marketing/ads-numbers/)

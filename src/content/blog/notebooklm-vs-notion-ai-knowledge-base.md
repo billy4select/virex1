@@ -102,3 +102,7 @@ faq:
 **延伸閱讀**
 - [NotebookLM 與 Claude 的文件工作分工](/blog/notebooklm-vs-claude-internal-docs/)
 - [NotebookLM 職場研究的使用方式](/blog/notebooklm-workplace-research/)
+
+## 延伸閱讀
+
+- [NotebookLM 實戰主題總覽](/topics/notebooklm/)

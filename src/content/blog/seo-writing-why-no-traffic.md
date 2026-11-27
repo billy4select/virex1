@@ -96,3 +96,7 @@ SEO 成效不會在每個網站、每個主題都用相同速度出現。新網�
 這五個環節不是保證排名的公式，而是避免把所有問題都歸咎於文筆或字數。找到真正卡住的地方，再決定要修改、整併，還是暫時不投入更多時間。
 
 延伸閱讀：[SEO 文章優化檢查清單](/blog/on-page-seo-checklist/)、[搜尋意圖怎麼判斷？](/blog/search-intent-guide/)。
+
+## 延伸閱讀
+
+- [SEO 與內容策略主題總覽](/topics/marketing/seo-from-zero/)

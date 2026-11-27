@@ -102,3 +102,7 @@ Meta description 可以補充頁面重點，但搜尋引擎可能依查詢情況
 這份清單的目的，是降低明顯疏漏。真正影響內容價值的，仍是你是否理解讀者的問題，以及文章是否提供了值得花時間閱讀的答案。
 
 延伸閱讀：[內部連結與主題集群](/blog/internal-linking-topic-clusters/)、[SEO 寫作有寫卻沒流量？](/blog/seo-writing-why-no-traffic/)。
+
+## 延伸閱讀
+
+- [SEO 與內容策略主題總覽](/topics/marketing/seo-from-zero/)

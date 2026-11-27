@@ -110,3 +110,7 @@ faq:
 **延伸閱讀**
 - [NotebookLM 工作研究：從資料找到觀點](/blog/notebooklm-workplace-research/)
 - [主管用 AI 整理週會報告](/blog/ai-weekly-report-manager/)
+
+## 延伸閱讀
+
+- [NotebookLM 實戰主題總覽](/topics/notebooklm/)

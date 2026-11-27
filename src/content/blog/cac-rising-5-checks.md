@@ -100,3 +100,7 @@ CAC 本身沒有脫離產品毛利的好壞標準。取得一位顧客花了多�
 如果回購資料還不完整，應該保守估計，不要先把未來收入全部算進來。也可以降低測試規模，先驗證新客品質，再決定是否擴大。
 
 想看廣告指標與商業結果的關係，可以參考[行銷指標的差異](/blog/marketing-metrics-differences/)與[ROAS 計算公式](/blog/roas-formula-explained/)。
+
+## 延伸閱讀
+
+- [廣告數據與預算主題總覽](/topics/marketing/ads-numbers/)

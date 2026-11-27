@@ -239,7 +239,7 @@ AI 批量分析評論，真正的價值不是「幫你讀完所有評論」，�
 
 ---
 
-## 延伸閱讀
+## AI 批量分析使用者評論，找：延伸閱讀
 
 - [NotebookLM 的提問方式決定答案品質：五種問法比較](https://www.billy4select.com/blog/notebooklm-question-types/)
 - [主管用 AI 準備週會報告的正確姿態：不是叫它寫，是叫它整理你的邏輯](https://www.billy4select.com/blog/ai-weekly-report-manager/)

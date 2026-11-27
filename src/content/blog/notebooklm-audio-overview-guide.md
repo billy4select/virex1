@@ -79,3 +79,7 @@ NotebookLM 的 Audio Overview，會把來源資料整理成類似主持人對談
 **延伸閱讀**
 - [NotebookLM 怎麼提問比較有效](/blog/notebooklm-question-types/)
 - [NotebookLM 完整入門與工作流程](/blog/notebooklm-complete-guide-2026/)
+
+## 延伸閱讀
+
+- [NotebookLM 實戰主題總覽](/topics/notebooklm/)

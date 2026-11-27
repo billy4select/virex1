@@ -106,3 +106,7 @@ NotebookLM 可以協助整理素材，但最後的報告仍需要你決定：哪
 - [NotebookLM 上傳文件前必做的檢查](/blog/notebooklm-upload-preparation/)
 - [NotebookLM 的提問方式](/blog/notebooklm-question-types/)
 - [NotebookLM 與 Claude 的文件工作分工](/blog/notebooklm-vs-claude-internal-docs/)
+
+## 延伸閱讀
+
+- [NotebookLM 實戰主題總覽](/topics/notebooklm/)

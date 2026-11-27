@@ -69,7 +69,7 @@ NotebookLM 和 Claude 都可以讀文件，所以很容易被拿來比較。但�
 
 **不要假設工具會永久記住所有資料。** 檔案管理、專案、對話與記憶功能會依產品版本及帳號方案而變動，重要資料應保留在自己的正式文件系統。
 
-## 怎麼選？
+## NotebookLM vs ：怎麼選？
 
 如果你最常做的是「從一批來源裡找資料、反覆查詢」，先試 NotebookLM；如果你最常做的是「分析、討論、改寫與產出」，先試 Claude。若工作同時包含兩者，就把來源查核與內容生成拆成兩個階段。
 
@@ -78,3 +78,7 @@ NotebookLM 和 Claude 都可以讀文件，所以很容易被拿來比較。但�
 **延伸閱讀**
 - [NotebookLM 與 Notion AI 的知識管理差異](/blog/notebooklm-vs-notion-ai-knowledge-base/)
 - [NotebookLM 的研究提問方式](/blog/notebooklm-question-types/)
+
+## 延伸閱讀
+
+- [NotebookLM 實戰主題總覽](/topics/notebooklm/)

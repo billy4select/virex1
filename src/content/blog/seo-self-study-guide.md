@@ -101,3 +101,7 @@ SEO 的資訊很多，教學文章、工具介紹、演算法消息每天都在�
 SEO 需要持續觀察，很多判斷都要透過自己的網站慢慢驗證。先學會提出問題、找資料與解讀結果，再增加工具與技術深度，會比較不容易迷失在技巧清單裡。
 
 延伸閱讀：[SEO 文章發布前檢查](/blog/on-page-seo-checklist/)、[免費 SEO 工具怎麼選？](/blog/free-seo-tools/)。
+
+## 延伸閱讀
+
+- [SEO 與內容策略主題總覽](/topics/marketing/seo-from-zero/)

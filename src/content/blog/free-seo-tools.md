@@ -101,3 +101,7 @@ SEO 工具很多，免費的也不少。真正容易浪費時間的情況，是�
 工具的價值是讓判斷更有依據，不是替你決定要寫什麼、該改哪一頁，或保證排名。
 
 延伸閱讀：[SEO 自學怎麼開始？](/blog/seo-self-study-guide/)、[SEO 文章發布前檢查](/blog/on-page-seo-checklist/)。
+
+## 延伸閱讀
+
+- [SEO 與內容策略主題總覽](/topics/marketing/seo-from-zero/)

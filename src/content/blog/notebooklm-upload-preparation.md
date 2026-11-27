@@ -100,3 +100,7 @@ PDF 看起來是文字，不代表裡面一定有可擷取的文字層。掃描�
 **延伸閱讀**
 - [NotebookLM 掃描 PDF 的 OCR 處理方式](/blog/notebooklm-ocr-pdf-solution/)
 - [NotebookLM 常見問題與排除方式](/blog/notebooklm-problems-solutions/)
+
+## 延伸閱讀
+
+- [NotebookLM 實戰主題總覽](/topics/notebooklm/)

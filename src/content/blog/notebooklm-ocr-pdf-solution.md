@@ -90,3 +90,7 @@ OCR（光學字元辨識）會分析圖片中的字形，將辨識結果轉成�
 **延伸閱讀**
 - [NotebookLM 上傳文件前的檢查](/blog/notebooklm-upload-preparation/)
 - [NotebookLM 常見問題與排除方式](/blog/notebooklm-problems-solutions/)
+
+## 延伸閱讀
+
+- [NotebookLM 實戰主題總覽](/topics/notebooklm/)

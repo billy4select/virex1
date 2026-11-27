@@ -90,3 +90,7 @@ TTFB（Time to First Byte）是瀏覽器收到伺服器第一個位元組所花�
 不要為了把分數從 90 拉到 100，犧牲實際功能或內容呈現。網站效能的目標，是讓使用者更順利地取得資訊與完成操作。
 
 延伸閱讀：[SEO 文章發布前檢查](/blog/on-page-seo-checklist/)、[免費 SEO 工具怎麼選？](/blog/free-seo-tools/)。
+
+## 延伸閱讀
+
+- [SEO 與內容策略主題總覽](/topics/marketing/seo-from-zero/)
