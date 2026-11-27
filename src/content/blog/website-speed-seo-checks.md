@@ -1,5 +1,5 @@
 ---
-title: 網站速度怎麼檢查？用 Core Web Vitals 抓出真正影響體驗的卡點
+title: "網站速度怎麼檢查？PageSpeed Insights 與 Core Web Vitals 看卡點"
 description: >-
   網頁開太慢會讓手機讀者直接關掉，連帶拖累 SEO 表現。這篇用白話拆解 Core Web Vitals 三個核心指標，教你用免費工具快速抓出肥圖跟拖慢載入的元兇。
 publishedDate: 2026-05-04T01:00:00Z
