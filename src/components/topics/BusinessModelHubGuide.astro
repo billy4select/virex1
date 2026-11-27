@@ -1,0 +1,215 @@
+---
+import ArticleAuthor from '@/components/blog/ArticleAuthor.astro';
+
+interface HubStage {
+  step: string;
+  heading: string;
+  paragraphs: string[];
+  items: {
+    title: string;
+    href: string;
+    summary: string;
+  }[];
+}
+
+const stages: HubStage[] = [
+  {
+    step: 'STAGE 01',
+    heading: '先看懂一門生意靠什麼活著',
+    paragraphs: [
+      '商學院常教的畫布能幫你把元素列齊，卻很少告訴你這門生意能不能賺錢、別人抄不抄得走。',
+      '把收入結構、成本曲線跟資源分配擺在一起看，很多表面上很熱鬧的案子，其實一眼就能看出漏洞。',
+    ],
+    items: [
+      {
+        title: '一門生意為什麼成立？從需求、價值與成本看商業模式',
+        href: '/blog/why-business-exists-nine-questions/',
+        summary: '從需求到護城河的九道檢查題，用來快速盤點一個商業構想站不站得住腳。',
+      },
+      {
+        title: '商業模式畫布之外：從收入結構、成本結構與護城河看生意',
+        href: '/blog/beyond-business-model-canvas/',
+        summary: '補上傳統畫布沒寫出來的現實：單位經濟跟長期防守能力。',
+      },
+      {
+        title: '如何分析一家公司的商業策略？從公開資訊看企業的選擇',
+        href: '/blog/analyze-company-strategy-public-info/',
+        summary: '策略其實就是資源分配的取捨，從五條公開線索就能反推一家公司真正在賺什麼錢。',
+      },
+      {
+        title: 'AI 正在改變哪些成本與競爭優勢？',
+        href: '/blog/how-ai-changes-cost-and-competition/',
+        summary: '當產出內容變得越來越便宜，真正變貴的反而是驗證跟信任。',
+      },
+    ],
+  },
+  {
+    step: 'STAGE 02',
+    heading: '先問對方願意為什麼付錢',
+    paragraphs: [
+      '在產品還沒做出來之前，最容易踩的坑是把「人口統計」當成受眾，然後問身邊朋友「你會不會買」。',
+      '朋友通常會禮貌地說會，但市場不會跟你客氣。',
+    ],
+    items: [
+      {
+        title: '受眾分析怎麼做？從情境、任務與替代方案理解顧客',
+        href: '/blog/audience-is-not-a-label/',
+        summary: '把模糊的年齡性別標籤，拆成顧客當下遇到什麼障礙、原本都用誰當替代品。',
+      },
+      {
+        title: '從消費者需求到商業機會：問對方願意為什麼付錢',
+        href: '/blog/consumer-demand-to-business-opportunity/',
+        summary: '從五個需求訊號跟兩類訪談問法，把「大家好像想要」收斂成真的會掏錢的機會。',
+      },
+      {
+        title: '如何驗證市場需求？五個避免自嗨的實測方法',
+        href: '/blog/validate-market-demand-five-methods/',
+        summary: '用行為、成本跟實際承諾測試市場反應，不用先砸大錢開發才發現沒人要。',
+      },
+    ],
+  },
+  {
+    step: 'STAGE 03',
+    heading: '定價、獲利結構跟知識變現',
+    paragraphs: [
+      '東西賣得出去，不代表這門生意有賺錢。每一筆訂單的毛利、免費資源的引流邏輯，還有怎麼把專業知識變成可重複銷售的產品，都是這一段要解決的事。',
+    ],
+    items: [
+      {
+        title: '為什麼有人賺錢有人只是忙？從定價與獲利結構看差異',
+        href: '/blog/pricing-and-profit-structure/',
+        summary: '拆解單筆訂單獲利、損益平衡點，以及調價對整體利潤的真實影響。',
+      },
+      {
+        title: '《免費！揭開零定價的獲利祕密》：免費的東西怎麼幫企業賺錢',
+        href: '/blog/free-zero-price-business-models/',
+        summary: '整理免費模式的四種玩法，以及數位時代邊際成本趨近於零時，自媒體怎麼跟著用。',
+      },
+      {
+        title: '知識怎麼變成收入？從內容到產品的 3 種模式',
+        href: '/blog/content-to-product-knowledge-business/',
+        summary: '免費內容能吸引讀者，但要變成穩定收入，中間還需要清楚的產品階梯。',
+      },
+    ],
+  },
+];
+---
+
+<section class="bg-background pt-10 pb-4 md:pt-14" aria-label="商業模式與獲利選讀指南">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    {/* 開頭導讀 */}
+    <div class="max-w-3xl space-y-4 text-base leading-8 text-text-muted md:text-[17px]">
+      <p>
+        很多人做生意或經營自媒體，最先想的是「產品要長什麼樣子」、「流量要怎麼來」。
+      </p>
+      <p>
+        但做了半年之後才發現，忙了一圈，帳上其實沒剩多少錢（有時候甚至只是花錢買忙碌）。
+      </p>
+      <p>
+        我是比利陳，過去十年跑過 PM 從零開發商品、算成本結構跟通路策略，也操盤過品牌與整合行銷。這個主題頁整理的是我用來判斷「一門生意到底成不成立」的底層框架。
+      </p>
+    </div>
+
+    {/* 三階段選讀地圖 */}
+    <div class="mt-12 space-y-12">
+      {
+        stages.map((stage) => (
+          <section class="border-t border-border pt-10">
+            <p class="font-mono text-xs font-bold tracking-[0.15em] text-primary">{stage.step}</p>
+            <h2 class="mt-1.5 text-xl font-extrabold tracking-tight text-text md:text-2xl">
+              {stage.heading}
+            </h2>
+
+            <div class="mt-4 max-w-3xl space-y-3 text-sm leading-7 text-text-muted md:text-base">
+              {stage.paragraphs.map((para) => (
+                <p>{para}</p>
+              ))}
+            </div>
+
+            <ol class="mt-6 divide-y divide-border rounded-2xl border border-border bg-surface/50 px-5">
+              {stage.items.map((item, idx) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="group grid grid-cols-[1.75rem_minmax(0,1fr)_auto] items-start gap-x-3 py-4 transition-colors"
+                  >
+                    <span class="pt-0.5 font-mono text-xs font-bold tabular-nums text-primary">
+                      {String(idx + 1).padStart(2, '0')}
+                    </span>
+                    <div class="min-w-0">
+                      <h3 class="text-base font-bold leading-snug text-text transition-colors group-hover:text-primary">
+                        {item.title}
+                      </h3>
+                      <p class="mt-1 text-sm leading-relaxed text-text-muted">{item.summary}</p>
+                    </div>
+                    <span
+                      class="pt-0.5 text-sm font-semibold text-text-muted transition-transform group-hover:translate-x-0.5 group-hover:text-primary"
+                      aria-hidden="true"
+                    >
+                      →
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </section>
+        ))
+      }
+
+      {/* 延伸回行銷診斷、個人事業與電子報 */}
+      <section class="border-t border-border pt-10">
+        <h2 class="text-xl font-extrabold tracking-tight text-text md:text-2xl">
+          把商業判斷放回行銷與個人事業
+        </h2>
+        <div class="mt-4 max-w-3xl space-y-4 text-sm leading-7 text-text-muted md:text-base">
+          <p>
+            商業模式定下來之後，接下來就是怎麼讓對的人看見、怎麼診斷哪一段漏斗掉了，以及怎麼把這些能力放進一人公司的日常運作。
+          </p>
+          <p>
+            你可以接著逛
+            <a
+              href="/topics/marketing/"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              行銷、SEO 與廣告主題頁
+            </a>
+            （特別是
+            <a
+              href="/blog/marketing-diagnosis-traffic-conversion-aov-repurchase/"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              業績下滑先查哪裡？
+            </a>
+            這篇），或是到
+            <a
+              href="/topics/personal-business/"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              自媒體與個人事業
+            </a>
+            看怎麼把專業整理成第一個可販售的服務。每週我也會在
+            <a
+              href="https://billy4select.substack.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-conversion-cta="newsletter"
+              data-conversion-target="substack"
+              data-conversion-category="商業模式與獲利"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              比利陳 Substack 電子報
+            </a>
+            寫一篇商業或工具觀察，歡迎訂閱。
+          </p>
+        </div>
+
+        {/* 接回作者實體 /about/ */}
+        <ArticleAuthor />
+      </section>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '@/scripts/conversion';
+</script>
