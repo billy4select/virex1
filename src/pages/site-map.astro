@@ -11,7 +11,7 @@ import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import { siteConfig } from '@/config';
 import { getPublishedPosts, postUrl, sortByDate } from '@/lib/blog';
-import { blogThemes, themeUrl } from '@/lib/themes';
+import { blogThemes, getThemePosts, themeUrl } from '@/lib/themes';
 import { seoChapters, seoChapterUrl } from '@/lib/seo-series';
 import { marketingChapters, marketingChapterUrl } from '@/lib/marketing-series';
 
@@ -19,13 +19,14 @@ const xmlSitemap = `${siteConfig.url}/sitemap-index.xml`;
 
 const corePages = [
   { href: '/', label: '首頁' },
-  { href: '/about/', label: '關於我' },
-  { href: '/resources/', label: '免費資源' },
-  { href: '/blog/', label: '全部文章' },
+  { href: '/start-here/', label: '這裡開始' },
+  { href: '/series/', label: '教學總覽' },
   { href: '/topics/', label: '主題' },
-  { href: '/series/', label: '教學系列' },
-  { href: '/faq/', label: '常見問題' },
+  { href: '/blog/', label: '全部文章' },
+  { href: '/resources/', label: '免費資源' },
+  { href: '/about/', label: '關於我' },
   { href: '/testimonials/', label: '讀者回饋' },
+  { href: '/faq/', label: '常見問題' },
   { href: '/contact/', label: '聯絡我' },
   { href: '/privacy/', label: '隱私權政策' },
   { href: '/disclaimer/', label: '免責聲明' },
@@ -97,9 +98,9 @@ const soloPages = staticPages.filter((p) => p.href === '/narrative-engine/');
 const posts = sortByDate(await getPublishedPosts());
 const byTheme = blogThemes.map((theme) => ({
   theme,
-  posts: posts.filter((post) => post.data.category === theme.slug),
+  posts: getThemePosts(posts, theme),
 }));
-const unassigned = posts.filter((post) => !blogThemes.some((theme) => theme.slug === post.data.category));
+const unassigned = posts.filter((post) => !blogThemes.some((theme) => theme.name === post.data.category));
 
 const totalPages = corePages.length + series.length + staticPages.length + posts.length;
 
@@ -177,7 +178,7 @@ const breadcrumbs = [
 
       <div>
         <h2 class="text-xl font-extrabold tracking-tight text-text">文章分類</h2>
-        <p class="mt-2 text-sm text-text-muted">{posts.length} 篇已上線文章，依主要分類排列。</p>
+        <p class="mt-2 text-sm text-text-muted">目前共有 {posts.length} 篇文章，依主題分類排列。</p>
         <div class="mt-5 space-y-6">
           {
             byTheme

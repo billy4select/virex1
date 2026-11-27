@@ -22,6 +22,13 @@ faq:
     a: 常見原因是只堆了一堆「用心」「堅持」「夢想」這類抽象情緒詞，卻沒跟讀者當下遇到的問題接上關係。如果連自己讀完都不買單，讀者也很難產生共鳴。
   - q: 故事寫完之後，要怎麼自然接到觀點或商品？
     a: 用一句自然的思緒轉折就好，例如「這讓我想到……」「後來我才發現……」，順著剛剛那件事延伸出背後的做法或解法，不要硬轉成廣告叫賣。
+testedAt: 2026 年以自營品牌內容與實戰文章互動回饋對照整理
+testNotes: 對照 Google 實用內容與第一手經驗（Experience）原則，整理以具體情境取代空泛形容詞的寫作結構。
+sources:
+  - label: Google Search Central：建立實用、可靠且以使用者為優先的內容（E-E-A-T）
+    url: https://developers.google.com/search/docs/fundamentals/creating-helpful-content?hl=zh-tw
+  - label: Google Search Central：SEO 入門指南
+    url: https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=zh-tw
 ---
 
 提到「故事行銷」，很多行銷人馬上會覺得壓力很大，以為一定要寫出像微電影一樣曲折感人的創業故事。

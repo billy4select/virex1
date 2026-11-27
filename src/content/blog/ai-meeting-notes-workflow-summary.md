@@ -19,6 +19,15 @@ faq:
     a: 會。只要會議內容牽涉到未公開財報、客戶個資、薪資或人事討論，在公司沒有授權該工具前都不要直接上傳。先確認公司政策，或把敏感名稱與金額做去識別化處理。
   - q: AI 寫完會議紀錄後，主持人最該核對哪一塊？
     a: 核對「到底有沒有真的拍板」跟「負責人有沒有寫錯」。開會時大家常會口頭提議但沒通過，AI 很容易把某個人的隨口建議寫成已定案決策，這點一定要人工確認。
+testedAt: 2026 年以真實會議逐字稿實測 Claude 與 ChatGPT 整理決策與行動清單
+testNotes: 對照原始會議紀錄與 AI 摘要，驗證去識別化處理與人工核對「決策／負責人／期限」三關卡。
+sources:
+  - label: OpenAI 企業隱私與資料使用說明
+    url: https://openai.com/enterprise-privacy/
+  - label: Anthropic 隱私中心：使用者資料與模型訓練說明
+    url: https://privacy.anthropic.com/
+  - label: Google Workspace 隱私中心：生成式 AI 資料保護
+    url: https://workspace.google.com/security/
 ---
 
 職場上最浪費生命的事情之一，就是開了一小時的會，會後還要花四十分鐘重聽錄音寫會議紀錄。

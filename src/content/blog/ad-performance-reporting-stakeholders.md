@@ -22,6 +22,15 @@ faq:
     a: 因為流量很高但沒轉單，對生意一點幫助都沒有。如果沒有搭配轉換率跟 GA 跳出率一起看，單純報告流量成長反而容易讓主管覺得你在報喜不報憂。
   - q: 成效不好時，報告裡應該怎麼交代？
     a: 直接講清楚數據卡在哪一段（例如素材疲勞、或進站跳出率偏高），並附上具體的驗證動作（例如下週上兩組新切角素材、先跑 2 天看反應），主管在乎的是你有沒有找到原因跟解法。
+testedAt: 2026 年依 GA4 轉換報表與 Meta／Google 廣告後台週報實務整理
+testNotes: 對照投放後台與 GA4 實際轉換、跳出率數據，整理以決策與下一步行動為核心的成效報告寫法。
+sources:
+  - label: Google Analytics (GA4) 說明：參與率與跳出率
+    url: https://support.google.com/analytics/answer/12195621?hl=zh-Hant
+  - label: Meta 企業商家使用說明：廣告成效疑難排解
+    url: https://www.facebook.com/business/help/1690837864463765
+  - label: Google Ads 說明：轉換追蹤簡介
+    url: https://support.google.com/google-ads/answer/1722022?hl=zh-Hant
 ---
 
 做廣告投放的人，每週最怕的一件事大概就是寫週報。

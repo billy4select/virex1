@@ -24,6 +24,13 @@ faq:
   - q: 同一個關鍵字可以寫多篇文章嗎？
     a: >-
       如果不同文章服務的是不同任務，而且內容有清楚區隔，可以分開；若只是換標題回答同一個問題，通常應整併，避免頁面互相競爭。
+testedAt: 2026 年以自營網站（www.billy4select.com）SERP 版型與 GSC 查詢詞實測整理
+testNotes: 透過實際比對搜尋結果頁型與點擊表現，歸納資訊、商業調查、交易與導覽四種意圖判斷步驟。
+sources:
+  - label: Google Search Central：SEO 入門指南
+    url: https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=zh-tw
+  - label: Google Search Central：建立實用、可靠且以使用者為優先的內容
+    url: https://developers.google.com/search/docs/fundamentals/creating-helpful-content?hl=zh-tw
 ---
 
 搜尋意圖要回答的問題很簡單：**輸入這組字的人，現在想完成什麼事？**

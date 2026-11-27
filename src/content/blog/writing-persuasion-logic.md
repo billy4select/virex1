@@ -22,6 +22,13 @@ faq:
     a: 剛好相反。把「這個做法在什麼情況下沒用」老實講清楚，讀者反而會覺得你真的做過、沒有在誇大，信任感會高很多。
   - q: 發文前怎麼快速檢查一篇文章有沒有說服力？
     a: 問自己三個問題：這套說法連我自己買不買單？核心主張有沒有具體案例或數據撐住？段落之間的上下文有沒有順著同一條邏輯串起來？
+testedAt: 2026 年依自營網站長文互動、轉換回饋與 Google E-E-A-T 規範對照整理
+testNotes: 結合第一手經驗、可驗證依據與限制條件交代，建立 AI 時代內容說服力的發布前自檢標準。
+sources:
+  - label: Google Search Central：建立實用、可靠且以使用者為優先的內容（E-E-A-T）
+    url: https://developers.google.com/search/docs/fundamentals/creating-helpful-content?hl=zh-tw
+  - label: Google Search Central：搜尋排名系統指南
+    url: https://developers.google.com/search/docs/appearance/ranking-systems-guide?hl=zh-tw
 ---
 
 現在打開社群或部落格，最不缺的就是「讀起來很順、每個字都沒錯，但看完心裡毫無波瀾」的文章。
