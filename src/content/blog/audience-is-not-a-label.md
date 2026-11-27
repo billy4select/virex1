@@ -77,3 +77,7 @@ faq:
 受眾分析不會一次完成。先提出假設，再用真實顧客的行為與回饋修正，會比憑空想像一個完美客群更可靠。
 
 想進一步驗證需求，可以接著看[如何驗證市場需求？五個避免自嗨的方法](/blog/validate-market-demand-five-methods/)；若要從需求延伸到搜尋字詞，可以看[關鍵字怎麼找？從購買前的煩惱挖高轉換流量](/blog/keyword-research-purchase-intent/)。
+
+## 延伸閱讀
+
+- [行銷策略與診斷主題總覽](/topics/marketing/)
