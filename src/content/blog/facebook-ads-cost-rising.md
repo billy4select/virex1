@@ -79,4 +79,4 @@ sources:
 
 - [廣告數據與預算主題總覽](/topics/marketing/ads-numbers/)
 - [廣告疲勞怎麼判斷？看懂頻次、受眾飽和與換素材的時機](/blog/ad-fatigue-frequency-creative-rotation/)
-- [ROAS 計算公式拆解：為什麼你的 ROAS 看起來很好，帳卻對不起來？](/blog/marketing-calculator/)
+- [行銷計算機：CPC、CTR、CPM、CPA、ROAS、ROI 公式與毛利損益平衡表](/blog/marketing-calculator/)

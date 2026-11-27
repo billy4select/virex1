@@ -66,4 +66,5 @@ faq:
 - [Threads 經營實戰教學專題：從起步心態到自然導流變現](/threads/)
 - [自媒體第一個月做什麼？先定位還是先發文](/blog/self-media-first-month-positioning-or-posting/)
 - [從內容、通路到信任：曝光之後，關係如何延續](/blog/content-channel-trust-growth/)
+- [IG 洞察報告怎麼看？六個數字、三個診斷順序，別再只看觸及](/blog/ig-insights-report-guide/)
 - [開始經營自媒體主題總覽](/topics/personal-business/start-self-media/)

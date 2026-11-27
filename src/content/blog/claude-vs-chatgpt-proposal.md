@@ -111,5 +111,6 @@ AI 可以幫你把三小時的初稿縮成半小時，但提案會不會過，�
 
 - [客戶簡報前，用 Claude 跑一遍「反對意見模擬」實戰流程](/blog/claude-objection-simulation/)
 - [AI 產出怎麼檢查？交付前確認事實、推論與責任](/blog/ai-output-quality-check/)
-- [免費仔的 AI 工具組合：不花錢也能跑完 80% 職場任務](/ai-work-team/lesson-02/)
+- [打造你的 AI 工作團隊｜主題 02：AI 工具挑選評估與免費組合](/ai-work-team/lesson-02/)
+- [Google AI Pro 值得買嗎？跟免費版差在哪、5 小時額度與家庭共享實測心得](/blog/google-ai-pro-vs-free-limits-family-sharing/)
 - [AI 工作流程主題總覽](/topics/ai-workflow/)

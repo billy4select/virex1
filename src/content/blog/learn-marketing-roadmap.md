@@ -74,4 +74,5 @@ faq:
 
 ## 延伸閱讀
 
+- [行銷團隊怎麼分工？三個人也能跑完一整條漏斗的分法](/blog/marketing-team-roles/)
 - [行銷策略與診斷主題總覽](/topics/marketing/)

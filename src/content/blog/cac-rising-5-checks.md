@@ -72,4 +72,4 @@ CAC 變貴的原因很多，但現場操作最忌諱一次把受眾、素材、�
 
 - [廣告數據與預算主題總覽](/topics/marketing/ads-numbers/)
 - [廣告沒效果怎麼辦？先找出流量、點擊與轉換哪裡出問題](/blog/ads-not-working-diagnosis/)
-- [ROAS 計算公式拆解：為什麼你的 ROAS 看起來很好，帳卻對不起來？](/blog/marketing-calculator/)
+- [行銷計算機：CPC、CTR、CPM、CPA、ROAS、ROI 公式與毛利損益平衡表](/blog/marketing-calculator/)

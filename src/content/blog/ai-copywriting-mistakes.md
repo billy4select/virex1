@@ -90,4 +90,5 @@ AI 生出草稿後，無論多趕時間，按上架或排程之前固定掃過�
 - [廣告數據與預算主題總覽](/topics/marketing/ads-numbers/)
 - [受眾分析怎麼做？從情境、任務與替代方案理解顧客](/blog/audience-is-not-a-label/)
 - [AI 產出怎麼檢查？交付前確認事實、推論、語氣與責任的四道關卡](/blog/ai-output-quality-check/)
+- [AI 批量分析使用者評論：從上百則留言裡，抓出真的值得改的方向](/blog/ai-batch-review-analysis/)
 - [文章說服力怎麼提升？先讓讀者看懂你的理由、經驗與證據](/blog/writing-persuasion-logic/)

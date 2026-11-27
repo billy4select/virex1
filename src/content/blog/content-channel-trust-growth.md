@@ -67,4 +67,5 @@ faq:
 
 - [2026 行銷指標要追什麼？從曝光到留存，只留五個真的會影響決策的數字](/blog/marketing-metrics-2026-what-to-track/)
 - [個人品牌怎麼做才有效？讓對的人理解、信任、記得你](/blog/personal-brand-trust-not-reach/)
+- [網紅合作怎麼評估？別搞錯任務目標，曝光型跟導購型根本是兩回事](/blog/influencer-marketing-next-step/)
 - [行銷診斷主題總覽](/topics/marketing/marketing-diagnosis/)

@@ -87,3 +87,4 @@ sources:
 - [廣告數據與預算主題總覽](/topics/marketing/ads-numbers/)
 - [廣告疲勞怎麼判斷？看懂頻次、受眾飽和與換素材的時機](/blog/ad-fatigue-frequency-creative-rotation/)
 - [廣告沒效果怎麼辦？先看轉換率與 GA 跳出率，照順序找出卡在哪一段](/blog/ads-not-working-diagnosis/)
+- [廣告成效報告怎麼寫？少貼一堆流量圖，直接講轉換率與下一步](/blog/ad-performance-reporting-stakeholders/)

@@ -104,4 +104,5 @@ faq:
 - [商業模式與獲利主題總覽](/topics/business-model/)
 - [一門生意為什麼成立？從需求、價值與成本看商業模式](/blog/why-business-exists-nine-questions/)
 - [受眾要廣泛還是專注？先看市場、差異化與資源](/blog/audience-broad-or-focused/)
+- [AI 批量分析使用者評論：從上百則留言裡，抓出真的值得改的方向](/blog/ai-batch-review-analysis/)
 - [行銷從診斷開始：從痛點時刻定義受眾（第 3 章）](/marketing/audience/)

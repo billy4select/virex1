@@ -73,4 +73,4 @@ sources:
 
 - [SEO 與內容策略主題總覽](/topics/marketing/seo-from-zero/)
 - [SEO 自學怎麼開始？別先急著調版型，照這四步把流量跑起來](/blog/seo-self-study-guide/)
-- [內部連結怎麼規劃？用主題集群把百篇文章串成一個網](/seo/internal-links/)
+- [SEO 從零開始｜第 5 章：內部連結與主題集群規劃](/seo/internal-links/)

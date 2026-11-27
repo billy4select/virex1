@@ -105,4 +105,5 @@ faq:
 
 ## 延伸閱讀
 
+- [面對新的工作機會，怎麼判斷值不值得？把看得見與看不見的成本都算進去](/blog/career-opportunity-cost-decision/)
 - [職涯與 AI 轉型主題總覽](/topics/career/)

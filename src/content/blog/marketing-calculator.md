@@ -113,5 +113,6 @@ ROAS 只管廣告費與營業額，是給廣告投手看「這檔投放效率」
 - [廣告數據與預算主題總覽](/topics/marketing/ads-numbers/)
 - [CTR、ROAS、CPC 多少算好？先確認比較基準與獲利條件](/blog/ctr-benchmarks-what-counts-as-good/)
 - [業績預估怎麼做？四種方法、公式與可以直接套用的範例](/blog/sales-forecast-4-methods/)
-- [為什麼有人賺錢有人只是忙？從定價與獲利結構看差異](/blog/why-business-exists-nine-questions/)
+- [一門生意為什麼成立？從需求、價值、定價與獲利結構看商業模式](/blog/why-business-exists-nine-questions/)
 - [廣告沒效果怎麼辦？先看轉換率與 GA 跳出率，照順序找出卡在哪一段](/blog/ads-not-working-diagnosis/)
+- [廣告成效報告怎麼寫？少貼一堆流量圖，直接講轉換率與下一步](/blog/ad-performance-reporting-stakeholders/)

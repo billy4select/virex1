@@ -245,5 +245,5 @@ faq:
 ## 延伸閱讀
 
 - 想看信任怎麼從內容一路累積到通路，可以看[從內容、通路到信任：成長不是把曝光做大，而是把信任累積起來](/blog/content-channel-trust-growth/)。
-- 同教學的書籍閱讀：[《看得見的高效思考》](/blog/visible-thinking-book-notes/)、[《流量池》](/blog/traffic-pool-book-notes/)、[《納瓦爾寶典》](/blog/almanack-of-naval-ravikant-book-notes/)
+- 同系列書籍導讀：[《與成功有約》七個習慣](/blog/seven-habits-book-notes/)、[《看得見的高效思考》](/blog/visible-thinking-book-notes/)、[《流量池》](/blog/traffic-pool-book-notes/)、[《納瓦爾寶典》](/blog/almanack-of-naval-ravikant-book-notes/)
 - [商業與成長書單主題總覽](/topics/book-guides/)

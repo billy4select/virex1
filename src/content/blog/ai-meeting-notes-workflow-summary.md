@@ -58,4 +58,4 @@ AI 聽逐字稿偶爾會有辨識錯字或搞混講者，寄給團隊前快速�
 
 - [AI 工作流程主題總覽](/topics/ai-workflow/)
 - [AI 協助專案複盤：把結果、原因與下一次的做法分開](/blog/ai-project-review-knowledge-base/)
-- [AI 工作流程怎麼建立？別從工具開始，先挑一個每週最煩的任務](/ai-work-team/lesson-01/)
+- [打造你的 AI 工作團隊｜主題 01：工作盤點與第一條 AI 流程](/ai-work-team/lesson-01/)
