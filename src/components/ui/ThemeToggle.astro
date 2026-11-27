@@ -48,14 +48,6 @@ import { Icon } from 'astro-icon/components';
     moonIcons.forEach((icon) => icon.classList.toggle('hidden', isDark));
   }
 
-  function getThemePreference(): 'dark' | 'light' {
-    const stored = localStorage.getItem('theme-v2');
-    if (stored === 'dark' || stored === 'light') {
-      return stored;
-    }
-    return 'light';
-  }
-
   function setTheme(theme: 'dark' | 'light') {
     const isDark = theme === 'dark';
     document.documentElement.classList.toggle('dark', isDark);

@@ -5,8 +5,6 @@
  * 1. 移除輸入信箱的表單，改為大型呼籲按鈕。
  * 2. 點擊後直接導向 Kit (ConvertKit) 的訂閱頁面。
  */
-import { siteConfig } from '@/config';
-
 interface Props {
   /** Section title */
   title?: string;
@@ -21,8 +19,6 @@ interface Props {
   /** Section background style */
   background?: 'default' | 'muted' | 'accent';
 }
-
-const { newsletter } = siteConfig.content;
 
 // 這裡填入你的 Kit 連結
 const DEFAULT_KIT_URL = "https://billy4select.substack.com/"; 
