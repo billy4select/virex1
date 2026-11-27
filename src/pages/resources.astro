@@ -2,6 +2,7 @@
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import { siteConfig } from '@/config';
+import { entityConfig } from '@/config/entity';
 
 const libraries = [
   {
@@ -47,11 +48,15 @@ const ADSENSE_SLOT = '5433378708'; // billy4select_resources_2026
 const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
+  '@id': 'https://www.billy4select.com/resources/#collection',
   name: '免費資源',
   description: '免費的 Prompt、工作流程模板、任務卡與知識字典，讓讀者可以直接使用。',
   url: 'https://www.billy4select.com/resources/',
   inLanguage: 'zh-Hant-TW',
   dateModified: '2026-11-26',
+  author: { '@id': entityConfig.ids.person },
+  publisher: { '@id': entityConfig.ids.person },
+  isPartOf: { '@id': entityConfig.ids.website },
   mainEntity: {
     '@type': 'ItemList',
     name: '免費資源分類',
