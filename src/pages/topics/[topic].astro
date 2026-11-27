@@ -4,6 +4,7 @@ import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import TopicCard from '@/components/topics/TopicCard.astro';
 import NotebookLMHubGuide from '@/components/topics/NotebookLMHubGuide.astro';
 import AIWorkflowHubGuide from '@/components/topics/AIWorkflowHubGuide.astro';
+import BusinessModelHubGuide from '@/components/topics/BusinessModelHubGuide.astro';
 import { siteConfig } from '@/config';
 import { entityConfig } from '@/config/entity';
 import { getPublishedPosts } from '@/lib/blog';
@@ -31,18 +32,23 @@ const canonical = `${siteConfig.url}/topics/${slug}/`;
 
 const isNotebookLM = slug === 'notebooklm';
 const isAIWorkflow = slug === 'ai-workflow';
-const hasCustomHub = isNotebookLM || isAIWorkflow;
+const isBusinessModel = slug === 'business-model';
+const hasCustomHub = isNotebookLM || isAIWorkflow || isBusinessModel;
 
 const pageTitle = isNotebookLM
   ? `NotebookLM 實戰指南：從 PDF 處理到工作研究 - ${siteConfig.name}`
   : isAIWorkflow
     ? `AI 工作流程與工具：從任務拆解到職場落地 - ${siteConfig.name}`
-    : `${area.name} - ${siteConfig.name}`;
+    : isBusinessModel
+      ? `商業模式與獲利：從需求驗證到定價結構 - ${siteConfig.name}`
+      : `${area.name} - ${siteConfig.name}`;
 const pageDescription = isNotebookLM
   ? '整理比利陳實測 NotebookLM 的 9 篇完整筆記，涵蓋掃描 PDF 轉檔、亂碼排錯、五種提問方法，以及與 Claude、Notion AI 的工具比較。'
   : isAIWorkflow
     ? '比利陳整理 17 篇 AI 工作流程實戰筆記，涵蓋任務拆解、ChatGPT 與 Claude 工具組合、會議與評論分析、品質檢查與資安底線。'
-    : `${area.lead}${area.summary}`;
+    : isBusinessModel
+      ? '比利陳整理商業模式、需求驗證、定價與獲利結構的實戰筆記，帶你用九個問題拆解一門生意到底靠什麼賺錢。'
+      : `${area.lead}${area.summary}`;
 const heroHeading = isNotebookLM ? 'NotebookLM 實戰指南' : area.name;
 
 const schema = {
@@ -93,6 +99,7 @@ const schema = {
 
   {isNotebookLM && <NotebookLMHubGuide />}
   {isAIWorkflow && <AIWorkflowHubGuide />}
+  {isBusinessModel && <BusinessModelHubGuide />}
 
   <section class="bg-background py-12 md:py-16" aria-labelledby="area-topics-title">
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
