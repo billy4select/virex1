@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "virex1",
+  "name": "virex2",
   "compatibility_date": "2026-04-10",
   "observability": {
     "enabled": true
