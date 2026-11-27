@@ -4,6 +4,7 @@ import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import ShareTrigger from '@/components/common/ShareTrigger.astro';
 import ShareCard from '@/components/common/ShareCard.astro';
 import { siteConfig } from '@/config';
+import { entityConfig } from '@/config/entity';
 import { marketingChapters, marketingChapterUrl, type MarketingChapter } from '@/lib/marketing-series';
 
 export function getStaticPaths() {
@@ -29,13 +30,14 @@ const url = `${siteConfig.url}${marketingChapterUrl(chapter.slug)}`;
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
+  '@id': `${url}#article`,
   headline: chapter.title,
   description: chapter.description,
   inLanguage: 'zh-Hant-TW',
   mainEntityOfPage: { '@type': 'WebPage', '@id': url },
   isPartOf: { '@type': 'CollectionPage', name: '行銷教學', url: `${siteConfig.url}/marketing/` },
-  author: { '@type': 'Person', name: '比利陳 Billy Chen' },
-  publisher: { '@type': 'Organization', name: siteConfig.name },
+  author: { '@id': entityConfig.ids.person },
+  publisher: { '@id': entityConfig.ids.person },
 };
 ---
 

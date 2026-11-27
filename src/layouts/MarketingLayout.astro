@@ -20,6 +20,8 @@ interface Props {
   faq?: { q: string; a: string }[];
   section?: string;
   sectionUrl?: string;
+  topicPillar?: { name: string; url: string };
+  citations?: string[];
   noindex?: boolean;
   structuredData?: Record<string, unknown>[];
 }
@@ -38,6 +40,8 @@ const {
   faq,
   section,
   sectionUrl,
+  topicPillar,
+  citations,
   noindex = false,
   structuredData = [],
 } = Astro.props;
@@ -93,6 +97,8 @@ if (schemaType === 'HowTo' && steps && steps.length > 0) {
   tags={tags}
   section={section}
   sectionUrl={sectionUrl}
+  topicPillar={topicPillar}
+  citations={citations}
   noindex={noindex}
 >
   <Fragment slot="head">

@@ -2,7 +2,9 @@
 import MarketingLayout from './MarketingLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import TableOfContents from '@/components/blog/TableOfContents.astro';
+import ArticleEvidence, { type ArticleSource } from '@/components/blog/ArticleEvidence.astro';
 import ArticleFAQ from '@/components/blog/ArticleFAQ.astro';
+import ArticleTopicCluster from '@/components/blog/ArticleTopicCluster.astro';
 import ArticleNext from '@/components/blog/ArticleNext.astro';
 import ArticleAuthor from '@/components/blog/ArticleAuthor.astro';
 import ArticleNewsletter from '@/components/blog/ArticleNewsletter.astro';
@@ -12,7 +14,9 @@ import { Icon } from 'astro-icon/components';
 import { calculateReadingTime, formatDate } from '@/lib/utils';
 import { tagUrl } from '@/lib/blog';
 import { themeUrl, type BlogTheme } from '@/lib/themes';
+import type { ArticleTopicCluster as TopicClusterData } from '@/lib/topic-curation';
 import { siteConfig } from '@/config';
+import { entityConfig } from '@/config/entity';
 
 interface Heading {
   depth: number;
@@ -43,6 +47,10 @@ interface Props {
   headings?: Heading[];
   category?: BlogTheme;
   nextPost?: NextPost;
+  topicCluster?: TopicClusterData;
+  testedAt?: string;
+  testNotes?: string;
+  sources?: ArticleSource[];
 }
 
 const {
@@ -61,6 +69,10 @@ const {
   headings = [],
   category,
   nextPost,
+  topicCluster,
+  testedAt,
+  testNotes,
+  sources = [],
 } = Astro.props;
 
 const readingTime = calculateReadingTime(content);
@@ -76,7 +88,7 @@ const formattedUpdated = hasUpdate
   ? formatDate(updatedDate, { year: 'numeric', month: 'long', day: 'numeric' })
   : '';
 
-const displayTitle = propsDisplayTitle || (title ? title.split(/ [\|\-] /)[0] : '');
+const displayTitle = propsDisplayTitle || (title ? title.split(/ [|-] /)[0] : '');
 const canonicalUrl = new URL(Astro.url.pathname, siteConfig.url).href;
 
 const tocCount =
@@ -85,6 +97,15 @@ const tocCount =
 const hasToc = tocCount >= 3;
 
 const articleGridClass = 'lg:grid lg:grid-cols-[220px_minmax(0,760px)] lg:gap-12';
+
+const topicPillar = topicCluster
+  ? {
+      name: topicCluster.pillarName,
+      url: new URL(topicCluster.pillarHref, siteConfig.url).href,
+    }
+  : undefined;
+
+const citations = sources.map((source) => source.url);
 ---
 
 <MarketingLayout
@@ -101,6 +122,8 @@ const articleGridClass = 'lg:grid lg:grid-cols-[220px_minmax(0,760px)] lg:gap-12
   faq={faq}
   section={category?.name}
   sectionUrl={category ? `${siteConfig.url}${themeUrl(category.slug)}` : undefined}
+  topicPillar={topicPillar}
+  citations={citations}
 >
   <Breadcrumbs
     items={[
@@ -111,24 +134,42 @@ const articleGridClass = 'lg:grid lg:grid-cols-[220px_minmax(0,760px)] lg:gap-12
     ]}
   />
 
-  {/* 文章標題區 */}
+  {/* 文章標題區：與下方正文共用同一組兩欄網格，讓標題、說明、分享鈕與正文左右齊平 */}
   <section class="bg-background border-b border-border pt-10 pb-8 md:pt-14 md:pb-10" data-pagefind-ignore>
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <header class="min-w-0 max-w-3xl">
+      <div class={articleGridClass}>
+        <header class="min-w-0 max-w-3xl lg:col-start-2 lg:max-w-none">
           <h1 class="mb-4 text-3xl font-extrabold leading-tight tracking-tight text-text md:text-4xl">
             {displayTitle}
           </h1>
 
           {
             description && (
-              <p class="mb-6 max-w-3xl text-base leading-relaxed text-text-muted md:text-lg">
+              <p class="mb-6 text-base leading-relaxed text-text-muted md:text-lg">
                 {description}
               </p>
             )
           }
 
           <div class="flex flex-wrap items-center justify-between gap-x-5 gap-y-3 text-xs font-medium text-text-muted md:text-sm">
-            <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+              <a
+                href="/about/"
+                rel="author"
+                class="group inline-flex items-center gap-2 text-text transition-colors hover:text-primary"
+              >
+                <img
+                  src={siteConfig.logo}
+                  alt={entityConfig.personName}
+                  width="24"
+                  height="24"
+                  class="h-6 w-6 rounded-full border border-border object-cover"
+                />
+                <span class="font-semibold">{entityConfig.personName}</span>
+              </a>
+
+              <span class="text-border" aria-hidden="true">·</span>
+
               <span class="flex items-center gap-1.5">
                 <Icon name="lucide:calendar" class="h-4 w-4" />
                 {formattedDate}
@@ -171,25 +212,28 @@ const articleGridClass = 'lg:grid lg:grid-cols-[220px_minmax(0,760px)] lg:gap-12
               </div>
             )
           }
-      </header>
+        </header>
+      </div>
     </div>
   </section>
 
-  {/* 封面圖：有 image 時才顯示（自動產生的 /og/ 分享卡只給社群用，不當封面） */}
+  {/* 封面圖：與標題和正文共用同一條對齊軸線（自動產生的 /og/ 分享卡只給社群用，不當封面） */}
   {
     image && !image.startsWith('/og/') && (
       <section class="bg-background border-b border-border" data-pagefind-ignore>
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 md:py-8">
-          <div class="max-w-3xl overflow-hidden rounded-xl border border-border bg-surface">
-            <img
-              src={image}
-              alt={displayTitle}
-              width="1200"
-              height="630"
-              loading="eager"
-              decoding="async"
-              class="aspect-[16/9] w-full object-cover"
-            />
+          <div class={articleGridClass}>
+            <div class="min-w-0 max-w-3xl overflow-hidden rounded-xl border border-border bg-surface lg:col-start-2 lg:max-w-none">
+              <img
+                src={image}
+                alt={displayTitle}
+                width="1200"
+                height="630"
+                loading="eager"
+                decoding="async"
+                class="aspect-[16/9] w-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -208,7 +252,7 @@ const articleGridClass = 'lg:grid lg:grid-cols-[220px_minmax(0,760px)] lg:gap-12
           )
         }
 
-        <div class="min-w-0 max-w-3xl">
+        <div class="min-w-0 max-w-3xl lg:max-w-none">
           <span data-pagefind-meta="title" class="sr-only">{displayTitle}</span>
           <div class="prose prose-slate max-w-none prose-base md:prose-lg" data-reading-body>
             <slot name="content" />
@@ -217,12 +261,14 @@ const articleGridClass = 'lg:grid lg:grid-cols-[220px_minmax(0,760px)] lg:gap-12
 
           <div data-pagefind-ignore>
             <slot name="before-faq" />
+            <ArticleEvidence testedAt={testedAt} testNotes={testNotes} sources={sources} />
             <ArticleFAQ faqs={faq} />
             <ShareCard
               title={displayTitle}
               description={description}
               url={canonicalUrl}
             />
+            <ArticleTopicCluster cluster={topicCluster} />
             <ArticleNext post={nextPost} />
             <ArticleAuthor />
             <ArticleNewsletter />

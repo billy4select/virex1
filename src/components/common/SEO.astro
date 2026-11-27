@@ -1,24 +1,33 @@
 ---
 /**
- * SEO - 完整版
+ * SEO - 完整版（含全域 @id 互通 Entity JSON-LD）
  *
  * 全站唯一的 title / description / canonical / Open Graph / JSON-LD 出口。
  * 呼叫端可以傳入已含品牌的名稱，這裡會自動避免重複附加站名。
  */
 import { siteConfig } from '@/config';
+import { entityConfig } from '@/config/entity';
 import { getThemeBySlug } from '@/lib/themes';
+
+interface TopicPillarRef {
+  name: string;
+  url: string;
+}
 
 interface Props {
   title: string;
   description: string;
   image?: string;
   type?: 'website' | 'article';
+  // 文章專用的 JSON-LD 資料
   publishedDate?: Date;
   modifiedDate?: Date;
   author?: string;
   tags?: string[];
   section?: string;
   sectionUrl?: string;
+  topicPillar?: TopicPillarRef;
+  citations?: string[];
   noindex?: boolean;
 }
 
@@ -33,6 +42,8 @@ const {
   tags = [],
   section,
   sectionUrl,
+  topicPillar,
+  citations = [],
   noindex = false,
 } = Astro.props;
 
@@ -51,34 +62,51 @@ const canonicalURL = new URL(Astro.url.pathname, siteConfig.url);
 const isDefaultImage = !image;
 const imageUrl = image || siteConfig.ogImage;
 const ogImage = imageUrl ? new URL(imageUrl, siteConfig.url).href : undefined;
-const ogImageAlt = isDefaultImage ? brand : cleanTitle;
+const ogImageAlt = isDefaultImage ? entityConfig.canonicalBrand : cleanTitle;
+const lastModified = modifiedDate || publishedDate;
 
-const socialUrls = Object.values(siteConfig.social).filter(Boolean);
+// 全站固定實體節點（@id 互通）：Person + WebSite
+const personNode = {
+  '@type': 'Person',
+  '@id': entityConfig.ids.person,
+  name: entityConfig.personName,
+  alternateName: [...entityConfig.alternateNames],
+  url: entityConfig.aboutUrl,
+  mainEntityOfPage: {
+    '@id': entityConfig.ids.profilePage,
+  },
+  image: {
+    '@type': 'ImageObject',
+    url: entityConfig.imageUrl,
+  },
+  email: `mailto:${entityConfig.email}`,
+  jobTitle: entityConfig.jobTitle,
+  description: entityConfig.bio,
+  knowsAbout: [...entityConfig.knowsAbout],
+  sameAs: [...entityConfig.sameAs],
+};
 
-// JSON-LD 結構化資料
-const websiteSchema = {
-  '@context': 'https://schema.org',
+const websiteNode = {
   '@type': 'WebSite',
-  name: brand,
+  '@id': entityConfig.ids.website,
+  name: entityConfig.canonicalBrand,
+  alternateName: [brand, '行銷裡的路人甲'],
   description: siteConfig.description,
-  url: siteConfig.url,
+  url: entityConfig.siteUrl,
   inLanguage: 'zh-Hant-TW',
+  author: {
+    '@id': entityConfig.ids.person,
+  },
+  publisher: {
+    '@id': entityConfig.ids.person,
+  },
 };
 
-const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: brand,
-  url: siteConfig.url,
-  logo: new URL(siteConfig.logo, siteConfig.url).href,
-  ...(socialUrls.length > 0 ? { sameAs: socialUrls } : {}),
-};
-
-const articleSchema =
+const articleNode =
   type === 'article' && publishedDate
     ? {
-        '@context': 'https://schema.org',
         '@type': 'BlogPosting',
+        '@id': `${canonicalURL.href}#article`,
         headline: cleanTitle,
         description,
         image: ogImage,
@@ -87,29 +115,29 @@ const articleSchema =
         datePublished: publishedDate.toISOString(),
         dateModified: (modifiedDate || publishedDate).toISOString(),
         author: {
-          '@type': 'Person',
-          name: author || siteConfig.author,
-          url: new URL('/about/', siteConfig.url).href,
-          ...(socialUrls.length > 0 ? { sameAs: socialUrls } : {}),
+          '@id': entityConfig.ids.person,
         },
         publisher: {
-          '@type': 'Organization',
-          name: brand,
-          logo: {
-            '@type': 'ImageObject',
-            url: new URL(siteConfig.logo, siteConfig.url).href,
-          },
+          '@id': entityConfig.ids.person,
         },
         isPartOf: {
-          '@type': 'Blog',
-          '@id': `${siteConfig.url}/blog/#blog`,
-          name: `${brand} 文章`,
-          url: `${siteConfig.url}/blog/`,
+          '@id': entityConfig.ids.website,
         },
         mainEntityOfPage: {
           '@type': 'WebPage',
           '@id': canonicalURL.href,
         },
+        ...(topicPillar
+          ? {
+              about: {
+                '@type': 'Thing',
+                name: topicPillar.name,
+                url: topicPillar.url,
+              },
+            }
+          : {}),
+        ...(citations.length > 0 ? { citation: citations } : {}),
+        ...(tags.length > 0 ? { keywords: tags } : {}),
         url: canonicalURL.href,
       }
     : null;
@@ -139,11 +167,12 @@ if (isCategoryPath) {
 } else if (pathSegments.length > 0 && !isBlogPath) {
   breadcrumbItems.push({ name: cleanTitle, item: canonicalURL.href });
 }
-const breadcrumbSchema =
+
+const breadcrumbNode =
   breadcrumbItems.length > 1
     ? {
-        '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
+        '@id': `${canonicalURL.href}#breadcrumb`,
         itemListElement: breadcrumbItems.map((item, index) => ({
           '@type': 'ListItem',
           position: index + 1,
@@ -152,13 +181,23 @@ const breadcrumbSchema =
         })),
       }
     : null;
+
+const entityGraph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    personNode,
+    websiteNode,
+    ...(breadcrumbNode ? [breadcrumbNode] : []),
+    ...(articleNode ? [articleNode] : []),
+  ],
+};
 ---
 
 <title>{fullTitle}</title>
 <meta name="title" content={fullTitle} />
 <meta name="description" content={description} />
 {noindex && <meta name="robots" content="noindex, follow" />}
-<meta name="author" content={siteConfig.author} />
+<meta name="author" content={author || entityConfig.personName} />
 {tags.length > 0 && <meta name="keywords" content={tags.join(', ')} />}
 
 <link rel="canonical" href={canonicalURL} />
@@ -167,7 +206,7 @@ const breadcrumbSchema =
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
-<meta property="og:site_name" content={brand} />
+<meta property="og:site_name" content={entityConfig.canonicalBrand} />
 <meta property="og:locale" content="zh_TW" />
 {ogImage && <meta property="og:image" content={ogImage} />}
 {ogImage && <meta property="og:image:alt" content={ogImageAlt} />}
@@ -177,13 +216,10 @@ const breadcrumbSchema =
 {type === 'article' && publishedDate && (
   <meta property="article:published_time" content={publishedDate.toISOString()} />
 )}
-{type === 'article' && (modifiedDate || publishedDate) && (
-  <meta
-    property="article:modified_time"
-    content={(modifiedDate || publishedDate).toISOString()}
-  />
+{type === 'article' && lastModified && (
+  <meta property="article:modified_time" content={lastModified.toISOString()} />
 )}
-{type === 'article' && <meta property="article:author" content={author || siteConfig.author} />}
+{type === 'article' && <meta property="article:author" content={entityConfig.aboutUrl} />}
 {type === 'article' && tags.map((tag) => <meta property="article:tag" content={tag} />)}
 
 <meta property="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
@@ -192,14 +228,7 @@ const breadcrumbSchema =
 {ogImage && <meta property="twitter:image" content={ogImage} />}
 {ogImage && <meta property="twitter:image:alt" content={ogImageAlt} />}
 
-<script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
-<script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
-{breadcrumbSchema && (
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-)}
-{articleSchema && (
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
-)}
+<script is:inline type="application/ld+json" set:html={JSON.stringify(entityGraph)} />
 
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />

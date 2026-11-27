@@ -20,6 +20,8 @@ interface Props {
   tags?: string[];
   section?: string;
   sectionUrl?: string;
+  topicPillar?: { name: string; url: string };
+  citations?: string[];
   noindex?: boolean;
 }
 
@@ -34,6 +36,8 @@ const {
   tags,
   section,
   sectionUrl,
+  topicPillar,
+  citations,
   noindex = false,
 } = Astro.props;
 ---
@@ -76,6 +80,8 @@ const {
       tags={tags}
       section={section}
       sectionUrl={sectionUrl}
+      topicPillar={topicPillar}
+      citations={citations}
       noindex={noindex}
     />
 

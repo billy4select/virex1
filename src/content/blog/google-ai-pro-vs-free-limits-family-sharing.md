@@ -20,6 +20,15 @@ faq:
     a: 因為 Gemini 的用量是以「運算量」計算，每 5 小時重設一次。如果在同一個長對話裡反覆傳檔、請它整理並打包下載，系統每輪都要重新讀取前面所有歷史紀錄，消耗自然會變快；換任務時直接開新對話就能省下不少額度。
   - q: Google AI Pro 開家庭共享，家人的額度是各自獨立還是共用？
     a: 依 Google One 官方說明，最多可與 5 位家人共享 Gemini App、NotebookLM 與 Workspace 進階 AI 功能，但雲端儲存空間、AI 點數以及部分產品（如 Google Flow、Google Antigravity）的用量上限是整個家庭共用同一個池子；另外像 YouTube Premium Lite、Google Colab 等福利僅限方案管理者本人使用。
+testedAt: 2026-11 實測於 Google AI Pro 訂閱方案（網頁版繁體中文介面）
+testNotes: 以單一長對話視窗連續上傳多份檔案、反覆整理並打包下載為實測情境，規格與家庭共享規則對照 Google 官方說明頁。
+sources:
+  - label: Google Gemini 官方方案與用量限制說明
+    url: https://support.google.com/gemini/answer/16275805?hl=zh-Hant
+  - label: Google One — Google AI Pro 方案官方介紹
+    url: https://one.google.com/intl/zh-TW_tw/about/google-ai-plans/
+  - label: Google One 家庭群組共享規則官方說明
+    url: https://support.google.com/googleone/answer/9004015?hl=en&co=GENIE.Platform%3DDesktop
 ---
 
 最近實際用了一陣子 Google AI Pro，第一個最有感的體感其實跟大家想的不太一樣：
