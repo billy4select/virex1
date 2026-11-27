@@ -32,3 +32,17 @@
 - **廣告與追蹤設定檔**
   - `public/ads.txt`
   - `src/layouts/BaseLayout.astro` 內的既有 GTM / 廣告追蹤碼設定
+
+## 4. 新文章上架與 SEO 品質檢查清單
+
+未來新增或大幅更新 `src/content/blog/*.md` 文章時，一律順手檢查以下五點：
+
+- **實測證據與官方來源（工具／平台／廣告／SEO 類文章必補）**：在 frontmatter 補上 `testedAt`、`testNotes` 與官方 `sources`（`label` + `url`），讓文章頁自動顯示「實測條件與參考來源」證據卡。
+- **搜尋意圖與 3 秒速查表**：凡屬「比較（A vs B）」「怎麼選」「指標差異」「流程步驟」類文章，開頭或第一個小節優先放上**結論先行**或 **Markdown 速查表**，直接完成搜尋者的任務。
+- **Pillar / Cluster 內鏈收錄**：文章內文至少連回 1 個對應的 `/topics/.../` 主題頁，並將文章 slug 登記到 `src/lib/topic-curation.ts` 與對應主題支柱頁（避免孤島頁）。
+- **品牌與轉換連結規範**：
+  - 統一品牌稱呼為 **「比利陳｜行銷裡的路人甲」**。
+  - 電子報連結一律使用 **Substack**（`https://billy4select.substack.com/`），**禁止使用已停用的 `kit.com`**。
+  - **NARRATIVE ENGINE**（`/narrative-engine/`）為付費工具，不可標示為免費。
+- **推送方式**：若直接推送 `main` 受分支保護阻擋，請開 feature branch 推送並使用 `gh pr create` 建立 Pull Request 交給使用者合併。
+

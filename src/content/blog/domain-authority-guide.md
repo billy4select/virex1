@@ -22,6 +22,15 @@ faq:
     a: 有可能，但別去硬碰大字。只要鎖定具體長尾問題、把搜尋意圖對準、寫出大媒體沒有的第一手實戰經驗，新網站一樣能在特定問題上排到首頁。
   - q: 比起盯著網站權重分數，平常應該看什麼數字？
     a: 直接看 Google Search Console 的曝光與點擊趨勢，搭配 GA4 看進站後的用戶反應（跳出率、停留時間與轉換），這才是真實的成長證據。
+testedAt: 2026 年依 Google 搜尋官方文件與 Moz / Ahrefs 指標定義整理
+testNotes: 核對 Google Search Central 排名系統說明與第三方工具（DA / DR）計算口徑，區分站內權重結構與外部評分。
+sources:
+  - label: Google Search Central：Google 搜尋排名系統指南
+    url: https://developers.google.com/search/docs/appearance/ranking-systems-guide?hl=zh-tw
+  - label: Moz 官方說明：What Is Domain Authority?
+    url: https://moz.com/learn/seo/domain-authority
+  - label: Ahrefs 官方說明：Domain Rating (DR)
+    url: https://ahrefs.com/website-authority-checker
 ---
 
 剛開始經營網站的人，常會被一個名詞嚇到：「你的網站權重（DA 或 DR）只有 10，根本不可能排到 Google 首頁！」

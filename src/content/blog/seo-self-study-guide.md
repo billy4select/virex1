@@ -24,6 +24,13 @@ faq:
   - q: SEO 自學多久會看到成果？
     a: >-
       沒有固定時間。網站年齡、競爭程度、內容主題與執行品質都會影響結果。初期先確認頁面能正常索引，再觀察曝光、查詢與點擊的變化。
+testedAt: 2026 年以自營網站（www.billy4select.com）SEO 建置與收錄實戰整理
+testNotes: 對照 Google 官方 SEO 入門指南與實務網站操作順序，整理從爬取、索引到內容架構的自學路線。
+sources:
+  - label: Google Search Central：SEO 入門指南
+    url: https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=zh-tw
+  - label: Google Search Console 官方說明中心
+    url: https://support.google.com/webmasters/?hl=zh-Hant
 ---
 
 SEO 的資訊很多，教學文章、工具介紹、演算法消息每天都在增加。初學者很容易先學一堆操作，卻不知道這些操作究竟在解決什麼問題。

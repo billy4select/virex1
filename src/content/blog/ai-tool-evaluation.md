@@ -21,6 +21,15 @@ faq:
     a: 最實際的三個指標是「我要刪改多少廢話才能交出去」、「資料能不能安全處理」，以及「把生成加上核對的時間全算進去，到底有沒有比我自己做快」。
   - q: 什麼時候才值得花錢換成新的 AI 工具？
     a: 當新工具在你的三個真實工作任務裡，都能穩定省下明顯時間或降低修改成本，且沒有增加團隊交接負擔時再換。不要因為社群大家都在討論就急著搬家。
+testedAt: 2026 年以實務工作任務盲測多款生成式 AI 工具整理
+testNotes: 用三個固定真實工作任務（摘要、改寫、結構分析）橫向測試輸出穩定度與返工成本，而非只看規格表。
+sources:
+  - label: OpenAI 官方文件中心
+    url: https://platform.openai.com/docs/overview
+  - label: Anthropic Claude 官方文件
+    url: https://docs.anthropic.com/
+  - label: Google AI 官方網站
+    url: https://ai.google/
 ---
 
 現在每個月都有好幾個號稱「顛覆工作流」的新 AI 工具上線。

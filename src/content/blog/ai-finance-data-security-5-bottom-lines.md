@@ -19,6 +19,15 @@ faq:
     a: 把「邏輯」跟「真實敏感數字」分開。你可以把公司名稱跟客戶姓名換成代號（A 公司、B 產品），把真實金額等比例縮放或用假數字，只請 AI 幫你寫 Excel 公式、分析框架或摘要模板，回來再自己套入真數字。
   - q: 付費版 AI 工具就一定不會外洩公司資料嗎？
     a: 個人付費版跟企業版（Enterprise / Team）的資安條款不同。就算關閉了模型訓練選項，公司內部通常還是有明確的資訊安全規範，處理財務或個資前先問清楚 IT 或主管最保險。
+testedAt: 2026 年核對 OpenAI、Anthropic 與 Google Workspace 官方資料隱私條款整理
+testNotes: 對照個人免費版、付費版與企業版在訓練資料使用權與資料保留政策的差異，訂出財務資料去識別化底線。
+sources:
+  - label: OpenAI 企業隱私與資料使用說明
+    url: https://openai.com/enterprise-privacy/
+  - label: Anthropic 隱私中心：使用者資料與模型訓練說明
+    url: https://privacy.anthropic.com/
+  - label: Google Workspace 隱私中心：生成式 AI 資料保護
+    url: https://workspace.google.com/security/
 ---
 
 手上拿到一份格式很亂的財務報表，下午開會前要整理出給主管看的重點摘要。

@@ -22,6 +22,13 @@ faq:
     a: 沒有統一標準，要看你的商品毛利率。最簡單的算法是「1 ÷ 毛利率」：如果毛利率是 50%，損益平衡的 ROAS 就是 2，超過 2 才算覆蓋掉商品跟廣告成本；若毛利率只有 25%，ROAS 要做到 4 以上才打平。
   - q: 為什麼廣告後台的 ROAS 常常跟公司實際營收對不起來？
     a: 主要有三個原因：一是後台只算「營收」沒扣掉退貨、運費與手續費；二是不同廣告平台會各自歸因同一筆訂單造成重複計算；三是沒有把新客跟原本就會回購的老客拆開看。
+testedAt: 2026 年依 Meta 廣告後台 ROAS 口徑與電商毛利損益表對帳實務整理
+testNotes: 區分平台端歸因 ROAS 與實際扣掉商品成本、退貨與平台抽成後的淨利結構。
+sources:
+  - label: Meta 企業商家使用說明：廣告投資報酬率（ROAS）定義
+    url: https://www.facebook.com/business/help/1735705093365807
+  - label: Google Ads 說明：目標廣告投資報酬率出價
+    url: https://support.google.com/google-ads/answer/6268637?hl=zh-Hant
 ---
 
 廣告後台跳出一個漂亮的數字：ROAS 4.5。
