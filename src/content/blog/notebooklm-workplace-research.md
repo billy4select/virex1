@@ -20,6 +20,13 @@ faq:
     a: 先收齊 3 到 5 份靠譜的報告或文章丟進去，起手先問「這批資料在講什麼、整體架構是什麼」，再針對看不懂的環節一個一個追問為什麼；資料沒寫到的背景再往外查補進來。
   - q: 研究完的資料要怎麼留下來，才不會做完專案就忘掉？
     a: NotebookLM 放的是原始資料，研究完之後，把確認過有用的結論、數據跟自己的判斷整理出來，存進 Notion 或你習慣的筆記系統，之後寫提案才找得到。
+testedAt: 2026 年於 NotebookLM 網頁版實測職場研究與簡報前期資料拆解流程
+testNotes: 以公開財報、產業報告與訪談筆記實測「匯入來源 → 交叉提問 → 核對引用 → 形成觀點」工作流。
+sources:
+  - label: NotebookLM 官方說明中心
+    url: https://support.google.com/notebooklm/?hl=zh-Hant
+  - label: NotebookLM 官方網站
+    url: https://notebooklm.google.com/
 ---
 
 職場上做研究，最累的狀況常常是資料太多、知識太硬，打開十份 PDF 看了兩小時，還是不知道明天開會要講什麼。

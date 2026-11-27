@@ -20,6 +20,13 @@ faq:
     a: 一般幾十頁的 PDF 直接丟進去沒問題。但如果一份檔案長達好幾百頁、裡面又塞了好幾個不相關的主題，照章節拆開上傳，後續追問跟核對引用會準確很多。
   - q: 上傳表格很多的 PDF 要注意什麼？
     a: 複雜的跨頁表格轉成純文字後很容易欄位錯位。如果裡面的數字很重要，建議同時保留原始 Excel 或試算表，問完重點還是要回原檔核對數字。
+testedAt: 2026 年於 NotebookLM 網頁版實測不同檔案格式與檔名結構之上傳效果
+testNotes: 比對原生文字 PDF、掃描 PDF、Google Docs 與純文字檔在引用精準度與中文斷行上的差異。
+sources:
+  - label: NotebookLM 官方說明中心（支援來源格式與上傳限制）
+    url: https://support.google.com/notebooklm/?hl=zh-Hant
+  - label: Google Drive 官方說明：將 PDF 轉換為 Google 文件文字
+    url: https://support.google.com/drive/answer/176692?hl=zh-Hant
 ---
 
 NotebookLM 好不好用，其實有一半在「按下上傳之前」就決定了。

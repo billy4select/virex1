@@ -20,6 +20,13 @@ faq:
     a: 可以，而且這是我最常用的做法。先在 NotebookLM 把一堆原始文件讀完、拆解重點，確認哪些真的有用之後，再把整理好的結論放進 Notion 存成長期資料庫。
   - q: 只想選一個工具，應該怎麼決定？
     a: 看你現在最花時間的是哪一段。如果你手上有一堆外部報告讀不完，先用 NotebookLM；如果你的痛點是會議紀錄、專案進度跟工作檔案散落各處，那就先整理進 Notion。
+testedAt: 2026 年以個人與專案知識庫情境對照實測 NotebookLM 與 Notion AI
+testNotes: 從跨文件引用查核、長期資料維護、團隊權限與日常工作流程整合四個面向對照官方定位。
+sources:
+  - label: NotebookLM 官方說明中心
+    url: https://support.google.com/notebooklm/?hl=zh-Hant
+  - label: Notion 官方說明中心：Notion AI 功能說明
+    url: https://www.notion.com/help/category/notion-ai
 ---
 
 想建一個 AI 知識庫，到底該用 NotebookLM，還是直接用 Notion AI？

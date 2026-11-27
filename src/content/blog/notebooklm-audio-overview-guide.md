@@ -19,6 +19,13 @@ faq:
     a: 支援中文輸出，而且在生成前可以點「自訂」，輸入你希望主持人聚焦的主題、立場或目標聽眾，避免它把不重要的細節講太久。
   - q: 聽完語音摘要就可以直接拿裡面的數字做報告嗎？
     a: 不建議。語音對談為了聽起來流暢，常會簡化條件或把推論講得太順口。聽到有用的觀點，還是要回到筆記本文字區查原文引用再使用。
+testedAt: 2026 年於 NotebookLM 網頁版實測 Audio Overview 語音摘要功能
+testNotes: 以長篇產業報告與中文筆記來源實測語音摘要生成品質、重點涵蓋率與指令調整效果。
+sources:
+  - label: NotebookLM 官方說明中心（Audio Overview 語音摘要功能說明）
+    url: https://support.google.com/notebooklm/?hl=zh-Hant
+  - label: NotebookLM 官方網站
+    url: https://notebooklm.google.com/
 ---
 
 NotebookLM 剛爆紅的時候，最多人拿出來展示的功能就是 Audio Overview——把一堆枯燥的 PDF 丟進去，幾分鐘後就生出一段像雙人 Podcast 的語音對談。

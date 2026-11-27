@@ -22,6 +22,15 @@ faq:
     a: LCP 看主要畫面多久出來（2.5 秒內佳）；INP 看點按鈕或選單反不反應得夠快（200 毫秒內佳）；CLS 看網頁載入時文字跟按鈕會不會突然亂跳（0.1 以下佳）。
   - q: 最快改善網站載入速度的方法是什麼？
     a: 九成的慢網站都是因為「圖片沒壓縮」跟「裝了太多第三方追蹤碼或外掛」。把圖片轉成 WebP、壓在 200KB 以內，並清掉沒在用的腳本，通常馬上就會順很多。
+testedAt: 2026 年依 Google Core Web Vitals 官方門檻實測網站速度檢測流程
+testNotes: 對照 LCP、INP、CLS 官方評分標準與 Search Console 體驗報表，整理實務優先修復順序。
+sources:
+  - label: Google 搜尋中心：了解 Core Web Vitals 與搜尋結果
+    url: https://developers.google.com/search/docs/appearance/core-web-vitals?hl=zh-tw
+  - label: web.dev：Web Vitals 核心指標官方標準
+    url: https://web.dev/articles/vitals
+  - label: Google PageSpeed Insights 官方檢測工具
+    url: https://pagespeed.web.dev/
 ---
 
 你在手機上點進一篇文章，結果畫面轉了五秒還是一片白，你會繼續等，還是直接按上一頁？

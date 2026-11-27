@@ -21,6 +21,13 @@ faq:
     a: 不需要。標籤可協助平台內分類或探索，但不應把它當成 Google 排名的保證。內容主題與可理解性更重要。
   - q: Threads 可以取代網站 SEO 嗎？
     a: 不建議。社群平台的頁面與功能由平台控制，網站更適合承載完整內容、內部連結與長期搜尋需求。
+testedAt: 2026 年實測 Threads 個人檔案、貼文關鍵字與搜尋結果呈現整理
+testNotes: 觀察站內搜尋與 Google 公開頁索引特性，並對照 Meta 官方公開帳號與標籤機制說明。
+sources:
+  - label: Meta 官方說明中心：Threads 公開個人檔案與搜尋說明
+    url: https://help.instagram.com/788669719351544
+  - label: Google 搜尋中心：SEO 入門指南
+    url: https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=zh-tw
 ---
 
 Threads 的公開內容有機會出現在搜尋引擎結果中，因此有人開始問：是不是可以把 Threads 當成另一個 SEO 流量入口？
