@@ -22,6 +22,13 @@ faq:
     a: 確實有可能，這也是最需要注意的地方。所以即使交給系統自動分配，後台設定裡還是可以檢視「既有客戶預算上限」，並定期對照官網實際的「首購新客比例」跟毛利。
   - q: 預算交給系統自動跑之後，行銷人該把時間花在哪裡？
     a: 把力氣從調後台移回三件事：持續產出能切出新受眾的素材、追蹤網站轉換率與 GA 跳出率，以及確認整體獲客成本沒有超過商品毛利底線。
+testedAt: 2026 年依 Meta Advantage+ 與 Google Ads 自動出價實務經驗整理
+testNotes: 整理自動化投放時代的新客開發與再行銷預算切分邏輯，避免系統過度集中既有名單。
+sources:
+  - label: Meta 企業商家使用說明：關於 Advantage+ 購物廣告活動
+    url: https://www.facebook.com/business/help/2222300377957363
+  - label: Google Ads 說明：自動出價策略總覽
+    url: https://support.google.com/google-ads/answer/2979071?hl=zh-Hant
 ---
 
 過去學廣告投放，教科書幾乎都會教你一條標準公式：預算 70% 拿去拉新客、30% 拿去做再行銷跟老客回購。

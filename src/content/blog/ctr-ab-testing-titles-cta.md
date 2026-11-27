@@ -22,6 +22,13 @@ faq:
     a: 先測「大方向」再測小細節。優先順序通常是：溝通切角（講省時 vs. 講省錢）＞ 首圖或影片前 3 秒 ＞ 文案開頭三行；按鈕顏色或最後一句 CTA 字眼對小預算帳號影響微乎其微。
   - q: 如果 A 組 CTR 比較高，但 B 組轉換率比較高，該留哪一組？
     a: 留 B 組。CTR 高只代表比較吸睛，如果帶來一堆不買的流量跟高跳出率反而浪費錢；最終判斷勝負一定要看轉換率跟實際獲客成本。
+testedAt: 2026 年依 Meta A/B 測試與廣告素材單一變因實驗實務整理
+testNotes: 以單一變因（標題或 CTA）設定測試假設與最小樣本觀察期，避免過早關閉或同時改太多變因。
+sources:
+  - label: Meta 企業商家使用說明：關於 A/B 測試
+    url: https://www.facebook.com/business/help/1738164643098669
+  - label: Google Ads 說明：廣告變體與實驗
+    url: https://support.google.com/google-ads/answer/6261395?hl=zh-Hant
 ---
 
 很多行銷團隊每週都在做廣告 A/B 測試，但跑了一個月下來，問他們「所以我們學到了什麼？」大家往往答不出來。

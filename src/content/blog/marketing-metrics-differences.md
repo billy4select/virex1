@@ -22,6 +22,13 @@ faq:
     a: 我實務上會先看轉換率，再搭配 GA 的跳出率，確認進來的人有沒有買單意願。單純的點擊數或流量其實參考價值最低，因為你根本不知道進來的人對不對。
   - q: CTR 高但沒有轉單，問題通常出在哪裡？
     a: 代表素材或標題很吸睛、讓人想點進來，但點進著陸頁後發現內容跟預期不符、價格太硬，或是根本吸引到愛看熱鬧卻不會買的非目標客群。
+testedAt: 2026 年對照 Meta Ads 與 Google Ads 報表欄位與實務操盤經驗整理
+testNotes: 依漏斗前中後段拆解 CPC、CTR、ROAS、ROI 各自反映的環節，避免單看單一指標誤判成效。
+sources:
+  - label: Meta 企業商家使用說明：廣告成效指標總覽
+    url: https://www.facebook.com/business/help/447834205249495
+  - label: Google Ads 說明：評估轉換與投資報酬率
+    url: https://support.google.com/google-ads/answer/1722096?hl=zh-Hant
 ---
 
 剛開始看廣告報表的人，常常會被一堆三個字母的縮寫搞混：CPM、CPC、CTR、CVR、ROAS、ROI。

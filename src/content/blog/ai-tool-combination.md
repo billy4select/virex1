@@ -21,6 +21,15 @@ faq:
     a: 因為每個工具的強項不同。像 NotebookLM 查原始資料很穩，但吐出來的文字很硬；通用模型寫作順手，但長期管理幾十份參考檔又很亂。勉強單一工具硬扛，最後都在花時間補救它的短板。
   - q: 工具之間交接資料時，最容易出什麼問題？
     a: 最常見的是把前一個工具的「未驗證草稿」直接丟給下一個工具擴寫，結果錯誤一路被放大。每次交接前一定要先花一分鐘人工核對關鍵數字與立場。
+testedAt: 2026 年以多工具日常工作流（研究、寫作、知識管理）實測整理
+testNotes: 以單一真實工作專案走完「資料收集 → 結構整理 → 文案定稿」，驗證不同 AI 工具的分工邊界。
+sources:
+  - label: OpenAI ChatGPT 官方產品說明
+    url: https://openai.com/chatgpt/overview/
+  - label: Anthropic Claude 官方產品說明
+    url: https://www.anthropic.com/claude
+  - label: Google NotebookLM 官方說明中心
+    url: https://support.google.com/notebooklm/?hl=zh-Hant
 ---
 
 很多人開始用 AI 之後，都會遇到一個問題：手邊開了三四個工具，一下問 ChatGPT、一下開 Claude、一下又開 NotebookLM，切換來切換去，反而覺得比以前更累。

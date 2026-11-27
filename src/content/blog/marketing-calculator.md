@@ -22,6 +22,13 @@ faq:
     a: 公式是「CPC ＝ CPM ÷ (1000 × CTR)」。例如 CPM 是 200 元、CTR 是 2%，1000 次曝光有 20 次點擊，平均每次點擊成本 CPC 就是 10 元。
   - q: 為什麼算完公式還是常常沒轉單？
     a: 公式只是幫你把漏斗數字接起來。如果算出來流量夠、點擊成本也不高，卻沒轉單，通常問題卡在轉換率跟進站品質，建議直接去查 GA 跳出率跟著陸頁內容。
+testedAt: 2026 年對照 Meta 廣告管理員與 Google Ads 官方指標口徑整理
+testNotes: 彙整 CPC、CTR、CPM、CPA、ROAS、ROI 計算公式與實務毛利換算範例，確保報表口徑一致。
+sources:
+  - label: Meta 企業商家使用說明：廣告指標詞彙表
+    url: https://www.facebook.com/business/help/447834205249495
+  - label: Google Ads 說明：瞭解廣告活動效能指標
+    url: https://support.google.com/google-ads/answer/2454065?hl=zh-Hant
 ---
 
 做廣告投放或寫行銷提案時，最怕憑感覺抓預算。
