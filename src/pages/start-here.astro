@@ -116,8 +116,9 @@ const sections: GuideSection[] = [
 ];
 
 const quickPicks = [
+  { href: '/series/', title: '教學總覽', note: '想直接跟著系統化章節走完 AI、Threads、行銷或 SEO，從這裡進。' },
   { href: '/resources/', title: '免費資源', note: 'Prompt 範本、SOP 模板、AI 名詞字典，直接拿走使用。' },
-  { href: '/blog/', title: '全部文章', note: '依時間排列，想看最新發佈的文章從這裡進。' },
+  { href: '/blog/', title: '全部文章', note: '依時間排列，想看最新發佈的實戰指南從這裡進。' },
   { href: '/site-map/', title: '網站地圖', note: '記得標題、想快速找特定一篇時用這頁。' },
 ];
 
@@ -164,7 +165,7 @@ const schema = {
       </h1>
       <div class="mt-5 max-w-3xl space-y-4 text-base leading-8 text-text-muted md:text-lg">
         <p>
-          如果你是第一次來到這裡，站上一百多篇文章可能會讓你有點不知道從哪一篇點起。
+          如果你是第一次來到這裡，站上累積了數十篇深度實戰指南與多套系統化教學專題，可能會讓你有點不知道從哪一篇點起。
         </p>
         <p>
           這個網站沒有每天追最新的 AI 新聞，也很少寫只講觀念的心靈雞湯（那種東西滑社群就看飽了）。
@@ -271,7 +272,7 @@ const schema = {
         {/* 快速入口 */}
         <div class="rounded-2xl border border-border bg-surface p-6 md:p-7">
           <h2 class="text-lg font-extrabold tracking-tight text-text">不想照順序，只想直接找工具或文章</h2>
-          <ul class="mt-4 grid gap-4 sm:grid-cols-3">
+          <ul class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {
               quickPicks.map((item) => (
                 <li>
