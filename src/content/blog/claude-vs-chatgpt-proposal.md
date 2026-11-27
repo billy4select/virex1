@@ -1,31 +1,28 @@
+---
 title: Claude vs ChatGPT：行銷人寫提案，哪個比較不會讓你改到崩潰
 description: >-
-同樣是 AI 寫提案，為什麼有人改三遍就過，有人改十遍還在原地？不是你的 prompt 不夠好，是你用錯工具了。本文從行銷人的實際需求出發，拆解
-Claude 和 ChatGPT 在提案寫作上的真實差異。
+  同樣是 AI 寫提案，為什麼有人改三遍就過，有人改十遍還在原地？不是你的 prompt 不夠好，是你用錯工具了。本文從行銷人的實際需求出發，拆解
+  Claude 和 ChatGPT 在提案寫作上的真實差異。
 publishedDate: 2026-04-20T09:22:18Z
 updatedDate: 2026-11-27T00:00:00Z
 author: 比利陳 Billy Chen
 tags:
-
-* 工具比較評測
-
-* 行銷文案
-  category: AI 工作流程與工具
-  featured: false
-  boost: false
-  draft: false
-  schemaType: Article
-  faq:
-
-* q: Claude 和 ChatGPT 哪個比較適合寫行銷提案？
-  a: >-
-  看你現在卡在哪一段。要寫正式提案骨架、長篇論述或改好幾輪的案子，Claude 比較穩；前期還沒有方向、想快速逼出十個活動切角或標題，ChatGPT 比較順手。
-
-* q: 可以同時用 Claude 和 ChatGPT 寫提案嗎？
-  a: 可以，我自己就是這樣用。先用 ChatGPT 丟點子、看有哪些方向可以打，挑完之後把資料帶去 Claude 展開成正式提案。
-
-* q: 免費版和付費版的差異大嗎？
-  a: 偶爾寫短提案，免費版夠用。但如果一份提案超過兩千字、要來回修五六輪，付費版的上下文長度和穩定度會差很多，比較不會寫到一半撞上限。
+  - 工具比較評測
+  - 行銷文案
+category: AI 工作流程與工具
+featured: false
+boost: false
+draft: false
+schemaType: Article
+faq:
+  - q: Claude 和 ChatGPT 哪個比較適合寫行銷提案？
+    a: >-
+      看你現在卡在哪一段。要寫正式提案骨架、長篇論述或改好幾輪的案子，Claude 比較穩；前期還沒有方向、想快速逼出十個活動切角或標題，ChatGPT 比較順手。
+  - q: 可以同時用 Claude 和 ChatGPT 寫提案嗎？
+    a: 可以，我自己就是這樣用。先用 ChatGPT 丟點子、看有哪些方向可以打，挑完之後把資料帶去 Claude 展開成正式提案。
+  - q: 免費版和付費版的差異大嗎？
+    a: 偶爾寫短提案，免費版夠用。但如果一份提案超過兩千字、要來回修五六輪，付費版的上下文長度和穩定度會差很多，比較不會寫到一半撞上限。
+---
 
 用 AI 寫提案，最煩的其實不是它寫不出來，而是它寫出一份「看起來很完整、但你根本交不出去」的東西。
 
@@ -105,10 +102,7 @@ AI 可以幫你把三小時的初稿縮成半小時，但提案會不會過，�
 
 ## 延伸閱讀
 
-* [客戶簡報前，用 Claude 跑一遍「反對意見模擬」實戰流程](https://www.google.com/search?q=/blog/claude-objection-simulation/)
-
-* [AI 產出怎麼檢查？交付前確認事實、推論與責任](https://www.google.com/search?q=/blog/ai-output-quality-check/)
-
-* [免費仔的 AI 工具組合：不花錢也能跑完 80% 職場任務](https://www.google.com/search?q=/blog/free-ai-tools-workflow/)
-
-* [AI 工作流程主題總覽](https://www.google.com/search?q=/topics/ai-workflow/)
+- [客戶簡報前，用 Claude 跑一遍「反對意見模擬」實戰流程](/blog/claude-objection-simulation/)
+- [AI 產出怎麼檢查？交付前確認事實、推論與責任](/blog/ai-output-quality-check/)
+- [免費仔的 AI 工具組合：不花錢也能跑完 80% 職場任務](/blog/free-ai-tools-workflow/)
+- [AI 工作流程主題總覽](/topics/ai-workflow/)
