@@ -71,3 +71,9 @@ schemaType: Article
 - 有沒有交代重要限制或不同情境？
 
 文章不需要把所有可能性都寫完，但應該讓讀者知道你為什麼這樣判斷，以及判斷的邊界在哪裡。這比單純把句子修得更有力，對說服力更有幫助。
+
+## 延伸閱讀
+
+- [內容行銷怎麼寫出故事？從具體事件開始，不要只堆情緒形容詞](/blog/story-marketing-emotional-connection/)
+- [如何快速提煉賣點，並轉為打動使用者的文案？](/blog/feature-to-copywriting-selling-point/)
+- [文案與賣點主題總覽](/topics/marketing/copywriting/)

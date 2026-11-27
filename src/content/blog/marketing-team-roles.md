@@ -75,3 +75,9 @@ faq:
 外包不代表不用管理。需求、素材權利、修改範圍、交期與驗收方式，都應事先說清楚。
 
 團隊設計沒有通用的最佳人數。先把目標、工作流程與責任釐清，再決定需要哪些角色，比照搬其他公司的組織圖更實際。
+
+## 延伸閱讀
+
+- [一人公司怎麼運作？用 AI 建立可穩定交付的工作系統](/blog/one-person-company-ai-work-system/)
+- [數位行銷是什麼？從消費者決策理解需求、通路與訊息](/blog/digital-marketing-basics/)
+- [行銷診斷主題總覽](/topics/marketing/marketing-diagnosis/)

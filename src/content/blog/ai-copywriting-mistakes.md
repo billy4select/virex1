@@ -67,3 +67,9 @@ AI 很容易把一個簡單任務寫成完整文章。你只需要一個廣告�
 最後才處理語氣與節奏。若前面的資訊都不準，單純把句子改得更口語，也不會讓文案變有效。
 
 AI 可以快速提供草稿與不同表達方式，但文案是否成立，仍取決於你對產品、受眾與使用情境的理解。
+
+## 延伸閱讀
+
+- [Claude vs ChatGPT：行銷人寫提案，哪個比較不會讓你改到崩潰](/blog/claude-vs-chatgpt-proposal/)
+- [AI 產出怎麼檢查？交付前確認事實、推論與責任](/blog/ai-output-quality-check/)
+- [文案與賣點主題總覽](/topics/marketing/copywriting/)

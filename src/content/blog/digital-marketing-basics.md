@@ -82,3 +82,9 @@ faq:
 開始規劃數位行銷時，可以先寫下三件事：目標客群現在遇到什麼問題、他通常在哪裡尋找解法、他做決定時最需要確認什麼。接著再選擇內容形式、通路與工具。
 
 當你能說清楚這三件事，SEO、廣告或社群才會變成解決問題的方法，而不是待辦清單。
+
+## 延伸閱讀
+
+- [自學行銷的順序：為什麼多數人一開始就畫錯流程](/blog/learn-marketing-roadmap/)
+- [業績下滑先查哪裡？從流量、轉換、客單價與回購拆解](/blog/marketing-diagnosis-traffic-conversion-aov-repurchase/)
+- [行銷診斷主題總覽](/topics/marketing/marketing-diagnosis/)

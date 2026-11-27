@@ -69,3 +69,9 @@ schemaType: Article
 如果還沒有答案，可以先用小型專案、跨部門合作、公開作品或訪談市場上的從業者來測試，不必一開始就做高成本決定。
 
 職涯走到中段，重新檢查自己擁有什麼、缺少什麼，往往比急著追逐下一個熱門職稱更有用。
+
+## 延伸閱讀
+
+- [離開公司後，哪些能力與成果能帶著走？中階主管的 5 項可攜帶資產](/blog/mid-career-portable-assets/)
+- [35 歲開始學 AI 會太晚嗎？先從工作問題判斷值不值得投入](/blog/learn-ai-at-35-too-late-roi-metrics/)
+- [職涯轉型主題總覽](/topics/career/career-transition/)

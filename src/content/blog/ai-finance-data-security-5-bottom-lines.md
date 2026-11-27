@@ -73,3 +73,9 @@ AI 可能在摘要、表格或簡報中重新列出原始資料。即使輸入�
 如果任務必須使用未公開的完整財務資料，就先確認服務與權限是否獲得核准。不要為了省下幾分鐘，承擔自己無法評估的資料風險。
 
 AI 能提高處理效率，但資料能不能交出去，仍然要由有權限的人與制度決定。
+
+## 延伸閱讀
+
+- [用 AI 做數據分析，怎麼保留自己的專業判斷？](/blog/ai-data-analysis-human-ai-collaboration-professionalism/)
+- [NotebookLM 上傳文件前怎麼準備？格式、版本與來源檢查](/blog/notebooklm-upload-preparation/)
+- [AI 資料安全主題總覽](/topics/ai-workflow/ai-data-safety/)

@@ -63,3 +63,9 @@ AI 可以很快整理出一份格式完整的報告。標題、段落、摘要�
 3. 如果報告提出行動，我是否知道要驗證什麼？
 
 AI 可以協助組織內容與改善表達，但不能替作者補出沒有發生過的經驗，也不能替作者承擔報告中的判斷。
+
+## 延伸閱讀
+
+- [AI 產出怎麼檢查？交付前確認事實、推論與責任](/blog/ai-output-quality-check/)
+- [主管如何用 AI 準備週會報告：先整理判斷，再整理格式](/blog/ai-weekly-report-manager/)
+- [AI 會議與提案主題總覽](/topics/ai-workflow/ai-meetings-proposals/)
