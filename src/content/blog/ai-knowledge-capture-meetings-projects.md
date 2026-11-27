@@ -21,6 +21,13 @@ faq:
     a: 一是把所有未經篩選的逐字稿跟草稿全部塞進資料庫，最後變得比硬碟還亂；二是讓 AI 幫你補完檔案裡沒寫的歷史原因，反而把錯誤假設存進知識庫。
   - q: 沉澱好的專案知識應該放在哪裡比較好找？
     a: 原始檔案跟研究過程可以留在 NotebookLM 或雲端資料夾；經過篩選確認後的結論、決策脈絡跟模板，建議集中存進 Notion 這類方便分類與搜尋的結果資料庫。
+testedAt: 2026 年以 NotebookLM 搭配 Notion 建立會議與專案知識庫流程實測
+testNotes: 測試四欄知識沉澱模板（背景、決策、理由、後續動作）在專案交接與回查時的檢索效率。
+sources:
+  - label: Google NotebookLM 官方說明中心
+    url: https://support.google.com/notebooklm/?hl=zh-Hant
+  - label: Notion 官方說明中心：Notion AI 與知識庫整理
+    url: https://www.notion.com/help/category/notion-ai
 ---
 
 很多團隊都有個共同現象：每次開會都很認真寫紀錄，專案結束也有存結案簡報，雲端硬碟裡塞滿了幾百個檔案。

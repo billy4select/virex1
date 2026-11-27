@@ -649,7 +649,7 @@ export const topics: Topic[] = [
     name: '我想在 Threads 上從零開始經營',
     lead: '先有觀點，再談流量，最後才是導流與變現。',
     intro:
-      '完整 Threads 140 天實戰、人設語氣、貼文 SEO、與 IG 分工及商業帳號經營皆已整併進《Threads 經營教學》專題；下方搭配個人品牌與內容通路底層邏輯文章。',
+      '完整的 Threads 140 天實戰、帳號語氣、貼文曝光、與 IG 分工及商業帳號經營，我都整理在《Threads 經營教學》專題裡；下方可以搭配個人品牌與內容累積的延伸文章一起看。',
     articleIds: [
       'self-media-first-month-positioning-or-posting',
       'personal-brand-trust-not-reach',

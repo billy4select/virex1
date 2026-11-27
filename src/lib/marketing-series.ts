@@ -127,7 +127,7 @@ export const marketingChapters: MarketingChapter[] = [
     ],
     links: [
       { label: '廣告沒效果：三段診斷', href: '/blog/ads-not-working-diagnosis/' },
-      { label: 'AI 批量分析使用者評論：抓出真正痛點', href: '/blog/ai-batch-review-analysis/' },
+      { label: 'AI 批次分析使用者評論：抓出真正痛點', href: '/blog/ai-batch-review-analysis/' },
     ],
   },
   {

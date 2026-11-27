@@ -25,7 +25,7 @@ faq:
     a: >-
       先查看實際查詢、平均排名、搜尋結果版位與標題描述是否符合需求。平均排名是彙總指標，不能單獨證明標題或內容有問題。
 testedAt: 2026 年依 Google Search Console 檢索、索引與點擊數據排查經驗整理
-testNotes: 結合站內百餘篇文章在 GSC 的實際收錄與曝光表現，對照 Google 實用內容與索引官方規範。
+testNotes: 依實際網站在 Google Search Console 的收錄與曝光表現，對照 Google 官方實用內容與索引規範整理。
 sources:
   - label: Google Search Central：建立實用、可靠且以使用者為優先的內容
     url: https://developers.google.com/search/docs/fundamentals/creating-helpful-content?hl=zh-tw

@@ -129,7 +129,7 @@ export const entityConfig = {
       href: 'https://portaly.cc/billyselect4/product/ioeupgO66jK7vB24yJzY',
       description:
         '以行銷理論為基礎的自媒體經營指南，從目標受眾、內容、市場測試到變現與長期系統。',
-      pitch: '10 年品牌行銷人給你一套從定位、內容、找到用戶到商業變現的自媒體方法。',
+      pitch: '10 年品牌行銷人給你一套從定位、內容、找到受眾到商業變現的自媒體方法。',
     },
     {
       id: 'marketing',
