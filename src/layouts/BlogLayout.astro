@@ -6,6 +6,7 @@ import ArticleEvidence, { type ArticleSource } from '@/components/blog/ArticleEv
 import ArticleFAQ from '@/components/blog/ArticleFAQ.astro';
 import ArticleTopicCluster from '@/components/blog/ArticleTopicCluster.astro';
 import ArticleNext from '@/components/blog/ArticleNext.astro';
+import ArticleExploreGuide from '@/components/blog/ArticleExploreGuide.astro';
 import ArticleAuthor from '@/components/blog/ArticleAuthor.astro';
 import ArticleNewsletter from '@/components/blog/ArticleNewsletter.astro';
 import ShareTrigger from '@/components/common/ShareTrigger.astro';
@@ -272,6 +273,7 @@ const citations = sources.map((source) => source.url);
             />
             <ArticleTopicCluster cluster={topicCluster} />
             <ArticleNext post={nextPost} />
+            <ArticleExploreGuide />
             <ArticleAuthor />
             <ArticleNewsletter
               categorySlug={category?.slug}
