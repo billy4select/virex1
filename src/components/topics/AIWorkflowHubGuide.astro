@@ -1,0 +1,245 @@
+---
+import ArticleAuthor from '@/components/blog/ArticleAuthor.astro';
+
+interface HubStage {
+  step: string;
+  heading: string;
+  paragraphs: string[];
+  items: {
+    title: string;
+    href: string;
+    summary: string;
+  }[];
+}
+
+const stages: HubStage[] = [
+  {
+    step: 'STAGE 01',
+    heading: '先拆開任務，再決定找誰幫忙',
+    paragraphs: [
+      '工具每個月都在改版，追功能表很容易追到累。',
+      '比較省事的做法，是先把工作拆成「研究、寫作、知識保存」這幾種不同性質的任務，再去挑順手的工具。',
+    ],
+    items: [
+      {
+        title: '建立你的 AI 工作流程：先拆任務，再選工具',
+        href: '/blog/ai-workflow-start-with-tasks/',
+        summary: '從手邊一個真實任務開始，畫出人機怎麼配合的一頁式流程。',
+      },
+      {
+        title: 'AI 工具評估法：先找任務瓶頸，再看功能表',
+        href: '/blog/ai-tool-evaluation/',
+        summary: '用五個維度跟三任務測試法，判斷一個新工具值不值得花時間學。',
+      },
+      {
+        title: '三種 AI 大腦的分工：寫作、研究、知識庫不要混著用',
+        href: '/blog/three-ai-brains-division/',
+        summary: '把查資料、產出文案跟存檔切開，減少在同一個視窗裡越聊越亂的狀況。',
+      },
+    ],
+  },
+  {
+    step: 'STAGE 02',
+    heading: '工具怎麼搭配，還有花錢的邊界',
+    paragraphs: [
+      '沒有哪一個模型能把所有事情做到最好。平常我會讓不同工具各自負責擅長的那一段，免費版夠用就不急著付費。',
+    ],
+    items: [
+      {
+        title: 'AI 工具組合學：ChatGPT、Claude、NotebookLM 什麼時候一起用',
+        href: '/blog/ai-tool-combination/',
+        summary: '直接拆解這三個工具在研究、寫作跟資料整理上的交接順序。',
+      },
+      {
+        title: 'Claude vs ChatGPT：行銷人寫提案的真實差異',
+        href: '/blog/claude-vs-chatgpt-proposal/',
+        summary: '比較兩者在邏輯結構跟語氣控制上的表現，看哪一個比較少改稿。',
+      },
+      {
+        title: '免費仔的 AI 工具組合：不花錢跑完多數職場任務',
+        href: '/blog/free-ai-tools-workflow/',
+        summary: '如果暫時不想付月費，這四個免費工具搭起來已經夠應付日常工作。',
+      },
+      {
+        title: 'Google AI Pro 與免費版額度實測、家庭共享方案拆解',
+        href: '/blog/google-ai-pro-vs-free-limits-family-sharing/',
+        summary: '實際測完額度限制跟共享規則後，算清楚到底適不適合升級付費。',
+      },
+    ],
+  },
+  {
+    step: 'STAGE 03',
+    heading: '放進開會、簡報跟專案知識庫',
+    paragraphs: [
+      '工具單獨用很順，放進團隊專案卻常卡住，多半是卡在資料格式跟交接流程。',
+      '下面這幾篇主要處理每天都會遇到的高頻場景：開會、寫週報、模擬客戶問題、整理評論，還有把專案經驗留下來。',
+    ],
+    items: [
+      {
+        title: 'AI 會議整理術：從逐字稿到高價值決策摘要',
+        href: '/blog/ai-meeting-notes-workflow-summary/',
+        summary: '把一小時的會議錄音，變成大家真的會看的行動清單。',
+      },
+      {
+        title: '主管用 AI 準備週會報告的正確姿勢',
+        href: '/blog/ai-weekly-report-manager/',
+        summary: '先理清你自己的判斷，再讓 AI 幫你把報告結構順一遍。',
+      },
+      {
+        title: '客戶簡報前，用 Claude 跑一遍反對意見模擬',
+        href: '/blog/claude-objection-simulation/',
+        summary: '上場前先讓模型扮演難搞的客戶，提前把提案漏洞挑出來。',
+      },
+      {
+        title: 'AI 批量分析使用者評論：抓出最值得改的真實痛點',
+        href: '/blog/ai-batch-review-analysis/',
+        summary: '把上百則買家留言整理成可排序的改善清單與真實賣點。',
+      },
+      {
+        title: '會議、專案、客戶資料：讓 AI 幫你沉澱可複用的知識',
+        href: '/blog/ai-knowledge-capture-meetings-projects/',
+        summary: '用四欄模板把零散對話轉成下次能直接拿來用的經驗庫。',
+      },
+      {
+        title: 'AI 專案複盤與知識庫：讓一次經驗變成下一次資產',
+        href: '/blog/ai-project-review-knowledge-base/',
+        summary: '專案結束後的檢討報告常常寫完就放著，這裡拆解怎麼做成可檢索的團隊檔案。',
+      },
+    ],
+  },
+  {
+    step: 'STAGE 04',
+    heading: '東西交出去之前，先過這幾關',
+    paragraphs: [
+      '速度變快之後，職場上真正會出事的地方，通常出在「看起來很完整，但其實數字錯了」或是「把不該傳的資料貼進公開模型」。',
+    ],
+    items: [
+      {
+        title: 'AI 產出品質檢查：事實、邏輯、語氣與責任的四道關卡',
+        href: '/blog/ai-output-quality-check/',
+        summary: '時間很趕的時候，交件前至少要核對這四個項目。',
+      },
+      {
+        title: 'AI 報告怎麼編輯？刪掉空話、補上脈絡與自己的判斷',
+        href: '/blog/ai-report-human-touch/',
+        summary: '用七個編輯檢查點，把生硬草稿修成只有你能交付的版本。',
+      },
+      {
+        title: '處理敏感數據的五條資安底線：把財報貼給 AI 前先看這篇',
+        href: '/blog/ai-finance-data-security-5-bottom-lines/',
+        summary: '碰到未公開金額、客戶名單或內部財報時，有哪些東西絕對不能貼。',
+      },
+      {
+        title: '用 AI 做數據分析，怎麼保留自己的專業判斷？',
+        href: '/blog/ai-data-analysis-human-ai-collaboration-professionalism/',
+        summary: '當主管問起數字怎麼算出來的時候，你得答得出背後的邏輯。',
+      },
+    ],
+  },
+];
+---
+
+<section class="bg-background pt-10 pb-4 md:pt-14" aria-label="AI 工作流程與工具選讀指南">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    {/* 開頭導讀 */}
+    <div class="max-w-3xl space-y-4 text-base leading-8 text-text-muted md:text-[17px]">
+      <p>
+        很多人學 AI 的順序，是先存了一堆提示詞模板，再把每個新出的工具都註冊一遍。
+      </p>
+      <p>
+        用了一兩個月之後，工作時間還是沒變少（只是多了好幾個每個月固定扣款的訂閱）。
+      </p>
+      <p>
+        我是比利陳，在行銷跟 PM 戰場跑過十幾年。這個主題頁整理的，是我把 AI 真的塞進日常專案、週會報告跟提案裡之後，留下來的做法跟挑選標準。
+      </p>
+    </div>
+
+    {/* 四階段選讀地圖 */}
+    <div class="mt-12 space-y-12">
+      {
+        stages.map((stage) => (
+          <section class="border-t border-border pt-10">
+            <p class="font-mono text-xs font-bold tracking-[0.15em] text-primary">{stage.step}</p>
+            <h2 class="mt-1.5 text-xl font-extrabold tracking-tight text-text md:text-2xl">
+              {stage.heading}
+            </h2>
+
+            <div class="mt-4 max-w-3xl space-y-3 text-sm leading-7 text-text-muted md:text-base">
+              {stage.paragraphs.map((para) => (
+                <p>{para}</p>
+              ))}
+            </div>
+
+            <ol class="mt-6 divide-y divide-border rounded-2xl border border-border bg-surface/50 px-5">
+              {stage.items.map((item, idx) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="group grid grid-cols-[1.75rem_minmax(0,1fr)_auto] items-start gap-x-3 py-4 transition-colors"
+                  >
+                    <span class="pt-0.5 font-mono text-xs font-bold tabular-nums text-primary">
+                      {String(idx + 1).padStart(2, '0')}
+                    </span>
+                    <div class="min-w-0">
+                      <h3 class="text-base font-bold leading-snug text-text transition-colors group-hover:text-primary">
+                        {item.title}
+                      </h3>
+                      <p class="mt-1 text-sm leading-relaxed text-text-muted">{item.summary}</p>
+                    </div>
+                    <span
+                      class="pt-0.5 text-sm font-semibold text-text-muted transition-transform group-hover:translate-x-0.5 group-hover:text-primary"
+                      aria-hidden="true"
+                    >
+                      →
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </section>
+        ))
+      }
+
+      {/* 延伸至 NotebookLM 與 Substack 電子報 */}
+      <section class="border-t border-border pt-10">
+        <h2 class="text-xl font-extrabold tracking-tight text-text md:text-2xl">
+          想把特定工具用到更深
+        </h2>
+        <div class="mt-4 max-w-3xl space-y-4 text-sm leading-7 text-text-muted md:text-base">
+          <p>
+            如果你在工作上最常需要整理大量內部 PDF 或研究報告，可以接著看
+            <a
+              href="/topics/notebooklm/"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              NotebookLM 實戰指南
+            </a>
+            ，那邊專門整理了掃描檔轉檔跟進階問法。
+          </p>
+          <p>
+            想把這些方法跟行銷判斷、個人品牌串在一起，歡迎訂閱每週發出的
+            <a
+              href="https://billy4select.substack.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-conversion-cta="newsletter"
+              data-conversion-target="substack"
+              data-conversion-category="AI 工作流程與工具"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              比利陳 Substack 電子報
+            </a>
+            。
+          </p>
+        </div>
+
+        {/* 接回作者實體 /about/ */}
+        <ArticleAuthor />
+      </section>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '@/scripts/conversion';
+</script>
