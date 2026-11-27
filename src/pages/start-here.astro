@@ -1,9 +1,9 @@
 ---
 /**
- * 從這裡開始 /start-here/
+ * 這裡開始 /start-here/
  *
- * 輕量級新訪客入門頁（3 屏內滑完、只選一條路走）：
- * 與完整全站目錄 /topics/ 做出明顯體感區隔，讓社群或首頁進來的新朋友無壓力認識比利陳並選一條路線出發。
+ * 新訪客分流頁與全站內部權重中繼站：
+ * 依四種核心需求分流到全站 8 大 /topics/ 主題支柱頁、3 個行銷執行專區與免費工具。
  */
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
@@ -11,24 +11,126 @@ import ArticleAuthor from '@/components/blog/ArticleAuthor.astro';
 import { siteConfig } from '@/config';
 import { entityConfig } from '@/config/entity';
 
-const canonical = `${siteConfig.url}/start-here/`;
+interface GuideItem {
+  title: string;
+  href: string;
+  summary: string;
+}
 
-const schemaLinks = [
-  { name: 'AI 工作流程與工具', href: '/topics/ai-workflow/' },
-  { name: 'NotebookLM 實戰指南', href: '/topics/notebooklm/' },
-  { name: '行銷策略與診斷', href: '/topics/marketing/' },
-  { name: '職涯與轉型', href: '/topics/career/' },
-  { name: '自媒體與個人事業', href: '/topics/personal-business/' },
-  { name: '教學總覽', href: '/series/' },
+interface GuideSection {
+  no: string;
+  heading: string;
+  lead: string;
+  items: GuideItem[];
+}
+
+const sections: GuideSection[] = [
+  {
+    no: '01',
+    heading: '我想把 AI 放進日常工作，但不知道從哪裡開始',
+    lead: '工具每個月都在出新的，先學流程通常比背指令省時間。',
+    items: [
+      {
+        title: 'AI 工作流程與工具主題頁',
+        href: '/topics/ai-workflow/',
+        summary: '從任務拆解開始，搞懂 ChatGPT、Claude 跟免費工具各自適合處理哪一段工作。',
+      },
+      {
+        title: 'NotebookLM 實戰指南',
+        href: '/topics/notebooklm/',
+        summary: '如果你平常要讀大量 PDF、合約或研究報告，直接從這組實測筆記開始最實用。',
+      },
+    ],
+  },
+  {
+    no: '02',
+    heading: '我在寫文案、投廣告，或是整體行銷做不動',
+    lead: '當業績掉下來、廣告越燒越貴的時候，問題常常出在更前面的定位跟受眾定義。',
+    items: [
+      {
+        title: '行銷策略與診斷主題頁',
+        href: '/topics/marketing/',
+        summary: '先用流量、轉換、客單價跟回購四個維度查出卡在哪一段，再決定要不要加預算。',
+      },
+      {
+        title: '廣告與投放實戰專區',
+        href: '/topics/marketing/ads-numbers/',
+        summary: '看懂 CPA、ROAS 跟毛利結構的關係，避開沒轉換的空轉消耗。',
+      },
+      {
+        title: '文案與賣點提煉專區',
+        href: '/topics/marketing/copywriting/',
+        summary: '把冰冷的產品規格翻成受眾聽得懂的話，還有怎麼避免 AI 寫出罐頭文案。',
+      },
+      {
+        title: '內容與 SEO 從零開始',
+        href: '/topics/marketing/seo-from-zero/',
+        summary: '給想慢慢累積長期自然流量、不想永遠靠買廣告撐業績的經營者。',
+      },
+    ],
+  },
+  {
+    no: '03',
+    heading: '我在思考職涯下一步，或想開始做自媒體',
+    lead: '工作過了十年，很多人會重新思考「離開公司之後，還有什麼能力帶得走」。',
+    items: [
+      {
+        title: '職涯與轉型主題頁',
+        href: '/topics/career/',
+        summary: '整理 35 歲以後的職涯評估、中階主管定位調整，以及知識工作的刻意練習。',
+      },
+      {
+        title: '自媒體與個人事業主題頁',
+        href: '/topics/personal-business/',
+        summary: '從第一個月先定位還是先發文開始，一路走到第一個付費產品跟一人公司交付系統。',
+      },
+      {
+        title: '商業模式與獲利主題頁',
+        href: '/topics/business-model/',
+        summary: '不管是接案、賣課還是做產品，先把需求驗證跟單筆獲利算清楚。',
+      },
+    ],
+  },
+  {
+    no: '04',
+    heading: '我想看書單拆解，或是了解站上的實用工具',
+    lead: '除了長篇文章，我也把平時讀過覺得有價值的商管書，跟自己做的內容工具一起放在站上。',
+    items: [
+      {
+        title: '書籍導讀主題頁',
+        href: '/topics/book-guides/',
+        summary: '挑過之後才寫的商業、行銷與職場思維拆解筆記。',
+      },
+      {
+        title: '學習與能力主題頁',
+        href: '/topics/learning/',
+        summary: '個人知識管理、T 型能力盤點，以及怎麼在 30 天內快速上手一個新領域。',
+      },
+      {
+        title: 'NARRATIVE ENGINE 動態簡報工具',
+        href: '/narrative-engine/',
+        summary: '專為短影音與知識型內容打造的付費動態簡報工具，貼入口播逐字稿就能自動切分分鏡並套用視覺主題。',
+      },
+    ],
+  },
 ];
+
+const quickPicks = [
+  { href: '/resources/', title: '免費資源', note: 'Prompt 範本、SOP 模板、AI 名詞字典，直接拿走使用。' },
+  { href: '/blog/', title: '全部文章', note: '依時間排列，想看最新發佈的文章從這裡進。' },
+  { href: '/site-map/', title: '網站地圖', note: '記得標題、想快速找特定一篇時用這頁。' },
+];
+
+const canonical = `${siteConfig.url}/start-here/`;
+const allItems = sections.flatMap((section) => section.items);
 
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   '@id': `${canonical}#collection`,
-  name: '從這裡開始：第一次來到行銷裡的路人甲',
+  name: '從這裡開始：行銷裡的路人甲全站閱讀指南',
   description:
-    '第一次來到比利陳的網站？花一分鐘看懂這裡在寫什麼，直接挑一條最符合你目前需求的路線開始。',
+    '第一次來到行銷裡的路人甲？比利陳幫你依 AI 工作流、行銷診斷、職涯轉型與一人事業四種需求，整理最快上手的閱讀順序。',
   url: canonical,
   inLanguage: 'zh-Hant-TW',
   author: { '@id': entityConfig.ids.person },
@@ -36,11 +138,11 @@ const schema = {
   isPartOf: { '@id': entityConfig.ids.website },
   mainEntity: {
     '@type': 'ItemList',
-    numberOfItems: schemaLinks.length,
-    itemListElement: schemaLinks.map((item, index) => ({
+    numberOfItems: allItems.length,
+    itemListElement: allItems.map((item, index) => ({
       '@type': 'ListItem',
       position: index + 1,
-      name: item.name,
+      name: item.title,
       url: new URL(item.href, siteConfig.url).href,
     })),
   },
@@ -48,170 +150,97 @@ const schema = {
 ---
 
 <MarketingLayout
-  title={`從這裡開始：第一次來到行銷裡的路人甲 - ${siteConfig.name}`}
-  description="第一次來到比利陳的網站？花一分鐘看懂這裡在寫什麼，直接挑一條最符合你目前需求的路線開始。"
+  title={`從這裡開始：行銷裡的路人甲全站閱讀指南 - ${siteConfig.name}`}
+  description="第一次來到行銷裡的路人甲？比利陳幫你依 AI 工作流、行銷診斷、職涯轉型與一人事業四種需求，整理最快上手的閱讀順序。"
   structuredData={[schema]}
 >
-  <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '從這裡開始' }]} />
+  <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '從這裡開始', href: '/start-here/' }]} />
 
   <section class="page-band">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <p class="text-sm font-semibold tracking-[0.15em] text-primary">新朋友導覽</p>
+      <div class="max-w-4xl">
+        <p class="text-sm font-semibold tracking-[0.15em] text-primary">全站閱讀指南</p>
         <h1 class="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-text md:text-4xl lg:text-5xl">
           從這裡開始
         </h1>
-        <div class="mt-5 space-y-4 text-base leading-8 text-text-muted md:text-lg">
-          <p>站上有一百多篇文章，一次看全部很容易眼花。</p>
+        <div class="mt-5 max-w-3xl space-y-4 text-base leading-8 text-text-muted md:text-lg">
+          <p>
+            如果你是第一次來到這裡，站上一百多篇文章可能會讓你有點不知道從哪一篇點起。
+          </p>
           <p>
             這個網站沒有每天追最新的 AI 新聞，也很少寫只講觀念的心靈雞湯（那種東西滑社群就看飽了）。
           </p>
           <p>
-            我是比利陳，過去十年跑過 PM、品牌行銷跟廣告投放。這裡記錄的，是我實際放進工作跟生意裡之後，確定真的有用、留下來繼續用的判斷方法。
+            我是比利陳，過去十年跑過 PM、品牌行銷跟廣告投放。這裡記錄的，是我實際把方法放進工作跟生意裡之後，確定真的有用、留下來繼續用的判斷邏輯。
           </p>
           <p>
-            如果你想先了解我的背景，可以先逛
+            如果你想先認識我的背景跟經歷，可以先看
             <a
               href="/about/"
               class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
             >
               關於比利陳
             </a>
-            。如果想直接找答案，照你現在最在意的事選一個入口就好。
+            。如果想直接找答案，可以照你現在最想解決的問題選一條路走。
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="bg-background py-12 md:py-16" aria-labelledby="pick-one-path">
+  <section class="bg-background pb-14 pt-10 md:pb-20 md:pt-14">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <h2 id="pick-one-path" class="text-2xl font-extrabold tracking-tight text-text md:text-3xl">
-          你現在最想解決哪一件事
-        </h2>
-
-      <ol class="mt-7 space-y-4">
-        <li class="rounded-2xl border border-border bg-surface/60 p-5 transition-colors hover:border-primary/40 sm:p-6">
-          <div class="flex items-start gap-4">
-            <span class="pt-0.5 font-mono text-sm font-bold text-primary">01</span>
-            <div class="min-w-0 space-y-2">
-              <h3 class="text-base font-extrabold leading-snug text-text sm:text-lg">
-                想把 AI 放進日常工作，但工具太多不知道怎麼搭
-              </h3>
-              <p class="text-sm leading-7 text-text-muted sm:text-base">
-                <span class="mr-1 font-semibold text-primary" aria-hidden="true">→</span>
-                直接看
-                <a
-                  href="/topics/ai-workflow/"
-                  class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
-                >
-                  AI 工作流程與工具
-                </a>
-                （如果平常要處理大量 PDF 跟長報告，改看
-                <a
-                  href="/topics/notebooklm/"
-                  class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
-                >
-                  NotebookLM 實戰指南
-                </a>
-                ）。
+      <div class="max-w-4xl space-y-12">
+        {
+          sections.map((section) => (
+            <section class="border-t border-border pt-10 first:border-t-0 first:pt-0">
+              <p class="font-mono text-xs font-bold tracking-[0.15em] text-primary">
+                PATH {section.no}
               </p>
-            </div>
-          </div>
-        </li>
-
-        <li class="rounded-2xl border border-border bg-surface/60 p-5 transition-colors hover:border-primary/40 sm:p-6">
-          <div class="flex items-start gap-4">
-            <span class="pt-0.5 font-mono text-sm font-bold text-primary">02</span>
-            <div class="min-w-0 space-y-2">
-              <h3 class="text-base font-extrabold leading-snug text-text sm:text-lg">
-                廣告越投越貴，或行銷做起來一直沒轉換
-              </h3>
-              <p class="text-sm leading-7 text-text-muted sm:text-base">
-                <span class="mr-1 font-semibold text-primary" aria-hidden="true">→</span>
-                先看
-                <a
-                  href="/topics/marketing/"
-                  class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
-                >
-                  行銷策略與診斷
-                </a>
-                ，搞懂是流量、轉換還是受眾出了問題。
+              <h2 class="mt-1.5 text-xl font-extrabold tracking-tight text-text md:text-2xl">
+                {section.heading}
+              </h2>
+              <p class="mt-3 max-w-3xl text-sm leading-7 text-text-muted md:text-base">
+                {section.lead}
               </p>
-            </div>
-          </div>
-        </li>
 
-        <li class="rounded-2xl border border-border bg-surface/60 p-5 transition-colors hover:border-primary/40 sm:p-6">
-          <div class="flex items-start gap-4">
-            <span class="pt-0.5 font-mono text-sm font-bold text-primary">03</span>
-            <div class="min-w-0 space-y-2">
-              <h3 class="text-base font-extrabold leading-snug text-text sm:text-lg">
-                在想 35 歲後的職涯下一步，或想開始做個人品牌
-              </h3>
-              <p class="text-sm leading-7 text-text-muted sm:text-base">
-                <span class="mr-1 font-semibold text-primary" aria-hidden="true">→</span>
-                職場定位看
-                <a
-                  href="/topics/career/"
-                  class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
-                >
-                  職涯與轉型
-                </a>
-                ，想靠自己接案或變現看
-                <a
-                  href="/topics/personal-business/"
-                  class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
-                >
-                  自媒體與個人事業
-                </a>
-                。
-              </p>
-            </div>
-          </div>
-        </li>
+              <ol class="mt-6 divide-y divide-border rounded-2xl border border-border bg-surface/50 px-5">
+                {section.items.map((item, idx) => (
+                  <li>
+                    <a
+                      href={item.href}
+                      class="group grid grid-cols-[1.75rem_minmax(0,1fr)_auto] items-start gap-x-3 py-4 transition-colors"
+                    >
+                      <span class="pt-0.5 font-mono text-xs font-bold tabular-nums text-primary">
+                        {String(idx + 1).padStart(2, '0')}
+                      </span>
+                      <div class="min-w-0">
+                        <h3 class="text-base font-bold leading-snug text-text transition-colors group-hover:text-primary">
+                          {item.title}
+                        </h3>
+                        <p class="mt-1 text-sm leading-relaxed text-text-muted">{item.summary}</p>
+                      </div>
+                      <span
+                        class="pt-0.5 text-sm font-semibold text-text-muted transition-transform group-hover:translate-x-0.5 group-hover:text-primary"
+                        aria-hidden="true"
+                      >
+                        →
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          ))
+        }
 
-        <li class="rounded-2xl border border-border bg-surface/60 p-5 transition-colors hover:border-primary/40 sm:p-6">
-          <div class="flex items-start gap-4">
-            <span class="pt-0.5 font-mono text-sm font-bold text-primary">04</span>
-            <div class="min-w-0 space-y-2">
-              <h3 class="text-base font-extrabold leading-snug text-text sm:text-lg">
-                懶得一篇一篇找，想直接跟著完整教學或用免費工具
-              </h3>
-              <p class="text-sm leading-7 text-text-muted sm:text-base">
-                <span class="mr-1 font-semibold text-primary" aria-hidden="true">→</span>
-                直接逛
-                <a
-                  href="/series/"
-                  class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
-                >
-                  教學總覽
-                </a>
-                ，裡面有排版好的實作專題、章節教學跟純前端工具。
-              </p>
-            </div>
-          </div>
-        </li>
-      </ol>
-
-      <div class="mt-12 border-t border-border pt-10">
-        <h2 class="text-xl font-extrabold tracking-tight text-text md:text-2xl">
-          想看全站目錄，或每週收一封整理
-        </h2>
-        <div class="mt-4 space-y-3 text-sm leading-7 text-text-muted sm:text-base">
-          <p>
-            如果你想自己慢慢挑文章分類，完整的知識地圖都在
-            <a
-              href="/topics/"
-              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
-            >
-              知識主題總覽
-            </a>
-            。
-          </p>
-          <p>
-            如果你習慣每週花五分鐘看一篇濃縮過的實戰觀察，歡迎訂閱
+        {/* 電子報與 Portaly 入口 */}
+        <section class="border-t border-border pt-10">
+          <h2 class="text-xl font-extrabold tracking-tight text-text md:text-2xl">
+            如果想固定收到新的實測與觀察
+          </h2>
+          <p class="mt-4 max-w-3xl text-sm leading-7 text-text-muted md:text-base">
+            網站文章通常比較長，適合有空慢慢查。如果你習慣每週花五分鐘看一篇濃縮過的實戰筆記，歡迎訂閱
             <a
               href="https://billy4select.substack.com/"
               target="_blank"
@@ -223,12 +252,40 @@ const schema = {
             >
               比利陳 Substack 電子報
             </a>
-            。
+            ，也可以到我的
+            <a
+              href="https://portaly.cc/billyselect4"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-conversion-cta="ebook"
+              data-conversion-target="portaly-catalog"
+              data-conversion-category="從這裡開始"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              Portaly 資源頁
+            </a>
+            查看完整電子書跟社群入口。
           </p>
-        </div>
 
-        <ArticleAuthor />
-      </div>
+          <ArticleAuthor />
+        </section>
+
+        {/* 快速入口 */}
+        <div class="rounded-2xl border border-border bg-surface p-6 md:p-7">
+          <h2 class="text-lg font-extrabold tracking-tight text-text">不想照順序，只想直接找工具或文章</h2>
+          <ul class="mt-4 grid gap-4 sm:grid-cols-3">
+            {
+              quickPicks.map((item) => (
+                <li>
+                  <a class="text-sm font-bold text-text hover:text-primary" href={item.href}>
+                    {item.title} →
+                  </a>
+                  <p class="mt-1 text-sm leading-relaxed text-text-muted">{item.note}</p>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
       </div>
     </div>
   </section>
