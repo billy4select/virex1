@@ -61,14 +61,12 @@ export const articleOutcomes: Record<string, string> = {
   'ai-output-quality-check': '交付前四道審核關卡、去 AI 味編輯三動作，以及主管週報實戰流程。',
   'ai-project-review-knowledge-base': '怎麼把一次專案的經驗，變成可檢索的團隊知識庫。',
   'analyze-company-strategy-public-info': '從收入、顧客、成本、投資、定價五條線索看策略。',
-  'audience-is-not-a-label': '用情境、任務、障礙、替代方案，重新定義客群。',
-  'beyond-business-model-canvas': '畫布看不到的現實：收入、成本、單位經濟與護城河。',
+  'audience-is-not-a-label': '從情境、任務、障礙、替代方案到五個低成本市場需求實測驗證。',
   'capability-inventory-workshop': '用 60 分鐘工作坊，盤點 T 型能力與可遷移技能。',
   'career-opportunity-cost-decision': '面對新機會，怎麼把看得見與看不見的成本都算進去。',
   'career-strategy-after-35': '35 歲後，怎麼把經驗轉成市場看得懂的判斷力。',
   'claude-objection-simulation': '簡報前，怎麼用 Claude 先找出客戶會卡住的地方。',
   'claude-vs-chatgpt-proposal': '寫提案時，Claude 和 ChatGPT 各適合做什麼。',
-  'consumer-demand-to-business-opportunity': '怎麼問，才問得出對方願意付錢的需求。',
   'content-channel-trust-growth': '觸及、信任、轉換、留存、轉介，內容與通路怎麼分工。',
   'content-to-product-knowledge-business': '知識從免費內容走向產品的三種模式。',
   'deliberate-practice-knowledge-work': '用回饋迴路與作品集，練習寫作、分析與提案。',
@@ -88,7 +86,6 @@ export const articleOutcomes: Record<string, string> = {
   'one-person-company-ai-work-system': '用五個角色與一條交付鏈，建立能穩定接案的系統。',
   'personal-brand-trust-not-reach': '個人品牌靠定位、內容支柱與信任資產，不靠演算法。',
   'personal-knowledge-system-minimal': '收集、理解、輸出三層，建一個最小的知識管理系統。',
-  'pricing-and-profit-structure': '營收不差卻沒剩錢，問題常出在單筆獲利結構。',
   'self-media-first-month-positioning-or-posting': '第一個月不用想完美：先寫暫定定位，再用發文測試修正。',
   'senior-employees-ai-upskilling-strategy-not-replaced': '資深員工面對 AI，可以重新定位的三個方向。',
   'turn-expertise-into-market-value': '六個步驟，整理出第一個可以賣的服務。',
@@ -100,8 +97,7 @@ export const articleOutcomes: Record<string, string> = {
   'traffic-pool-book-notes': '把流量當成可累積的資產：流量池、品牌、裂變與存量找增量。',
   'visible-thinking-book-notes': '知道很多卻說不清楚時，怎麼用結構化思考與三種視覺化，整理出自己的觀點。',
   'what-i-didnt-learn-in-business-school': '學會所有行銷理論，為什麼到真實商場仍用不上，以及該補哪三種能力。',
-  'validate-market-demand-five-methods': '做產品之前，怎麼確認有人真的願意付錢。',
-  'why-business-exists-nine-questions': '用九個問題，判斷一門生意到底靠什麼活著。',
+  'why-business-exists-nine-questions': '九個核心問題、畫布外的四個現實透鏡，加上單筆獲利與調價打折實算。',
   'website-speed-seo-checks': 'TTFB、LCP、CLS 三個門檻，以及修復的優先順序。',
   'seo-self-study-guide': '四階段自學路徑與一份 30 天可執行計畫。',
   'search-intent-guide': '四種意圖、兩個現場測試，判斷該寫哪種內容。',
@@ -126,11 +122,6 @@ export const articleOutcomes: Record<string, string> = {
   'story-marketing-emotional-connection': '具體場景、轉折、代價、留下的問題四段結構。',
   'writing-persuasion-logic': '具體對照、代價陳述、可驗證的下一步。',
   'influencer-marketing-next-step': '大網紅失效後，四種正在取代的做法。',
-  'threads-brand-z-gen-z': '品牌帳號的三種角色與四種會被討厭的語氣。',
-  'threads-0-to-10k-140-days': '140 天四個階段，可複製與不該複製的部分。',
-  'threads-seo-profile-posts': '關鍵字該放在四個位置，以及 hashtag 的真實作用。',
-  'threads-vs-instagram-2026': '四個維度比較，決定主力與延伸平台。',
-  'threads-business-account': '判斷型、過程型、產品型的內容配比與導流設計。',
 };
 
 export const topicAreas: TopicArea[] = [
@@ -315,13 +306,11 @@ export const topics: Topic[] = [
     name: '我想驗證一個想法值不值得做',
     lead: '做產品之前，先確認這門生意成立、有人願意付錢。',
     intro:
-      '從生意為什麼成立、消費者需求、需求驗證，到收入成本結構與定價，判斷一個想法值不值得做。',
+      '從生意為什麼成立、受眾分析與五個低成本需求實測，到單筆獲利結構與定價，判斷一個想法值不值得做。',
     articleIds: [
       'why-business-exists-nine-questions',
-      'consumer-demand-to-business-opportunity',
-      'validate-market-demand-five-methods',
-      'beyond-business-model-canvas',
-      'pricing-and-profit-structure',
+      'audience-is-not-a-label',
+      'audience-broad-or-focused',
     ],
   },
   {
@@ -332,10 +321,10 @@ export const topics: Topic[] = [
     intro:
       '從單筆獲利結構、商業模式畫布看不到的成本，到免費模式與 AI 帶來的成本變化，看懂一門生意怎麼賺錢。',
     articleIds: [
-      'pricing-and-profit-structure',
-      'beyond-business-model-canvas',
+      'why-business-exists-nine-questions',
       'free-zero-price-business-models',
       'how-ai-changes-cost-and-competition',
+      'content-to-product-knowledge-business',
     ],
   },
   {
@@ -378,10 +367,9 @@ export const topics: Topic[] = [
     name: '我想搞懂我的受眾到底是誰',
     lead: '受眾不是標籤，是一群有情境、任務與障礙的人。',
     intro:
-      '從消費者需求、受眾定義到評論分析，用情境、任務、障礙與替代方案，重新看清你的受眾。',
+      '從受眾四要素、需求驗證到評論分析，用情境、任務、障礙與替代方案，重新看清你的受眾。',
     articleIds: [
       'audience-is-not-a-label',
-      'consumer-demand-to-business-opportunity',
       'audience-broad-or-focused',
       'ai-batch-review-analysis',
     ],
@@ -397,7 +385,6 @@ export const topics: Topic[] = [
     articleIds: [
       'audience-is-not-a-label',
       'personal-brand-trust-not-reach',
-      'threads-brand-z-gen-z',
       'content-channel-trust-growth',
     ],
     series: { name: '行銷從診斷開始（品牌定位章節）', href: '/marketing/positioning/' },
@@ -662,13 +649,12 @@ export const topics: Topic[] = [
     name: '我想在 Threads 上從零開始經營',
     lead: '先有觀點，再談流量，最後才是導流與變現。',
     intro:
-      '從品牌與個人帳號的語氣、140 天成長紀錄、平台分工，到 Threads 的搜尋優化與商業帳號經營，走完從 0 到有讀者的一輪。',
+      '完整 Threads 140 天實戰、人設語氣、貼文 SEO、與 IG 分工及商業帳號經營皆已整併進《Threads 經營教學》專題；下方搭配個人品牌與內容通路底層邏輯文章。',
     articleIds: [
-      'threads-0-to-10k-140-days',
-      'threads-brand-z-gen-z',
-      'threads-vs-instagram-2026',
-      'threads-seo-profile-posts',
-      'threads-business-account',
+      'self-media-first-month-positioning-or-posting',
+      'personal-brand-trust-not-reach',
+      'content-channel-trust-growth',
+      'laws-of-communication-book-notes',
     ],
     series: { name: 'Threads 經營教學', href: '/threads/' },
   },

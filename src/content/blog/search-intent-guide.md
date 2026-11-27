@@ -94,7 +94,7 @@ faq:
 
 搜尋意圖也會隨產品、競爭者與市場狀況改變。舊文章不必固定每半年重寫一次，但當曝光、點擊或搜尋結果形式出現明顯變化時，就值得重新檢查。
 
-延伸閱讀：[關鍵字怎麼找？](/blog/keyword-research-purchase-intent/)、[SEO 寫作怎麼做？](/blog/seo-writing-why-no-traffic/)。
+延伸閱讀：[關鍵字怎麼找？](/seo/keywords/)、[SEO 寫作怎麼做？](/blog/seo-writing-why-no-traffic/)。
 
 ## 延伸閱讀
 

@@ -75,6 +75,7 @@ faq:
 
 ## 延伸閱讀
 
+- [行銷計算機：CPC、CTR、CPM、CPA、ROAS、ROI 公式與毛利損益平衡表](/blog/marketing-calculator/)
 - [廣告數據與預算主題總覽](/topics/marketing/ads-numbers/)
-- [CTR A/B 測試怎麼做？先設好假設，測 2 天就能看出差別的方法](/blog/ctr-ab-testing-titles-cta/)
+- [CTR A/B 測試怎麼做？先設好假設，測 2 天就能看出差別的方法](/blog/ctr-benchmarks-what-counts-as-good/)
 - [受眾分析怎麼做？從情境、任務與替代方案理解顧客](/blog/audience-is-not-a-label/)

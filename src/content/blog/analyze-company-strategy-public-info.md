@@ -72,7 +72,7 @@ faq:
 
 選一家公司，先找三項可查證的變化，再寫出一個可能的策略推論。接著列出什麼新資訊會讓你改變看法。這樣的分析，比先決定公司「做得好不好」更有用。
 
-延伸閱讀：[一門生意為什麼成立？](/blog/why-business-exists-nine-questions/)、[商業模式畫布之外](/blog/beyond-business-model-canvas/)。
+延伸閱讀：[一門生意為什麼成立？](/blog/why-business-exists-nine-questions/)、[商業模式畫布之外](/blog/why-business-exists-nine-questions/)。
 
 ## 延伸閱讀
 

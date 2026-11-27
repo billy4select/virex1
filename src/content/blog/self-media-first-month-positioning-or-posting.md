@@ -86,4 +86,5 @@ faq:
 
 ## 延伸閱讀
 
+- [Threads 經營實戰教學專題：從起步心態到自然導流變現](/threads/)
 - [個人事業與自媒體主題總覽](/topics/personal-business/)

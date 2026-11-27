@@ -66,6 +66,6 @@ sources:
 
 ## 延伸閱讀
 
+- [打造 AI 工作團隊：角色分工、免費工具與實戰流程完整教學](/ai-work-team/)
 - [AI 工作流程主題總覽](/topics/ai-workflow/)
 - [AI 產出怎麼檢查？交付前確認事實、推論、語氣與責任的四道關卡](/blog/ai-output-quality-check/)
-- [主管如何用 AI 準備週會報告：先整理自己的判斷，再交給 AI 順格式](/blog/ai-weekly-report-manager/)

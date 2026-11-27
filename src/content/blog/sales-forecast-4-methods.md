@@ -73,8 +73,9 @@ faq:
 
 預估不是一次算完的答案，而是一組會隨新資料更新的假設。若無法說明數字從哪裡來，也無法指出什麼情況下要修正，就還不是可用的預估。
 
-延伸閱讀：[行銷指標要追什麼？](/blog/marketing-metrics-2026-what-to-track/)、[業績掉了，先查哪一段？](/blog/marketing-diagnosis-traffic-conversion-aov-repurchase/)。
+延伸閱讀：[行銷指標要追什麼？](/blog/marketing-metrics-2026-what-to-track/)、[業績掉了，先查哪一段？](/marketing/diagnosis/)。
 
 ## 延伸閱讀
 
+- [一門生意為什麼成立？商業模式九大問題與獲利結構完整指南](/blog/why-business-exists-nine-questions/)
 - [商業模式與獲利主題總覽](/topics/business-model/)

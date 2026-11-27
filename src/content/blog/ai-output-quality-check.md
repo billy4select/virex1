@@ -95,6 +95,7 @@ AI 很常把「兩件事同時發生」寫成「A 導致了 B」。例如草稿�
 
 ## 延伸閱讀
 
+- [打造 AI 工作團隊：角色分工、免費工具與實戰流程完整教學](/ai-work-team/)
 - [AI 工作流程主題總覽](/topics/ai-workflow/)
 - [用 AI 做數據分析，怎麼保留自己的專業判斷？](/blog/ai-data-analysis-human-ai-collaboration-professionalism/)
 - [Claude vs ChatGPT：行銷人寫提案，哪個比較不會讓你改到崩潰](/blog/claude-vs-chatgpt-proposal/)

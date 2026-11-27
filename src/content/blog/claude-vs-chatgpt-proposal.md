@@ -111,5 +111,5 @@ AI 可以幫你把三小時的初稿縮成半小時，但提案會不會過，�
 
 - [客戶簡報前，用 Claude 跑一遍「反對意見模擬」實戰流程](/blog/claude-objection-simulation/)
 - [AI 產出怎麼檢查？交付前確認事實、推論與責任](/blog/ai-output-quality-check/)
-- [免費仔的 AI 工具組合：不花錢也能跑完 80% 職場任務](/blog/free-ai-tools-workflow/)
+- [免費仔的 AI 工具組合：不花錢也能跑完 80% 職場任務](/ai-work-team/lesson-02/)
 - [AI 工作流程主題總覽](/topics/ai-workflow/)

@@ -69,7 +69,7 @@ sources:
 
 所以付費買 Google AI Pro，買到的多半是「一次塞進大批資料不會失憶的容量」跟「4 倍額度＋尖峰期優先權」。
 
-如果你連免費工具都還沒跑順，可以先看我整理的[免費仔的 AI 工具組合](/blog/free-ai-tools-workflow/)，確定自己真的常撞到上限再來考慮付費。
+如果你連免費工具都還沒跑順，可以先看我整理的[免費仔的 AI 工具組合](/ai-work-team/lesson-02/)，確定自己真的常撞到上限再來考慮付費。
 
 ## 家人帳號的額度共用嗎？
 
@@ -99,10 +99,10 @@ YouTube Premium Lite 或加購項目、Google Home Premium、Google Colab 以及
 
 記得養成「每換一個任務就開新對話」的習慣，才不會把這份額度白白燒在重讀舊紀錄上。
 
-想看更多挑選工具的判斷方式，可以接著看[AI 工具怎麼選？先找工作瓶頸，再比較功能](/blog/ai-tool-evaluation/)。
+想看更多挑選工具的判斷方式，可以接著看[AI 工具怎麼選？先找工作瓶頸，再比較功能](/ai-work-team/lesson-02/)。
 
 ## 延伸閱讀
 
 - [AI 工作流程主題總覽](/topics/ai-workflow/)
-- [免費仔的 AI 工具組合：不花錢也能跑完 80% 職場任務](/blog/free-ai-tools-workflow/)
+- [免費仔的 AI 工具組合：不花錢也能跑完 80% 職場任務](/ai-work-team/lesson-02/)
 - [NotebookLM 怎麼用？2026 完整教學：拆解難懂資料、提問與常見限制](/blog/notebooklm-complete-guide-2026/)

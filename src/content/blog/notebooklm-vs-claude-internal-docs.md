@@ -102,6 +102,6 @@ Claude 強的地方在組織架構跟多輪修改。
 ## 延伸閱讀
 
 - [NotebookLM 實戰主題總覽](/topics/notebooklm/)
-- [NotebookLM 怎麼問比較有效？五種研究問題與提問範例](/blog/notebooklm-question-types/)
+- [NotebookLM 怎麼問比較有效？五種研究問題與提問範例](/blog/notebooklm-complete-guide-2026/)
 - [Claude vs ChatGPT：行銷人寫提案，哪個比較不會讓你改到崩潰](/blog/claude-vs-chatgpt-proposal/)
-- [三種 AI 大腦的分工：寫作、研究、知識庫不要混著用](/blog/three-ai-brains-division/)
+- [三種 AI 大腦的分工：寫作、研究、知識庫不要混著用](/ai-work-team/lesson-05/)

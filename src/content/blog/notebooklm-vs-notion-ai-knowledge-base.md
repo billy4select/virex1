@@ -121,4 +121,4 @@ Notion 在我的工作流裡，比較像是「選完之後的雲端空間資料�
 - [NotebookLM 實戰主題總覽](/topics/notebooklm/)
 - [NotebookLM vs Claude：讀文件、查來源與整理報告怎麼分工？](/blog/notebooklm-vs-claude-internal-docs/)
 - [個人知識管理怎麼做？收集、理解到輸出的最小系統](/blog/personal-knowledge-system-minimal/)
-- [三種 AI 大腦的分工：寫作、研究、知識庫不要混著用](/blog/three-ai-brains-division/)
+- [三種 AI 大腦的分工：寫作、研究、知識庫不要混著用](/ai-work-team/lesson-05/)

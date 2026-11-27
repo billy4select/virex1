@@ -69,6 +69,7 @@ faq:
 
 ## 如何把專業變成市場價值：延伸閱讀
 
+- [Threads 經營實戰教學專題：從起步心態到自然導流變現](/threads/)
 - [知識怎麼變成收入？先從一個有人願意付費解決的問題開始](/blog/content-to-product-knowledge-business/)
 - [怎麼做能力盤點？寫出 T 型能力與可遷移技能的工作坊](/blog/capability-inventory-workshop/)
 - [專業變現主題總覽](/topics/personal-business/monetize-expertise/)

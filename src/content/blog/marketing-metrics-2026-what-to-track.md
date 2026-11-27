@@ -88,7 +88,7 @@ GA4 有幾十個指標，廣告後台有幾十個，社群平台又有幾十個�
 
 然後在每個數字旁邊寫一句話，說明「這個數字變差時，我要先動哪裡」。寫不出那句話的指標，就代表你還沒有能力用它做決策，先別看。
 
-想看更完整的拆解，可以接著讀[業績掉了先查哪一段](/blog/marketing-diagnosis-traffic-conversion-aov-repurchase/)與[定價與獲利結構](/blog/pricing-and-profit-structure/)。
+想看更完整的拆解，可以接著讀[業績掉了先查哪一段](/marketing/diagnosis/)與[定價與獲利結構](/blog/why-business-exists-nine-questions/)。
 
 ## 延伸閱讀
 

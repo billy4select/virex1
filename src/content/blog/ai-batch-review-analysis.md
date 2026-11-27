@@ -55,10 +55,10 @@ AI 幫你分完類之後，最後的排序還是得由熟悉業務的人來定�
 
 ## 評論分析完，順手就能接上廣告文案
 
-這套做法我自己最常拿來配文案寫作。把抓出來的真實好評與買前猶豫，直接帶去寫新的商品頁賣點或廣告測試切角（做法可以看[寫廣告文案前先把資料丟給 AI](/blog/ai-copywriting-audience-data/)跟[如何快速提煉賣點](/blog/feature-to-copywriting-selling-point/)），寫出來的東西會比關在辦公室裡空想貼近市場非常多。
+這套做法我自己最常拿來配文案寫作。把抓出來的真實好評與買前猶豫，直接帶去寫新的商品頁賣點或廣告測試切角（做法可以看[寫廣告文案前先把資料丟給 AI](/blog/ai-copywriting-mistakes/)跟[如何快速提煉賣點](/blog/ai-copywriting-mistakes/)），寫出來的東西會比關在辦公室裡空想貼近市場非常多。
 
 ## 延伸閱讀
 
 - [AI 工作流程主題總覽](/topics/ai-workflow/)
 - [NotebookLM 怎麼用？2026 完整教學：拆解難懂資料、提問與常見限制](/blog/notebooklm-complete-guide-2026/)
-- [AI 工作流程怎麼建立？別從工具開始，先挑一個每週最煩的任務](/blog/ai-workflow-start-with-tasks/)
+- [AI 工作流程怎麼建立？別從工具開始，先挑一個每週最煩的任務](/ai-work-team/lesson-01/)

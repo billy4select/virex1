@@ -72,10 +72,10 @@ sources:
 
 頁面打開第一眼看不出這東西幫我解決什麼問題、沒有真實評價、手機版按鈕點半天沒反應——這種網頁不管換哪個投手、調哪套後台參數，轉換率都很難拉起來。
 
-下次發現廣告跑不動，先照著轉換率跟跳出率把問題切出來。想進一步判斷前端點擊低該改哪裡，可以接著看[CTR 低是素材問題還是受眾問題](/blog/ctr-low-creative-or-audience/)，或是看[CAC 一直上升怎麼辦](/blog/cac-rising-5-checks/)。
+下次發現廣告跑不動，先照著轉換率跟跳出率把問題切出來。想進一步判斷前端點擊低該改哪裡，可以接著看[CTR 低是素材問題還是受眾問題](/blog/ctr-benchmarks-what-counts-as-good/)，或是看[CAC 一直上升怎麼辦](/blog/cac-rising-5-checks/)。
 
 ## 延伸閱讀
 
 - [廣告數據與預算主題總覽](/topics/marketing/ads-numbers/)
-- [CPC、CTR、ROAS、ROI 差在哪？看懂廣告報表該先看哪個數字](/blog/marketing-metrics-differences/)
-- [CTR A/B 測試怎麼做？先設定假設，再比較素材與訊息](/blog/ctr-ab-testing-titles-cta/)
+- [CPC、CTR、ROAS、ROI 差在哪？看懂廣告報表該先看哪個數字](/blog/marketing-calculator/)
+- [CTR A/B 測試怎麼做？先設定假設，再比較素材與訊息](/blog/ctr-benchmarks-what-counts-as-good/)

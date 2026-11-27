@@ -85,6 +85,7 @@ AI 生出草稿後，無論多趕時間，按上架或排程之前固定掃過�
 
 ## 延伸閱讀
 
+- [行銷計算機：CPC、CTR、CPM、CPA、ROAS、ROI 公式與毛利損益平衡表](/blog/marketing-calculator/)
 - [文案與賣點主題總覽](/topics/marketing/copywriting/)
 - [廣告數據與預算主題總覽](/topics/marketing/ads-numbers/)
 - [受眾分析怎麼做？從情境、任務與替代方案理解顧客](/blog/audience-is-not-a-label/)

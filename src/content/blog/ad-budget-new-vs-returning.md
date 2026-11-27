@@ -80,7 +80,7 @@ sources:
 
 把後台分配的苦工交給演算法，讓自己空出時間看懂毛利、修好網站轉換率、持續換出能打動新客的素材，這才是現在投廣告比較省力也比較穩的做法。
 
-想知道怎麼算自己能承受多少獲客成本，可以回頭對照[ROAS 計算公式拆解](/blog/roas-formula-explained/)，或是看[CAC 一直上升怎麼辦](/blog/cac-rising-5-checks/)。
+想知道怎麼算自己能承受多少獲客成本，可以回頭對照[ROAS 計算公式拆解](/blog/marketing-calculator/)，或是看[CAC 一直上升怎麼辦](/blog/cac-rising-5-checks/)。
 
 ## 延伸閱讀
 

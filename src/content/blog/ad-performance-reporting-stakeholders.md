@@ -70,10 +70,10 @@ faq:
 
 數據難看時，千萬別把版面塞滿曝光數跟觸及人數。直接把轉換率跟跳出率攤開，講清楚你判斷問題出在哪裡、下週準備怎麼測。主管真正擔心的，其實是出了問題卻沒人知道接下來要改什麼。
 
-如果你想把報告裡常用的指標關係一次整理清楚，可以參考[CPC、CTR、ROAS、ROI 差在哪](/blog/marketing-metrics-differences/)，以及[廣告沒效果怎麼辦](/blog/ads-not-working-diagnosis/)。
+如果你想把報告裡常用的指標關係一次整理清楚，可以參考[CPC、CTR、ROAS、ROI 差在哪](/blog/marketing-calculator/)，以及[廣告沒效果怎麼辦](/blog/ads-not-working-diagnosis/)。
 
 ## 延伸閱讀
 
 - [廣告數據與預算主題總覽](/topics/marketing/ads-numbers/)
-- [主管如何用 AI 準備週會報告：先整理判斷，再整理格式](/blog/ai-weekly-report-manager/)
-- [ROAS 計算公式拆解：為什麼你的 ROAS 看起來很好，帳卻對不起來？](/blog/roas-formula-explained/)
+- [主管如何用 AI 準備週會報告：先整理判斷，再整理格式](/blog/ai-output-quality-check/)
+- [ROAS 計算公式拆解：為什麼你的 ROAS 看起來很好，帳卻對不起來？](/blog/marketing-calculator/)
