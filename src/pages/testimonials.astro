@@ -1,69 +1,219 @@
 ---
+/**
+ * 讀者的真實回饋 /testimonials/
+ *
+ * 收錄電子書讀者與行銷實戰社群夥伴的真實回饋，依具體度排序（鍋子、東置頂），
+ * 並串聯 /start-here/、Portaly 書單、Substack 電子報與 /contact/。
+ */
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
-import TestimonialsGrid from '@sections/social-proof/TestimonialsGrid.astro';
+import ArticleAuthor from '@/components/blog/ArticleAuthor.astro';
 import CTA from '@sections/marketing/CTA.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { siteConfig } from '@/config';
+import { entityConfig } from '@/config/entity';
 
 type TestimonialEntry = CollectionEntry<'testimonials'>;
 
 const testimonials = await getCollection(
   'testimonials',
-  ({ data }: { data: TestimonialEntry['data'] }) => !data.draft
+  ({ data }: { data: TestimonialEntry['data'] }) => !data.draft,
 );
 const sortedTestimonials = testimonials.sort(
-  (a: TestimonialEntry, b: TestimonialEntry) => a.data.order - b.data.order
+  (a: TestimonialEntry, b: TestimonialEntry) => a.data.order - b.data.order,
 );
 
-// 分離精選回饋與一般回饋
-const featuredTestimonials = sortedTestimonials.filter((t: TestimonialEntry) => t.data.featured);
-const otherTestimonials = sortedTestimonials.filter((t: TestimonialEntry) => !t.data.featured);
+interface SourceMeta {
+  label: string;
+  linkLabel?: string;
+  href?: string;
+  external?: boolean;
+}
+
+const sourceMetaByAuthor: Record<string, SourceMeta> = {
+  鍋子: {
+    label: '電子書讀者',
+    linkLabel: '查看完整電子書清單',
+    href: 'https://portaly.cc/billyselect4',
+    external: true,
+  },
+  東: {
+    label: '電子書讀者',
+    linkLabel: '自媒體與個人事業',
+    href: '/topics/personal-business/',
+  },
+  instarwin: {
+    label: '電子書讀者',
+    linkLabel: 'AI 工作流程與工具',
+    href: '/topics/ai-workflow/',
+  },
+  CabLate: {
+    label: '行銷實戰 LINE 社群夥伴',
+  },
+};
+
+const canonical = `${siteConfig.url}/testimonials/`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${canonical}#collection`,
+  name: '讀者的真實回饋：電子書、實戰專題與社群心得',
+  description:
+    '來自比利陳（行銷裡的路人甲）電子書讀者與行銷實戰社群夥伴的真實心得回饋，看看大家怎麼把方法放進日常工作裡。',
+  url: canonical,
+  inLanguage: 'zh-Hant-TW',
+  author: { '@id': entityConfig.ids.person },
+  publisher: { '@id': entityConfig.ids.person },
+  isPartOf: { '@id': entityConfig.ids.website },
+};
 ---
 
 <MarketingLayout
-  title={`推薦與回饋 - ${siteConfig.name}`}
-  description={`看看讀者與學員對 ${siteConfig.name} 的真實評價與心得。`}
+  title={`讀者的真實回饋：電子書、實戰專題與社群心得 - ${siteConfig.name}`}
+  description="來自比利陳（行銷裡的路人甲）電子書讀者與行銷實戰社群夥伴的真實心得回饋，看看大家怎麼把方法放進日常工作裡。"
+  structuredData={[schema]}
 >
   <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '讀者回饋' }]} />
 
   <section class="page-band">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <p class="text-sm font-semibold tracking-[0.15em] text-primary">真實評價</p>
-        <h1 class="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-text md:text-4xl lg:text-5xl">
-          讀者回饋
-        </h1>
-        <p class="mt-4 max-w-2xl text-base leading-relaxed text-text-muted md:text-lg">
-          看看讀者與學員實際套用網站方法、工具與電子書後的真實評價與心得。
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <p class="text-sm font-semibold tracking-[0.15em] text-primary">真實評價</p>
+      <h1 class="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-text md:text-4xl lg:text-5xl">
+        讀者的真實回饋
+      </h1>
+      <div class="mt-5 max-w-3xl space-y-4 text-base leading-8 text-text-muted md:text-lg">
+        <p>自己說自己的東西有多實用，聽起來通常都很像在寫廣告文案。</p>
+        <p>
+          對我來說，一篇教學或一本電子書有沒有價值，還是要看讀者真的拿去照著做完之後，到底有沒有解決手邊的問題（哪怕只是少走一點冤枉路）。
         </p>
+        <p>這裡收錄了幾位讀過電子書，或在社群裡一起交流過的夥伴留下的真實回饋。</p>
       </div>
     </div>
   </section>
 
-  <TestimonialsGrid
-    featured={featuredTestimonials.map((t: TestimonialEntry) => ({
-      quote: t.data.quote,
-      author: t.data.author,
-      role: t.data.role,
-      company: t.data.company,
-      avatar: t.data.avatar,
-    }))}
-    testimonials={otherTestimonials.map((t: TestimonialEntry) => ({
-      quote: t.data.quote,
-      author: t.data.author,
-      role: t.data.role,
-      company: t.data.company,
-      avatar: t.data.avatar,
-    }))}
-    emptyMessage="目前尚無回饋，期待聽到您的聲音！"
-    background="default"
-  />
+  <section class="bg-background py-12 md:py-16" aria-labelledby="feedback-list-title">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <p class="font-mono text-xs font-bold tracking-[0.15em] text-primary">READER FEEDBACK</p>
+      <h2 id="feedback-list-title" class="mt-1.5 text-2xl font-extrabold tracking-tight text-text md:text-3xl">
+        大家實際用完之後怎麼說
+      </h2>
+
+      {
+        sortedTestimonials.length > 0 ? (
+          <div class="mt-8 grid gap-5 md:grid-cols-2">
+            {sortedTestimonials.map((item, index) => {
+              const meta = sourceMetaByAuthor[item.data.author] ?? {
+                label: item.data.company || item.data.role || '讀者',
+              };
+
+              return (
+                <figure class="flex flex-col justify-between rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-primary/40 md:p-7">
+                  <div>
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="font-mono text-xs font-bold tracking-[0.14em] text-primary">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                      <span class="rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-text-muted">
+                        {meta.label}
+                      </span>
+                    </div>
+
+                    <blockquote class="mt-4 text-base leading-8 text-text md:text-[17px]">
+                      「{item.data.quote}」
+                    </blockquote>
+                  </div>
+
+                  <figcaption class="mt-6 flex flex-wrap items-center justify-between gap-2 border-t border-border pt-4 text-sm">
+                    <span class="font-bold text-text">—— {item.data.author}</span>
+                    {meta.href && meta.linkLabel && (
+                      <a
+                        href={meta.href}
+                        target={meta.external ? '_blank' : undefined}
+                        rel={meta.external ? 'noopener noreferrer' : undefined}
+                        data-conversion-cta={meta.external ? 'ebook' : undefined}
+                        data-conversion-target={meta.external ? 'portaly-catalog' : undefined}
+                        data-conversion-category={meta.external ? '讀者回饋' : undefined}
+                        class="text-xs font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+                      >
+                        {meta.linkLabel} {meta.external ? '↗' : '→'}
+                      </a>
+                    )}
+                  </figcaption>
+                </figure>
+              );
+            })}
+          </div>
+        ) : (
+          <p class="mt-8 text-sm text-text-muted">目前尚無回饋，期待聽到您的聲音！</p>
+        )
+      }
+
+      {/* 接下來你想先看看哪一塊 */}
+      <div class="mt-14 border-t border-border pt-10">
+        <h2 class="text-xl font-extrabold tracking-tight text-text md:text-2xl">
+          接下來你想先看看哪一塊
+        </h2>
+        <div class="mt-4 max-w-3xl space-y-4 text-sm leading-7 text-text-muted md:text-base">
+          <p>
+            如果你也是第一次來到這個網站，想先看看我平常怎麼拆解行銷跟 AI 工作流程，可以從
+            <a
+              href="/start-here/"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              從這裡開始
+            </a>
+            挑一條路線逛。
+          </p>
+          <p>
+            想直接看完整電子書清單，可以到我的
+            <a
+              href="https://portaly.cc/billyselect4"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-conversion-cta="ebook"
+              data-conversion-target="portaly-catalog"
+              data-conversion-category="讀者回饋"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              個人資源與書單頁
+            </a>
+            ；習慣每週收一篇實戰筆記的話，歡迎訂閱
+            <a
+              href="https://billy4select.substack.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-conversion-cta="newsletter"
+              data-conversion-target="substack"
+              data-conversion-category="讀者回饋"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              比利陳 Substack 電子報
+            </a>
+            。如果你讀完站上的文章有任何心得或建議，也歡迎透過
+            <a
+              href="/contact/"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              聯絡頁面
+            </a>
+            寫信跟我聊聊。
+          </p>
+        </div>
+
+        <ArticleAuthor />
+      </div>
+    </div>
+  </section>
 
   <CTA
     title="想分享你的想法？"
-    description="歡迎寫信給我。"
+    description="讀完文章、電子書或專題有任何心得或疑問，歡迎寫信給我。"
     action={{ label: '與我聯繫', href: '/contact/' }}
     background="muted"
   />
+
+  <script>
+    import '@/scripts/conversion';
+  </script>
 </MarketingLayout>
