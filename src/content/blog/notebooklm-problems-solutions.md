@@ -19,6 +19,13 @@ faq:
     a: 通常是問題問得太籠統，系統只挑了字面最接近的段落回答。可以在左側先勾選特定幾份檔案，並在提問裡明確要求它比較不同檔案的說法。
   - q: 遇到 NotebookLM 答不出來的問題怎麼辦？
     a: 它只看筆記本裡的檔案，資料沒寫的背景知識它本來就推不出來。遇到缺口時直接去外部查完資料，存成 PDF 或貼網址補進筆記本，再繼續問就好。
+testedAt: 2026 年於 NotebookLM 網頁版針對中文 PDF 與多來源檔案實測排錯
+testNotes: 實測掃描檔無法辨識、表格錯位與引用來源混亂等常見狀況，並對照官方支援格式與限制整理排查流程。
+sources:
+  - label: NotebookLM 官方說明中心（來源支援格式與疑難排解）
+    url: https://support.google.com/notebooklm/?hl=zh-Hant
+  - label: Google Drive 官方說明：PDF 與圖片文字辨識（OCR）
+    url: https://support.google.com/drive/answer/176692?hl=zh-Hant
 ---
 
 NotebookLM 剛上手時通常覺得很順，但真的拿進日常工作一兩個禮拜，各種不順手的地方就會開始冒出來。

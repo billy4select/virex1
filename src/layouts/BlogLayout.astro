@@ -46,6 +46,7 @@ interface Props {
   faq?: { q: string; a: string }[];
   headings?: Heading[];
   category?: BlogTheme;
+  postId?: string;
   nextPost?: NextPost;
   topicCluster?: TopicClusterData;
   testedAt?: string;
@@ -68,6 +69,7 @@ const {
   faq = [],
   headings = [],
   category,
+  postId,
   nextPost,
   topicCluster,
   testedAt,
@@ -271,7 +273,12 @@ const citations = sources.map((source) => source.url);
             <ArticleTopicCluster cluster={topicCluster} />
             <ArticleNext post={nextPost} />
             <ArticleAuthor />
-            <ArticleNewsletter />
+            <ArticleNewsletter
+              categorySlug={category?.slug}
+              categoryName={category?.name}
+              postId={postId}
+              tags={tags}
+            />
           </div>
         </div>
       </div>

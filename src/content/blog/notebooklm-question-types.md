@@ -19,6 +19,13 @@ faq:
     a: 多半是因為問題太寬，沒有指定要看哪幾份來源，也沒有講清楚要它做比較、找證據還是拆概念。把問題拆小、一次只追一個為什麼，答案會扎實很多。
   - q: NotebookLM 回答出來的文字可以直接拿來用嗎？
     a: 不建議直接照抄。它為了守住原文，吐出來的用字通常很硬、沒什麼節奏感。比較好的做法是只拿它整理出來的架構跟證據，寫成報告或文章時自己重寫，或交給 Claude 整理表達。
+testedAt: 2026 年於 NotebookLM 網頁版多來源研究專案實測五種提問句型
+testNotes: 以同一組多份研究文件測試摘要、對照、找矛盾、拆步驟與追問盲點五類指令的引用準確度。
+sources:
+  - label: NotebookLM 官方說明中心
+    url: https://support.google.com/notebooklm/?hl=zh-Hant
+  - label: NotebookLM 官方網站
+    url: https://notebooklm.google.com/
 ---
 
 把檔案丟進 NotebookLM 之後，很多人第一句就問：「幫我總結這些資料。」

@@ -19,6 +19,13 @@ faq:
     a: 可以，而且這是我最常用的做法。先在 NotebookLM 把原始文件翻透、確認數字跟出處，再把核對過的重點帶去 Claude 整理成正式報告或提案。
   - q: 公司內部文件可以直接上傳嗎？
     a: 上傳前一定要先確認公司政策與帳號的隱私設定。只要涉及客戶個資、未公開財務數據或商業機密，在沒有授權前都應該先去識別化，或只放公開與整理後的片段。
+testedAt: 2026 年以同一批長篇報告與內部企劃資料同步實測 NotebookLM 與 Claude
+testNotes: 比較兩者在多文件溯源查核、長文結構重組與多輪局部改稿上的穩定度與適用階段。
+sources:
+  - label: NotebookLM 官方說明中心
+    url: https://support.google.com/notebooklm/?hl=zh-Hant
+  - label: Anthropic Claude 官方文件（長文本處理與 Prompt 指南）
+    url: https://docs.anthropic.com/
 ---
 
 拿到一堆內部文件要整理成報告，到底該用 NotebookLM，還是直接丟給 Claude？

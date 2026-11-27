@@ -1,35 +1,85 @@
 ---
+import { getRecommendedBook } from '@/config/entity';
+
 interface Props {
   href?: string;
+  categorySlug?: string;
+  categoryName?: string;
+  postId?: string;
+  tags?: string[];
 }
 
-const { href = 'https://billy4select.substack.com/' } = Astro.props;
+const {
+  href = 'https://billy4select.substack.com/',
+  categorySlug,
+  categoryName = '',
+  postId,
+  tags = [],
+} = Astro.props;
+
+const book = getRecommendedBook(categorySlug, postId, tags);
 ---
 
-<section class="not-prose mt-8 rounded-2xl border border-primary/20 bg-primary/10 p-6">
-  <h2 class="text-xl font-bold tracking-tight text-text md:text-2xl">
-    每週一封，繼續研究值得理解的新事物。
-  </h2>
-  <p class="mt-2 max-w-2xl text-sm leading-relaxed text-text-muted">
-    把 AI、商業、投資與個人事業的新變化，拆成可以判斷、可以行動的線索。
+<section
+  aria-label="延伸閱讀作品與電子報"
+  class="not-prose mt-8 overflow-hidden rounded-2xl border border-primary/25 bg-gradient-to-br from-primary/10 via-surface to-background p-6"
+>
+  <p class="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.15em] text-primary">
+    <span class="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />
+    延伸完整系統 · 獨立出版電子書
   </p>
-  <a
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    class="mt-5 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-primary-dark"
-  >
-    訂閱電子報
-    <svg
-      class="h-4 w-4"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      aria-hidden="true"
+
+  <h2 class="mt-2 text-xl font-bold tracking-tight text-text md:text-2xl">
+    《{book.title}》
+  </h2>
+
+  <p class="mt-2 max-w-2xl text-sm leading-relaxed text-text-muted md:text-[15px]">
+    {book.pitch}
+  </p>
+
+  <div class="mt-5 flex flex-wrap items-center gap-3">
+    <a
+      href={book.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      data-conversion-cta="ebook"
+      data-conversion-target={book.title}
+      data-conversion-category={categoryName}
+      class="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-primary-dark"
     >
-      <path d="M5 12h14" />
-      <path d="m13 6 6 6-6 6" />
-    </svg>
-  </a>
+      了解這本電子書
+      <svg
+        class="h-4 w-4"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        aria-hidden="true"
+      >
+        <path d="M5 12h14" />
+        <path d="m13 6 6 6-6 6" />
+      </svg>
+    </a>
+
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      data-conversion-cta="newsletter"
+      data-conversion-target="substack"
+      data-conversion-category={categoryName}
+      class="inline-flex items-center gap-2 rounded-full border border-border bg-background px-5 py-2.5 text-sm font-semibold text-text transition-colors hover:border-primary/40 hover:text-primary"
+    >
+      或先免費訂閱電子報
+      <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+
+  <p class="mt-4 text-xs leading-relaxed text-text-muted">
+    不想一次買書？每週一封 Substack 電子報，把 AI、行銷與個人事業的新變化拆成可以行動的線索。
+  </p>
 </section>
+
+<script>
+  import '@/scripts/conversion';
+</script>

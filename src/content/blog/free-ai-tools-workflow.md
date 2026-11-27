@@ -19,6 +19,17 @@ faq:
     a: 預設情況下，多數免費方案的對話可能會被用於模型訓練。建議到各平台的隱私設定裡把該選項關掉，而且涉及公司機密或客戶個資前一定要先去識別化。
   - q: 什麼情況下才值得付費升級？
     a: 當你每天都在用 AI、常常要一次塞進大批檔案做長對話整理，而且頻繁撞到額度限制時再升級。如果只是偶爾問幾個問題，免費版完全夠用。
+testedAt: 2026 年以免費方案實測多工具分工跑完日常研究、草稿與資料整理任務
+testNotes: 對照各工具免費層級的功能邊界與用量限制，整理不付費也能穩定運作的任務交接流程。
+sources:
+  - label: NotebookLM 官方說明中心
+    url: https://support.google.com/notebooklm/?hl=zh-Hant
+  - label: Google Gemini 官方方案與免費版額度說明
+    url: https://support.google.com/gemini/answer/16275805?hl=zh-Hant
+  - label: OpenAI 官方說明中心
+    url: https://help.openai.com/
+  - label: Anthropic Claude 官方文件
+    url: https://docs.anthropic.com/
 ---
 
 AI 工具幾乎都有免費版。但大多數人的使用方式是：下載一個工具，發現免費版有限制，然後放棄。

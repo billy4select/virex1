@@ -22,6 +22,15 @@ faq:
     a: GSC 看的是「進網站之前」：大家搜了什麼字看到你、曝光幾次、排名第幾、有沒有順利收錄。GA4 看的是「進網站之後」：人從哪裡來、停留多久、跳出率高不高、有沒有轉換。
   - q: 除了 GSC 和 GA4，還有什麼免費工具偶爾會用到？
     a: 檢查網頁載入速度時會開 PageSpeed Insights；想找新題目直接看 Google 搜尋下拉建議跟頁尾相關搜尋，這幾個免費工具完全夠用。
+testedAt: 2026 年以自營網站（www.billy4select.com）實際維運流程整理免費 SEO 工具組合
+testNotes: 以 Google Search Console 檢索與點擊報表、GA4 行為數據與 PageSpeed 檢測為核心驗證流程。
+sources:
+  - label: Google Search Console 官方網站
+    url: https://search.google.com/search-console/about
+  - label: Google Analytics (GA4) 官方說明中心
+    url: https://support.google.com/analytics/?hl=zh-Hant
+  - label: Google PageSpeed Insights 官方檢測工具
+    url: https://pagespeed.web.dev/
 ---
 
 上網搜「免費 SEO 工具」，很容易找到那種一次列出二十款、三十款軟體的整理文。

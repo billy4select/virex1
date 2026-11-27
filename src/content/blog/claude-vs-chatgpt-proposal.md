@@ -22,6 +22,13 @@ faq:
     a: 可以，我自己就是這樣用。先用 ChatGPT 丟點子、看有哪些方向可以打，挑完之後把資料帶去 Claude 展開成正式提案。
   - q: 免費版和付費版的差異大嗎？
     a: 偶爾寫短提案，免費版夠用。但如果一份提案超過兩千字、要來回修五六輪，付費版的上下文長度和穩定度會差很多，比較不會寫到一半撞上限。
+testedAt: 2026 年以同一份新品上市行銷提案素材同步實測 Claude 與 ChatGPT
+testNotes: 針對前期發想切角、正式提案骨架撰寫與第 4–5 輪局部修改指令，對照兩者的廢話比例與指令遵循度。
+sources:
+  - label: Anthropic Claude 官方文件（Prompt Engineering 與長文寫作）
+    url: https://docs.anthropic.com/
+  - label: OpenAI 官方說明中心（ChatGPT 功能與使用指南）
+    url: https://help.openai.com/
 ---
 
 用 AI 寫提案，最煩的其實不是它寫不出來，而是它寫出一份「看起來很完整、但你根本交不出去」的東西。

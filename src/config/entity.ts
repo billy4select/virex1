@@ -17,9 +17,11 @@ export interface ExternalProfile {
 }
 
 export interface PublishedBook {
+  id: 'self-media' | 'marketing' | 'knowledge' | 'ai-workplace' | 'traffic';
   title: string;
   href: string;
   description: string;
+  pitch: string;
 }
 
 const baseUrl = siteUrl.replace(/\/$/, '');
@@ -90,13 +92,6 @@ export const entityConfig = {
       description: '每週整理值得深入研究的 AI、商業與個人事業觀察。',
     },
     {
-      id: 'kit',
-      name: 'Kit 週報',
-      handle: 'billy4select.kit.com',
-      href: 'https://billy4select.kit.com/',
-      description: '訂閱者專屬筆記、工具整理與新文章更新通知。',
-    },
-    {
       id: 'threads',
       name: 'Threads',
       handle: '@billy4select',
@@ -119,7 +114,6 @@ export const entityConfig = {
     'https://www.youtube.com/channel/UCDC7CXKOTdac0ZzVyTSg6eQ',
     'https://billy4select.substack.com/',
     'https://substack.com/@billy4select',
-    'https://billy4select.kit.com/',
     'https://www.threads.net/@billy4select',
     'https://www.instagram.com/billy4select',
   ],
@@ -127,34 +121,91 @@ export const entityConfig = {
   /** 獨立出版電子書（2025–2026），共五本 */
   books: [
     {
+      id: 'self-media',
       title: '從零開始自媒體',
       href: 'https://portaly.cc/billyselect4/product/ioeupgO66jK7vB24yJzY',
       description:
         '以行銷理論為基礎的自媒體經營指南，從目標受眾、內容、市場測試到變現與長期系統。',
+      pitch: '10 年品牌行銷人給你一套從定位、內容、找到用戶到商業變現的自媒體方法。',
     },
     {
+      id: 'marketing',
       title: '寫給大家的行銷書',
       href: 'https://portaly.cc/billyselect4/product/FlzuxW1QbZpC79Op2zhE',
       description:
         '用「減法」看行銷：回到流量、轉換、客單價與回購的基本架構，先診斷問題出在哪裡。',
+      pitch: '用「減法」回到流量、轉換、客單價與回購的底層架構，先看懂生意真正卡在哪一段。',
     },
     {
+      id: 'knowledge',
       title: '人人都做得到的知識變現',
       href: 'https://portaly.cc/billyselect4/product/icSVZ0k6BHdItavIKf9X',
       description:
         '為素人設計的知識整理方法，把經驗與技能萃取、結構化，做成課程或電子書等小型知識產品。',
+      pitch: '把你累積的工作經驗與技能萃取成結構化產品，從免費內容走向可複製的知識收入。',
     },
     {
+      id: 'ai-workplace',
       title: 'AI時代職場生存法則',
       href: 'https://portaly.cc/billyselect4/product/jLrib0ZgLmXWs2WOTiy8',
       description:
         '把 AI 放進日常工作的方法：任務拆解、工具選擇、協作流程與判斷邊界，讓效率提升而不是多一份焦慮。',
+      pitch: '拆解日常任務、AI 工具分工與職場判斷邊界，讓 AI 真正幫你省時間而不是多一份焦慮。',
     },
     {
+      id: 'traffic',
       title: '流量騙局',
       href: 'https://portaly.cc/billyselect4/product/khu55lTbwebNRjRtUCQ3',
       description:
         '拆解流量數字的錯覺：曝光、點擊與轉換之間差在哪，哪些指標值得追，哪些只是好看。',
+      pitch: '拆開曝光、點擊與轉換數字背後的假象，看懂哪些指標真的會影響獲利與廣告預算。',
     },
   ] satisfies PublishedBook[],
 } as const;
+
+const monetizationSlugs = new Set([
+  'turn-expertise-into-market-value',
+  'content-to-product-knowledge-business',
+  'one-person-company-ai-work-system',
+  'expert-secrets-book-notes',
+]);
+
+/** 依文章分類、Slug 與標籤自動挑選最對題的電子書 */
+export function getRecommendedBook(
+  categorySlug?: string,
+  postId?: string,
+  tags: string[] = []
+): PublishedBook {
+  const byId = (id: PublishedBook['id']) =>
+    entityConfig.books.find((book) => book.id === id) ?? entityConfig.books[0];
+
+  if (
+    (postId && monetizationSlugs.has(postId)) ||
+    tags.some((t) => /知識變現|一人公司|個人事業/.test(t))
+  ) {
+    return byId('knowledge');
+  }
+
+  switch (categorySlug) {
+    case 'self-media':
+      return byId('self-media');
+    case 'ai-workflow':
+    case 'notebooklm':
+    case 'career':
+      return byId('ai-workplace');
+    case 'advertising':
+      return byId('traffic');
+    case 'marketing-strategy':
+    case 'business-model':
+    case 'seo-content':
+      return byId('marketing');
+    case 'book-guides':
+      if (postId === 'traffic-pool-book-notes') return byId('traffic');
+      if (postId === 'laws-of-communication-book-notes' || postId === 'storytelling-marketing-book-notes') {
+        return byId('self-media');
+      }
+      return byId('marketing');
+    default:
+      return byId('self-media');
+  }
+}

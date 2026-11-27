@@ -21,6 +21,13 @@ faq:
     a: 沒有固定答案。觸及會受到內容、受眾、競爭、帳號狀態與平台推薦機制影響，應以自己的帳號數據持續比較。
   - q: 產品品牌一定要選 Instagram 嗎？
     a: 視產品與購買決策而定。視覺展示有幫助的品類可能適合 Instagram，但品牌也可能透過 Threads 回答問題、建立信任或觀察需求。
+testedAt: 2026 年依據雙平台實際經營（@billy4select）與內容分發特性對照整理
+testNotes: 從文字互動成本、圖文留存、演算法擴散與導流回官網四個維度比較主力與輔助定位。
+sources:
+  - label: Meta 官方說明中心：Threads 與 Instagram 帳號關聯說明
+    url: https://help.instagram.com/788669719351544
+  - label: Instagram 官方說明中心：專業帳號洞察報告
+    url: https://help.instagram.com/788388387972460
 ---
 
 「現在經營 Threads 還是 Instagram 比較好？」這個問題很常出現，但如果沒有先說明經營目標，很難有一致答案。

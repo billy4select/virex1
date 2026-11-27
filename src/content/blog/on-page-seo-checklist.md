@@ -24,6 +24,13 @@ faq:
   - q: 每篇文章一定要有三條內部連結嗎？
     a: >-
       沒有固定數量。連結應指向真正相關、能補充資訊或協助下一步的頁面，避免為了達到數量而加入不自然的連結。
+testedAt: 2026 年依 Google 搜尋中心官方文件與本站發佈檢查流程整理
+testNotes: 對照標題、Canonical、內部連結、結構化資料與行動裝置可讀性等發佈前核心檢查項目。
+sources:
+  - label: Google 搜尋中心：SEO 入門指南
+    url: https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=zh-tw
+  - label: Google 搜尋中心：建立實用、可靠且以使用者為優先的內容
+    url: https://developers.google.com/search/docs/fundamentals/creating-helpful-content?hl=zh-tw
 ---
 
 文章寫完之後，通常還會再檢查一次標題、段落、圖片與連結。問題是，網路上有很多看似精準的 SEO 規則，例如標題要控制在某個字數、每篇一定要放幾條內部連結、每個 H2 都要有關鍵字。
