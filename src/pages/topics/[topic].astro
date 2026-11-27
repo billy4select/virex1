@@ -3,6 +3,7 @@ import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import TopicCard from '@/components/topics/TopicCard.astro';
 import NotebookLMHubGuide from '@/components/topics/NotebookLMHubGuide.astro';
+import AIWorkflowHubGuide from '@/components/topics/AIWorkflowHubGuide.astro';
 import { siteConfig } from '@/config';
 import { entityConfig } from '@/config/entity';
 import { getPublishedPosts } from '@/lib/blog';
@@ -29,12 +30,19 @@ const areaTopics = getTopicsByArea(slug).filter((topic) => countOf(topic.article
 const canonical = `${siteConfig.url}/topics/${slug}/`;
 
 const isNotebookLM = slug === 'notebooklm';
+const isAIWorkflow = slug === 'ai-workflow';
+const hasCustomHub = isNotebookLM || isAIWorkflow;
+
 const pageTitle = isNotebookLM
   ? `NotebookLM 實戰指南：從 PDF 處理到工作研究 - ${siteConfig.name}`
-  : `${area.name} - ${siteConfig.name}`;
+  : isAIWorkflow
+    ? `AI 工作流程與工具：從任務拆解到職場落地 - ${siteConfig.name}`
+    : `${area.name} - ${siteConfig.name}`;
 const pageDescription = isNotebookLM
   ? '整理比利陳實測 NotebookLM 的 9 篇完整筆記，涵蓋掃描 PDF 轉檔、亂碼排錯、五種提問方法，以及與 Claude、Notion AI 的工具比較。'
-  : `${area.lead}${area.summary}`;
+  : isAIWorkflow
+    ? '比利陳整理 17 篇 AI 工作流程實戰筆記，涵蓋任務拆解、ChatGPT 與 Claude 工具組合、會議與評論分析、品質檢查與資安底線。'
+    : `${area.lead}${area.summary}`;
 const heroHeading = isNotebookLM ? 'NotebookLM 實戰指南' : area.name;
 
 const schema = {
@@ -84,11 +92,12 @@ const schema = {
   </section>
 
   {isNotebookLM && <NotebookLMHubGuide />}
+  {isAIWorkflow && <AIWorkflowHubGuide />}
 
   <section class="bg-background py-12 md:py-16" aria-labelledby="area-topics-title">
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
       <h2 id="area-topics-title" class="text-xl font-bold tracking-tight text-text md:text-2xl">
-        {isNotebookLM ? '或依情境直接切入子主題路線' : '你現在遇到的是哪一種？'}
+        {hasCustomHub ? '或依情境直接切入子主題路線' : '你現在遇到的是哪一種？'}
       </h2>
       <div class="mt-6 grid gap-4 sm:grid-cols-2">
         {
