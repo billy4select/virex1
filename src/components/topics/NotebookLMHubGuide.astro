@@ -15,51 +15,35 @@ interface HubStage {
 const stages: HubStage[] = [
   {
     step: 'STAGE 01',
-    heading: '上傳檔案前先把格式檢查好',
+    heading: '從上手流程、提問指令到排錯一次搞定',
     paragraphs: [
-      '多數人覺得 NotebookLM 難用，通常是卡在第一步。資料丟進去讀不到、中文變亂碼，或是整份報告漏東漏西。',
-      '這些狀況多半跟模型無關，問題出在原始檔案沒有文字層，或是格式超過限制。',
+      '多數人覺得 NotebookLM 難用，要嘛是掃描檔沒文字層讀不到，要嘛是第一句就問「幫我總結」只拿到空泛摘要。',
+      '這兩篇旗艦指南把上傳前準備、五種高精準提問法、Audio Overview 實測、免費 OCR 轉換與 7 大排錯方案全部整合在一起，照順序看最省時間。',
     ],
     items: [
       {
-        title: 'NotebookLM 上傳 PDF 前必做 3 件事',
-        href: '/blog/notebooklm-upload-preparation/',
-        summary: '先確認檔案大小、頁數上限跟中文編碼，省下重傳的時間。',
+        title: 'NotebookLM 教學：2026 最新功能實測、提問指令與知識庫建立完整指南',
+        href: '/blog/notebooklm-complete-guide-2026/',
+        summary: '完整涵蓋上傳前四項準備、從抓架構到追問為什麼的五種問法、Audio Overview 實測與限制解法。',
       },
       {
-        title: 'NotebookLM OCR 教學：掃描版 PDF 的免費轉檔工具與步驟',
-        href: '/blog/notebooklm-ocr-pdf-solution/',
-        summary: '遇到純圖片掃描的合約或報告，先轉出文字層再丟進去。',
-      },
-      {
-        title: 'NotebookLM 亂碼、幻覺與格式混亂的 7 個排錯方案',
+        title: 'NotebookLM 缺點與常見問題解法：PDF 讀不到、OCR 轉換與引用錯誤一次解決',
         href: '/blog/notebooklm-problems-solutions/',
-        summary: '如果已經開始用卻發現回答怪怪的，這篇有完整的排查對照。',
+        summary: '整理掃描版 PDF 三種免費 OCR 做法，加上文字太硬、表格錯位與引用混亂的 7 個實戰排錯方案。',
       },
     ],
   },
   {
     step: 'STAGE 02',
-    heading: '問法對了，資料才會長出觀點',
+    heading: '把整理好的資料，轉成自己的職場判斷',
     paragraphs: [
-      '檔案都順順讀進去之後，接下來會遇到第二個瓶頸：摘要看起來都很工整，但開會或寫提案時還是不知道怎麼用。',
-      '這時候通常需要換一種提問方式，把「叫它整理」換成「叫它交叉比對」。',
+      '檔案都順順讀進去之後，重點就不只是「整理資料」，而是怎麼把多份報告與訪談交叉比對出真正能進會議室的觀點。',
     ],
     items: [
       {
-        title: 'NotebookLM 五種提問方式比較',
-        href: '/blog/notebooklm-question-types/',
-        summary: '同一份資料換個問法，挖出來的細節深度差非常多。',
-      },
-      {
-        title: '職場人用 NotebookLM 做工作研究的正確姿勢',
+        title: '用 NotebookLM 做職場研究：怎麼把一堆資料拆懂，再變成自己的判斷？',
         href: '/blog/notebooklm-workplace-research/',
-        summary: '怎麼從一堆雜亂資料裡理出自己的判斷，而不只是當資料搬運工。',
-      },
-      {
-        title: 'NotebookLM Audio Overview 語音摘要與 Podcast 技巧',
-        href: '/blog/notebooklm-audio-overview-guide/',
-        summary: '通勤或沒空盯螢幕時，把長文件變成雙人對談音檔來聽。',
+        summary: '怎麼從一堆雜亂資料裡理出自己的立場，而不只是當資料搬運工。',
       },
     ],
   },
