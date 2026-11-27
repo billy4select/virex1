@@ -4,8 +4,8 @@ export const navigation: Navigation = {
   header: {
     main: [
       { label: '這裡開始', href: '/start-here/' },
-      { label: '主題', href: '/topics/' },
       { label: '教學', href: '/series/' },
+      { label: '主題', href: '/topics/' },
       { label: '文章', href: '/blog/' },
       { label: '免費資源', href: '/resources/' },
       { label: '關於我', href: '/about/' },
@@ -17,8 +17,8 @@ export const navigation: Navigation = {
   footer: {
     product: [ 
       { label: '這裡開始', href: '/start-here/' },
-      { label: '主題', href: '/topics/' },
       { label: '教學', href: '/series/' },
+      { label: '主題', href: '/topics/' },
       { label: '文章', href: '/blog/' },
       { label: '免費資源', href: '/resources/' },
       { label: '關於我', href: '/about/' },
