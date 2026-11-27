@@ -59,18 +59,102 @@ const isActive = (href: string) => {
 
       <div class="hidden md:flex items-center gap-6">
         {
-          mainNavItems.map((item) => (
-            <a
-              href={item.href}
-              aria-current={isActive(item.href) ? 'page' : undefined}
-              class:list={[
-                'transition-colors text-sm font-medium rounded-md px-2 py-1 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background focus:outline-none',
-                isActive(item.href) ? 'text-text bg-surface' : 'text-text-muted hover:text-text',
-              ]}
-            >
-              {item.label}
-            </a>
-          ))
+          mainNavItems.map((item, index) =>
+            item.children && item.children.length > 0 ? (
+              <div class="relative" data-nav-dropdown>
+                <div
+                  class:list={[
+                    'inline-flex items-center rounded-md transition-colors',
+                    isActive(item.href) ? 'bg-surface text-text' : 'text-text-muted hover:text-text',
+                  ]}
+                >
+                  <a
+                    href={item.href}
+                    aria-current={isActive(item.href) ? 'page' : undefined}
+                    class="rounded-l-md py-1 pl-2 pr-1 text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  >
+                    {item.label}
+                  </a>
+                  <button
+                    type="button"
+                    data-nav-dropdown-toggle
+                    aria-expanded="false"
+                    aria-controls={`desktop-dropdown-${index}`}
+                    aria-label={`展開${item.label}分類選單`}
+                    class="inline-flex items-center rounded-r-md py-1 pl-0.5 pr-1.5 text-current focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  >
+                    <Icon
+                      name="lucide:chevron-down"
+                      data-nav-dropdown-chevron
+                      class="h-3.5 w-3.5 transition-transform duration-200"
+                      aria-hidden="true"
+                    />
+                  </button>
+                </div>
+
+                <div
+                  id={`desktop-dropdown-${index}`}
+                  data-nav-dropdown-menu
+                  hidden
+                  class="absolute left-1/2 top-full z-50 w-[560px] max-w-[calc(100vw-2rem)] -translate-x-1/2 pt-2.5"
+                >
+                  <div class="rounded-2xl border border-border bg-background/95 p-3 shadow-xl backdrop-blur-md">
+                    <div class="grid grid-cols-2 gap-1">
+                      {item.children.map((child) => (
+                        <a
+                          href={child.href}
+                          aria-current={isActive(child.href) ? 'page' : undefined}
+                          class:list={[
+                            'group rounded-xl px-3 py-2.5 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary',
+                            isActive(child.href) ? 'bg-primary/10 text-primary' : 'hover:bg-surface',
+                          ]}
+                        >
+                          <span
+                            class:list={[
+                              'block text-sm font-semibold leading-snug transition-colors',
+                              isActive(child.href) ? 'text-primary' : 'text-text group-hover:text-primary',
+                            ]}
+                          >
+                            {child.label}
+                          </span>
+                          {child.description && (
+                            <span class="mt-0.5 block line-clamp-1 text-xs text-text-muted">
+                              {child.description}
+                            </span>
+                          )}
+                        </a>
+                      ))}
+                    </div>
+                    <div class="mt-2 flex items-center justify-between border-t border-border px-3 pt-2.5 pb-0.5 text-xs">
+                      <a
+                        href={item.href}
+                        class="font-semibold text-primary transition-colors hover:text-primary-dark"
+                      >
+                        查看全部{item.label}總覽 →
+                      </a>
+                      <a
+                        href="/blog/"
+                        class="font-medium text-text-muted transition-colors hover:text-text"
+                      >
+                        依時間看全部文章 →
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <a
+                href={item.href}
+                aria-current={isActive(item.href) ? 'page' : undefined}
+                class:list={[
+                  'transition-colors text-sm font-medium rounded-md px-2 py-1 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background focus:outline-none',
+                  isActive(item.href) ? 'text-text bg-surface' : 'text-text-muted hover:text-text',
+                ]}
+              >
+                {item.label}
+              </a>
+            )
+          )
         }
       </div>
 
@@ -186,23 +270,78 @@ const isActive = (href: string) => {
   <div id="mobile-menu-backdrop" class="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
   <nav
     id="mobile-menu-panel"
-    class="absolute left-0 right-0 bg-surface border-b border-background shadow-lg"
+    class="absolute left-0 right-0 max-h-[calc(100vh-4.75rem)] overflow-y-auto bg-surface border-b border-background shadow-lg"
     aria-label="行動版導覽"
   >
     <div class="px-4 py-4 space-y-1">
       {
-        mainNavItems.map((item) => (
-          <a
-            href={item.href}
-            aria-current={isActive(item.href) ? 'page' : undefined}
-            class:list={[
-              'block px-3 py-3 rounded-md transition-colors text-base font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset',
-              isActive(item.href) ? 'text-text bg-background font-semibold' : 'text-text-muted hover:text-text hover:bg-background',
-            ]}
-          >
-            {item.label}
-          </a>
-        ))
+        mainNavItems.map((item, index) =>
+          item.children && item.children.length > 0 ? (
+            <div data-mobile-dropdown>
+              <div class="flex items-center justify-between gap-2">
+                <a
+                  href={item.href}
+                  aria-current={isActive(item.href) ? 'page' : undefined}
+                  class:list={[
+                    'flex-1 rounded-md px-3 py-3 text-base font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset',
+                    isActive(item.href)
+                      ? 'bg-background font-semibold text-text'
+                      : 'text-text-muted hover:bg-background hover:text-text',
+                  ]}
+                >
+                  {item.label}
+                </a>
+                <button
+                  type="button"
+                  data-mobile-dropdown-toggle
+                  aria-expanded="false"
+                  aria-controls={`mobile-dropdown-${index}`}
+                  aria-label={`展開${item.label}分類`}
+                  class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md text-text-muted transition-colors hover:bg-background hover:text-text focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset"
+                >
+                  <Icon
+                    name="lucide:chevron-down"
+                    data-mobile-dropdown-chevron
+                    class="h-4 w-4 transition-transform duration-200"
+                    aria-hidden="true"
+                  />
+                </button>
+              </div>
+              <div
+                id={`mobile-dropdown-${index}`}
+                data-mobile-dropdown-menu
+                hidden
+                class="mt-1 mb-2 ml-3 space-y-0.5 border-l-2 border-border pl-3"
+              >
+                {item.children.map((child) => (
+                  <a
+                    href={child.href}
+                    aria-current={isActive(child.href) ? 'page' : undefined}
+                    class:list={[
+                      'block rounded-md px-3 py-2 text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset',
+                      isActive(child.href)
+                        ? 'bg-background font-semibold text-primary'
+                        : 'text-text-muted hover:bg-background hover:text-text',
+                    ]}
+                  >
+                    {child.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <a
+              href={item.href}
+              aria-current={isActive(item.href) ? 'page' : undefined}
+              class:list={[
+                'block px-3 py-3 rounded-md transition-colors text-base font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-inset',
+                isActive(item.href) ? 'text-text bg-background font-semibold' : 'text-text-muted hover:text-text hover:bg-background',
+              ]}
+            >
+              {item.label}
+            </a>
+          )
+        )
       }
       <div class="border-t border-border my-2"></div>
       {
@@ -241,6 +380,90 @@ const isActive = (href: string) => {
   const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
   const menuIconOpen = document.getElementById('menu-icon-open');
   const menuIconClose = document.getElementById('menu-icon-close');
+  const desktopDropdowns = document.querySelectorAll<HTMLElement>('[data-nav-dropdown]');
+  const mobileDropdowns = document.querySelectorAll<HTMLElement>('[data-mobile-dropdown]');
+
+  function closeDesktopDropdown(dropdown: HTMLElement) {
+    const toggle = dropdown.querySelector<HTMLElement>('[data-nav-dropdown-toggle]');
+    const menu = dropdown.querySelector<HTMLElement>('[data-nav-dropdown-menu]');
+    const chevron = dropdown.querySelector<HTMLElement>('[data-nav-dropdown-chevron]');
+    if (!menu) return;
+    menu.hidden = true;
+    toggle?.setAttribute('aria-expanded', 'false');
+    chevron?.classList.remove('rotate-180');
+  }
+
+  function closeAllDesktopDropdowns() {
+    desktopDropdowns.forEach(closeDesktopDropdown);
+  }
+
+  function openDesktopDropdown(dropdown: HTMLElement) {
+    closeHeaderSearch();
+    desktopDropdowns.forEach((other) => {
+      if (other !== dropdown) closeDesktopDropdown(other);
+    });
+    const toggle = dropdown.querySelector<HTMLElement>('[data-nav-dropdown-toggle]');
+    const menu = dropdown.querySelector<HTMLElement>('[data-nav-dropdown-menu]');
+    const chevron = dropdown.querySelector<HTMLElement>('[data-nav-dropdown-chevron]');
+    if (!menu) return;
+    menu.hidden = false;
+    toggle?.setAttribute('aria-expanded', 'true');
+    chevron?.classList.add('rotate-180');
+  }
+
+  desktopDropdowns.forEach((dropdown) => {
+    const toggle = dropdown.querySelector<HTMLElement>('[data-nav-dropdown-toggle]');
+    const menu = dropdown.querySelector<HTMLElement>('[data-nav-dropdown-menu]');
+    let closeTimer: number | undefined;
+
+    dropdown.addEventListener('mouseenter', () => {
+      if (closeTimer) {
+        window.clearTimeout(closeTimer);
+        closeTimer = undefined;
+      }
+      openDesktopDropdown(dropdown);
+    });
+
+    dropdown.addEventListener('mouseleave', () => {
+      closeTimer = window.setTimeout(() => {
+        closeDesktopDropdown(dropdown);
+      }, 140);
+    });
+
+    toggle?.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (menu?.hidden) {
+        openDesktopDropdown(dropdown);
+      } else {
+        closeDesktopDropdown(dropdown);
+      }
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    const target = e.target as Node | null;
+    if (!target) return;
+    desktopDropdowns.forEach((dropdown) => {
+      if (!dropdown.contains(target)) {
+        closeDesktopDropdown(dropdown);
+      }
+    });
+  });
+
+  mobileDropdowns.forEach((dropdown) => {
+    const toggle = dropdown.querySelector<HTMLElement>('[data-mobile-dropdown-toggle]');
+    const menu = dropdown.querySelector<HTMLElement>('[data-mobile-dropdown-menu]');
+    const chevron = dropdown.querySelector<HTMLElement>('[data-mobile-dropdown-chevron]');
+
+    toggle?.addEventListener('click', () => {
+      if (!menu) return;
+      const willOpen = menu.hidden;
+      menu.hidden = !willOpen;
+      toggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      chevron?.classList.toggle('rotate-180', willOpen);
+    });
+  });
 
   function updateMenuPosition() {
     if (header && mobileMenuPanel) {
@@ -259,6 +482,7 @@ const isActive = (href: string) => {
 
   function openHeaderSearch() {
     if (!headerSearchPanel || !headerSearchBackdrop) return;
+    closeAllDesktopDropdowns();
     closeMobileMenu();
     updateHeaderSearchPosition();
     headerSearchPanel.hidden = false;
@@ -296,6 +520,7 @@ const isActive = (href: string) => {
   });
 
   function openMobileMenu() {
+    closeAllDesktopDropdowns();
     closeHeaderSearch();
     updateMenuPosition();
     mobileMenu?.classList.remove('hidden');
@@ -326,14 +551,25 @@ const isActive = (href: string) => {
   mobileMenuBackdrop?.addEventListener('click', closeMobileMenu);
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && headerSearchPanel && !headerSearchPanel.hidden) {
-      closeHeaderSearch();
-      headerSearchToggles[0]?.focus();
-      return;
-    }
-    if (e.key === 'Escape' && mobileMenuButton?.getAttribute('aria-expanded') === 'true') {
-      closeMobileMenu();
-      mobileMenuButton?.focus();
+    if (e.key === 'Escape') {
+      const openDropdown = Array.from(desktopDropdowns).find((dropdown) => {
+        const menu = dropdown.querySelector<HTMLElement>('[data-nav-dropdown-menu]');
+        return menu && !menu.hidden;
+      });
+      if (openDropdown) {
+        closeDesktopDropdown(openDropdown);
+        openDropdown.querySelector<HTMLElement>('[data-nav-dropdown-toggle]')?.focus();
+        return;
+      }
+      if (headerSearchPanel && !headerSearchPanel.hidden) {
+        closeHeaderSearch();
+        headerSearchToggles[0]?.focus();
+        return;
+      }
+      if (mobileMenuButton?.getAttribute('aria-expanded') === 'true') {
+        closeMobileMenu();
+        mobileMenuButton?.focus();
+      }
     }
   });
 

@@ -6,11 +6,19 @@
  * These types are separated from config values for better maintainability.
  */
 
+export interface NavigationChildItem {
+  label: string;
+  href: string;
+  description?: string;
+}
+
 export interface NavigationItem {
   label: string;
   href: string;
   /** Feature flag key - item only shows if this feature is enabled */
   feature?: keyof FeatureFlags;
+  /** Optional dropdown child links for desktop & mobile navigation */
+  children?: NavigationChildItem[];
 }
 
 export interface NavigationCTA {
