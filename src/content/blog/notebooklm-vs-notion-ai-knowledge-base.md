@@ -1,5 +1,5 @@
 ---
-title: NotebookLM vs Notion AI：研究資料與工作知識庫怎麼選？
+title: "NotebookLM vs Notion AI 比較（2026）：AI 筆記與工作知識庫怎麼選？"
 description: >-
   NotebookLM 比較像放原始資料的研究資料庫，Notion 則是篩選整理後的雲端結果資料庫。從實際工作流程看兩者的差別，以及什麼時候該一起用。
 publishedDate: 2026-04-21T13:48:52Z
