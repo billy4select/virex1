@@ -2,228 +2,293 @@
 /**
  * 這裡開始 /start-here/
  *
- * 新訪客分流頁：四條路徑，每條三個起點，避免一次面對 200 多頁。
+ * 新訪客分流頁與全站內部權重中繼站：
+ * 依四種核心需求分流到全站 8 大 /topics/ 主題支柱頁、3 個行銷執行專區與免費工具。
  */
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import ArticleAuthor from '@/components/blog/ArticleAuthor.astro';
 import { siteConfig } from '@/config';
-import { getPublishedPosts } from '@/lib/blog';
-import { seoChapters } from '@/lib/seo-series';
-import { marketingChapters } from '@/lib/marketing-series';
+import { entityConfig } from '@/config/entity';
 
-type Step = { href: string; title: string; note: string };
-type Path = {
-  no: string;
+interface GuideItem {
   title: string;
-  who: string;
+  href: string;
+  summary: string;
+}
+
+interface GuideSection {
+  no: string;
+  heading: string;
   lead: string;
-  steps: Step[];
-  seriesHref: string;
-  seriesLabel: string;
-};
+  items: GuideItem[];
+}
 
-/** 用文章 collection 抓標題，避免手寫標題跟文章不一致 */
-const posts = await getPublishedPosts();
-const postTitle = (slug: string) => posts.find((p) => p.id === slug)?.data.title ?? slug;
-const seoTitle = (slug: string) => {
-  const chapter = seoChapters.find((c) => c.slug === slug);
-  return chapter ? `${chapter.no} ${chapter.title}` : slug;
-};
-const mkTitle = (slug: string) => {
-  const chapter = marketingChapters.find((c) => c.slug === slug);
-  return chapter ? `${chapter.no} ${chapter.title}` : slug;
-};
-
-const paths: Path[] = [
+const sections: GuideSection[] = [
   {
     no: '01',
-    title: '把 AI 放進日常工作',
-    who: '每天要寫東西、開會、做簡報，想少花一點時間',
-    lead: '先盤點工作，再建立角色與說明書，最後接上流程。順序反了就變成在玩工具。',
-    steps: [
+    heading: '我想把 AI 放進日常工作，但不知道從哪裡開始',
+    lead: '工具每個月都在出新的，先學流程通常比背指令省時間。',
+    items: [
       {
-        href: '/ai-work-team/lesson-01/',
-        title: '工作盤點：哪些事真的該交給 AI',
-        note: '先分清「可交付」與「只能自己判斷」，這一步決定後面所有設定。',
+        title: 'AI 工作流程與工具主題頁',
+        href: '/topics/ai-workflow/',
+        summary: '從任務拆解開始，搞懂 ChatGPT、Claude 跟免費工具各自適合處理哪一段工作。',
       },
       {
-        href: '/ai-work-team/lesson-03/',
-        title: '建立 AI 員工：角色、職責與工作說明書',
-        note: '沒有職責邊界，AI 產出的東西每一次都不一樣。',
-      },
-      {
-        href: '/ai-work-team/workflows/',
-        title: '流程庫：六條可以直接照做的流程',
-        note: '會議記錄、市場研究、簡報、內容製作，挑一條這週就用。',
+        title: 'NotebookLM 實戰指南',
+        href: '/topics/notebooklm/',
+        summary: '如果你平常要讀大量 PDF、合約或研究報告，直接從這組實測筆記開始最實用。',
       },
     ],
-    seriesHref: '/ai-work-team/',
-    seriesLabel: '完整 AI 工作團隊教學',
   },
   {
     no: '02',
-    title: '開始經營 Threads／自媒體',
-    who: '想固定發文、累積讀者，但一直卡在「不知道寫什麼」',
-    lead: '心態先對，選題才有東西寫；有頻率才有數據；有數據才談成長。',
-    steps: [
+    heading: '我在寫文案、投廣告，或是整體行銷做不動',
+    lead: '當業績掉下來、廣告越燒越貴的時候，問題常常出在更前面的定位跟受眾定義。',
+    items: [
       {
-        href: '/threads/mindset/',
-        title: '起步心態：不夠專業、沒人看怎麼辦',
-        note: '先處理「怕寫不好」這件事，不然寫三篇就停。',
+        title: '行銷策略與診斷主題頁',
+        href: '/topics/marketing/',
+        summary: '先用流量、轉換、客單價跟回購四個維度查出卡在哪一段，再決定要不要加預算。',
       },
       {
-        href: '/threads/what-to-post/',
-        title: '不知道要寫什麼：10 個起步選題',
-        note: '從你已經會的、被問過的、踩過的坑開始，不用等靈感。',
+        title: '廣告與投放實戰專區',
+        href: '/topics/marketing/ads-numbers/',
+        summary: '看懂 CPA、ROAS 跟毛利結構的關係，避開沒轉換的空轉消耗。',
       },
       {
-        href: '/blog/threads-0-to-10k-140-days/',
-        title: `${postTitle('threads-0-to-10k-140-days')}`,
-        note: '140 天的完整紀錄：哪幾篇有效、什麼時候開始動、哪些做法沒用。',
+        title: '文案與賣點提煉專區',
+        href: '/topics/marketing/copywriting/',
+        summary: '把冰冷的產品規格翻成受眾聽得懂的話，還有怎麼避免 AI 寫出罐頭文案。',
+      },
+      {
+        title: '內容與 SEO 從零開始',
+        href: '/topics/marketing/seo-from-zero/',
+        summary: '給想慢慢累積長期自然流量、不想永遠靠買廣告撐業績的經營者。',
       },
     ],
-    seriesHref: '/threads/',
-    seriesLabel: '完整 Threads 教學',
   },
   {
     no: '03',
-    title: '學行銷，先學會看懂數字',
-    who: '有產品或內容要推，但不知道成效為什麼好、為什麼壞',
-    lead: '行銷不是工具清單，是需求、通路、訊息三個角，加上四個數字。從診斷開始，不是從投放開始。',
-    steps: [
+    heading: '我在思考職涯下一步，或想開始做自媒體',
+    lead: '工作過了十年，很多人會重新思考「離開公司之後，還有什麼能力帶得走」。',
+    items: [
       {
-        href: '/marketing/three-corners/',
-        title: mkTitle('three-corners'),
-        note: '先把三個角分清楚，才不會用「多投一點預算」解決訊息問題。',
+        title: '職涯與轉型主題頁',
+        href: '/topics/career/',
+        summary: '整理 35 歲以後的職涯評估、中階主管定位調整，以及知識工作的刻意練習。',
       },
       {
-        href: '/marketing/diagnosis/',
-        title: mkTitle('diagnosis'),
-        note: '流量、轉換、客單價、回購，四段哪一段在漏，決定你要修什麼。',
+        title: '自媒體與個人事業主題頁',
+        href: '/topics/personal-business/',
+        summary: '從第一個月先定位還是先發文開始，一路走到第一個付費產品跟一人公司交付系統。',
       },
       {
-        href: '/blog/marketing-calculator/',
-        title: postTitle('marketing-calculator'),
-        note: '把 ROAS、CAC、客單價算一遍，你就知道該不該加預算。',
+        title: '商業模式與獲利主題頁',
+        href: '/topics/business-model/',
+        summary: '不管是接案、賣課還是做產品，先把需求驗證跟單筆獲利算清楚。',
       },
     ],
-    seriesHref: '/marketing/',
-    seriesLabel: '完整行銷教學',
   },
   {
     no: '04',
-    title: '學 SEO，讓文章被找到',
-    who: '已經有內容，但搜尋流量一直是零',
-    lead: '不從工具開始，從 Google 怎麼處理一個頁面開始。七章走完，你能自己跑一輪。',
-    steps: [
+    heading: '我想看書單拆解，或是試用站上的免費工具',
+    lead: '除了長篇文章，我也把平時讀過覺得有價值的商管書，跟自己做的小工具一起放在站上。',
+    items: [
       {
-        href: '/seo/how-seo-works/',
-        title: seoTitle('how-seo-works'),
-        note: '爬取、索引、排序、呈現，四個階段各自會壞在哪。',
+        title: '書籍導讀主題頁',
+        href: '/topics/book-guides/',
+        summary: '挑過之後才寫的商業、行銷與職場思維拆解筆記。',
       },
       {
-        href: '/seo/search-intent/',
-        title: seoTitle('search-intent'),
-        note: '同一個關鍵字，意圖不同就要寫成不同的文章。',
+        title: '學習與能力主題頁',
+        href: '/topics/learning/',
+        summary: '個人知識管理、T 型能力盤點，以及怎麼在 30 天內快速上手一個新領域。',
       },
       {
-        href: '/seo/30-day-plan/',
-        title: seoTitle('30-day-plan'),
-        note: '一份照順序做的計畫：先修技術，再修結構，最後才寫新文章。',
+        title: 'NARRATIVE ENGINE 動態簡報工具',
+        href: '/narrative-engine/',
+        summary: '如果你在做短影音或知識型內容，這個純前端工具可以把口播逐字稿直接轉成動態視覺簡報。',
       },
     ],
-    seriesHref: '/seo/',
-    seriesLabel: '完整 SEO 教學',
   },
 ];
 
 const quickPicks = [
-  { href: '/resources/', title: '免費資源', note: 'Prompt 範本、SOP 模板、AI 名詞字典，直接下載。' },
-  { href: '/blog/', title: '全部文章', note: '依時間排列，想看最新寫了什麼從這裡進。' },
-  { href: '/site-map/', title: '網站地圖', note: '記得標題、想找特定一篇時用這頁。' },
+  { href: '/resources/', title: '免費資源', note: 'Prompt 範本、SOP 模板、AI 名詞字典，直接拿走使用。' },
+  { href: '/blog/', title: '全部文章', note: '依時間排列，想看最新發佈的文章從這裡進。' },
+  { href: '/site-map/', title: '網站地圖', note: '記得標題、想快速找特定一篇時用這頁。' },
 ];
+
+const canonical = `${siteConfig.url}/start-here/`;
+const allItems = sections.flatMap((section) => section.items);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${canonical}#collection`,
+  name: '從這裡開始：行銷裡的路人甲全站閱讀指南',
+  description:
+    '第一次來到行銷裡的路人甲？比利陳幫你依 AI 工作流、行銷診斷、職涯轉型與一人事業四種需求，整理最快上手的閱讀順序。',
+  url: canonical,
+  inLanguage: 'zh-Hant-TW',
+  author: { '@id': entityConfig.ids.person },
+  publisher: { '@id': entityConfig.ids.person },
+  isPartOf: { '@id': entityConfig.ids.website },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: allItems.length,
+    itemListElement: allItems.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.title,
+      url: new URL(item.href, siteConfig.url).href,
+    })),
+  },
+};
 ---
 
 <MarketingLayout
-  title={`這裡開始 - ${siteConfig.name}`}
-  description="第一次來不知道從哪讀？四條路徑：AI 工作、Threads 自媒體、行銷、SEO，每條三個起點，照順序讀完一輪。"
+  title={`從這裡開始：行銷裡的路人甲全站閱讀指南 - ${siteConfig.name}`}
+  description="第一次來到行銷裡的路人甲？比利陳幫你依 AI 工作流、行銷診斷、職涯轉型與一人事業四種需求，整理最快上手的閱讀順序。"
+  structuredData={[schema]}
 >
-  <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '這裡開始', href: '/start-here/' }]} />
+  <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '從這裡開始', href: '/start-here/' }]} />
 
   <section class="page-band">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-      <p class="text-sm font-semibold tracking-[0.15em] text-primary">這裡開始</p>
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <p class="text-sm font-semibold tracking-[0.15em] text-primary">全站閱讀指南</p>
       <h1 class="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-text md:text-4xl lg:text-5xl">
-        別從全部文章開始，先選一條路
+        從這裡開始
       </h1>
-      <p class="mt-4 max-w-2xl text-base leading-relaxed text-text-muted md:text-lg">
-        這裡有兩百多頁。第一次來，最有效的方式不是逛，是挑一條路徑走完三個起點——大約兩小時，你會知道自己接下來要讀什麼。
-      </p>
-      <p class="mt-4 text-sm text-text-muted">4 條路徑 · 12 個起點 · 每篇 6–10 分鐘</p>
+      <div class="mt-5 max-w-3xl space-y-4 text-base leading-8 text-text-muted md:text-lg">
+        <p>
+          如果你是第一次來到這裡，站上一百多篇文章可能會讓你有點不知道從哪一篇點起。
+        </p>
+        <p>
+          這個網站沒有每天追最新的 AI 新聞，也很少寫只講觀念的心靈雞湯（那種東西滑社群就看飽了）。
+        </p>
+        <p>
+          我是比利陳，過去十年跑過 PM、品牌行銷跟廣告投放。這裡記錄的，是我實際把方法放進工作跟生意裡之後，確定真的有用、留下來繼續用的判斷邏輯。
+        </p>
+        <p>
+          如果你想先認識我的背景跟經歷，可以先看
+          <a
+            href="/about/"
+            class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+          >
+            關於比利陳
+          </a>
+          。如果想直接找答案，可以照你現在最想解決的問題選一條路走。
+        </p>
+      </div>
     </div>
   </section>
 
-  <section class="bg-background pb-14 pt-10 md:pb-20 md:pt-12">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-      <div class="grid gap-5 md:grid-cols-2">
+  <section class="bg-background pb-14 pt-10 md:pb-20 md:pt-14">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="space-y-12">
         {
-          paths.map((path) => (
-            <article class="flex flex-col rounded-2xl border border-border bg-surface p-6 md:p-7">
-              <div class="flex items-baseline gap-3">
-                <span class="font-mono text-sm font-semibold tracking-wider text-primary">{path.no}</span>
-                <h2 class="text-xl font-extrabold tracking-tight text-text">{path.title}</h2>
-              </div>
-              <p class="mt-2 text-sm font-medium text-text-muted">給：{path.who}</p>
-              <p class="mt-3 text-sm leading-relaxed text-text-muted">{path.lead}</p>
+          sections.map((section) => (
+            <section class="border-t border-border pt-10 first:border-t-0 first:pt-0">
+              <p class="font-mono text-xs font-bold tracking-[0.15em] text-primary">
+                PATH {section.no}
+              </p>
+              <h2 class="mt-1.5 text-xl font-extrabold tracking-tight text-text md:text-2xl">
+                {section.heading}
+              </h2>
+              <p class="mt-3 max-w-3xl text-sm leading-7 text-text-muted md:text-base">
+                {section.lead}
+              </p>
 
-              <ol class="mt-5 space-y-4 border-t border-border pt-5">
-                {path.steps.map((step, index) => (
-                  <li class="flex gap-3">
-                    <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 font-mono text-xs font-bold text-primary">
-                      {index + 1}
-                    </span>
-                    <div class="min-w-0">
-                      <a class="text-sm font-bold text-text transition-colors hover:text-primary" href={step.href}>
-                        {step.title}
-                      </a>
-                      <p class="mt-1 text-sm leading-relaxed text-text-muted">{step.note}</p>
-                    </div>
+              <ol class="mt-6 divide-y divide-border rounded-2xl border border-border bg-surface/50 px-5">
+                {section.items.map((item, idx) => (
+                  <li>
+                    <a
+                      href={item.href}
+                      class="group grid grid-cols-[1.75rem_minmax(0,1fr)_auto] items-start gap-x-3 py-4 transition-colors"
+                    >
+                      <span class="pt-0.5 font-mono text-xs font-bold tabular-nums text-primary">
+                        {String(idx + 1).padStart(2, '0')}
+                      </span>
+                      <div class="min-w-0">
+                        <h3 class="text-base font-bold leading-snug text-text transition-colors group-hover:text-primary">
+                          {item.title}
+                        </h3>
+                        <p class="mt-1 text-sm leading-relaxed text-text-muted">{item.summary}</p>
+                      </div>
+                      <span
+                        class="pt-0.5 text-sm font-semibold text-text-muted transition-transform group-hover:translate-x-0.5 group-hover:text-primary"
+                        aria-hidden="true"
+                      >
+                        →
+                      </span>
+                    </a>
                   </li>
                 ))}
               </ol>
-
-              <a
-                class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline"
-                href={path.seriesHref}
-              >
-                {path.seriesLabel} →
-              </a>
-            </article>
+            </section>
           ))
         }
-      </div>
 
-      <div class="mt-10 rounded-2xl border border-border bg-surface p-6 md:p-7">
-        <h2 class="text-lg font-extrabold tracking-tight text-text">不想照順序，只想找一個能用的東西</h2>
-        <ul class="mt-4 grid gap-4 sm:grid-cols-3">
-          {
-            quickPicks.map((item) => (
-              <li>
-                <a class="text-sm font-bold text-text hover:text-primary" href={item.href}>
-                  {item.title} →
-                </a>
-                <p class="mt-1 text-sm leading-relaxed text-text-muted">{item.note}</p>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
+        {/* 電子報與 Portaly 入口 */}
+        <section class="border-t border-border pt-10">
+          <h2 class="text-xl font-extrabold tracking-tight text-text md:text-2xl">
+            如果想固定收到新的實測與觀察
+          </h2>
+          <p class="mt-4 max-w-3xl text-sm leading-7 text-text-muted md:text-base">
+            網站文章通常比較長，適合有空慢慢查。如果你習慣每週花五分鐘看一篇濃縮過的實戰筆記，歡迎訂閱
+            <a
+              href="https://billy4select.substack.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-conversion-cta="newsletter"
+              data-conversion-target="substack"
+              data-conversion-category="從這裡開始"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              比利陳 Substack 電子報
+            </a>
+            ，也可以到我的
+            <a
+              href="https://portaly.cc/billyselect4"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-conversion-cta="ebook"
+              data-conversion-target="portaly-catalog"
+              data-conversion-category="從這裡開始"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              Portaly 資源頁
+            </a>
+            查看完整電子書跟社群入口。
+          </p>
 
-      <p class="mt-8 text-sm leading-relaxed text-text-muted">
-        這頁是分流，不是目錄。要按分類找、或記得文章標題，走
-        <a class="font-semibold text-primary hover:underline" href="/site-map/">網站地圖</a>；
-        想知道我為什麼寫這些，讀<a class="font-semibold text-primary hover:underline" href="/about/">關於我</a>。
-      </p>
+          <ArticleAuthor />
+        </section>
+
+        {/* 快速入口 */}
+        <div class="rounded-2xl border border-border bg-surface p-6 md:p-7">
+          <h2 class="text-lg font-extrabold tracking-tight text-text">不想照順序，只想直接找工具或文章</h2>
+          <ul class="mt-4 grid gap-4 sm:grid-cols-3">
+            {
+              quickPicks.map((item) => (
+                <li>
+                  <a class="text-sm font-bold text-text hover:text-primary" href={item.href}>
+                    {item.title} →
+                  </a>
+                  <p class="mt-1 text-sm leading-relaxed text-text-muted">{item.note}</p>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
+
+  <script>
+    import '@/scripts/conversion';
+  </script>
 </MarketingLayout>
