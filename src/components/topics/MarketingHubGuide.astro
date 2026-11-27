@@ -1,0 +1,216 @@
+---
+import ArticleAuthor from '@/components/blog/ArticleAuthor.astro';
+
+const diagnosticItems = [
+  {
+    title: '業績掉了，先查哪一段？用流量、轉換、客單價與回購做行銷診斷',
+    href: '/blog/marketing-diagnosis-traffic-conversion-aov-repurchase/',
+    summary: '把整體業績拆成四個維度逐一排查，先看清瓶頸在哪裡再動手。',
+  },
+  {
+    title: '品牌定位怎麼找？先看顧客把你和誰放在一起比較',
+    href: '/blog/brand-positioning-category-competition/',
+    summary: '定位寫成一句標語很容易，但顧客掏錢時真正比較的是替代方案。',
+  },
+  {
+    title: '從內容、通路到信任：把曝光變成長期累積',
+    href: '/blog/content-channel-trust-growth/',
+    summary: '曝光買得到，信任買不到，這篇拆解觸及、信任、轉換到留存的分工方式。',
+  },
+  {
+    title: 'AI 批量分析用戶評論，找到值得優化的方向',
+    href: '/blog/ai-batch-review-analysis/',
+    summary: '用實際工具把大量顧客留言整理成可排序的改善清單，少一點主觀猜測。',
+  },
+];
+---
+
+<section class="bg-background pt-10 pb-4 md:pt-14" aria-label="行銷策略與診斷總控台">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    {/* 開頭導讀 */}
+    <div class="max-w-3xl space-y-4 text-base leading-8 text-text-muted md:text-[17px]">
+      <p>
+        很多公司業績一掉，第一個反應就是加碼廣告預算，或是叫團隊多發幾篇貼文。
+      </p>
+      <p>
+        預算花下去之後，曝光變多了，訂單卻沒跟著動（有時候甚至連問題卡在哪一段都不知道）。
+      </p>
+      <p>
+        我是比利陳，過去十年從 PM、品牌行銷一路做到整合投放。這個主題頁放的，是我在決定要不要花錢投廣告、要不要寫內容之前，用來檢查整條行銷漏斗的判斷架構。
+      </p>
+    </div>
+
+    <div class="mt-12 space-y-12">
+      {/* STAGE 01: 先做診斷，再決定要不要加預算 */}
+      <section class="border-t border-border pt-10">
+        <p class="font-mono text-xs font-bold tracking-[0.15em] text-primary">STAGE 01</p>
+        <h2 class="mt-1.5 text-xl font-extrabold tracking-tight text-text md:text-2xl">
+          先做診斷，再決定要不要加預算
+        </h2>
+
+        <div class="mt-4 max-w-3xl space-y-3 text-sm leading-7 text-text-muted md:text-base">
+          <p>行銷做不動的時候，先急著改素材或換平台通常沒什麼用。</p>
+          <p>
+            把業績拆成幾個可觀察的數字，找出真正卡住的那一段，後面的調整才不會白忙一場。
+          </p>
+        </div>
+
+        <ol class="mt-6 divide-y divide-border rounded-2xl border border-border bg-surface/50 px-5">
+          {
+            diagnosticItems.map((item, idx) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="group grid grid-cols-[1.75rem_minmax(0,1fr)_auto] items-start gap-x-3 py-4 transition-colors"
+                >
+                  <span class="pt-0.5 font-mono text-xs font-bold tabular-nums text-primary">
+                    {String(idx + 1).padStart(2, '0')}
+                  </span>
+                  <div class="min-w-0">
+                    <h3 class="text-base font-bold leading-snug text-text transition-colors group-hover:text-primary">
+                      {item.title}
+                    </h3>
+                    <p class="mt-1 text-sm leading-relaxed text-text-muted">{item.summary}</p>
+                  </div>
+                  <span
+                    class="pt-0.5 text-sm font-semibold text-text-muted transition-transform group-hover:translate-x-0.5 group-hover:text-primary"
+                    aria-hidden="true"
+                  >
+                    →
+                  </span>
+                </a>
+              </li>
+            ))
+          }
+        </ol>
+      </section>
+
+      {/* STAGE 02: 診斷完之後，依問題挑一個執行專區 */}
+      <section class="border-t border-border pt-10">
+        <p class="font-mono text-xs font-bold tracking-[0.15em] text-primary">STAGE 02</p>
+        <h2 class="mt-1.5 text-xl font-extrabold tracking-tight text-text md:text-2xl">
+          診斷完之後，依問題挑一個執行專區
+        </h2>
+
+        <p class="mt-4 max-w-3xl text-sm leading-7 text-text-muted md:text-base">
+          找到問題卡在哪一段之後，接下來才是選對執行工具。我把底下三個最常被問到的執行領域拆成獨立專區，你可以直接挑目前最缺的那一塊進去：
+        </p>
+
+        <ol class="mt-6 divide-y divide-border rounded-2xl border border-border bg-surface/50 px-5">
+          <li class="grid grid-cols-[1.75rem_minmax(0,1fr)] items-start gap-x-3 py-5">
+            <span class="pt-0.5 font-mono text-xs font-bold tabular-nums text-primary">01</span>
+            <div class="min-w-0">
+              <h3 class="text-base font-bold leading-snug text-text">
+                <a
+                  href="/topics/marketing/ads-numbers/"
+                  class="transition-colors hover:text-primary"
+                >
+                  廣告與投放實戰專區 →
+                </a>
+              </h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-text-muted">
+                看懂 ROAS、CPA 背後的數字邏輯。如果你常覺得廣告一直在燒錢卻沒轉換，可以先看這篇
+                <a
+                  href="/blog/audience-definition-ad-conversion/"
+                  class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+                >
+                  廣告燒很多、轉換率卻低？先檢查受眾定義
+                </a>
+                。
+              </p>
+            </div>
+          </li>
+
+          <li class="grid grid-cols-[1.75rem_minmax(0,1fr)] items-start gap-x-3 py-5">
+            <span class="pt-0.5 font-mono text-xs font-bold tabular-nums text-primary">02</span>
+            <div class="min-w-0">
+              <h3 class="text-base font-bold leading-snug text-text">
+                <a
+                  href="/topics/marketing/seo-from-zero/"
+                  class="transition-colors hover:text-primary"
+                >
+                  內容與 SEO 從零開始 →
+                </a>
+              </h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-text-muted">
+                給不想永遠靠廣告買流量的經營者，從搜尋意圖、網站架構到長期自然流量的完整筆記。
+              </p>
+            </div>
+          </li>
+
+          <li class="grid grid-cols-[1.75rem_minmax(0,1fr)] items-start gap-x-3 py-5">
+            <span class="pt-0.5 font-mono text-xs font-bold tabular-nums text-primary">03</span>
+            <div class="min-w-0">
+              <h3 class="text-base font-bold leading-snug text-text">
+                <a
+                  href="/topics/marketing/copywriting/"
+                  class="transition-colors hover:text-primary"
+                >
+                  文案與賣點提煉專區 →
+                </a>
+              </h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-text-muted">
+                把產品規格翻譯成顧客聽得懂的好處。剛入門可以先看
+                <a
+                  href="/blog/feature-to-copywriting-selling-point/"
+                  class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+                >
+                  如何快速提煉賣點，並轉為打動用戶的文案
+                </a>
+                ，或參考這篇
+                <a
+                  href="/blog/ai-copywriting-audience-data/"
+                  class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+                >
+                  寫廣告文案前先給 AI 讀受眾資料的實測差異
+                </a>
+                。
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      {/* 跨支柱回連商業模式與 Substack 電子報 */}
+      <section class="border-t border-border pt-10">
+        <h2 class="text-xl font-extrabold tracking-tight text-text md:text-2xl">
+          先把生意算清楚，再談放大
+        </h2>
+        <div class="mt-4 max-w-3xl space-y-4 text-sm leading-7 text-text-muted md:text-base">
+          <p>
+            行銷策略如果沒有接回定價跟獲利結構，常常會變成「越賣越忙、卻沒賺錢」。
+          </p>
+          <p>
+            如果你還在確認產品定價或商業模式站不站得住腳，建議先回去看
+            <a
+              href="/topics/business-model/"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              商業模式與獲利主題頁
+            </a>
+            。想每週收到一篇我整理的行銷觀察跟工具實測，也歡迎訂閱
+            <a
+              href="https://billy4select.substack.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-conversion-cta="newsletter"
+              data-conversion-target="substack"
+              data-conversion-category="行銷策略與診斷"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              比利陳 Substack 電子報
+            </a>
+            。
+          </p>
+        </div>
+
+        {/* 接回作者實體 /about/ */}
+        <ArticleAuthor />
+      </section>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '@/scripts/conversion';
+</script>

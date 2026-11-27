@@ -1,0 +1,236 @@
+---
+import ArticleAuthor from '@/components/blog/ArticleAuthor.astro';
+
+interface Props {
+  publishedIds: Set<string>;
+}
+
+interface HubItem {
+  id: string;
+  title: string;
+  href: string;
+  summary: string;
+}
+
+interface HubStage {
+  step: string;
+  heading: string;
+  paragraphs: string[];
+  items: HubItem[];
+}
+
+const { publishedIds } = Astro.props;
+
+const allStages: HubStage[] = [
+  {
+    step: 'STAGE 01',
+    heading: '看懂生意跟定價的底層邏輯',
+    paragraphs: [
+      '很多經營上的卡關，看再多操作技巧都很難解開，往往是底層的定價或商業假設一開始就沒算對。',
+    ],
+    items: [
+      {
+        id: 'free-zero-price-business-models',
+        title: '《免費！揭開零定價的獲利祕密》：四種免費商業模式解析',
+        href: '/blog/free-zero-price-business-models/',
+        summary: '免費其實是一種商業設計，拆解四種免費模式，以及數位時代成本趨近於零時自媒體怎麼借力。',
+      },
+      {
+        id: 'expert-secrets-book-notes',
+        title: '《專家機密》：銷售漏斗、價值階梯與知識變現系統',
+        href: '/blog/expert-secrets-book-notes/',
+        summary: '拆解專業怎麼變成收入：從新機會、信念轉換到價值階梯與可複製的變現路徑。',
+      },
+      {
+        id: 'what-i-didnt-learn-in-business-school',
+        title: '《不只是件白襯衫》：商學院沒教的商業判斷與行銷現實',
+        href: '/blog/what-i-didnt-learn-in-business-school/',
+        summary: '學會滿腦子理論到真實商場卻用不上？整理真實生意裡最容易被忽略的三種判斷能力。',
+      },
+    ],
+  },
+  {
+    step: 'STAGE 02',
+    heading: '行銷、人性與說服的方法',
+    paragraphs: [
+      '行銷工具每兩年換一輪，但人怎麼做決定、怎麼建立信任，幾十年下來其實沒變太多。',
+    ],
+    items: [
+      {
+        id: 'storytelling-marketing-book-notes',
+        title: '《故事行銷》：怎麼用好故事拉高商品價值與文案說服力？',
+        href: '/blog/storytelling-marketing-book-notes/',
+        summary: '用故事替相同功能的商品拉開心理價值，同時避開為了感動而失真的文案陷阱。',
+      },
+      {
+        id: 'traffic-pool-book-notes',
+        title: '《流量池》：獲客、裂變、留存到品牌私域的實戰思維',
+        href: '/blog/traffic-pool-book-notes/',
+        summary: '別只會花錢買一次性曝光，整理怎麼把流量變成可反覆觸達的品牌與私域資產。',
+      },
+      {
+        id: 'laws-of-communication-book-notes',
+        title: '《溝通的黃金法則》：麥斯威爾 16 個有效表達與說服關鍵',
+        href: '/blog/laws-of-communication-book-notes/',
+        summary: '拆解 16 項溝通法則的底層脈絡，以及自媒體與管理者怎麼靠一致言行累積信任。',
+      },
+    ],
+  },
+  {
+    step: 'STAGE 03',
+    heading: '職場思維與長期個人成長',
+    paragraphs: [
+      '除了工作上的方法論，怎麼管理自己的精力、做職涯選擇，也是我這幾年挑書的另一個重點。',
+    ],
+    items: [
+      {
+        id: 'almanack-of-naval-ravikant-book-notes',
+        title: '《納瓦爾寶典》：專屬知識、三種槓桿，怎麼放大個人價值？',
+        href: '/blog/almanack-of-naval-ravikant-book-notes/',
+        summary: '分清楚財富與金錢的差別，善用專屬知識與程式碼／媒體槓桿，不再只靠賣時間換收入。',
+      },
+      {
+        id: 'seven-habits-book-notes',
+        title: '《與成功有約》：七個習慣核心架構與職場實戰應用',
+        href: '/blog/seven-habits-book-notes/',
+        summary: '把七個習慣的順序、時間四象限與情感帳戶，放進每天的行銷決策與時間安排。',
+      },
+      {
+        id: 'visible-thinking-book-notes',
+        title: '《看得見的高效思考》：把複雜想法變成好懂表達的視覺化方法',
+        href: '/blog/visible-thinking-book-notes/',
+        summary: '腦中知道很多卻說不清楚時，用結構化思考與三種視覺化把資訊整理成自己的觀點。',
+      },
+    ],
+  },
+];
+
+// 只顯示已發佈的文章（排程中的書評到發布日後會自動出現，避免產生 404）
+const stages = allStages
+  .map((stage) => ({
+    ...stage,
+    items: stage.items.filter((item) => publishedIds.has(item.id)),
+  }))
+  .filter((stage) => stage.items.length > 0);
+---
+
+<section class="bg-background pt-10 pb-4 md:pt-14" aria-label="書籍導讀選讀指南">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    {/* 開頭導讀 */}
+    <div class="max-w-3xl space-y-4 text-base leading-8 text-text-muted md:text-[17px]">
+      <p>
+        市面上的商管書很多，有些書買回來翻了前兩章就放進書架，有些則是整本其實只講了一個觀念（剩下的兩百頁都在重複舉例）。
+      </p>
+      <p>
+        我讀書習慣帶著一個問題進去：這個說法在真實的職場、品牌或一門小生意裡，到底能不能拿來用？
+      </p>
+      <p>
+        我是比利陳，過去十年跑過 PM、品牌跟廣告投放。這個主題頁整理的，是我讀完之後真正留著參考、而且用實務角度拆解過的書籍筆記。
+      </p>
+    </div>
+
+    {/* 三階段選讀地圖 */}
+    <div class="mt-12 space-y-12">
+      {
+        stages.map((stage) => (
+          <section class="border-t border-border pt-10">
+            <p class="font-mono text-xs font-bold tracking-[0.15em] text-primary">{stage.step}</p>
+            <h2 class="mt-1.5 text-xl font-extrabold tracking-tight text-text md:text-2xl">
+              {stage.heading}
+            </h2>
+
+            <div class="mt-4 max-w-3xl space-y-3 text-sm leading-7 text-text-muted md:text-base">
+              {stage.paragraphs.map((para) => (
+                <p>{para}</p>
+              ))}
+            </div>
+
+            <ol class="mt-6 divide-y divide-border rounded-2xl border border-border bg-surface/50 px-5">
+              {stage.items.map((item, idx) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="group grid grid-cols-[1.75rem_minmax(0,1fr)_auto] items-start gap-x-3 py-4 transition-colors"
+                  >
+                    <span class="pt-0.5 font-mono text-xs font-bold tabular-nums text-primary">
+                      {String(idx + 1).padStart(2, '0')}
+                    </span>
+                    <div class="min-w-0">
+                      <h3 class="text-base font-bold leading-snug text-text transition-colors group-hover:text-primary">
+                        {item.title}
+                      </h3>
+                      <p class="mt-1 text-sm leading-relaxed text-text-muted">{item.summary}</p>
+                    </div>
+                    <span
+                      class="pt-0.5 text-sm font-semibold text-text-muted transition-transform group-hover:translate-x-0.5 group-hover:text-primary"
+                      aria-hidden="true"
+                    >
+                      →
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </section>
+        ))
+      }
+
+      {/* 延伸回商業模式、學習與 Portaly / Substack */}
+      <section class="border-t border-border pt-10">
+        <h2 class="text-xl font-extrabold tracking-tight text-text md:text-2xl">
+          讀完書之後，真正放進工作裡
+        </h2>
+        <div class="mt-4 max-w-3xl space-y-4 text-sm leading-7 text-text-muted md:text-base">
+          <p>看懂一本書的邏輯只是起點，把觀念變成每天用得上的工具跟流程，書才算沒有白買。</p>
+          <p>
+            如果你想看書裡的商業觀念怎麼落成真實結構，可以接著看
+            <a
+              href="/topics/business-model/"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              商業模式與獲利主題頁
+            </a>
+            ；想看怎麼把閱讀筆記變成日常產出，可以逛
+            <a
+              href="/topics/learning/"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              學習與能力主題頁
+            </a>
+            。如果你也對我自己的完整著作有興趣，在我的
+            <a
+              href="https://portaly.cc/billyselect4"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-conversion-cta="ebook"
+              data-conversion-target="portaly-catalog"
+              data-conversion-category="書籍導讀"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              個人資源與書單頁
+            </a>
+            也能找到五本實戰電子書，或直接訂閱
+            <a
+              href="https://billy4select.substack.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-conversion-cta="newsletter"
+              data-conversion-target="substack"
+              data-conversion-category="書籍導讀"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              比利陳 Substack 電子報
+            </a>
+            一起交流。
+          </p>
+        </div>
+
+        <ArticleAuthor />
+      </section>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '@/scripts/conversion';
+</script>
