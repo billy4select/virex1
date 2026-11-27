@@ -122,6 +122,12 @@ export const articleOutcomes: Record<string, string> = {
   'story-marketing-emotional-connection': '具體場景、轉折、代價、留下的問題四段結構。',
   'writing-persuasion-logic': '具體對照、代價陳述、可驗證的下一步。',
   'influencer-marketing-next-step': '大網紅失效後，四種正在取代的做法。',
+  'notebooklm-limits-formats-guide': '免費版 50 個來源、單檔 200MB 與 50 萬字上限，以及支援與不支援格式速查。',
+  'notebooklm-excel-csv-encoding-fix': '用 UTF-8、Markdown 表格與先算再丟三種方法，解決 Excel 與 CSV 亂碼錯位。',
+  'claude-projects-guide': '把品牌背景與四段式固定指令放進 Claude Projects，建立不用重貼資料的工作區。',
+  'gsc-crawled-not-indexed-fix': '拆解四種 GSC 未收錄狀態，用五步排查順序解決孤島頁、重複內容與收錄卡關。',
+  'ga4-bounce-rate-key-events-guide': '看懂 GA4 跳出率與參與度算法、重要事件標記，每週只看四張核心報表。',
+  'substack-taiwan-newsletter-guide': 'Substack 免費方案優勢、台灣 Stripe 收款限制拆分解法，以及從社群導流實戰。',
 };
 
 export const topicAreas: TopicArea[] = [
@@ -210,6 +216,7 @@ export const topics: Topic[] = [
     articleIds: [
       'google-ai-pro-vs-free-limits-family-sharing',
       'claude-vs-chatgpt-proposal',
+      'claude-projects-guide',
       'notebooklm-vs-claude-internal-docs',
       'notebooklm-vs-notion-ai-knowledge-base',
     ],
@@ -270,6 +277,7 @@ export const topics: Topic[] = [
       '從 NotebookLM 的完整實戰指南、上傳準備、五種提問方式、Audio Overview 到職場研究，一次學會讀文件、做研究。',
     articleIds: [
       'notebooklm-complete-guide-2026',
+      'notebooklm-limits-formats-guide',
       'notebooklm-workplace-research',
     ],
   },
@@ -282,6 +290,8 @@ export const topics: Topic[] = [
       'NotebookLM 遇到 PDF 亂碼、回答出現幻覺、掃描檔讀不到時，要先檢查什麼、怎麼用免費 OCR 轉換，一次排錯。',
     articleIds: [
       'notebooklm-problems-solutions',
+      'notebooklm-excel-csv-encoding-fix',
+      'notebooklm-limits-formats-guide',
       'notebooklm-complete-guide-2026',
     ],
   },
@@ -414,6 +424,7 @@ export const topics: Topic[] = [
     articleIds: [
       'seo-self-study-guide',
       'search-intent-guide',
+      'gsc-crawled-not-indexed-fix',
       'seo-writing-why-no-traffic',
       'website-speed-seo-checks',
     ],
@@ -429,6 +440,7 @@ export const topics: Topic[] = [
     articleIds: [
       'domain-authority-guide',
       'free-seo-tools',
+      'ga4-bounce-rate-key-events-guide',
       'digital-marketing-basics',
       'learn-marketing-roadmap',
     ],
@@ -606,6 +618,7 @@ export const topics: Topic[] = [
     articleIds: [
       'self-media-first-month-positioning-or-posting',
       'personal-brand-trust-not-reach',
+      'substack-taiwan-newsletter-guide',
       'audience-is-not-a-label',
       'content-channel-trust-growth',
       'storytelling-marketing-book-notes',
@@ -653,6 +666,7 @@ export const topics: Topic[] = [
     articleIds: [
       'self-media-first-month-positioning-or-posting',
       'personal-brand-trust-not-reach',
+      'substack-taiwan-newsletter-guide',
       'content-channel-trust-growth',
       'laws-of-communication-book-notes',
     ],
