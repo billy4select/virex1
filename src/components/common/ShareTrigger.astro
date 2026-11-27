@@ -1,0 +1,112 @@
+---
+import { Icon } from 'astro-icon/components';
+import { buildShareChannels } from '@/lib/share';
+
+interface Props {
+  title: string;
+  description?: string;
+  url: string;
+  id?: string;
+  align?: 'left' | 'right';
+}
+
+const {
+  title,
+  description = '',
+  url,
+  id = 'page',
+  align = 'right',
+} = Astro.props;
+
+const channels = buildShareChannels(title, url);
+const popoverId = `share-popover-${id}`;
+const alignClass = align === 'left' ? 'left-0' : 'left-0 sm:left-auto sm:right-0';
+---
+
+<div class="not-prose relative inline-flex shrink-0 items-center" data-pagefind-ignore>
+  <button
+    type="button"
+    class="group inline-flex cursor-pointer items-center gap-1.5 rounded-full border border-border bg-surface/80 px-3 py-1.5 text-xs font-semibold text-text-muted transition-all duration-200 hover:border-primary/40 hover:bg-primary/5 hover:text-primary active:scale-[0.97] aria-expanded:border-primary/50 aria-expanded:bg-primary/10 aria-expanded:text-primary"
+    aria-haspopup="menu"
+    aria-expanded="false"
+    aria-controls={popoverId}
+    aria-label="分享這個頁面"
+    data-share-trigger
+    data-share-title={title}
+    data-share-description={description}
+    data-share-url={url}
+  >
+    <Icon
+      name="lucide:share-2"
+      class="h-3.5 w-3.5 transition-transform duration-200 group-hover:scale-110"
+      aria-hidden="true"
+    />
+    <span>分享</span>
+  </button>
+
+  <div
+    id={popoverId}
+    hidden
+    role="menu"
+    aria-label="分享選項"
+    data-share-popover
+    data-open="false"
+    class:list={[
+      'share-popover absolute top-full z-40 mt-2 w-52 rounded-2xl border border-border bg-background/95 p-1.5 shadow-xl shadow-black/8 ring-1 ring-black/5 backdrop-blur-md dark:shadow-black/40 dark:ring-white/10',
+      alignClass,
+    ]}
+  >
+    <button
+      type="button"
+      role="menuitem"
+      class="share-copy-row group flex w-full cursor-pointer items-center gap-2.5 rounded-xl px-2.5 py-2 text-left text-xs font-semibold text-text transition-colors hover:bg-surface hover:text-primary"
+      data-share-copy
+      data-copied="false"
+      data-share-title={title}
+      data-share-url={url}
+    >
+      <span
+        class="share-copy-icon flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-surface text-text-muted transition-colors group-hover:bg-primary/10 group-hover:text-primary"
+      >
+        <Icon name="lucide:link" class="h-3.5 w-3.5" data-share-icon-default aria-hidden="true" />
+        <Icon name="lucide:check" class="hidden h-3.5 w-3.5" data-share-icon-done aria-hidden="true" />
+      </span>
+      <span class="min-w-0 flex-1" data-share-label-default>複製連結</span>
+      <span class="hidden min-w-0 flex-1" data-share-label-done>已複製連結</span>
+    </button>
+
+    <div class="my-1.5 h-px bg-border/80" role="separator" />
+
+    <div class="space-y-0.5">
+      {
+        channels.map((channel) => (
+          <a
+            href={channel.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            role="menuitem"
+            aria-label={channel.ariaLabel}
+            data-share-platform={channel.id}
+            data-share-title={title}
+            data-share-url={url}
+            class="group flex items-center gap-2.5 rounded-xl px-2.5 py-2 text-xs font-medium text-text transition-colors hover:bg-surface hover:text-primary"
+          >
+            <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-surface text-text-muted transition-colors group-hover:bg-primary/10 group-hover:text-primary">
+              <Icon name={channel.icon} class="h-3.5 w-3.5" aria-hidden="true" />
+            </span>
+            <span class="min-w-0 flex-1">{channel.label}</span>
+            <Icon
+              name="lucide:arrow-up-right"
+              class="h-3.5 w-3.5 text-text-muted/60 opacity-0 transition-all duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary group-hover:opacity-100"
+              aria-hidden="true"
+            />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<script>
+  import '@/scripts/share';
+</script>

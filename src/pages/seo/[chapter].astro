@@ -1,6 +1,8 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import ShareTrigger from '@/components/common/ShareTrigger.astro';
+import ShareCard from '@/components/common/ShareCard.astro';
 import { siteConfig } from '@/config';
 import { seoChapters, seoChapterUrl, type SeoChapter } from '@/lib/seo-series';
 
@@ -49,7 +51,15 @@ const articleSchema = {
 
   <section class="page-band">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <p class="text-sm font-semibold tracking-[0.15em] text-primary">第 {chapter.no} 章 · {chapter.short}</p>
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <p class="text-sm font-semibold tracking-[0.15em] text-primary">第 {chapter.no} 章 · {chapter.short}</p>
+        <ShareTrigger
+          id={`seo-${chapter.slug}`}
+          title={chapter.title}
+          description={chapter.description}
+          url={url}
+        />
+      </div>
       <h1 class="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-text md:text-4xl">
         {chapter.title}
       </h1>
@@ -87,7 +97,16 @@ const articleSchema = {
         }
       </div>
 
-      <div class="mt-12 rounded-2xl border border-border bg-surface p-6">
+      <ShareCard
+        title={chapter.title}
+        description={chapter.description}
+        url={url}
+        eyebrow="分享這一章"
+        heading="覺得這章整理有幫助嗎？"
+        subtext="轉給正在研究 SEO 的朋友，一起把自然流量做起來。"
+      />
+
+      <div class="mt-8 rounded-2xl border border-border bg-surface p-6">
         <h2 class="text-base font-extrabold text-text">深入閱讀</h2>
         <ul class="mt-4 space-y-3">
           {

@@ -402,3 +402,66 @@ select:focus-visible {
       min-height: 19rem;
     }
   }
+
+  /* ── 分享元件（Popover 動畫、複製成功狀態、底部 Toast）── */
+  .share-popover {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+    transform-origin: top right;
+    transition: opacity 0.16s ease, transform 0.16s ease;
+  }
+  .share-popover[data-open='true'] {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  [data-share-copy][data-copied='true'] [data-share-icon-default],
+  [data-share-copy][data-copied='true'] [data-share-label-default] {
+    display: none;
+  }
+  [data-share-copy][data-copied='true'] [data-share-icon-done],
+  [data-share-copy][data-copied='true'] [data-share-label-done] {
+    display: inline-block;
+  }
+
+  .share-copy-pill[data-copied='true'],
+  .share-copy-pill[data-copied='true']:hover {
+    background-color: var(--color-success);
+    color: #ffffff;
+  }
+  .dark .share-copy-pill[data-copied='true'],
+  .dark .share-copy-pill[data-copied='true']:hover {
+    background-color: oklch(0.52 0.15 145);
+    color: #ffffff;
+  }
+  .share-copy-row[data-copied='true'] {
+    color: var(--color-success);
+  }
+  .share-copy-row[data-copied='true'] .share-copy-icon {
+    background-color: var(--color-success-bg);
+    color: var(--color-success);
+  }
+
+  .share-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 1.5rem;
+    z-index: 60;
+    padding: 0.625rem 1.125rem;
+    border-radius: 9999px;
+    background-color: var(--color-text);
+    color: var(--color-background);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.22);
+    opacity: 0;
+    transform: translate(-50%, 10px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  .share-toast[data-visible='true'] {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+

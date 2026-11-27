@@ -1,0 +1,34 @@
+# 專案協作規則（AGENTS.md）
+
+本專案（`billy4select/virex1`）的所有修改與維護，無論任務大小，一律必須遵守以下三條核心規則：
+
+## 1. 動工前，一定要先同步 GitHub 最新版本
+
+- 開始修改任何檔案之前，必須先執行 `git fetch origin` 確認遠端狀態，並將本地分支同步到 `origin/main` 最新版本（例如 `git pull --ff-only origin main`）。
+- 若本地已有未提交修改，或與遠端發生衝突，必須先告知使用者並確認處理方式，不可私自丟棄或強制覆蓋（禁止 `git reset --hard`、`git push --force`）。
+
+## 2. 改完先確認沒有報錯，不直接覆蓋正式網站；等使用者說「可以上線」再推送
+
+- 每次修改完成後，必須先進行檢查與驗證（包含語法、型別、Lint 或建置測試），確認沒有報錯。
+- **未獲得明確同意前，禁止執行 `git push`、`npm run deploy`、`wrangler deploy` 或任何會覆蓋正式網站的操作。**
+- 驗證完成後，先用**白話**向使用者說明：
+  1. 這次改了什麼功能或畫面、影響哪些頁面。
+  2. 檢查與測試的結果（若有發現其他既有的報錯也要順便提醒）。
+- 務必等到使用者明確回覆 **「可以上線」** 之後，才執行提交與推送到 GitHub。
+
+## 3. 絕對不要亂動網域設定、轉址規則和廣告設定檔
+
+除非使用者明確點名要求調整，以下與網域、轉址、廣告驗證相關的檔案與設定**一律禁止修改或刪除**：
+
+- **網域與部署設定**
+  - `astro.config.mjs`（尤其是 `site`、`trailingSlash`、`build.format` 與 sitemap 規則）
+  - `src/config/site.ts` 中的 `url`（正式網域）
+  - `wrangler.jsonc`
+  - `src/pages/robots.txt.ts`
+  - 網站所有權驗證檔：`public/googlec0026ef1195a0d98.html`、`googlec0026ef1195a0d98.html`
+- **轉址規則**
+  - `public/_redirects`
+  - `tools/check-redirects.mjs`
+- **廣告與追蹤設定檔**
+  - `public/ads.txt`
+  - `src/layouts/BaseLayout.astro` 內的既有 GTM / 廣告追蹤碼設定
