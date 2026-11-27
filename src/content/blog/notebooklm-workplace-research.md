@@ -75,10 +75,11 @@ NotebookLM 有個特性：資料裡沒寫的，它就答不出來。
 
 要寫成提案或對外報告，就用自己的話重寫，或交給 Claude 幫忙順架構（可以看[NotebookLM vs Claude 怎麼分工](/blog/notebooklm-vs-claude-internal-docs/)）；要留作以後反覆查閱的專案資產，就整理進 Notion（可以看[NotebookLM vs Notion AI 怎麼選](/blog/notebooklm-vs-notion-ai-knowledge-base/)）。
 
-工具幫你省下翻找和拆解資料的時間，但真正讓主管和客戶買單的，還是你消化完之後說出來的那個判斷。
+工具幫你省下翻找和拆解資料的時間，但真正讓主管和客戶買單的，還是你消化完之後說出來的那個判斷。如果想把這套做法放進更完整的日常任務分工裡，可以接著逛[AI 工作流程與工具主題總覽](/topics/ai-workflow/)。
 
 ## 延伸閱讀
 
 - [NotebookLM 實戰主題總覽](/topics/notebooklm/)
+- [AI 工作流程與工具主題總覽](/topics/ai-workflow/)
 - [NotebookLM 怎麼用？2026 完整教學：拆解難懂資料、提問與常見限制](/blog/notebooklm-complete-guide-2026/)
 - [AI 產出怎麼檢查？交付前確認事實、推論與責任](/blog/ai-output-quality-check/)

@@ -1,0 +1,206 @@
+---
+import ArticleAuthor from '@/components/blog/ArticleAuthor.astro';
+
+interface HubStage {
+  step: string;
+  heading: string;
+  paragraphs: string[];
+  items: {
+    title: string;
+    href: string;
+    summary: string;
+  }[];
+}
+
+const stages: HubStage[] = [
+  {
+    step: 'STAGE 01',
+    heading: '上傳檔案前先把格式檢查好',
+    paragraphs: [
+      '多數人覺得 NotebookLM 難用，通常是卡在第一步。資料丟進去讀不到、中文變亂碼，或是整份報告漏東漏西。',
+      '這些狀況多半跟模型無關，問題出在原始檔案沒有文字層，或是格式超過限制。',
+    ],
+    items: [
+      {
+        title: 'NotebookLM 上傳 PDF 前必做 3 件事',
+        href: '/blog/notebooklm-upload-preparation/',
+        summary: '先確認檔案大小、頁數上限跟中文編碼，省下重傳的時間。',
+      },
+      {
+        title: 'NotebookLM OCR 教學：掃描版 PDF 的免費轉檔工具與步驟',
+        href: '/blog/notebooklm-ocr-pdf-solution/',
+        summary: '遇到純圖片掃描的合約或報告，先轉出文字層再丟進去。',
+      },
+      {
+        title: 'NotebookLM 亂碼、幻覺與格式混亂的 7 個排錯方案',
+        href: '/blog/notebooklm-problems-solutions/',
+        summary: '如果已經開始用卻發現回答怪怪的，這篇有完整的排查對照。',
+      },
+    ],
+  },
+  {
+    step: 'STAGE 02',
+    heading: '問法對了，資料才會長出觀點',
+    paragraphs: [
+      '檔案都順順讀進去之後，接下來會遇到第二個瓶頸：摘要看起來都很工整，但開會或寫提案時還是不知道怎麼用。',
+      '這時候通常需要換一種提問方式，把「叫它整理」換成「叫它交叉比對」。',
+    ],
+    items: [
+      {
+        title: 'NotebookLM 五種提問方式比較',
+        href: '/blog/notebooklm-question-types/',
+        summary: '同一份資料換個問法，挖出來的細節深度差非常多。',
+      },
+      {
+        title: '職場人用 NotebookLM 做工作研究的正確姿勢',
+        href: '/blog/notebooklm-workplace-research/',
+        summary: '怎麼從一堆雜亂資料裡理出自己的判斷，而不只是當資料搬運工。',
+      },
+      {
+        title: 'NotebookLM Audio Overview 語音摘要與 Podcast 技巧',
+        href: '/blog/notebooklm-audio-overview-guide/',
+        summary: '通勤或沒空盯螢幕時，把長文件變成雙人對談音檔來聽。',
+      },
+    ],
+  },
+  {
+    step: 'STAGE 03',
+    heading: '什麼時候該換別的工具',
+    paragraphs: [
+      'NotebookLM 很適合守住內部資料的邊界，但要它從零寫出一份有說服力的提案，或是管理長期專案資料庫，還是有更順手的工具。',
+    ],
+    items: [
+      {
+        title: 'Claude vs NotebookLM：讀內部文件與寫報告怎麼選',
+        href: '/blog/notebooklm-vs-claude-internal-docs/',
+        summary: '看任務是要「嚴格查證來源」，還是需要「邏輯推理跟潤稿」。',
+      },
+      {
+        title: 'NotebookLM vs Notion AI：知識庫與搜尋能力比較',
+        href: '/blog/notebooklm-vs-notion-ai-knowledge-base/',
+        summary: '評估你缺的是單次研究工作台，還是整個團隊共用的資料庫。',
+      },
+    ],
+  },
+];
+---
+
+<section class="bg-background pt-10 pb-4 md:pt-14" aria-label="NotebookLM 實戰選讀指南">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    {/* 開頭導讀 */}
+    <div class="max-w-3xl space-y-4 text-base leading-8 text-text-muted md:text-[17px]">
+      <p>
+        很多人把 NotebookLM 當成另一個 ChatGPT 來用，丟幾份檔案進去問幾個問題，覺得好像也就那樣。
+      </p>
+      <p>
+        其實它最值錢的地方在「來源限定」。只要資料給得對，它幾乎不會像一般對話 AI 那樣自由發揮（至少胡說八道的機率低非常多）。
+      </p>
+      <p>
+        我是比利陳，過去十年跑過 PM、品牌跟廣告投放。這個主題頁整理了我實際把 NotebookLM 放進日常工作後，踩過的坑跟真正留著用的做法。
+      </p>
+    </div>
+
+    {/* 新手起點引導卡：明確把單篇長文任務交給 2026 完整教學 */}
+    <div class="mt-8 rounded-2xl border border-primary/30 bg-primary/5 p-5 sm:p-6">
+      <p class="text-[11px] font-bold tracking-[0.15em] text-primary">第一次用從這裡開始</p>
+      <p class="mt-2 text-sm leading-relaxed text-text sm:text-base">
+        如果你是第一次打開這個工具，可以先直接看這篇
+        <a
+          href="/blog/notebooklm-complete-guide-2026/"
+          class="font-bold text-primary underline decoration-primary/40 underline-offset-4 transition-colors hover:text-primary-dark"
+        >
+          NotebookLM 全面攻略：從入門、PDF 上傳到語音摘要教學
+        </a>
+        ，裡面把基本操作一次走完了。
+      </p>
+    </div>
+
+    {/* 三階段選讀地圖 */}
+    <div class="mt-12 space-y-12">
+      {
+        stages.map((stage) => (
+          <section class="border-t border-border pt-10">
+            <p class="font-mono text-xs font-bold tracking-[0.15em] text-primary">{stage.step}</p>
+            <h2 class="mt-1.5 text-xl font-extrabold tracking-tight text-text md:text-2xl">
+              {stage.heading}
+            </h2>
+
+            <div class="mt-4 max-w-3xl space-y-3 text-sm leading-7 text-text-muted md:text-base">
+              {stage.paragraphs.map((para) => (
+                <p>{para}</p>
+              ))}
+            </div>
+
+            <ol class="mt-6 divide-y divide-border rounded-2xl border border-border bg-surface/50 px-5">
+              {stage.items.map((item, idx) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="group grid grid-cols-[1.75rem_minmax(0,1fr)_auto] items-start gap-x-3 py-4 transition-colors"
+                  >
+                    <span class="pt-0.5 font-mono text-xs font-bold tabular-nums text-primary">
+                      {String(idx + 1).padStart(2, '0')}
+                    </span>
+                    <div class="min-w-0">
+                      <h3 class="text-base font-bold leading-snug text-text transition-colors group-hover:text-primary">
+                        {item.title}
+                      </h3>
+                      <p class="mt-1 text-sm leading-relaxed text-text-muted">{item.summary}</p>
+                    </div>
+                    <span
+                      class="pt-0.5 text-sm font-semibold text-text-muted transition-transform group-hover:translate-x-0.5 group-hover:text-primary"
+                      aria-hidden="true"
+                    >
+                      →
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </section>
+        ))
+      }
+
+      {/* 延伸回工作流程與電子報 */}
+      <section class="border-t border-border pt-10">
+        <h2 class="text-xl font-extrabold tracking-tight text-text md:text-2xl">
+          把單一工具放回工作流程裡
+        </h2>
+        <div class="mt-4 max-w-3xl space-y-4 text-sm leading-7 text-text-muted md:text-base">
+          <p>
+            工具會一直更新，明天可能又有新的模型把今天的限制推翻。真正能留下來的，是拆解任務跟驗證資料的習慣。
+          </p>
+          <p>
+            如果你想看更多不同 AI 工具之間的搭配方式，可以接著逛
+            <a
+              href="/topics/ai-workflow/"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              AI 工作流程與工具主題頁
+            </a>
+            。我也每週在
+            <a
+              href="https://billy4select.substack.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-conversion-cta="newsletter"
+              data-conversion-target="substack"
+              data-conversion-category="NotebookLM 實戰"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              比利陳 Substack 電子報
+            </a>
+            分享最近實測過的工作方法，有興趣可以直接訂閱。
+          </p>
+        </div>
+
+        {/* 接回作者實體 /about/ */}
+        <ArticleAuthor />
+      </section>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '@/scripts/conversion';
+</script>
