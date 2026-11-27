@@ -87,4 +87,5 @@ faq:
 
 ## 延伸閱讀
 
+- [AI 會取代我的工作嗎？資深員工可以怎麼重新定位](/blog/senior-employees-ai-upskilling-strategy-not-replaced/)
 - [職涯與 AI 轉型主題總覽](/topics/career/)

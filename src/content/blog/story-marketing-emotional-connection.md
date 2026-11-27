@@ -62,4 +62,4 @@ faq:
 - [SEO 從零開始：從搜尋意圖、關鍵字到內部連結完整 7 章教學](/seo/)
 - [文案與賣點主題總覽](/topics/marketing/copywriting/)
 - [SEO 與內容策略主題總覽](/topics/marketing/seo-from-zero/)
-- [如何快速提煉賣點，並轉為打動使用者的文案？](/blog/ai-copywriting-mistakes/)
+- [AI 文案常見的三種問題：從賣點提煉、餵真實資料到避開長文案毛病](/blog/ai-copywriting-mistakes/)

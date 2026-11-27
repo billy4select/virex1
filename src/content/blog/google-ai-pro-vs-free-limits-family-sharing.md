@@ -99,10 +99,10 @@ YouTube Premium Lite 或加購項目、Google Home Premium、Google Colab 以及
 
 記得養成「每換一個任務就開新對話」的習慣，才不會把這份額度白白燒在重讀舊紀錄上。
 
-想看更多挑選工具的判斷方式，可以接著看[AI 工具怎麼選？先找工作瓶頸，再比較功能](/ai-work-team/lesson-02/)。
+想看更多挑選工具的判斷方式，可以接著看 [打造 AI 工作團隊｜主題 02：先找工作瓶頸再選工具](/ai-work-team/lesson-02/)。
 
 ## 延伸閱讀
 
 - [AI 工作流程主題總覽](/topics/ai-workflow/)
-- [免費仔的 AI 工具組合：不花錢也能跑完 80% 職場任務](/ai-work-team/lesson-02/)
+- [打造你的 AI 工作團隊｜主題 02：AI 工具挑選評估與免費組合](/ai-work-team/lesson-02/)
 - [NotebookLM 怎麼用？2026 完整教學：拆解難懂資料、提問與常見限制](/blog/notebooklm-complete-guide-2026/)

@@ -149,3 +149,4 @@ NotebookLM 最值錢的地方，是把你從翻找文件的苦工裡救出來；
 - [NotebookLM 缺點與常見問題解法：PDF 讀不到、OCR 轉換與引用錯誤一次解決](/blog/notebooklm-problems-solutions/)
 - [NotebookLM vs Claude：讀文件、查來源與整理報告怎麼分工？](/blog/notebooklm-vs-claude-internal-docs/)
 - [用 NotebookLM 做職場研究：怎麼把一堆資料拆懂，再變成自己的判斷？](/blog/notebooklm-workplace-research/)
+- [Google AI Pro 值得買嗎？跟免費版差在哪、5 小時額度與家庭共享實測心得](/blog/google-ai-pro-vs-free-limits-family-sharing/)

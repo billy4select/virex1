@@ -83,4 +83,5 @@ faq:
 
 - [離開公司後，哪些能力與成果能帶著走？中階主管的 5 項可攜帶資產](/blog/mid-career-portable-assets/)
 - [35 歲開始學 AI 會太晚嗎？先從工作問題判斷值不值得投入](/blog/learn-ai-at-35-too-late-roi-metrics/)
+- [面對新的工作機會，怎麼判斷值不值得？把看得見與看不見的成本都算進去](/blog/career-opportunity-cost-decision/)
 - [職涯轉型主題總覽](/topics/career/career-transition/)

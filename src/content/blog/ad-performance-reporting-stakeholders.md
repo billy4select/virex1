@@ -75,5 +75,5 @@ faq:
 ## 延伸閱讀
 
 - [廣告數據與預算主題總覽](/topics/marketing/ads-numbers/)
-- [主管如何用 AI 準備週會報告：先整理判斷，再整理格式](/blog/ai-output-quality-check/)
-- [ROAS 計算公式拆解：為什麼你的 ROAS 看起來很好，帳卻對不起來？](/blog/marketing-calculator/)
+- [AI 產出怎麼檢查？交付前四道關卡與主管週會報告實戰](/blog/ai-output-quality-check/)
+- [行銷計算機：CPC、CTR、CPM、CPA、ROAS、ROI 公式與損益平衡表](/blog/marketing-calculator/)

@@ -77,4 +77,4 @@ sources:
 - [打造 AI 工作團隊：角色分工、免費工具與實戰流程完整教學](/ai-work-team/)
 - [AI 工作流程主題總覽](/topics/ai-workflow/)
 - [AI 產出怎麼檢查？交付前確認事實、推論、語氣與責任的四道關卡](/blog/ai-output-quality-check/)
-- [NotebookLM 上傳文件前怎麼準備？格式、版本與來源檢查](/blog/notebooklm-complete-guide-2026/)
+- [NotebookLM 教學：2026 最新功能實測、上傳準備與提問指令完整指南](/blog/notebooklm-complete-guide-2026/)

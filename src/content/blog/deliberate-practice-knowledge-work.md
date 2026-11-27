@@ -110,4 +110,5 @@ faq:
 
 ## 延伸閱讀
 
+- [《與成功有約》重點整理與心得：七個習慣核心架構與職場實戰應用](/blog/seven-habits-book-notes/)
 - [職涯與 AI 轉型主題總覽](/topics/career/)

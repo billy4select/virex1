@@ -77,5 +77,6 @@ sources:
 ## 延伸閱讀
 
 - [廣告數據與預算主題總覽](/topics/marketing/ads-numbers/)
-- [CPC、CTR、ROAS、ROI 差在哪？看懂廣告報表該先看哪個數字](/blog/marketing-calculator/)
-- [CTR A/B 測試怎麼做？先設定假設，再比較素材與訊息](/blog/ctr-benchmarks-what-counts-as-good/)
+- [行銷計算機：CPC、CTR、CPM、CPA、ROAS、ROI 公式與損益平衡表](/blog/marketing-calculator/)
+- [CTR、ROAS、CPC 多少算好？比較基準、漏斗排查與 2 天 A/B 測試](/blog/ctr-benchmarks-what-counts-as-good/)
+- [網紅合作怎麼評估？別搞錯任務目標，曝光型跟導購型根本是兩回事](/blog/influencer-marketing-next-step/)

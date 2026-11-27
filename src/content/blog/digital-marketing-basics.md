@@ -88,5 +88,6 @@ faq:
 ## 數位行銷是什麼：延伸閱讀
 
 - [自學行銷的順序：為什麼多數人一開始就畫錯流程](/blog/learn-marketing-roadmap/)
-- [業績下滑先查哪裡？從流量、轉換、客單價與回購拆解](/marketing/diagnosis/)
+- [行銷從診斷開始｜第 2 章：業績掉了先查哪一段（流量、轉換、客單價與回購）](/marketing/diagnosis/)
+- [行銷團隊怎麼分工？三個人也能跑完一整條漏斗的分法](/blog/marketing-team-roles/)
 - [行銷診斷主題總覽](/topics/marketing/marketing-diagnosis/)
