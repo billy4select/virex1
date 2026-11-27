@@ -114,7 +114,7 @@ export const homeExploreEntries: HomeExploreEntry[] = [
     label: '工具',
     question: '有沒有值得使用的工具？',
     description: 'AI 工具、工作軟體、網站服務與數位資源。',
-    articleId: 'free-ai-tools-workflow',
+    articleId: 'notebooklm-complete-guide-2026',
   },
   {
     label: '方法',
@@ -160,7 +160,7 @@ export const homeQuestions: HomeQuestion[] = [
 
 /** 首頁「近期值得探索」精選文章 ID */
 export const homeFeaturedExplore = [
-  'ai-workflow-start-with-tasks',
+  'ai-output-quality-check',
   'notebooklm-complete-guide-2026',
   'why-business-exists-nine-questions',
   'mid-career-portable-assets',

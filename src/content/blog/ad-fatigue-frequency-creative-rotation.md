@@ -73,10 +73,11 @@ sources:
 
 同時也別忘了回頭看 GA 的跳出率跟轉換率，確認換了新素材切進來的新受眾，真的是會買單的人，而不是只來逛逛的流量。
 
-想看更完整的成本排查步驟，可以接著讀[CAC 一直上升怎麼辦](/blog/cac-rising-5-checks/)，或是看[CTR A/B 測試怎麼做](/blog/ctr-ab-testing-titles-cta/)。
+想看更完整的成本排查步驟，可以接著讀[CAC 一直上升怎麼辦](/blog/cac-rising-5-checks/)，或是看[CTR A/B 測試怎麼做](/blog/ctr-benchmarks-what-counts-as-good/)。
 
 ## 延伸閱讀
 
+- [行銷計算機：CPC、CTR、CPM、CPA、ROAS、ROI 公式與毛利損益平衡表](/blog/marketing-calculator/)
 - [廣告數據與預算主題總覽](/topics/marketing/ads-numbers/)
 - [廣告預算怎麼分配？自動化時代的新客與回購投放邏輯](/blog/ad-budget-new-vs-returning/)
 - [Facebook 廣告為什麼越來越貴？先拆解成本，再決定要不要換通路](/blog/facebook-ads-cost-rising/)

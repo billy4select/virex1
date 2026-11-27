@@ -57,6 +57,7 @@ faq:
 
 ## 延伸閱讀
 
+- [打造 AI 工作團隊：角色分工、免費工具與實戰流程完整教學](/ai-work-team/)
 - [AI 工作流程主題總覽](/topics/ai-workflow/)
 - [AI 協助專案複盤：把結果、原因與下一次的做法分開](/blog/ai-project-review-knowledge-base/)
 - [個人知識管理怎麼做？收集、理解到輸出的最小系統](/blog/personal-knowledge-system-minimal/)

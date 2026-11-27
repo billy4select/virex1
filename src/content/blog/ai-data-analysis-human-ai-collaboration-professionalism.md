@@ -76,6 +76,7 @@ AI 很容易把相關性整理成流暢的因果敘述。你需要把觀察與�
 
 ## 用 AI 做數據分析，怎麼保：延伸閱讀
 
+- [職涯與轉型主題總覽：35 歲以後的職場判斷力與 AI 時代定位](/topics/career/)
 - [AI 產出怎麼檢查？交付前確認事實、推論與責任](/blog/ai-output-quality-check/)
 - [AI 時代如何培養判斷力？從問題、證據到後果](/blog/judgment-in-ai-era/)
 - [AI 數據分析主題總覽](/topics/ai-workflow/ai-analysis/)

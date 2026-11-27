@@ -55,6 +55,7 @@ AI 幫你把草稿拉出來後，開複盤會時還是要讓參與的夥伴補�
 
 ## 延伸閱讀
 
+- [打造 AI 工作團隊：角色分工、免費工具與實戰流程完整教學](/ai-work-team/)
 - [AI 工作流程主題總覽](/topics/ai-workflow/)
 - [AI 整理會議紀錄：從冗長逐字稿，變成決策與行動清單的做法](/blog/ai-meeting-notes-workflow-summary/)
 - [個人知識管理怎麼做？收集、理解到輸出的最小系統](/blog/personal-knowledge-system-minimal/)

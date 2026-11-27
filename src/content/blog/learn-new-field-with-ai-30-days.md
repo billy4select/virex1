@@ -71,7 +71,7 @@ AI 列出的清單只是起點。重要概念要回到官方文件、原始資�
 
 三十天的價值，是讓學習有一個可檢查的起點。真正的熟練仍需要反覆實作、收到回饋，並在不同情境中修正判斷。
 
-延伸閱讀：[建立你的 AI 工作流程](/blog/ai-workflow-start-with-tasks/)、[知識工作如何刻意練習？](/blog/deliberate-practice-knowledge-work/)。
+延伸閱讀：[建立你的 AI 工作流程](/ai-work-team/lesson-01/)、[知識工作如何刻意練習？](/blog/deliberate-practice-knowledge-work/)。
 
 ## 延伸閱讀
 

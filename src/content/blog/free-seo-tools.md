@@ -66,7 +66,7 @@ GSC 是 Google 官方直接給你的第一手數據，沒有任何第三方工�
 
 不要為了蒐集工具而裝一堆帳號。先把 GSC 看流量來源、GA4 看用戶反應這兩步跑順，把省下來的時間拿去把文章寫好，見效快得多。
 
-想知道怎麼從 Google 下拉建議找好題目，可以接著看[關鍵字怎麼找](/blog/keyword-research-purchase-intent/)；想確認網頁速度怎麼測，可以看[網站速度怎麼檢查](/blog/website-speed-seo-checks/)。
+想知道怎麼從 Google 下拉建議找好題目，可以接著看[關鍵字怎麼找](/seo/keywords/)；想確認網頁速度怎麼測，可以看[網站速度怎麼檢查](/blog/website-speed-seo-checks/)。
 
 ## 延伸閱讀
 

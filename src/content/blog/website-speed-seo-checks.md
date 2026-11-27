@@ -66,7 +66,7 @@ sources:
 
 速度檢查只要確認手機版打開順暢、Search Console 裡沒有大片紅燈警告，就夠了。把剩下的時間留給內容跟研究用戶反應，回報高得多。
 
-想確認發文前還要對哪些細節，可以參考[SEO 文章發布前檢查清單](/blog/on-page-seo-checklist/)，以及[免費 SEO 工具怎麼選](/blog/free-seo-tools/)。
+想確認發文前還要對哪些細節，可以參考[SEO 文章發布前檢查清單](/seo/on-page/)，以及[免費 SEO 工具怎麼選](/blog/free-seo-tools/)。
 
 ## 延伸閱讀
 
