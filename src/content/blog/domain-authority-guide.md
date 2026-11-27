@@ -43,6 +43,12 @@ sources:
 
 你在網路上常看到的 DA（Domain Authority）是 Moz 算出來的，DR（Domain Rating）是 Ahrefs 算出來的，AS（Authority Score）則是 Semrush 的算法。
 
+| 權重指標 | 推出工具 | 主要計算依據 | 免費查詢入口 | Google 官方是否採用 |
+| :--- | :--- | :--- | :--- | :--- |
+| **DA（Domain Authority）** | Moz | 外部連結網域數、連結品質與歷史資料 | Moz Free Domain SEO Analysis | 否（僅為第三方預估） |
+| **DR（Domain Rating）** | Ahrefs | 外部連結網域的數量與對方的 DR 強度 | Ahrefs Website Authority Checker | 否（僅為第三方預估） |
+| **AS（Authority Score）** | Semrush | 反向連結、自然流量估算與垃圾連結訊號 | Semrush Domain Overview（每日限額） | 否（僅為第三方預估） |
+
 這些都是第三方 SEO 工具為了方便行銷人快速估算「這個網站大概被多少外部網站連結推薦」所設計的指標，滿分 100。
 
 它頂多拿來當作「看競爭對手大不大隻」的粗略參考，絕對不等於 Google 眼中的網站好壞。
