@@ -1,0 +1,206 @@
+---
+import ArticleAuthor from '@/components/blog/ArticleAuthor.astro';
+
+interface HubStage {
+  step: string;
+  heading: string;
+  paragraphs: string[];
+  items: {
+    title: string;
+    href: string;
+    summary: string;
+  }[];
+}
+
+const stages: HubStage[] = [
+  {
+    step: 'STAGE 01',
+    heading: '先面對 AI 帶來的角色焦慮',
+    paragraphs: [
+      '看到新工具一直冒出來，第一步通常不需要急著去背一百個指令。',
+      '先搞清楚組織真正還需要你做什麼決定，定位清楚了，工具自然知道怎麼配。',
+    ],
+    items: [
+      {
+        title: 'AI 會取代我的工作嗎？資深員工的重新定位',
+        href: '/blog/senior-employees-ai-upskilling-strategy-not-replaced/',
+        summary: '取代很少是一夕發生的，多半是一個慢慢把「純執行」剝離出來的過程。',
+      },
+      {
+        title: '中階主管在 AI 時代怎麼轉型？',
+        href: '/blog/middle-manager-transition-to-ai-curator-3-stages/',
+        summary: '從自己跳下去做，變成理解工具邊界、幫團隊把關產出的角色。',
+      },
+      {
+        title: '35 歲學 AI 會太晚嗎？把十年經驗變成判斷力槓桿',
+        href: '/blog/learn-ai-at-35-too-late-roi-metrics/',
+        summary: '年輕人跑得快，但資深工作者手上有業務直覺跟踩坑經驗，這兩件事結合起來才有力氣。',
+      },
+    ],
+  },
+  {
+    step: 'STAGE 02',
+    heading: '盤點你能帶走的資產，別把頭銜當能力',
+    paragraphs: [
+      '很多人在公司待久了，會不小心把公司的資源、預算跟名片上的職稱，誤認成自己的實力。',
+      '真正換跑道或面對新機會時，只有那些離開組織之後依然算數的東西，才叫做資產。',
+    ],
+    items: [
+      {
+        title: '離開公司後，哪些能力能帶著走？中階主管的 5 項可攜帶資產',
+        href: '/blog/mid-career-portable-assets/',
+        summary: '把公司給的條件跟真正屬於你的方法、聲譽分開盤點一次。',
+      },
+      {
+        title: '怎麼做能力盤點？寫出 T 型能力與可遷移技能',
+        href: '/blog/capability-inventory-workshop/',
+        summary: '用一個 60 分鐘的工作坊流程，整理出你最值錢的深度跟跨領域證據。',
+      },
+      {
+        title: '35 歲以後的職涯怎麼走？檢視經驗如何形成判斷的 3 個方向',
+        href: '/blog/career-strategy-after-35/',
+        summary: '從資產、路徑跟一個 90 天小實驗，重新定義市場怎麼看你。',
+      },
+      {
+        title: '面對新的工作機會，怎麼判斷值不值得去',
+        href: '/blog/career-opportunity-cost-decision/',
+        summary: '升遷、轉職或接案都有代價，把收入、時間、家庭跟可逆性一起算進去。',
+      },
+    ],
+  },
+  {
+    step: 'STAGE 03',
+    heading: '長期會複利的三種底層能力',
+    paragraphs: [
+      '工具半年就換一輪，追工具本身很難累積複利。',
+      '過了三十五歲之後，真正能讓你拉開差距的，是提問的準度、對結果負責的判斷力，還有把隱性經驗變成可見作品的習慣。',
+    ],
+    items: [
+      {
+        title: 'AI 時代該培養什麼能力？哪些在貶值、哪些會複利',
+        href: '/blog/ai-era-capability-map/',
+        summary: '把能力拆成判斷力、操作力跟學習力，決定接下來時間該投在哪裡。',
+      },
+      {
+        title: 'AI 時代如何培養判斷力？從提問、證據到後果',
+        href: '/blog/judgment-in-ai-era/',
+        summary: '建立自己的決策紀錄法，讓每一次判斷都能被回頭檢驗。',
+      },
+      {
+        title: '知識工作如何刻意練習？從回饋迴路到作品集',
+        href: '/blog/deliberate-practice-knowledge-work/',
+        summary: '寫作跟提案沒有標準答案，這裡整理怎麼靠外部回饋把經驗練成穩定能力。',
+      },
+    ],
+  },
+];
+---
+
+<section class="bg-background pt-10 pb-4 md:pt-14" aria-label="職涯與轉型選讀指南">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    {/* 開頭導讀 */}
+    <div class="max-w-3xl space-y-4 text-base leading-8 text-text-muted md:text-[17px]">
+      <p>工作過了十年，很多人會突然進入一個微妙的階段。</p>
+      <p>
+        事情越做越熟，頭銜也往上爬了一點，但看著身邊剛出社會的同事用 AI 十幾分鐘產出一份報告，心裡難免會冒出一個念頭：我累積這麼久的經驗，到底還值多少錢？
+      </p>
+      <p>
+        我是比利陳，在 PM、品牌跟整合行銷的位子上待過十幾年。這個主題頁整理的，是給資深工作者跟中階主管的轉型筆記（沒有空泛的心靈雞湯，只有怎麼把經驗變成護城河的拆解）。
+      </p>
+    </div>
+
+    {/* 三階段選讀地圖 */}
+    <div class="mt-12 space-y-12">
+      {
+        stages.map((stage) => (
+          <section class="border-t border-border pt-10">
+            <p class="font-mono text-xs font-bold tracking-[0.15em] text-primary">{stage.step}</p>
+            <h2 class="mt-1.5 text-xl font-extrabold tracking-tight text-text md:text-2xl">
+              {stage.heading}
+            </h2>
+
+            <div class="mt-4 max-w-3xl space-y-3 text-sm leading-7 text-text-muted md:text-base">
+              {stage.paragraphs.map((para) => (
+                <p>{para}</p>
+              ))}
+            </div>
+
+            <ol class="mt-6 divide-y divide-border rounded-2xl border border-border bg-surface/50 px-5">
+              {stage.items.map((item, idx) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="group grid grid-cols-[1.75rem_minmax(0,1fr)_auto] items-start gap-x-3 py-4 transition-colors"
+                  >
+                    <span class="pt-0.5 font-mono text-xs font-bold tabular-nums text-primary">
+                      {String(idx + 1).padStart(2, '0')}
+                    </span>
+                    <div class="min-w-0">
+                      <h3 class="text-base font-bold leading-snug text-text transition-colors group-hover:text-primary">
+                        {item.title}
+                      </h3>
+                      <p class="mt-1 text-sm leading-relaxed text-text-muted">{item.summary}</p>
+                    </div>
+                    <span
+                      class="pt-0.5 text-sm font-semibold text-text-muted transition-transform group-hover:translate-x-0.5 group-hover:text-primary"
+                      aria-hidden="true"
+                    >
+                      →
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </section>
+        ))
+      }
+
+      {/* 延伸回個人事業、AI 工作流與 Substack 電子報 */}
+      <section class="border-t border-border pt-10">
+        <h2 class="text-xl font-extrabold tracking-tight text-text md:text-2xl">
+          如果你想開始建立個人事業
+        </h2>
+        <div class="mt-4 max-w-3xl space-y-4 text-sm leading-7 text-text-muted md:text-base">
+          <p>
+            職涯轉型走到某一步，很多人會開始思考：除了換下一家公司，能不能把這些累積變成自己的副業或一人公司？
+          </p>
+          <p>
+            如果是這樣，可以接著逛
+            <a
+              href="/topics/personal-business/"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              自媒體與個人事業主題頁
+            </a>
+            ，或是回頭看
+            <a
+              href="/topics/ai-workflow/"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              AI 工作流程與工具
+            </a>
+            怎麼幫你用一個人的時間完成團隊的產出。每週我也會在
+            <a
+              href="https://billy4select.substack.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-conversion-cta="newsletter"
+              data-conversion-target="substack"
+              data-conversion-category="職涯與轉型"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              比利陳 Substack 電子報
+            </a>
+            聊這些職場觀察，歡迎訂閱。
+          </p>
+        </div>
+
+        <ArticleAuthor />
+      </section>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '@/scripts/conversion';
+</script>

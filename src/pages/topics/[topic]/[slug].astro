@@ -1,8 +1,12 @@
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import MarketingSubHubGuide, {
+  type MarketingSubHubSlug,
+} from '@/components/topics/MarketingSubHubGuide.astro';
 import { getCollection } from 'astro:content';
 import { siteConfig } from '@/config';
+import { entityConfig } from '@/config/entity';
 import { postUrl, getPublishedPosts } from '@/lib/blog';
 import { calculateReadingTime } from '@/lib/utils';
 import { homeSeries } from '@/lib/homepage';
@@ -61,21 +65,50 @@ const siblings = getTopicsByArea(topic.area).filter(
   (item) => item.slug !== topic.slug && item.articleIds.some((id) => publishedIds.has(id))
 );
 
+const subHubMeta: Record<MarketingSubHubSlug, { title: string; description: string; heading: string }> = {
+  'ads-numbers': {
+    title: '廣告與投放：看懂 CPA、ROAS 與受眾背後的真實數字',
+    description:
+      '比利陳整理數位廣告實戰筆記，拆解受眾定義錯誤、預算測試節奏、CPA 與毛利結構計算，以及廣告燒錢卻沒轉換的排查方法。',
+    heading: '廣告與投放',
+  },
+  'seo-from-zero': {
+    title: '內容與 SEO 從零開始：搜尋意圖、架構與長期自然流量',
+    description:
+      '比利陳整理從零做 SEO 的實戰筆記，涵蓋搜尋意圖判斷、主題架構規劃、內部連結設計，以及 Search Console 數據調校。',
+    heading: '內容與 SEO 從零開始',
+  },
+  copywriting: {
+    title: '文案與賣點：從產品規格提煉到受眾語言轉換',
+    description:
+      '比利陳整理的實戰文案筆記，拆解如何把冰冷規格轉成打動人的賣點、AI 寫文案常犯的三種錯，以及餵對受眾資料的具體做法。',
+    heading: '文案與賣點',
+  },
+};
+
+const isMarketingSubHub =
+  topic.slug === 'ads-numbers' || topic.slug === 'seo-from-zero' || topic.slug === 'copywriting';
+const subHubSlug = isMarketingSubHub ? (topic.slug as MarketingSubHubSlug) : undefined;
+const customMeta = subHubSlug ? subHubMeta[subHubSlug] : undefined;
+
+const pageTitle = customMeta
+  ? `${customMeta.title} - ${siteConfig.name}`
+  : `${topic.name} - ${siteConfig.name}`;
+const pageDescription = customMeta ? customMeta.description : topic.intro;
+const heroHeading = customMeta ? customMeta.heading : topic.name;
+
 const canonical = `${siteConfig.url}${topicUrl(topic)}`;
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   '@id': `${canonical}#collection`,
-  name: topic.name,
-  description: topic.intro,
+  name: heroHeading,
+  description: pageDescription,
   url: canonical,
   inLanguage: 'zh-Hant-TW',
-  isPartOf: {
-    '@type': 'Blog',
-    '@id': `${siteConfig.url}/blog/#blog`,
-    name: `${siteConfig.name} 文章`,
-    url: `${siteConfig.url}/blog/`,
-  },
+  author: { '@id': entityConfig.ids.person },
+  publisher: { '@id': entityConfig.ids.person },
+  isPartOf: { '@id': entityConfig.ids.website },
   mainEntity: {
     '@type': 'ItemList',
     itemListOrder: 'https://schema.org/ItemListOrderAscending',
@@ -91,8 +124,8 @@ const schema = {
 ---
 
 <MarketingLayout
-  title={`${topic.name} - ${siteConfig.name}`}
-  description={topic.intro}
+  title={pageTitle}
+  description={pageDescription}
   structuredData={[schema]}
 >
   <Breadcrumbs
@@ -100,7 +133,7 @@ const schema = {
       { label: '首頁', href: '/' },
       { label: '主題', href: '/topics/' },
       { label: area.name, href: `/topics/${area.slug}/` },
-      { label: topic.name },
+      { label: heroHeading },
     ]}
   />
 
@@ -108,11 +141,13 @@ const schema = {
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
       <p class="text-xs font-bold tracking-[0.15em] text-primary">{area.name}</p>
       <h1 class="mt-2 text-2xl font-extrabold leading-snug tracking-tight text-text md:text-3xl lg:text-4xl">
-        {topic.name}
+        {heroHeading}
       </h1>
       <p class="mt-4 text-lg leading-relaxed text-text-muted md:text-xl">{topic.lead}</p>
     </div>
   </section>
+
+  {subHubSlug && <MarketingSubHubGuide slug={subHubSlug} />}
 
   {
     series && (

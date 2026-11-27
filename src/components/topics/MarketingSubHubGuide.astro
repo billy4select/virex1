@@ -1,0 +1,369 @@
+---
+import ArticleAuthor from '@/components/blog/ArticleAuthor.astro';
+
+export type MarketingSubHubSlug = 'ads-numbers' | 'seo-from-zero' | 'copywriting';
+
+interface Props {
+  slug: MarketingSubHubSlug;
+}
+
+interface SubHubStage {
+  step: string;
+  heading: string;
+  paragraphs: string[];
+  items: {
+    title: string;
+    href: string;
+    summary: string;
+  }[];
+}
+
+interface SubHubConfig {
+  ariaLabel: string;
+  intro: string[];
+  stages: SubHubStage[];
+  closingHeading: string;
+  closingLead: string;
+  categoryName: string;
+}
+
+const { slug } = Astro.props;
+
+const configs: Record<MarketingSubHubSlug, SubHubConfig> = {
+  'ads-numbers': {
+    ariaLabel: '廣告與投放實戰導讀',
+    intro: [
+      '廣告後台數字很多，曝光、點擊率、CPM、ROAS 每天都在跳。',
+      '但很多品牌投了幾個月下來，報表看起來好像有在動，銀行帳戶卻沒跟著變厚（有時候只是把利潤全部搬去繳給廣告平台）。',
+      '我是比利陳，過去十年操盤過線上線下媒體跟廣告投放。這個專區整理的，是怎麼看懂廣告背後的商業算盤，而不只是盯著素材點擊率發呆。',
+    ],
+    stages: [
+      {
+        step: 'STAGE 01',
+        heading: '先確定你投給對的人，再談素材好不好看',
+        paragraphs: [
+          '廣告沒轉換的時候，大家第一個檢討的永遠是圖片跟文案。',
+          '很多時候素材根本沒問題，真正出事的地方在於一開始就把廣告推給不需要這個東西的人。',
+        ],
+        items: [
+          {
+            title: '廣告轉換率低，該先檢查受眾還是素材？',
+            href: '/blog/audience-definition-ad-conversion/',
+            summary: '從受眾購買情境跟替代方案出發，找出廣告費一直空轉的真正原因。',
+          },
+          {
+            title: 'CTR 低是素材問題還是受眾問題？現在怎麼拆開判斷最準',
+            href: '/blog/ctr-low-creative-or-audience/',
+            summary: '用 CTR 與轉換率的交叉組合，拆開冷流量、受眾設定與素材表現的排查順序。',
+          },
+        ],
+      },
+      {
+        step: 'STAGE 02',
+        heading: '算清楚 CPA、ROAS 跟毛利的關係',
+        paragraphs: [
+          '別人常問「ROAS 要做到多少才算及格」，這個問題其實沒有標準答案。',
+          '毛利三成跟毛利七成的產品，能承受的獲客成本本來就完全不同。',
+        ],
+        items: [
+          {
+            title: 'ROAS 計算公式拆解：為什麼你的 ROAS 看起來很好，帳卻對不起來？',
+            href: '/blog/roas-formula-explained/',
+            summary: '先算出一筆訂單最多能花多少廣告費與損益兩平點，才不會越賣越虧。',
+          },
+          {
+            title: '廣告預算怎麼分配？自動化時代的新客與回購投放邏輯',
+            href: '/blog/ad-budget-new-vs-returning/',
+            summary: '預算有限的時候，怎麼用回購週期與毛利率決定新客跟舊客的預算比例。',
+          },
+          {
+            title: '廣告成效報告怎麼寫？少貼一堆流量圖，直接講轉換率與下一步',
+            href: '/blog/ad-performance-reporting-stakeholders/',
+            summary: '當點擊率高卻沒下單，或下單卻無法放大時，逐段往下查與回報的標準順序。',
+          },
+        ],
+      },
+    ],
+    closingHeading: '把廣告放回整條行銷漏斗裡',
+    closingLead: '廣告能買到曝光，但它沒辦法單獨替產品建立信任。',
+    categoryName: '廣告與投放',
+  },
+
+  'seo-from-zero': {
+    ariaLabel: '內容與 SEO 從零開始導讀',
+    intro: [
+      '做內容跟做廣告剛好相反。',
+      '廣告今天下預算、明天就有流量；SEO 寫完前面幾個月通常安靜得很像沒人看（有時候真的會懷疑自己是不是寫錯地方）。',
+      '但只要文章對上真實的搜尋需求，它會在半年、一年後持續替你帶進精準讀者，而且不用每次點擊都付錢。這個專區整理的，是給非工程師、想靠內容慢慢累積資產的人看的從零路線。',
+    ],
+    stages: [
+      {
+        step: 'STAGE 01',
+        heading: '動筆之前，先看懂別人在搜什麼',
+        paragraphs: [
+          '寫文章最怕關起門來寫自己想講的話，發出去才發現根本沒人在搜尋這個詞。',
+          '先看懂搜尋引擎結果頁排在前面的是哪種格式，再決定這篇文章該怎麼寫。',
+        ],
+        items: [
+          {
+            title: '搜尋意圖怎麼判斷？先看搜尋者要完成什麼事',
+            href: '/blog/search-intent-guide/',
+            summary: '搞清楚使用者搜這個詞時想學方法、比規格，還是已經準備要買。',
+          },
+          {
+            title: '關鍵字怎麼找？從使用者問題整理值得寫的主題',
+            href: '/blog/keyword-research-purchase-intent/',
+            summary: '避開大品牌佔滿的高難度大字，先搶具體購買前煩惱的長尾流量。',
+          },
+        ],
+      },
+      {
+        step: 'STAGE 02',
+        heading: '把零散文章串成 Google 看得懂的架構',
+        paragraphs: [
+          '站上文章越寫越多之後，最容易發生的事是兩三篇都在搶同一個字，最後誰都排不上去。',
+          '用主題頁把核心大題跟子題串起來，爬蟲跟讀者才不會在網站裡迷路。',
+        ],
+        items: [
+          {
+            title: 'SEO 文章發布前檢查：標題、內容結構與技術細節',
+            href: '/blog/on-page-seo-checklist/',
+            summary: '標題、H2 階層跟開頭第一段怎麼寫，才能讓讀者跟搜尋引擎一眼看懂。',
+          },
+          {
+            title: '內部連結怎麼規劃？用主題關係整理網站內容',
+            href: '/blog/internal-linking-topic-clusters/',
+            summary: '透過描述性錨點把同主題文章互相串接，減少沒人連進去的孤島頁面。',
+          },
+        ],
+      },
+      {
+        step: 'STAGE 03',
+        heading: '上線之後，用數據慢慢調出第一頁排名',
+        paragraphs: ['文章發出去只算做完一半，真正拉開差距的是上線三個月後的調整。'],
+        items: [
+          {
+            title: 'SEO 文章有寫卻沒流量？先檢查這五個環節',
+            href: '/blog/seo-writing-why-no-traffic/',
+            summary: '特別盯緊曝光高卻沒點擊的文章，以及卡在第二頁邊緣的結構瓶頸。',
+          },
+          {
+            title: '免費 SEO 工具怎麼選？其實先把 GSC、GA4 跟 Google 搜尋用熟就夠了',
+            href: '/blog/free-seo-tools/',
+            summary: '用免費的 Search Console 與 GA4 報表找出該先更新哪些舊文。',
+          },
+        ],
+      },
+    ],
+    closingHeading: '把寫好的內容接回商業轉換',
+    closingLead: '自然流量進來之後，還需要承接信任的下一步。',
+    categoryName: '內容與 SEO',
+  },
+
+  copywriting: {
+    ariaLabel: '文案與賣點實戰導讀',
+    intro: [
+      '很多產品頁規格列得密密麻麻，功能也比競爭對手強，但消費者滑過去就是沒有停下來。',
+      '大家不買單，通常不是字寫得不夠華麗，而是讀完之後還是不知道「這件事跟我有什麼關係」。',
+      '我是比利陳，過去十年在品牌跟整合行銷裡改過無數次產品頁跟廣告文案。這個專區整理的，是怎麼把產品功能翻譯成受眾心裡的痛點，以及這兩年我搭配 AI 寫文案時踩過的坑。',
+    ],
+    stages: [
+      {
+        step: 'STAGE 01',
+        heading: '先提煉出真正的賣點，再開始動筆',
+        paragraphs: [
+          '規格是廠商在看的，賣點才是消費者在意的。',
+          '在打開空白文件準備寫字之前，先把這組轉換邏輯跑過一遍，後面下筆會順非常多。',
+        ],
+        items: [
+          {
+            title: '如何快速提煉賣點，並轉為打動使用者的文案？',
+            href: '/blog/feature-to-copywriting-selling-point/',
+            summary: '拆解「功能、特色、利益、賣點」四層轉換，用三個步驟把規格寫進顧客的生活情境裡。',
+          },
+        ],
+      },
+      {
+        step: 'STAGE 02',
+        heading: '把 AI 放進文案工作流之前，先避開這幾個坑',
+        paragraphs: [
+          '現在很多人直接叫 AI 寫十組廣告標題，看一看覺得都好像差不多，改到最後乾脆自己重寫。',
+          '模型寫得像罐頭，多半是因為我們給它的起點太模糊了。',
+        ],
+        items: [
+          {
+            title: '寫廣告文案前，先把你手上的所有資料直接丟給 AI',
+            href: '/blog/ai-copywriting-audience-data/',
+            summary: '直接下指令跟先餵過受眾痛點、評論語氣之後再產出，兩者水準完全不同。',
+          },
+          {
+            title: 'AI 文案常見的三種問題：短文案還好，長文越寫越容易出錯',
+            href: '/blog/ai-copywriting-mistakes/',
+            summary: '整理實際改稿時最常看到的幾種 AI 腔，以及不同模型各自容易偏掉的地方。',
+          },
+          {
+            title: 'Claude vs ChatGPT：行銷人寫提案，哪個比較不會讓你改到崩潰',
+            href: '/blog/claude-vs-chatgpt-proposal/',
+            summary: '比較兩者在長篇說服結構跟文字自然度上的表現，幫你選對順手的工具。',
+          },
+        ],
+      },
+    ],
+    closingHeading: '寫好文案之後，放進對的通路測試',
+    closingLead: '文案寫得再好，放錯受眾一樣沒辦法轉換；放進對的測試流程裡，你才能知道哪一句真的打中人心。',
+    categoryName: '內容與 SEO',
+  },
+};
+
+const cfg = configs[slug];
+---
+
+<section class="bg-background pt-10 pb-2 md:pt-14" aria-label={cfg.ariaLabel}>
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    {/* 開頭導讀 */}
+    <div class="max-w-3xl space-y-4 text-base leading-8 text-text-muted md:text-[17px]">
+      {cfg.intro.map((para) => <p>{para}</p>)}
+    </div>
+
+    {/* 分階段重點路線 */}
+    <div class="mt-12 space-y-12">
+      {
+        cfg.stages.map((stage) => (
+          <section class="border-t border-border pt-10">
+            <p class="font-mono text-xs font-bold tracking-[0.15em] text-primary">{stage.step}</p>
+            <h2 class="mt-1.5 text-xl font-extrabold tracking-tight text-text md:text-2xl">
+              {stage.heading}
+            </h2>
+
+            <div class="mt-4 max-w-3xl space-y-3 text-sm leading-7 text-text-muted md:text-base">
+              {stage.paragraphs.map((para) => (
+                <p>{para}</p>
+              ))}
+            </div>
+
+            <ol class="mt-6 divide-y divide-border rounded-2xl border border-border bg-surface/50 px-5">
+              {stage.items.map((item, idx) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="group grid grid-cols-[1.75rem_minmax(0,1fr)_auto] items-start gap-x-3 py-4 transition-colors"
+                  >
+                    <span class="pt-0.5 font-mono text-xs font-bold tabular-nums text-primary">
+                      {String(idx + 1).padStart(2, '0')}
+                    </span>
+                    <div class="min-w-0">
+                      <h3 class="text-base font-bold leading-snug text-text transition-colors group-hover:text-primary">
+                        {item.title}
+                      </h3>
+                      <p class="mt-1 text-sm leading-relaxed text-text-muted">{item.summary}</p>
+                    </div>
+                    <span
+                      class="pt-0.5 text-sm font-semibold text-text-muted transition-transform group-hover:translate-x-0.5 group-hover:text-primary"
+                      aria-hidden="true"
+                    >
+                      →
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </section>
+        ))
+      }
+
+      {/* 結尾回連與電子報 */}
+      <section class="border-t border-border pt-10">
+        <h2 class="text-xl font-extrabold tracking-tight text-text md:text-2xl">
+          {cfg.closingHeading}
+        </h2>
+        <div class="mt-4 max-w-3xl space-y-4 text-sm leading-7 text-text-muted md:text-base">
+          <p>{cfg.closingLead}</p>
+
+          {
+            slug === 'ads-numbers' && (
+              <p>
+                如果這段時間發現廣告成本越投越高，建議回頭看
+                <a
+                  href="/topics/marketing/"
+                  class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+                >
+                  行銷策略與診斷主題頁
+                </a>
+                檢查整體轉換率，或到
+                <a
+                  href="/topics/business-model/"
+                  class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+                >
+                  商業模式與獲利
+                </a>
+                重新核對一次定價跟毛利結構。
+              </p>
+            )
+          }
+
+          {
+            slug === 'seo-from-zero' && (
+              <p>
+                如果你想看怎麼把寫作跟整個品牌成長接在一起，可以回到
+                <a
+                  href="/topics/marketing/"
+                  class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+                >
+                  行銷策略與診斷主題頁
+                </a>
+                ；如果想看怎麼用工具加速研究與整理資料，也能參考
+                <a
+                  href="/topics/ai-workflow/"
+                  class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+                >
+                  AI 工作流程與工具
+                </a>
+                。
+              </p>
+            )
+          }
+
+          {
+            slug === 'copywriting' && (
+              <p>
+                寫完素材準備上線測試，可以接著看
+                <a
+                  href="/topics/marketing/ads-numbers/"
+                  class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+                >
+                  廣告與投放實戰專區
+                </a>
+                ，或是回到
+                <a
+                  href="/topics/marketing/"
+                  class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+                >
+                  行銷策略與診斷主題頁
+                </a>
+                檢查整體定位。每週我也會在
+                <a
+                  href="https://billy4select.substack.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-conversion-cta="newsletter"
+                  data-conversion-target="substack"
+                  data-conversion-category={cfg.categoryName}
+                  class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+                >
+                  比利陳 Substack 電子報
+                </a>
+                分享最近拆解的文案跟行銷案例，歡迎訂閱。
+              </p>
+            )
+          }
+        </div>
+
+        <ArticleAuthor />
+      </section>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '@/scripts/conversion';
+</script>

@@ -1,0 +1,184 @@
+---
+import ArticleAuthor from '@/components/blog/ArticleAuthor.astro';
+
+interface HubStage {
+  step: string;
+  heading: string;
+  paragraphs: string[];
+  items: {
+    title: string;
+    href: string;
+    summary: string;
+  }[];
+}
+
+const stages: HubStage[] = [
+  {
+    step: 'STAGE 01',
+    heading: '第一個月先讓對的人認出你',
+    paragraphs: [
+      '做個人品牌最容易誤會的事，以為要變成全網都知道的網紅才算成功。',
+      '其實對專業工作者來說，只要讓特定一群人知道你是誰、你能解決什麼問題，這件事就已經成立了。',
+    ],
+    items: [
+      {
+        title: '自媒體第一個月做什麼？先定位還是先發文',
+        href: '/blog/self-media-first-month-positioning-or-posting/',
+        summary: '給一個 30 天的實際做法：先寫暫定定位、用發文測試市場反應、再回頭修正方向。',
+      },
+      {
+        title: '個人品牌怎麼做才有效？讓對的人理解、信任、記得你',
+        href: '/blog/personal-brand-trust-not-reach/',
+        summary: '透過定位、內容支柱跟信任資產，建立一個不靠單次爆紅也能運作的專業品牌。',
+      },
+    ],
+  },
+  {
+    step: 'STAGE 02',
+    heading: '把經驗變成第一個有人願意買的產品',
+    paragraphs: [
+      '內容寫久了會有讀者，但讀者不會自動變成收入。',
+      '中間缺的那一段，通常是一個別人剛好很痛、而且願意付錢解決的具體問題。',
+    ],
+    items: [
+      {
+        title: '如何把專業變成市場價值？從能力盤點到第一個付費 offer',
+        href: '/blog/turn-expertise-into-market-value/',
+        summary: '用六個步驟，把累積多年的職場能力整理成第一個可以拿出來賣的服務或產品。',
+      },
+      {
+        title: '知識怎麼變成收入？從內容到產品的 3 種模式',
+        href: '/blog/content-to-product-knowledge-business/',
+        summary: '拆解產品階梯跟三種常見商業模式，說明怎麼從免費文章走向可持續經營的收入結構。',
+      },
+    ],
+  },
+  {
+    step: 'STAGE 03',
+    heading: '一個人怎麼撐起整間公司的產出',
+    paragraphs: [
+      '接案或賣產品之後，最怕的是時間全被交付塞滿，回頭就沒力氣寫新內容。',
+      '善用流程拆解跟 AI 工具，一個人也能維持穩定的品質跟交件節奏。',
+    ],
+    items: [
+      {
+        title: '一人公司怎麼運作？用 AI 建立可穩定交付的工作系統',
+        href: '/blog/one-person-company-ai-work-system/',
+        summary: '把團隊角色拆開，用五個角色、一條交付鏈跟品質檢查表，建立能穩定接案的工作系統。',
+      },
+      {
+        title: 'Threads 經營實戰專題',
+        href: '/threads/',
+        summary: '如果你目前的主戰場在脆上，這頁整理了我從零累積追蹤跟內容測試的完整紀錄。',
+      },
+    ],
+  },
+];
+---
+
+<section class="bg-background pt-10 pb-4 md:pt-14" aria-label="自媒體與個人事業選讀指南">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    {/* 開頭導讀 */}
+    <div class="max-w-3xl space-y-4 text-base leading-8 text-text-muted md:text-[17px]">
+      <p>很多人想開始做自媒體，卡住的第一關通常很像。</p>
+      <p>
+        想先把定位想透再動筆，結果筆記本寫滿了卻一篇都沒發；直接每天亂發，發了三個月又覺得好像只是在陪演算法聊天（順便消耗掉下班後的意志力）。
+      </p>
+      <p>
+        我是比利陳，在行銷跟品牌戰場跑了十幾年。這個主題頁整理的，是我自己從零經營內容、把專業整理成電子書跟服務，到建立一人工作系統的真實做法。
+      </p>
+    </div>
+
+    {/* 三階段選讀地圖 */}
+    <div class="mt-12 space-y-12">
+      {
+        stages.map((stage) => (
+          <section class="border-t border-border pt-10">
+            <p class="font-mono text-xs font-bold tracking-[0.15em] text-primary">{stage.step}</p>
+            <h2 class="mt-1.5 text-xl font-extrabold tracking-tight text-text md:text-2xl">
+              {stage.heading}
+            </h2>
+
+            <div class="mt-4 max-w-3xl space-y-3 text-sm leading-7 text-text-muted md:text-base">
+              {stage.paragraphs.map((para) => (
+                <p>{para}</p>
+              ))}
+            </div>
+
+            <ol class="mt-6 divide-y divide-border rounded-2xl border border-border bg-surface/50 px-5">
+              {stage.items.map((item, idx) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="group grid grid-cols-[1.75rem_minmax(0,1fr)_auto] items-start gap-x-3 py-4 transition-colors"
+                  >
+                    <span class="pt-0.5 font-mono text-xs font-bold tabular-nums text-primary">
+                      {String(idx + 1).padStart(2, '0')}
+                    </span>
+                    <div class="min-w-0">
+                      <h3 class="text-base font-bold leading-snug text-text transition-colors group-hover:text-primary">
+                        {item.title}
+                      </h3>
+                      <p class="mt-1 text-sm leading-relaxed text-text-muted">{item.summary}</p>
+                    </div>
+                    <span
+                      class="pt-0.5 text-sm font-semibold text-text-muted transition-transform group-hover:translate-x-0.5 group-hover:text-primary"
+                      aria-hidden="true"
+                    >
+                      →
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </section>
+        ))
+      }
+
+      {/* 延伸回商業模式、AI 工作流與 Substack 電子報 */}
+      <section class="border-t border-border pt-10">
+        <h2 class="text-xl font-extrabold tracking-tight text-text md:text-2xl">
+          接下來可以怎麼往下走
+        </h2>
+        <div class="mt-4 max-w-3xl space-y-4 text-sm leading-7 text-text-muted md:text-base">
+          <p>自媒體做到一定階段，回頭還是要面對定價、獲利結構跟日常工具效率這幾件事。</p>
+          <p>
+            如果你想把單筆產品的毛利跟商業結構算得更清楚，可以接著看
+            <a
+              href="/topics/business-model/"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              商業模式與獲利主題頁
+            </a>
+            ；想找能幫一人公司省時間的工具組合，可以逛
+            <a
+              href="/topics/ai-workflow/"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              AI 工作流程與工具
+            </a>
+            。我也每週在
+            <a
+              href="https://billy4select.substack.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-conversion-cta="newsletter"
+              data-conversion-target="substack"
+              data-conversion-category="自媒體與個人事業"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              比利陳 Substack 電子報
+            </a>
+            寫一篇實戰觀察，歡迎訂閱。
+          </p>
+        </div>
+
+        <ArticleAuthor />
+      </section>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '@/scripts/conversion';
+</script>

@@ -1,0 +1,191 @@
+---
+import ArticleAuthor from '@/components/blog/ArticleAuthor.astro';
+
+interface HubStage {
+  step: string;
+  heading: string;
+  paragraphs: string[];
+  items: {
+    title: string;
+    href: string;
+    summary: string;
+  }[];
+}
+
+const stages: HubStage[] = [
+  {
+    step: 'STAGE 01',
+    heading: '先看清楚哪些能力值得花時間',
+    paragraphs: [
+      '時間有限，追著每週更新的軟體功能學，很容易陷入無止境的補課。',
+      '動手學之前，先盤點自己手上已經有的底氣，再挑那些不容易過期、能跨領域帶走的能力來投資。',
+    ],
+    items: [
+      {
+        title: '怎麼做能力盤點？寫出 T 型能力與可遷移技能',
+        href: '/blog/capability-inventory-workshop/',
+        summary: '用 60 分鐘整理出你的專業深度、廣度，以及換個環境依然管用的證據。',
+      },
+      {
+        title: 'AI 時代該培養什麼能力？哪些在貶值、哪些會複利',
+        href: '/blog/ai-era-capability-map/',
+        summary: '把能力拆成判斷力、操作力跟學習力，搞清楚接下來該把時間壓在哪一塊。',
+      },
+    ],
+  },
+  {
+    step: 'STAGE 02',
+    heading: '建立一個不用太複雜的知識系統',
+    paragraphs: [
+      '很多人做知識管理做到後來，花在調整筆記軟體版面的時間，比真正寫出東西的時間還多。',
+      '好用的系統通常很樸素，只要能讓資料在需要的時候順利變成輸出就夠了。',
+    ],
+    items: [
+      {
+        title: '個人知識管理怎麼做？收集、理解到輸出的最小系統',
+        href: '/blog/personal-knowledge-system-minimal/',
+        summary: '拆成收集、理解、輸出三層，不用綁定複雜工具也能長期跑下去。',
+      },
+      {
+        title: '如何用 AI 學新領域？從陌生到能交付的 30 天路徑',
+        href: '/blog/learn-new-field-with-ai-30-days/',
+        summary: '把一個月分成四週：先定義交付標準、畫出問題地圖、主動練習，最後做出具體作品。',
+      },
+    ],
+  },
+  {
+    step: 'STAGE 03',
+    heading: '把經驗練成能交差的判斷力',
+    paragraphs: [
+      '知識工作跟彈鋼琴不一樣，沒有標準譜可以照著練，回饋又來得很慢。',
+      '所以更需要刻意設計回饋迴路，把每一次做完的專案跟決策，變成下一次判斷的依據。',
+    ],
+    items: [
+      {
+        title: '知識工作如何刻意練習？從回饋迴路到作品集',
+        href: '/blog/deliberate-practice-knowledge-work/',
+        summary: '把寫作、分析跟提案拆成可以反覆練習的小單位，用真實作品集驗證進步。',
+      },
+      {
+        title: 'AI 時代如何培養判斷力？從提問、證據到後果',
+        href: '/blog/judgment-in-ai-era/',
+        summary: '當工具能一秒吐出完整答案，真正拉開差距的是你問什麼問題、怎麼驗算結果。',
+      },
+    ],
+  },
+];
+---
+
+<section class="bg-background pt-10 pb-4 md:pt-14" aria-label="學習與能力選讀指南">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    {/* 開頭導讀 */}
+    <div class="max-w-3xl space-y-4 text-base leading-8 text-text-muted md:text-[17px]">
+      <p>這兩年大家都很焦慮，書單越存越長，AI 工具教學也收藏了一堆。</p>
+      <p>
+        但真正碰到新專案要上陣的時候，腦袋裡留下的東西還是很少（收藏夾很滿，實戰還是從頭查起）。
+      </p>
+      <p>
+        我是比利陳，過去十年跑過 PM、品牌跟整合行銷，靠的一直是在不同領域之間快速補齊能力。這個主題頁整理的，是怎麼把「看過」變成「做得出來」的學習系統。
+      </p>
+    </div>
+
+    {/* 三階段選讀地圖 */}
+    <div class="mt-12 space-y-12">
+      {
+        stages.map((stage) => (
+          <section class="border-t border-border pt-10">
+            <p class="font-mono text-xs font-bold tracking-[0.15em] text-primary">{stage.step}</p>
+            <h2 class="mt-1.5 text-xl font-extrabold tracking-tight text-text md:text-2xl">
+              {stage.heading}
+            </h2>
+
+            <div class="mt-4 max-w-3xl space-y-3 text-sm leading-7 text-text-muted md:text-base">
+              {stage.paragraphs.map((para) => (
+                <p>{para}</p>
+              ))}
+            </div>
+
+            <ol class="mt-6 divide-y divide-border rounded-2xl border border-border bg-surface/50 px-5">
+              {stage.items.map((item, idx) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="group grid grid-cols-[1.75rem_minmax(0,1fr)_auto] items-start gap-x-3 py-4 transition-colors"
+                  >
+                    <span class="pt-0.5 font-mono text-xs font-bold tabular-nums text-primary">
+                      {String(idx + 1).padStart(2, '0')}
+                    </span>
+                    <div class="min-w-0">
+                      <h3 class="text-base font-bold leading-snug text-text transition-colors group-hover:text-primary">
+                        {item.title}
+                      </h3>
+                      <p class="mt-1 text-sm leading-relaxed text-text-muted">{item.summary}</p>
+                    </div>
+                    <span
+                      class="pt-0.5 text-sm font-semibold text-text-muted transition-transform group-hover:translate-x-0.5 group-hover:text-primary"
+                      aria-hidden="true"
+                    >
+                      →
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </section>
+        ))
+      }
+
+      {/* 延伸至工具、職涯與 Substack 電子報 */}
+      <section class="border-t border-border pt-10">
+        <h2 class="text-xl font-extrabold tracking-tight text-text md:text-2xl">
+          把學到的東西放進真實工具裡
+        </h2>
+        <div class="mt-4 max-w-3xl space-y-4 text-sm leading-7 text-text-muted md:text-base">
+          <p>方法想通了之後，接下來就是挑順手的工具把這些流程跑起來。</p>
+          <p>
+            如果你想看怎麼用具體軟體建立研究筆記，可以接著看
+            <a
+              href="/topics/notebooklm/"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              NotebookLM 實戰指南
+            </a>
+            或
+            <a
+              href="/topics/ai-workflow/"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              AI 工作流程與工具
+            </a>
+            ；如果是想替下一階段的職涯做準備，也可以回到
+            <a
+              href="/topics/career/"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              職涯與轉型主題頁
+            </a>
+            。每週我也會在
+            <a
+              href="https://billy4select.substack.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-conversion-cta="newsletter"
+              data-conversion-target="substack"
+              data-conversion-category="學習與知識管理"
+              class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+            >
+              比利陳 Substack 電子報
+            </a>
+            分享最近整理好的書單跟實測筆記，歡迎訂閱。
+          </p>
+        </div>
+
+        <ArticleAuthor />
+      </section>
+    </div>
+  </div>
+</section>
+
+<script>
+  import '@/scripts/conversion';
+</script>
