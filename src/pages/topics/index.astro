@@ -2,88 +2,206 @@
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import { siteConfig } from '@/config';
+import { entityConfig } from '@/config/entity';
 import { getPublishedPosts } from '@/lib/blog';
 import { topicAreas, getTopicsByArea } from '@/lib/topic-curation';
 
 const publishedIds = new Set((await getPublishedPosts()).map((post) => post.id));
 const countOf = (ids: string[]) => ids.filter((id) => publishedIds.has(id)).length;
 
-const areas = topicAreas
-  .map((area, index) => {
-    const topics = getTopicsByArea(area.slug).filter(
-      (topic) => countOf(topic.articleIds) > 0,
-    );
+const displayNames: Record<string, string> = {
+  'ai-workflow': 'AI 工作流程與工具',
+  notebooklm: 'NotebookLM 實戰指南',
+  learning: '學習與能力',
+  'book-guides': '書籍導讀',
+  'business-model': '商業模式與獲利',
+  marketing: '行銷策略與診斷',
+  career: '職涯與轉型',
+  'personal-business': '自媒體與個人事業',
+};
 
-    return {
-      ...area,
-      index: String(index + 1).padStart(2, '0'),
-      topicCount: topics.length,
-      articleCount: new Set(
-        topics.flatMap((topic) => topic.articleIds).filter((id) => publishedIds.has(id)),
-      ).size,
-    };
-  })
-  .filter((area) => area.topicCount > 0);
+const areaMap = new Map(
+  topicAreas
+    .map((area) => {
+      const topics = getTopicsByArea(area.slug).filter(
+        (topic) => countOf(topic.articleIds) > 0,
+      );
+
+      return {
+        ...area,
+        displayName: displayNames[area.slug] ?? area.name,
+        topicCount: topics.length,
+        articleCount: new Set(
+          topics.flatMap((topic) => topic.articleIds).filter((id) => publishedIds.has(id)),
+        ).size,
+      };
+    })
+    .filter((area) => area.topicCount > 0)
+    .map((area) => [area.slug, area]),
+);
+
+const topicGroups = [
+  {
+    no: 'GROUP 01',
+    title: 'AI 與學習效率',
+    subtitle: '把 AI 工具放進日常工作流、讀透複雜資料，並建立可累積的個人知識與閱讀系統。',
+    slugs: ['ai-workflow', 'notebooklm', 'learning', 'book-guides'],
+  },
+  {
+    no: 'GROUP 02',
+    title: '商業與行銷決策',
+    subtitle: '先看懂一門生意靠什麼賺錢，再從漏斗診斷切入廣告投放、SEO 與文案執行。',
+    slugs: ['business-model', 'marketing'],
+  },
+  {
+    no: 'GROUP 03',
+    title: '職涯與一人事業',
+    subtitle: '給資深工作者的轉型定位筆記，以及把專業經驗轉成自媒體與穩定交付系統的做法。',
+    slugs: ['career', 'personal-business'],
+  },
+].map((group) => ({
+  ...group,
+  items: group.slugs
+    .map((slug) => areaMap.get(slug))
+    .filter((item): item is NonNullable<typeof item> => Boolean(item)),
+}));
+
+const allDisplayedAreas = topicGroups.flatMap((group) => group.items);
+const canonical = `${siteConfig.url}/topics/`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${canonical}#collection`,
+  name: '探索主題 — 全站知識領域總覽',
+  description:
+    '八個知識領域、三大主題群組：從 AI 工作流、NotebookLM、商業模式、行銷策略，到職涯轉型與一人事業，找到適合自己的入門閱讀路徑。',
+  url: canonical,
+  inLanguage: 'zh-Hant-TW',
+  author: { '@id': entityConfig.ids.person },
+  publisher: { '@id': entityConfig.ids.person },
+  isPartOf: { '@id': entityConfig.ids.website },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: allDisplayedAreas.length,
+    itemListElement: allDisplayedAreas.map((area, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: area.displayName,
+      url: `${siteConfig.url}/topics/${area.slug}/`,
+    })),
+  },
+};
 ---
 
 <MarketingLayout
-  title={`主題 - ${siteConfig.name}`}
-  description="九個文章分類、八個知識領域：從 AI 工作流程、NotebookLM、商業模式、行銷策略、廣告投放、SEO 內容，到自媒體、職涯與書籍導讀，找到適合自己的閱讀路線。"
+  title={`主題總覽 - ${siteConfig.name}`}
+  description="八個知識領域、三大主題群組：從 AI 工作流程、NotebookLM、商業模式、行銷策略，到職涯轉型、自媒體與書籍導讀，找到適合自己的閱讀路線。"
+  structuredData={[schema]}
 >
   <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '主題' }]} />
 
   <section class="page-band">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <h1 class="text-3xl font-extrabold leading-tight tracking-tight text-text md:text-4xl lg:text-5xl">
         探索主題
       </h1>
       <p class="mt-4 max-w-2xl text-base leading-relaxed text-text-muted md:text-lg">
-        從八個知識領域開始，找到你現在想解決的問題。行銷領域已補上 SEO 與廣告投放，自媒體領域加入 Threads 經營；點進領域後，再挑選適合自己的閱讀路線。
+        這裡是照問題整理的入門路徑，不只是文章列表。先從三大方向挑出你現在最卡的一塊，點進支柱頁就有排好順序的選讀指南。
+      </p>
+      <p class="mt-5 text-sm text-text-muted">
+        第一次來到這裡、還不確定自己要看哪一塊？可以先逛
+        <a
+          href="/start-here/"
+          class="font-semibold text-primary underline decoration-primary/35 underline-offset-4 transition-colors hover:text-primary-dark"
+        >
+          從這裡開始 →
+        </a>
       </p>
     </div>
   </section>
 
-  <section class="bg-background pb-16 pt-10 md:pb-24 md:pt-14" aria-label="八大主題領域">
-    <div class="mx-auto grid max-w-6xl gap-5 px-4 sm:px-6 md:grid-cols-2 lg:gap-6 lg:px-8">
+  <section class="bg-background pb-16 pt-10 md:pb-24 md:pt-14" aria-label="三大主題群組與八大知識領域">
+    <div class="mx-auto max-w-6xl space-y-14 px-4 sm:px-6 lg:px-8">
       {
-        areas.map((area) => (
-          <a
-            href={`/topics/${area.slug}/`}
-            class="group relative flex min-h-64 flex-col overflow-hidden rounded-3xl border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 md:min-h-72 md:p-8"
-          >
-            <div class="flex items-start justify-between gap-4">
-              <span class="font-mono text-sm font-semibold tracking-wider text-primary">
-                {area.index}
-              </span>
-              <span class="rounded-full border border-border bg-background px-3 py-1.5 text-xs font-medium text-text-muted">
-                {area.topicCount} 個主題
-              </span>
-            </div>
-
-            <div class="mt-8 flex-1">
-              <h2 class="text-xl font-bold tracking-tight text-text transition-colors group-hover:text-primary md:text-2xl">
-                {area.name}
+        topicGroups.map((group) => (
+          <section class="border-t border-border pt-10 first:border-t-0 first:pt-0">
+            <div class="max-w-2xl">
+              <p class="font-mono text-xs font-bold tracking-[0.15em] text-primary">{group.no}</p>
+              <h2 class="mt-1.5 text-2xl font-extrabold tracking-tight text-text md:text-3xl">
+                {group.title}
               </h2>
-              <p class="mt-3 text-sm font-semibold leading-relaxed text-text md:text-base">
-                {area.question}
-              </p>
-              <p class="mt-2 max-w-xl text-sm leading-relaxed text-text-muted">
-                {area.summary}
+              <p class="mt-2 text-sm leading-relaxed text-text-muted md:text-base">
+                {group.subtitle}
               </p>
             </div>
 
-            <div class="mt-8 flex items-center justify-between border-t border-border pt-4">
-              <span class="text-xs text-text-muted">
-                收錄 {area.articleCount} 篇文章
-              </span>
-              <span class="inline-flex items-center gap-2 text-sm font-semibold text-primary">
-                探索領域
-                <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
-              </span>
+            <div class="mt-6 grid gap-5 md:grid-cols-2 lg:gap-6">
+              {group.items.map((area, idx) => (
+                <a
+                  href={`/topics/${area.slug}/`}
+                  class="group relative flex min-h-60 flex-col overflow-hidden rounded-3xl border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5 md:p-7"
+                >
+                  <div class="flex items-start justify-between gap-4">
+                    <span class="font-mono text-xs font-semibold tracking-wider text-primary">
+                      {String(idx + 1).padStart(2, '0')}
+                    </span>
+                    <span class="rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-text-muted">
+                      {area.topicCount} 條路線
+                    </span>
+                  </div>
+
+                  <div class="mt-6 flex-1">
+                    <h3 class="text-xl font-bold tracking-tight text-text transition-colors group-hover:text-primary md:text-2xl">
+                      {area.displayName}
+                    </h3>
+                    <p class="mt-2.5 text-sm font-semibold leading-relaxed text-text md:text-base">
+                      {area.question}
+                    </p>
+                    <p class="mt-2 max-w-xl text-sm leading-relaxed text-text-muted">
+                      {area.summary}
+                    </p>
+                  </div>
+
+                  <div class="mt-6 flex items-center justify-between border-t border-border pt-4">
+                    <span class="text-xs text-text-muted">
+                      收錄 {area.articleCount} 篇文章
+                    </span>
+                    <span class="inline-flex items-center gap-2 text-sm font-semibold text-primary">
+                      進入支柱指南
+                      <span class="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+                    </span>
+                  </div>
+                </a>
+              ))}
             </div>
-          </a>
+          </section>
         ))
       }
+
+      {/* 底部接回 /start-here/ 與文章列表 */}
+      <div class="rounded-2xl border border-border bg-surface/60 p-6 sm:flex sm:items-center sm:justify-between sm:gap-6">
+        <div>
+          <p class="text-sm font-bold text-text">第一次來到這裡，還不確定從哪一塊切入？</p>
+          <p class="mt-1 text-sm text-text-muted">
+            可以直接看四條情境分流路線，或到全部文章依時間瀏覽。
+          </p>
+        </div>
+        <div class="mt-4 flex shrink-0 flex-wrap items-center gap-3 sm:mt-0">
+          <a
+            href="/start-here/"
+            class="inline-flex items-center gap-1.5 rounded-full bg-primary px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-primary-dark"
+          >
+            從這裡開始 →
+          </a>
+          <a
+            href="/blog/"
+            class="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-4 py-2.5 text-sm font-semibold text-text transition-colors hover:border-primary/40 hover:text-primary"
+          >
+            逛全部文章
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 </MarketingLayout>
