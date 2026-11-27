@@ -1,5 +1,5 @@
 ---
-title: 行銷計算機：CPC、CTR、CPM、CPA、ROAS、ROI 公式與換算範例
+title: "ROAS 計算公式與行銷計算機：損益平衡、ROI 差異與 6 大廣告指標換算"
 description: >-
   整理廣告投放必備的七個核心公式（CPM、CTR、CPC、CVR、CPA、ROAS、ROI）、毛利損益平衡 ROAS 對照表、ROAS 與 ROI 真實差異，以及看報表不踩坑的判讀順序。
 publishedDate: 2023-04-24T01:00:00Z

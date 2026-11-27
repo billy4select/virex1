@@ -1,5 +1,5 @@
 ---
-title: NotebookLM vs Claude：讀文件、查來源與整理報告怎麼分工？
+title: "NotebookLM vs Claude 比較（2026）：讀內部文件、Projects 與寫報告怎麼分工？"
 description: >-
   NotebookLM 適合丟進大量原始資料反覆查證與拆解，Claude 適合把確認過的重點寫成報告、簡報或提案。從實際工作流看兩個工具怎麼分工最順手。
 publishedDate: 2026-04-22T15:34:21Z

@@ -1,5 +1,5 @@
 ---
-title: NotebookLM 教學：2026 最新功能實測、提問指令與知識庫建立完整指南
+title: "NotebookLM (Gemini Notebook) 教學 2026：功能實測、提問指令與知識庫指南"
 description: >-
   NotebookLM 怎麼用最有效？這篇完整實戰指南涵蓋 2026 功能速查、上傳前四項準備、五種高精準提問指令、Audio Overview 語音摘要實測與兩大限制解法，幫你把難啃的資料變成可用知識庫。
 publishedDate: 2026-04-23T00:00:00Z

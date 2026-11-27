@@ -1,5 +1,5 @@
 ---
-title: NotebookLM 缺點與常見問題解法：PDF 讀不到、OCR 轉換與引用錯誤一次解決
+title: "NotebookLM PDF 讀不到？免費 OCR 轉換法與常見缺點排錯指南（2026）"
 description: >-
   用 NotebookLM 遇到掃描 PDF 讀不到、文字很硬像說明書、表格跑版或引用亂掉？這篇整理 7 大常見痛點排查、三種免費 OCR 轉換實測與轉檔後必查重點，也講清楚什麼時候該直接換工具。
 publishedDate: 2026-04-10T00:00:00Z
