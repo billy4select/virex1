@@ -1,16 +1,16 @@
-
 ---
 import MarketingLayout from '@/layouts/MarketingLayout.astro';
 import { topicAreas, topics as topicList } from '@/lib/topic-curation';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import CTA from '@sections/marketing/CTA.astro';
 import { siteConfig } from '@/config';
+import { entityConfig } from '@/config/entity';
 
 /** 經驗以工作類型呈現；作者匿名經營，不公開任職公司與客戶名稱。 */
 const experience = [
   '產業：傳統產業、3C 等多個產業',
-  '產品：商品企劃、開發、維運',
-  '行銷：廣告策略與投放、會員經營、網站管理',
+  '產品：商品企劃（PM）、開發、維運',
+  '行銷：品牌策略、整合行銷、廣告策略與投放、會員經營、網站管理',
   '內容：社群媒體、平面設計、內容製作、YouTube、Podcast',
   '數位產品：App 相關專案',
 ];
@@ -26,71 +26,111 @@ const sources = [
   {
     title: '工作經驗',
     description:
-      '來自十多年在產品、廣告、會員、內容與平台經營上的實際判斷，包含做對的與做錯的。',
+      '來自十多年在產品、品牌、廣告、會員、內容與平台經營上的實際判斷，包含做對的與做錯的。',
   },
   {
     title: '閱讀與研究',
     description:
-      '整理公開資料、案例與研究，並盡量說明資料從哪裡來、判斷依據是什麼。',
+      '整理公開資料、官方文件、案例與研究，並盡量說明資料從哪裡來、判斷依據是什麼。',
   },
   {
     title: '親自實驗',
     description:
-      'AI 工具、工作流程與內容經營，我會先自己動手試，再寫下測試條件與結果。',
+      'AI 工具、工作流程與內容經營，我會先自己動手試，再寫下測試日期、條件與實際結果。',
   },
 ];
 
-/** 獨立出版電子書（2025–2026），共五本。 */
-const books = [
-  {
-    title: '從零開始自媒體',
-    href: 'https://portaly.cc/billyselect4/product/ioeupgO66jK7vB24yJzY',
-    description:
-      '以行銷理論為基礎的自媒體經營指南，從目標受眾、內容、市場測試到變現與長期系統。',
+const profilePageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  '@id': entityConfig.ids.profilePage,
+  url: entityConfig.aboutUrl,
+  name: `關於 ${entityConfig.canonicalBrand}`,
+  description: entityConfig.bio,
+  inLanguage: 'zh-Hant-TW',
+  isPartOf: {
+    '@id': entityConfig.ids.website,
   },
-  {
-    title: '寫給大家的行銷書',
-    href: 'https://portaly.cc/billyselect4/product/FlzuxW1QbZpC79Op2zhE',
-    description:
-      '用「減法」看行銷：回到流量、轉換、客單價與回購的基本架構，先診斷問題出在哪裡。',
+  mainEntity: {
+    '@id': entityConfig.ids.person,
   },
-  {
-    title: '人人都做得到的知識變現',
-    href: 'https://portaly.cc/billyselect4/product/icSVZ0k6BHdItavIKf9X',
-    description:
-      '為素人設計的知識整理方法，把經驗與技能萃取、結構化，做成課程或電子書等小型知識產品。',
-  },
-  {
-    title: 'AI時代職場生存法則',
-    href: 'https://portaly.cc/billyselect4/product/jLrib0ZgLmXWs2WOTiy8',
-    description:
-      '把 AI 放進日常工作的方法：任務拆解、工具選擇、協作流程與判斷邊界，讓效率提升而不是多一份焦慮。',
-  },
-  {
-    title: '流量騙局',
-    href: 'https://portaly.cc/billyselect4/product/khu55lTbwebNRjRtUCQ3',
-    description:
-      '拆解流量數字的錯覺：曝光、點擊與轉換之間差在哪，哪些指標值得追，哪些只是好看。',
-  },
-];
+};
+
+const booksSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  '@id': `${entityConfig.aboutUrl}#books`,
+  name: `${entityConfig.personName} 獨立出版電子書`,
+  numberOfItems: entityConfig.books.length,
+  itemListElement: entityConfig.books.map((book, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: {
+      '@type': 'Book',
+      name: book.title,
+      description: book.description,
+      url: book.href,
+      inLanguage: 'zh-Hant-TW',
+      author: {
+        '@id': entityConfig.ids.person,
+      },
+    },
+  })),
+};
 ---
 
 <MarketingLayout
-  title={`關於我 - ${siteConfig.name}`}
-  description="比利陳，十多年行銷與產品經驗，獨立出版五本電子書。讓工作與生活多一些值得探索的可能，分享工具、方法、閱讀與對行銷、商業、AI、工作與個人成長的觀察。"
+  title={`關於 ${entityConfig.canonicalBrand}`}
+  description="比利陳｜行銷裡的路人甲（Billy Chen）。十多年 PM、品牌、整合行銷與廣告投放實戰經驗，獨立出版五本電子書，公開聯絡信箱 billy4select@gmail.com。分享 AI 工作流、行銷策略、SEO 與個人事業的實測與觀察。"
+  structuredData={[profilePageSchema, booksSchema]}
 >
   <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '關於我' }]} />
 
-  <!-- 個人介紹 -->
+  <!-- 個人基準檔案 -->
   <section class="page-band">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
-        <h1 class="text-3xl font-extrabold leading-tight tracking-tight text-text md:text-4xl lg:text-5xl">
-          關於比利
-        </h1>
-        <p class="mt-5 max-w-2xl text-base leading-relaxed text-text-muted md:text-lg">
-          認識 Billy 與這個知識庫的建立初衷。了解我如何整理複雜資訊，為你篩選出真正實用的解決方案。
+        <div class="flex flex-col gap-5 sm:flex-row sm:items-center">
+          <img
+            src={siteConfig.logo}
+            alt={entityConfig.canonicalBrand}
+            width="80"
+            height="80"
+            class="h-20 w-20 shrink-0 rounded-full border border-border object-cover shadow-xs"
+          />
+          <div>
+            <p class="text-xs font-bold tracking-[0.16em] text-primary">作者基準檔案</p>
+            <h1 class="mt-1.5 text-2xl font-extrabold leading-tight tracking-tight text-text sm:text-3xl md:text-4xl">
+              {entityConfig.canonicalBrand}
+            </h1>
+            <p class="mt-2 text-sm font-medium text-text-muted md:text-base">
+              {entityConfig.shortCredentials}
+            </p>
+          </div>
+        </div>
+
+        <p class="mt-6 max-w-2xl text-base leading-relaxed text-text-muted md:text-lg">
+          認識比利陳（Billy Chen）與這個知識庫的建立初衷。了解我如何結合十年實戰與親自實測，整理出可驗證、可執行的行銷與 AI 方法。
         </p>
+
+        <dl class="mt-6 grid grid-cols-1 gap-3 rounded-2xl border border-border bg-background/80 p-4 text-xs sm:grid-cols-2 sm:p-5 sm:text-sm">
+          <div>
+            <dt class="font-semibold text-text-muted">唯一官方網站</dt>
+            <dd class="mt-1 font-medium text-text">
+              <a href={entityConfig.siteUrl} class="hover:text-primary hover:underline">
+                www.billy4select.com
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="font-semibold text-text-muted">公開聯絡信箱</dt>
+            <dd class="mt-1 font-medium text-text">
+              <a href={`mailto:${entityConfig.email}`} class="hover:text-primary hover:underline">
+                {entityConfig.email}
+              </a>
+            </dd>
+          </div>
+        </dl>
       </div>
     </div>
   </section>
@@ -100,15 +140,15 @@ const books = [
       <div class="max-w-3xl">
         <div class="space-y-5 text-lg text-text-muted leading-relaxed">
           <p>
-            我是比利陳（Billy Chen），有十多年的行銷與產品相關工作經驗，待過傳統產業與 3C 等不同產業，做過的工作從商品企劃、開發與維運，到網站管理、廣告策略與投放、會員經營，也包含平面設計、社群媒體、內容製作，以及 App、YouTube 與 Podcast 的經營。
+            我是<strong>{entityConfig.canonicalBrand}</strong>（Billy Chen），擁有十多年的 PM、品牌、整合行銷與廣告投放實戰經驗。待過傳統產業與 3C 等不同產業，做過的工作從商品企劃、開發與維運，到網站管理、廣告策略與投放、會員經營，也包含平面設計、社群媒體、內容製作，以及 App、YouTube 與 Podcast 的經營。
           </p>
 
           <p>
-            因為我以匿名方式經營這個網站，不公開任職公司與合作客戶的名稱，所以這裡只談做過的工作類型，以及從中得到的判斷。
+            因為我以匿名方式經營這個網站，不公開任職公司與合作客戶的名稱，所以這裡只談做過的工作類型、可驗證的公開資料與親自實測的過程，以及從中得到的判斷。
           </p>
 
           <p>
-            2025 到 2026 年，我獨立出版了五本電子書，也持續研究 AI 如何改變工作、內容與商業。
+            2025 到 2026 年，我獨立出版了五本電子書，也持續研究 AI 如何改變工作流程、內容行銷與一人商業模式。
           </p>
         </div>
 
@@ -145,11 +185,11 @@ const books = [
     <section class="py-14 border-t border-border">
       <div class="max-w-6xl">
         <h2 class="text-2xl font-bold tracking-tight text-text md:text-3xl">
-          內容從哪裡來
+          內容從哪裡來與查核原則
         </h2>
 
         <p class="mt-4 max-w-3xl text-text-muted leading-relaxed">
-          每篇文章的觀點，主要來自下面三種來源。文章會標示發布日期；內容有實質修改時，也會標示最後更新日期。
+          每篇文章的觀點，主要來自下面三種來源。文章會標示發布日期；內容有實質修改時，也會標示最後更新日期，涉及工具規格或額度時盡量附上官方文件與實測條件。
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
@@ -163,11 +203,11 @@ const books = [
       </div>
     </section>
 
-    <!-- 四個主題 -->
+    <!-- 這裡談哪些事 -->
     <section class="py-14 border-t border-border">
       <div class="max-w-6xl">
         <h2 class="text-2xl font-bold tracking-tight text-text md:text-3xl">
-          這裡談哪些事
+          這裡長期深耕的主題
         </h2>
 
         <p class="mt-4 max-w-3xl text-text-muted leading-relaxed">
@@ -200,7 +240,7 @@ const books = [
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-          {books.map((book) => (
+          {entityConfig.books.map((book) => (
             <a
               href={book.href}
               target="_blank"
@@ -219,57 +259,41 @@ const books = [
       </div>
     </section>
 
-    <!-- 其他平台 -->
+    <!-- 官方外部平台 -->
     <section class="py-14 border-t border-border">
       <div class="max-w-6xl">
         <h2 class="text-2xl font-bold tracking-tight text-text md:text-3xl">
-          在其他平台找到我
+          官方外部平台與聯絡方式
         </h2>
 
-        <p class="mt-4 text-text-muted leading-relaxed">
-          除了這個網站，我也在不同平台分享內容。
+        <p class="mt-4 max-w-3xl text-text-muted leading-relaxed">
+          以下皆為「{entityConfig.canonicalBrand}」本人經營的官方帳號與電子報。合作或讀者來信請寄至
+          <a href={`mailto:${entityConfig.email}`} class="font-semibold text-primary hover:underline">
+            {entityConfig.email}
+          </a>
+          。
         </p>
 
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
-          <a
-            href="https://www.youtube.com/@billyselect4"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group rounded-xl border border-border p-5 hover:border-primary transition-colors"
-          >
-            <h3 class="font-semibold text-text group-hover:text-primary">
-              YouTube
-            </h3>
-            <p class="mt-2 text-sm text-text-muted">
-              AI、自媒體、行銷與商業相關的長篇內容。
-            </p>
-          </a>
-
-          <a
-            href="https://www.threads.net/@billyselect4"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group rounded-xl border border-border p-5 hover:border-primary transition-colors"
-          >
-            <h3 class="font-semibold text-text group-hover:text-primary">
-              Threads
-            </h3>
-            <p class="mt-2 text-sm text-text-muted">
-              日常觀察、想法與實際經驗。
-            </p>
-          </a>
-
-          <a
-            href="https://billy4select.substack.com/"
-            class="group rounded-xl border border-border p-5 hover:border-primary transition-colors"
-          >
-            <h3 class="font-semibold text-text group-hover:text-primary">
-              電子報
-            </h3>
-            <p class="mt-2 text-sm text-text-muted">
-              整理值得深入研究的議題與近期觀察。
-            </p>
-          </a>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+          {entityConfig.externalProfiles.map((profile) => (
+            <a
+              href={profile.href}
+              target="_blank"
+              rel="me noopener noreferrer"
+              class="group rounded-xl border border-border p-5 transition-colors hover:border-primary"
+            >
+              <div class="flex items-baseline justify-between gap-2">
+                <h3 class="font-semibold text-text group-hover:text-primary">
+                  {profile.name}
+                </h3>
+                <span class="text-xs text-text-muted group-hover:text-primary" aria-hidden="true">↗</span>
+              </div>
+              <p class="mt-1 font-mono text-xs text-primary/80">{profile.handle}</p>
+              <p class="mt-2 text-sm text-text-muted leading-relaxed">
+                {profile.description}
+              </p>
+            </a>
+          ))}
         </div>
       </div>
     </section>

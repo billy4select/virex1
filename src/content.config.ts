@@ -27,6 +27,14 @@ const blog = defineCollection({
       q: z.string(),
       a: z.string(),
     })).optional(),
+
+    // --- 信任證據欄位：實測條件與官方出處 ---
+    testedAt: z.string().optional(),
+    testNotes: z.string().optional(),
+    sources: z.array(z.object({
+      label: z.string(),
+      url: z.string().url(),
+    })).optional(),
   }),
 });
 

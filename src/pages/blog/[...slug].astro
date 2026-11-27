@@ -1,18 +1,17 @@
 ---
 import BlogLayout from '@/layouts/BlogLayout.astro';
-import { getCollection, render, type CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
 import { siteConfig } from '@/config';
 import { getNextPost, getPublishedPosts } from '@/lib/blog';
 import { getThemeByName } from '@/lib/themes';
-
-type BlogPost = CollectionEntry<'blog'>;
+import { getArticleTopicCluster } from '@/lib/topic-curation';
 
 export async function getStaticPaths() {
-  const posts = await getPublishedPosts();
-  return posts.map((post) => ({
-    params: { slug: post.id },
-    props: { post },
-  }));
+  const posts = await getPublishedPosts();
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
 }
 
 const { post } = Astro.props;
@@ -22,36 +21,40 @@ const seoTitle = `${post.data.title} - ${siteConfig.name}`;
 const displayTitle = post.data.title;
 const category = getThemeByName(post.data.category);
 
-// --- 相關閱讀：依共同標籤排序（固定結果，不亂數） ---
+// --- 相關閱讀與所屬主題支柱（固定結果，不亂數） ---
 const allPosts = await getPublishedPosts();
-
 const nextPost = getNextPost(post, allPosts);
+const topicCluster = getArticleTopicCluster(post.id, post.data.category, allPosts, nextPost?.id);
 ---
 
 <BlogLayout
-  title={seoTitle}
-  displayTitle={displayTitle}
-  description={post.data.description}
-  publishedDate={post.data.publishedDate}
+  title={seoTitle}
+  displayTitle={displayTitle}
+  description={post.data.description}
+  publishedDate={post.data.publishedDate}
   updatedDate={post.data.updatedDate}
-  author={post.data.author}
-  image={post.data.image ?? `/og/${post.id}.png`}
-  tags={post.data.tags}
-  content={post.body || ''}
-  /* --- 注入 SEO 結構化資料所需的 Props --- */
-  schemaType={post.data.schemaType}
-  steps={post.data.steps}
-  faq={post.data.faq}
-  headings={headings}
-  category={category}
-  nextPost={nextPost ? {
-    id: nextPost.id,
-    title: nextPost.data.title,
-    description: nextPost.data.description,
-    category: nextPost.data.category,
-  } : undefined}
+  author={post.data.author}
+  image={post.data.image ?? `/og/${post.id}.png`}
+  tags={post.data.tags}
+  content={post.body || ''}
+  schemaType={post.data.schemaType}
+  steps={post.data.steps}
+  faq={post.data.faq}
+  headings={headings}
+  category={category}
+  topicCluster={topicCluster}
+  testedAt={post.data.testedAt}
+  testNotes={post.data.testNotes}
+  sources={post.data.sources}
+  nextPost={nextPost
+    ? {
+        id: nextPost.id,
+        title: nextPost.data.title,
+        description: nextPost.data.description,
+        category: nextPost.data.category,
+      }
+    : undefined}
 >
-  {/* 文章主體內容 */}
-  <Content slot="content" />
-
+  {/* 文章主體內容 */}
+  <Content slot="content" />
 </BlogLayout>

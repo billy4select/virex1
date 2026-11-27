@@ -719,3 +719,114 @@ export const getTopicsByArea = (areaSlug: string): Topic[] =>
 
 export const topicUrl = (topic: Pick<Topic, 'area' | 'slug'>): string =>
   `/topics/${topic.area}/${topic.slug}/`;
+
+/** 9 大文章分類對應到 /topics/ 領域支柱頁 */
+const categoryToAreaSlug: Record<string, string> = {
+  'AI 工作流程與工具': 'ai-workflow',
+  'NotebookLM 實戰': 'notebooklm',
+  '商業模式與獲利': 'business-model',
+  '行銷策略與診斷': 'marketing',
+  '廣告與投放': 'marketing',
+  '內容與 SEO': 'marketing',
+  '自媒體與個人事業': 'personal-business',
+  '職涯與轉型': 'career',
+  '書籍導讀': 'book-guides',
+};
+
+export interface ArticleTopicCluster {
+  pillarName: string;
+  pillarHref: string;
+  pillarLead: string;
+  areaName: string;
+  areaHref: string;
+  relatedPosts: Array<{
+    id: string;
+    title: string;
+    summary: string;
+    href: string;
+  }>;
+}
+
+interface MinimalPost {
+  id: string;
+  data: {
+    title: string;
+    description: string;
+    category?: string;
+  };
+}
+
+/**
+ * 幫單篇文章找出所屬的 /topics/ 支柱頁與 2 篇同主題延伸文章。
+ * 1. 先比對精選主題（topics），連回 /topics/[area]/[topic]/ 與同主題鄰近 2 篇。
+ * 2. 若文章尚未編入子主題，自動退回所屬 /topics/[area]/ 領域支柱頁與同分類 2 篇。
+ */
+export function getArticleTopicCluster(
+  postId: string,
+  categoryName: string | undefined,
+  publishedPosts: MinimalPost[],
+  excludeId?: string
+): ArticleTopicCluster | undefined {
+  const postById = new Map(publishedPosts.map((post) => [post.id, post]));
+  const matchedTopic = topics.find((topic) => topic.articleIds.includes(postId));
+
+  if (matchedTopic) {
+    const area = getArea(matchedTopic.area);
+    const currentIndex = matchedTopic.articleIds.indexOf(postId);
+    const orderedCandidates = [
+      ...matchedTopic.articleIds.slice(currentIndex + 1),
+      ...matchedTopic.articleIds.slice(0, currentIndex),
+    ].filter((id) => id !== postId && postById.has(id));
+
+    // 盡量避開跟下方「下一篇」重複，若候選不足再補回
+    const preferred = orderedCandidates.filter((id) => id !== excludeId);
+    const pickedIds = (preferred.length >= 2 ? preferred : orderedCandidates).slice(0, 2);
+
+    const relatedPosts = pickedIds
+      .map((id) => {
+        const item = postById.get(id);
+        if (!item) return null;
+        return {
+          id: item.id,
+          title: item.data.title,
+          summary: articleOutcomes[item.id] || item.data.description,
+          href: `/blog/${item.id}/`,
+        };
+      })
+      .filter((item): item is NonNullable<typeof item> => Boolean(item));
+
+    return {
+      pillarName: matchedTopic.name,
+      pillarHref: topicUrl(matchedTopic),
+      pillarLead: matchedTopic.lead,
+      areaName: area?.name ?? '所有主題',
+      areaHref: area ? `/topics/${area.slug}/` : '/topics/',
+      relatedPosts,
+    };
+  }
+
+  const areaSlug = (categoryName && categoryToAreaSlug[categoryName]) || 'ai-workflow';
+  const area = getArea(areaSlug);
+  if (!area) return undefined;
+
+  const sameCategory = publishedPosts.filter(
+    (post) => post.id !== postId && post.data.category === categoryName
+  );
+  const preferred = sameCategory.filter((post) => post.id !== excludeId);
+  const picked = (preferred.length >= 2 ? preferred : sameCategory).slice(0, 2);
+
+  return {
+    pillarName: `${area.name}主題總覽`,
+    pillarHref: `/topics/${area.slug}/`,
+    pillarLead: area.lead,
+    areaName: area.name,
+    areaHref: `/topics/${area.slug}/`,
+    relatedPosts: picked.map((item) => ({
+      id: item.id,
+      title: item.data.title,
+      summary: articleOutcomes[item.id] || item.data.description,
+      href: `/blog/${item.id}/`,
+    })),
+  };
+}
+

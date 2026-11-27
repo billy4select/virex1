@@ -20,6 +20,13 @@ faq:
     a: 一般橫排印刷體的中文文件表現還不錯，而且免費又快。但如果是直排排版、字跡模糊或有很多複雜表格的檔案，轉完還是要抽查幾頁確認有沒有亂碼或漏字。
   - q: 超過一百頁的掃描 PDF 一定要整份做 OCR 嗎？
     a: 不需要。如果裡面只有某幾個章節會用到，先把需要的頁數拆出來單獨轉成文字檔或小份 PDF 再上傳，準確度更高也省時間。
+testedAt: 2026-11 實測於 NotebookLM 網頁版與 Google 雲端硬碟繁體中文介面
+testNotes: 以掃描圖片型中文 PDF 與混合型報表 PDF 實測反白選取、Google 文件自動 OCR 轉換與拆分頁數後匯入 NotebookLM 的讀取結果。
+sources:
+  - label: Google Drive 官方說明：將 PDF 和相片檔案轉換為文字（OCR）
+    url: https://support.google.com/drive/answer/176692?hl=zh-Hant
+  - label: NotebookLM 官方說明中心（支援來源格式與限制）
+    url: https://support.google.com/notebooklm/?hl=zh-Hant
 ---
 
 把 PDF 丟進 NotebookLM，結果它回你找不到資料，或者回答得牛頭不對馬嘴。
