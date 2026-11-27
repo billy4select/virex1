@@ -132,14 +132,12 @@ const schema = {
   />
 
   <section class="page-band">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="max-w-4xl">
-        <p class="text-sm font-semibold tracking-[0.15em] text-primary">知識主題指南</p>
-        <h1 class="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-text md:text-4xl lg:text-5xl">
-          {heroHeading}
-        </h1>
-        <p class="mt-4 max-w-3xl text-base leading-relaxed text-text-muted md:text-lg">{area.lead}</p>
-      </div>
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <p class="text-sm font-semibold tracking-[0.15em] text-primary">知識主題指南</p>
+      <h1 class="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-text md:text-4xl lg:text-5xl">
+        {heroHeading}
+      </h1>
+      <p class="mt-4 max-w-3xl text-base leading-relaxed text-text-muted md:text-lg">{area.lead}</p>
     </div>
   </section>
 
@@ -153,33 +151,31 @@ const schema = {
   {slug === 'personal-business' && <PersonalBusinessHubGuide />}
 
   <section class="bg-background py-12 md:py-16" aria-labelledby="area-topics-title">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="max-w-4xl">
-        <h2 id="area-topics-title" class="text-xl font-bold tracking-tight text-text md:text-2xl">
-          {hasCustomHub ? '或依情境直接切入子主題路線' : '你現在遇到的是哪一種？'}
-        </h2>
-        <div class="mt-6 grid gap-4 sm:grid-cols-2">
-          {
-            areaTopics.map((topic) => (
-              <TopicCard
-                href={topicUrl(topic)}
-                name={topic.name}
-                lead={topic.lead}
-                count={countOf(topic.articleIds)}
-              />
-            ))
-          }
-        </div>
-        <p class="mt-10 text-sm text-text-muted">
-          想自己逛？
-          <a
-            href="/blog/"
-            class="font-semibold text-primary underline decoration-primary/30 underline-offset-4 hover:text-primary-dark"
-          >
-            到文章列表自己逛
-          </a>
-        </p>
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <h2 id="area-topics-title" class="text-xl font-bold tracking-tight text-text md:text-2xl">
+        {hasCustomHub ? '或依情境直接切入子主題路線' : '你現在遇到的是哪一種？'}
+      </h2>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        {
+          areaTopics.map((topic) => (
+            <TopicCard
+              href={topicUrl(topic)}
+              name={topic.name}
+              lead={topic.lead}
+              count={countOf(topic.articleIds)}
+            />
+          ))
+        }
       </div>
+      <p class="mt-10 text-sm text-text-muted">
+        想自己逛？
+        <a
+          href="/blog/"
+          class="font-semibold text-primary underline decoration-primary/30 underline-offset-4 hover:text-primary-dark"
+        >
+          到文章列表自己逛
+        </a>
+      </p>
     </div>
   </section>
 </MarketingLayout>
