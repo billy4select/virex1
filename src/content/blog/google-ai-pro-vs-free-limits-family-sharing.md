@@ -91,7 +91,7 @@ Google 已將旗下個人 AI 訂閱整併為 **Google AI** 系列方案。先看
 | **核心優勢** | Google 生態系整合、1M 長脈絡、Deep Research、NotebookLM 高額度 | 功能最均衡、GPT-6 進階推理、深度研究、內建 Codex 與無廣告體驗 | 長文中文自然度與邏輯細膩度佳、內建 Claude Code、Artifacts 與文件協作強 |
 | **附加周邊價值** | **5 TB 雲端空間**、Gmail／Docs 側邊欄、Flow 影音點數、YouTube Premium Lite（限本人） | 完整影像生成與即時語音互動生態 | 無生圖或影音功能，專注文字、檔案建立與程式開發 |
 
-**一句話選型結論**：
+如果讓我依預算跟工作習慣來挑，其實很好分：
 
 - **預算只想壓在台幣 300 元以內**：想試水溫選 **Google AI Plus（NT$ 165）** 門檻最低；習慣 ChatGPT 生態可看 **ChatGPT Go**。
 - **主力預算在台幣 650 元上下**：
