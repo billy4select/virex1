@@ -8,6 +8,7 @@ tags:
   - 學習方法
   - 知識管理
 category: 職涯與轉型
+image: /images/blog/learn-new-field-with-ai-30-days.webp
 featured: false
 boost: false
 draft: false
@@ -26,6 +27,8 @@ faq:
 三十天不會讓人變成專家，但可以安排一個有範圍的小目標：理解基本概念、完成一項練習、做出可供別人檢查的成果，並知道接下來還缺什麼。
 
 ## 開始前先定義成果
+
+![用 AI 在 30 天學會新領域的四週實作路徑圖](/images/blog/learn-30-days-roadmap.svg)
 
 不要只寫「學會數據分析」或「了解產品管理」。改成一個可以檢查的交付，例如整理一份產業分析、完成一個小型儀表板、提出一份產品改善建議，或做一次內部分享。
 

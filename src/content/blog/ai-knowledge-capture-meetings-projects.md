@@ -10,6 +10,7 @@ tags:
   - 專案管理
   - 知識沉澱
 category: AI 工作流程與工具
+image: /images/blog/ai-knowledge-capture-meetings-projects.webp
 featured: false
 boost: false
 draft: false
@@ -37,6 +38,8 @@ sources:
 因為「把檔案存起來」跟「沉澱成下次能直接用的知識」，中間還少了一道篩選跟整理的工序。
 
 ## 一筆真的有用的知識，至少要留這四件事
+
+![可複用專案與會議知識必留四欄位圖：背景情境、決策與理由、踩坑教訓、下次檢查點](/images/blog/ai-knowledge-4-fields.svg)
 
 要讓三個月後的自己看得懂、用得上，不需要留兩萬字逐字稿。每個專案或重要會議結束後，只要留下四個欄位就夠了：
 

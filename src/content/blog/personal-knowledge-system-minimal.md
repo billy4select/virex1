@@ -8,6 +8,7 @@ tags:
   - 筆記方法
   - 學習系統
 category: 職涯與轉型
+image: /images/blog/personal-knowledge-system-minimal.webp
 featured: false
 boost: false
 draft: false
@@ -26,6 +27,8 @@ faq:
 問題通常不是工具不夠好，而是系統沒有連到輸出。知識只有被使用，才會變成你的。
 
 ## 三層就夠：收集、理解、輸出
+
+![極簡個人知識管理系統三層架構圖：收集、理解與輸出](/images/blog/pkm-3-layers.svg)
 
 ### 第一層：收集，只收「現在或確定會用」的資料
 

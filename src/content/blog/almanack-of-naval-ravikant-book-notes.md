@@ -10,6 +10,7 @@ tags:
   - 槓桿
   - 個人品牌
 category: 書籍導讀
+image: /images/blog/almanack-of-naval-ravikant-book-notes.webp
 featured: false
 boost: false
 draft: false
@@ -76,6 +77,8 @@ faq:
 不過光有專屬知識還不夠。如果你有一身本事，但每次還是只能一對一慢慢做，收入遲早會撞上時間天花板——這時候才輪到槓桿上場。
 
 ## 三種槓桿裡，一般人真正用得上的是哪一種
+
+![納瓦爾寶典三種槓桿比較圖：人力、資本與無需許可的程式碼和媒體槓桿](/images/blog/naval-3-leverages.svg)
 
 如果說專屬知識決定你能提供什麼價值，槓桿（Leverage）就是把這些價值放大的方法。納瓦爾把創造財富的槓桿大致分成三種：
 

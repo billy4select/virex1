@@ -8,6 +8,7 @@ author: 比利陳 Billy Chen
 tags:
   - AI工作流程
 category: AI 工作流程與工具
+image: /images/blog/claude-objection-simulation.webp
 featured: false
 boost: false
 draft: false
@@ -46,6 +47,8 @@ sources:
 > 請你扮演這兩位決策者，讀完我的提案後，直接列出最有可能打槍我的 5 個尖銳問題，不要客氣，也不要稱讚我寫得好。
 
 ## 第二步：把問出來的問題分成三種處理
+
+![提案前用 Claude 模擬反對意見的三種問題分類處理圖](/images/blog/claude-objection-3-buckets.svg)
 
 它吐出來的問題通常會很刺耳，這正是我們要的。把這些問題分成三類：
 

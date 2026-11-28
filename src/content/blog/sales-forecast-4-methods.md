@@ -9,6 +9,7 @@ tags:
   - 行銷指標
   - 商業分析
 category: 商業模式與獲利
+image: /images/blog/sales-forecast-4-methods.webp
 featured: false
 boost: false
 draft: false
@@ -30,6 +31,8 @@ faq:
 預估的用途，是讓團隊知道需要哪些條件、可能遇到什麼風險，以及什麼時候應該調整資源。不同資料成熟度，適合不同估算方式。
 
 ## 方法一：由上而下估算市場空間
+
+![業績預估四種方法與實務對撞驗證圖](/images/blog/sales-forecast-4-methods.svg)
 
 從目標客群、可觸及比例、購買率與客單價推估可能規模：
 

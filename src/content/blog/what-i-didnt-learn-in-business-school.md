@@ -10,6 +10,7 @@ tags:
   - 行銷思維
   - 策略分析
 category: 書籍導讀
+image: /images/blog/what-i-didnt-learn-in-business-school.webp
 featured: false
 boost: false
 draft: false
@@ -39,6 +40,8 @@ faq:
 這本書好看的地方，在於它不直接否定商學院理論，而是拿真實商場裡的「人、組織與動態競爭」，一層一層檢驗那些漂亮框架在現場為什麼常失靈。下面我挑出最值得行銷人與 PM 反覆咀嚼的幾個現場真相。
 
 ## 為什麼商學院教你分析問題，真實世界卻還要處理人的問題？
+
+![不只是件白襯衫：商學院分析框架與真實企業決策現場落差對照圖](/images/blog/business-school-vs-reality.svg)
 
 故事一開始，賈斯汀接到顧問任務，要協助一家名為賈氏化學的公司，評估新化學技術「百帝威」（Plastiwear）的商業發展機會。這項技術可以用在不同產品上，其中一個選項就是做白襯衫。
 

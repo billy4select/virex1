@@ -8,6 +8,7 @@ tags:
   - 企業分析
   - 商業思考
 category: 商業模式與獲利
+image: /images/blog/analyze-company-strategy-public-info.webp
 featured: false
 boost: false
 draft: false
@@ -26,6 +27,8 @@ faq:
 如果要分析一家公司的策略，可以先觀察它把資源放在哪裡，以及它願意放棄什麼。公開資訊能提供線索，但通常無法直接告訴你管理團隊的完整意圖，因此分析時要把事實與推論分開。
 
 ## 先從五個面向找線索
+
+![用公開資訊拆解一家公司商業策略的五個線索圖](/images/blog/company-strategy-5-clues.svg)
 
 ### 1. 收入組合
 

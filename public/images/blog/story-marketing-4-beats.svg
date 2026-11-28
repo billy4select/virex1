@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="故事行銷不需要寫成八點檔：有說服力的四段敘事骨架">
+  <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
+  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
+  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">故事行銷不需要寫成八點檔：有說服力的四段敘事骨架</text>
+  
+      <rect x="36" y="92" width="198" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+      <text x="52" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">01 場景</text>
+      <text x="52" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">一個具體畫面</text>
+      <text x="52" y="190" class="font" fill="#52525B" font-size="12.5">時間、地點、當下真實的卡關感</text>
+    
+      <rect x="266" y="92" width="198" height="150" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+      <text x="282" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">02 轉折</text>
+      <text x="282" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">原本做法失靈</text>
+      <text x="282" y="190" class="font" fill="#52525B" font-size="12.5">照常理硬撐卻行不通的那一刻</text>
+    
+      <rect x="496" y="92" width="198" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+      <text x="512" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">03 代價</text>
+      <text x="512" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">做出取捨與改變</text>
+      <text x="512" y="190" class="font" fill="#52525B" font-size="12.5">承擔了什麼成本、換了什麼做法</text>
+    
+      <rect x="726" y="92" width="198" height="150" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
+      <text x="742" y="124" class="font" fill="#FBBF24" font-size="12" font-weight="800">04 餘韻</text>
+      <text x="742" y="156" class="font" fill="#FFFFFF" font-size="16" font-weight="800">留下一個真問題</text>
+      <text x="742" y="190" class="font" fill="#D4D4D8" font-size="12.5">讓讀者自己對號入座，而不是硬說教</text>
+    
+</svg>

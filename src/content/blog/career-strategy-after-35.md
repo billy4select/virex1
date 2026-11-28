@@ -10,6 +10,7 @@ tags:
   - 中年轉職
   - 經驗價值
 category: 職涯與轉型
+image: /images/blog/career-strategy-after-35.webp
 featured: false
 boost: false
 draft: false
@@ -30,6 +31,8 @@ faq:
 這個問題值得重新整理。因為公司裡的職位、團隊、預算與資源，並不會全部跟著一個人離開。
 
 ## 先分清楚經歷與能力
+
+![35 歲後職涯策略三步驟：拆解經歷、翻譯成可遷移能力與建立外部選擇權](/images/blog/career-35-reframe.svg)
 
 履歷常用職稱和工作內容描述經歷，例如負責行銷、管理團隊、規劃專案。這些資訊能讓人知道你待過什麼位置，卻不一定能看出你能解決什麼問題。
 

@@ -10,6 +10,7 @@ tags:
   - AI時代
   - 決策方法
 category: 職涯與轉型
+image: /images/blog/judgment-in-ai-era.webp
 featured: false
 boost: false
 draft: false
@@ -30,6 +31,8 @@ AI 讓取得答案的成本降低很多。你可以請它整理資料、比較�
 這些都需要判斷。
 
 ## 第一層：判斷問題是否問對
+
+![AI 時代人類判斷力三層次圖：問題是否問對、證據是否足夠、商業後果評估](/images/blog/judgment-3-layers.svg)
 
 同一件事，問題怎麼定義，會影響後面得到的答案。
 

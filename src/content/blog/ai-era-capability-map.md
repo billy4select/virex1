@@ -10,6 +10,7 @@ tags:
   - 學習方法
   - 工作方法
 category: 職涯與轉型
+image: /images/blog/ai-era-capability-map.webp
 featured: false
 boost: false
 draft: false
@@ -28,6 +29,8 @@ faq:
 工具當然要學，但如果只記得按鈕在哪裡，能力很容易跟著產品改版一起失效。可以把 AI 時代的能力分成三層來看。
 
 ## 一、問題理解與判斷
+
+![AI 時代職場能力地圖三層結構圖：問題判斷、工具驗證與學習整合協作](/images/blog/ai-era-3-layers.svg)
 
 這一層決定你能不能找到值得解決的問題。
 

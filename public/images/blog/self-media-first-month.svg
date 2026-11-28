@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="自媒體第一個月別空想定位：照這 4 週邊寫邊收市場回饋">
+  <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
+  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
+  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">自媒體第一個月別空想定位：照這 4 週邊寫邊收市場回饋</text>
+  
+      <rect x="36" y="92" width="198" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+      <text x="52" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">開跑前</text>
+      <text x="52" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">先定三個起點</text>
+      <text x="52" y="190" class="font" fill="#52525B" font-size="12.5">寫給誰、解什麼痛、你能穩定的更新頻率</text>
+    
+      <rect x="266" y="92" width="198" height="150" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+      <text x="282" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">第 1 週</text>
+      <text x="282" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">列 10 個測試題</text>
+      <text x="282" y="190" class="font" fill="#52525B" font-size="12.5">從真實踩雷與常被問的問題切入，先發出去</text>
+    
+      <rect x="496" y="92" width="198" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+      <text x="512" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">第 2–3 週</text>
+      <text x="512" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">記錄真實互動</text>
+      <text x="512" y="190" class="font" fill="#52525B" font-size="12.5">看哪幾篇有人收藏、留言或私訊追問細節</text>
+    
+      <rect x="726" y="92" width="198" height="150" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
+      <text x="742" y="124" class="font" fill="#FBBF24" font-size="12" font-weight="800">第 4 週</text>
+      <text x="742" y="156" class="font" fill="#FFFFFF" font-size="16" font-weight="800">只修正一件事</text>
+      <text x="742" y="190" class="font" fill="#D4D4D8" font-size="12.5">放大有共鳴的題型，定位會在實作中自然長清</text>
+    
+</svg>
