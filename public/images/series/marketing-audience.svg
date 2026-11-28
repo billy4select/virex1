@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="第 03 章核心：拆掉年齡標籤，用「痛點時刻」定義受眾">
+  <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
+  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
+  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">第 03 章核心：拆掉年齡標籤，用「痛點時刻」定義受眾</text>
+  
+      <rect x="36" y="92" width="198" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+      <text x="52" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">要素 1</text>
+      <text x="52" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">觸發情境</text>
+      <text x="52" y="190" class="font" fill="#52525B" font-size="12.5">哪個瞬間讓他非解決這件事不可？</text>
+    
+      <rect x="266" y="92" width="198" height="150" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+      <text x="282" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">要素 2</text>
+      <text x="282" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">核心任務</text>
+      <text x="282" y="190" class="font" fill="#52525B" font-size="12.5">他買單究竟想把哪件麻煩搞定？</text>
+    
+      <rect x="496" y="92" width="198" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+      <text x="512" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">要素 3</text>
+      <text x="512" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">現有替代</text>
+      <text x="512" y="190" class="font" fill="#52525B" font-size="12.5">不買你時，他目前用什麼硬撐？</text>
+    
+      <rect x="726" y="92" width="198" height="150" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
+      <text x="742" y="124" class="font" fill="#FBBF24" font-size="12" font-weight="800">要素 4</text>
+      <text x="742" y="156" class="font" fill="#FFFFFF" font-size="16" font-weight="800">下單顧慮</text>
+      <text x="742" y="190" class="font" fill="#D4D4D8" font-size="12.5">最後卡住他不掏錢的理由是什麼？</text>
+    
+</svg>

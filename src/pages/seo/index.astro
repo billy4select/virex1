@@ -28,11 +28,12 @@ const collectionSchema = {
 <MarketingLayout
   title={`SEO 教學（2027）：從零開始的關鍵字、文章結構與站內優化 7 章 - ${siteConfig.name}`}
   description="七章從零開始的 SEO 教學：搜尋機制、搜尋意圖、關鍵字、文章結構、內部連結、技術檢查與 30 天計畫。照順序讀完，能自己跑一輪。"
+  image="/images/series/seo.webp"
 >
   <Breadcrumbs items={[{ label: '首頁', href: '/' }, { label: '教學', href: '/series/' }, { label: 'SEO 教學', href: '/seo/' }]} />
 
   <section class="page-band">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
       <p class="text-sm font-semibold tracking-[0.15em] text-primary">SEO 教學</p>
       <h1 class="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-text md:text-4xl lg:text-5xl">
         從被找到開始：七章學會 SEO
@@ -41,6 +42,17 @@ const collectionSchema = {
         不從工具開始，從「Google 怎麼處理一個頁面」開始。依序是機制、意圖、關鍵字、結構、內鏈、技術，最後給一份 30 天可執行的計畫。
       </p>
       <p class="mt-4 text-sm text-text-muted">7 章 · 每章 5–8 分鐘 · 附深入閱讀</p>
+      <div class="mt-8 overflow-hidden rounded-2xl border border-border bg-surface">
+        <img
+          src="/images/series/seo.webp"
+          alt="SEO 從零開始：七章學會 SEO 專題封面"
+          width="1200"
+          height="675"
+          loading="eager"
+          decoding="async"
+          class="aspect-[16/9] w-full object-cover"
+        />
+      </div>
     </div>
   </section>
 

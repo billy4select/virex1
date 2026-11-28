@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="第 06 章核心：看懂廣告數字的底線，別被漂亮流量騙過">
+  <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style>
+  <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#18181B"/></marker></defs>
+  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
+  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">第 06 章核心：看懂廣告數字的底線，別被漂亮流量騙過</text>
+  
+      <rect x="36" y="92" width="264" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+      <text x="56" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">先算底線</text>
+      <text x="56" y="156" class="font" fill="#18181B" font-size="16.5" font-weight="800">損益平衡 ROAS</text>
+      <text x="56" y="190" class="font" fill="#52525B" font-size="12.5">1 ÷ 毛利率，先算清打平線再談擴大預算</text>
+      <line x1="300" y1="167" x2="338" y2="167" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+    
+      <rect x="348" y="92" width="264" height="150" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+      <text x="368" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">看懂漏斗</text>
+      <text x="368" y="156" class="font" fill="#18181B" font-size="16.5" font-weight="800">CVR → 跳出 → CTR</text>
+      <text x="368" y="190" class="font" fill="#52525B" font-size="12.5">從最靠近成交的轉換率倒著排查卡點</text>
+      <line x1="612" y1="167" x2="650" y2="167" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+    
+      <rect x="660" y="92" width="264" height="150" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
+      <text x="680" y="124" class="font" fill="#FBBF24" font-size="12" font-weight="800">對齊帳本</text>
+      <text x="680" y="156" class="font" fill="#FFFFFF" font-size="16.5" font-weight="800">ROAS ≠ ROI</text>
+      <text x="680" y="190" class="font" fill="#D4D4D8" font-size="12.5">扣完退貨、運費與人事才叫公司真的賺錢</text>
+      
+    
+</svg>
