@@ -126,6 +126,11 @@ export const articleOutcomes: Record<string, string> = {
   'gsc-crawled-not-indexed-fix': '拆解四種 GSC 未收錄狀態，用五步排查順序解決孤島頁、重複內容與收錄卡關。',
   'ga4-bounce-rate-key-events-guide': '看懂 GA4 跳出率與參與度算法、重要事件標記，每週只看四張核心報表。',
   'substack-taiwan-newsletter-guide': 'Substack 免費方案優勢、台灣 Stripe 收款限制拆分解法，以及從社群導流實戰。',
+  'meta-ads-troubleshooting-guide': 'Meta 廣告學習受限、CPM 飆高、像素與 CAPI 設定及帳戶受限的四段排錯順序。',
+  'google-ads-vs-meta-ads-budget': '依搜尋意圖、產業特性與月預算大小，判斷先投 Google 還是 Meta 廣告。',
+  'threads-reach-drop-algorithm-fix': '判斷 Threads 觸及下滑是限流還是內容疲乏，搭配四種拉回互動率的串文改寫法。',
+  'geo-ai-overview-seo-writing-guide': '對照 Google 官方指南，用四種結構化寫法與舊文翻修清單爭取 AI Overview 引用。',
+  'brand-positioning-persona-usp-guide': '從情境版人物誌、決策型競品分析到收斂出可驗證的產品賣點（USP）與定位公式。',
 };
 
 export const topicAreas: TopicArea[] = [
@@ -388,6 +393,7 @@ export const topics: Topic[] = [
     intro:
       '從品類與競爭看品牌定位，再到個人品牌如何靠信任而不是觸及累積，以及內容與通路的分工。',
     articleIds: [
+      'brand-positioning-persona-usp-guide',
       'audience-is-not-a-label',
       'personal-brand-trust-not-reach',
       'content-channel-trust-growth',
@@ -420,6 +426,7 @@ export const topics: Topic[] = [
       'seo-self-study-guide',
       'search-intent-guide',
       'gsc-crawled-not-indexed-fix',
+      'geo-ai-overview-seo-writing-guide',
       'seo-writing-why-no-traffic',
       'website-speed-seo-checks',
     ],
@@ -449,6 +456,7 @@ export const topics: Topic[] = [
       '從 CPC、CTR、ROAS、ROI 公式與毛利損益平衡點，到「多少算好」與受眾素材排查，最後把數字寫成一份能說服老闆的報告。',
     articleIds: [
       'marketing-calculator',
+      'google-ads-vs-meta-ads-budget',
       'ctr-benchmarks-what-counts-as-good',
       'ad-performance-reporting-stakeholders',
       'sales-forecast-4-methods',
@@ -463,12 +471,12 @@ export const topics: Topic[] = [
       '曝光、點擊、轉換三段診斷，加上 CTR 與受眾素材排查、素材疲勞、新客成本與預算比例，找出成本上升的真正原因。',
     articleIds: [
       'ads-not-working-diagnosis',
+      'meta-ads-troubleshooting-guide',
       'ctr-benchmarks-what-counts-as-good',
       'ad-fatigue-frequency-creative-rotation',
       'cac-rising-5-checks',
       'facebook-ads-cost-rising',
       'ad-budget-new-vs-returning',
-      'influencer-marketing-next-step',
     ],
   },
 
@@ -660,6 +668,7 @@ export const topics: Topic[] = [
       '完整的 Threads 140 天實戰、帳號語氣、貼文曝光、與 IG 分工及商業帳號經營，我都整理在《Threads 經營教學》專題裡；下方可以搭配個人品牌與內容累積的延伸文章一起看。',
     articleIds: [
       'self-media-first-month-positioning-or-posting',
+      'threads-reach-drop-algorithm-fix',
       'personal-brand-trust-not-reach',
       'substack-taiwan-newsletter-guide',
       'content-channel-trust-growth',
