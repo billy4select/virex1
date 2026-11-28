@@ -20,6 +20,7 @@ interface FeaturedProject {
   meta: string;
   ctaLabel: string;
   href: string;
+  image: string;
   contextLead: string;
   contextLabel: string;
   contextHref: string;
@@ -35,6 +36,7 @@ const featuredProjects: FeaturedProject[] = [
     meta: '6 個主題 · 6 條流程 · 18 張任務卡',
     ctaLabel: '進入打造 AI 工作團隊專題頁',
     href: '/ai-work-team/',
+    image: '/images/series/ai-work-team.webp',
     contextLead: '如果你想先看背後的工作流拆解邏輯，可以搭配',
     contextLabel: 'AI 工作流程與工具',
     contextHref: '/topics/ai-workflow/',
@@ -48,6 +50,7 @@ const featuredProjects: FeaturedProject[] = [
     meta: '8 個主題 · 不談爆文公式',
     ctaLabel: '進入 Threads 經營實戰專題頁',
     href: '/threads/',
+    image: '/images/series/threads.webp',
     contextLead: '做社群之餘想把流量接回個人產品，可以接著逛',
     contextLabel: '自媒體與個人事業',
     contextHref: '/topics/personal-business/',
@@ -61,6 +64,7 @@ const featuredProjects: FeaturedProject[] = [
     meta: '免安裝 · 免金鑰 · 貼上逐字稿即用',
     ctaLabel: '打開 NARRATIVE ENGINE 動態簡報工作台',
     href: '/narrative-engine/',
+    image: '/images/series/narrative-engine.webp',
     contextLead: '想先學會怎麼把長文章濃縮成適合口播的賣點，可以先看',
     contextLabel: '文案與賣點提煉專區',
     contextHref: '/topics/marketing/copywriting/',
@@ -75,6 +79,7 @@ const chapterCourses = [
     description:
       '從需求、通路、訊息三個角切入，走完四段漏斗診斷、受眾定位、廣告數字判讀與 90 天驗證計畫。',
     href: '/marketing/',
+    image: '/images/series/marketing.webp',
     ctaLabel: '進入行銷教學',
     contextLabel: '行銷策略與診斷主題頁',
     contextHref: '/topics/marketing/',
@@ -86,6 +91,7 @@ const chapterCourses = [
     description:
       '不從工具清單開始，直接從 Google 爬取與搜尋意圖切入，走到 On-Page、內鏈架構與 30 天執行計畫。',
     href: '/seo/',
+    image: '/images/series/seo.webp',
     ctaLabel: '進入 SEO 教學',
     contextLabel: '內容與 SEO 從零開始專區',
     contextHref: '/topics/marketing/seo-from-zero/',
@@ -161,7 +167,19 @@ const collectionSchema = {
       <div class="mt-8 space-y-6">
         {
           featuredProjects.map((project) => (
-            <article class="rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-primary/40 md:p-8">
+            <article class="overflow-hidden rounded-2xl border border-border bg-surface transition-colors hover:border-primary/40">
+              <a href={project.href} class="block border-b border-border bg-background">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  width="1200"
+                  height="675"
+                  loading="lazy"
+                  decoding="async"
+                  class="aspect-[16/9] w-full object-cover"
+                />
+              </a>
+              <div class="p-6 md:p-8">
               <div class="flex flex-wrap items-center justify-between gap-3">
                 <span class="font-mono text-xs font-bold tracking-[0.14em] text-primary">
                   {project.no}
@@ -204,6 +222,7 @@ const collectionSchema = {
                 </a>
                 一起看。
               </p>
+              </div>
             </article>
           ))
         }
@@ -226,7 +245,19 @@ const collectionSchema = {
         <div class="mt-6 grid gap-5 md:grid-cols-2">
           {
             chapterCourses.map((course) => (
-              <article class="flex flex-col rounded-2xl border border-border bg-surface/60 p-6 transition-colors hover:border-primary/40">
+              <article class="flex flex-col overflow-hidden rounded-2xl border border-border bg-surface/60 transition-colors hover:border-primary/40">
+                <a href={course.href} class="block border-b border-border bg-background">
+                  <img
+                    src={course.image}
+                    alt={course.title}
+                    width="1200"
+                    height="675"
+                    loading="lazy"
+                    decoding="async"
+                    class="aspect-[16/9] w-full object-cover"
+                  />
+                </a>
+                <div class="flex flex-1 flex-col p-6">
                 <div class="flex items-center justify-between gap-2">
                   <span class="font-mono text-xs font-bold tracking-wider text-primary">{course.no}</span>
                   <span class="text-xs font-medium text-text-muted">{course.label}</span>
@@ -250,6 +281,7 @@ const collectionSchema = {
                   >
                     延伸：{course.contextLabel}
                   </a>
+                </div>
                 </div>
               </article>
             ))

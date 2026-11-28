@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="第 08 章核心：90 天行動節奏，從診斷走到第一個有效實驗">
+  <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style>
+  <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#18181B"/></marker></defs>
+  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
+  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">第 08 章核心：90 天行動節奏，從診斷走到第一個有效實驗</text>
+  
+      <rect x="36" y="92" width="264" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+      <text x="56" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">第 1–30 天</text>
+      <text x="56" y="156" class="font" fill="#18181B" font-size="16.5" font-weight="800">診斷與補基礎</text>
+      <text x="56" y="190" class="font" fill="#52525B" font-size="12.5">裝好 GA4／GSC、算清毛利底線與受眾四格</text>
+      <line x1="300" y1="167" x2="338" y2="167" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+    
+      <rect x="348" y="92" width="264" height="150" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+      <text x="368" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">第 31–60 天</text>
+      <text x="368" y="156" class="font" fill="#18181B" font-size="16.5" font-weight="800">修漏斗最大洞</text>
+      <text x="368" y="190" class="font" fill="#52525B" font-size="12.5">先修跳出率最高的到達頁與核心賣點文案</text>
+      <line x1="612" y1="167" x2="650" y2="167" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+    
+      <rect x="660" y="92" width="264" height="150" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
+      <text x="680" y="124" class="font" fill="#FBBF24" font-size="12" font-weight="800">第 61–90 天</text>
+      <text x="680" y="156" class="font" fill="#FFFFFF" font-size="16.5" font-weight="800">跑小額驗證循環</text>
+      <text x="680" y="190" class="font" fill="#D4D4D8" font-size="12.5">每兩週測一組新切角，放大真正有毛利的通路</text>
+      
+    
+</svg>
