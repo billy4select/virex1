@@ -11,6 +11,7 @@ tags:
   - 網站收錄
   - 技術檢查
 category: 內容與 SEO
+image: /images/blog/gsc-crawled-not-indexed-fix.webp
 featured: false
 boost: false
 draft: false
