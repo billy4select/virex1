@@ -1,7 +1,7 @@
 ---
-title: "NotebookLM (Gemini Notebook) 教學 2026：功能實測、提問指令與知識庫指南"
+title: "NotebookLM (Gemini Notebook) 教學 2027：功能實測、提問指令與知識庫指南"
 description: >-
-  NotebookLM 怎麼用最有效？這篇完整實戰指南涵蓋 2026 功能速查、上傳前四項準備、五種高精準提問指令、Audio Overview 語音摘要實測與兩大限制解法，幫你把難啃的資料變成可用知識庫。
+  NotebookLM 怎麼用最有效？這篇完整實戰指南涵蓋 2027 功能速查、上傳前四項準備、五種高精準提問指令、Audio Overview 語音摘要實測與兩大限制解法，幫你把難啃的資料變成可用知識庫。
 publishedDate: 2026-04-23T00:00:00Z
 updatedDate: 2026-11-27T00:00:00+08:00
 author: 比利陳 Billy Chen
@@ -133,11 +133,11 @@ Audio Overview 可以把枯燥的 PDF 變成雙人對談 Podcast，但老實講�
 
 我自己現在的固定習慣是：**NotebookLM 負責把事實、證據、正反論點跟出處挖乾淨，絕不叫它當寫手**。關於研究腦與寫作腦怎麼接力最順手，可以看 [NotebookLM vs Claude 實戰分工](/blog/notebooklm-vs-claude-internal-docs/)；如果在評估資料該長期存哪裡，可以對照 [NotebookLM vs Notion AI 知識庫怎麼選](/blog/notebooklm-vs-notion-ai-knowledge-base/)。
 
-## 免費版上限、匯出筆記與 Gemini 串接用法（2026）
+## 免費版上限、匯出筆記與 Gemini 串接用法（2027）
 
 不少人把知識庫建起來後，接下來會問三件事：**免費版夠不夠用？整理完的筆記怎麼匯出？以及跟 Gemini 怎麼串接？**
 
-| 常見操作問題 | 2026 實測重點與建議做法 |
+| 常見操作問題 | 2027 實測重點與建議做法 |
 | :--- | :--- |
 | **免費版上限與付費版差異** | 免費版每本最多 **50 個來源**（單檔上限 200MB 或 50 萬字），一般職場研究已很充裕；升級 Google AI Pro 後單本可擴充至 **300 個來源**並放寬每日語音摘要配額（完整規格見 [NotebookLM 排錯與上限指南](/blog/notebooklm-problems-solutions/)） |
 | **整理完的筆記怎麼匯出** | 在筆記本右側「工作室／筆記」區將滿意的回答點選「儲存至筆記」，再直接複製或匯出到 **Google 文件**，就能接著排版成簡報、週報或團隊 SOP |

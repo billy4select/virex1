@@ -140,6 +140,5 @@ sources:
 ## 延伸閱讀
 
 - [SEO 文章沒流量怎麼辦？有寫卻沒排名，先檢查這 5 個環節](/blog/seo-writing-why-no-traffic/)
-- [免費 SEO 工具推薦：GSC、GA4 先用熟就夠，新手怎麼選（2026）](/blog/free-seo-tools/)
-- [AI 搜尋時代的內容寫法（GEO）：如何設計結構與摘要，讓網站被 AI Overview 引用](/blog/geo-ai-overview-seo-writing-guide/)
-- 想把整套網站搜尋基礎一次打通，推薦照順序讀 [SEO 教學（2026）：從零開始的 7 章實戰](/seo/)，或回到 [行銷策略與診斷實戰總覽](/topics/marketing/)。
+- [免費 SEO 工具推薦：GSC、GA4 先用熟就夠，新手怎麼選（2027）](/blog/free-seo-tools/)
+- 想把整套網站搜尋基礎一次打通，推薦照順序讀 [SEO 教學（2027）：從零開始的 7 章實戰](/seo/)，或回到 [行銷策略與診斷實戰總覽](/topics/marketing/)。

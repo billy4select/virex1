@@ -1,5 +1,5 @@
 ---
-title: "NotebookLM PDF 讀不到？免費 OCR 轉換法與常見缺點排錯指南（2026）"
+title: "NotebookLM PDF 讀不到？免費 OCR 轉換法與常見缺點排錯指南（2027）"
 description: >-
   用 NotebookLM 遇到掃描 PDF 讀不到、Excel／CSV 亂碼、檔案超過上限、文字很硬像說明書或引用亂掉？這篇整合免費版上限與支援格式速查、三種免費 OCR 轉換法、Excel／CSV 轉檔實測與 7 大痛點排查，一次解決。
 publishedDate: 2026-04-10T00:00:00Z
