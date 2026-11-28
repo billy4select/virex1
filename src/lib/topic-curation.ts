@@ -122,6 +122,10 @@ export const articleOutcomes: Record<string, string> = {
   'story-marketing-emotional-connection': '具體場景、轉折、代價、留下的問題四段結構。',
   'writing-persuasion-logic': '具體對照、代價陳述、可驗證的下一步。',
   'influencer-marketing-next-step': '大網紅失效後，四種正在取代的做法。',
+  'gemini-ai-pro-guide': '拆解開通 Google AI Pro 後的 Deep Research、技能（原 Gems）、Workspace 側邊欄與 NotebookLM 接力。',
+  'gsc-crawled-not-indexed-fix': '拆解四種 GSC 未收錄狀態，用五步排查順序解決孤島頁、重複內容與收錄卡關。',
+  'ga4-bounce-rate-key-events-guide': '看懂 GA4 跳出率與參與度算法、重要事件標記，每週只看四張核心報表。',
+  'substack-taiwan-newsletter-guide': 'Substack 免費方案優勢、台灣 Stripe 收款限制拆分解法，以及從社群導流實戰。',
   'meta-ads-troubleshooting-guide': 'Meta 廣告學習受限、CPM 飆高、像素與 CAPI 設定及帳戶受限的四段排錯順序。',
   'google-ads-vs-meta-ads-budget': '依搜尋意圖、產業特性與月預算大小，判斷先投 Google 還是 Meta 廣告。',
   'threads-reach-drop-algorithm-fix': '判斷 Threads 觸及下滑是限流還是內容疲乏，搭配四種拉回互動率的串文改寫法。',
@@ -214,6 +218,7 @@ export const topics: Topic[] = [
       'ChatGPT、Claude、NotebookLM 怎麼分工與交接？從免費與付費額度評估，到寫提案、讀內部文件時的選擇。',
     articleIds: [
       'google-ai-pro-vs-free-limits-family-sharing',
+      'gemini-ai-pro-guide',
       'claude-vs-chatgpt-proposal',
       'notebooklm-vs-claude-internal-docs',
       'notebooklm-vs-notion-ai-knowledge-base',
@@ -420,6 +425,7 @@ export const topics: Topic[] = [
     articleIds: [
       'seo-self-study-guide',
       'search-intent-guide',
+      'gsc-crawled-not-indexed-fix',
       'geo-ai-overview-seo-writing-guide',
       'seo-writing-why-no-traffic',
       'website-speed-seo-checks',
@@ -436,6 +442,7 @@ export const topics: Topic[] = [
     articleIds: [
       'domain-authority-guide',
       'free-seo-tools',
+      'ga4-bounce-rate-key-events-guide',
       'digital-marketing-basics',
       'learn-marketing-roadmap',
     ],
@@ -614,6 +621,7 @@ export const topics: Topic[] = [
     articleIds: [
       'self-media-first-month-positioning-or-posting',
       'personal-brand-trust-not-reach',
+      'substack-taiwan-newsletter-guide',
       'audience-is-not-a-label',
       'content-channel-trust-growth',
       'storytelling-marketing-book-notes',
@@ -662,6 +670,7 @@ export const topics: Topic[] = [
       'self-media-first-month-positioning-or-posting',
       'threads-reach-drop-algorithm-fix',
       'personal-brand-trust-not-reach',
+      'substack-taiwan-newsletter-guide',
       'content-channel-trust-growth',
       'laws-of-communication-book-notes',
     ],
