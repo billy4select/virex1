@@ -9,6 +9,7 @@ tags:
   - 內容優化
   - 社群經營
 category: 行銷策略與診斷
+image: /images/blog/ig-insights-report-guide.webp
 featured: false
 boost: false
 draft: false
@@ -37,6 +38,8 @@ IG 洞察報告的問題不是資料太少，是它把「描述」和「判斷�
 真正該做的是分層看。內容層、帳號層、生意層，三層的數字要分開解讀。
 
 ## 內容層：這篇值不值得加碼
+
+![IG 洞察報告內容層、帳號層、生意層三層診斷架構圖](/images/blog/ig-insights-3-layers.svg)
 
 三個數字就夠：
 

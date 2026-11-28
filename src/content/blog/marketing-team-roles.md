@@ -9,6 +9,7 @@ tags:
   - 組織設計
   - 行銷管理
 category: 行銷策略與診斷
+image: /images/blog/marketing-team-roles.webp
 featured: false
 boost: false
 draft: false
@@ -50,6 +51,8 @@ faq:
 實際上仍會互相支援。例如內容人員需要理解通路數據，投放人員也需要回饋受眾反應。分工不是禁止跨界，而是確保每件重要決策有人負責。
 
 ## 先定義交付與決策權
+
+![行銷小團隊按決策權三分法分工圖：策略預算、內容通路與數據投放](/images/blog/marketing-team-3-owners.svg)
 
 每個主要工作都要說清楚：誰提出方案、誰做最後決定、誰執行、誰需要知道結果。若所有事情都要主管核准，主管會成為瓶頸；若每個人都能自行改變方向，訊息與預算又容易失去一致性。
 

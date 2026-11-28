@@ -11,6 +11,7 @@ tags:
   - 回購
   - 投放策略
 category: 廣告與投放
+image: /images/blog/ad-budget-new-vs-returning.webp
 featured: false
 boost: false
 draft: false
@@ -68,6 +69,8 @@ sources:
 當預算分配交給系統之後，決定系統能不能幫你帶進新客的關鍵，就變成你的素材了。如果你給系統的全是「老客專屬折扣圖」，它自然只會推給熟人；定期補進講新痛點、給陌生人看的素材，系統才有子彈幫你往外擴散。
 
 ## 什麼時候還是會把預算分開？
+
+![廣告預算自動化分配與手動拆開控管時機對照圖](/images/blog/ad-budget-allocation.svg)
 
 當然也不是每種情況都無腦全自動。
 

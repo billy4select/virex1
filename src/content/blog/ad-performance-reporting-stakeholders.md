@@ -11,6 +11,7 @@ tags:
   - 溝通
   - 行銷管理
 category: 廣告與投放
+image: /images/blog/ad-performance-reporting-stakeholders.webp
 featured: false
 boost: false
 draft: false
@@ -48,6 +49,8 @@ sources:
 流量很高但沒轉單，在投放現場太常見了。如果沒有同時交代**轉換率**跟 **GA 跳出率**，這組漂亮流量很可能只是吸引了一堆不對的人進來逛三秒就走。
 
 ## 一份好討論的廣告報告，只要有這四段就夠
+
+![老闆看得懂且好討論的廣告成效報告四段結構圖](/images/blog/ad-report-4-sections.svg)
 
 不管你是用簡報還是 Notion 寫週報，照這四個順序排，開會時間通常能直接砍半：
 

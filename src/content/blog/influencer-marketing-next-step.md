@@ -11,6 +11,7 @@ tags:
   - 轉換
   - 通路策略
 category: 廣告與投放
+image: /images/blog/influencer-marketing-next-step.webp
 featured: false
 boost: false
 draft: false
@@ -40,6 +41,8 @@ sources:
 每個網紅在行銷裡扮演的任務本來就不一樣，把負責拉知名度的人拿來當業務員考核，結果當然會很失望。
 
 ## 兩種網紅，任務完全不同
+
+![大型 KOL 與垂直領域微網紅 KOC 商業任務分工對照圖](/images/blog/influencer-two-types.svg)
 
 在挑名單之前，先把人分成兩大類來看，你馬上就會知道自己以前是不是找錯人了：
 

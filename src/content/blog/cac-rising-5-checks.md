@@ -11,6 +11,7 @@ tags:
   - 廣告投放
   - 單位經濟
 category: 廣告與投放
+image: /images/blog/cac-rising-5-checks.webp
 featured: false
 boost: false
 draft: false
@@ -42,6 +43,8 @@ CAC 變貴的原因很多，但現場操作最忌諱一次把受眾、素材、�
 照我自己在現場排查的順序，可以分成五個檢查點，從最快見效的開始動。
 
 ## 1. 先換素材，順手切一批新受眾測試
+
+![獲客成本 CAC 飆高的五步排查順序圖](/images/blog/cac-rising-5-steps.svg)
 
 當我看到 CAC 開始往上爬，第一個動作通常就是**先換素材，順便切一組新受眾看看**。
 

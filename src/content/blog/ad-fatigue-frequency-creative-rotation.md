@@ -11,6 +11,7 @@ tags:
   - 素材輪替
   - 廣告投放
 category: 廣告與投放
+image: /images/blog/ad-fatigue-frequency-creative-rotation.webp
 featured: false
 boost: false
 draft: false
@@ -38,6 +39,8 @@ sources:
 其實多數時候沒那麼複雜，只是**原本那批對這組素材有反應的受眾，已經被打得差不多了**——這就是廣告疲勞。
 
 ## 四個訊號，確認是不是進入廣告疲勞
+
+![確認進入廣告疲勞的四個關鍵數據訊號圖](/images/blog/ad-fatigue-4-signals.svg)
 
 不用等業績掉到谷底才發現，只要後台同時出現下面這幾個變化，通常就是警訊：
 

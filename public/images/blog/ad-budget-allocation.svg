@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="廣告預算自動化分配與拆開控管時機對照圖">
+  <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
+  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
+  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">新客 vs 再行銷預算：什麼時候交給系統自動配、什麼時候要手動拆開？</text>
+  <rect x="36" y="92" width="430" height="152" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+  <text x="56" y="128" class="font" fill="#EA580C" font-size="15" font-weight="800">平常交給系統自動分配（ASC／PMax）</text>
+  <text x="56" y="158" class="font" fill="#52525B" font-size="13">• 不用手動硬切 70/30，讓演算法依出價效率找單</text>
+  <text x="56" y="184" class="font" fill="#52525B" font-size="13">• 但要在後台設「現有顧客預算上限」避免狂洗老客</text>
+  <text x="56" y="216" class="font" fill="#EA580C" font-size="13" font-weight="700">核心：靠「不同階段素材」分流，而不是靠切細受眾</text>
+  <rect x="494" y="92" width="430" height="152" rx="12" fill="#18181B"/>
+  <text x="514" y="128" class="font" fill="#FBBF24" font-size="15" font-weight="800">這 3 種情況還是要把預算獨立拆開</text>
+  <text x="514" y="158" class="font" fill="#D4D4D8" font-size="13">1. 新品上市或開拓全新市場，強迫系統只找陌生新客</text>
+  <text x="514" y="184" class="font" fill="#D4D4D8" font-size="13">2. 高客單價（破萬）決策期長，需要獨立再行銷溝通信任</text>
+  <text x="514" y="210" class="font" fill="#D4D4D8" font-size="13">3. 會員專屬大促檔期，只想精準通知既有名單</text>
+</svg>

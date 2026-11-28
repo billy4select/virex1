@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="老闆看得懂的廣告成效報告四段結構">
+  <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
+  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
+  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">少貼十張流量截圖：一份好討論的廣告報告只要這 4 段</text>
+  
+    <rect x="36" y="92" width="198" height="150" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+    <text x="52" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">第 1 段</text>
+    <text x="52" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">商業結果總覽</text>
+    <text x="52" y="190" class="font" fill="#52525B" font-size="12">花費、營收、CPA 與是否過損益線</text>
+  
+    <rect x="266" y="92" width="198" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+    <text x="282" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">第 2 段</text>
+    <text x="282" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">有效與無效對照</text>
+    <text x="282" y="190" class="font" fill="#52525B" font-size="12">哪組素材／受眾真的成交、哪組在燒錢</text>
+  
+    <rect x="496" y="92" width="198" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+    <text x="512" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">第 3 段</text>
+    <text x="512" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">卡點診斷原因</text>
+    <text x="512" y="190" class="font" fill="#52525B" font-size="12">是廣告打歪、到達頁跳出還是商品定價？</text>
+  
+    <rect x="726" y="92" width="198" height="150" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
+    <text x="742" y="124" class="font" fill="#FBBF24" font-size="12" font-weight="800">第 4 段</text>
+    <text x="742" y="156" class="font" fill="#FFFFFF" font-size="16" font-weight="800">下週唯一動作</text>
+    <text x="742" y="190" class="font" fill="#D4D4D8" font-size="12">預算怎麼調、要測哪兩組新切角</text>
+  
+</svg>
