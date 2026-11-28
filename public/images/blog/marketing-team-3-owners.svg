@@ -1,22 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="行銷小團隊依決策權三分法分工圖">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="960" height="480" role="img" aria-label="行銷小團隊依決策權三分法分工圖">
   <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
-  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
-  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
-  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">小團隊分工別按動作切，改按「一個人一個決策權」劃清責任</text>
+  <rect width="960" height="480" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="60" width="6" height="29.9" rx="2" fill="#EA580C"/>
+  <text x="52" y="82.3" class="font" fill="#18181B" font-size="18" font-weight="800">小團隊分工別按動作切，改按「一個人一個決策權」劃清責任</text>
   
-    <rect x="36" y="92" width="264" height="150" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
-    <text x="56" y="124" class="font" fill="#FBBF24" font-size="12" font-weight="800">決策權 A</text>
-    <text x="56" y="156" class="font" fill="#FFFFFF" font-size="17" font-weight="800">策略與預算</text>
-    <text x="56" y="190" class="font" fill="#D4D4D8" font-size="12.5">負責定位、產品賣點、預算配置與損益結果</text>
+    <rect x="36" y="157.7" width="264" height="257.1" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
+    <text x="56" y="212.6" class="font" fill="#FBBF24" font-size="12" font-weight="800">決策權 A</text>
+    <text x="56" y="267.4" class="font" fill="#FFFFFF" font-size="17" font-weight="800">策略與預算</text>
+    <text x="56" y="325.7" class="font" fill="#D4D4D8" font-size="12.5">負責定位、產品賣點、預算配置與損益結果</text>
   
-    <rect x="348" y="92" width="264" height="150" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
-    <text x="368" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">決策權 B</text>
-    <text x="368" y="156" class="font" fill="#18181B" font-size="17" font-weight="800">內容與通路</text>
-    <text x="368" y="190" class="font" fill="#52525B" font-size="12.5">負責長文 SEO、社群素材、品牌口吻與留存</text>
+    <rect x="348" y="157.7" width="264" height="257.1" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+    <text x="368" y="212.6" class="font" fill="#EA580C" font-size="12" font-weight="800">決策權 B</text>
+    <text x="368" y="267.4" class="font" fill="#18181B" font-size="17" font-weight="800">內容與通路</text>
+    <text x="368" y="325.7" class="font" fill="#52525B" font-size="12.5">負責長文 SEO、社群素材、品牌口吻與留存</text>
   
-    <rect x="660" y="92" width="264" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
-    <text x="680" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">決策權 C</text>
-    <text x="680" y="156" class="font" fill="#18181B" font-size="17" font-weight="800">數據與投放</text>
-    <text x="680" y="190" class="font" fill="#52525B" font-size="12.5">負責廣告測試、GA4 歸因、轉換率優化回饋</text>
+    <rect x="660" y="157.7" width="264" height="257.1" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+    <text x="680" y="212.6" class="font" fill="#EA580C" font-size="12" font-weight="800">決策權 C</text>
+    <text x="680" y="267.4" class="font" fill="#18181B" font-size="17" font-weight="800">數據與投放</text>
+    <text x="680" y="325.7" class="font" fill="#52525B" font-size="12.5">負責廣告測試、GA4 歸因、轉換率優化回饋</text>
   
 </svg>

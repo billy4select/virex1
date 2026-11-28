@@ -1,27 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="有人會看的會議紀錄四欄結構圖">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520" role="img" aria-label="有人會看的會議紀錄四欄結構圖">
   <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
-  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
-  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
-  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">別再貼千字逐字稿摘要：一份有人會看的會議紀錄只要這 4 欄</text>
+  <rect width="960" height="520" rx="16" fill="#FFFBF5"/>
+  <rect x="36" y="34" width="7" height="32" rx="2" fill="#EA580C"/>
+  <text x="56" y="58" class="font" fill="#18181B" font-size="21" font-weight="800">別再貼千字逐字稿摘要：一份有人會看的會議紀錄只要這 4 欄</text>
   
-    <rect x="36" y="92" width="198" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
-    <text x="54" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">欄位 01</text>
-    <text x="54" y="156" class="font" fill="#18181B" font-size="17" font-weight="800">已定案決議</text>
-    <text x="54" y="190" class="font" fill="#52525B" font-size="12.5">今天拍板了什麼？寫成一句話</text>
-  
-    <rect x="266" y="92" width="198" height="150" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
-    <text x="284" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">欄位 02</text>
-    <text x="284" y="156" class="font" fill="#18181B" font-size="17" font-weight="800">行動清單</text>
-    <text x="284" y="190" class="font" fill="#52525B" font-size="12.5">誰負責＋做什麼＋哪天交</text>
-  
-    <rect x="496" y="92" width="198" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
-    <text x="514" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">欄位 03</text>
-    <text x="514" y="156" class="font" fill="#18181B" font-size="17" font-weight="800">待決事項</text>
-    <text x="514" y="190" class="font" fill="#52525B" font-size="12.5">還沒定案、需要誰補資料</text>
-  
-    <rect x="726" y="92" width="198" height="150" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
-    <text x="744" y="124" class="font" fill="#FBBF24" font-size="12" font-weight="800">欄位 04</text>
-    <text x="744" y="156" class="font" fill="#FFFFFF" font-size="17" font-weight="800">風險與阻塞</text>
-    <text x="744" y="190" class="font" fill="#D4D4D8" font-size="12.5">會卡住進度的外部依賴</text>
-  
+      <rect x="36" y="108" width="430" height="174" rx="14" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+      <text x="64" y="148" class="font" fill="#EA580C" font-size="13.5" font-weight="800">欄位 01</text>
+      <text x="64" y="186" class="font" fill="#18181B" font-size="20" font-weight="800">已定案決議</text>
+      <text x="64" y="232" class="font" fill="#52525B" font-size="15.5">今天拍板了什麼？寫成一句話</text>
+
+      <rect x="494" y="108" width="430" height="174" rx="14" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+      <text x="522" y="148" class="font" fill="#EA580C" font-size="13.5" font-weight="800">欄位 02</text>
+      <text x="522" y="186" class="font" fill="#18181B" font-size="20" font-weight="800">行動清單</text>
+      <text x="522" y="232" class="font" fill="#52525B" font-size="15.5">誰負責＋做什麼＋哪天交</text>
+
+      <rect x="36" y="306" width="430" height="174" rx="14" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+      <text x="64" y="346" class="font" fill="#EA580C" font-size="13.5" font-weight="800">欄位 03</text>
+      <text x="64" y="384" class="font" fill="#18181B" font-size="20" font-weight="800">待決事項</text>
+      <text x="64" y="430" class="font" fill="#52525B" font-size="15.5">還沒定案、需要誰補資料</text>
+
+      <rect x="494" y="306" width="430" height="174" rx="14" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
+      <text x="522" y="346" class="font" fill="#FBBF24" font-size="13.5" font-weight="800">欄位 04</text>
+      <text x="522" y="384" class="font" fill="#FFFFFF" font-size="20" font-weight="800">風險與阻塞</text>
+      <text x="522" y="430" class="font" fill="#D4D4D8" font-size="15.5">會卡住進度的外部依賴</text>
 </svg>

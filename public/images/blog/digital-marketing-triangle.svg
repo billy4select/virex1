@@ -1,22 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="數位行銷需求、訊息與通路鐵三角圖">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="960" height="480" role="img" aria-label="數位行銷需求、訊息與通路鐵三角圖">
   <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
-  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
-  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
-  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">工具會一直換，但數位行銷真正不變的底層只有這三件事</text>
+  <rect width="960" height="480" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="60" width="6" height="29.9" rx="2" fill="#EA580C"/>
+  <text x="52" y="82.3" class="font" fill="#18181B" font-size="18" font-weight="800">工具會一直換，但數位行銷真正不變的底層只有這三件事</text>
   
-    <rect x="36" y="92" width="264" height="150" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
-    <text x="56" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">核心 1</text>
-    <text x="56" y="156" class="font" fill="#18181B" font-size="16.5" font-weight="800">看懂需求（人）</text>
-    <text x="56" y="190" class="font" fill="#52525B" font-size="12.5">顧客在什麼情境下覺得痛、原本怎麼解？</text>
+    <rect x="36" y="157.7" width="264" height="257.1" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+    <text x="56" y="212.6" class="font" fill="#EA580C" font-size="12" font-weight="800">核心 1</text>
+    <text x="56" y="267.4" class="font" fill="#18181B" font-size="16.5" font-weight="800">看懂需求（人）</text>
+    <text x="56" y="325.7" class="font" fill="#52525B" font-size="12.5">顧客在什麼情境下覺得痛、原本怎麼解？</text>
   
-    <rect x="348" y="92" width="264" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
-    <text x="368" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">核心 2</text>
-    <text x="368" y="156" class="font" fill="#18181B" font-size="16.5" font-weight="800">講清價值（話）</text>
-    <text x="368" y="190" class="font" fill="#52525B" font-size="12.5">為什麼選你比選替代方案更划算？</text>
+    <rect x="348" y="157.7" width="264" height="257.1" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+    <text x="368" y="212.6" class="font" fill="#EA580C" font-size="12" font-weight="800">核心 2</text>
+    <text x="368" y="267.4" class="font" fill="#18181B" font-size="16.5" font-weight="800">講清價值（話）</text>
+    <text x="368" y="325.7" class="font" fill="#52525B" font-size="12.5">為什麼選你比選替代方案更划算？</text>
   
-    <rect x="660" y="92" width="264" height="150" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
-    <text x="680" y="124" class="font" fill="#FBBF24" font-size="12" font-weight="800">核心 3</text>
-    <text x="680" y="156" class="font" fill="#FFFFFF" font-size="16.5" font-weight="800">選對通路（場）</text>
-    <text x="680" y="190" class="font" fill="#D4D4D8" font-size="12.5">他做功課時在哪出沒，才放對的工具</text>
+    <rect x="660" y="157.7" width="264" height="257.1" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
+    <text x="680" y="212.6" class="font" fill="#FBBF24" font-size="12" font-weight="800">核心 3</text>
+    <text x="680" y="267.4" class="font" fill="#FFFFFF" font-size="16.5" font-weight="800">選對通路（場）</text>
+    <text x="680" y="325.7" class="font" fill="#D4D4D8" font-size="12.5">他做功課時在哪出沒，才放對的工具</text>
   
 </svg>

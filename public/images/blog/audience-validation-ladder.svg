@@ -1,33 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 320" width="960" height="320" role="img" aria-label="從低成本到手動交付的五階市場驗證梯">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520" role="img" aria-label="從低成本到手動交付的五階市場驗證梯">
   <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
-  <rect width="960" height="320" rx="14" fill="#FFFBF5"/>
-  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
-  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">花三個月開發前，先照這 5 階由低到高驗證真實付費意願</text>
+  <rect width="960" height="520" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="57.5" width="6" height="29.9" rx="2" fill="#EA580C"/>
+  <text x="52" y="78" class="font" fill="#18181B" font-size="18" font-weight="800">花三個月開發前，先照這 5 階由低到高驗證真實付費意願</text>
 
   
-    <rect x="36" y="204" width="160" height="86" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
-    <text x="52" y="234" class="font" fill="#EA580C" font-size="14" font-weight="800">STEP 01</text>
-    <text x="52" y="260" class="font" fill="#18181B" font-size="15.5" font-weight="800">觀察既有行為</text>
-    <text x="52" y="284" class="font" fill="#52525B" font-size="12">爬負評與替代方案</text>
+    <rect x="36" y="331.5" width="160" height="139.8" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+    <text x="52" y="380.3" class="font" fill="#EA580C" font-size="14" font-weight="800">STEP 01</text>
+    <text x="52" y="422.5" class="font" fill="#18181B" font-size="15.5" font-weight="800">觀察既有行為</text>
+    <text x="52" y="461.5" class="font" fill="#52525B" font-size="12">爬負評與替代方案</text>
   
-    <rect x="218" y="178" width="160" height="112" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
-    <text x="234" y="208" class="font" fill="#EA580C" font-size="14" font-weight="800">STEP 02</text>
-    <text x="234" y="234" class="font" fill="#18181B" font-size="15.5" font-weight="800">訪談過去事件</text>
-    <text x="234" y="258" class="font" fill="#52525B" font-size="12">問上次怎麼解與成本</text>
+    <rect x="218" y="289.3" width="160" height="182" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+    <text x="234" y="338" class="font" fill="#EA580C" font-size="14" font-weight="800">STEP 02</text>
+    <text x="234" y="380.3" class="font" fill="#18181B" font-size="15.5" font-weight="800">訪談過去事件</text>
+    <text x="234" y="419.3" class="font" fill="#52525B" font-size="12">問上次怎麼解與成本</text>
   
-    <rect x="400" y="152" width="160" height="138" rx="12" fill="#FDE68A" stroke="#18181B" stroke-width="2.2"/>
-    <text x="416" y="182" class="font" fill="#EA580C" font-size="14" font-weight="800">STEP 03</text>
-    <text x="416" y="208" class="font" fill="#18181B" font-size="15.5" font-weight="800">一頁介紹測轉換</text>
-    <text x="416" y="232" class="font" fill="#52525B" font-size="12">看陌生人願否留名單</text>
+    <rect x="400" y="247" width="160" height="224.3" rx="12" fill="#FDE68A" stroke="#18181B" stroke-width="2.2"/>
+    <text x="416" y="295.8" class="font" fill="#EA580C" font-size="14" font-weight="800">STEP 03</text>
+    <text x="416" y="338" class="font" fill="#18181B" font-size="15.5" font-weight="800">一頁介紹測轉換</text>
+    <text x="416" y="377" class="font" fill="#52525B" font-size="12">看陌生人願否留名單</text>
   
-    <rect x="582" y="126" width="160" height="164" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
-    <text x="598" y="156" class="font" fill="#EA580C" font-size="14" font-weight="800">STEP 04</text>
-    <text x="598" y="182" class="font" fill="#18181B" font-size="15.5" font-weight="800">小額預售收訂金</text>
-    <text x="598" y="206" class="font" fill="#52525B" font-size="12">掏錢表態才是真需求</text>
+    <rect x="582" y="204.8" width="160" height="266.5" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+    <text x="598" y="253.5" class="font" fill="#EA580C" font-size="14" font-weight="800">STEP 04</text>
+    <text x="598" y="295.8" class="font" fill="#18181B" font-size="15.5" font-weight="800">小額預售收訂金</text>
+    <text x="598" y="334.8" class="font" fill="#52525B" font-size="12">掏錢表態才是真需求</text>
   
-    <rect x="764" y="96" width="160" height="194" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
-    <text x="780" y="126" class="font" fill="#FBBF24" font-size="14" font-weight="800">STEP 05</text>
-    <text x="780" y="152" class="font" fill="#FFFFFF" font-size="15.5" font-weight="800">手動交付最小版</text>
-    <text x="780" y="176" class="font" fill="#D4D4D8" font-size="12">親手服務 3–5 位客戶</text>
+    <rect x="764" y="156" width="160" height="315.3" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
+    <text x="780" y="204.8" class="font" fill="#FBBF24" font-size="14" font-weight="800">STEP 05</text>
+    <text x="780" y="247" class="font" fill="#FFFFFF" font-size="15.5" font-weight="800">手動交付最小版</text>
+    <text x="780" y="286" class="font" fill="#D4D4D8" font-size="12">親手服務 3–5 位客戶</text>
   
 </svg>

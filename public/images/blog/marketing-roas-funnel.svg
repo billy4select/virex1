@@ -1,39 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 320" width="960" height="320" role="img" aria-label="廣告指標七大公式漏斗與倒著看報表順序圖">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520" role="img" aria-label="廣告指標七大公式漏斗與倒著看報表順序圖">
   <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style>
   <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#EA580C"/></marker></defs>
-  <rect width="960" height="320" rx="14" fill="#FFFBF5"/>
-  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
-  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">廣告指標七公式位置：消費者順著走，但看報表要「倒著查」</text>
+  <rect width="960" height="520" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="57.5" width="6" height="29.9" rx="2" fill="#EA580C"/>
+  <text x="52" y="78" class="font" fill="#18181B" font-size="18" font-weight="800">廣告指標七公式位置：消費者順著走，但看報表要「倒著查」</text>
 
   
-    <rect x="36" y="92" width="198" height="122" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2"/>
-    <rect x="52" y="108" width="82" height="22" rx="11" fill="#F4F4F5"/>
-    <text x="93" y="123" text-anchor="middle" class="font" fill="#18181B" font-size="11" font-weight="800">曝光層</text>
-    <text x="52" y="162" class="font" fill="#18181B" font-size="20" font-weight="800">CPM</text>
-    <text x="52" y="190" class="font" fill="#52525B" font-size="12.5">千次曝光成本</text>
+    <rect x="36" y="149.5" width="198" height="198.3" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2"/>
+    <rect x="52" y="175.5" width="82" height="25.3" rx="11" fill="#F4F4F5"/>
+    <text x="93" y="199.9" text-anchor="middle" class="font" fill="#18181B" font-size="11" font-weight="800">曝光層</text>
+    <text x="52" y="263.3" class="font" fill="#18181B" font-size="20" font-weight="800">CPM</text>
+    <text x="52" y="308.8" class="font" fill="#52525B" font-size="12.5">千次曝光成本</text>
   
-    <rect x="266" y="92" width="198" height="122" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2"/>
-    <rect x="282" y="108" width="82" height="22" rx="11" fill="#F4F4F5"/>
-    <text x="323" y="123" text-anchor="middle" class="font" fill="#18181B" font-size="11" font-weight="800">流量層</text>
-    <text x="282" y="162" class="font" fill="#18181B" font-size="20" font-weight="800">CTR / CPC</text>
-    <text x="282" y="190" class="font" fill="#52525B" font-size="12.5">點擊率與單次點擊成本</text>
+    <rect x="266" y="149.5" width="198" height="198.3" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2"/>
+    <rect x="282" y="175.5" width="82" height="25.3" rx="11" fill="#F4F4F5"/>
+    <text x="323" y="199.9" text-anchor="middle" class="font" fill="#18181B" font-size="11" font-weight="800">流量層</text>
+    <text x="282" y="263.3" class="font" fill="#18181B" font-size="20" font-weight="800">CTR / CPC</text>
+    <text x="282" y="308.8" class="font" fill="#52525B" font-size="12.5">點擊率與單次點擊成本</text>
   
-    <rect x="496" y="92" width="198" height="122" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.5"/>
-    <rect x="512" y="108" width="82" height="22" rx="11" fill="#EA580C"/>
-    <text x="553" y="123" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11" font-weight="800">轉換層</text>
-    <text x="512" y="162" class="font" fill="#18181B" font-size="20" font-weight="800">CVR / CPA</text>
-    <text x="512" y="190" class="font" fill="#52525B" font-size="12.5">轉換率與單筆獲客成本</text>
+    <rect x="496" y="149.5" width="198" height="198.3" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.5"/>
+    <rect x="512" y="175.5" width="82" height="25.3" rx="11" fill="#EA580C"/>
+    <text x="553" y="199.9" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11" font-weight="800">轉換層</text>
+    <text x="512" y="263.3" class="font" fill="#18181B" font-size="20" font-weight="800">CVR / CPA</text>
+    <text x="512" y="308.8" class="font" fill="#52525B" font-size="12.5">轉換率與單筆獲客成本</text>
   
-    <rect x="726" y="92" width="198" height="122" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2"/>
-    <rect x="742" y="108" width="82" height="22" rx="11" fill="#FBBF24"/>
-    <text x="783" y="123" text-anchor="middle" class="font" fill="#18181B" font-size="11" font-weight="800">營收與利潤層</text>
-    <text x="742" y="162" class="font" fill="#FFFFFF" font-size="20" font-weight="800">ROAS / ROI</text>
-    <text x="742" y="190" class="font" fill="#D4D4D8" font-size="12.5">廣告營收倍數 vs 真實淨利</text>
+    <rect x="726" y="149.5" width="198" height="198.3" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2"/>
+    <rect x="742" y="175.5" width="82" height="25.3" rx="11" fill="#FBBF24"/>
+    <text x="783" y="199.9" text-anchor="middle" class="font" fill="#18181B" font-size="11" font-weight="800">營收與利潤層</text>
+    <text x="742" y="263.3" class="font" fill="#FFFFFF" font-size="20" font-weight="800">ROAS / ROI</text>
+    <text x="742" y="308.8" class="font" fill="#D4D4D8" font-size="12.5">廣告營收倍數 vs 真實淨利</text>
   
 
   <!-- Reverse diagnosis arrow bar -->
-  <rect x="36" y="236" width="888" height="54" rx="10" fill="#FFF3EB" stroke="#EA580C" stroke-width="2"/>
-  <path d="M 880 263 L 96 263" stroke="#EA580C" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#a)"/>
-  <rect x="260" y="247" width="440" height="32" rx="16" fill="#FFFBF5" stroke="#EA580C" stroke-width="1.5"/>
-  <text x="480" y="268" text-anchor="middle" class="font" fill="#EA580C" font-size="13.5" font-weight="800">報表倒著查：先看損益 ROAS → 查 CVR 與 GA4 跳出率 → 最後調 CTR／CPC</text>
+  <rect x="36" y="383.5" width="888" height="87.8" rx="10" fill="#FFF3EB" stroke="#EA580C" stroke-width="2"/>
+  <path d="M 880 427.4 L 96 427.4" stroke="#EA580C" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#a)"/>
+  <rect x="260" y="401.4" width="440" height="52" rx="16" fill="#FFFBF5" stroke="#EA580C" stroke-width="1.5"/>
+  <text x="480" y="435.5" text-anchor="middle" class="font" fill="#EA580C" font-size="13.5" font-weight="800">報表倒著查：先看損益 ROAS → 查 CVR 與 GA4 跳出率 → 最後調 CTR／CPC</text>
 </svg>

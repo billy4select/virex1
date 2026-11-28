@@ -1,27 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="叫 AI 寫文案前先餵四種真實素材圖">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520" role="img" aria-label="叫 AI 寫文案前先餵四種真實素材圖">
   <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
-  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
-  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
-  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">不想讓 AI 寫出空洞推銷文？動筆前先把這 4 種真實文字丟給它</text>
+  <rect width="960" height="520" rx="16" fill="#FFFBF5"/>
+  <rect x="36" y="34" width="7" height="32" rx="2" fill="#EA580C"/>
+  <text x="56" y="58" class="font" fill="#18181B" font-size="21" font-weight="800">不想讓 AI 寫出空洞推銷文？動筆前先把這 4 種真實文字丟給它</text>
   
-    <rect x="36" y="92" width="198" height="150" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
-    <text x="52" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">素材 1</text>
-    <text x="52" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">客戶原話評論</text>
-    <text x="52" y="190" class="font" fill="#52525B" font-size="12.5">買家怎麼用白話形容痛點</text>
-  
-    <rect x="266" y="92" width="198" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
-    <text x="282" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">素材 2</text>
-    <text x="282" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">客服常被問的顧慮</text>
-    <text x="282" y="190" class="font" fill="#52525B" font-size="12.5">不敢下單前的最後猶豫</text>
-  
-    <rect x="496" y="92" width="198" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
-    <text x="512" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">素材 3</text>
-    <text x="512" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">具體使用場景</text>
-    <text x="512" y="190" class="font" fill="#52525B" font-size="12.5">什麼時間、地點最需要它</text>
-  
-    <rect x="726" y="92" width="198" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
-    <text x="742" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">素材 4</text>
-    <text x="742" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">競品真實負評</text>
-    <text x="742" y="190" class="font" fill="#52525B" font-size="12.5">客人對舊方案最不滿之處</text>
-  
+      <rect x="36" y="108" width="430" height="174" rx="14" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+      <text x="64" y="148" class="font" fill="#EA580C" font-size="13.5" font-weight="800">素材 1</text>
+      <text x="64" y="186" class="font" fill="#18181B" font-size="20" font-weight="800">客戶原話評論</text>
+      <text x="64" y="232" class="font" fill="#52525B" font-size="15.5">買家怎麼用白話形容痛點</text>
+
+      <rect x="494" y="108" width="430" height="174" rx="14" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+      <text x="522" y="148" class="font" fill="#EA580C" font-size="13.5" font-weight="800">素材 2</text>
+      <text x="522" y="186" class="font" fill="#18181B" font-size="20" font-weight="800">客服常被問的顧慮</text>
+      <text x="522" y="232" class="font" fill="#52525B" font-size="15.5">不敢下單前的最後猶豫</text>
+
+      <rect x="36" y="306" width="430" height="174" rx="14" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+      <text x="64" y="346" class="font" fill="#EA580C" font-size="13.5" font-weight="800">素材 3</text>
+      <text x="64" y="384" class="font" fill="#18181B" font-size="20" font-weight="800">具體使用場景</text>
+      <text x="64" y="430" class="font" fill="#52525B" font-size="15.5">什麼時間、地點最需要它</text>
+
+      <rect x="494" y="306" width="430" height="174" rx="14" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+      <text x="522" y="346" class="font" fill="#EA580C" font-size="13.5" font-weight="800">素材 4</text>
+      <text x="522" y="384" class="font" fill="#18181B" font-size="20" font-weight="800">競品真實負評</text>
+      <text x="522" y="430" class="font" fill="#52525B" font-size="15.5">客人對舊方案最不滿之處</text>
 </svg>

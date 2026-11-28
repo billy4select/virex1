@@ -1,27 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="用 AI 做數據分析的專業分工：算得快靠工具，問對與驗算靠人">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520" role="img" aria-label="用 AI 做數據分析的專業分工：算得快靠工具，問對與驗算靠人">
   <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
-  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
-  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
-  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">用 AI 做數據分析的專業分工：算得快靠工具，問對與驗算靠人</text>
+  <rect width="960" height="520" rx="16" fill="#FFFBF5"/>
+  <rect x="36" y="34" width="7" height="32" rx="2" fill="#EA580C"/>
+  <text x="56" y="58" class="font" fill="#18181B" font-size="21" font-weight="800">用 AI 做數據分析的專業分工：算得快靠工具，問對與驗算靠人</text>
   
-      <rect x="36" y="92" width="198" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
-      <text x="52" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">步驟 1（人）</text>
-      <text x="52" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">定義決策問題</text>
-      <text x="52" y="190" class="font" fill="#52525B" font-size="12.5">先講清要回答哪個商業疑問</text>
-    
-      <rect x="266" y="92" width="198" height="150" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
-      <text x="282" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">步驟 2（AI）</text>
-      <text x="282" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">整理與初探</text>
-      <text x="282" y="190" class="font" fill="#52525B" font-size="12.5">清欄位、跑描述統計與找異常</text>
-    
-      <rect x="496" y="92" width="198" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
-      <text x="512" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">步驟 3（驗算）</text>
-      <text x="512" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">可重現公式核對</text>
-      <text x="512" y="190" class="font" fill="#52525B" font-size="12.5">關鍵加總回 Excel 交叉驗算</text>
-    
-      <rect x="726" y="92" width="198" height="150" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
-      <text x="742" y="124" class="font" fill="#FBBF24" font-size="12" font-weight="800">步驟 4（人）</text>
-      <text x="742" y="156" class="font" fill="#FFFFFF" font-size="16" font-weight="800">回到現場歸因</text>
-      <text x="742" y="190" class="font" fill="#D4D4D8" font-size="12.5">區分相關與因果，提出行動</text>
-    
+      <rect x="36" y="108" width="430" height="174" rx="14" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+      <text x="64" y="148" class="font" fill="#EA580C" font-size="13.5" font-weight="800">步驟 1（人）</text>
+      <text x="64" y="186" class="font" fill="#18181B" font-size="20" font-weight="800">定義決策問題</text>
+      <text x="64" y="232" class="font" fill="#52525B" font-size="15.5">先講清要回答哪個商業疑問</text>
+
+      <rect x="494" y="108" width="430" height="174" rx="14" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+      <text x="522" y="148" class="font" fill="#EA580C" font-size="13.5" font-weight="800">步驟 2（AI）</text>
+      <text x="522" y="186" class="font" fill="#18181B" font-size="20" font-weight="800">整理與初探</text>
+      <text x="522" y="232" class="font" fill="#52525B" font-size="15.5">清欄位、跑描述統計與找異常</text>
+
+      <rect x="36" y="306" width="430" height="174" rx="14" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+      <text x="64" y="346" class="font" fill="#EA580C" font-size="13.5" font-weight="800">步驟 3（驗算）</text>
+      <text x="64" y="384" class="font" fill="#18181B" font-size="20" font-weight="800">可重現公式核對</text>
+      <text x="64" y="430" class="font" fill="#52525B" font-size="15.5">關鍵加總回 Excel 交叉驗算</text>
+
+      <rect x="494" y="306" width="430" height="174" rx="14" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
+      <text x="522" y="346" class="font" fill="#FBBF24" font-size="13.5" font-weight="800">步驟 4（人）</text>
+      <text x="522" y="384" class="font" fill="#FFFFFF" font-size="20" font-weight="800">回到現場歸因</text>
+      <text x="522" y="430" class="font" fill="#D4D4D8" font-size="15.5">區分相關與因果，提出行動</text>
 </svg>

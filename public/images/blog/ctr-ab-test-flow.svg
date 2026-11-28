@@ -1,26 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="小預算 2 天 1000 元 CTR 素材 A/B 測試流程圖">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="960" height="480" role="img" aria-label="小預算 2 天 1000 元 CTR 素材 A/B 測試流程圖">
   <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style>
   <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#18181B"/></marker></defs>
-  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
-  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
-  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">小預算測 CTR 怎麼跑最準？2 天、1,000 元只改一個變因</text>
+  <rect width="960" height="480" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="60" width="6" height="29.9" rx="2" fill="#EA580C"/>
+  <text x="52" y="82.3" class="font" fill="#18181B" font-size="18" font-weight="800">小預算測 CTR 怎麼跑最準？2 天、1,000 元只改一個變因</text>
   
-    <rect x="36" y="92" width="264" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
-    <text x="56" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">控變因</text>
-    <text x="56" y="156" class="font" fill="#18181B" font-size="16.5" font-weight="800">同受眾 × 雙切角</text>
-    <text x="56" y="190" class="font" fill="#52525B" font-size="12.5">只換主標或痛點畫面，其餘設定鎖定一致</text>
-    <line x1="300" y1="167" x2="338" y2="167" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+    <rect x="36" y="157.7" width="264" height="257.1" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+    <text x="56" y="212.6" class="font" fill="#EA580C" font-size="12" font-weight="800">控變因</text>
+    <text x="56" y="267.4" class="font" fill="#18181B" font-size="16.5" font-weight="800">同受眾 × 雙切角</text>
+    <text x="56" y="325.7" class="font" fill="#52525B" font-size="12.5">只換主標或痛點畫面，其餘設定鎖定一致</text>
+    <line x1="300" y1="286.3" x2="338" y2="286.3" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
   
-    <rect x="348" y="92" width="264" height="150" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
-    <text x="368" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">跑 48h</text>
-    <text x="368" y="156" class="font" fill="#18181B" font-size="16.5" font-weight="800">各投 500 元看訊號</text>
-    <text x="368" y="190" class="font" fill="#52525B" font-size="12.5">重點看連結點擊率與進站停留，別提早關</text>
-    <line x1="612" y1="167" x2="650" y2="167" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+    <rect x="348" y="157.7" width="264" height="257.1" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+    <text x="368" y="212.6" class="font" fill="#EA580C" font-size="12" font-weight="800">跑 48h</text>
+    <text x="368" y="267.4" class="font" fill="#18181B" font-size="16.5" font-weight="800">各投 500 元看訊號</text>
+    <text x="368" y="325.7" class="font" fill="#52525B" font-size="12.5">重點看連結點擊率與進站停留，別提早關</text>
+    <line x1="612" y1="286.3" x2="650" y2="286.3" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
   
-    <rect x="660" y="92" width="264" height="150" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
-    <text x="680" y="124" class="font" fill="#FBBF24" font-size="12" font-weight="800">留勝者</text>
-    <text x="680" y="156" class="font" fill="#FFFFFF" font-size="16.5" font-weight="800">砍弱組、放大強組</text>
-    <text x="680" y="190" class="font" fill="#D4D4D8" font-size="12.5">把勝出切角延伸成短影音與到達頁首屏</text>
+    <rect x="660" y="157.7" width="264" height="257.1" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
+    <text x="680" y="212.6" class="font" fill="#FBBF24" font-size="12" font-weight="800">留勝者</text>
+    <text x="680" y="267.4" class="font" fill="#FFFFFF" font-size="16.5" font-weight="800">砍弱組、放大強組</text>
+    <text x="680" y="325.7" class="font" fill="#D4D4D8" font-size="12.5">把勝出切角延伸成短影音與到達頁首屏</text>
     
   
 </svg>

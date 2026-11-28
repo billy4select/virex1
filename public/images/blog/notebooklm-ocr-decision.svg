@@ -1,31 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 320" width="960" height="320" role="img" aria-label="NotebookLM 掃描 PDF 判斷與三種免費 OCR 路徑圖">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520" role="img" aria-label="NotebookLM 掃描 PDF 判斷與三種免費 OCR 路徑圖">
   <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style>
   <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#18181B"/></marker></defs>
-  <rect width="960" height="320" rx="14" fill="#FFFBF5"/>
-  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
-  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">PDF 丟進去讀不到？先花 10 秒測反白，再挑對應免費 OCR</text>
+  <rect width="960" height="520" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="57.5" width="6" height="29.9" rx="2" fill="#EA580C"/>
+  <text x="52" y="78" class="font" fill="#18181B" font-size="18" font-weight="800">PDF 丟進去讀不到？先花 10 秒測反白，再挑對應免費 OCR</text>
 
-  <rect x="36" y="96" width="230" height="184" rx="12" fill="#18181B"/>
-  <rect x="54" y="114" width="90" height="22" rx="11" fill="#FBBF24"/>
-  <text x="99" y="129" text-anchor="middle" class="font" fill="#18181B" font-size="11" font-weight="800">上傳前 10 秒</text>
-  <text x="54" y="164" class="font" fill="#FFFFFF" font-size="16.5" font-weight="800">滑鼠拖曳反白測試</text>
-  <text x="54" y="194" class="font" fill="#D4D4D8" font-size="12.5">• 選得到字 → 直接上傳</text>
-  <text x="54" y="218" class="font" fill="#FBBF24" font-size="12.5" font-weight="700">• 選不到字 → 掃描圖檔</text>
-  <text x="54" y="242" class="font" fill="#D4D4D8" font-size="12.5">（留意附錄報表常為截圖）</text>
+  <rect x="36" y="156" width="230" height="299" rx="12" fill="#18181B"/>
+  <rect x="54" y="185.3" width="90" height="25.3" rx="11" fill="#FBBF24"/>
+  <text x="99" y="209.6" text-anchor="middle" class="font" fill="#18181B" font-size="11" font-weight="800">上傳前 10 秒</text>
+  <text x="54" y="266.5" class="font" fill="#FFFFFF" font-size="16.5" font-weight="800">滑鼠拖曳反白測試</text>
+  <text x="54" y="315.3" class="font" fill="#D4D4D8" font-size="12.5">• 選得到字 → 直接上傳</text>
+  <text x="54" y="354.3" class="font" fill="#FBBF24" font-size="12.5" font-weight="700">• 選不到字 → 掃描圖檔</text>
+  <text x="54" y="393.3" class="font" fill="#D4D4D8" font-size="12.5">（留意附錄報表常為截圖）</text>
 
-  <path d="M 266 138 L 322 138" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
-  <path d="M 266 188 L 322 188" stroke="#EA580C" stroke-width="2.2" marker-end="url(#a)"/>
-  <path d="M 266 238 L 322 238" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+  <path d="M 266 224.3 L 322 224.3" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+  <path d="M 266 305.5 L 322 305.5" stroke="#EA580C" stroke-width="2.2" marker-end="url(#a)"/>
+  <path d="M 266 386.8 L 322 386.8" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
 
-  <rect x="330" y="96" width="594" height="54" rx="10" fill="#FFFFFF" stroke="#18181B" stroke-width="2"/>
-  <text x="350" y="128" class="font" fill="#18181B" font-size="14" font-weight="800">1–5 頁關鍵段落</text>
-  <text x="488" y="128" class="font" fill="#52525B" font-size="13">→ 用 Mac 預覽 / Windows 截圖工具直接複製文字（本機離線最安全）</text>
+  <rect x="330" y="156" width="594" height="87.8" rx="10" fill="#FFFFFF" stroke="#18181B" stroke-width="2"/>
+  <text x="350" y="208" class="font" fill="#18181B" font-size="14" font-weight="800">1–5 頁關鍵段落</text>
+  <text x="488" y="208" class="font" fill="#52525B" font-size="13">→ 用 Mac 預覽 / Windows 截圖工具直接複製文字（本機離線最安全）</text>
 
-  <rect x="330" y="162" width="594" height="56" rx="10" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
-  <text x="350" y="195" class="font" fill="#EA580C" font-size="14" font-weight="800">10–50 頁橫排中文</text>
-  <text x="498" y="195" class="font" fill="#18181B" font-size="13" font-weight="700">→ 上傳 Google Drive 右鍵「以 Google 文件開啟」自動轉文字</text>
+  <rect x="330" y="263.3" width="594" height="91" rx="10" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+  <text x="350" y="316.9" class="font" fill="#EA580C" font-size="14" font-weight="800">10–50 頁橫排中文</text>
+  <text x="498" y="316.9" class="font" fill="#18181B" font-size="13" font-weight="700">→ 上傳 Google Drive 右鍵「以 Google 文件開啟」自動轉文字</text>
 
-  <rect x="330" y="230" width="594" height="54" rx="10" fill="#FFFFFF" stroke="#18181B" stroke-width="2"/>
-  <text x="350" y="262" class="font" fill="#18181B" font-size="14" font-weight="800">百頁以上舊報告</text>
-  <text x="488" y="262" class="font" fill="#52525B" font-size="13">→ 先拆出真的要查的章節再轉，轉完必抽查 0/O、金額與表格欄位</text>
+  <rect x="330" y="373.8" width="594" height="87.8" rx="10" fill="#FFFFFF" stroke="#18181B" stroke-width="2"/>
+  <text x="350" y="425.8" class="font" fill="#18181B" font-size="14" font-weight="800">百頁以上舊報告</text>
+  <text x="488" y="425.8" class="font" fill="#52525B" font-size="13">→ 先拆出真的要查的章節再轉，轉完必抽查 0/O、金額與表格欄位</text>
 </svg>

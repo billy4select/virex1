@@ -1,25 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 290" width="960" height="290" role="img" aria-label="IG 洞察報告三層診斷架構圖">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="960" height="480" role="img" aria-label="IG 洞察報告三層診斷架構圖">
   <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
-  <rect width="960" height="290" rx="14" fill="#FFFBF5"/>
-  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
-  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">IG 洞察別只看觸及數：分三層判讀，才能知道下一步改哪裡</text>
+  <rect width="960" height="480" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="58.3" width="6" height="29.9" rx="2" fill="#EA580C"/>
+  <text x="52" y="79.4" class="font" fill="#18181B" font-size="18" font-weight="800">IG 洞察別只看觸及數：分三層判讀，才能知道下一步改哪裡</text>
   
-    <rect x="36" y="84" width="888" height="52" rx="10" fill="#FFFFFF" stroke="#18181B" stroke-width="2"/>
-    <rect x="52" y="98" width="72" height="24" rx="12" fill="#18181B"/>
-    <text x="88" y="114" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">內容層</text>
-    <text x="142" y="115" class="font" fill="#18181B" font-size="14" font-weight="800">這篇值不值得加碼？</text>
-    <text x="348" y="115" class="font" fill="#52525B" font-size="13" font-weight="400">盯「收藏率、分享數、完播率」→ 決定下次多寫哪類題目</text>
+    <rect x="36" y="139" width="888" height="86.1" rx="10" fill="#FFFFFF" stroke="#18181B" stroke-width="2"/>
+    <rect x="52" y="162.2" width="72" height="27.6" rx="12" fill="#18181B"/>
+    <text x="88" y="188.7" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">內容層</text>
+    <text x="142" y="190.3" class="font" fill="#18181B" font-size="14" font-weight="800">這篇值不值得加碼？</text>
+    <text x="348" y="190.3" class="font" fill="#52525B" font-size="13" font-weight="400">盯「收藏率、分享數、完播率」→ 決定下次多寫哪類題目</text>
   
-    <rect x="36" y="148" width="888" height="52" rx="10" fill="#FFF3EB" stroke="#EA580C" stroke-width="2"/>
-    <rect x="52" y="162" width="72" height="24" rx="12" fill="#EA580C"/>
-    <text x="88" y="178" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">帳號層</text>
-    <text x="142" y="179" class="font" fill="#18181B" font-size="14" font-weight="800">是不是值得追蹤的帳號？</text>
-    <text x="348" y="179" class="font" fill="#EA580C" font-size="13" font-weight="700">盯「個人檔案瀏覽 → 追蹤轉換率」→ 檢查自介與精選定位</text>
+    <rect x="36" y="245" width="888" height="86.1" rx="10" fill="#FFF3EB" stroke="#EA580C" stroke-width="2"/>
+    <rect x="52" y="268.1" width="72" height="27.6" rx="12" fill="#EA580C"/>
+    <text x="88" y="294.6" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">帳號層</text>
+    <text x="142" y="296.3" class="font" fill="#18181B" font-size="14" font-weight="800">是不是值得追蹤的帳號？</text>
+    <text x="348" y="296.3" class="font" fill="#EA580C" font-size="13" font-weight="700">盯「個人檔案瀏覽 → 追蹤轉換率」→ 檢查自介與精選定位</text>
   
-    <rect x="36" y="212" width="888" height="52" rx="10" fill="#FFFFFF" stroke="#18181B" stroke-width="2"/>
-    <rect x="52" y="226" width="72" height="24" rx="12" fill="#18181B"/>
-    <text x="88" y="242" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">生意層</text>
-    <text x="142" y="243" class="font" fill="#18181B" font-size="14" font-weight="800">注意力能不能變成收入？</text>
-    <text x="348" y="243" class="font" fill="#52525B" font-size="13" font-weight="400">盯「外部連結點擊、私訊詢問、帶 UTM 進站轉換」</text>
+    <rect x="36" y="350.9" width="888" height="86.1" rx="10" fill="#FFFFFF" stroke="#18181B" stroke-width="2"/>
+    <rect x="52" y="374.1" width="72" height="27.6" rx="12" fill="#18181B"/>
+    <text x="88" y="400.6" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">生意層</text>
+    <text x="142" y="402.2" class="font" fill="#18181B" font-size="14" font-weight="800">注意力能不能變成收入？</text>
+    <text x="348" y="402.2" class="font" fill="#52525B" font-size="13" font-weight="400">盯「外部連結點擊、私訊詢問、帶 UTM 進站轉換」</text>
   
 </svg>

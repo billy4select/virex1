@@ -1,37 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" role="img" aria-label="SEO 文章沒流量的五步排查順序圖">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="960" height="480" role="img" aria-label="SEO 文章沒流量的五步排查順序圖">
   <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
-  <rect width="960" height="300" rx="14" fill="#FFFBF5"/>
-  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
-  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">文章寫完沒流量？先照這 5 個環節由底層往上排查</text>
+  <rect width="960" height="480" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="56.8" width="6" height="29.9" rx="2" fill="#EA580C"/>
+  <text x="52" y="76.8" class="font" fill="#18181B" font-size="18" font-weight="800">文章寫完沒流量？先照這 5 個環節由底層往上排查</text>
   
-    <rect x="36" y="82" width="888" height="34" rx="8" fill="#FFF3EB" stroke="#EA580C" stroke-width="1.8"/>
-    <rect x="48" y="88" width="44" height="22" rx="6" fill="#EA580C"/>
-    <text x="70" y="103" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">查 1</text>
-    <text x="108" y="104" class="font" fill="#18181B" font-size="13.5" font-weight="800">有沒有被收錄？</text>
-    <text x="304" y="104" class="font" fill="#EA580C" font-size="13" font-weight="700">先開 GSC 網址審查，沒進索引後面全白忙</text>
+    <rect x="36" y="131.2" width="888" height="54.4" rx="8" fill="#FFF3EB" stroke="#EA580C" stroke-width="1.8"/>
+    <rect x="48" y="140.8" width="44" height="25.3" rx="6" fill="#EA580C"/>
+    <text x="70" y="164.8" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">查 1</text>
+    <text x="108" y="166.4" class="font" fill="#18181B" font-size="13.5" font-weight="800">有沒有被收錄？</text>
+    <text x="304" y="166.4" class="font" fill="#EA580C" font-size="13" font-weight="700">先開 GSC 網址審查，沒進索引後面全白忙</text>
   
-    <rect x="36" y="124" width="888" height="34" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
-    <rect x="48" y="130" width="44" height="22" rx="6" fill="#18181B"/>
-    <text x="70" y="145" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">查 2</text>
-    <text x="108" y="146" class="font" fill="#18181B" font-size="13.5" font-weight="800">這個題目有人搜嗎？</text>
-    <text x="304" y="146" class="font" fill="#52525B" font-size="13" font-weight="400">確認不是自創名詞，而是讀者真實會打的字</text>
+    <rect x="36" y="198.4" width="888" height="54.4" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
+    <rect x="48" y="208" width="44" height="25.3" rx="6" fill="#18181B"/>
+    <text x="70" y="232" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">查 2</text>
+    <text x="108" y="233.6" class="font" fill="#18181B" font-size="13.5" font-weight="800">這個題目有人搜嗎？</text>
+    <text x="304" y="233.6" class="font" fill="#52525B" font-size="13" font-weight="400">確認不是自創名詞，而是讀者真實會打的字</text>
   
-    <rect x="36" y="166" width="888" height="34" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
-    <rect x="48" y="172" width="44" height="22" rx="6" fill="#18181B"/>
-    <text x="70" y="187" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">查 3</text>
-    <text x="108" y="188" class="font" fill="#18181B" font-size="13.5" font-weight="800">贏得過首頁前 3 名嗎？</text>
-    <text x="304" y="188" class="font" fill="#52525B" font-size="13" font-weight="400">比對競品缺口，補進對方沒講透的實測或表格</text>
+    <rect x="36" y="265.6" width="888" height="54.4" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
+    <rect x="48" y="275.2" width="44" height="25.3" rx="6" fill="#18181B"/>
+    <text x="70" y="299.2" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">查 3</text>
+    <text x="108" y="300.8" class="font" fill="#18181B" font-size="13.5" font-weight="800">贏得過首頁前 3 名嗎？</text>
+    <text x="304" y="300.8" class="font" fill="#52525B" font-size="13" font-weight="400">比對競品缺口，補進對方沒講透的實測或表格</text>
   
-    <rect x="36" y="208" width="888" height="34" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
-    <rect x="48" y="214" width="44" height="22" rx="6" fill="#18181B"/>
-    <text x="70" y="229" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">查 4</text>
-    <text x="108" y="230" class="font" fill="#18181B" font-size="13.5" font-weight="800">站內找得到這篇嗎？</text>
-    <text x="304" y="230" class="font" fill="#52525B" font-size="13" font-weight="400">從高權重舊文與主題頁補內鏈，消滅孤島頁</text>
+    <rect x="36" y="332.8" width="888" height="54.4" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
+    <rect x="48" y="342.4" width="44" height="25.3" rx="6" fill="#18181B"/>
+    <text x="70" y="366.4" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">查 4</text>
+    <text x="108" y="368" class="font" fill="#18181B" font-size="13.5" font-weight="800">站內找得到這篇嗎？</text>
+    <text x="304" y="368" class="font" fill="#52525B" font-size="13" font-weight="400">從高權重舊文與主題頁補內鏈，消滅孤島頁</text>
   
-    <rect x="36" y="250" width="888" height="34" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
-    <rect x="48" y="256" width="44" height="22" rx="6" fill="#18181B"/>
-    <text x="70" y="271" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">查 5</text>
-    <text x="108" y="272" class="font" fill="#18181B" font-size="13.5" font-weight="800">是不是太早判死刑？</text>
-    <text x="304" y="272" class="font" fill="#52525B" font-size="13" font-weight="400">新文通常需 2–8 週發酵，先看曝光成長再改版</text>
+    <rect x="36" y="400" width="888" height="54.4" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
+    <rect x="48" y="409.6" width="44" height="25.3" rx="6" fill="#18181B"/>
+    <text x="70" y="433.6" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">查 5</text>
+    <text x="108" y="435.2" class="font" fill="#18181B" font-size="13.5" font-weight="800">是不是太早判死刑？</text>
+    <text x="304" y="435.2" class="font" fill="#52525B" font-size="13" font-weight="400">新文通常需 2–8 週發酵，先看曝光成長再改版</text>
   
 </svg>

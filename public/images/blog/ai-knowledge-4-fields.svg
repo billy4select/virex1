@@ -1,27 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="讓舊專案不再白做：每一筆值得留存的知識至少記這 4 件事">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520" role="img" aria-label="讓舊專案不再白做：每一筆值得留存的知識至少記這 4 件事">
   <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
-  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
-  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
-  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">讓舊專案不再白做：每一筆值得留存的知識至少記這 4 件事</text>
+  <rect width="960" height="520" rx="16" fill="#FFFBF5"/>
+  <rect x="36" y="34" width="7" height="32" rx="2" fill="#EA580C"/>
+  <text x="56" y="58" class="font" fill="#18181B" font-size="21" font-weight="800">讓舊專案不再白做：每一筆值得留存的知識至少記這 4 件事</text>
   
-      <rect x="36" y="92" width="198" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
-      <text x="52" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">欄位 1</text>
-      <text x="52" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">當時的背景前提</text>
-      <text x="52" y="190" class="font" fill="#52525B" font-size="12.5">預算、時程與限制條件是什麼</text>
-    
-      <rect x="266" y="92" width="198" height="150" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
-      <text x="282" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">欄位 2</text>
-      <text x="282" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">決策與取捨理由</text>
-      <text x="282" y="190" class="font" fill="#52525B" font-size="12.5">為什麼選 A 不選 B，避免重踩</text>
-    
-      <rect x="496" y="92" width="198" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
-      <text x="512" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">欄位 3</text>
-      <text x="512" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">真實結果與踩坑</text>
-      <text x="512" y="190" class="font" fill="#52525B" font-size="12.5">哪裡有效、哪裡不如預期</text>
-    
-      <rect x="726" y="92" width="198" height="150" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
-      <text x="742" y="124" class="font" fill="#FBBF24" font-size="12" font-weight="800">欄位 4</text>
-      <text x="742" y="156" class="font" fill="#FFFFFF" font-size="16" font-weight="800">下次開案檢查點</text>
-      <text x="742" y="190" class="font" fill="#D4D4D8" font-size="12.5">濃縮成 3 條下次直接用的清單</text>
-    
+      <rect x="36" y="108" width="430" height="174" rx="14" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+      <text x="64" y="148" class="font" fill="#EA580C" font-size="13.5" font-weight="800">欄位 1</text>
+      <text x="64" y="186" class="font" fill="#18181B" font-size="20" font-weight="800">當時的背景前提</text>
+      <text x="64" y="232" class="font" fill="#52525B" font-size="15.5">預算、時程與限制條件是什麼</text>
+
+      <rect x="494" y="108" width="430" height="174" rx="14" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+      <text x="522" y="148" class="font" fill="#EA580C" font-size="13.5" font-weight="800">欄位 2</text>
+      <text x="522" y="186" class="font" fill="#18181B" font-size="20" font-weight="800">決策與取捨理由</text>
+      <text x="522" y="232" class="font" fill="#52525B" font-size="15.5">為什麼選 A 不選 B，避免重踩</text>
+
+      <rect x="36" y="306" width="430" height="174" rx="14" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+      <text x="64" y="346" class="font" fill="#EA580C" font-size="13.5" font-weight="800">欄位 3</text>
+      <text x="64" y="384" class="font" fill="#18181B" font-size="20" font-weight="800">真實結果與踩坑</text>
+      <text x="64" y="430" class="font" fill="#52525B" font-size="15.5">哪裡有效、哪裡不如預期</text>
+
+      <rect x="494" y="306" width="430" height="174" rx="14" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
+      <text x="522" y="346" class="font" fill="#FBBF24" font-size="13.5" font-weight="800">欄位 4</text>
+      <text x="522" y="384" class="font" fill="#FFFFFF" font-size="20" font-weight="800">下次開案檢查點</text>
+      <text x="522" y="430" class="font" fill="#D4D4D8" font-size="15.5">濃縮成 3 條下次直接用的清單</text>
 </svg>

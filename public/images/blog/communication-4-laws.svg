@@ -1,27 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="《溝通的黃金法則》核心：技巧排最後，先顧好這四個底層條件">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520" role="img" aria-label="《溝通的黃金法則》核心：技巧排最後，先顧好這四個底層條件">
   <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
-  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
-  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
-  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">《溝通的黃金法則》核心：技巧排最後，先顧好這四個底層條件</text>
+  <rect width="960" height="520" rx="16" fill="#FFFBF5"/>
+  <rect x="36" y="34" width="7" height="32" rx="2" fill="#EA580C"/>
+  <text x="56" y="58" class="font" fill="#18181B" font-size="21" font-weight="800">《溝通的黃金法則》核心：技巧排最後，先顧好這四個底層條件</text>
   
-      <rect x="36" y="92" width="198" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
-      <text x="52" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">底層 1</text>
-      <text x="52" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">先立住「人」</text>
-      <text x="52" y="190" class="font" fill="#52525B" font-size="12.5">平時累積的信用，決定開口前對方信幾分</text>
-    
-      <rect x="266" y="92" width="198" height="150" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
-      <text x="282" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">底層 2</text>
-      <text x="282" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">內容言之有物</text>
-      <text x="282" y="190" class="font" fill="#52525B" font-size="12.5">先想透再開口，沒料的話術撐不過三分鐘</text>
-    
-      <rect x="496" y="92" width="198" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
-      <text x="512" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">底層 3</text>
-      <text x="512" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">讓對方願意聽</text>
-      <text x="512" y="190" class="font" fill="#52525B" font-size="12.5">對齊對方在乎的利益，而不是只講自己想說的</text>
-    
-      <rect x="726" y="92" width="198" height="150" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
-      <text x="742" y="124" class="font" fill="#FBBF24" font-size="12" font-weight="800">底層 4</text>
-      <text x="742" y="156" class="font" fill="#FFFFFF" font-size="16" font-weight="800">掌握溝通時機</text>
-      <text x="742" y="190" class="font" fill="#D4D4D8" font-size="12.5">同樣一句話，在情緒對的時刻講才進得去</text>
-    
+      <rect x="36" y="108" width="430" height="174" rx="14" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+      <text x="64" y="148" class="font" fill="#EA580C" font-size="13.5" font-weight="800">底層 1</text>
+      <text x="64" y="186" class="font" fill="#18181B" font-size="20" font-weight="800">先立住「人」</text>
+      <text x="64" y="232" class="font" fill="#52525B" font-size="15.5">平時累積的信用，決定開口前對方信幾分</text>
+
+      <rect x="494" y="108" width="430" height="174" rx="14" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+      <text x="522" y="148" class="font" fill="#EA580C" font-size="13.5" font-weight="800">底層 2</text>
+      <text x="522" y="186" class="font" fill="#18181B" font-size="20" font-weight="800">內容言之有物</text>
+      <text x="522" y="232" class="font" fill="#52525B" font-size="15.5">先想透再開口，沒料的話術撐不過三分鐘</text>
+
+      <rect x="36" y="306" width="430" height="174" rx="14" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+      <text x="64" y="346" class="font" fill="#EA580C" font-size="13.5" font-weight="800">底層 3</text>
+      <text x="64" y="384" class="font" fill="#18181B" font-size="20" font-weight="800">讓對方願意聽</text>
+      <text x="64" y="430" class="font" fill="#52525B" font-size="15.5">對齊對方在乎的利益，而不是只講自己想說的</text>
+
+      <rect x="494" y="306" width="430" height="174" rx="14" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
+      <text x="522" y="346" class="font" fill="#FBBF24" font-size="13.5" font-weight="800">底層 4</text>
+      <text x="522" y="384" class="font" fill="#FFFFFF" font-size="20" font-weight="800">掌握溝通時機</text>
+      <text x="522" y="430" class="font" fill="#D4D4D8" font-size="15.5">同樣一句話，在情緒對的時刻講才進得去</text>
 </svg>
