@@ -76,18 +76,6 @@ const articleSchema = {
         <p class="mt-2 text-sm leading-relaxed text-text-muted">{chapter.outcome}</p>
       </div>
 
-      <figure class="mt-8 overflow-hidden rounded-2xl border border-border bg-surface">
-        <img
-          src={`/images/series/seo-${chapter.slug}.svg`}
-          alt={`第 ${chapter.no} 章核心圖解：${chapter.title}`}
-          width="960"
-          height="280"
-          loading="eager"
-          decoding="async"
-          class="block w-full h-auto"
-        />
-      </figure>
-
       <div class="mt-10 space-y-10">
         {
           chapter.sections.map((section) => (

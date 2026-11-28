@@ -121,7 +121,6 @@ const schema = {
 <MarketingLayout
   title={pageTitle}
   description={pageDescription}
-  image={`/images/topics/${slug}.webp`}
   structuredData={[schema]}
 >
   <Breadcrumbs
@@ -139,17 +138,6 @@ const schema = {
         {heroHeading}
       </h1>
       <p class="mt-4 max-w-3xl text-base leading-relaxed text-text-muted md:text-lg">{area.lead}</p>
-      <div class="mt-8 overflow-hidden rounded-2xl border border-border bg-surface">
-        <img
-          src={`/images/topics/${slug}.webp`}
-          alt={`${heroHeading} 主題封面圖`}
-          width="1200"
-          height="675"
-          loading="eager"
-          decoding="async"
-          class="aspect-[16/9] w-full object-cover"
-        />
-      </div>
     </div>
   </section>
 
