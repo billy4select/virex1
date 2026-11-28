@@ -8,6 +8,7 @@ tags:
   - 職涯資產
   - 可遷移能力
 category: 職涯與轉型
+image: /images/blog/mid-career-portable-assets.webp
 featured: false
 boost: false
 draft: false
@@ -28,6 +29,8 @@ faq:
 這不是要否定你的成就，而是提醒你：職涯的安全感，應該建立在可攜帶的資產上。
 
 ## 五項可攜帶資產
+
+![離開原公司後真正帶得走的五項中階主管可攜帶資產圖](/images/blog/portable-5-assets.svg)
 
 ### 1. 方法
 

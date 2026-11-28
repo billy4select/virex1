@@ -9,6 +9,7 @@ tags:
   - AI 學習
   - 職涯轉型
 category: 職涯與轉型
+image: /images/blog/learn-ai-at-35-too-late-roi-metrics.webp
 featured: false
 boost: false
 draft: false
@@ -37,6 +38,8 @@ faq:
 這些經驗可以幫助你評估 AI 的輸出，但不代表年資越長就一定越會使用 AI。若缺乏驗證，過去的習慣也可能讓人忽略新的做法。
 
 ## 不必先學完整套工具，先選一項任務
+
+![35 歲後學 AI 判斷投入是否值得的三個實務路徑](/images/blog/learn-ai-35-roi.svg)
 
 找一件最近真的做過、而且下次還會再做的工作。例如整理訪談紀錄、比較多份文件、初步分類顧客意見，或把資料整理成報告初稿。
 

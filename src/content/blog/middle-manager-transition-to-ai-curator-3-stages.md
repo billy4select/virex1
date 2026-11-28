@@ -9,6 +9,7 @@ tags:
   - AI 工作流程
   - 管理
 category: 職涯與轉型
+image: /images/blog/middle-manager-transition-to-ai-curator-3-stages.webp
 featured: false
 boost: false
 draft: false
@@ -26,6 +27,8 @@ faq:
 這時主管不一定要成為團隊裡最懂模型或工具的人，但需要知道工作是怎麼完成的、哪些環節可以交給 AI，以及最後由誰確認結果。
 
 ## 先從工作流程理解 AI 能做什麼
+
+![中階主管在 AI 時代從旁觀者轉型為策展人的三階段圖](/images/blog/manager-ai-curator-3-stages.svg)
 
 不要先要求每個人學會同一套工具。先挑選團隊裡重複、耗時，而且結果容易檢查的任務，例如會議資料整理、文件初步分類、報告格式整理或資料彙整。
 

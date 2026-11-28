@@ -8,6 +8,7 @@ author: 比利陳 Billy Chen
 tags:
   - 職涯與心態
 category: 職涯與轉型
+image: /images/blog/senior-employees-ai-upskilling-strategy-not-replaced.webp
 featured: true
 boost: true
 draft: false
@@ -34,6 +35,8 @@ faq:
 ---
 
 ## 升級而不是替代，有哪三個策略？
+
+![資深員工面對 AI 不被稀釋的三個升級策略圖](/images/blog/senior-ai-3-strategies.svg)
 
 ### 方向一：從「生產者」變成「審核者」
 

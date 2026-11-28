@@ -8,6 +8,7 @@ tags:
   - 知識工作
   - 作品集
 category: 職涯與轉型
+image: /images/blog/deliberate-practice-knowledge-work.webp
 featured: false
 boost: false
 draft: false
@@ -26,6 +27,8 @@ faq:
 但知識工作不是不能練習，而是要換一種練法：不要練整個任務，練任務裡的一個子技能。
 
 ## 把工作拆成子技能
+
+![知識工作者刻意練習四步驟迴路圖：拆子技能、單點練習、外部回饋與版本對照](/images/blog/deliberate-practice-loop.svg)
 
 一場提案，可以拆成：
 

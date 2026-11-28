@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="說服不是靠形容詞堆疊：讓文章站得住腳的 4 個關鍵元件">
+  <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
+  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
+  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">說服不是靠形容詞堆疊：讓文章站得住腳的 4 個關鍵元件</text>
+  
+      <rect x="36" y="92" width="198" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+      <text x="52" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">關鍵 1</text>
+      <text x="52" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">先讓自己買單</text>
+      <text x="52" y="190" class="font" fill="#52525B" font-size="12.5">自己讀了都心虛的論點，讀者一眼就看穿</text>
+    
+      <rect x="266" y="92" width="198" height="150" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+      <text x="282" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">關鍵 2</text>
+      <text x="282" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">具體對照畫面</text>
+      <text x="282" y="190" class="font" fill="#52525B" font-size="12.5">用前後差異與數字取代「很有效、很棒」</text>
+    
+      <rect x="496" y="92" width="198" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+      <text x="512" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">關鍵 3</text>
+      <text x="512" y="156" class="font" fill="#18181B" font-size="16" font-weight="800">誠實講出代價</text>
+      <text x="512" y="190" class="font" fill="#52525B" font-size="12.5">主動點出限制與不適用對象，信任感翻倍</text>
+    
+      <rect x="726" y="92" width="198" height="150" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
+      <text x="742" y="124" class="font" fill="#FBBF24" font-size="12" font-weight="800">關鍵 4</text>
+      <text x="742" y="156" class="font" fill="#FFFFFF" font-size="16" font-weight="800">可驗證下一步</text>
+      <text x="742" y="190" class="font" fill="#D4D4D8" font-size="12.5">給一個讀者今天就能自己驗證的小動作</text>
+    
+</svg>

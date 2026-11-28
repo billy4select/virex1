@@ -11,6 +11,7 @@ tags:
   - 溝通
   - 說服力
 category: 內容與 SEO
+image: /images/blog/writing-persuasion-logic.webp
 featured: false
 boost: false
 draft: false
@@ -44,6 +45,8 @@ sources:
 如果一個方法我自己沒跑過、或是寫出來的結論連我自己都不太信服，硬湊出來的文字讀者一眼就能感覺到虛。如果連我自己都不買單，我就無法賣給任何人，更別說要說服讀者改變想法。
 
 ## 讓文章站得住腳的四個關鍵
+
+![讓文章與提案更有說服力的四個核心關鍵圖](/images/blog/writing-persuasion-4-keys.svg)
 
 1. **分清楚「現象」「主張」跟「證據」**  
    不要直接丟一句「做 SEO 很重要」或「FB 廣告太貴了」。把你看到的具體現象講出來（例如跑了 2 天花 1,000 元沒反應、或是 GA 跳出率飆高），再講你的推論，讀者才能跟著你的思路走。

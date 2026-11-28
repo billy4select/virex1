@@ -9,6 +9,7 @@ tags:
   - 知識管理
   - AI工作流程
 category: AI 工作流程與工具
+image: /images/blog/ai-project-review-knowledge-base.webp
 featured: false
 boost: false
 draft: false
@@ -44,6 +45,8 @@ sources:
 3. **一線人員的零碎回饋**：設計、投放、客服或業務各自記下的卡點。
 
 ## 用 AI 把複盤切乾淨的三段結構
+
+![AI 專案複盤三段切分結構圖：客觀結果、真正原因與下次做法](/images/blog/ai-project-review-3-parts.svg)
 
 把材料丟進去後，請它嚴格照下面三段拆開整理，不要急著下評語：
 

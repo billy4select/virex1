@@ -11,6 +11,7 @@ tags:
   - 文案
   - 品牌溝通
 category: 內容與 SEO
+image: /images/blog/story-marketing-emotional-connection.webp
 featured: false
 boost: false
 draft: false
@@ -38,6 +39,8 @@ sources:
 這種文字連你自己念一遍都覺得尷尬，讀者當然更不會買單。
 
 ## 好故事不需要煽情，只要夠具體
+
+![好故事不煽情四段結構圖：具體場景、轉折衝突、付出代價與留下的問題](/images/blog/story-marketing-4-beats.svg)
 
 我在寫文章或電子報的時候，其實很少刻意「編故事」。多數時候，都是從**我自己這週真的遇過的一件具體小事**開始講。
 

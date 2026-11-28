@@ -9,6 +9,7 @@ tags:
   - 數據與資安
   - AI工作流程
 category: AI 工作流程與工具
+image: /images/blog/ai-batch-review-analysis.webp
 featured: false
 boost: false
 draft: false
@@ -38,6 +39,8 @@ sources:
 真正反覆出現的小抱怨、或是買家自己發現的意外好用場景，全都被埋在底下沒人整理。這正是 AI 最擅長幫你省力氣的地方。
 
 ## 第一步：把原始評論收乾淨，先拔掉個資
+
+![AI 批量分析使用者評論三步驟圖：去個資整理、分類統計到按生意影響排序](/images/blog/ai-review-analysis-3-steps.svg)
 
 先把官網、電商平台或客服表單裡的留言匯出成純文字或試算表。
 

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="做能力盤點別只寫職稱：把實際做過的工作動作拆成這三層">
+  <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style>
+  <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#18181B"/></marker></defs>
+  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
+  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">做能力盤點別只寫職稱：把實際做過的工作動作拆成這三層</text>
+  
+      <rect x="36" y="92" width="264" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+      <text x="56" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">底層（帶不走）</text>
+      <text x="56" y="156" class="font" fill="#18181B" font-size="16.5" font-weight="800">原公司專屬流程</text>
+      <text x="56" y="190" class="font" fill="#52525B" font-size="12.5">只有舊系統與舊窗口用得上的熟悉度</text>
+      <line x1="300" y1="167" x2="338" y2="167" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+    
+      <rect x="348" y="92" width="264" height="150" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+      <text x="368" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">中層（可遷移）</text>
+      <text x="368" y="156" class="font" fill="#18181B" font-size="16.5" font-weight="800">可複製的方法論</text>
+      <text x="368" y="190" class="font" fill="#52525B" font-size="12.5">換公司也能立刻上手的拆題與交付流程</text>
+      <line x1="612" y1="167" x2="650" y2="167" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+    
+      <rect x="660" y="92" width="264" height="150" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
+      <text x="680" y="124" class="font" fill="#FBBF24" font-size="12" font-weight="800">頂層（最值錢）</text>
+      <text x="680" y="156" class="font" fill="#FFFFFF" font-size="16.5" font-weight="800">有證據的判斷力</text>
+      <text x="680" y="190" class="font" fill="#D4D4D8" font-size="12.5">附具體案例與成果數字的關鍵決策紀錄</text>
+      
+    
+</svg>

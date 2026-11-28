@@ -7,6 +7,7 @@ tags:
   - 數據與資安
   - 職涯與心態
 category: 職涯與轉型
+image: /images/blog/ai-data-analysis-human-ai-collaboration-professionalism.webp
 featured: true
 boost: true
 draft: false
@@ -23,6 +24,8 @@ faq:
 但當主管或同事追問「這個數字怎麼算的？」、「為什麼你認為是這個原因？」時，能不能回答，才是這份分析是否可靠的分水嶺。
 
 ## 分析開始前，先把問題定義清楚
+
+![AI 數據分析人機協作四步驟圖：定義問題、AI 計算、交叉驗算到回到現場下判斷](/images/blog/ai-data-analysis-collab.svg)
 
 「幫我分析這份銷售資料」不是一個足夠清楚的分析任務。你需要先說明：
 

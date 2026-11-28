@@ -11,6 +11,7 @@ tags:
   - Core Web Vitals
   - 技術優化
 category: 內容與 SEO
+image: /images/blog/website-speed-seo-checks.webp
 featured: false
 boost: false
 draft: false
@@ -40,6 +41,8 @@ sources:
 網站速度對 SEO 的影響其實很直觀：開太慢會直接拉高你在 GA4 看到的跳出率，讀者連文章第一行都還沒讀到就離開了，內容寫得再好也沒機會發揮。
 
 ## 先看懂三個核心指標（Core Web Vitals）
+
+![網站速度 Core Web Vitals 三大核心指標 LCP、INP、CLS 門檻對照圖](/images/blog/cwv-3-metrics.svg)
 
 進 Google Search Console 的「網頁體驗」或免費的 PageSpeed Insights，會看到三個英文縮寫，其實對應的就是三個很生活化的體驗：
 

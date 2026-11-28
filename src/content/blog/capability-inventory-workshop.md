@@ -8,6 +8,7 @@ tags:
   - 職涯發展
   - T型能力
 category: 職涯與轉型
+image: /images/blog/capability-inventory-workshop.webp
 featured: false
 boost: false
 draft: false
@@ -32,6 +33,8 @@ faq:
 盡量寫成動詞加上情境。比起「溝通能力好」，「能在產品、業務與客服對目標理解不同時，整理出可執行的共識」更容易被檢查。
 
 ## 把能力分成三個層次
+
+![個人能力盤點三層次圖：組織綁定技能、可遷移方法論與底層判斷力](/images/blog/capability-3-tiers.svg)
 
 ### 專業深度
 

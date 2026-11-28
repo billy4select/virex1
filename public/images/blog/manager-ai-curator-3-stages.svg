@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="中階主管的 AI 轉型三階段：核心價值不在親自寫 Prompt，而在定標準">
+  <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style>
+  <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#18181B"/></marker></defs>
+  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
+  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">中階主管的 AI 轉型三階段：核心價值不在親自寫 Prompt，而在定標準</text>
+  
+      <rect x="36" y="92" width="264" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+      <text x="56" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">階段 1</text>
+      <text x="56" y="156" class="font" fill="#18181B" font-size="16.5" font-weight="800">摸清流程邊界</text>
+      <text x="56" y="190" class="font" fill="#52525B" font-size="12.5">看懂團隊工作裡哪些適合 AI、哪些必由人把關</text>
+      <line x1="300" y1="167" x2="338" y2="167" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+    
+      <rect x="348" y="92" width="264" height="150" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+      <text x="368" y="124" class="font" fill="#EA580C" font-size="12" font-weight="800">階段 2</text>
+      <text x="368" y="156" class="font" fill="#18181B" font-size="16.5" font-weight="800">建立品質檢查表</text>
+      <text x="368" y="190" class="font" fill="#52525B" font-size="12.5">定出全隊共用的事實查核與去 AI 味驗收標準</text>
+      <line x1="612" y1="167" x2="650" y2="167" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+    
+      <rect x="660" y="92" width="264" height="150" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
+      <text x="680" y="124" class="font" fill="#FBBF24" font-size="12" font-weight="800">階段 3</text>
+      <text x="680" y="156" class="font" fill="#FFFFFF" font-size="16.5" font-weight="800">重分配人機協作</text>
+      <text x="680" y="190" class="font" fill="#D4D4D8" font-size="12.5">用小實驗累積成功案例，把人力移往高判斷任務</text>
+      
+    
+</svg>

@@ -7,6 +7,7 @@ tags:
   - 職涯發展
   - 決策思考
 category: 職涯與轉型
+image: /images/blog/career-opportunity-cost-decision.webp
 featured: false
 boost: false
 draft: false
@@ -44,6 +45,8 @@ faq:
 先知道自己現在在意什麼，才不會只因為某個機會看起來很漂亮就急著答應。
 
 ## 把機會拆成六個面向
+
+![職涯機會評估六大面向與可逆性檢查圖](/images/blog/career-6-dimensions.svg)
 
 | 面向 | 可以問自己的問題 |
 | :--- | :--- |
