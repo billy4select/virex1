@@ -9,6 +9,7 @@ tags:
   - AI工作流
   - 個人事業
 category: 自媒體與個人事業
+image: /images/blog/one-person-company-ai-work-system.webp
 featured: false
 boost: false
 draft: false
@@ -29,6 +30,8 @@ faq:
 這篇談的是實務上的「經營與交付做法」（公司登記、發票與稅務請以主管機關與會計師為準），直接用五個角色與一條最小交付鏈，幫你搭出一個跑得久的一人工作系統。
 
 ## 先把五個角色拆開
+
+![一人公司五大角色分工與六節點最小交付鏈架構圖](/images/blog/one-person-delivery-chain.svg)
 
 ### 1. 業務角色：找到對的人與對的問題
 

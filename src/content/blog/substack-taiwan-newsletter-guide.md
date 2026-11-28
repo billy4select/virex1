@@ -12,6 +12,7 @@ tags:
   - 自媒體
   - 個人品牌
 category: 自媒體與個人事業
+image: /images/blog/substack-taiwan-newsletter-guide.webp
 featured: false
 boost: false
 draft: false
@@ -126,6 +127,8 @@ Substack 允許你一次性支付 50 美金，把 `yourname.substack.com` 綁到
 - **一封信只講透一個核心主題**：不要把電子報寫成什麼都塞的大雜燴，講完一個具體判斷，文末放 1–2 個延伸長文連結點擊率反而最高。
 
 ## 我怎麼從 Threads、部落格把人導進 Substack？（實際運作節奏）
+
+![一魚三吃導流線：從自有官網長文與 Threads 導流進 Substack 電子報名單](/images/blog/substack-content-funnel.svg)
 
 電子報本身幾乎不會憑空長出流量，我自己的做法是把「**部落格長文（SEO）**」＋「**Threads／Notes（公域觸及）**」＋「**Substack（私域留存）**」接成同一條線：
 

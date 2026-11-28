@@ -11,6 +11,7 @@ tags:
   - 工具比較評測
   - AI工具
 category: AI 工作流程與工具
+image: /images/blog/google-ai-pro-vs-free-limits-family-sharing.webp
 featured: false
 boost: false
 draft: false
@@ -112,6 +113,8 @@ NT$ 650 買到的不只是聊天框，而是一整組綁在 Google 帳號裡的�
 - **雲端空間與影音點數**：含 5 TB Google One 空間、每月 1,000 點 Google Flow 影音創作點數，以及部分帳號隨附的 YouTube Premium Lite（詳見下方家庭共享限制）。
 
 ## 三、真的買的人該怎麼用？把額度與功能用到極致的實戰教學
+
+![Google AI Pro 依任務難度切換快速模式、Pro 思考深度與 NotebookLM 的省額度分工圖](/images/blog/google-ai-pro-workflow-routing.svg)
 
 ### 1. 開通後先檢查 2 個設定
 

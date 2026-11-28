@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 350" width="960" height="350" role="img" aria-label="GA4 到達網頁與流量來源交叉診斷圖">
+  <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style>
+  <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#18181B"/></marker></defs>
+  <rect width="960" height="350" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
+  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">到達網頁 × 流量來源交叉比對：30 秒抓出「廣告打歪」還是「網頁接不住」</text>
+
+  <rect x="36" y="96" width="240" height="206" rx="12" fill="#18181B"/>
+  <rect x="54" y="114" width="84" height="22" rx="11" fill="#FBBF24"/>
+  <text x="96" y="129" text-anchor="middle" class="font" fill="#18181B" font-size="11" font-weight="800">交叉維度</text>
+  <text x="54" y="164" class="font" fill="#FFFFFF" font-size="17" font-weight="800">到達網頁報表</text>
+  <text x="54" y="194" class="font" fill="#D4D4D8" font-size="13">1. 找到跳出率 &gt; 60% 的頁面</text>
+  <text x="54" y="220" class="font" fill="#D4D4D8" font-size="13">2. 點左側藍色「＋」號</text>
+  <text x="54" y="246" class="font" fill="#FBBF24" font-size="13" font-weight="700">3. 加上「工作階段來源／媒介」</text>
+
+  <path d="M 276 154 L 334 154" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+  <path d="M 276 248 L 334 248" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="342" y="92" width="582" height="104" rx="10" fill="#FFFFFF" stroke="#18181B" stroke-width="2"/>
+  <rect x="360" y="108" width="64" height="22" rx="11" fill="#18181B"/>
+  <text x="392" y="123" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11" font-weight="700">情況 A</text>
+  <text x="436" y="124" class="font" fill="#18181B" font-size="15" font-weight="800">只有單一廣告管道跳出率飆高（例如搜尋 28%，Meta 廣告 75%）</text>
+  <text x="360" y="154" class="font" fill="#52525B" font-size="13">診斷：頁面本身沒大問題，是廣告打錯受眾或素材承諾跟進站首屏落差太大</text>
+  <text x="360" y="178" class="font" fill="#EA580C" font-size="13" font-weight="800">優先動作 → 別急著大改網頁，先回去調廣告受眾與素材標題</text>
+
+  <rect x="342" y="212" width="582" height="104" rx="10" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+  <rect x="360" y="228" width="64" height="22" rx="11" fill="#EA580C"/>
+  <text x="392" y="243" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11" font-weight="700">情況 B</text>
+  <text x="436" y="244" class="font" fill="#18181B" font-size="15" font-weight="800">所有管道（搜尋、社群、電子報）進這一頁都超過 65%</text>
+  <text x="360" y="274" class="font" fill="#52525B" font-size="13">診斷：問題在頁面本身——手機開太慢、首屏標題看不懂、或找不到下一步按鈕</text>
+  <text x="360" y="298" class="font" fill="#EA580C" font-size="13" font-weight="800">優先動作 → 拿手機實測載入速度，重寫首屏主標與行動呼籲</text>
+</svg>

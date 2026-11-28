@@ -12,6 +12,7 @@ tags:
   - 需求分析
   - 行銷策略
 category: 行銷策略與診斷
+image: /images/blog/audience-is-not-a-label.webp
 featured: false
 boost: false
 draft: false
@@ -78,6 +79,8 @@ faq:
 一個人對過去踩坑的細節講得越具體，這個需求的真實度就越高。
 
 ## 五個避免自嗨的市場需求實測方法（由低成本到高成本）
+
+![從觀察既有行為到手動交付最小版本的五階低成本市場驗證梯](/images/blog/audience-validation-ladder.svg)
 
 在花三個月開發完整產品之前，照以下五個方法由淺入深推進，至少要通過其中兩到三個，才值得繼續加碼投入：
 

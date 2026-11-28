@@ -8,6 +8,7 @@ author: 比利陳 Billy Chen
 tags:
   - NotebookLM教學
 category: NotebookLM 實戰
+image: /images/blog/notebooklm-complete-guide-2026.webp
 featured: true
 boost: true
 draft: false
@@ -54,6 +55,8 @@ NotebookLM 跟 ChatGPT、Claude 最大的差別，在於它被嚴格鎖定在你
 只要你手上已經有一堆難消化的資料——像是五份產業報告想找共同趨勢、十場客戶訪談想抓重複抱怨、或是讀一份很硬的專業文件——NotebookLM 就能省下大量翻找時間。反過來，如果你需要外部最新動態、延伸背景知識或有節奏感的對外文案，請直接切換到通用 AI 或自己改寫。
 
 ## 上傳文件前的準備與整理：四項必做檢查
+
+![NotebookLM 實戰四步流：守住入口衛生、先畫架構地圖、鎖定追問因果與核對引用](/images/blog/notebooklm-four-step-workflow.svg)
 
 NotebookLM 好不好用，有一半在按下上傳之前就已經決定了。把未篩選的新舊草稿、掃描圖檔跟不同專案全塞進同一本筆記本，只會讓後面的回答東拼西湊、查引用查到懷疑人生。
 

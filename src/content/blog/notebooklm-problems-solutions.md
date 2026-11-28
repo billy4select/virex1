@@ -11,6 +11,7 @@ tags:
   - OCR
   - CSV亂碼
 category: NotebookLM 實戰
+image: /images/blog/notebooklm-problems-solutions.webp
 featured: false
 boost: false
 draft: false
@@ -58,6 +59,8 @@ sources:
 | **舊數字跟新方案混在一起答** | 初版、修改版、最終版全塞在同一本筆記本 | 移出舊版草稿，檔名統一標註 `日期_主題_來源` |
 
 ## PDF 讀不到掃描檔？三種免費 OCR 轉換做法與抽查重點
+
+![NotebookLM 掃描 PDF 判斷與三種免費 OCR 選擇路徑圖](/images/blog/notebooklm-ocr-decision.svg)
 
 把 PDF 丟進 NotebookLM 卻顯示找不到資料或答非所問，最常見的原因是這份檔案只是一張一張掃描出來的圖片、裡面根本沒有文字層。上傳前花 10 秒測一次反白，必要時先做 OCR 轉換，就能徹底避開這個坑。
 
