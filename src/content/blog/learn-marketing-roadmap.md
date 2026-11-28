@@ -10,7 +10,6 @@ tags:
   - 學習路徑
   - 行銷基礎
 category: 行銷策略與診斷
-image: /images/blog/learn-marketing-roadmap.webp
 featured: false
 boost: false
 draft: false

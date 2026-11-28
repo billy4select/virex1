@@ -11,7 +11,6 @@ tags:
   - 文案
   - 品牌溝通
 category: 內容與 SEO
-image: /images/blog/story-marketing-emotional-connection.webp
 featured: false
 boost: false
 draft: false

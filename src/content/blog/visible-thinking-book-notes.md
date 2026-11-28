@@ -10,7 +10,6 @@ tags:
   - 視覺化表達
   - 內容創作
 category: 書籍導讀
-image: /images/blog/visible-thinking-book-notes.webp
 featured: false
 boost: false
 draft: false

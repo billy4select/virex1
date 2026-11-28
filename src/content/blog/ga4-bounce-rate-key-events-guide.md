@@ -11,7 +11,6 @@ tags:
   - 數據分析
   - 行銷指標
 category: 行銷策略與診斷
-image: /images/blog/ga4-bounce-rate-key-events-guide.webp
 featured: false
 boost: false
 draft: false

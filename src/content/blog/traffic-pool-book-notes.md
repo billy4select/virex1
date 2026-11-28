@@ -10,7 +10,6 @@ tags:
   - 裂變行銷
   - 會員經營
 category: 書籍導讀
-image: /images/blog/traffic-pool-book-notes.webp
 featured: false
 boost: false
 draft: false

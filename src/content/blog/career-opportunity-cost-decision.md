@@ -7,7 +7,6 @@ tags:
   - 職涯發展
   - 決策思考
 category: 職涯與轉型
-image: /images/blog/career-opportunity-cost-decision.webp
 featured: false
 boost: false
 draft: false

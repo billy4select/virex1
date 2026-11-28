@@ -10,7 +10,6 @@ tags:
   - 溝通表達
   - 個人品牌
 category: 書籍導讀
-image: /images/blog/laws-of-communication-book-notes.webp
 featured: false
 boost: false
 draft: false

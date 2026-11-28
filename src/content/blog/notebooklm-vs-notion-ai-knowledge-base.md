@@ -9,7 +9,6 @@ tags:
   - 工具比較評測
   - 知識管理
 category: NotebookLM 實戰
-image: /images/blog/notebooklm-vs-notion-ai-knowledge-base.webp
 featured: false
 boost: false
 draft: false

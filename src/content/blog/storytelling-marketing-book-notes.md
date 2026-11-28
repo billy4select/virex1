@@ -10,7 +10,6 @@ tags:
   - 文案寫作
   - 品牌定位
 category: 書籍導讀
-image: /images/blog/storytelling-marketing-book-notes.webp
 featured: false
 boost: false
 draft: false

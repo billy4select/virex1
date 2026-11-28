@@ -8,7 +8,6 @@ author: 比利陳 Billy Chen
 tags:
   - AI工作流程
 category: AI 工作流程與工具
-image: /images/blog/claude-objection-simulation.webp
 featured: false
 boost: false
 draft: false

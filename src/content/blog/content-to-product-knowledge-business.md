@@ -9,7 +9,6 @@ tags:
   - 內容產品
   - 個人事業
 category: 自媒體與個人事業
-image: /images/blog/content-to-product-knowledge-business.webp
 featured: false
 boost: false
 draft: false

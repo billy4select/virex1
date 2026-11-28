@@ -10,7 +10,6 @@ tags:
   - 學習方法
   - 工作方法
 category: 職涯與轉型
-image: /images/blog/ai-era-capability-map.webp
 featured: false
 boost: false
 draft: false

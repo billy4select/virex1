@@ -11,7 +11,6 @@ tags:
   - 回購
   - 投放策略
 category: 廣告與投放
-image: /images/blog/ad-budget-new-vs-returning.webp
 featured: false
 boost: false
 draft: false

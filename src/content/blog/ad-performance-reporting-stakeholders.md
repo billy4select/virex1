@@ -11,7 +11,6 @@ tags:
   - 溝通
   - 行銷管理
 category: 廣告與投放
-image: /images/blog/ad-performance-reporting-stakeholders.webp
 featured: false
 boost: false
 draft: false

@@ -8,7 +8,6 @@ tags:
   - 學習方法
   - 知識管理
 category: 職涯與轉型
-image: /images/blog/learn-new-field-with-ai-30-days.webp
 featured: false
 boost: false
 draft: false

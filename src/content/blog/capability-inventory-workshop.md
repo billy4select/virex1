@@ -8,7 +8,6 @@ tags:
   - 職涯發展
   - T型能力
 category: 職涯與轉型
-image: /images/blog/capability-inventory-workshop.webp
 featured: false
 boost: false
 draft: false

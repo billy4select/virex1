@@ -10,7 +10,6 @@ tags:
   - 專案管理
   - 知識沉澱
 category: AI 工作流程與工具
-image: /images/blog/ai-knowledge-capture-meetings-projects.webp
 featured: false
 boost: false
 draft: false

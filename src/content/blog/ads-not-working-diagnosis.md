@@ -11,7 +11,6 @@ tags:
   - 轉換率
   - 投放
 category: 廣告與投放
-image: /images/blog/ads-not-working-diagnosis.webp
 featured: false
 boost: false
 draft: false

@@ -8,7 +8,6 @@ author: 比利陳 Billy Chen
 tags:
   - 工具比較評測
 category: NotebookLM 實戰
-image: /images/blog/notebooklm-vs-claude-internal-docs.webp
 featured: false
 boost: false
 draft: false

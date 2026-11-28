@@ -11,7 +11,6 @@ tags:
   - Core Web Vitals
   - 技術優化
 category: 內容與 SEO
-image: /images/blog/website-speed-seo-checks.webp
 featured: false
 boost: false
 draft: false

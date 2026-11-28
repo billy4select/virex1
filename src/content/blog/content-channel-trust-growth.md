@@ -10,7 +10,6 @@ tags:
   - 成長策略
   - 品牌信任
 category: 行銷策略與診斷
-image: /images/blog/content-channel-trust-growth.webp
 featured: false
 boost: false
 draft: false

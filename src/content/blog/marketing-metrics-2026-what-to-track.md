@@ -9,7 +9,6 @@ tags:
   - 數據分析
   - 歸因
 category: 行銷策略與診斷
-image: /images/blog/marketing-metrics-2026-what-to-track.webp
 featured: false
 boost: false
 draft: false

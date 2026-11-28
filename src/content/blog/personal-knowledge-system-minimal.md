@@ -8,7 +8,6 @@ tags:
   - 筆記方法
   - 學習系統
 category: 職涯與轉型
-image: /images/blog/personal-knowledge-system-minimal.webp
 featured: false
 boost: false
 draft: false

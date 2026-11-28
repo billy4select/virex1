@@ -9,7 +9,6 @@ tags:
   - 知識管理
   - AI工作流程
 category: AI 工作流程與工具
-image: /images/blog/ai-project-review-knowledge-base.webp
 featured: false
 boost: false
 draft: false

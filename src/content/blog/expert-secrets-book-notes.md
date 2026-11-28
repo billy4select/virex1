@@ -10,7 +10,6 @@ tags:
   - 銷售漏斗
   - 知識變現
 category: 書籍導讀
-image: /images/blog/expert-secrets-book-notes.webp
 featured: false
 boost: false
 draft: false

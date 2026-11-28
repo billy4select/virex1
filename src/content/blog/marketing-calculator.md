@@ -12,7 +12,6 @@ tags:
   - ROI
   - 廣告計算
 category: 廣告與投放
-image: /images/blog/marketing-calculator.webp
 featured: false
 boost: false
 draft: false

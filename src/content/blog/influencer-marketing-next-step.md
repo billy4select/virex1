@@ -11,7 +11,6 @@ tags:
   - 轉換
   - 通路策略
 category: 廣告與投放
-image: /images/blog/influencer-marketing-next-step.webp
 featured: false
 boost: false
 draft: false

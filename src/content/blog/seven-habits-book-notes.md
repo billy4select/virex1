@@ -10,7 +10,6 @@ tags:
   - 時間管理
   - 個人成長
 category: 書籍導讀
-image: /images/blog/seven-habits-book-notes.webp
 featured: false
 boost: false
 draft: false

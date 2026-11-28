@@ -8,7 +8,6 @@ tags:
   - 職涯資產
   - 可遷移能力
 category: 職涯與轉型
-image: /images/blog/mid-career-portable-assets.webp
 featured: false
 boost: false
 draft: false

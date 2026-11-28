@@ -9,7 +9,6 @@ tags:
   - AI 工作流程
   - 管理
 category: 職涯與轉型
-image: /images/blog/middle-manager-transition-to-ai-curator-3-stages.webp
 featured: false
 boost: false
 draft: false

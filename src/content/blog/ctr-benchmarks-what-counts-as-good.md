@@ -12,7 +12,6 @@ tags:
   - 廣告指標
   - 成效診斷
 category: 廣告與投放
-image: /images/blog/ctr-benchmarks-what-counts-as-good.webp
 featured: false
 boost: false
 draft: false
