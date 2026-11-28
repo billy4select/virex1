@@ -9,6 +9,7 @@ tags:
   - 工具比較評測
   - 知識管理
 category: NotebookLM 實戰
+image: /images/blog/notebooklm-vs-notion-ai-knowledge-base.webp
 featured: false
 boost: false
 draft: false
@@ -89,6 +90,8 @@ Notion 在我的工作流裡，比較像是「選完之後的雲端空間資料�
 很多時候覺得難用，只是把「原料」放進了該放「成品」的地方。
 
 ## 我自己的分工方式
+
+![NotebookLM 暫存研究庫與 Notion 長期結果知識庫的分工對照圖](/images/blog/notebooklm-vs-notion-split.svg)
 
 如果你兩個都想用，其實不用搞得很複雜，照資料的流向切開就好。
 

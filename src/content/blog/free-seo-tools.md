@@ -11,6 +11,7 @@ tags:
   - 關鍵字研究
   - 技術檢查
 category: 內容與 SEO
+image: /images/blog/free-seo-tools.webp
 featured: false
 boost: false
 draft: false
@@ -40,6 +41,8 @@ sources:
 我自己經營網站到現在，平常真的會固定打開來用的免費工具其實就那幾個：**GSC、GA4，再加一個 Google 搜尋框**。
 
 ## 為什麼先把這兩支用熟就夠了
+
+![Google Search Console 與 GA4 兩大免費官方 SEO 工具分工對照圖](/images/blog/free-seo-tools-gsc-ga4.svg)
 
 因為做網站真正要搞懂的事只有兩件：**人從哪裡來**，以及**進來之後的反應好不好**。
 

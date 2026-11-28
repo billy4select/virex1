@@ -10,6 +10,7 @@ tags:
   - 關鍵字
   - 內容策略
 category: 內容與 SEO
+image: /images/blog/search-intent-guide.webp
 featured: false
 boost: false
 draft: false
@@ -40,6 +41,8 @@ sources:
 因此，搜尋意圖不是一張固定分類表，而是一種觀察方式。
 
 ## 四種常見任務
+
+![四種搜尋意圖與對應頁面形式對照圖：資訊型、商業調查型、交易型與導覽型](/images/blog/search-intent-4-types.svg)
 
 常見的分類有四種：
 

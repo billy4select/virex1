@@ -11,6 +11,7 @@ tags:
   - 內容品質
   - 品牌
 category: 內容與 SEO
+image: /images/blog/domain-authority-guide.webp
 featured: false
 boost: false
 draft: false
@@ -60,6 +61,8 @@ sources:
 你花錢洗完，工具上的 DA 可能真的從 10 跳到 35，但打開 Google Search Console 跟 GA4 一看——自然流量一動也不動，甚至因為被 Google 判定異常外鏈而掉排名。
 
 ## 小網站真正該累積的「隱形權重」
+
+![第三方 DA／DR 網站權重分數與小站真正該累積的三項隱形權重對照圖](/images/blog/domain-authority-real-signals.svg)
 
 雖然不用迷信第三方分數，但「讓 Google 信任你的網站」這件事確實存在。對中小網站跟個人品牌來說，最穩的累積方式有三件：
 

@@ -9,6 +9,7 @@ tags:
   - 數據分析
   - 歸因
 category: 行銷策略與診斷
+image: /images/blog/marketing-metrics-2026-what-to-track.webp
 featured: false
 boost: false
 draft: false
@@ -50,6 +51,8 @@ GA4 有幾十個指標，廣告後台有幾十個，社群平台又有幾十個�
 三層的更新頻率也不一樣：生意層一個月、通路層一週、素材層一天到三天。混在一起看，就會出現「CTR 上升所以生意變好」這種推論，而這兩件事其實沒有關係。
 
 ## 五個每週真的會看的數字
+
+![2027 每週必追的五個決策型行銷核心指標圖](/images/blog/marketing-5-core-metrics.svg)
 
 **一、貢獻毛利（不是營收）**
 

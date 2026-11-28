@@ -11,6 +11,7 @@ tags:
   - 投放成本
   - 通路策略
 category: 廣告與投放
+image: /images/blog/facebook-ads-cost-rising.webp
 featured: false
 boost: false
 draft: false
@@ -60,6 +61,8 @@ sources:
 在「讓原本不知道你的人突然停下來看你一眼」這件事上，Meta 的自動化演算法依然是目前規模最大、測試速度最快的地方。你至少花 2 天、預算抓個 1,000 元就能知道一個新切角有沒有反應，這種驗證速度在很多其他通路很難做到。
 
 ## 真的要應對高廣告費，該做哪三件事
+
+![因應 FB 與 Meta 廣告費變貴的三個實戰結構動作圖](/images/blog/fb-ads-rising-3-moves.svg)
 
 1. 預算交給系統自動分配，人力留給素材
 

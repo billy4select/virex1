@@ -11,6 +11,7 @@ tags:
   - 行銷策略
   - 通路
 category: 行銷策略與診斷
+image: /images/blog/digital-marketing-basics.webp
 featured: false
 boost: false
 draft: false
@@ -46,6 +47,8 @@ faq:
 這不是每個人都會依序走完的固定漏斗，而是幫助我們理解消費者決策的觀察角度。
 
 ## 需求、通路與訊息要一起看
+
+![數位行銷不變的底層鐵三角：看懂需求、講清價值、選對通路](/images/blog/digital-marketing-triangle.svg)
 
 **需求**決定你要解決什麼問題。若連目標對象遇到什麼困難都不清楚，後面很容易只是在推銷自己想賣的東西。
 

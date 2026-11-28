@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="大型網紅與微網紅 KOC 任務分工對照圖">
+  <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
+  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
+  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">大網紅不等於高導購：先搞懂兩種創作者完全不同的商業任務</text>
+  <rect x="36" y="92" width="430" height="152" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2"/>
+  <text x="56" y="128" class="font" fill="#18181B" font-size="15.5" font-weight="800">大型 KOL：負責「品牌背書與破圈聲量」</text>
+  <text x="56" y="158" class="font" fill="#52525B" font-size="13">• 讓陌生大眾快速認識品牌、建立信任門面</text>
+  <text x="56" y="186" class="font" fill="#52525B" font-size="13">• 適合拿授權素材搭配廣告投放二次放大</text>
+  <text x="56" y="216" class="font" fill="#18181B" font-size="13" font-weight="700">別只拿單篇分潤連結去評斷他有沒有價值</text>
+  <rect x="494" y="92" width="430" height="152" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+  <text x="514" y="128" class="font" fill="#EA580C" font-size="15.5" font-weight="800">垂直領域微網紅／KOC：負責「真實體驗與轉換」</text>
+  <text x="514" y="158" class="font" fill="#52525B" font-size="13">• 粉絲輪廓精準、留言互動高，更像朋友真心推薦</text>
+  <text x="514" y="186" class="font" fill="#52525B" font-size="13">• 預算可拆成多位分散測試，快速找到會賣的切角</text>
+  <text x="514" y="216" class="font" fill="#EA580C" font-size="13" font-weight="700">中小品牌起步最穩的口碑與團購引擎</text>
+</svg>

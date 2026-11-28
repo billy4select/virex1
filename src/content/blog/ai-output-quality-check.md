@@ -11,6 +11,7 @@ tags:
   - 報告寫作
   - 工作方法
 category: AI 工作流程與工具
+image: /images/blog/ai-output-quality-check.webp
 featured: false
 boost: false
 draft: false
@@ -38,6 +39,8 @@ sources:
 這篇把交付 AI 產出前必過的**四道檢查關卡**、**三個最快去掉機器味的編輯動作**，以及**主管用 AI 準備週會報告的實戰順序**一次整理好，幫你在趕時間時依然守住專業信用。
 
 ## 交付前必過的四道審核關卡
+
+![AI 產出交付前必過的四道品質把關關卡：事實、邏輯、去機器味與風險責任](/images/blog/ai-quality-4-gates.svg)
 
 不管是對內週報還是對外提案，按送出之前固定跑完這四道關卡，就能擋掉九成會傷到職場信用的錯誤。核心原則很單純：先抓事實與推論漏洞，再確認這份文件掛上你的名字扛不扛得住。
 

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 310" width="960" height="310" role="img" aria-label="職場使用 AI 處理財務與敏感資料的五條資安底線">
+  <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
+  <rect width="960" height="310" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
+  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">資料丟進 AI 前的 5 條資安底線（少做一條都可能踩紅線）</text>
+  
+    <rect x="36" y="84" width="888" height="36" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
+    <rect x="48" y="91" width="34" height="22" rx="6" fill="#18181B"/>
+    <text x="65" y="106" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">01</text>
+    <text x="98" y="107" class="font" fill="#18181B" font-size="13.5" font-weight="800">先確認公司核准工具</text>
+    <text x="320" y="107" class="font" fill="#52525B" font-size="13" font-weight="400">未核准前不用個人免費帳號處理公司內部檔</text>
+  
+    <rect x="36" y="128" width="888" height="36" rx="8" fill="#FFF3EB" stroke="#EA580C" stroke-width="1.8"/>
+    <rect x="48" y="135" width="34" height="22" rx="6" fill="#EA580C"/>
+    <text x="65" y="150" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">02</text>
+    <text x="98" y="151" class="font" fill="#18181B" font-size="13.5" font-weight="800">四類資料絕不直接貼</text>
+    <text x="320" y="151" class="font" fill="#EA580C" font-size="13" font-weight="700">客戶個資、未公開財報、合約底價、帳密金鑰</text>
+  
+    <rect x="36" y="172" width="888" height="36" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
+    <rect x="48" y="179" width="34" height="22" rx="6" fill="#18181B"/>
+    <text x="65" y="194" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">03</text>
+    <text x="98" y="195" class="font" fill="#18181B" font-size="13.5" font-weight="800">先做去識別與等比例替換</text>
+    <text x="320" y="195" class="font" fill="#52525B" font-size="13" font-weight="400">改公司名為甲／乙，金額同乘係數再請 AI 算邏輯</text>
+  
+    <rect x="36" y="216" width="888" height="36" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
+    <rect x="48" y="223" width="34" height="22" rx="6" fill="#18181B"/>
+    <text x="65" y="238" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">04</text>
+    <text x="98" y="239" class="font" fill="#18181B" font-size="13.5" font-weight="800">關閉模型訓練開關</text>
+    <text x="320" y="239" class="font" fill="#52525B" font-size="13" font-weight="400">進設定確認關閉「以對話改善模型」或使用企業版</text>
+  
+    <rect x="36" y="260" width="888" height="36" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
+    <rect x="48" y="267" width="34" height="22" rx="6" fill="#18181B"/>
+    <text x="65" y="282" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">05</text>
+    <text x="98" y="283" class="font" fill="#18181B" font-size="13.5" font-weight="800">數字回本地試算表驗算</text>
+    <text x="320" y="283" class="font" fill="#52525B" font-size="13" font-weight="400">AI 幫寫公式與架構，最終加總一律回 Excel 確認</text>
+  
+</svg>

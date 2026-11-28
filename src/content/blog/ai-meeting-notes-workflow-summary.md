@@ -8,6 +8,7 @@ author: 比利陳 Billy Chen
 tags:
   - AI工作流程
 category: AI 工作流程與工具
+image: /images/blog/ai-meeting-notes-workflow-summary.webp
 featured: false
 boost: false
 draft: false
@@ -37,6 +38,8 @@ sources:
 用 AI 整理會議紀錄確實能把這件事縮短到五分鐘，但前提是你得先換掉「流水帳」的寫法——**大家根本不想重看剛才誰講了什麼，大家只在乎剛剛決定了什麼、誰要做、什麼時候交。**
 
 ## 一份有人會看的會議紀錄，只要這四欄
+
+![有人會看的會議紀錄四欄結構圖：已定案決議、行動清單、待決事項與風險阻塞](/images/blog/ai-meeting-4-columns.svg)
 
 把逐字稿丟進 AI 之前，先決定好你要它吐出來的格式。我平常只留四塊：
 

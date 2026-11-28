@@ -12,6 +12,7 @@ tags:
   - 廣告指標
   - 成效診斷
 category: 廣告與投放
+image: /images/blog/ctr-benchmarks-what-counts-as-good.webp
 featured: false
 boost: false
 draft: false
@@ -75,6 +76,8 @@ sources:
 排查受眾時也要跳脫「年齡、性別、興趣標籤」，回到**需求狀態**去思考（例如「偶爾看健身影片的人」跟「正在排課表找營養補充的人」購買意圖天差地遠），想系統化整理受眾需求可以看 [受眾分析怎麼做](/blog/audience-is-not-a-label/)。
 
 ## 小預算怎麼做 CTR A/B 測試？2 天、1,000 元看出勝負
+
+![小預算 2 天 1000 元 CTR 素材 A/B 測試三步驟圖](/images/blog/ctr-ab-test-flow.svg)
 
 小預算團隊最常把測試預算浪費在改按鈕顏色（「立即購買」vs「馬上搶購」），或一次把圖、文案、到達頁全換掉，結果測完完全不知道是哪裡贏。把測試收斂成三個原則就夠了：
 

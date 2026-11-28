@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="SEO 自學五階段順序圖">
+  <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
+  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
+  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">SEO 自學正確順序：先懂搜尋原理與需求，最後才碰進階工具</text>
+  
+    <rect x="36" y="92" width="160" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+    <text x="52" y="124" class="font" fill="#EA580C" font-size="11.5" font-weight="800">STAGE 1</text>
+    <text x="52" y="158" class="font" fill="#18181B" font-size="17" font-weight="800">搜尋原理</text>
+    <text x="52" y="192" class="font" fill="#52525B" font-size="12.5">探索→檢索→索引</text>
+  
+    <rect x="218" y="92" width="160" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+    <text x="234" y="124" class="font" fill="#EA580C" font-size="11.5" font-weight="800">STAGE 2</text>
+    <text x="234" y="158" class="font" fill="#18181B" font-size="17" font-weight="800">搜尋意圖</text>
+    <text x="234" y="192" class="font" fill="#52525B" font-size="12.5">看懂搜尋者任務</text>
+  
+    <rect x="400" y="92" width="160" height="150" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+    <text x="416" y="124" class="font" fill="#EA580C" font-size="11.5" font-weight="800">STAGE 3</text>
+    <text x="416" y="158" class="font" fill="#18181B" font-size="17" font-weight="800">內容實作</text>
+    <text x="416" y="192" class="font" fill="#52525B" font-size="12.5">寫出有增量長文</text>
+  
+    <rect x="582" y="92" width="160" height="150" rx="12" fill="#FDE68A" stroke="#18181B" stroke-width="2.2"/>
+    <text x="598" y="124" class="font" fill="#EA580C" font-size="11.5" font-weight="800">STAGE 4</text>
+    <text x="598" y="158" class="font" fill="#18181B" font-size="17" font-weight="800">技術衛生</text>
+    <text x="598" y="192" class="font" fill="#52525B" font-size="12.5">速度、內鏈、行動版</text>
+  
+    <rect x="764" y="92" width="160" height="150" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
+    <text x="780" y="124" class="font" fill="#FBBF24" font-size="11.5" font-weight="800">STAGE 5</text>
+    <text x="780" y="158" class="font" fill="#FFFFFF" font-size="17" font-weight="800">數據迭代</text>
+    <text x="780" y="192" class="font" fill="#D4D4D8" font-size="12.5">用 GSC 舊文翻修</text>
+  
+</svg>

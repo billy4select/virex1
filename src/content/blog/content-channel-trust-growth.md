@@ -10,6 +10,7 @@ tags:
   - 成長策略
   - 品牌信任
 category: 行銷策略與診斷
+image: /images/blog/content-channel-trust-growth.webp
 featured: false
 boost: false
 draft: false
@@ -28,6 +29,8 @@ faq:
 但看過內容的人，不一定記得品牌；記得品牌的人，不一定相信你；相信你的人，也不一定在當下有購買需求。若把這些狀態都當成同一種成長，就容易用錯方法。
 
 ## 內容與通路各自負責什麼
+
+![內容、通路與長期信任複利關係圖](/images/blog/content-channel-trust-loop.svg)
 
 內容處理的是訊息：你要讓對方理解什麼、相信什麼，或採取什麼行動。通路處理的是接觸：你在哪裡遇見對方，以及對方能不能方便地繼續了解你。
 

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="2027 行銷必追的五個決策型核心指標">
+  <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
+  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
+  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">砍掉虛榮數字：每週真正能決定行銷動作的 5 個核心指標</text>
+  
+    <rect x="36" y="92" width="160" height="150" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
+    <text x="52" y="124" class="font" fill="#FBBF24" font-size="13" font-weight="800">KPI 01</text>
+    <text x="52" y="158" class="font" fill="#FFFFFF" font-size="15.5" font-weight="800">貢獻毛利</text>
+    <text x="52" y="192" class="font" fill="#D4D4D8" font-size="12">扣完變動成本剩多少</text>
+  
+    <rect x="218" y="92" width="160" height="150" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+    <text x="234" y="124" class="font" fill="#EA580C" font-size="13" font-weight="800">KPI 02</text>
+    <text x="234" y="158" class="font" fill="#18181B" font-size="15.5" font-weight="800">CAC 獲客成本</text>
+    <text x="234" y="192" class="font" fill="#52525B" font-size="12">買一位新客花多少</text>
+  
+    <rect x="400" y="92" width="160" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+    <text x="416" y="124" class="font" fill="#EA580C" font-size="13" font-weight="800">KPI 03</text>
+    <text x="416" y="158" class="font" fill="#18181B" font-size="15.5" font-weight="800">轉換率 CVR</text>
+    <text x="416" y="192" class="font" fill="#52525B" font-size="12">進站後有沒有買單</text>
+  
+    <rect x="582" y="92" width="160" height="150" rx="12" fill="#FDE68A" stroke="#18181B" stroke-width="2.2"/>
+    <text x="598" y="124" class="font" fill="#EA580C" font-size="13" font-weight="800">KPI 04</text>
+    <text x="598" y="158" class="font" fill="#18181B" font-size="15.5" font-weight="800">回購／留存率</text>
+    <text x="598" y="192" class="font" fill="#52525B" font-size="12">老客會不會再回來</text>
+  
+    <rect x="764" y="92" width="160" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+    <text x="780" y="124" class="font" fill="#EA580C" font-size="13" font-weight="800">KPI 05</text>
+    <text x="780" y="158" class="font" fill="#18181B" font-size="15.5" font-weight="800">自然入口佔比</text>
+    <text x="780" y="192" class="font" fill="#52525B" font-size="12">停投廣告還剩多少量</text>
+  
+</svg>

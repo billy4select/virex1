@@ -8,6 +8,7 @@ author: 比利陳 Billy Chen
 tags:
   - 數據與資安
 category: AI 工作流程與工具
+image: /images/blog/ai-finance-data-security-5-bottom-lines.webp
 featured: false
 boost: false
 draft: false
@@ -39,6 +40,8 @@ sources:
 為了省下一個小時而踩到公司資安紅線，代價完全划不來。處理財務或任何敏感數據前，先把這五條底線守好。
 
 ## 1. 先確認公司有沒有核准這個工具
+
+![職場使用 AI 處理財務與敏感資料的五條資安底線總覽圖](/images/blog/ai-security-5-lines.svg)
 
 不同公司對外部 AI 服務的規定差非常多。有些企業已經買了企業版帳號（簽有不留存、不用於訓練的條款），有些公司則是明文禁止把任何內部文件傳到外部雲端。
 

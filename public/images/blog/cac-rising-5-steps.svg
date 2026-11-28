@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" role="img" aria-label="獲客成本 CAC 飆高五步排查圖">
+  <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
+  <rect width="960" height="300" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
+  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">獲客成本（CAC）越來越高？照這 5 步拆出真正漲價的原因</text>
+  
+    <rect x="36" y="82" width="888" height="34" rx="8" fill="#FFF3EB" stroke="#EA580C" stroke-width="1.8"/>
+    <rect x="48" y="88" width="34" height="22" rx="6" fill="#EA580C"/>
+    <text x="65" y="103" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">01</text>
+    <text x="98" y="104" class="font" fill="#18181B" font-size="13.5" font-weight="800">換新素材切角＋測新受眾</text>
+    <text x="330" y="104" class="font" fill="#EA580C" font-size="13" font-weight="700">先排除最常見的素材疲勞與受眾見底</text>
+  
+    <rect x="36" y="124" width="888" height="34" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
+    <rect x="48" y="130" width="34" height="22" rx="6" fill="#18181B"/>
+    <text x="65" y="145" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">02</text>
+    <text x="98" y="146" class="font" fill="#18181B" font-size="13.5" font-weight="800">核對轉換率與 GA4 跳出率</text>
+    <text x="330" y="146" class="font" fill="#52525B" font-size="13" font-weight="400">確認不是到達頁變慢或結帳出故障</text>
+  
+    <rect x="36" y="166" width="888" height="34" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
+    <rect x="48" y="172" width="34" height="22" rx="6" fill="#18181B"/>
+    <text x="65" y="187" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">03</text>
+    <text x="98" y="188" class="font" fill="#18181B" font-size="13.5" font-weight="800">拆開新客與老客報表</text>
+    <text x="330" y="188" class="font" fill="#52525B" font-size="13" font-weight="400">避免再行銷吃掉預算，拉高真正的新客成本</text>
+  
+    <rect x="36" y="208" width="888" height="34" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
+    <rect x="48" y="214" width="34" height="22" rx="6" fill="#18181B"/>
+    <text x="65" y="229" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">04</text>
+    <text x="98" y="230" class="font" fill="#18181B" font-size="13.5" font-weight="800">對照檔期與競品大促</text>
+    <text x="330" y="230" class="font" fill="#52525B" font-size="13" font-weight="400">雙 11、節慶旺季 CPM 本來就會結構性上揚</text>
+  
+    <rect x="36" y="250" width="888" height="34" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
+    <rect x="48" y="256" width="34" height="22" rx="6" fill="#18181B"/>
+    <text x="65" y="271" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">05</text>
+    <text x="98" y="272" class="font" fill="#18181B" font-size="13.5" font-weight="800">檢視商品力與定價空間</text>
+    <text x="330" y="272" class="font" fill="#52525B" font-size="13" font-weight="400">若所有通路都變貴，就該拉高客單或改推組合</text>
+  
+</svg>

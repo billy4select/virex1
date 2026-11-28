@@ -11,6 +11,7 @@ tags:
   - 轉換率
   - 投放
 category: 廣告與投放
+image: /images/blog/ads-not-working-diagnosis.webp
 featured: false
 boost: false
 draft: false
@@ -44,6 +45,8 @@ sources:
 我自己的習慣是**至少讓新素材跑滿 2 天**。如果跑了 2 天、預算大概花到 **1,000 元左右**還是完全沒反應（沒轉換、沒加購物車、連互動都很冷），那通常就有問題了，直接進診斷，不要期待第三天會突然奇蹟爆發。
 
 ## 從後往回查：先看轉換率，再看 GA 跳出率
+
+![廣告沒效果從轉換率與 GA4 跳出率倒著查三步驟圖](/images/blog/ads-diagnosis-reverse.svg)
 
 很多人診斷廣告習慣從曝光跟流量看起，但我會反過來從最靠近錢的那端查。
 

@@ -9,6 +9,7 @@ tags:
   - 行銷文案
   - 工具比較評測
 category: 廣告與投放
+image: /images/blog/ai-copywriting-mistakes.webp
 featured: false
 boost: false
 draft: false
@@ -55,6 +56,8 @@ sources:
 3. **把零碎評論丟給 AI 歸納痛點**：讓 AI 幫你把幾十則留言分類，再用你自己的「買單標準」挑出真的會打動人的兩三個切角。
 
 ## 叫 AI 寫廣告文案前，先把手上四種真實文字直接丟給它
+
+![叫 AI 寫廣告文案前先餵四種真實客戶文字素材圖](/images/blog/ai-copywriting-4-inputs.svg)
 
 很多人花時間背「百萬爆款提示詞模板」，結果產出還是很虛，原因只有一個——沒給資料時，AI 只能靠猜的，只好拼出「忙碌現代人的健康首選」這種到處都能套的空話。其實不用特別做簡報，把日常現成的零碎文字全餵進去，品質馬上差一截：
 

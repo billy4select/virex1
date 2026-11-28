@@ -10,6 +10,7 @@ tags:
   - 流量
   - 內容策略
 category: 內容與 SEO
+image: /images/blog/seo-writing-why-no-traffic.webp
 featured: false
 boost: false
 draft: false
@@ -91,6 +92,8 @@ SEO 成效不會在每個網站、每個主題都用相同速度出現。新網�
 有曝光但點擊少，可能與排名、搜尋結果版位、標題描述或需求不符有關；有點擊卻沒有後續行動，則要回頭看頁面內容與網站提供的下一步是否符合讀者期待。
 
 ## 建議的檢查順序
+
+![SEO 文章沒流量的五步排查順序圖：收錄、搜尋量、競品缺口、內鏈與發酵時間](/images/blog/seo-no-traffic-5-checks.svg)
 
 1. 確認網址可存取、可索引。
 2. 確認主題有對應的搜尋需求。

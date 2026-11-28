@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" role="img" aria-label="AI 產出交付前四道品質檢查關卡圖">
+  <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style>
+  <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#18181B"/></marker></defs>
+  <rect width="960" height="300" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
+  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">AI 產出不能直接交：交付前必過的 4 道把關順序</text>
+  
+    <rect x="36" y="92" width="198" height="170" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+    <rect x="52" y="110" width="58" height="22" rx="11" fill="#EA580C"/>
+    <text x="81" y="125" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11" font-weight="800">第 1 關</text>
+    <text x="52" y="160" class="font" fill="#18181B" font-size="16" font-weight="800">事實與數字</text>
+    <text x="52" y="190" class="font" fill="#52525B" font-size="12.5">• 專有名詞、法規、金額</text>
+    <text x="52" y="216" class="font" fill="#EA580C" font-size="12.5" font-weight="700">• 一律回原來源核對</text>
+    <line x1="234" y1="177" x2="260" y2="177" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+  
+    <rect x="266" y="92" width="198" height="170" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+    <rect x="282" y="110" width="58" height="22" rx="11" fill="#18181B"/>
+    <text x="311" y="125" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11" font-weight="800">第 2 關</text>
+    <text x="282" y="160" class="font" fill="#18181B" font-size="16" font-weight="800">邏輯與前提</text>
+    <text x="282" y="190" class="font" fill="#52525B" font-size="12.5">• 推論有沒有跳步？</text>
+    <text x="282" y="216" class="font" fill="#EA580C" font-size="12.5" font-weight="700">• 是否符合公司真實條件</text>
+    <line x1="464" y1="177" x2="490" y2="177" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+  
+    <rect x="496" y="92" width="198" height="170" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+    <rect x="512" y="110" width="58" height="22" rx="11" fill="#18181B"/>
+    <text x="541" y="125" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11" font-weight="800">第 3 關</text>
+    <text x="512" y="160" class="font" fill="#18181B" font-size="16" font-weight="800">去 AI 機器味</text>
+    <text x="512" y="190" class="font" fill="#52525B" font-size="12.5">• 刪掉空泛形容詞與套話</text>
+    <text x="512" y="216" class="font" fill="#EA580C" font-size="12.5" font-weight="700">• 換回具體案例與立場</text>
+    <line x1="694" y1="177" x2="720" y2="177" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+  
+    <rect x="726" y="92" width="198" height="170" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
+    <rect x="742" y="110" width="58" height="22" rx="11" fill="#FBBF24"/>
+    <text x="771" y="125" text-anchor="middle" class="font" fill="#18181B" font-size="11" font-weight="800">第 4 關</text>
+    <text x="742" y="160" class="font" fill="#FFFFFF" font-size="16" font-weight="800">風險與責任</text>
+    <text x="742" y="190" class="font" fill="#D4D4D8" font-size="12.5">• 有沒有過度承諾？</text>
+    <text x="742" y="216" class="font" fill="#FBBF24" font-size="12.5" font-weight="700">• 發出去你願不願簽名？</text>
+    
+  
+</svg>

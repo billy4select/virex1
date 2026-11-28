@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" role="img" aria-label="NotebookLM 原始研究庫與 Notion 結果知識庫分工圖">
+  <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style>
+  <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#EA580C"/></marker></defs>
+  <rect width="960" height="300" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
+  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">不讓知識庫變雜物間的關鍵：把「研究過程」與「定案結果」切開</text>
+
+  <rect x="36" y="92" width="404" height="172" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+  <rect x="56" y="110" width="128" height="22" rx="11" fill="#EA580C"/>
+  <text x="120" y="125" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11" font-weight="800">NotebookLM（暫存研究）</text>
+  <text x="56" y="160" class="font" fill="#18181B" font-size="16.5" font-weight="800">放還沒消化的大量原始材料</text>
+  <text x="56" y="188" class="font" fill="#52525B" font-size="13">• 產業長報告、訪談逐字稿、競品 PDF</text>
+  <text x="56" y="212" class="font" fill="#52525B" font-size="13">• 一個專案開一本，做完交叉比對就收尾</text>
+  <text x="56" y="242" class="font" fill="#EA580C" font-size="12.5" font-weight="700">原則：只做查證與消化，不拿來當長期歸檔</text>
+
+  <line x1="440" y1="178" x2="508" y2="178" stroke="#EA580C" stroke-width="3" marker-end="url(#a)"/>
+  <text x="474" y="166" text-anchor="middle" class="font" fill="#18181B" font-size="11.5" font-weight="800">只搬結論</text>
+
+  <rect x="520" y="92" width="404" height="172" rx="12" fill="#18181B"/>
+  <rect x="540" y="110" width="128" height="22" rx="11" fill="#FBBF24"/>
+  <text x="604" y="125" text-anchor="middle" class="font" fill="#18181B" font-size="11" font-weight="800">Notion（長期資產）</text>
+  <text x="540" y="160" class="font" fill="#FFFFFF" font-size="16.5" font-weight="800">只存消化完、未來會重用的結論</text>
+  <text x="540" y="188" class="font" fill="#D4D4D8" font-size="13">• 定案 SOP、提案模板、專案復盤清單</text>
+  <text x="540" y="212" class="font" fill="#D4D4D8" font-size="13">• 可加標籤、分權限、跨團隊長期檢索</text>
+  <text x="540" y="242" class="font" fill="#FBBF24" font-size="12.5" font-weight="700">原則：進 Notion 的每頁都必須是自己寫懂的</text>
+</svg>

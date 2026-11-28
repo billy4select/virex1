@@ -10,6 +10,7 @@ tags:
   - 工具比較評測
   - 行銷文案
 category: AI 工作流程與工具
+image: /images/blog/claude-vs-chatgpt-proposal.webp
 featured: false
 boost: false
 draft: false
@@ -72,6 +73,8 @@ Claude 在這點上老實很多。你跟它說預算只有 30 萬，它比較會
 它比較敢給一些跳脫框架的點子，就算十個裡面有七個不能用，剩下三個也常能幫你打開思路。同一題問 Claude，它給的東西往往太像標準企劃書，工整、合理，但有時候就是少了一點驚喜。
 
 ## 我現在寫提案的實際做法
+
+![寫提案時 Claude 與 ChatGPT 的實戰分工圖：長文論述與即時聯網廣搜各自定位](/images/blog/claude-vs-chatgpt-workflow.svg)
 
 既然兩個工具個性不同，最省事的用法就是分兩步走，不用逼同一個視窗從頭寫到尾。
 

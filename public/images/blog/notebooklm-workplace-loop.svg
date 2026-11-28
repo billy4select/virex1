@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 290" width="960" height="290" role="img" aria-label="用 NotebookLM 把陌生資料轉成職場判斷的三階段">
+  <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style>
+  <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#18181B"/></marker></defs>
+  <rect width="960" height="290" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
+  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">陌生領域研究三步：從「讀懂資料」走到「站得住腳的立場」</text>
+  
+    <rect x="36" y="92" width="264" height="162" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+    <rect x="54" y="110" width="62" height="22" rx="11" fill="#18181B"/>
+    <text x="85" y="125" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11" font-weight="800">第一步</text>
+    <text x="54" y="160" class="font" fill="#18181B" font-size="16" font-weight="800">拆架構＋問為什麼</text>
+    <text x="54" y="190" class="font" fill="#52525B" font-size="12.5">• 先抓 3–5 個核心主題</text>
+    <text x="54" y="216" class="font" fill="#EA580C" font-size="12.5" font-weight="700">• 追問前提條件與因果關係</text>
+    <line x1="300" y1="173" x2="338" y2="173" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+  
+    <rect x="348" y="92" width="264" height="162" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+    <rect x="366" y="110" width="62" height="22" rx="11" fill="#EA580C"/>
+    <text x="397" y="125" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11" font-weight="800">第二步</text>
+    <text x="366" y="160" class="font" fill="#18181B" font-size="16" font-weight="800">找資料沒寫到的盲點</text>
+    <text x="366" y="190" class="font" fill="#52525B" font-size="12.5">• 問它「還有哪些問題沒證據？」</text>
+    <text x="366" y="216" class="font" fill="#EA580C" font-size="12.5" font-weight="700">• 拿自己的假設請它找反例</text>
+    <line x1="612" y1="173" x2="650" y2="173" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+  
+    <rect x="660" y="92" width="264" height="162" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
+    <rect x="678" y="110" width="62" height="22" rx="11" fill="#FBBF24"/>
+    <text x="709" y="125" text-anchor="middle" class="font" fill="#18181B" font-size="11" font-weight="800">第三步</text>
+    <text x="678" y="160" class="font" fill="#FFFFFF" font-size="16" font-weight="800">帶出筆記本下判斷</text>
+    <text x="678" y="190" class="font" fill="#D4D4D8" font-size="12.5">• 整理成「結論＋證據＋風險」</text>
+    <text x="678" y="216" class="font" fill="#FBBF24" font-size="12.5" font-weight="700">• 用自己的語言寫進決策簡報</text>
+    
+  
+</svg>

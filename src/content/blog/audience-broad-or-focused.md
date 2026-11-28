@@ -10,6 +10,7 @@ tags:
   - 個人品牌
   - 行銷策略
 category: 行銷策略與診斷
+image: /images/blog/audience-broad-or-focused.webp
 featured: false
 boost: false
 draft: false
@@ -65,6 +66,8 @@ faq:
 這個過程不是單純縮小人口數，而是讓讀者更容易判斷「這件事跟我有沒有關係」。
 
 ## 定位建立後，怎麼擴張？
+
+![受眾定位先收斂打穿單一痛點再橫向擴張三階段圖](/images/blog/audience-narrow-then-expand.svg)
 
 當你已經知道某一群人為什麼需要你，可以先沿著他們相鄰的問題延伸。以小型團隊為例，可能從廣告預算分配，延伸到客群研究、內容規劃、轉換診斷與行銷團隊分工。
 

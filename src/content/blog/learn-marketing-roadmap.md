@@ -10,6 +10,7 @@ tags:
   - 學習路徑
   - 行銷基礎
 category: 行銷策略與診斷
+image: /images/blog/learn-marketing-roadmap.webp
 featured: false
 boost: false
 draft: false
@@ -31,6 +32,8 @@ faq:
 行銷沒有唯一的學習順序，因為不同職務需要的能力不同。不過，如果想建立整體判斷，可以從幾個互相連動的問題開始。
 
 ## 第一階段：先理解生意與顧客
+
+![新手自學行銷五階段順序圖：從生意顧客、數字、通路到文案實作](/images/blog/learn-marketing-5-stages.svg)
 
 先弄清楚產品解決什麼問題、誰會使用、目前怎麼解決，以及為什麼可能願意付錢。練習閱讀產品頁、客服問題、顧客評論與銷售資料。若有機會，直接訪談使用者，詢問他最近一次遇到問題時怎麼處理，而不是只問「你喜不喜歡這個產品」。
 
