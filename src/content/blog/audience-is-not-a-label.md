@@ -12,7 +12,6 @@ tags:
   - 需求分析
   - 行銷策略
 category: 行銷策略與診斷
-image: /images/blog/audience-is-not-a-label.webp
 featured: false
 boost: false
 draft: false

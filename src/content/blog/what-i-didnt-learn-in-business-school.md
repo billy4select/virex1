@@ -10,7 +10,6 @@ tags:
   - 行銷思維
   - 策略分析
 category: 書籍導讀
-image: /images/blog/what-i-didnt-learn-in-business-school.webp
 featured: false
 boost: false
 draft: false

@@ -8,7 +8,6 @@ author: 比利陳 Billy Chen
 tags:
   - 職涯與心態
 category: 職涯與轉型
-image: /images/blog/senior-employees-ai-upskilling-strategy-not-replaced.webp
 featured: true
 boost: true
 draft: false

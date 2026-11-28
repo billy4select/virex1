@@ -11,7 +11,6 @@ tags:
   - 內容品質
   - 品牌
 category: 內容與 SEO
-image: /images/blog/domain-authority-guide.webp
 featured: false
 boost: false
 draft: false

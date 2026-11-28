@@ -10,7 +10,6 @@ tags:
   - 關鍵字
   - 內容策略
 category: 內容與 SEO
-image: /images/blog/search-intent-guide.webp
 featured: false
 boost: false
 draft: false

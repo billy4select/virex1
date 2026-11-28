@@ -11,7 +11,6 @@ tags:
   - 廣告投放
   - 單位經濟
 category: 廣告與投放
-image: /images/blog/cac-rising-5-checks.webp
 featured: false
 boost: false
 draft: false

@@ -8,7 +8,6 @@ author: 比利陳 Billy Chen
 tags:
   - NotebookLM教學
 category: NotebookLM 實戰
-image: /images/blog/notebooklm-complete-guide-2026.webp
 featured: true
 boost: true
 draft: false

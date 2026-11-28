@@ -9,7 +9,6 @@ tags:
   - AI工作流
   - 個人事業
 category: 自媒體與個人事業
-image: /images/blog/one-person-company-ai-work-system.webp
 featured: false
 boost: false
 draft: false

@@ -11,7 +11,6 @@ tags:
   - OCR
   - CSV亂碼
 category: NotebookLM 實戰
-image: /images/blog/notebooklm-problems-solutions.webp
 featured: false
 boost: false
 draft: false

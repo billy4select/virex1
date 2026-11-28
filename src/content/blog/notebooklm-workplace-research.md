@@ -9,7 +9,6 @@ tags:
   - NotebookLM教學
   - 工作方法
 category: NotebookLM 實戰
-image: /images/blog/notebooklm-workplace-research.webp
 featured: false
 boost: false
 draft: false

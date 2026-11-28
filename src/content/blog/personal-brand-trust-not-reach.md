@@ -10,7 +10,6 @@ tags:
   - 內容策略
   - 專業信任
 category: 自媒體與個人事業
-image: /images/blog/personal-brand-trust-not-reach.webp
 featured: false
 boost: false
 draft: false

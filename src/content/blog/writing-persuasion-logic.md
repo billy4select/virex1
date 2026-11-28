@@ -11,7 +11,6 @@ tags:
   - 溝通
   - 說服力
 category: 內容與 SEO
-image: /images/blog/writing-persuasion-logic.webp
 featured: false
 boost: false
 draft: false

@@ -9,7 +9,6 @@ tags:
   - 行銷文案
   - 工具比較評測
 category: 廣告與投放
-image: /images/blog/ai-copywriting-mistakes.webp
 featured: false
 boost: false
 draft: false

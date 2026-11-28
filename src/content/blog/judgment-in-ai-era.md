@@ -10,7 +10,6 @@ tags:
   - AI時代
   - 決策方法
 category: 職涯與轉型
-image: /images/blog/judgment-in-ai-era.webp
 featured: false
 boost: false
 draft: false

@@ -11,7 +11,6 @@ tags:
   - 報告寫作
   - 工作方法
 category: AI 工作流程與工具
-image: /images/blog/ai-output-quality-check.webp
 featured: false
 boost: false
 draft: false

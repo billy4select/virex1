@@ -9,7 +9,6 @@ tags:
   - 內容優化
   - 社群經營
 category: 行銷策略與診斷
-image: /images/blog/ig-insights-report-guide.webp
 featured: false
 boost: false
 draft: false

@@ -9,7 +9,6 @@ tags:
   - AI 學習
   - 職涯轉型
 category: 職涯與轉型
-image: /images/blog/learn-ai-at-35-too-late-roi-metrics.webp
 featured: false
 boost: false
 draft: false

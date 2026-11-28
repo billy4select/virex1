@@ -11,7 +11,6 @@ tags:
   - 投放成本
   - 通路策略
 category: 廣告與投放
-image: /images/blog/facebook-ads-cost-rising.webp
 featured: false
 boost: false
 draft: false

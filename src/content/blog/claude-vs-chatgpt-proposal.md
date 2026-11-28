@@ -10,7 +10,6 @@ tags:
   - 工具比較評測
   - 行銷文案
 category: AI 工作流程與工具
-image: /images/blog/claude-vs-chatgpt-proposal.webp
 featured: false
 boost: false
 draft: false

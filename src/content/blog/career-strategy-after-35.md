@@ -10,7 +10,6 @@ tags:
   - 中年轉職
   - 經驗價值
 category: 職涯與轉型
-image: /images/blog/career-strategy-after-35.webp
 featured: false
 boost: false
 draft: false

@@ -8,7 +8,6 @@ tags:
   - 企業分析
   - 商業思考
 category: 商業模式與獲利
-image: /images/blog/analyze-company-strategy-public-info.webp
 featured: false
 boost: false
 draft: false

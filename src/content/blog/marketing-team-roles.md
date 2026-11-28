@@ -9,7 +9,6 @@ tags:
   - 組織設計
   - 行銷管理
 category: 行銷策略與診斷
-image: /images/blog/marketing-team-roles.webp
 featured: false
 boost: false
 draft: false

@@ -7,7 +7,6 @@ tags:
   - 數據與資安
   - 職涯與心態
 category: 職涯與轉型
-image: /images/blog/ai-data-analysis-human-ai-collaboration-professionalism.webp
 featured: true
 boost: true
 draft: false

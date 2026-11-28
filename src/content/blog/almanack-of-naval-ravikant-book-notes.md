@@ -10,7 +10,6 @@ tags:
   - 槓桿
   - 個人品牌
 category: 書籍導讀
-image: /images/blog/almanack-of-naval-ravikant-book-notes.webp
 featured: false
 boost: false
 draft: false

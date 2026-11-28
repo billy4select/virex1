@@ -10,7 +10,6 @@ tags:
   - 流量
   - 內容策略
 category: 內容與 SEO
-image: /images/blog/seo-writing-why-no-traffic.webp
 featured: false
 boost: false
 draft: false

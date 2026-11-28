@@ -8,7 +8,6 @@ tags:
   - 競爭策略
   - 成本結構
 category: 商業模式與獲利
-image: /images/blog/how-ai-changes-cost-and-competition.webp
 featured: false
 boost: false
 draft: false

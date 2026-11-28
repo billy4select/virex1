@@ -10,7 +10,6 @@ tags:
   - 個人事業
   - 職涯發展
 category: 自媒體與個人事業
-image: /images/blog/turn-expertise-into-market-value.webp
 featured: false
 boost: false
 draft: false

@@ -12,7 +12,6 @@ tags:
   - 自媒體
   - 個人品牌
 category: 自媒體與個人事業
-image: /images/blog/substack-taiwan-newsletter-guide.webp
 featured: false
 boost: false
 draft: false

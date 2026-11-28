@@ -11,7 +11,6 @@ tags:
   - 行銷策略
   - 通路
 category: 行銷策略與診斷
-image: /images/blog/digital-marketing-basics.webp
 featured: false
 boost: false
 draft: false

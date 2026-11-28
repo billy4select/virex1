@@ -10,7 +10,6 @@ tags:
   - 商業模式
   - 自媒體經營
 category: 書籍導讀
-image: /images/blog/free-zero-price-business-models.webp
 featured: false
 boost: false
 draft: false

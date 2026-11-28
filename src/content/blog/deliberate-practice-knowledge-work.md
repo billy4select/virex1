@@ -8,7 +8,6 @@ tags:
   - 知識工作
   - 作品集
 category: 職涯與轉型
-image: /images/blog/deliberate-practice-knowledge-work.webp
 featured: false
 boost: false
 draft: false

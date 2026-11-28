@@ -10,7 +10,6 @@ tags:
   - 個人品牌
   - 行銷策略
 category: 行銷策略與診斷
-image: /images/blog/audience-broad-or-focused.webp
 featured: false
 boost: false
 draft: false

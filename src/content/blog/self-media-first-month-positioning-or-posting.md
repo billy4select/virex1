@@ -9,7 +9,6 @@ tags:
   - 內容定位
   - Threads
 category: 自媒體與個人事業
-image: /images/blog/self-media-first-month-positioning-or-posting.webp
 featured: false
 boost: false
 draft: false

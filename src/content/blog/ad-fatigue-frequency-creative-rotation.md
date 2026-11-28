@@ -11,7 +11,6 @@ tags:
   - 素材輪替
   - 廣告投放
 category: 廣告與投放
-image: /images/blog/ad-fatigue-frequency-creative-rotation.webp
 featured: false
 boost: false
 draft: false

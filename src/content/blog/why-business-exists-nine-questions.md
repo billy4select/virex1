@@ -12,7 +12,6 @@ tags:
   - 定價策略
   - 獲利結構
 category: 商業模式與獲利
-image: /images/blog/why-business-exists-nine-questions.webp
 featured: false
 boost: false
 draft: false

@@ -9,7 +9,6 @@ tags:
   - 數據與資安
   - AI工作流程
 category: AI 工作流程與工具
-image: /images/blog/ai-batch-review-analysis.webp
 featured: false
 boost: false
 draft: false

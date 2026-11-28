@@ -8,7 +8,6 @@ author: 比利陳 Billy Chen
 tags:
   - 數據與資安
 category: AI 工作流程與工具
-image: /images/blog/ai-finance-data-security-5-bottom-lines.webp
 featured: false
 boost: false
 draft: false

@@ -10,7 +10,6 @@ tags:
   - 學習路徑
   - 內容行銷
 category: 內容與 SEO
-image: /images/blog/seo-self-study-guide.webp
 featured: false
 boost: false
 draft: false
