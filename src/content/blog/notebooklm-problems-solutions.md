@@ -1,5 +1,5 @@
 ---
-title: "NotebookLM PDF 讀不到？免費 OCR 轉換法與常見缺點排錯指南（2026）"
+title: "NotebookLM PDF 讀不到？免費 OCR 轉換法與常見缺點排錯指南（2027）"
 description: >-
   用 NotebookLM 遇到掃描 PDF 讀不到、Excel／CSV 亂碼、檔案超過上限、文字很硬像說明書或引用亂掉？這篇整合免費版上限與支援格式速查、三種免費 OCR 轉換法、Excel／CSV 轉檔實測與 7 大痛點排查，一次解決。
 publishedDate: 2026-04-10T00:00:00Z
@@ -37,9 +37,11 @@ sources:
     url: https://support.google.com/drive/answer/176692?hl=zh-Hant
 ---
 
-NotebookLM（Google 現亦稱 Gemini Notebook）剛上手時通常覺得很順，但真正放進日常工作一兩個禮拜，各種不順手的地方就會開始冒出來：掃描 PDF 讀不到、Excel 或 CSV 丟進去變亂碼、不知道免費版來源與字數上限、吐出來的文字硬得像說明書，或是塞了十幾份檔案卻只引用一兩份。
+明明照著網路教學把 PDF 和 Excel 丟進 **NotebookLM（Google 現亦稱 Gemini Notebook）**，結果它不是冷冷回你「來源中未提及」，就是吐出一堆中文亂碼，或是寫出來的文字硬得像操作說明書——這是幾乎每個把它放進日常工作兩週後，一定會碰到的卡關時刻。
 
-這篇是完整的 **NotebookLM 疑難排解大全**，把免費版上限與支援格式速查表、掃描 PDF 的免費 OCR 流程、Excel／CSV 亂碼轉檔實測，以及 7 大高頻痛點一次收在一起，卡關時直接照表排查。
+其實想通它的底層設計，八成問題都很好解：**NotebookLM 為了把 AI 幻覺降到最低，刻意把自己鎖死在「只讀你上傳的純文字層」**。它不像 ChatGPT 會幫你腦補外部知識，對檔案衛生也挑剔得多：只要 PDF 本質是掃描圖檔、Excel 帶著 Windows 舊編碼，或同一個筆記本混了新舊版本草稿，它就會直接失準。
+
+這篇把最常撞到的 7 大痛點、免費版上限與支援格式、免費 OCR 轉換法與 Excel／CSV 轉檔實測整在同一頁，卡關時直接照表排查。
 
 ## 常見問題速查表：先對號入座找解法
 

@@ -1,5 +1,5 @@
 ---
-title: "Claude vs ChatGPT 怎麼選（2026）？寫提案與長文實測比較，哪個更少改稿？"
+title: "Claude vs ChatGPT 怎麼選（2027）？寫提案與長文實測比較，哪個更少改稿？"
 description: >-
   同樣是 AI 寫提案，為什麼有人改三遍就過，有人改十遍還在原地？不是你的 prompt 不夠好，是你用錯工具了。本文從行銷人的實際需求出發，拆解
   Claude 和 ChatGPT 在提案寫作上的真實差異。
