@@ -8,6 +8,7 @@ author: 比利陳 Billy Chen
 tags:
   - 工具比較評測
 category: NotebookLM 實戰
+image: /images/blog/notebooklm-vs-claude-internal-docs.webp
 featured: false
 boost: false
 draft: false
@@ -66,6 +67,8 @@ Claude 強的地方在組織架構跟多輪修改。
 | 來源查核 | 內建引用編號，可直接跳回原文段落 | 需要主動要求標註出處並人工核對 |
 
 ## 我平常的分工順序
+
+![NotebookLM 與 Claude 實戰分工順序圖：翻透原始資料、整理成提案口吻到人工把關](/images/blog/notebooklm-vs-claude-relay.svg)
 
 如果這份報告很重要、又同時牽涉到很多份原始檔案，我通常會把兩個工具拆成三個步驟接力用。
 

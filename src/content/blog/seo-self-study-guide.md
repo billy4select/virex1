@@ -10,6 +10,7 @@ tags:
   - 學習路徑
   - 內容行銷
 category: 內容與 SEO
+image: /images/blog/seo-self-study-guide.webp
 featured: false
 boost: false
 draft: false
@@ -38,6 +39,8 @@ SEO 的資訊很多，教學文章、工具介紹、演算法消息每天都在�
 如果要重新安排學習順序，我會先從搜尋如何運作開始，再逐步進入內容與網站實作。以下不是每個人都要照表操課的 30 天保證計畫，而是一條可以依照網站狀況調整的路線。
 
 ## 第一階段：理解搜尋引擎如何找到頁面
+
+![SEO 自學五階段順序圖：從搜尋原理、搜尋意圖、內容實作到技術衛生與數據迭代](/images/blog/seo-self-study-5-stages.svg)
 
 先弄清楚三個基本概念：
 

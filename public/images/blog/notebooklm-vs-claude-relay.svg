@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" role="img" aria-label="NotebookLM 與 Claude 實戰分工順序圖">
+  <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style>
+  <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#18181B"/></marker></defs>
+  <rect width="960" height="300" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
+  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">研究腦 × 寫作腦接力：內部文件從消化到交稿的三步分工</text>
+
+  <rect x="36" y="92" width="276" height="170" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2"/>
+  <rect x="54" y="110" width="96" height="22" rx="11" fill="#18181B"/>
+  <text x="102" y="125" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11" font-weight="700">1. NotebookLM</text>
+  <text x="54" y="160" class="font" fill="#18181B" font-size="16.5" font-weight="800">翻透原始資料＋抓出處</text>
+  <text x="54" y="188" class="font" fill="#52525B" font-size="12.5">• 丟進 PDF、逐字稿與舊簡報</text>
+  <text x="54" y="212" class="font" fill="#52525B" font-size="12.5">• 抓出關鍵數字、異同與引用編號</text>
+  <text x="54" y="242" class="font" fill="#EA580C" font-size="12.5" font-weight="700">產出：核對過的事實底稿</text>
+
+  <line x1="312" y1="177" x2="346" y2="177" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="352" y="92" width="276" height="170" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+  <rect x="370" y="110" width="96" height="22" rx="11" fill="#EA580C"/>
+  <text x="418" y="125" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11" font-weight="700">2. Claude</text>
+  <text x="370" y="160" class="font" fill="#18181B" font-size="16.5" font-weight="800">整理結構＋寫成提案口吻</text>
+  <text x="370" y="188" class="font" fill="#52525B" font-size="12.5">• 放進 Projects 鎖定品牌語氣</text>
+  <text x="370" y="212" class="font" fill="#52525B" font-size="12.5">• 把生硬事實改寫成流暢論述</text>
+  <text x="370" y="242" class="font" fill="#EA580C" font-size="12.5" font-weight="700">產出：接近完稿的提案初版</text>
+
+  <line x1="628" y1="177" x2="662" y2="177" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="668" y="92" width="256" height="170" rx="12" fill="#18181B"/>
+  <rect x="686" y="110" width="84" height="22" rx="11" fill="#FBBF24"/>
+  <text x="728" y="125" text-anchor="middle" class="font" fill="#18181B" font-size="11" font-weight="800">3. 人工把關</text>
+  <text x="686" y="160" class="font" fill="#FFFFFF" font-size="16.5" font-weight="800">最後核對與承擔責任</text>
+  <text x="686" y="188" class="font" fill="#D4D4D8" font-size="12.5">• 敏感資料先確認授權</text>
+  <text x="686" y="212" class="font" fill="#D4D4D8" font-size="12.5">• 補進自己的商業判斷與取捨</text>
+  <text x="686" y="242" class="font" fill="#FBBF24" font-size="12.5" font-weight="700">產出：能直接進會議室的簡報</text>
+</svg>

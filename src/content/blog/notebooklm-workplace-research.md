@@ -9,6 +9,7 @@ tags:
   - NotebookLM教學
   - 工作方法
 category: NotebookLM 實戰
+image: /images/blog/notebooklm-workplace-research.webp
 featured: false
 boost: false
 draft: false
@@ -38,6 +39,8 @@ sources:
 我自己把 NotebookLM 放進職場研究裡，主要是拿它來幫自己把難啃的資料讀懂，不會指望它直接替我交報告。
 
 ## 接到陌生領域時，先拆架構再問為什麼
+
+![用 NotebookLM 做職場研究三步驟：拆架構、找盲點反例到帶出筆記本下判斷](/images/blog/notebooklm-workplace-loop.svg)
 
 假設下週要接一個你不熟的新產業案子，手上拿到五份市場報告跟幾篇競品訪談。
 
