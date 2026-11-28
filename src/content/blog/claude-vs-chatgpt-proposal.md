@@ -105,7 +105,7 @@ Claude 在這點上老實很多。你跟它說預算只有 30 萬，它比較會
 | **ChatGPT Plus** | 功能最全面（搜尋、生圖、語音、外掛生態完整）、發想速度快 | 中文商業文案較容易帶誇張形容詞，需要較細的指令收斂語氣 | 需要一站式多用途（研究＋生圖＋日常發想）的上班族 |
 | **Google AI Pro（Gemini）** | 整合 Gmail／Google 文件側邊欄、Deep Research、NotebookLM 高額度與大雲端空間 | 純中文提案改寫的手感仍略遜於 Claude，重在生態系打通 | 重度使用 Google Workspace 與 NotebookLM 的團隊與個人 |
 
-> 如果你在猶豫要不要訂 Google AI Pro，可以直接看專門評測 [Google AI Pro 值得買嗎（2026）](/blog/google-ai-pro-vs-free-limits-family-sharing/) 與操作教學 [Gemini AI Pro 教學（2026）](/blog/gemini-ai-pro-guide/)。
+> 如果你在猶豫要不要訂 Google AI Pro 或想知道買後怎麼省額度，可以直接看完整旗艦指南 [Google AI Pro（Gemini）值得買嗎？2027 費用比較與完整用法教學](/blog/google-ai-pro-vs-free-limits-family-sharing/)。
 
 ## 工具會更新，留一份自己的測試題最準
 

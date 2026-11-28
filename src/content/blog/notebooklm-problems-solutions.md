@@ -102,7 +102,7 @@ NotebookLM（Google 現亦稱 Gemini Notebook）剛上手時通常覺得很順�
 | **單一檔案大小上限** | **200 MB** | **200 MB**（企業版更高） | 超大 PDF 先壓縮圖片或拆分章節 |
 | **原生支援格式** | PDF（含文字層）、Google 文件／簡報、`.txt`、`.md`、公開網頁、有字幕 YouTube、音訊檔（MP3／WAV） | 同左，並放寬每日提問與語音摘要額度 | 加密 PDF、需登入網頁或純掃描圖檔需先轉檔 |
 
-> 想評估為了 300 個來源上限值不值得升級付費方案，可搭配看 [Google AI Pro 值得買嗎（2026）](/blog/google-ai-pro-vs-free-limits-family-sharing/) 與 [Gemini AI Pro 教學（2026）](/blog/gemini-ai-pro-guide/)。
+> 想評估為了 300 個來源上限值不值得升級付費方案，以及買後怎麼用最省額度，可搭配看 [Google AI Pro（Gemini）值得買嗎？2027 費用比較與完整用法教學](/blog/google-ai-pro-vs-free-limits-family-sharing/)。
 
 ## Excel 與 CSV 亂碼怎麼辦？3 種轉檔與整理實測
 
