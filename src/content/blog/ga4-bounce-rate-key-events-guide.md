@@ -11,6 +11,7 @@ tags:
   - 數據分析
   - 行銷指標
 category: 行銷策略與診斷
+image: /images/blog/ga4-bounce-rate-key-events-guide.webp
 featured: false
 boost: false
 draft: false
@@ -95,6 +96,8 @@ GA4 預設只顯示「參與度」。如果你或老闆還是習慣直接看「�
 - **接近 0%（參與度 95%–100%）**：別高興太早，這幾乎一定是追蹤碼重複安裝（同一頁觸發兩次 `page_view`），請立刻檢查網站追蹤碼設定。
 
 ## 第二步：行銷診斷重頭戲——用「到達網頁 × 流量來源」交叉比對抓真兇
+
+![GA4 到達網頁與流量來源交叉診斷圖：區分廣告打歪與網頁接不住](/images/blog/ga4-cross-dimension-diagnosis.svg)
 
 只看全站平均數據永遠抓不到問題，因為好通路跟壞通路的數字會互相抵銷。當你發現某個主力頁面跳出率偏高、或轉換一直上不去時，直接做這個交叉比對：
 

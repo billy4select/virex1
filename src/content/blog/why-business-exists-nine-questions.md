@@ -12,6 +12,7 @@ tags:
   - 定價策略
   - 獲利結構
 category: 商業模式與獲利
+image: /images/blog/why-business-exists-nine-questions.webp
 featured: false
 boost: false
 draft: false
@@ -59,6 +60,8 @@ faq:
 4. **真假護城河辨識**：「有功能」不等於有護城河。如果競爭者花差不多預算三個月就能抄出來，或客戶換家幾乎零成本，那只是暫時領先，不是長期優勢。
 
 ## 為什麼有人賺錢、有人只是忙？用一筆 1,000 元訂單拆給你看
+
+![1,000 元訂單單筆貢獻毛利拆解與打九折對獲利衝擊對照圖](/images/blog/business-unit-economics-waterfall.svg)
 
 營收是「收進來多少」，獲利是「扣完所有開銷後留下來多少」——忙是因為訂單多，賺不到錢是因為每筆訂單留下的太薄，或漏算了獲客成本與老闆自己的工時。以下用一組假設數字示範拆解（實際帳務與稅務請依自家報表並諮詢會計師）：
 

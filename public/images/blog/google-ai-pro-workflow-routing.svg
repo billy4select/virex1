@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 320" width="960" height="320" role="img" aria-label="Google AI Pro 依任務難度切思考深度省額度分工圖">
+  <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
+  <rect width="960" height="320" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
+  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">怎麼用才不會白燒 5 小時額度？依任務難度切換模式與工具</text>
+
+  <rect x="36" y="92" width="282" height="190" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2"/>
+  <rect x="54" y="110" width="96" height="22" rx="11" fill="#F4F4F5" stroke="#18181B" stroke-width="1.5"/>
+  <text x="102" y="125" text-anchor="middle" class="font" fill="#18181B" font-size="11" font-weight="700">輕量日常任務</text>
+  <text x="54" y="160" class="font" fill="#18181B" font-size="17" font-weight="800">預設快速模式（Fast）</text>
+  <text x="54" y="188" class="font" fill="#52525B" font-size="13">查名詞、翻譯短文、修錯字</text>
+  <text x="54" y="210" class="font" fill="#52525B" font-size="13">摘要單封信件或單頁筆記</text>
+  <text x="54" y="250" class="font" fill="#18181B" font-size="12.5" font-weight="700">省額度重點：別開高階思考殺雞用牛刀</text>
+
+  <rect x="339" y="92" width="282" height="190" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+  <rect x="357" y="110" width="96" height="22" rx="11" fill="#EA580C"/>
+  <text x="405" y="125" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11" font-weight="700">重度拆解任務</text>
+  <text x="357" y="160" class="font" fill="#18181B" font-size="17" font-weight="800">Pro 思考模式 ＋ 開新對話</text>
+  <text x="357" y="188" class="font" fill="#52525B" font-size="13">整批檔案整理、打包檢查</text>
+  <text x="357" y="210" class="font" fill="#52525B" font-size="13">寫複雜企劃架構、多檔比對</text>
+  <text x="357" y="250" class="font" fill="#EA580C" font-size="12.5" font-weight="700">省額度重點：換主題必開新視窗清上下文</text>
+
+  <rect x="642" y="92" width="282" height="190" rx="12" fill="#18181B"/>
+  <rect x="660" y="110" width="96" height="22" rx="11" fill="#FBBF24"/>
+  <text x="708" y="125" text-anchor="middle" class="font" fill="#18181B" font-size="11" font-weight="800">多檔研究專案</text>
+  <text x="660" y="160" class="font" fill="#FFFFFF" font-size="17" font-weight="800">交給 NotebookLM 接手</text>
+  <text x="660" y="188" class="font" fill="#D4D4D8" font-size="13">先用 Deep Research 匯出文件</text>
+  <text x="660" y="210" class="font" fill="#D4D4D8" font-size="13">再進 NotebookLM 查來源做交叉比對</text>
+  <text x="660" y="250" class="font" fill="#FBBF24" font-size="12.5" font-weight="700">省額度重點：大資料查證不佔對話額度</text>
+</svg>

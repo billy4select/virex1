@@ -12,6 +12,7 @@ tags:
   - ROI
   - 廣告計算
 category: 廣告與投放
+image: /images/blog/marketing-calculator.webp
 featured: false
 boost: false
 draft: false
@@ -45,6 +46,8 @@ sources:
 這篇把廣告投放最常用的七個核心公式、實戰換算範例、毛利損益平衡 ROAS 對照表，以及 ROAS 與 ROI 差異一次整在同一頁，方便你開會或抓預算時隨時查。
 
 ## 七個核心行銷指標公式與漏斗位置總表
+
+![廣告指標七大公式漏斗位置與倒著看報表三步診斷順序圖](/images/blog/marketing-roas-funnel.svg)
 
 把這幾個英文縮寫照「消費者從看到廣告到真正付錢」的漏斗順序排開，層級關係馬上就清楚了：前段（CPM、CTR、CPC）管能不能把人帶進來，後段（CVR、CPA、ROAS、ROI）管的才是進站後有沒有變成真利潤。
 

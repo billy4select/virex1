@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" role="img" aria-label="NotebookLM 四步知識庫工作流程圖">
+  <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style>
+  <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#18181B"/></marker></defs>
+  <rect width="960" height="300" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
+  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">NotebookLM 實戰四步流：把難啃的長報告變成可用判斷</text>
+
+  
+    <rect x="36" y="92" width="198" height="172" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2"/>
+    <rect x="52" y="108" width="56" height="22" rx="11" fill="#18181B"/>
+    <text x="80" y="123" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11" font-weight="800">步驟 1</text>
+    <text x="52" y="158" class="font" fill="#18181B" font-size="16" font-weight="800">守住入口衛生</text>
+    <text x="52" y="186" class="font" fill="#52525B" font-size="12.5">• 單一專案開一本</text>
+    <text x="52" y="208" class="font" fill="#52525B" font-size="12.5">• 檔名含日期＋清舊稿</text>
+    <text x="52" y="230" class="font" fill="#EA580C" font-size="12.5" font-weight="700">• 確認 PDF 有文字層</text>
+    <line x1="234" y1="178" x2="260" y2="178" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+  
+    <rect x="266" y="92" width="198" height="172" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.5"/>
+    <rect x="282" y="108" width="56" height="22" rx="11" fill="#EA580C"/>
+    <text x="310" y="123" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11" font-weight="800">步驟 2</text>
+    <text x="282" y="158" class="font" fill="#18181B" font-size="16" font-weight="800">先畫架構地圖</text>
+    <text x="282" y="186" class="font" fill="#52525B" font-size="12.5">• 別問「幫我總結」</text>
+    <text x="282" y="208" class="font" fill="#52525B" font-size="12.5">• 先叫它拆成 3–5 塊</text>
+    <text x="282" y="230" class="font" fill="#EA580C" font-size="12.5" font-weight="700">• 標註各自出自哪幾份</text>
+    <line x1="464" y1="178" x2="490" y2="178" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+  
+    <rect x="496" y="92" width="198" height="172" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2"/>
+    <rect x="512" y="108" width="56" height="22" rx="11" fill="#18181B"/>
+    <text x="540" y="123" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11" font-weight="800">步驟 3</text>
+    <text x="512" y="158" class="font" fill="#18181B" font-size="16" font-weight="800">鎖定追問因果</text>
+    <text x="512" y="186" class="font" fill="#52525B" font-size="12.5">• 挑關鍵章節追問為什麼</text>
+    <text x="512" y="208" class="font" fill="#52525B" font-size="12.5">• 勾選特定 3–4 份比對</text>
+    <text x="512" y="230" class="font" fill="#EA580C" font-size="12.5" font-weight="700">• 找出說法衝突與反例</text>
+    <line x1="694" y1="178" x2="720" y2="178" stroke="#18181B" stroke-width="2" marker-end="url(#a)"/>
+  
+    <rect x="726" y="92" width="198" height="172" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2"/>
+    <rect x="742" y="108" width="56" height="22" rx="11" fill="#FBBF24"/>
+    <text x="770" y="123" text-anchor="middle" class="font" fill="#18181B" font-size="11" font-weight="800">步驟 4</text>
+    <text x="742" y="158" class="font" fill="#FFFFFF" font-size="16" font-weight="800">核對引用再寫</text>
+    <text x="742" y="186" class="font" fill="#D4D4D8" font-size="12.5">• 重要數字必點回原文</text>
+    <text x="742" y="208" class="font" fill="#D4D4D8" font-size="12.5">• 只帶出事實與證據底稿</text>
+    <text x="742" y="230" class="font" fill="#FBBF24" font-size="12.5" font-weight="700">• 自己改寫或交給 Claude</text>
+    
+  
+</svg>
