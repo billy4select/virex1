@@ -1,18 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="第三方網站權重分數與真正影響排名的隱形權重對照">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="960" height="480" role="img" aria-label="第三方網站權重分數與真正影響排名的隱形權重對照">
   <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
-  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
-  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
-  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">別把 DA／DR 當 Google 官方評分：小站真正該累積這 3 件事</text>
+  <rect width="960" height="480" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="60" width="6" height="29.9" rx="2" fill="#EA580C"/>
+  <text x="52" y="82.3" class="font" fill="#18181B" font-size="18" font-weight="800">別把 DA／DR 當 Google 官方評分：小站真正該累積這 3 件事</text>
 
-  <rect x="36" y="92" width="280" height="152" rx="12" fill="#FFFFFF" stroke="#A1A1AA" stroke-width="2" stroke-dasharray="6 5"/>
-  <text x="56" y="128" class="font" fill="#71717A" font-size="13" font-weight="800">第三方參考分數（DA／DR）</text>
-  <text x="56" y="160" class="font" fill="#52525B" font-size="13">• 民間工具依外鏈推估</text>
-  <text x="56" y="186" class="font" fill="#52525B" font-size="13">• 容易被買垃圾外鏈灌水</text>
-  <text x="56" y="214" class="font" fill="#71717A" font-size="12.5">僅供對手量級參考，別當 KPI</text>
+  <rect x="36" y="157.7" width="280" height="260.6" rx="12" fill="#FFFFFF" stroke="#A1A1AA" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="56" y="219.4" class="font" fill="#71717A" font-size="13" font-weight="800">第三方參考分數（DA／DR）</text>
+  <text x="56" y="274.3" class="font" fill="#52525B" font-size="13">• 民間工具依外鏈推估</text>
+  <text x="56" y="318.9" class="font" fill="#52525B" font-size="13">• 容易被買垃圾外鏈灌水</text>
+  <text x="56" y="366.9" class="font" fill="#71717A" font-size="12.5">僅供對手量級參考，別當 KPI</text>
 
-  <rect x="342" y="92" width="582" height="152" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
-  <text x="364" y="128" class="font" fill="#EA580C" font-size="14" font-weight="800">Google 真正在乎的小站「隱形權重」</text>
-  <text x="364" y="160" class="font" fill="#18181B" font-size="13.5" font-weight="700">1. 主題深耕度（Topical Authority）：同一領域把核心問題與延伸子題寫透並互連</text>
-  <text x="364" y="188" class="font" fill="#18181B" font-size="13.5" font-weight="700">2. 第一手經驗證據：實測數據、踩雷紀錄與官方來源，讓讀者與 AI 都願意引用</text>
-  <text x="364" y="216" class="font" fill="#18181B" font-size="13.5" font-weight="700">3. 品牌搜尋量：越來越多人直接搜你的名字＋關鍵字，是最硬的信任訊號</text>
+  <rect x="342" y="157.7" width="582" height="260.6" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+  <text x="364" y="219.4" class="font" fill="#EA580C" font-size="14" font-weight="800">Google 真正在乎的小站「隱形權重」</text>
+  <text x="364" y="274.3" class="font" fill="#18181B" font-size="13.5" font-weight="700">1. 主題深耕度（Topical Authority）：同一領域把核心問題與延伸子題寫透並互連</text>
+  <text x="364" y="322.3" class="font" fill="#18181B" font-size="13.5" font-weight="700">2. 第一手經驗證據：實測數據、踩雷紀錄與官方來源，讓讀者與 AI 都願意引用</text>
+  <text x="364" y="370.3" class="font" fill="#18181B" font-size="13.5" font-weight="700">3. 品牌搜尋量：越來越多人直接搜你的名字＋關鍵字，是最硬的信任訊號</text>
 </svg>

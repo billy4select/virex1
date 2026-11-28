@@ -1,32 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="行銷自學五階段順序圖">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="960" height="480" role="img" aria-label="行銷自學五階段順序圖">
   <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
-  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
-  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
-  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">新手學行銷別先背廣告後台按鈕：照這 5 階段學最不容易走歪</text>
+  <rect width="960" height="480" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="60" width="6" height="29.9" rx="2" fill="#EA580C"/>
+  <text x="52" y="82.3" class="font" fill="#18181B" font-size="18" font-weight="800">新手學行銷別先背廣告後台按鈕：照這 5 階段學最不容易走歪</text>
   
-    <rect x="36" y="92" width="160" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
-    <text x="52" y="124" class="font" fill="#EA580C" font-size="13" font-weight="800">STAGE 01</text>
-    <text x="52" y="158" class="font" fill="#18181B" font-size="16.5" font-weight="800">生意與顧客</text>
-    <text x="52" y="192" class="font" fill="#52525B" font-size="12.5">誰買、為何買</text>
+    <rect x="36" y="157.7" width="160" height="257.1" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+    <text x="52" y="212.6" class="font" fill="#EA580C" font-size="13" font-weight="800">STAGE 01</text>
+    <text x="52" y="270.9" class="font" fill="#18181B" font-size="16.5" font-weight="800">生意與顧客</text>
+    <text x="52" y="329.1" class="font" fill="#52525B" font-size="12.5">誰買、為何買</text>
   
-    <rect x="218" y="92" width="160" height="150" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
-    <text x="234" y="124" class="font" fill="#EA580C" font-size="13" font-weight="800">STAGE 02</text>
-    <text x="234" y="158" class="font" fill="#18181B" font-size="16.5" font-weight="800">基本數字</text>
-    <text x="234" y="192" class="font" fill="#52525B" font-size="12.5">毛利、轉換、漏斗</text>
+    <rect x="218" y="157.7" width="160" height="257.1" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2.2"/>
+    <text x="234" y="212.6" class="font" fill="#EA580C" font-size="13" font-weight="800">STAGE 02</text>
+    <text x="234" y="270.9" class="font" fill="#18181B" font-size="16.5" font-weight="800">基本數字</text>
+    <text x="234" y="329.1" class="font" fill="#52525B" font-size="12.5">毛利、轉換、漏斗</text>
   
-    <rect x="400" y="92" width="160" height="150" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
-    <text x="416" y="124" class="font" fill="#EA580C" font-size="13" font-weight="800">STAGE 03</text>
-    <text x="416" y="158" class="font" fill="#18181B" font-size="16.5" font-weight="800">通路差異</text>
-    <text x="416" y="192" class="font" fill="#52525B" font-size="12.5">搜尋 vs 推播邏輯</text>
+    <rect x="400" y="157.7" width="160" height="257.1" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+    <text x="416" y="212.6" class="font" fill="#EA580C" font-size="13" font-weight="800">STAGE 03</text>
+    <text x="416" y="270.9" class="font" fill="#18181B" font-size="16.5" font-weight="800">通路差異</text>
+    <text x="416" y="329.1" class="font" fill="#52525B" font-size="12.5">搜尋 vs 推播邏輯</text>
   
-    <rect x="582" y="92" width="160" height="150" rx="12" fill="#FDE68A" stroke="#18181B" stroke-width="2.2"/>
-    <text x="598" y="124" class="font" fill="#EA580C" font-size="13" font-weight="800">STAGE 04</text>
-    <text x="598" y="158" class="font" fill="#18181B" font-size="16.5" font-weight="800">訊息與文案</text>
-    <text x="598" y="192" class="font" fill="#52525B" font-size="12.5">把賣點講成白話</text>
+    <rect x="582" y="157.7" width="160" height="257.1" rx="12" fill="#FDE68A" stroke="#18181B" stroke-width="2.2"/>
+    <text x="598" y="212.6" class="font" fill="#EA580C" font-size="13" font-weight="800">STAGE 04</text>
+    <text x="598" y="270.9" class="font" fill="#18181B" font-size="16.5" font-weight="800">訊息與文案</text>
+    <text x="598" y="329.1" class="font" fill="#52525B" font-size="12.5">把賣點講成白話</text>
   
-    <rect x="764" y="92" width="160" height="150" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
-    <text x="780" y="124" class="font" fill="#FBBF24" font-size="13" font-weight="800">STAGE 05</text>
-    <text x="780" y="158" class="font" fill="#FFFFFF" font-size="16.5" font-weight="800">執行與測試</text>
-    <text x="780" y="192" class="font" fill="#D4D4D8" font-size="12.5">小專案實際跑一輪</text>
+    <rect x="764" y="157.7" width="160" height="257.1" rx="12" fill="#18181B" stroke="#18181B" stroke-width="2.2"/>
+    <text x="780" y="212.6" class="font" fill="#FBBF24" font-size="13" font-weight="800">STAGE 05</text>
+    <text x="780" y="270.9" class="font" fill="#FFFFFF" font-size="16.5" font-weight="800">執行與測試</text>
+    <text x="780" y="329.1" class="font" fill="#D4D4D8" font-size="12.5">小專案實際跑一輪</text>
   
 </svg>

@@ -1,35 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 330" width="960" height="330" role="img" aria-label="1000元訂單單筆貢獻毛利拆解與打九折衝擊圖">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520" role="img" aria-label="1000元訂單單筆貢獻毛利拆解與打九折衝擊圖">
   <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
-  <rect width="960" height="330" rx="14" fill="#FFFBF5"/>
-  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
-  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">為什麼賣 1,000 元卻剩沒多少？單筆拆解與「打九折」的真實代價</text>
+  <rect width="960" height="520" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="56.1" width="6" height="29.9" rx="2" fill="#EA580C"/>
+  <text x="52" y="75.6" class="font" fill="#18181B" font-size="18" font-weight="800">為什麼賣 1,000 元卻剩沒多少？單筆拆解與「打九折」的真實代價</text>
 
   <!-- Left: 1000 -> 210 stacked bar -->
-  <rect x="36" y="88" width="540" height="206" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2"/>
-  <text x="58" y="118" class="font" fill="#18181B" font-size="15" font-weight="800">一筆 1,000 元訂單，扣完變動成本後其實只剩 210 元</text>
+  <rect x="36" y="138.7" width="540" height="324.6" rx="12" fill="#FFFFFF" stroke="#18181B" stroke-width="2"/>
+  <text x="58" y="185.9" class="font" fill="#18181B" font-size="15" font-weight="800">一筆 1,000 元訂單，扣完變動成本後其實只剩 210 元</text>
 
   <!-- Segmented bar (total width 496) -->
-  <rect x="58" y="142" width="223" height="54" rx="6" fill="#18181B"/>
-  <text x="169" y="174" text-anchor="middle" class="font" fill="#FFFFFF" font-size="12.5" font-weight="700">進貨 -450</text>
+  <rect x="58" y="223.8" width="223" height="85.1" rx="6" fill="#18181B"/>
+  <text x="169" y="274.2" text-anchor="middle" class="font" fill="#FFFFFF" font-size="12.5" font-weight="700">進貨 -450</text>
 
-  <rect x="285" y="142" width="70" height="54" rx="6" fill="#D4D4D8"/>
-  <text x="320" y="174" text-anchor="middle" class="font" fill="#18181B" font-size="11.5" font-weight="700">運/抽 -140</text>
+  <rect x="285" y="223.8" width="70" height="85.1" rx="6" fill="#D4D4D8"/>
+  <text x="320" y="274.2" text-anchor="middle" class="font" fill="#18181B" font-size="11.5" font-weight="700">運/抽 -140</text>
 
-  <rect x="359" y="142" width="98" height="54" rx="6" fill="#FBBF24"/>
-  <text x="408" y="174" text-anchor="middle" class="font" fill="#18181B" font-size="12" font-weight="800">獲客 -200</text>
+  <rect x="359" y="223.8" width="98" height="85.1" rx="6" fill="#FBBF24"/>
+  <text x="408" y="274.2" text-anchor="middle" class="font" fill="#18181B" font-size="12" font-weight="800">獲客 -200</text>
 
-  <rect x="461" y="142" width="93" height="54" rx="6" fill="#EA580C"/>
-  <text x="507" y="174" text-anchor="middle" class="font" fill="#FFFFFF" font-size="12.5" font-weight="800">剩 210</text>
+  <rect x="461" y="223.8" width="93" height="85.1" rx="6" fill="#EA580C"/>
+  <text x="507" y="274.2" text-anchor="middle" class="font" fill="#FFFFFF" font-size="12.5" font-weight="800">剩 210</text>
 
-  <text x="58" y="232" class="font" fill="#52525B" font-size="13">• 固定成本 63,000 元 ÷ 210 元 ＝ 每月要賣滿 300 件才剛好打平</text>
-  <text x="58" y="256" class="font" fill="#EA580C" font-size="13" font-weight="700">• 賣 400 件只賺 21,000 元，若老闆投入 200 小時，時薪僅 105 元</text>
+  <text x="58" y="365.6" class="font" fill="#52525B" font-size="13">• 固定成本 63,000 元 ÷ 210 元 ＝ 每月要賣滿 300 件才剛好打平</text>
+  <text x="58" y="403.4" class="font" fill="#EA580C" font-size="13" font-weight="700">• 賣 400 件只賺 21,000 元，若老闆投入 200 小時，時薪僅 105 元</text>
 
   <!-- Right: Discount shock -->
-  <rect x="600" y="88" width="324" height="206" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
-  <rect x="620" y="108" width="96" height="22" rx="11" fill="#EA580C"/>
-  <text x="668" y="123" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11" font-weight="800">定價槓桿實算</text>
-  <text x="620" y="160" class="font" fill="#18181B" font-size="15.5" font-weight="800">打九折 ≠ 只少賺 10%</text>
-  <text x="620" y="192" class="font" fill="#52525B" font-size="13">• 漲價 10%（1,100）→ 單筆剩 310（+48%）</text>
-  <text x="620" y="218" class="font" fill="#EA580C" font-size="13" font-weight="800">• 打九折（900）→ 單筆只剩 110（-48%）</text>
-  <text x="620" y="254" class="font" fill="#18181B" font-size="13" font-weight="700">想維持原毛利，銷量得暴衝到 1.9 倍！</text>
+  <rect x="600" y="138.7" width="324" height="324.6" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+  <rect x="620" y="170.2" width="96" height="25.3" rx="11" fill="#EA580C"/>
+  <text x="668" y="193.8" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11" font-weight="800">定價槓桿實算</text>
+  <text x="620" y="252.1" class="font" fill="#18181B" font-size="15.5" font-weight="800">打九折 ≠ 只少賺 10%</text>
+  <text x="620" y="302.5" class="font" fill="#52525B" font-size="13">• 漲價 10%（1,100）→ 單筆剩 310（+48%）</text>
+  <text x="620" y="343.5" class="font" fill="#EA580C" font-size="13" font-weight="800">• 打九折（900）→ 單筆只剩 110（-48%）</text>
+  <text x="620" y="400.2" class="font" fill="#18181B" font-size="13" font-weight="700">想維持原毛利，銷量得暴衝到 1.9 倍！</text>
 </svg>

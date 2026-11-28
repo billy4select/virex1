@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 350" width="960" height="350" role="img" aria-labelledby="gsc-s2-title gsc-s2-desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520" role="img" aria-labelledby="gsc-s2-title gsc-s2-desc">
   <title id="gsc-s2-title">GSC 收錄後第二階段拉流量決策圖</title>
   <desc id="gsc-s2-desc">收錄後 2 至 4 週透過 GSC 成效報表篩選單頁數據，依曝光、排名與點閱率決定修改標題或補強內文段落。</desc>
   <defs>
@@ -14,50 +14,50 @@
     </marker>
   </defs>
 
-  <rect class="bg" width="960" height="350" rx="14" />
+  <rect class="bg" width="960" height="520" rx="14" />
 
   <!-- Header -->
-  <rect x="36" y="28" width="6" height="26" rx="2" class="orange" />
-  <text x="52" y="48" class="font-sans ink" font-size="18" font-weight="800">收錄後 2–4 週：看 GSC 成效報表決定「改標題」還是「補內文」</text>
+  <rect x="36" y="53.6" width="6" height="29.9" rx="2" class="orange" />
+  <text x="52" y="71.3" class="font-sans ink" font-size="18" font-weight="800">收錄後 2–4 週：看 GSC 成效報表決定「改標題」還是「補內文」</text>
 
   <!-- Left box: Filter -->
-  <rect x="36" y="92" width="236" height="206" rx="12" fill="#18181B" />
-  <rect x="54" y="110" width="84" height="22" rx="11" fill="#FBBF24" />
-  <text x="96" y="125" text-anchor="middle" class="font-sans ink" font-size="11" font-weight="800">先篩選單頁</text>
-  <text x="54" y="160" class="font-sans" fill="#FFFFFF" font-size="17" font-weight="800">GSC 成效報表</text>
-  <text x="54" y="188" class="font-sans" fill="#D4D4D8" font-size="13">1. 日期選「最近 28 天」</text>
-  <text x="54" y="212" class="font-sans" fill="#D4D4D8" font-size="13">2. 篩選「確切網址」</text>
-  <text x="54" y="236" class="font-sans" fill="#D4D4D8" font-size="13">3. 位置篩選 &gt; 7.5（第 2 頁）</text>
-  <text x="54" y="260" class="font-sans" fill="#FBBF24" font-size="13" font-weight="700">4. 依「曝光數」由高到低排</text>
+  <rect x="36" y="136.7" width="236" height="306.1" rx="12" fill="#18181B" />
+  <rect x="54" y="163.4" width="84" height="25.3" rx="11" fill="#FBBF24" />
+  <text x="96" y="185.7" text-anchor="middle" class="font-sans ink" font-size="11" font-weight="800">先篩選單頁</text>
+  <text x="54" y="237.7" class="font-sans" fill="#FFFFFF" font-size="17" font-weight="800">GSC 成效報表</text>
+  <text x="54" y="279.3" class="font-sans" fill="#D4D4D8" font-size="13">1. 日期選「最近 28 天」</text>
+  <text x="54" y="315" class="font-sans" fill="#D4D4D8" font-size="13">2. 篩選「確切網址」</text>
+  <text x="54" y="350.6" class="font-sans" fill="#D4D4D8" font-size="13">3. 位置篩選 &gt; 7.5（第 2 頁）</text>
+  <text x="54" y="386.3" class="font-sans" fill="#FBBF24" font-size="13" font-weight="700">4. 依「曝光數」由高到低排</text>
 
   <!-- Branch arrows -->
-  <path d="M 272 155 L 330 155" stroke="#18181B" stroke-width="2" marker-end="url(#arr2)" />
-  <path d="M 272 245 L 330 245" stroke="#18181B" stroke-width="2" marker-end="url(#arr2)" />
+  <path d="M 272 230.3 L 330 230.3" stroke="#18181B" stroke-width="2" marker-end="url(#arr2)" />
+  <path d="M 272 364 L 330 364" stroke="#18181B" stroke-width="2" marker-end="url(#arr2)" />
 
   <!-- Case A -->
-  <rect x="336" y="88" width="380" height="106" rx="10" fill="#FFFFFF" stroke="#18181B" stroke-width="2" />
-  <rect x="352" y="102" width="60" height="22" rx="11" fill="#18181B" />
-  <text x="382" y="117" text-anchor="middle" class="font-sans" fill="#FFFFFF" font-size="11" font-weight="700">情況 A</text>
-  <text x="422" y="118" class="font-sans ink" font-size="15" font-weight="800">排名已進前 5 名，但點閱率 &lt; 3%</text>
-  <text x="352" y="148" class="font-sans muted" font-size="13">診斷：Google 已經給你曝光，但搜尋結果頁門面不夠吸睛</text>
-  <text x="352" y="172" class="font-sans orange" font-size="13" font-weight="800">動作 → 重寫 Title 與 Meta Description（關鍵字前移＋具體解法）</text>
+  <rect x="336" y="130.7" width="380" height="157.5" rx="10" fill="#FFFFFF" stroke="#18181B" stroke-width="2" />
+  <rect x="352" y="151.5" width="60" height="25.3" rx="11" fill="#18181B" />
+  <text x="382" y="173.8" text-anchor="middle" class="font-sans" fill="#FFFFFF" font-size="11" font-weight="700">情況 A</text>
+  <text x="422" y="175.3" class="font-sans ink" font-size="15" font-weight="800">排名已進前 5 名，但點閱率 &lt; 3%</text>
+  <text x="352" y="219.9" class="font-sans muted" font-size="13">診斷：Google 已經給你曝光，但搜尋結果頁門面不夠吸睛</text>
+  <text x="352" y="255.5" class="font-sans orange" font-size="13" font-weight="800">動作 → 重寫 Title 與 Meta Description（關鍵字前移＋具體解法）</text>
 
   <!-- Case B -->
-  <rect x="336" y="210" width="380" height="106" rx="10" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2" />
-  <rect x="352" y="224" width="60" height="22" rx="11" class="orange" />
-  <text x="382" y="239" text-anchor="middle" class="font-sans" fill="#FFFFFF" font-size="11" font-weight="700">情況 B</text>
-  <text x="422" y="240" class="font-sans ink" font-size="15" font-weight="800">曝光高，但平均排名卡在第 8–20 名</text>
-  <text x="352" y="270" class="font-sans muted" font-size="13">診斷：主題相關已獲認可，但深度還贏不過首頁前 3 名</text>
-  <text x="352" y="294" class="font-sans orange" font-size="13" font-weight="800">動作 → 挑最高曝光詞，在內文新增專屬 H2 段落寫透實作</text>
+  <rect x="336" y="312" width="380" height="157.5" rx="10" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2" />
+  <rect x="352" y="332.8" width="60" height="25.3" rx="11" class="orange" />
+  <text x="382" y="355.1" text-anchor="middle" class="font-sans" fill="#FFFFFF" font-size="11" font-weight="700">情況 B</text>
+  <text x="422" y="356.6" class="font-sans ink" font-size="15" font-weight="800">曝光高，但平均排名卡在第 8–20 名</text>
+  <text x="352" y="401.1" class="font-sans muted" font-size="13">診斷：主題相關已獲認可，但深度還贏不過首頁前 3 名</text>
+  <text x="352" y="436.8" class="font-sans orange" font-size="13" font-weight="800">動作 → 挑最高曝光詞，在內文新增專屬 H2 段落寫透實作</text>
 
   <!-- Merge arrows -->
-  <path d="M 716 141 L 750 141 L 750 198 L 774 198" fill="none" stroke="#18181B" stroke-width="2" marker-end="url(#arr2)" />
-  <path d="M 716 263 L 750 263 L 750 198" fill="none" stroke="#18181B" stroke-width="2" />
+  <path d="M 716 209.5 L 750 209.5 L 750 294.2 L 774 294.2" fill="none" stroke="#18181B" stroke-width="2" marker-end="url(#arr2)" />
+  <path d="M 716 390.7 L 750 390.7 L 750 294.2" fill="none" stroke="#18181B" stroke-width="2" />
 
   <!-- Right box: Track -->
-  <rect x="780" y="132" width="144" height="132" rx="10" fill="#FFFFFF" stroke="#18181B" stroke-width="2" />
-  <text x="852" y="166" text-anchor="middle" class="font-sans orange" font-size="13" font-weight="800">更新並驗證</text>
-  <text x="852" y="194" text-anchor="middle" class="font-sans ink" font-size="16" font-weight="800">等 14 天</text>
-  <text x="852" y="220" text-anchor="middle" class="font-sans muted" font-size="12">送一次網址審查</text>
-  <text x="852" y="240" text-anchor="middle" class="font-sans muted" font-size="12">比對修改前後點擊</text>
+  <rect x="780" y="196.1" width="144" height="196.1" rx="10" fill="#FFFFFF" stroke="#18181B" stroke-width="2" />
+  <text x="852" y="246.6" text-anchor="middle" class="font-sans orange" font-size="13" font-weight="800">更新並驗證</text>
+  <text x="852" y="288.2" text-anchor="middle" class="font-sans ink" font-size="16" font-weight="800">等 14 天</text>
+  <text x="852" y="326.9" text-anchor="middle" class="font-sans muted" font-size="12">送一次網址審查</text>
+  <text x="852" y="356.6" text-anchor="middle" class="font-sans muted" font-size="12">比對修改前後點擊</text>
 </svg>

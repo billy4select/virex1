@@ -1,37 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" role="img" aria-label="評估新工作機會別只看月薪：把看不見的機會成本一起攤開算">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="960" height="480" role="img" aria-label="評估新工作機會別只看月薪：把看不見的機會成本一起攤開算">
   <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
-  <rect width="960" height="300" rx="14" fill="#FFFBF5"/>
-  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
-  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">評估新工作機會別只看月薪：把看不見的機會成本一起攤開算</text>
+  <rect width="960" height="480" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="56.8" width="6" height="29.9" rx="2" fill="#EA580C"/>
+  <text x="52" y="76.8" class="font" fill="#18181B" font-size="18" font-weight="800">評估新工作機會別只看月薪：把看不見的機會成本一起攤開算</text>
   
-      <rect x="36" y="82" width="888" height="34" rx="8" fill="#FFF3EB" stroke="#EA580C" stroke-width="1.8"/>
-      <rect x="48" y="88" width="38" height="22" rx="6" fill="#EA580C"/>
-      <text x="67" y="103" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">01</text>
-      <text x="102" y="104" class="font" fill="#18181B" font-size="13.5" font-weight="800">現金收入與長期成長</text>
-      <text x="320" y="104" class="font" fill="#EA580C" font-size="13" font-weight="700">不只看今年底薪，更看兩年後能力有沒有複利</text>
+      <rect x="36" y="131.2" width="888" height="54.4" rx="8" fill="#FFF3EB" stroke="#EA580C" stroke-width="1.8"/>
+      <rect x="48" y="140.8" width="38" height="25.3" rx="6" fill="#EA580C"/>
+      <text x="67" y="164.8" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">01</text>
+      <text x="102" y="166.4" class="font" fill="#18181B" font-size="13.5" font-weight="800">現金收入與長期成長</text>
+      <text x="320" y="166.4" class="font" fill="#EA580C" font-size="13" font-weight="700">不只看今年底薪，更看兩年後能力有沒有複利</text>
     
-      <rect x="36" y="124" width="888" height="34" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
-      <rect x="48" y="130" width="38" height="22" rx="6" fill="#18181B"/>
-      <text x="67" y="145" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">02</text>
-      <text x="102" y="146" class="font" fill="#18181B" font-size="13.5" font-weight="800">時間自由與家庭影響</text>
-      <text x="320" y="146" class="font" fill="#52525B" font-size="13" font-weight="400">通勤、加班與心理消耗都是真實生活成本</text>
+      <rect x="36" y="198.4" width="888" height="54.4" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
+      <rect x="48" y="208" width="38" height="25.3" rx="6" fill="#18181B"/>
+      <text x="67" y="232" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">02</text>
+      <text x="102" y="233.6" class="font" fill="#18181B" font-size="13.5" font-weight="800">時間自由與家庭影響</text>
+      <text x="320" y="233.6" class="font" fill="#52525B" font-size="13" font-weight="400">通勤、加班與心理消耗都是真實生活成本</text>
     
-      <rect x="36" y="166" width="888" height="34" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
-      <rect x="48" y="172" width="38" height="22" rx="6" fill="#18181B"/>
-      <text x="67" y="187" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">03</text>
-      <text x="102" y="188" class="font" fill="#18181B" font-size="13.5" font-weight="800">風險承受與現金緩衝</text>
-      <text x="320" y="188" class="font" fill="#52525B" font-size="13" font-weight="400">最壞情況發生時，家庭與存款撐得住幾個月</text>
+      <rect x="36" y="265.6" width="888" height="54.4" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
+      <rect x="48" y="275.2" width="38" height="25.3" rx="6" fill="#18181B"/>
+      <text x="67" y="299.2" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">03</text>
+      <text x="102" y="300.8" class="font" fill="#18181B" font-size="13.5" font-weight="800">風險承受與現金緩衝</text>
+      <text x="320" y="300.8" class="font" fill="#52525B" font-size="13" font-weight="400">最壞情況發生時，家庭與存款撐得住幾個月</text>
     
-      <rect x="36" y="208" width="888" height="34" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
-      <rect x="48" y="214" width="38" height="22" rx="6" fill="#18181B"/>
-      <text x="67" y="229" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">04</text>
-      <text x="102" y="230" class="font" fill="#18181B" font-size="13.5" font-weight="800">選擇的可逆性</text>
-      <text x="320" y="230" class="font" fill="#52525B" font-size="13" font-weight="400">走錯路能不能回頭？不可逆的決定要留更大安全邊際</text>
+      <rect x="36" y="332.8" width="888" height="54.4" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
+      <rect x="48" y="342.4" width="38" height="25.3" rx="6" fill="#18181B"/>
+      <text x="67" y="366.4" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">04</text>
+      <text x="102" y="368" class="font" fill="#18181B" font-size="13.5" font-weight="800">選擇的可逆性</text>
+      <text x="320" y="368" class="font" fill="#52525B" font-size="13" font-weight="400">走錯路能不能回頭？不可逆的決定要留更大安全邊際</text>
     
-      <rect x="36" y="250" width="888" height="34" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
-      <rect x="48" y="256" width="38" height="22" rx="6" fill="#18181B"/>
-      <text x="67" y="271" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">05</text>
-      <text x="102" y="272" class="font" fill="#18181B" font-size="13.5" font-weight="800">如果不選它，你會失去什麼？</text>
-      <text x="320" y="272" class="font" fill="#52525B" font-size="13" font-weight="400">同時比較「留下來的隱形成本」才不會誤判</text>
+      <rect x="36" y="400" width="888" height="54.4" rx="8" fill="#FFFFFF" stroke="#E4E4E7" stroke-width="1.8"/>
+      <rect x="48" y="409.6" width="38" height="25.3" rx="6" fill="#18181B"/>
+      <text x="67" y="433.6" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11.5" font-weight="800">05</text>
+      <text x="102" y="435.2" class="font" fill="#18181B" font-size="13.5" font-weight="800">如果不選它，你會失去什麼？</text>
+      <text x="320" y="435.2" class="font" fill="#52525B" font-size="13" font-weight="400">同時比較「留下來的隱形成本」才不會誤判</text>
     
 </svg>

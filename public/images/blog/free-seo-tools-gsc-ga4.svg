@@ -1,20 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 280" width="960" height="280" role="img" aria-label="GSC 與 GA4 免費 SEO 工具分工圖">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="960" height="480" role="img" aria-label="GSC 與 GA4 免費 SEO 工具分工圖">
   <defs><style>.font{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;}</style></defs>
-  <rect width="960" height="280" rx="14" fill="#FFFBF5"/>
-  <rect x="36" y="28" width="6" height="26" rx="2" fill="#EA580C"/>
-  <text x="52" y="48" class="font" fill="#18181B" font-size="18" font-weight="800">新手不用急著買貴鬆鬆 SEO 軟體：先把這兩支免費官方工具用熟</text>
+  <rect width="960" height="480" rx="14" fill="#FFFBF5"/>
+  <rect x="36" y="60" width="6" height="29.9" rx="2" fill="#EA580C"/>
+  <text x="52" y="82.3" class="font" fill="#18181B" font-size="18" font-weight="800">新手不用急著買貴鬆鬆 SEO 軟體：先把這兩支免費官方工具用熟</text>
 
-  <rect x="36" y="92" width="430" height="152" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
-  <rect x="56" y="110" width="160" height="22" rx="11" fill="#EA580C"/>
-  <text x="136" y="125" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11" font-weight="800">Google Search Console</text>
-  <text x="56" y="160" class="font" fill="#18181B" font-size="16.5" font-weight="800">管「進網站之前」的所有事</text>
-  <text x="56" y="188" class="font" fill="#52525B" font-size="13">• 查網頁有沒有被收錄、卡在索引哪一關</text>
-  <text x="56" y="214" class="font" fill="#EA580C" font-size="13" font-weight="700">• 看大家搜什麼字看到你、排第幾名、點閱率多高</text>
+  <rect x="36" y="157.7" width="430" height="260.6" rx="12" fill="#FFF3EB" stroke="#EA580C" stroke-width="2.2"/>
+  <rect x="56" y="188.6" width="160" height="25.3" rx="11" fill="#EA580C"/>
+  <text x="136" y="214.3" text-anchor="middle" class="font" fill="#FFFFFF" font-size="11" font-weight="800">Google Search Console</text>
+  <text x="56" y="274.3" class="font" fill="#18181B" font-size="16.5" font-weight="800">管「進網站之前」的所有事</text>
+  <text x="56" y="322.3" class="font" fill="#52525B" font-size="13">• 查網頁有沒有被收錄、卡在索引哪一關</text>
+  <text x="56" y="366.9" class="font" fill="#EA580C" font-size="13" font-weight="700">• 看大家搜什麼字看到你、排第幾名、點閱率多高</text>
 
-  <rect x="494" y="92" width="430" height="152" rx="12" fill="#18181B"/>
-  <rect x="514" y="110" width="160" height="22" rx="11" fill="#FBBF24"/>
-  <text x="594" y="125" text-anchor="middle" class="font" fill="#18181B" font-size="11" font-weight="800">Google Analytics 4</text>
-  <text x="514" y="160" class="font" fill="#FFFFFF" font-size="16.5" font-weight="800">管「進網站之後」的互動與轉換</text>
-  <text x="514" y="188" class="font" fill="#D4D4D8" font-size="13">• 查訪客停多久、看哪一頁跳出率最高</text>
-  <text x="514" y="214" class="font" fill="#FBBF24" font-size="13" font-weight="700">• 看哪篇文章真正帶來留名單、訂閱或下單</text>
+  <rect x="494" y="157.7" width="430" height="260.6" rx="12" fill="#18181B"/>
+  <rect x="514" y="188.6" width="160" height="25.3" rx="11" fill="#FBBF24"/>
+  <text x="594" y="214.3" text-anchor="middle" class="font" fill="#18181B" font-size="11" font-weight="800">Google Analytics 4</text>
+  <text x="514" y="274.3" class="font" fill="#FFFFFF" font-size="16.5" font-weight="800">管「進網站之後」的互動與轉換</text>
+  <text x="514" y="322.3" class="font" fill="#D4D4D8" font-size="13">• 查訪客停多久、看哪一頁跳出率最高</text>
+  <text x="514" y="366.9" class="font" fill="#FBBF24" font-size="13" font-weight="700">• 看哪篇文章真正帶來留名單、訂閱或下單</text>
 </svg>
