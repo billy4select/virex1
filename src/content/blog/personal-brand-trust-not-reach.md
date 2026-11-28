@@ -10,6 +10,7 @@ tags:
   - 內容策略
   - 專業信任
 category: 自媒體與個人事業
+image: /images/blog/personal-brand-trust-not-reach.webp
 featured: false
 boost: false
 draft: false
@@ -28,6 +29,8 @@ faq:
 一個人或一個專業服務，為什麼會被選擇？對方可能需要知道你能處理什麼問題、你做事的方式、過去成果，以及是否值得信任。個人品牌就是讓這些資訊逐漸被看見與理解。
 
 ## 先說清楚你能處理什麼問題
+
+![個人品牌建立信任三層結構圖：清楚定位、穩定輸出判斷與跨通路累積口碑](/images/blog/personal-brand-trust-layers.svg)
 
 「分享行銷知識」、「分享職涯成長」範圍太大，讀者不容易知道什麼時候該找你。可以再往下問：你最常處理哪一類問題？你熟悉哪些情境？你能提供什麼不同的觀察或方法？
 

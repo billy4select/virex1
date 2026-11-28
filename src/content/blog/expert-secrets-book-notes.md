@@ -10,6 +10,7 @@ tags:
   - 銷售漏斗
   - 知識變現
 category: 書籍導讀
+image: /images/blog/expert-secrets-book-notes.webp
 featured: false
 boost: false
 draft: false
@@ -77,6 +78,8 @@ faq:
 當你有了自己的架構，專業就不再只是腦袋裡零散的知識，而是可以被傳遞的資產。這也是我認為專業工作者值得做的一件事：**把自己多年來憑經驗完成的事情，重新整理成別人能理解與學習的方法。** 如果想先盤點哪些經驗可以帶著走，可以參考[離開公司後，哪些能力與成果能帶著走？中階主管的 5 項可攜帶資產](/blog/mid-career-portable-assets/)。
 
 ## 不要只賣改善，要提供一個「新的機會」
+
+![專家機密核心四步驟圖：建立觀點、提出新機會、轉變信念到打造跟隨者信任](/images/blog/expert-secrets-4-pillars.svg)
 
 這是《專家機密》非常重要的一個概念。作者認為，很多人在銷售產品或服務時，習慣強調改善，例如：
 

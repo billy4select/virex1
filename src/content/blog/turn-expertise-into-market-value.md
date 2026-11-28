@@ -10,6 +10,7 @@ tags:
   - 個人事業
   - 職涯發展
 category: 自媒體與個人事業
+image: /images/blog/turn-expertise-into-market-value.webp
 featured: false
 boost: false
 draft: false
@@ -28,6 +29,8 @@ faq:
 把專業變成市場價值，需要經過幾個轉換：從「我會什麼」，走到「誰遇到什麼問題」，再走到「我能交付什麼結果」。
 
 ## 先整理可被證明的能力
+
+![把個人專業轉化為市場價值的四步驟圖](/images/blog/expertise-to-value-4-steps.svg)
 
 不要只寫「擅長溝通」、「具備策略思維」或「熟悉數位行銷」。這些詞很難讓客戶判斷你的能力。
 

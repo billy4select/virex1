@@ -10,6 +10,7 @@ tags:
   - 商業模式
   - 自媒體經營
 category: 書籍導讀
+image: /images/blog/free-zero-price-business-models.webp
 featured: false
 boost: false
 draft: false
@@ -56,6 +57,8 @@ faq:
 但有一個重要前提：**免費不代表企業不需要賺錢。** 厲害的企業，是知道該把哪一部分免費，再從其他地方把利潤賺回來。這正是整本書最值得研究的地方。
 
 ## 企業怎麼靠免費賺錢？四種免費商業模式
+
+![免費四種商業模式圖：直接交叉補貼、三方市場、免費增值與非貨幣市場](/images/blog/free-4-business-models.svg)
 
 書中整理出四種模式。它們看起來不同，背後卻有共同的邏輯：**消費者不一定要為自己使用的東西付錢，企業仍然可以從別的地方獲得收入。**
 

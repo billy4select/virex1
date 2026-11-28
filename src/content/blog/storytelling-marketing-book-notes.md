@@ -10,6 +10,7 @@ tags:
   - 文案寫作
   - 品牌定位
 category: 書籍導讀
+image: /images/blog/storytelling-marketing-book-notes.webp
 featured: false
 boost: false
 draft: false
@@ -43,6 +44,8 @@ faq:
 說到底，故事行銷不是叫每個品牌都去編一段感人肺腑的創業辛酸史，而是幫顧客把冷冰冰的規格，翻譯成他生活裡有感的畫面。下面我從心理價值、結構到文案寫法一路拆開來看。
 
 ## 故事行銷的本質：替商品增加心理價值
+
+![故事行銷提升商品心理價值三步驟圖：規格翻譯成感受、建立情感連結到導向行動](/images/blog/storytelling-value-formula.svg)
 
 故事行銷的核心不是把產品講得很感人，而是透過意義與情境替相同功能的商品拉開**心理價值**。就像同樣是一瓶解決口渴的水，有些只能賣十幾元，有些卻能賣到上百元，差別就在於消費者對它的認知。
 

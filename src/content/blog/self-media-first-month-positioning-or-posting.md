@@ -9,6 +9,7 @@ tags:
   - 內容定位
   - Threads
 category: 自媒體與個人事業
+image: /images/blog/self-media-first-month-positioning-or-posting.webp
 featured: false
 boost: false
 draft: false
@@ -29,6 +30,8 @@ faq:
 我會把定位先當成一個暫時的工作假設。它需要足夠清楚，讓你知道接下來要測試什麼，但不需要在第一天就定案。
 
 ## 開始前先整理三件事
+
+![自媒體第一個月四週實作節奏圖：邊發邊測、記錄回饋到單點修正](/images/blog/self-media-first-month.svg)
 
 **第一，你有什麼可以持續談的素材？** 可以是工作經驗、正在學習的技能、長期觀察的產業，或你實際測試過的方法。先列出具體題目，不要只寫「分享生活」或「幫助人成長」這種很難拿來決定內容的描述。
 

@@ -8,6 +8,7 @@ tags:
   - 競爭策略
   - 成本結構
 category: 商業模式與獲利
+image: /images/blog/how-ai-changes-cost-and-competition.webp
 featured: false
 boost: false
 draft: false
@@ -70,6 +71,8 @@ faq:
 這也是為什麼 AI 讓很多人「做得出來」，但沒有讓很多人「賣得出去」。
 
 ## 兩種策略：成本優勢 vs 價值優勢
+
+![AI 改變產業成本結構與價值優勢轉移對照圖](/images/blog/ai-cost-vs-value-shift.svg)
 
 ### 成本優勢
 

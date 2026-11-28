@@ -9,6 +9,7 @@ tags:
   - 內容產品
   - 個人事業
 category: 自媒體與個人事業
+image: /images/blog/content-to-product-knowledge-business.webp
 featured: false
 boost: false
 draft: false
@@ -29,6 +30,8 @@ faq:
 因此，先不要急著把文章整理成課程。先找出一個具體問題，確認有人願意為解決它付出時間或金錢。
 
 ## 內容和產品的任務不同
+
+![從免費內容走向付費知識產品三步驟圖](/images/blog/content-to-product-bridge.svg)
 
 免費內容可以幫助讀者認識問題、理解觀念、比較選項，也讓他知道你的思考方式。產品則需要對交付負責：買了之後會得到什麼、需要投入多少時間、能完成什麼，以及遇到問題時如何獲得協助。
 
